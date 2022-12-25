@@ -19,7 +19,8 @@ namespace Model
     COPY,
     CUSTOM,
     TAG,
-    DELETE_
+    DELETE_,
+    DECRYPT
   };
 
 namespace WorkflowStepTypeMapper

@@ -20,13 +20,17 @@ namespace Model
 
 RStudioServerProDomainSettingsForUpdate::RStudioServerProDomainSettingsForUpdate() : 
     m_domainExecutionRoleArnHasBeenSet(false),
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_rStudioConnectUrlHasBeenSet(false),
+    m_rStudioPackageManagerUrlHasBeenSet(false)
 {
 }
 
 RStudioServerProDomainSettingsForUpdate::RStudioServerProDomainSettingsForUpdate(JsonView jsonValue) : 
     m_domainExecutionRoleArnHasBeenSet(false),
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_rStudioConnectUrlHasBeenSet(false),
+    m_rStudioPackageManagerUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ RStudioServerProDomainSettingsForUpdate& RStudioServerProDomainSettingsForUpdate
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RStudioConnectUrl"))
+  {
+    m_rStudioConnectUrl = jsonValue.GetString("RStudioConnectUrl");
+
+    m_rStudioConnectUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RStudioPackageManagerUrl"))
+  {
+    m_rStudioPackageManagerUrl = jsonValue.GetString("RStudioPackageManagerUrl");
+
+    m_rStudioPackageManagerUrlHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue RStudioServerProDomainSettingsForUpdate::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_rStudioConnectUrlHasBeenSet)
+  {
+   payload.WithString("RStudioConnectUrl", m_rStudioConnectUrl);
+
+  }
+
+  if(m_rStudioPackageManagerUrlHasBeenSet)
+  {
+   payload.WithString("RStudioPackageManagerUrl", m_rStudioPackageManagerUrl);
 
   }
 

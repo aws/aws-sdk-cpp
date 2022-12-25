@@ -29,7 +29,8 @@ Item::Item() :
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
     m_participantRoleHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_messageMetadataHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Item::Item(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
     m_participantRoleHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_messageMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ Item& Item::operator =(JsonView jsonValue)
     m_attachmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageMetadata"))
+  {
+    m_messageMetadata = jsonValue.GetObject("MessageMetadata");
+
+    m_messageMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Item::Jsonize() const
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
    }
    payload.WithArray("Attachments", std::move(attachmentsJsonList));
+
+  }
+
+  if(m_messageMetadataHasBeenSet)
+  {
+   payload.WithObject("MessageMetadata", m_messageMetadata.Jsonize());
 
   }
 

@@ -113,7 +113,8 @@ DBCluster::DBCluster() :
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false)
+    m_dBSystemIdHasBeenSet(false),
+    m_masterUserSecretHasBeenSet(false)
 {
 }
 
@@ -210,7 +211,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false)
+    m_dBSystemIdHasBeenSet(false),
+    m_masterUserSecretHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -701,6 +703,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
       m_dBSystemIdHasBeenSet = true;
     }
+    XmlNode masterUserSecretNode = resultNode.FirstChild("MasterUserSecret");
+    if(!masterUserSecretNode.IsNull())
+    {
+      m_masterUserSecret = masterUserSecretNode;
+      m_masterUserSecretHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1116,6 +1124,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 
+  if(m_masterUserSecretHasBeenSet)
+  {
+      Aws::StringStream masterUserSecretLocationAndMemberSs;
+      masterUserSecretLocationAndMemberSs << location << index << locationValue << ".MasterUserSecret";
+      m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1457,6 +1472,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_dBSystemIdHasBeenSet)
   {
       oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+  if(m_masterUserSecretHasBeenSet)
+  {
+      Aws::String masterUserSecretLocationAndMember(location);
+      masterUserSecretLocationAndMember += ".MasterUserSecret";
+      m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMember.c_str());
   }
 }
 

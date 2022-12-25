@@ -10,6 +10,7 @@
 #include <aws/awstransfer/model/CustomStepDetails.h>
 #include <aws/awstransfer/model/DeleteStepDetails.h>
 #include <aws/awstransfer/model/TagStepDetails.h>
+#include <aws/awstransfer/model/DecryptStepDetails.h>
 #include <utility>
 
 namespace Aws
@@ -255,6 +256,25 @@ namespace Model
      */
     inline WorkflowStep& WithTagStepDetails(TagStepDetails&& value) { SetTagStepDetails(std::move(value)); return *this;}
 
+
+    
+    inline const DecryptStepDetails& GetDecryptStepDetails() const{ return m_decryptStepDetails; }
+
+    
+    inline bool DecryptStepDetailsHasBeenSet() const { return m_decryptStepDetailsHasBeenSet; }
+
+    
+    inline void SetDecryptStepDetails(const DecryptStepDetails& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = value; }
+
+    
+    inline void SetDecryptStepDetails(DecryptStepDetails&& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = std::move(value); }
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(const DecryptStepDetails& value) { SetDecryptStepDetails(value); return *this;}
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(DecryptStepDetails&& value) { SetDecryptStepDetails(std::move(value)); return *this;}
+
   private:
 
     WorkflowStepType m_type;
@@ -271,6 +291,9 @@ namespace Model
 
     TagStepDetails m_tagStepDetails;
     bool m_tagStepDetailsHasBeenSet = false;
+
+    DecryptStepDetails m_decryptStepDetails;
+    bool m_decryptStepDetailsHasBeenSet = false;
   };
 
 } // namespace Model

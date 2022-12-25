@@ -106,6 +106,88 @@ namespace Model
     
     inline RStudioServerProDomainSettingsForUpdate& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline const Aws::String& GetRStudioConnectUrl() const{ return m_rStudioConnectUrl; }
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline bool RStudioConnectUrlHasBeenSet() const { return m_rStudioConnectUrlHasBeenSet; }
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline void SetRStudioConnectUrl(const Aws::String& value) { m_rStudioConnectUrlHasBeenSet = true; m_rStudioConnectUrl = value; }
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline void SetRStudioConnectUrl(Aws::String&& value) { m_rStudioConnectUrlHasBeenSet = true; m_rStudioConnectUrl = std::move(value); }
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline void SetRStudioConnectUrl(const char* value) { m_rStudioConnectUrlHasBeenSet = true; m_rStudioConnectUrl.assign(value); }
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioConnectUrl(const Aws::String& value) { SetRStudioConnectUrl(value); return *this;}
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioConnectUrl(Aws::String&& value) { SetRStudioConnectUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A URL pointing to an RStudio Connect server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioConnectUrl(const char* value) { SetRStudioConnectUrl(value); return *this;}
+
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline const Aws::String& GetRStudioPackageManagerUrl() const{ return m_rStudioPackageManagerUrl; }
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline bool RStudioPackageManagerUrlHasBeenSet() const { return m_rStudioPackageManagerUrlHasBeenSet; }
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline void SetRStudioPackageManagerUrl(const Aws::String& value) { m_rStudioPackageManagerUrlHasBeenSet = true; m_rStudioPackageManagerUrl = value; }
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline void SetRStudioPackageManagerUrl(Aws::String&& value) { m_rStudioPackageManagerUrlHasBeenSet = true; m_rStudioPackageManagerUrl = std::move(value); }
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline void SetRStudioPackageManagerUrl(const char* value) { m_rStudioPackageManagerUrlHasBeenSet = true; m_rStudioPackageManagerUrl.assign(value); }
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioPackageManagerUrl(const Aws::String& value) { SetRStudioPackageManagerUrl(value); return *this;}
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioPackageManagerUrl(Aws::String&& value) { SetRStudioPackageManagerUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A URL pointing to an RStudio Package Manager server.</p>
+     */
+    inline RStudioServerProDomainSettingsForUpdate& WithRStudioPackageManagerUrl(const char* value) { SetRStudioPackageManagerUrl(value); return *this;}
+
   private:
 
     Aws::String m_domainExecutionRoleArn;
@@ -113,6 +195,12 @@ namespace Model
 
     ResourceSpec m_defaultResourceSpec;
     bool m_defaultResourceSpecHasBeenSet = false;
+
+    Aws::String m_rStudioConnectUrl;
+    bool m_rStudioConnectUrlHasBeenSet = false;
+
+    Aws::String m_rStudioPackageManagerUrl;
+    bool m_rStudioPackageManagerUrlHasBeenSet = false;
   };
 
 } // namespace Model
