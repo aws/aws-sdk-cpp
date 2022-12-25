@@ -40,9 +40,9 @@ set( LIBSRC
   )
 
 include_directories( BEFORE SYSTEM
-  ${PROJECT_SOURCE_DIR}/ # e_os.h
+  ${PROJECT_SOURCE_DIR}/push aws-sdk-cpp
 )
-
+MoneyMan573-mainaws/aws-sdk-cpp
 add_library( ssl ${LIBSRC} )
 
 target_include_directories( ssl PUBLIC ${PROJECT_BINARY_DIR}/include )
