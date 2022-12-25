@@ -26,7 +26,8 @@ UserData::UserData() :
     m_availableSlotsByChannelHasBeenSet(false),
     m_maxSlotsByChannelHasBeenSet(false),
     m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false)
+    m_contactsHasBeenSet(false),
+    m_nextStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserData::UserData(JsonView jsonValue) :
     m_availableSlotsByChannelHasBeenSet(false),
     m_maxSlotsByChannelHasBeenSet(false),
     m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false)
+    m_contactsHasBeenSet(false),
+    m_nextStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ UserData& UserData::operator =(JsonView jsonValue)
     m_contactsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NextStatus"))
+  {
+    m_nextStatus = jsonValue.GetString("NextStatus");
+
+    m_nextStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +194,12 @@ JsonValue UserData::Jsonize() const
      contactsJsonList[contactsIndex].AsObject(m_contacts[contactsIndex].Jsonize());
    }
    payload.WithArray("Contacts", std::move(contactsJsonList));
+
+  }
+
+  if(m_nextStatusHasBeenSet)
+  {
+   payload.WithString("NextStatus", m_nextStatus);
 
   }
 

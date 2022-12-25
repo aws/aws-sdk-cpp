@@ -105,37 +105,6 @@ namespace KinesisVideoWebRTCStorage
          */
         virtual void JoinStorageSessionAsync(const Model::JoinStorageSessionRequest& request, const JoinStorageSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /**
-         * <p> Join the ongoing one way-video and/or multi-way audio WebRTC session as a
-         * viewer for an input channel. If there’s no existing session for the channel,
-         * create a new streaming session and provide the Amazon Resource Name (ARN) of the
-         * signaling channel (<code>channelArn</code>) and client id
-         * (<code>clientId</code>). </p> <p>Currently for <code>SINGLE_MASTER</code> type,
-         * a video producing device is able to ingest both audio and video media into a
-         * stream, while viewers can only ingest audio. Both a video producing device and
-         * viewers can join a session first and wait for other participants. While
-         * participants are having peer to peer conversations through webRTC, the ingested
-         * media session will be stored into the Kinesis Video Stream. Multiple viewers are
-         * able to playback real-time media. </p> <p>Customers can also use existing
-         * Kinesis Video Streams features like <code>HLS</code> or <code>DASH</code>
-         * playback, Image generation, and more with ingested WebRTC media. If there’s an
-         * existing session with the same <code>clientId</code> that's found in the join
-         * session request, the new request takes precedence.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::JoinStorageSessionAsViewerOutcome JoinStorageSessionAsViewer(const Model::JoinStorageSessionAsViewerRequest& request) const;
-
-        /**
-         * A Callable wrapper for JoinStorageSessionAsViewer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::JoinStorageSessionAsViewerOutcomeCallable JoinStorageSessionAsViewerCallable(const Model::JoinStorageSessionAsViewerRequest& request) const;
-
-        /**
-         * An Async wrapper for JoinStorageSessionAsViewer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void JoinStorageSessionAsViewerAsync(const Model::JoinStorageSessionAsViewerRequest& request, const JoinStorageSessionAsViewerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase>& accessEndpointProvider();

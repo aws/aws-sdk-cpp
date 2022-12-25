@@ -11,6 +11,7 @@
 #include <aws/connect/model/AgentStatusReference.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/AgentContactReference.h>
 #include <utility>
@@ -395,6 +396,47 @@ namespace Model
      */
     inline UserData& AddContacts(AgentContactReference&& value) { m_contactsHasBeenSet = true; m_contacts.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline const Aws::String& GetNextStatus() const{ return m_nextStatus; }
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline bool NextStatusHasBeenSet() const { return m_nextStatusHasBeenSet; }
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline void SetNextStatus(const Aws::String& value) { m_nextStatusHasBeenSet = true; m_nextStatus = value; }
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline void SetNextStatus(Aws::String&& value) { m_nextStatusHasBeenSet = true; m_nextStatus = std::move(value); }
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline void SetNextStatus(const char* value) { m_nextStatusHasBeenSet = true; m_nextStatus.assign(value); }
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline UserData& WithNextStatus(const Aws::String& value) { SetNextStatus(value); return *this;}
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline UserData& WithNextStatus(Aws::String&& value) { SetNextStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The Next status of the agent.</p>
+     */
+    inline UserData& WithNextStatus(const char* value) { SetNextStatus(value); return *this;}
+
   private:
 
     UserReference m_user;
@@ -420,6 +462,9 @@ namespace Model
 
     Aws::Vector<AgentContactReference> m_contacts;
     bool m_contactsHasBeenSet = false;
+
+    Aws::String m_nextStatus;
+    bool m_nextStatusHasBeenSet = false;
   };
 
 } // namespace Model
