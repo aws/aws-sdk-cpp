@@ -35,66 +35,114 @@ namespace Model
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline DescribeTrustedAdvisorChecksRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline DescribeTrustedAdvisorChecksRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The ISO 639-1 code for the language that you want your checks to appear
+     * in.</p> <p>The Amazon Web Services Support API currently supports the following
+     * languages for Trusted Advisor:</p> <ul> <li> <p>Chinese, Simplified -
+     * <code>zh</code> </p> </li> <li> <p>Chinese, Traditional - <code>zh_TW</code>
+     * </p> </li> <li> <p>English - <code>en</code> </p> </li> <li> <p>French -
+     * <code>fr</code> </p> </li> <li> <p>German - <code>de</code> </p> </li> <li>
+     * <p>Indonesian - <code>id</code> </p> </li> <li> <p>Italian - <code>it</code>
+     * </p> </li> <li> <p>Japanese - <code>ja</code> </p> </li> <li> <p>Korean -
+     * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
+     * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
     inline DescribeTrustedAdvisorChecksRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

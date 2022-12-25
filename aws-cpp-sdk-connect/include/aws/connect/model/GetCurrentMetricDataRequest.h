@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/Grouping.h>
 #include <aws/connect/model/CurrentMetric.h>
+#include <aws/connect/model/CurrentMetricSortCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -86,50 +87,74 @@ namespace Model
 
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline const Filters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
-     * Metric data is retrieved only for the resources associated with the queues or
-     * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>The filters to apply to returned metrics. You can filter up to the following
+     * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
+     * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
+     * </li> </ul> <p>Metric data is retrieved only for the resources associated with
+     * the queues or routing profiles, and by any channels included in the filter. (You
+     * cannot filter by both queue AND routing profile.) You can include both resource
+     * IDs and resource ARNs in the same request. </p> <p>Currently tagging is only
+     * supported on the resources that are passed in the filter.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -141,8 +166,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
 
@@ -153,8 +180,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
 
@@ -165,8 +194,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
 
@@ -177,8 +208,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
 
@@ -189,8 +222,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
 
@@ -201,8 +236,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
 
@@ -213,8 +250,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
@@ -225,8 +264,10 @@ namespace Model
      * <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and
      * TASK channels are supported.</p> </li> <li> <p>If you group by
      * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-     * filter.</p> </li> <li> <p>If no <code>Grouping</code> is included in the
-     * request, a summary of metrics is returned.</p> </li> </ul>
+     * filter. In addition, a routing profile filter is required for metrics
+     * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
+     * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>If no <code>Grouping</code> is
+     * included in the request, a summary of metrics is returned.</p> </li> </ul>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
 
@@ -749,6 +790,87 @@ namespace Model
      */
     inline GetCurrentMetricDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline const Aws::Vector<CurrentMetricSortCriteria>& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline void SetSortCriteria(const Aws::Vector<CurrentMetricSortCriteria>& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline void SetSortCriteria(Aws::Vector<CurrentMetricSortCriteria>&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline GetCurrentMetricDataRequest& WithSortCriteria(const Aws::Vector<CurrentMetricSortCriteria>& value) { SetSortCriteria(value); return *this;}
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline GetCurrentMetricDataRequest& WithSortCriteria(Aws::Vector<CurrentMetricSortCriteria>&& value) { SetSortCriteria(std::move(value)); return *this;}
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline GetCurrentMetricDataRequest& AddSortCriteria(const CurrentMetricSortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(value); return *this; }
+
+    /**
+     * <p>The way to sort the resulting response based on metrics. You can enter one
+     * sort criteria. By default resources are sorted based on
+     * <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is
+     * sorted based on the input metrics.</p> <p>Note the following:</p> <ul> <li>
+     * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
+     * supported.</p> </li> </ul>
+     */
+    inline GetCurrentMetricDataRequest& AddSortCriteria(CurrentMetricSortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -768,6 +890,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::Vector<CurrentMetricSortCriteria> m_sortCriteria;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

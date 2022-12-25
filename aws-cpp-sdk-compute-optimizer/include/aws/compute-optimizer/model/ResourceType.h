@@ -20,7 +20,8 @@ namespace Model
     AutoScalingGroup,
     EbsVolume,
     LambdaFunction,
-    NotApplicable
+    NotApplicable,
+    EcsService
   };
 
 namespace ResourceTypeMapper

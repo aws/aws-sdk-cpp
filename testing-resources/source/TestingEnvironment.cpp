@@ -10,6 +10,10 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
+#ifdef __linux__
+#include <signal.h>
+#endif
+
 #include <sstream>
 
 namespace Aws
@@ -87,6 +91,14 @@ void RestoreEnvironmentVariables()
             Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1/*override*/);
         }
     }
+}
+
+AWS_TESTING_API void SetDefaultSigPipeHandler()
+{
+    // Setting SIGPIPE to be ignored in linux
+#ifdef __linux__
+    signal(SIGPIPE, SIG_IGN);
+#endif
 }
 
 } // namespace Testing
