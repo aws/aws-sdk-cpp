@@ -5,138 +5,16 @@
 
 #pragma once
 #include <aws/fis/FIS_EXPORTS.h>
-#include <aws/fis/FISErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/fis/model/CreateExperimentTemplateResult.h>
-#include <aws/fis/model/DeleteExperimentTemplateResult.h>
-#include <aws/fis/model/GetActionResult.h>
-#include <aws/fis/model/GetExperimentResult.h>
-#include <aws/fis/model/GetExperimentTemplateResult.h>
-#include <aws/fis/model/GetTargetResourceTypeResult.h>
-#include <aws/fis/model/ListActionsResult.h>
-#include <aws/fis/model/ListExperimentTemplatesResult.h>
-#include <aws/fis/model/ListExperimentsResult.h>
-#include <aws/fis/model/ListTagsForResourceResult.h>
-#include <aws/fis/model/ListTargetResourceTypesResult.h>
-#include <aws/fis/model/StartExperimentResult.h>
-#include <aws/fis/model/StopExperimentResult.h>
-#include <aws/fis/model/TagResourceResult.h>
-#include <aws/fis/model/UntagResourceResult.h>
-#include <aws/fis/model/UpdateExperimentTemplateResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/fis/FISServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace FIS
 {
-
-namespace Model
-{
-        class CreateExperimentTemplateRequest;
-        class DeleteExperimentTemplateRequest;
-        class GetActionRequest;
-        class GetExperimentRequest;
-        class GetExperimentTemplateRequest;
-        class GetTargetResourceTypeRequest;
-        class ListActionsRequest;
-        class ListExperimentTemplatesRequest;
-        class ListExperimentsRequest;
-        class ListTagsForResourceRequest;
-        class ListTargetResourceTypesRequest;
-        class StartExperimentRequest;
-        class StopExperimentRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateExperimentTemplateRequest;
-
-        typedef Aws::Utils::Outcome<CreateExperimentTemplateResult, FISError> CreateExperimentTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteExperimentTemplateResult, FISError> DeleteExperimentTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetActionResult, FISError> GetActionOutcome;
-        typedef Aws::Utils::Outcome<GetExperimentResult, FISError> GetExperimentOutcome;
-        typedef Aws::Utils::Outcome<GetExperimentTemplateResult, FISError> GetExperimentTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetTargetResourceTypeResult, FISError> GetTargetResourceTypeOutcome;
-        typedef Aws::Utils::Outcome<ListActionsResult, FISError> ListActionsOutcome;
-        typedef Aws::Utils::Outcome<ListExperimentTemplatesResult, FISError> ListExperimentTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListExperimentsResult, FISError> ListExperimentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, FISError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTargetResourceTypesResult, FISError> ListTargetResourceTypesOutcome;
-        typedef Aws::Utils::Outcome<StartExperimentResult, FISError> StartExperimentOutcome;
-        typedef Aws::Utils::Outcome<StopExperimentResult, FISError> StopExperimentOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, FISError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, FISError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateExperimentTemplateResult, FISError> UpdateExperimentTemplateOutcome;
-
-        typedef std::future<CreateExperimentTemplateOutcome> CreateExperimentTemplateOutcomeCallable;
-        typedef std::future<DeleteExperimentTemplateOutcome> DeleteExperimentTemplateOutcomeCallable;
-        typedef std::future<GetActionOutcome> GetActionOutcomeCallable;
-        typedef std::future<GetExperimentOutcome> GetExperimentOutcomeCallable;
-        typedef std::future<GetExperimentTemplateOutcome> GetExperimentTemplateOutcomeCallable;
-        typedef std::future<GetTargetResourceTypeOutcome> GetTargetResourceTypeOutcomeCallable;
-        typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
-        typedef std::future<ListExperimentTemplatesOutcome> ListExperimentTemplatesOutcomeCallable;
-        typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTargetResourceTypesOutcome> ListTargetResourceTypesOutcomeCallable;
-        typedef std::future<StartExperimentOutcome> StartExperimentOutcomeCallable;
-        typedef std::future<StopExperimentOutcome> StopExperimentOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateExperimentTemplateOutcome> UpdateExperimentTemplateOutcomeCallable;
-} // namespace Model
-
-  class FISClient;
-
-    typedef std::function<void(const FISClient*, const Model::CreateExperimentTemplateRequest&, const Model::CreateExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperimentTemplateResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::DeleteExperimentTemplateRequest&, const Model::DeleteExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentTemplateResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::GetActionRequest&, const Model::GetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActionResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::GetExperimentRequest&, const Model::GetExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::GetExperimentTemplateRequest&, const Model::GetExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentTemplateResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::GetTargetResourceTypeRequest&, const Model::GetTargetResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTargetResourceTypeResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::ListExperimentTemplatesRequest&, const Model::ListExperimentTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentTemplatesResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::ListTargetResourceTypesRequest&, const Model::ListTargetResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTargetResourceTypesResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::StartExperimentRequest&, const Model::StartExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExperimentResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::StopExperimentRequest&, const Model::StopExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExperimentResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const FISClient*, const Model::UpdateExperimentTemplateRequest&, const Model::UpdateExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentTemplateResponseReceivedHandler;
-
   /**
    * <p>Fault Injection Simulator is a managed service that enables you to perform
    * fault injection experiments on your Amazon Web Services workloads. For more
@@ -144,32 +22,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection
    * Simulator User Guide</a>.</p>
    */
-  class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient
+  class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FISClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FISClient(const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration(),
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FISClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FISClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         FISClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FISClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FISClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        FISClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~FISClient();
-
 
         /**
          * <p>Creates an experiment template. </p> <p>An experiment template includes the
@@ -463,28 +369,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateExperimentTemplateAsyncHelper(const Model::CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteExperimentTemplateAsyncHelper(const Model::DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetActionAsyncHelper(const Model::GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExperimentAsyncHelper(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExperimentTemplateAsyncHelper(const Model::GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTargetResourceTypeAsyncHelper(const Model::GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListActionsAsyncHelper(const Model::ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExperimentTemplatesAsyncHelper(const Model::ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExperimentsAsyncHelper(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTargetResourceTypesAsyncHelper(const Model::ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartExperimentAsyncHelper(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopExperimentAsyncHelper(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateExperimentTemplateAsyncHelper(const Model::UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FISClient>;
+      void init(const FISClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      FISClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<FISEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FIS

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorDetail
+  class ConnectorDetail
   {
   public:
-    ConnectorDetail();
-    ConnectorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorDetail();
+    AWS_APPFLOW_API ConnectorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -469,37 +469,37 @@ namespace Model
   private:
 
     Aws::String m_connectorDescription;
-    bool m_connectorDescriptionHasBeenSet;
+    bool m_connectorDescriptionHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     Aws::String m_connectorOwner;
-    bool m_connectorOwnerHasBeenSet;
+    bool m_connectorOwnerHasBeenSet = false;
 
     Aws::String m_connectorVersion;
-    bool m_connectorVersionHasBeenSet;
+    bool m_connectorVersionHasBeenSet = false;
 
     Aws::String m_applicationType;
-    bool m_applicationTypeHasBeenSet;
+    bool m_applicationTypeHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
 
     Aws::String m_registeredBy;
-    bool m_registeredByHasBeenSet;
+    bool m_registeredByHasBeenSet = false;
 
     ConnectorProvisioningType m_connectorProvisioningType;
-    bool m_connectorProvisioningTypeHasBeenSet;
+    bool m_connectorProvisioningTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectorModes;
-    bool m_connectorModesHasBeenSet;
+    bool m_connectorModesHasBeenSet = false;
   };
 
 } // namespace Model

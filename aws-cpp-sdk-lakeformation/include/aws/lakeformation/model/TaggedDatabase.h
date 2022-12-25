@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/TaggedDatabase">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API TaggedDatabase
+  class TaggedDatabase
   {
   public:
-    TaggedDatabase();
-    TaggedDatabase(Aws::Utils::Json::JsonView jsonValue);
-    TaggedDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API TaggedDatabase();
+    AWS_LAKEFORMATION_API TaggedDatabase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API TaggedDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     DatabaseResource m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::Vector<LFTagPair> m_lFTags;
-    bool m_lFTagsHasBeenSet;
+    bool m_lFTagsHasBeenSet = false;
   };
 
 } // namespace Model

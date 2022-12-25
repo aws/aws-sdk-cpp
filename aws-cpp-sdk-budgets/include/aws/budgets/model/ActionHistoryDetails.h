@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ActionHistoryDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API ActionHistoryDetails
+  class ActionHistoryDetails
   {
   public:
-    ActionHistoryDetails();
-    ActionHistoryDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActionHistoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API ActionHistoryDetails();
+    AWS_BUDGETS_API ActionHistoryDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API ActionHistoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

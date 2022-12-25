@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API ListAttachedUserPoliciesRequest : public IAMRequest
+  class ListAttachedUserPoliciesRequest : public IAMRequest
   {
   public:
-    ListAttachedUserPoliciesRequest();
+    AWS_IAM_API ListAttachedUserPoliciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAttachedUserPolicies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -322,16 +322,16 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_pathPrefix;
-    bool m_pathPrefixHasBeenSet;
+    bool m_pathPrefixHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/model/PropertyValueEntry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iottwinmaker/model/PropertyValueEntry.h>
 #include <utility>
 
 namespace Aws
@@ -30,50 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyError">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API BatchPutPropertyError
+  class BatchPutPropertyError
   {
   public:
-    BatchPutPropertyError();
-    BatchPutPropertyError(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline const PropertyValueEntry& GetEntry() const{ return m_entry; }
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline bool EntryHasBeenSet() const { return m_entryHasBeenSet; }
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline void SetEntry(const PropertyValueEntry& value) { m_entryHasBeenSet = true; m_entry = value; }
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline void SetEntry(PropertyValueEntry&& value) { m_entryHasBeenSet = true; m_entry = std::move(value); }
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline BatchPutPropertyError& WithEntry(const PropertyValueEntry& value) { SetEntry(value); return *this;}
-
-    /**
-     * <p>An object that contains information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
-    inline BatchPutPropertyError& WithEntry(PropertyValueEntry&& value) { SetEntry(std::move(value)); return *this;}
+    AWS_IOTTWINMAKER_API BatchPutPropertyError();
+    AWS_IOTTWINMAKER_API BatchPutPropertyError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API BatchPutPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,16 +120,53 @@ namespace Model
      */
     inline BatchPutPropertyError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline const PropertyValueEntry& GetEntry() const{ return m_entry; }
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline bool EntryHasBeenSet() const { return m_entryHasBeenSet; }
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline void SetEntry(const PropertyValueEntry& value) { m_entryHasBeenSet = true; m_entry = value; }
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline void SetEntry(PropertyValueEntry&& value) { m_entryHasBeenSet = true; m_entry = std::move(value); }
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline BatchPutPropertyError& WithEntry(const PropertyValueEntry& value) { SetEntry(value); return *this;}
+
+    /**
+     * <p>An object that contains information about errors returned by the
+     * <code>BatchPutProperty</code> action.</p>
+     */
+    inline BatchPutPropertyError& WithEntry(PropertyValueEntry&& value) { SetEntry(std::move(value)); return *this;}
+
   private:
 
-    PropertyValueEntry m_entry;
-    bool m_entryHasBeenSet;
-
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
+
+    PropertyValueEntry m_entry;
+    bool m_entryHasBeenSet = false;
   };
 
 } // namespace Model

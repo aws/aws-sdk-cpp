@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentActionState">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentActionState
+  class ExperimentActionState
   {
   public:
-    ExperimentActionState();
-    ExperimentActionState(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentActionState();
+    AWS_FIS_API ExperimentActionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ExperimentActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

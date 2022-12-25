@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeviceSelectionConfiguration
+  class DeviceSelectionConfiguration
   {
   public:
-    DeviceSelectionConfiguration();
-    DeviceSelectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSelectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DeviceSelectionConfiguration();
+    AWS_DEVICEFARM_API DeviceSelectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DeviceSelectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -417,10 +417,10 @@ namespace Model
   private:
 
     Aws::Vector<DeviceFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxDevices;
-    bool m_maxDevicesHasBeenSet;
+    bool m_maxDevicesHasBeenSet = false;
   };
 
 } // namespace Model

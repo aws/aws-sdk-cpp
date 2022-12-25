@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ReactiveAnomaly">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ReactiveAnomaly
+  class ReactiveAnomaly
   {
   public:
-    ReactiveAnomaly();
-    ReactiveAnomaly(Aws::Utils::Json::JsonView jsonValue);
-    ReactiveAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ReactiveAnomaly();
+    AWS_DEVOPSGURU_API ReactiveAnomaly(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ReactiveAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -560,43 +560,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AnomalySeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     AnomalyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AnomalyTimeRange m_anomalyTimeRange;
-    bool m_anomalyTimeRangeHasBeenSet;
+    bool m_anomalyTimeRangeHasBeenSet = false;
 
     AnomalyReportedTimeRange m_anomalyReportedTimeRange;
-    bool m_anomalyReportedTimeRangeHasBeenSet;
+    bool m_anomalyReportedTimeRangeHasBeenSet = false;
 
     AnomalySourceDetails m_sourceDetails;
-    bool m_sourceDetailsHasBeenSet;
+    bool m_sourceDetailsHasBeenSet = false;
 
     Aws::String m_associatedInsightId;
-    bool m_associatedInsightIdHasBeenSet;
+    bool m_associatedInsightIdHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     AnomalyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_causalAnomalyId;
-    bool m_causalAnomalyIdHasBeenSet;
+    bool m_causalAnomalyIdHasBeenSet = false;
 
     Aws::Vector<AnomalyResource> m_anomalyResources;
-    bool m_anomalyResourcesHasBeenSet;
+    bool m_anomalyResourcesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3CsvSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3CsvSource
+  class S3CsvSource
   {
   public:
-    S3CsvSource();
-    S3CsvSource(Aws::Utils::Json::JsonView jsonValue);
-    S3CsvSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3CsvSource();
+    AWS_GLUE_API S3CsvSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3CsvSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -812,61 +812,61 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
 
     Aws::String m_groupSize;
-    bool m_groupSizeHasBeenSet;
+    bool m_groupSizeHasBeenSet = false;
 
     Aws::String m_groupFiles;
-    bool m_groupFilesHasBeenSet;
+    bool m_groupFilesHasBeenSet = false;
 
     bool m_recurse;
-    bool m_recurseHasBeenSet;
+    bool m_recurseHasBeenSet = false;
 
     int m_maxBand;
-    bool m_maxBandHasBeenSet;
+    bool m_maxBandHasBeenSet = false;
 
     int m_maxFilesInBand;
-    bool m_maxFilesInBandHasBeenSet;
+    bool m_maxFilesInBandHasBeenSet = false;
 
     S3DirectSourceAdditionalOptions m_additionalOptions;
-    bool m_additionalOptionsHasBeenSet;
+    bool m_additionalOptionsHasBeenSet = false;
 
     Separator m_separator;
-    bool m_separatorHasBeenSet;
+    bool m_separatorHasBeenSet = false;
 
     Aws::String m_escaper;
-    bool m_escaperHasBeenSet;
+    bool m_escaperHasBeenSet = false;
 
     QuoteChar m_quoteChar;
-    bool m_quoteCharHasBeenSet;
+    bool m_quoteCharHasBeenSet = false;
 
     bool m_multiline;
-    bool m_multilineHasBeenSet;
+    bool m_multilineHasBeenSet = false;
 
     bool m_withHeader;
-    bool m_withHeaderHasBeenSet;
+    bool m_withHeaderHasBeenSet = false;
 
     bool m_writeHeader;
-    bool m_writeHeaderHasBeenSet;
+    bool m_writeHeaderHasBeenSet = false;
 
     bool m_skipFirst;
-    bool m_skipFirstHasBeenSet;
+    bool m_skipFirstHasBeenSet = false;
 
     bool m_optimizePerformance;
-    bool m_optimizePerformanceHasBeenSet;
+    bool m_optimizePerformanceHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

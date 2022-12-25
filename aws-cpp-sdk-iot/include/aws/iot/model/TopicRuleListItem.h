@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TopicRuleListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TopicRuleListItem
+  class TopicRuleListItem
   {
   public:
-    TopicRuleListItem();
-    TopicRuleListItem(Aws::Utils::Json::JsonView jsonValue);
-    TopicRuleListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TopicRuleListItem();
+    AWS_IOT_API TopicRuleListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TopicRuleListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_ruleArn;
-    bool m_ruleArnHasBeenSet;
+    bool m_ruleArnHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_topicPattern;
-    bool m_topicPatternHasBeenSet;
+    bool m_topicPatternHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     bool m_ruleDisabled;
-    bool m_ruleDisabledHasBeenSet;
+    bool m_ruleDisabledHasBeenSet = false;
   };
 
 } // namespace Model

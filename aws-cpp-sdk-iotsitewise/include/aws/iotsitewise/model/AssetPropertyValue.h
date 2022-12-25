@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetPropertyValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetPropertyValue
+  class AssetPropertyValue
   {
   public:
-    AssetPropertyValue();
-    AssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
-    AssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetPropertyValue();
+    AWS_IOTSITEWISE_API AssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Variant m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TimeInNanos m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Quality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
   };
 
 } // namespace Model

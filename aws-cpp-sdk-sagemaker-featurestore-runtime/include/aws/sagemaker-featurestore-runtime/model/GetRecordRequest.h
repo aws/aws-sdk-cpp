@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API GetRecordRequest : public SageMakerFeatureStoreRuntimeRequest
+  class GetRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    GetRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API GetRecordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,48 +34,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRecord"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierValueAsString;
-    bool m_recordIdentifierValueAsStringHasBeenSet;
+    bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_featureNames;
-    bool m_featureNamesHasBeenSet;
+    bool m_featureNamesHasBeenSet = false;
   };
 
 } // namespace Model

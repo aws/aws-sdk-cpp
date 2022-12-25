@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GitHubConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GitHubConfiguration
+  class GitHubConfiguration
   {
   public:
-    GitHubConfiguration();
-    GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GitHubConfiguration();
+    AWS_KENDRA_API GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,88 +153,88 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your GitHub. The secret must contain a
-     * JSON structure with the following keys:</p> <ul> <li> <p>githubToken—The access
-     * token created in GitHub. For more information on creating a token in GitHub, see
-     * <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.</p> </li> </ul>
+     * JSON structure with the following keys:</p> <ul> <li> <p>personalToken—The
+     * access token created in GitHub. For more information on creating a token in
+     * GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
+     * a GitHub data source</a>.</p> </li> </ul>
      */
     inline GitHubConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -1634,70 +1634,70 @@ namespace Model
   private:
 
     SaaSConfiguration m_saaSConfiguration;
-    bool m_saaSConfigurationHasBeenSet;
+    bool m_saaSConfigurationHasBeenSet = false;
 
     OnPremiseConfiguration m_onPremiseConfiguration;
-    bool m_onPremiseConfigurationHasBeenSet;
+    bool m_onPremiseConfigurationHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     GitHubDocumentCrawlProperties m_gitHubDocumentCrawlProperties;
-    bool m_gitHubDocumentCrawlPropertiesHasBeenSet;
+    bool m_gitHubDocumentCrawlPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_repositoryFilter;
-    bool m_repositoryFilterHasBeenSet;
+    bool m_repositoryFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFolderNamePatterns;
-    bool m_inclusionFolderNamePatternsHasBeenSet;
+    bool m_inclusionFolderNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFileTypePatterns;
-    bool m_inclusionFileTypePatternsHasBeenSet;
+    bool m_inclusionFileTypePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionFileNamePatterns;
-    bool m_inclusionFileNamePatternsHasBeenSet;
+    bool m_inclusionFileNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFolderNamePatterns;
-    bool m_exclusionFolderNamePatternsHasBeenSet;
+    bool m_exclusionFolderNamePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFileTypePatterns;
-    bool m_exclusionFileTypePatternsHasBeenSet;
+    bool m_exclusionFileTypePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionFileNamePatterns;
-    bool m_exclusionFileNamePatternsHasBeenSet;
+    bool m_exclusionFileNamePatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubRepositoryConfigurationFieldMappings;
-    bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubCommitConfigurationFieldMappings;
-    bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubCommitConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueDocumentConfigurationFieldMappings;
-    bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueCommentConfigurationFieldMappings;
-    bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubIssueAttachmentConfigurationFieldMappings;
-    bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestCommentConfigurationFieldMappings;
-    bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentConfigurationFieldMappings;
-    bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings;
-    bool m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet;
+    bool m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

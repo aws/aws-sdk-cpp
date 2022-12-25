@@ -22,7 +22,8 @@ RepublishAction::RepublishAction() :
     m_roleArnHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_qos(0),
-    m_qosHasBeenSet(false)
+    m_qosHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RepublishAction::RepublishAction(JsonView jsonValue) :
     m_roleArnHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_qos(0),
-    m_qosHasBeenSet(false)
+    m_qosHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ RepublishAction& RepublishAction::operator =(JsonView jsonValue)
     m_qosHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("headers"))
+  {
+    m_headers = jsonValue.GetObject("headers");
+
+    m_headersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue RepublishAction::Jsonize() const
   if(m_qosHasBeenSet)
   {
    payload.WithInteger("qos", m_qos);
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   payload.WithObject("headers", m_headers.Jsonize());
 
   }
 

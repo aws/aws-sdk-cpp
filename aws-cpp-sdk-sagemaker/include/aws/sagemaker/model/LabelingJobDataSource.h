@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobDataSource
+  class LabelingJobDataSource
   {
   public:
-    LabelingJobDataSource();
-    LabelingJobDataSource(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobDataSource();
+    AWS_SAGEMAKER_API LabelingJobDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     LabelingJobS3DataSource m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
 
     LabelingJobSnsDataSource m_snsDataSource;
-    bool m_snsDataSourceHasBeenSet;
+    bool m_snsDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

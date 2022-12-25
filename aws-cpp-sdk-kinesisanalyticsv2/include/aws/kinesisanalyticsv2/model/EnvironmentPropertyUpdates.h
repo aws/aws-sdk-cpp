@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/EnvironmentPropertyUpdates">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API EnvironmentPropertyUpdates
+  class EnvironmentPropertyUpdates
   {
   public:
-    EnvironmentPropertyUpdates();
-    EnvironmentPropertyUpdates(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentPropertyUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API EnvironmentPropertyUpdates();
+    AWS_KINESISANALYTICSV2_API EnvironmentPropertyUpdates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API EnvironmentPropertyUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PropertyGroup> m_propertyGroups;
-    bool m_propertyGroupsHasBeenSet;
+    bool m_propertyGroupsHasBeenSet = false;
   };
 
 } // namespace Model

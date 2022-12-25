@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API ListSigningProfilesRequest : public SignerRequest
+  class ListSigningProfilesRequest : public SignerRequest
   {
   public:
-    ListSigningProfilesRequest();
+    AWS_SIGNER_API ListSigningProfilesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListSigningProfiles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SIGNER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -251,19 +251,19 @@ namespace Model
   private:
 
     bool m_includeCanceled;
-    bool m_includeCanceledHasBeenSet;
+    bool m_includeCanceledHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::Vector<SigningProfileStatus> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

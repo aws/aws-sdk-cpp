@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AwsVpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API AwsVpcConfiguration
+  class AwsVpcConfiguration
   {
   public:
-    AwsVpcConfiguration();
-    AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API AwsVpcConfiguration();
+    AWS_ECS_API AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -225,13 +225,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     AssignPublicIp m_assignPublicIp;
-    bool m_assignPublicIpHasBeenSet;
+    bool m_assignPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

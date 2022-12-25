@@ -24,7 +24,7 @@ Aws::String PutEventsRequest::SerializePayload() const
 
   if(m_entriesHasBeenSet)
   {
-   Array<JsonValue> entriesJsonList(m_entries.size());
+   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
    for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
    {
      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
@@ -51,5 +51,15 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
 }
 
 
+
+PutEventsRequest::EndpointParameters PutEventsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (EndpointIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("EndpointId"), this->GetEndpointId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AlarmAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AlarmAction
+  class AlarmAction
   {
   public:
-    AlarmAction();
-    AlarmAction(Aws::Utils::Json::JsonView jsonValue);
-    AlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AlarmAction();
+    AWS_IOTEVENTS_API AlarmAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -219,31 +219,31 @@ namespace Model
   private:
 
     SNSTopicPublishAction m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
 
     IotTopicPublishAction m_iotTopicPublish;
-    bool m_iotTopicPublishHasBeenSet;
+    bool m_iotTopicPublishHasBeenSet = false;
 
     LambdaAction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     IotEventsAction m_iotEvents;
-    bool m_iotEventsHasBeenSet;
+    bool m_iotEventsHasBeenSet = false;
 
     SqsAction m_sqs;
-    bool m_sqsHasBeenSet;
+    bool m_sqsHasBeenSet = false;
 
     FirehoseAction m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     DynamoDBAction m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
 
     DynamoDBv2Action m_dynamoDBv2;
-    bool m_dynamoDBv2HasBeenSet;
+    bool m_dynamoDBv2HasBeenSet = false;
 
     IotSiteWiseAction m_iotSiteWise;
-    bool m_iotSiteWiseHasBeenSet;
+    bool m_iotSiteWiseHasBeenSet = false;
   };
 
 } // namespace Model

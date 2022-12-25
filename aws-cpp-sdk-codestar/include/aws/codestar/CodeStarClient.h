@@ -5,148 +5,16 @@
 
 #pragma once
 #include <aws/codestar/CodeStar_EXPORTS.h>
-#include <aws/codestar/CodeStarErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codestar/model/AssociateTeamMemberResult.h>
-#include <aws/codestar/model/CreateProjectResult.h>
-#include <aws/codestar/model/CreateUserProfileResult.h>
-#include <aws/codestar/model/DeleteProjectResult.h>
-#include <aws/codestar/model/DeleteUserProfileResult.h>
-#include <aws/codestar/model/DescribeProjectResult.h>
-#include <aws/codestar/model/DescribeUserProfileResult.h>
-#include <aws/codestar/model/DisassociateTeamMemberResult.h>
-#include <aws/codestar/model/ListProjectsResult.h>
-#include <aws/codestar/model/ListResourcesResult.h>
-#include <aws/codestar/model/ListTagsForProjectResult.h>
-#include <aws/codestar/model/ListTeamMembersResult.h>
-#include <aws/codestar/model/ListUserProfilesResult.h>
-#include <aws/codestar/model/TagProjectResult.h>
-#include <aws/codestar/model/UntagProjectResult.h>
-#include <aws/codestar/model/UpdateProjectResult.h>
-#include <aws/codestar/model/UpdateTeamMemberResult.h>
-#include <aws/codestar/model/UpdateUserProfileResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codestar/CodeStarServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeStar
 {
-
-namespace Model
-{
-        class AssociateTeamMemberRequest;
-        class CreateProjectRequest;
-        class CreateUserProfileRequest;
-        class DeleteProjectRequest;
-        class DeleteUserProfileRequest;
-        class DescribeProjectRequest;
-        class DescribeUserProfileRequest;
-        class DisassociateTeamMemberRequest;
-        class ListProjectsRequest;
-        class ListResourcesRequest;
-        class ListTagsForProjectRequest;
-        class ListTeamMembersRequest;
-        class ListUserProfilesRequest;
-        class TagProjectRequest;
-        class UntagProjectRequest;
-        class UpdateProjectRequest;
-        class UpdateTeamMemberRequest;
-        class UpdateUserProfileRequest;
-
-        typedef Aws::Utils::Outcome<AssociateTeamMemberResult, CodeStarError> AssociateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, CodeStarError> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<CreateUserProfileResult, CodeStarError> CreateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, CodeStarError> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserProfileResult, CodeStarError> DeleteUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, CodeStarError> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserProfileResult, CodeStarError> DescribeUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DisassociateTeamMemberResult, CodeStarError> DisassociateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, CodeStarError> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesResult, CodeStarError> ListResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForProjectResult, CodeStarError> ListTagsForProjectOutcome;
-        typedef Aws::Utils::Outcome<ListTeamMembersResult, CodeStarError> ListTeamMembersOutcome;
-        typedef Aws::Utils::Outcome<ListUserProfilesResult, CodeStarError> ListUserProfilesOutcome;
-        typedef Aws::Utils::Outcome<TagProjectResult, CodeStarError> TagProjectOutcome;
-        typedef Aws::Utils::Outcome<UntagProjectResult, CodeStarError> UntagProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, CodeStarError> UpdateProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateTeamMemberResult, CodeStarError> UpdateTeamMemberOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserProfileResult, CodeStarError> UpdateUserProfileOutcome;
-
-        typedef std::future<AssociateTeamMemberOutcome> AssociateTeamMemberOutcomeCallable;
-        typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-        typedef std::future<CreateUserProfileOutcome> CreateUserProfileOutcomeCallable;
-        typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-        typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
-        typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
-        typedef std::future<DescribeUserProfileOutcome> DescribeUserProfileOutcomeCallable;
-        typedef std::future<DisassociateTeamMemberOutcome> DisassociateTeamMemberOutcomeCallable;
-        typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
-        typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
-        typedef std::future<ListTagsForProjectOutcome> ListTagsForProjectOutcomeCallable;
-        typedef std::future<ListTeamMembersOutcome> ListTeamMembersOutcomeCallable;
-        typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
-        typedef std::future<TagProjectOutcome> TagProjectOutcomeCallable;
-        typedef std::future<UntagProjectOutcome> UntagProjectOutcomeCallable;
-        typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
-        typedef std::future<UpdateTeamMemberOutcome> UpdateTeamMemberOutcomeCallable;
-        typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
-} // namespace Model
-
-  class CodeStarClient;
-
-    typedef std::function<void(const CodeStarClient*, const Model::AssociateTeamMemberRequest&, const Model::AssociateTeamMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTeamMemberResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserProfileResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserProfileResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::DescribeUserProfileRequest&, const Model::DescribeUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserProfileResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::DisassociateTeamMemberRequest&, const Model::DisassociateTeamMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTeamMemberResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::ListTagsForProjectRequest&, const Model::ListTagsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::ListTeamMembersRequest&, const Model::ListTeamMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTeamMembersResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::ListUserProfilesRequest&, const Model::ListUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserProfilesResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::TagProjectRequest&, const Model::TagProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::UntagProjectRequest&, const Model::UntagProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::UpdateTeamMemberRequest&, const Model::UpdateTeamMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTeamMemberResponseReceivedHandler;
-    typedef std::function<void(const CodeStarClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
-
   /**
    * <fullname>AWS CodeStar</fullname> <p>This is the API reference for AWS CodeStar.
    * This reference provides descriptions of the operations and data types for the
@@ -179,32 +47,60 @@ namespace Model
    * <code>UpdateUserProfile</code>, which updates the profile for a user.</p> </li>
    * </ul>
    */
-  class AWS_CODESTAR_API CodeStarClient : public Aws::Client::AWSJsonClient
+  class AWS_CODESTAR_API CodeStarClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeStarClient(const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration(),
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeStarClient(const Aws::Auth::AWSCredentials& credentials,
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeStarClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeStarClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeStarClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeStarClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeStarClient();
-
 
         /**
          * <p>Adds an IAM user to the team for an AWS CodeStar project.</p><p><h3>See
@@ -541,30 +437,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeStarEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateTeamMemberAsyncHelper(const Model::AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserProfileAsyncHelper(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateTeamMemberAsyncHelper(const Model::DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForProjectAsyncHelper(const Model::ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTeamMembersAsyncHelper(const Model::ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUserProfilesAsyncHelper(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagProjectAsyncHelper(const Model::TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagProjectAsyncHelper(const Model::UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTeamMemberAsyncHelper(const Model::UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarClient>;
+      void init(const CodeStarClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeStarClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeStarEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeStar

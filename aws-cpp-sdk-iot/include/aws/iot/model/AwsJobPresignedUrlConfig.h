@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AwsJobPresignedUrlConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AwsJobPresignedUrlConfig
+  class AwsJobPresignedUrlConfig
   {
   public:
-    AwsJobPresignedUrlConfig();
-    AwsJobPresignedUrlConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsJobPresignedUrlConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AwsJobPresignedUrlConfig();
+    AWS_IOT_API AwsJobPresignedUrlConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AwsJobPresignedUrlConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     long long m_expiresInSec;
-    bool m_expiresInSecHasBeenSet;
+    bool m_expiresInSecHasBeenSet = false;
   };
 
 } // namespace Model

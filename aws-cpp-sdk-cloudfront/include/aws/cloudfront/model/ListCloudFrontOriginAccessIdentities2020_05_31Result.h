@@ -25,41 +25,41 @@ namespace CloudFront
 namespace Model
 {
   /**
-   * <p>The returned result of the corresponding request. </p><p><h3>See Also:</h3>  
+   * <p>The returned result of the corresponding request.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentitiesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result
+  class ListCloudFrontOriginAccessIdentities2020_05_31Result
   {
   public:
-    ListCloudFrontOriginAccessIdentities2020_05_31Result();
-    ListCloudFrontOriginAccessIdentities2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListCloudFrontOriginAccessIdentities2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result();
+    AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const{ return m_cloudFrontOriginAccessIdentityList; }
 
     /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { m_cloudFrontOriginAccessIdentityList = value; }
 
     /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = std::move(value); }
 
     /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
 
     /**
-     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
+     * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(std::move(value)); return *this;}
 

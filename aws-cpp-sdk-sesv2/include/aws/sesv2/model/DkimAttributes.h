@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DkimAttributes
+  class DkimAttributes
   {
   public:
-    DkimAttributes();
-    DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DkimAttributes();
+    AWS_SESV2_API DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -482,25 +482,25 @@ namespace Model
   private:
 
     bool m_signingEnabled;
-    bool m_signingEnabledHasBeenSet;
+    bool m_signingEnabledHasBeenSet = false;
 
     DkimStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokens;
-    bool m_tokensHasBeenSet;
+    bool m_tokensHasBeenSet = false;
 
     DkimSigningAttributesOrigin m_signingAttributesOrigin;
-    bool m_signingAttributesOriginHasBeenSet;
+    bool m_signingAttributesOriginHasBeenSet = false;
 
     DkimSigningKeyLength m_nextSigningKeyLength;
-    bool m_nextSigningKeyLengthHasBeenSet;
+    bool m_nextSigningKeyLengthHasBeenSet = false;
 
     DkimSigningKeyLength m_currentSigningKeyLength;
-    bool m_currentSigningKeyLengthHasBeenSet;
+    bool m_currentSigningKeyLengthHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastKeyGenerationTimestamp;
-    bool m_lastKeyGenerationTimestampHasBeenSet;
+    bool m_lastKeyGenerationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

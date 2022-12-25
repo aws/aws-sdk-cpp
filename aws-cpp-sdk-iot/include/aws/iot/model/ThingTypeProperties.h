@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingTypeProperties
+  class ThingTypeProperties
   {
   public:
-    ThingTypeProperties();
-    ThingTypeProperties(Aws::Utils::Json::JsonView jsonValue);
-    ThingTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingTypeProperties();
+    AWS_IOT_API ThingTypeProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_thingTypeDescription;
-    bool m_thingTypeDescriptionHasBeenSet;
+    bool m_thingTypeDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_searchableAttributes;
-    bool m_searchableAttributesHasBeenSet;
+    bool m_searchableAttributesHasBeenSet = false;
   };
 
 } // namespace Model

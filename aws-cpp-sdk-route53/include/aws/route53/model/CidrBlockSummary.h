@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CidrBlockSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CidrBlockSummary
+  class CidrBlockSummary
   {
   public:
-    CidrBlockSummary();
-    CidrBlockSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CidrBlockSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrBlockSummary();
+    AWS_ROUTE53_API CidrBlockSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrBlockSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::String m_locationName;
-    bool m_locationNameHasBeenSet;
+    bool m_locationNameHasBeenSet = false;
   };
 
 } // namespace Model

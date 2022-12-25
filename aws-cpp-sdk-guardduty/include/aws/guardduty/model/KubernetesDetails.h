@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/KubernetesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API KubernetesDetails
+  class KubernetesDetails
   {
   public:
-    KubernetesDetails();
-    KubernetesDetails(Aws::Utils::Json::JsonView jsonValue);
-    KubernetesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API KubernetesDetails();
+    AWS_GUARDDUTY_API KubernetesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API KubernetesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     KubernetesUserDetails m_kubernetesUserDetails;
-    bool m_kubernetesUserDetailsHasBeenSet;
+    bool m_kubernetesUserDetailsHasBeenSet = false;
 
     KubernetesWorkloadDetails m_kubernetesWorkloadDetails;
-    bool m_kubernetesWorkloadDetailsHasBeenSet;
+    bool m_kubernetesWorkloadDetailsHasBeenSet = false;
   };
 
 } // namespace Model

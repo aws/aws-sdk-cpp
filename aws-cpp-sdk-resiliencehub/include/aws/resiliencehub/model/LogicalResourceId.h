@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/LogicalResourceId">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API LogicalResourceId
+  class LogicalResourceId
   {
   public:
-    LogicalResourceId();
-    LogicalResourceId(Aws::Utils::Json::JsonView jsonValue);
-    LogicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API LogicalResourceId();
+    AWS_RESILIENCEHUB_API LogicalResourceId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API LogicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_logicalStackName;
-    bool m_logicalStackNameHasBeenSet;
+    bool m_logicalStackNameHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_terraformSourceName;
-    bool m_terraformSourceNameHasBeenSet;
+    bool m_terraformSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

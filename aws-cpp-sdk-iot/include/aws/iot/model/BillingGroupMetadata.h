@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BillingGroupMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BillingGroupMetadata
+  class BillingGroupMetadata
   {
   public:
-    BillingGroupMetadata();
-    BillingGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BillingGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BillingGroupMetadata();
+    AWS_IOT_API BillingGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BillingGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

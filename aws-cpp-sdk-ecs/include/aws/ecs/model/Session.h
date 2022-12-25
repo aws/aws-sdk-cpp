@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Session">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Session
+  class Session
   {
   public:
-    Session();
-    Session(Aws::Utils::Json::JsonView jsonValue);
-    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Session();
+    AWS_ECS_API Session(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Session& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_streamUrl;
-    bool m_streamUrlHasBeenSet;
+    bool m_streamUrlHasBeenSet = false;
 
     Aws::String m_tokenValue;
-    bool m_tokenValueHasBeenSet;
+    bool m_tokenValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TuningJobCompletionCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TuningJobCompletionCriteria
+  class TuningJobCompletionCriteria
   {
   public:
-    TuningJobCompletionCriteria();
-    TuningJobCompletionCriteria(Aws::Utils::Json::JsonView jsonValue);
-    TuningJobCompletionCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TuningJobCompletionCriteria();
+    AWS_SAGEMAKER_API TuningJobCompletionCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TuningJobCompletionCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     double m_targetObjectiveMetricValue;
-    bool m_targetObjectiveMetricValueHasBeenSet;
+    bool m_targetObjectiveMetricValueHasBeenSet = false;
   };
 
 } // namespace Model

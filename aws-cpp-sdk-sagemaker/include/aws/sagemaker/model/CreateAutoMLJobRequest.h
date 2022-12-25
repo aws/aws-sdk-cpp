@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateAutoMLJobRequest : public SageMakerRequest
+  class CreateAutoMLJobRequest : public SageMakerRequest
   {
   public:
-    CreateAutoMLJobRequest();
+    AWS_SAGEMAKER_API CreateAutoMLJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAutoMLJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -482,34 +482,34 @@ namespace Model
   private:
 
     Aws::String m_autoMLJobName;
-    bool m_autoMLJobNameHasBeenSet;
+    bool m_autoMLJobNameHasBeenSet = false;
 
     Aws::Vector<AutoMLChannel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     AutoMLOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ProblemType m_problemType;
-    bool m_problemTypeHasBeenSet;
+    bool m_problemTypeHasBeenSet = false;
 
     AutoMLJobObjective m_autoMLJobObjective;
-    bool m_autoMLJobObjectiveHasBeenSet;
+    bool m_autoMLJobObjectiveHasBeenSet = false;
 
     AutoMLJobConfig m_autoMLJobConfig;
-    bool m_autoMLJobConfigHasBeenSet;
+    bool m_autoMLJobConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     bool m_generateCandidateDefinitionsOnly;
-    bool m_generateCandidateDefinitionsOnlyHasBeenSet;
+    bool m_generateCandidateDefinitionsOnlyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ModelDeployConfig m_modelDeployConfig;
-    bool m_modelDeployConfigHasBeenSet;
+    bool m_modelDeployConfigHasBeenSet = false;
   };
 
 } // namespace Model

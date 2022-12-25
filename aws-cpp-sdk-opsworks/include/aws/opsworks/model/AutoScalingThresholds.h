@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API AutoScalingThresholds
+  class AutoScalingThresholds
   {
   public:
-    AutoScalingThresholds();
-    AutoScalingThresholds(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API AutoScalingThresholds();
+    AWS_OPSWORKS_API AutoScalingThresholds(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API AutoScalingThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,25 +333,25 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     int m_thresholdsWaitTime;
-    bool m_thresholdsWaitTimeHasBeenSet;
+    bool m_thresholdsWaitTimeHasBeenSet = false;
 
     int m_ignoreMetricsTime;
-    bool m_ignoreMetricsTimeHasBeenSet;
+    bool m_ignoreMetricsTimeHasBeenSet = false;
 
     double m_cpuThreshold;
-    bool m_cpuThresholdHasBeenSet;
+    bool m_cpuThresholdHasBeenSet = false;
 
     double m_memoryThreshold;
-    bool m_memoryThresholdHasBeenSet;
+    bool m_memoryThresholdHasBeenSet = false;
 
     double m_loadThreshold;
-    bool m_loadThresholdHasBeenSet;
+    bool m_loadThresholdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

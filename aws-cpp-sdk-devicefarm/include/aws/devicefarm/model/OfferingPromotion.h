@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/OfferingPromotion">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API OfferingPromotion
+  class OfferingPromotion
   {
   public:
-    OfferingPromotion();
-    OfferingPromotion(Aws::Utils::Json::JsonView jsonValue);
-    OfferingPromotion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API OfferingPromotion();
+    AWS_DEVICEFARM_API OfferingPromotion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API OfferingPromotion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

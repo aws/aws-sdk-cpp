@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API ListResourcesForWebACLRequest : public WAFV2Request
+  class ListResourcesForWebACLRequest : public WAFV2Request
   {
   public:
-    ListResourcesForWebACLRequest();
+    AWS_WAFV2_API ListResourcesForWebACLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListResourcesForWebACL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -79,52 +79,70 @@ namespace Model
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Used for web ACLs that are scoped for regional applications. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-     * REST API, or an AppSync GraphQL API. </p>
+     * REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p> 
+     * <p>If you don't provide a resource type, the call uses the resource type
+     * <code>APPLICATION_LOAD_BALANCER</code>. </p>  <p>Default:
+     * <code>APPLICATION_LOAD_BALANCER</code> </p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_webACLArn;
-    bool m_webACLArnHasBeenSet;
+    bool m_webACLArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

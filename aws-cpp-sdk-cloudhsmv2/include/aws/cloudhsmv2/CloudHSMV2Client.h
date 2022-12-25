@@ -5,165 +5,76 @@
 
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
-#include <aws/cloudhsmv2/CloudHSMV2Errors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cloudhsmv2/model/CopyBackupToRegionResult.h>
-#include <aws/cloudhsmv2/model/CreateClusterResult.h>
-#include <aws/cloudhsmv2/model/CreateHsmResult.h>
-#include <aws/cloudhsmv2/model/DeleteBackupResult.h>
-#include <aws/cloudhsmv2/model/DeleteClusterResult.h>
-#include <aws/cloudhsmv2/model/DeleteHsmResult.h>
-#include <aws/cloudhsmv2/model/DescribeBackupsResult.h>
-#include <aws/cloudhsmv2/model/DescribeClustersResult.h>
-#include <aws/cloudhsmv2/model/InitializeClusterResult.h>
-#include <aws/cloudhsmv2/model/ListTagsResult.h>
-#include <aws/cloudhsmv2/model/ModifyBackupAttributesResult.h>
-#include <aws/cloudhsmv2/model/ModifyClusterResult.h>
-#include <aws/cloudhsmv2/model/RestoreBackupResult.h>
-#include <aws/cloudhsmv2/model/TagResourceResult.h>
-#include <aws/cloudhsmv2/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudHSMV2
 {
-
-namespace Model
-{
-        class CopyBackupToRegionRequest;
-        class CreateClusterRequest;
-        class CreateHsmRequest;
-        class DeleteBackupRequest;
-        class DeleteClusterRequest;
-        class DeleteHsmRequest;
-        class DescribeBackupsRequest;
-        class DescribeClustersRequest;
-        class InitializeClusterRequest;
-        class ListTagsRequest;
-        class ModifyBackupAttributesRequest;
-        class ModifyClusterRequest;
-        class RestoreBackupRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CopyBackupToRegionResult, CloudHSMV2Error> CopyBackupToRegionOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterResult, CloudHSMV2Error> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmResult, CloudHSMV2Error> CreateHsmOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, CloudHSMV2Error> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, CloudHSMV2Error> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteHsmResult, CloudHSMV2Error> DeleteHsmOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, CloudHSMV2Error> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClustersResult, CloudHSMV2Error> DescribeClustersOutcome;
-        typedef Aws::Utils::Outcome<InitializeClusterResult, CloudHSMV2Error> InitializeClusterOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, CloudHSMV2Error> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ModifyBackupAttributesResult, CloudHSMV2Error> ModifyBackupAttributesOutcome;
-        typedef Aws::Utils::Outcome<ModifyClusterResult, CloudHSMV2Error> ModifyClusterOutcome;
-        typedef Aws::Utils::Outcome<RestoreBackupResult, CloudHSMV2Error> RestoreBackupOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CloudHSMV2Error> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CloudHSMV2Error> UntagResourceOutcome;
-
-        typedef std::future<CopyBackupToRegionOutcome> CopyBackupToRegionOutcomeCallable;
-        typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-        typedef std::future<CreateHsmOutcome> CreateHsmOutcomeCallable;
-        typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
-        typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-        typedef std::future<DeleteHsmOutcome> DeleteHsmOutcomeCallable;
-        typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
-        typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
-        typedef std::future<InitializeClusterOutcome> InitializeClusterOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<ModifyBackupAttributesOutcome> ModifyBackupAttributesOutcomeCallable;
-        typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
-        typedef std::future<RestoreBackupOutcome> RestoreBackupOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class CloudHSMV2Client;
-
-    typedef std::function<void(const CloudHSMV2Client*, const Model::CopyBackupToRegionRequest&, const Model::CopyBackupToRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyBackupToRegionResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::CreateHsmRequest&, const Model::CreateHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteHsmRequest&, const Model::DeleteHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::InitializeClusterRequest&, const Model::InitializeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeClusterResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::ModifyBackupAttributesRequest&, const Model::ModifyBackupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyBackupAttributesResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::RestoreBackupRequest&, const Model::RestoreBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreBackupResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>For more information about AWS CloudHSM, see <a
    * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
    * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
    * Guide</a>.</p>
    */
-  class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudHSMV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudHSMV2Client(const Aws::CloudHSMV2::CloudHSMV2ClientConfiguration& clientConfiguration = Aws::CloudHSMV2::CloudHSMV2ClientConfiguration(),
+                         std::shared_ptr<CloudHSMV2EndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudHSMV2Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudHSMV2Client(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<CloudHSMV2EndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudHSMV2::CloudHSMV2ClientConfiguration& clientConfiguration = Aws::CloudHSMV2::CloudHSMV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudHSMV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CloudHSMV2EndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudHSMV2::CloudHSMV2ClientConfiguration& clientConfiguration = Aws::CloudHSMV2::CloudHSMV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudHSMV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudHSMV2Client(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudHSMV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudHSMV2Client();
-
 
         /**
          * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
@@ -458,27 +369,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudHSMV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CopyBackupToRegionAsyncHelper(const Model::CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHsmAsyncHelper(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHsmAsyncHelper(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitializeClusterAsyncHelper(const Model::InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyBackupAttributesAsyncHelper(const Model::ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreBackupAsyncHelper(const Model::RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>;
+      void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudHSMV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudHSMV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudHSMV2

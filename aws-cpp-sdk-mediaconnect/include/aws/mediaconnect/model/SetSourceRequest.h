@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SetSourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API SetSourceRequest
+  class SetSourceRequest
   {
   public:
-    SetSourceRequest();
-    SetSourceRequest(Aws::Utils::Json::JsonView jsonValue);
-    SetSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API SetSourceRequest();
+    AWS_MEDIACONNECT_API SetSourceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API SetSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -499,6 +499,68 @@ namespace Model
 
 
     /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline const Aws::String& GetSourceListenerAddress() const{ return m_sourceListenerAddress; }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline bool SourceListenerAddressHasBeenSet() const { return m_sourceListenerAddressHasBeenSet; }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline void SetSourceListenerAddress(const Aws::String& value) { m_sourceListenerAddressHasBeenSet = true; m_sourceListenerAddress = value; }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline void SetSourceListenerAddress(Aws::String&& value) { m_sourceListenerAddressHasBeenSet = true; m_sourceListenerAddress = std::move(value); }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline void SetSourceListenerAddress(const char* value) { m_sourceListenerAddressHasBeenSet = true; m_sourceListenerAddress.assign(value); }
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline SetSourceRequest& WithSourceListenerAddress(const Aws::String& value) { SetSourceListenerAddress(value); return *this;}
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline SetSourceRequest& WithSourceListenerAddress(Aws::String&& value) { SetSourceListenerAddress(std::move(value)); return *this;}
+
+    /**
+     * Source IP or domain name for SRT-caller protocol.
+     */
+    inline SetSourceRequest& WithSourceListenerAddress(const char* value) { SetSourceListenerAddress(value); return *this;}
+
+
+    /**
+     * Source port for SRT-caller protocol.
+     */
+    inline int GetSourceListenerPort() const{ return m_sourceListenerPort; }
+
+    /**
+     * Source port for SRT-caller protocol.
+     */
+    inline bool SourceListenerPortHasBeenSet() const { return m_sourceListenerPortHasBeenSet; }
+
+    /**
+     * Source port for SRT-caller protocol.
+     */
+    inline void SetSourceListenerPort(int value) { m_sourceListenerPortHasBeenSet = true; m_sourceListenerPort = value; }
+
+    /**
+     * Source port for SRT-caller protocol.
+     */
+    inline SetSourceRequest& WithSourceListenerPort(int value) { SetSourceListenerPort(value); return *this;}
+
+
+    /**
      * The stream ID that you want to use for this transport. This parameter applies
      * only to Zixi-based streams.
      */
@@ -647,52 +709,58 @@ namespace Model
   private:
 
     Encryption m_decryption;
-    bool m_decryptionHasBeenSet;
+    bool m_decryptionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     int m_ingestPort;
-    bool m_ingestPortHasBeenSet;
+    bool m_ingestPortHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_maxLatency;
-    bool m_maxLatencyHasBeenSet;
+    bool m_maxLatencyHasBeenSet = false;
 
     int m_maxSyncBuffer;
-    bool m_maxSyncBufferHasBeenSet;
+    bool m_maxSyncBufferHasBeenSet = false;
 
     Aws::Vector<MediaStreamSourceConfigurationRequest> m_mediaStreamSourceConfigurations;
-    bool m_mediaStreamSourceConfigurationsHasBeenSet;
+    bool m_mediaStreamSourceConfigurationsHasBeenSet = false;
 
     int m_minLatency;
-    bool m_minLatencyHasBeenSet;
+    bool m_minLatencyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     Aws::String m_senderIpAddress;
-    bool m_senderIpAddressHasBeenSet;
+    bool m_senderIpAddressHasBeenSet = false;
+
+    Aws::String m_sourceListenerAddress;
+    bool m_sourceListenerAddressHasBeenSet = false;
+
+    int m_sourceListenerPort;
+    bool m_sourceListenerPortHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_vpcInterfaceName;
-    bool m_vpcInterfaceNameHasBeenSet;
+    bool m_vpcInterfaceNameHasBeenSet = false;
 
     Aws::String m_whitelistCidr;
-    bool m_whitelistCidrHasBeenSet;
+    bool m_whitelistCidrHasBeenSet = false;
   };
 
 } // namespace Model

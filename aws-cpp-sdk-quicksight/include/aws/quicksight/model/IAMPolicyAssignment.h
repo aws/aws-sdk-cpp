@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IAMPolicyAssignment">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API IAMPolicyAssignment
+  class IAMPolicyAssignment
   {
   public:
-    IAMPolicyAssignment();
-    IAMPolicyAssignment(Aws::Utils::Json::JsonView jsonValue);
-    IAMPolicyAssignment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API IAMPolicyAssignment();
+    AWS_QUICKSIGHT_API IAMPolicyAssignment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API IAMPolicyAssignment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -299,22 +299,22 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_assignmentId;
-    bool m_assignmentIdHasBeenSet;
+    bool m_assignmentIdHasBeenSet = false;
 
     Aws::String m_assignmentName;
-    bool m_assignmentNameHasBeenSet;
+    bool m_assignmentNameHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
-    bool m_identitiesHasBeenSet;
+    bool m_identitiesHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
   };
 
 } // namespace Model

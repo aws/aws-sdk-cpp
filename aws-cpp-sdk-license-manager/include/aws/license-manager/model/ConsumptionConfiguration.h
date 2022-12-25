@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ConsumptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ConsumptionConfiguration
+  class ConsumptionConfiguration
   {
   public:
-    ConsumptionConfiguration();
-    ConsumptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConsumptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ConsumptionConfiguration();
+    AWS_LICENSEMANAGER_API ConsumptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ConsumptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     RenewType m_renewType;
-    bool m_renewTypeHasBeenSet;
+    bool m_renewTypeHasBeenSet = false;
 
     ProvisionalConfiguration m_provisionalConfiguration;
-    bool m_provisionalConfigurationHasBeenSet;
+    bool m_provisionalConfigurationHasBeenSet = false;
 
     BorrowConfiguration m_borrowConfiguration;
-    bool m_borrowConfigurationHasBeenSet;
+    bool m_borrowConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

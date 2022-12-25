@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Lambda received an unexpected EC2 client exception while setting up for the
-   * Lambda function.</p><p><h3>See Also:</h3>   <a
+   * <p>Lambda received an unexpected Amazon EC2 client exception while setting up
+   * for the Lambda function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EC2UnexpectedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EC2UnexpectedException
+  class EC2UnexpectedException
   {
   public:
-    EC2UnexpectedException();
-    EC2UnexpectedException(Aws::Utils::Json::JsonView jsonValue);
-    EC2UnexpectedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EC2UnexpectedException();
+    AWS_LAMBDA_API EC2UnexpectedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EC2UnexpectedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_eC2ErrorCode;
-    bool m_eC2ErrorCodeHasBeenSet;
+    bool m_eC2ErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

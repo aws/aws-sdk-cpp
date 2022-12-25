@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateScheduledAuditRequest : public IoTRequest
+  class UpdateScheduledAuditRequest : public IoTRequest
   {
   public:
-    UpdateScheduledAuditRequest();
+    AWS_IOT_API UpdateScheduledAuditRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateScheduledAudit"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -331,19 +331,19 @@ namespace Model
   private:
 
     AuditFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetCheckNames;
-    bool m_targetCheckNamesHasBeenSet;
+    bool m_targetCheckNamesHasBeenSet = false;
 
     Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
+    bool m_scheduledAuditNameHasBeenSet = false;
   };
 
 } // namespace Model

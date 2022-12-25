@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SendUsersMessageRequest
+  class SendUsersMessageRequest
   {
   public:
-    SendUsersMessageRequest();
-    SendUsersMessageRequest(Aws::Utils::Json::JsonView jsonValue);
-    SendUsersMessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SendUsersMessageRequest();
+    AWS_PINPOINT_API SendUsersMessageRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SendUsersMessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -388,19 +388,19 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     DirectMessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_traceId;
-    bool m_traceIdHasBeenSet;
+    bool m_traceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, EndpointSendConfiguration> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

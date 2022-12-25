@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SecurityHubConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SecurityHubConfiguration
+  class SecurityHubConfiguration
   {
   public:
-    SecurityHubConfiguration();
-    SecurityHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SecurityHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SecurityHubConfiguration();
+    AWS_MACIE2_API SecurityHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SecurityHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_publishClassificationFindings;
-    bool m_publishClassificationFindingsHasBeenSet;
+    bool m_publishClassificationFindingsHasBeenSet = false;
 
     bool m_publishPolicyFindings;
-    bool m_publishPolicyFindingsHasBeenSet;
+    bool m_publishPolicyFindingsHasBeenSet = false;
   };
 
 } // namespace Model

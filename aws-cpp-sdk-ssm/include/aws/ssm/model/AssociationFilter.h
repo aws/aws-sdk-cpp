@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AssociationFilter
+  class AssociationFilter
   {
   public:
-    AssociationFilter();
-    AssociationFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssociationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AssociationFilter();
+    AWS_SSM_API AssociationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AssociationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     AssociationFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

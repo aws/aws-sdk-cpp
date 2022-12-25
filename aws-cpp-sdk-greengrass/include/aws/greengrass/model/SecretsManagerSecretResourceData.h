@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SecretsManagerSecretResourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API SecretsManagerSecretResourceData
+  class SecretsManagerSecretResourceData
   {
   public:
-    SecretsManagerSecretResourceData();
-    SecretsManagerSecretResourceData(Aws::Utils::Json::JsonView jsonValue);
-    SecretsManagerSecretResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API SecretsManagerSecretResourceData();
+    AWS_GREENGRASS_API SecretsManagerSecretResourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API SecretsManagerSecretResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalStagingLabelsToDownload;
-    bool m_additionalStagingLabelsToDownloadHasBeenSet;
+    bool m_additionalStagingLabelsToDownloadHasBeenSet = false;
   };
 
 } // namespace Model

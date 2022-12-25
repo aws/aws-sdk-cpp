@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ActionParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ActionParameters
+  class ActionParameters
   {
   public:
-    ActionParameters();
-    ActionParameters(Aws::Utils::Json::JsonView jsonValue);
-    ActionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ActionParameters();
+    AWS_AMPLIFYUIBUILDER_API ActionParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ActionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -433,31 +433,31 @@ namespace Model
   private:
 
     ComponentProperty m_anchor;
-    bool m_anchorHasBeenSet;
+    bool m_anchorHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentProperty> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     ComponentProperty m_global;
-    bool m_globalHasBeenSet;
+    bool m_globalHasBeenSet = false;
 
     ComponentProperty m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     MutationActionSetStateParameter m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ComponentProperty m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     ComponentProperty m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ComponentProperty m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

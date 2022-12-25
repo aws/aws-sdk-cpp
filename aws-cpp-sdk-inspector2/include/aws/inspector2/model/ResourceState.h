@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResourceState">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ResourceState
+  class ResourceState
   {
   public:
-    ResourceState();
-    ResourceState(Aws::Utils::Json::JsonView jsonValue);
-    ResourceState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ResourceState();
+    AWS_INSPECTOR2_API ResourceState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ResourceState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,13 +111,35 @@ namespace Model
      */
     inline ResourceState& WithEcr(State&& value) { SetEcr(std::move(value)); return *this;}
 
+
+    
+    inline const State& GetLambda() const{ return m_lambda; }
+
+    
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    
+    inline void SetLambda(const State& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    
+    inline void SetLambda(State&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
+
+    
+    inline ResourceState& WithLambda(const State& value) { SetLambda(value); return *this;}
+
+    
+    inline ResourceState& WithLambda(State&& value) { SetLambda(std::move(value)); return *this;}
+
   private:
 
     State m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     State m_ecr;
-    bool m_ecrHasBeenSet;
+    bool m_ecrHasBeenSet = false;
+
+    State m_lambda;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

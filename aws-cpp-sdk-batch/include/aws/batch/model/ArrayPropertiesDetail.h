@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the array properties of a job.</p><p><h3>See
+   * <p>An object that represents the array properties of a job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ArrayPropertiesDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ArrayPropertiesDetail
+  class ArrayPropertiesDetail
   {
   public:
-    ArrayPropertiesDetail();
-    ArrayPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
-    ArrayPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ArrayPropertiesDetail();
+    AWS_BATCH_API ArrayPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ArrayPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, int> m_statusSummary;
-    bool m_statusSummaryHasBeenSet;
+    bool m_statusSummaryHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

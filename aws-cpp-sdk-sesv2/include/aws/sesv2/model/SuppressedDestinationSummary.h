@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SuppressedDestinationSummary
+  class SuppressedDestinationSummary
   {
   public:
-    SuppressedDestinationSummary();
-    SuppressedDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
-    SuppressedDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SuppressedDestinationSummary();
+    AWS_SESV2_API SuppressedDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SuppressedDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     SuppressionListReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

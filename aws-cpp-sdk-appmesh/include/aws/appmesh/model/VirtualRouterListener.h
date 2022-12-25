@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterListener">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualRouterListener
+  class VirtualRouterListener
   {
   public:
-    VirtualRouterListener();
-    VirtualRouterListener(Aws::Utils::Json::JsonView jsonValue);
-    VirtualRouterListener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualRouterListener();
+    AWS_APPMESH_API VirtualRouterListener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualRouterListener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     PortMapping m_portMapping;
-    bool m_portMappingHasBeenSet;
+    bool m_portMappingHasBeenSet = false;
   };
 
 } // namespace Model

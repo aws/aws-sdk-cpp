@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3PublicAccessBlockConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration
+  class S3PublicAccessBlockConfiguration
   {
   public:
-    S3PublicAccessBlockConfiguration();
-    S3PublicAccessBlockConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3PublicAccessBlockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration();
+    AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     bool m_ignorePublicAcls;
-    bool m_ignorePublicAclsHasBeenSet;
+    bool m_ignorePublicAclsHasBeenSet = false;
 
     bool m_restrictPublicBuckets;
-    bool m_restrictPublicBucketsHasBeenSet;
+    bool m_restrictPublicBucketsHasBeenSet = false;
   };
 
 } // namespace Model

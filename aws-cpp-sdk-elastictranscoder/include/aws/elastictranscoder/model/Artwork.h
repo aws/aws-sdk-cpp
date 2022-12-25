@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Artwork">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Artwork
+  class Artwork
   {
   public:
-    Artwork();
-    Artwork(Aws::Utils::Json::JsonView jsonValue);
-    Artwork& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Artwork();
+    AWS_ELASTICTRANSCODER_API Artwork(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Artwork& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -649,25 +649,25 @@ namespace Model
   private:
 
     Aws::String m_inputKey;
-    bool m_inputKeyHasBeenSet;
+    bool m_inputKeyHasBeenSet = false;
 
     Aws::String m_maxWidth;
-    bool m_maxWidthHasBeenSet;
+    bool m_maxWidthHasBeenSet = false;
 
     Aws::String m_maxHeight;
-    bool m_maxHeightHasBeenSet;
+    bool m_maxHeightHasBeenSet = false;
 
     Aws::String m_sizingPolicy;
-    bool m_sizingPolicyHasBeenSet;
+    bool m_sizingPolicyHasBeenSet = false;
 
     Aws::String m_paddingPolicy;
-    bool m_paddingPolicyHasBeenSet;
+    bool m_paddingPolicyHasBeenSet = false;
 
     Aws::String m_albumArtFormat;
-    bool m_albumArtFormatHasBeenSet;
+    bool m_albumArtFormatHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

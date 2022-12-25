@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ErrorInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API ErrorInfo
+  class ErrorInfo
   {
   public:
-    ErrorInfo();
-    ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ErrorInfo();
+    AWS_IOT_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

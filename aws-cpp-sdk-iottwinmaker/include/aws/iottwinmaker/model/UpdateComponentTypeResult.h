@@ -25,12 +25,48 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API UpdateComponentTypeResult
+  class UpdateComponentTypeResult
   {
   public:
-    UpdateComponentTypeResult();
-    UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateComponentTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API UpdateComponentTypeResult();
+    AWS_IOTTWINMAKER_API UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API UpdateComponentTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline UpdateComponentTypeResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline UpdateComponentTypeResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace that contains the component type.</p>
+     */
+    inline UpdateComponentTypeResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -130,51 +166,15 @@ namespace Model
      */
     inline UpdateComponentTypeResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline UpdateComponentTypeResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline UpdateComponentTypeResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the component type.</p>
-     */
-    inline UpdateComponentTypeResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
+
+    Aws::String m_workspaceId;
 
     Aws::String m_arn;
 
     Aws::String m_componentTypeId;
 
     State m_state;
-
-    Aws::String m_workspaceId;
   };
 
 } // namespace Model

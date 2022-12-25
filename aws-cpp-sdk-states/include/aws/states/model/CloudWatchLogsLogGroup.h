@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CloudWatchLogsLogGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API CloudWatchLogsLogGroup
+  class CloudWatchLogsLogGroup
   {
   public:
-    CloudWatchLogsLogGroup();
-    CloudWatchLogsLogGroup(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API CloudWatchLogsLogGroup();
+    AWS_SFN_API CloudWatchLogsLogGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API CloudWatchLogsLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

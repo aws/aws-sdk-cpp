@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringResources">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringResources
+  class MonitoringResources
   {
   public:
-    MonitoringResources();
-    MonitoringResources(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringResources();
+    AWS_SAGEMAKER_API MonitoringResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     MonitoringClusterConfig m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
   };
 
 } // namespace Model

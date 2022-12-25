@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mpeg2Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Mpeg2Settings
+  class Mpeg2Settings
   {
   public:
-    Mpeg2Settings();
-    Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Mpeg2Settings();
+    AWS_MEDIACONVERT_API Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -624,6 +624,39 @@ namespace Model
      * default the encoder measures GOP size in frames.
      */
     inline Mpeg2Settings& WithGopSizeUnits(Mpeg2GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
+
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline int GetHrdBufferFinalFillPercentage() const{ return m_hrdBufferFinalFillPercentage; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline bool HrdBufferFinalFillPercentageHasBeenSet() const { return m_hrdBufferFinalFillPercentageHasBeenSet; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline void SetHrdBufferFinalFillPercentage(int value) { m_hrdBufferFinalFillPercentageHasBeenSet = true; m_hrdBufferFinalFillPercentage = value; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline Mpeg2Settings& WithHrdBufferFinalFillPercentage(int value) { SetHrdBufferFinalFillPercentage(value); return *this;}
 
 
     /**
@@ -1532,42 +1565,42 @@ namespace Model
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(Mpeg2Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(const Mpeg2Syntax& value) { SetSyntax(value); return *this;}
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(Mpeg2Syntax&& value) { SetSyntax(std::move(value)); return *this;}
 
@@ -1750,100 +1783,103 @@ namespace Model
   private:
 
     Mpeg2AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Mpeg2CodecLevel m_codecLevel;
-    bool m_codecLevelHasBeenSet;
+    bool m_codecLevelHasBeenSet = false;
 
     Mpeg2CodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     Mpeg2DynamicSubGop m_dynamicSubGop;
-    bool m_dynamicSubGopHasBeenSet;
+    bool m_dynamicSubGopHasBeenSet = false;
 
     Mpeg2FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     Mpeg2FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     Mpeg2GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
+
+    int m_hrdBufferFinalFillPercentage;
+    bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
     int m_hrdBufferInitialFillPercentage;
-    bool m_hrdBufferInitialFillPercentageHasBeenSet;
+    bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     Mpeg2InterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     Mpeg2IntraDcPrecision m_intraDcPrecision;
-    bool m_intraDcPrecisionHasBeenSet;
+    bool m_intraDcPrecisionHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_minIInterval;
-    bool m_minIIntervalHasBeenSet;
+    bool m_minIIntervalHasBeenSet = false;
 
     int m_numberBFramesBetweenReferenceFrames;
-    bool m_numberBFramesBetweenReferenceFramesHasBeenSet;
+    bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
     Mpeg2ParControl m_parControl;
-    bool m_parControlHasBeenSet;
+    bool m_parControlHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     Mpeg2QualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     Mpeg2RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     Mpeg2ScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     Mpeg2SceneChangeDetect m_sceneChangeDetect;
-    bool m_sceneChangeDetectHasBeenSet;
+    bool m_sceneChangeDetectHasBeenSet = false;
 
     Mpeg2SlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     int m_softness;
-    bool m_softnessHasBeenSet;
+    bool m_softnessHasBeenSet = false;
 
     Mpeg2SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
-    bool m_spatialAdaptiveQuantizationHasBeenSet;
+    bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
     Mpeg2Syntax m_syntax;
-    bool m_syntaxHasBeenSet;
+    bool m_syntaxHasBeenSet = false;
 
     Mpeg2Telecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
 
     Mpeg2TemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
-    bool m_temporalAdaptiveQuantizationHasBeenSet;
+    bool m_temporalAdaptiveQuantizationHasBeenSet = false;
   };
 
 } // namespace Model

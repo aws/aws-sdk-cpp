@@ -26,12 +26,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DescribeGroupResult
+  class DescribeGroupResult
   {
   public:
-    DescribeGroupResult();
-    DescribeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeGroupResult();
+    AWS_WORKMAIL_API DescribeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -143,31 +143,31 @@ namespace Model
 
 
     /**
-     * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of the user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of the user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(const EntityState& value) { m_state = value; }
 
     /**
-     * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of the user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of the user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeGroupResult& WithState(const EntityState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of the user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeGroupResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}

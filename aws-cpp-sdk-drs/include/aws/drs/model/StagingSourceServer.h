@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StagingSourceServer">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API StagingSourceServer
+  class StagingSourceServer
   {
   public:
-    StagingSourceServer();
-    StagingSourceServer(Aws::Utils::Json::JsonView jsonValue);
-    StagingSourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API StagingSourceServer();
+    AWS_DRS_API StagingSourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API StagingSourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FindMatchesParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FindMatchesParameters
+  class FindMatchesParameters
   {
   public:
-    FindMatchesParameters();
-    FindMatchesParameters(Aws::Utils::Json::JsonView jsonValue);
-    FindMatchesParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FindMatchesParameters();
+    AWS_GLUE_API FindMatchesParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FindMatchesParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_primaryKeyColumnName;
-    bool m_primaryKeyColumnNameHasBeenSet;
+    bool m_primaryKeyColumnNameHasBeenSet = false;
 
     double m_precisionRecallTradeoff;
-    bool m_precisionRecallTradeoffHasBeenSet;
+    bool m_precisionRecallTradeoffHasBeenSet = false;
 
     double m_accuracyCostTradeoff;
-    bool m_accuracyCostTradeoffHasBeenSet;
+    bool m_accuracyCostTradeoffHasBeenSet = false;
 
     bool m_enforceProvidedLabels;
-    bool m_enforceProvidedLabelsHasBeenSet;
+    bool m_enforceProvidedLabelsHasBeenSet = false;
   };
 
 } // namespace Model

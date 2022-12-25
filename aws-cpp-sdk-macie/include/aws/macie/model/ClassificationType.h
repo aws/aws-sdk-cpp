@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ClassificationType">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API ClassificationType
+  class ClassificationType
   {
   public:
-    ClassificationType();
-    ClassificationType(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API ClassificationType();
+    AWS_MACIE_API ClassificationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API ClassificationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     S3OneTimeClassificationType m_oneTime;
-    bool m_oneTimeHasBeenSet;
+    bool m_oneTimeHasBeenSet = false;
 
     S3ContinuousClassificationType m_continuous;
-    bool m_continuousHasBeenSet;
+    bool m_continuousHasBeenSet = false;
   };
 
 } // namespace Model

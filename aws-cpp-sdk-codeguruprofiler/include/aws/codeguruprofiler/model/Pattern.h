@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Pattern">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Pattern
+  class Pattern
   {
   public:
-    Pattern();
-    Pattern(Aws::Utils::Json::JsonView jsonValue);
-    Pattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Pattern();
+    AWS_CODEGURUPROFILER_API Pattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Pattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_countersToAggregate;
-    bool m_countersToAggregateHasBeenSet;
+    bool m_countersToAggregateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resolutionSteps;
-    bool m_resolutionStepsHasBeenSet;
+    bool m_resolutionStepsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_targetFrames;
-    bool m_targetFramesHasBeenSet;
+    bool m_targetFramesHasBeenSet = false;
 
     double m_thresholdPercent;
-    bool m_thresholdPercentHasBeenSet;
+    bool m_thresholdPercentHasBeenSet = false;
   };
 
 } // namespace Model

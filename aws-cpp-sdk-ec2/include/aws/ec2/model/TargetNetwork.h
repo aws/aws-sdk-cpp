@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetNetwork">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TargetNetwork
+  class TargetNetwork
   {
   public:
-    TargetNetwork();
-    TargetNetwork(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetNetwork& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetNetwork();
+    AWS_EC2_API TargetNetwork(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetNetwork& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_targetNetworkId;
-    bool m_targetNetworkIdHasBeenSet;
+    bool m_targetNetworkIdHasBeenSet = false;
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     AssociationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Aggregates">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Aggregates
+  class Aggregates
   {
   public:
-    Aggregates();
-    Aggregates(Aws::Utils::Json::JsonView jsonValue);
-    Aggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Aggregates();
+    AWS_IOTSITEWISE_API Aggregates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,22 +164,22 @@ namespace Model
   private:
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_standardDeviation;
-    bool m_standardDeviationHasBeenSet;
+    bool m_standardDeviationHasBeenSet = false;
   };
 
 } // namespace Model

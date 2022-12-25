@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistorySearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ListRecordHistorySearchFilter
+  class ListRecordHistorySearchFilter
   {
   public:
-    ListRecordHistorySearchFilter();
-    ListRecordHistorySearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListRecordHistorySearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ListRecordHistorySearchFilter();
+    AWS_SERVICECATALOG_API ListRecordHistorySearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ListRecordHistorySearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

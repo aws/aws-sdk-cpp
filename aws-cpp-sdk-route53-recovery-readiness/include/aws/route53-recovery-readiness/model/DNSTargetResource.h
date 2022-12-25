@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DNSTargetResource">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API DNSTargetResource
+  class DNSTargetResource
   {
   public:
-    DNSTargetResource();
-    DNSTargetResource(Aws::Utils::Json::JsonView jsonValue);
-    DNSTargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API DNSTargetResource();
+    AWS_ROUTE53RECOVERYREADINESS_API DNSTargetResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API DNSTargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_hostedZoneArn;
-    bool m_hostedZoneArnHasBeenSet;
+    bool m_hostedZoneArnHasBeenSet = false;
 
     Aws::String m_recordSetId;
-    bool m_recordSetIdHasBeenSet;
+    bool m_recordSetIdHasBeenSet = false;
 
     Aws::String m_recordType;
-    bool m_recordTypeHasBeenSet;
+    bool m_recordTypeHasBeenSet = false;
 
     TargetResource m_targetResource;
-    bool m_targetResourceHasBeenSet;
+    bool m_targetResourceHasBeenSet = false;
   };
 
 } // namespace Model

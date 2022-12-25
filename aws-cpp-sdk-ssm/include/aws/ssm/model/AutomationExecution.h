@@ -13,10 +13,12 @@
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/ssm/model/ResolvedTargets.h>
 #include <aws/ssm/model/ProgressCounters.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/AutomationSubtype.h>
 #include <aws/ssm/model/StepExecution.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <aws/ssm/model/Runbook.h>
 #include <utility>
 
@@ -41,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AutomationExecution
+  class AutomationExecution
   {
   public:
-    AutomationExecution();
-    AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
-    AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AutomationExecution();
+    AWS_SSM_API AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1116,6 +1118,78 @@ namespace Model
 
 
     /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline AutomationExecution& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm applied to your automation.</p>
+     */
+    inline AutomationExecution& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline bool TriggeredAlarmsHasBeenSet() const { return m_triggeredAlarmsHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarm that was invoked by the automation.</p>
+     */
+    inline AutomationExecution& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The subtype of the Automation operation. Currently, the only supported value
      * is <code>ChangeRequest</code>.</p>
      */
@@ -1381,97 +1455,103 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStartTime;
-    bool m_executionStartTimeHasBeenSet;
+    bool m_executionStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionEndTime;
-    bool m_executionEndTimeHasBeenSet;
+    bool m_executionEndTimeHasBeenSet = false;
 
     AutomationExecutionStatus m_automationExecutionStatus;
-    bool m_automationExecutionStatusHasBeenSet;
+    bool m_automationExecutionStatusHasBeenSet = false;
 
     Aws::Vector<StepExecution> m_stepExecutions;
-    bool m_stepExecutionsHasBeenSet;
+    bool m_stepExecutionsHasBeenSet = false;
 
     bool m_stepExecutionsTruncated;
-    bool m_stepExecutionsTruncatedHasBeenSet;
+    bool m_stepExecutionsTruncatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     ExecutionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_parentAutomationExecutionId;
-    bool m_parentAutomationExecutionIdHasBeenSet;
+    bool m_parentAutomationExecutionIdHasBeenSet = false;
 
     Aws::String m_executedBy;
-    bool m_executedByHasBeenSet;
+    bool m_executedByHasBeenSet = false;
 
     Aws::String m_currentStepName;
-    bool m_currentStepNameHasBeenSet;
+    bool m_currentStepNameHasBeenSet = false;
 
     Aws::String m_currentAction;
-    bool m_currentActionHasBeenSet;
+    bool m_currentActionHasBeenSet = false;
 
     Aws::String m_targetParameterName;
-    bool m_targetParameterNameHasBeenSet;
+    bool m_targetParameterNameHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-    bool m_targetMapsHasBeenSet;
+    bool m_targetMapsHasBeenSet = false;
 
     ResolvedTargets m_resolvedTargets;
-    bool m_resolvedTargetsHasBeenSet;
+    bool m_resolvedTargetsHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Vector<TargetLocation> m_targetLocations;
-    bool m_targetLocationsHasBeenSet;
+    bool m_targetLocationsHasBeenSet = false;
 
     ProgressCounters m_progressCounters;
-    bool m_progressCountersHasBeenSet;
+    bool m_progressCountersHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
 
     AutomationSubtype m_automationSubtype;
-    bool m_automationSubtypeHasBeenSet;
+    bool m_automationSubtypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::Vector<Runbook> m_runbooks;
-    bool m_runbooksHasBeenSet;
+    bool m_runbooksHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_changeRequestName;
-    bool m_changeRequestNameHasBeenSet;
+    bool m_changeRequestNameHasBeenSet = false;
   };
 
 } // namespace Model

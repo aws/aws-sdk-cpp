@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
     m_awsAccountIdHasBeenSet(false),
     m_defaultNamespaceHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false)
+    m_notificationEmailHasBeenSet(false),
+    m_terminationProtectionEnabled(false),
+    m_terminationProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String UpdateAccountSettingsRequest::SerializePayload() const
   if(m_notificationEmailHasBeenSet)
   {
    payload.WithString("NotificationEmail", m_notificationEmail);
+
+  }
+
+  if(m_terminationProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
 
   }
 

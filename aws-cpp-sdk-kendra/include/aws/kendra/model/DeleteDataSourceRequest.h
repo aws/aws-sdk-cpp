@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API DeleteDataSourceRequest : public KendraRequest
+  class DeleteDataSourceRequest : public KendraRequest
   {
   public:
-    DeleteDataSourceRequest();
+    AWS_KENDRA_API DeleteDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,99 +29,99 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline DeleteDataSourceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline DeleteDataSourceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the data source to delete.</p>
+     * <p>The identifier of the data source connector you want to delete.</p>
      */
     inline DeleteDataSourceRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DeleteDataSourceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DeleteDataSourceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the index associated with the data source.</p>
+     * <p>The identifier of the index used with the data source connector.</p>
      */
     inline DeleteDataSourceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
   };
 
 } // namespace Model

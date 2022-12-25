@@ -24,7 +24,7 @@ Aws::String DisassociateSigninDelegateGroupsFromAccountRequest::SerializePayload
 
   if(m_groupNamesHasBeenSet)
   {
-   Array<JsonValue> groupNamesJsonList(m_groupNames.size());
+   Aws::Utils::Array<JsonValue> groupNamesJsonList(m_groupNames.size());
    for(unsigned groupNamesIndex = 0; groupNamesIndex < groupNamesJsonList.GetLength(); ++groupNamesIndex)
    {
      groupNamesJsonList[groupNamesIndex].AsString(m_groupNames[groupNamesIndex]);

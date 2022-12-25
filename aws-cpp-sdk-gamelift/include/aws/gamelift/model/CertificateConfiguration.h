@@ -28,19 +28,18 @@ namespace Model
    * feature must be enabled when creating the fleet. All instances in a fleet share
    * the same certificate. The certificate can be retrieved by calling the <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
-   * Server SDK</a> operation <code>GetInstanceCertificate</code>. </p> <p>A fleet's
-   * certificate configuration is part of <a>FleetAttributes</a>.</p><p><h3>See
+   * Server SDK</a> operation <code>GetInstanceCertificate</code>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CertificateConfiguration
+  class CertificateConfiguration
   {
   public:
-    CertificateConfiguration();
-    CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API CertificateConfiguration();
+    AWS_GAMELIFT_API CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,7 +93,7 @@ namespace Model
   private:
 
     CertificateType m_certificateType;
-    bool m_certificateTypeHasBeenSet;
+    bool m_certificateTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SourceTableDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API SourceTableDetails
+  class SourceTableDetails
   {
   public:
-    SourceTableDetails();
-    SourceTableDetails(Aws::Utils::Json::JsonView jsonValue);
-    SourceTableDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API SourceTableDetails();
+    AWS_DYNAMODB_API SourceTableDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API SourceTableDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -380,31 +380,31 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     long long m_tableSizeBytes;
-    bool m_tableSizeBytesHasBeenSet;
+    bool m_tableSizeBytesHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     Aws::Utils::DateTime m_tableCreationDateTime;
-    bool m_tableCreationDateTimeHasBeenSet;
+    bool m_tableCreationDateTimeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
 
     long long m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     BillingMode m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
   };
 
 } // namespace Model

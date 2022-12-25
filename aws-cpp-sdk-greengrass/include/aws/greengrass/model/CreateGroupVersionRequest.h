@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASS_API CreateGroupVersionRequest : public GreengrassRequest
+  class CreateGroupVersionRequest : public GreengrassRequest
   {
   public:
-    CreateGroupVersionRequest();
+    AWS_GREENGRASS_API CreateGroupVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGroupVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GREENGRASS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -405,31 +405,31 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_connectorDefinitionVersionArn;
-    bool m_connectorDefinitionVersionArnHasBeenSet;
+    bool m_connectorDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_coreDefinitionVersionArn;
-    bool m_coreDefinitionVersionArnHasBeenSet;
+    bool m_coreDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_deviceDefinitionVersionArn;
-    bool m_deviceDefinitionVersionArnHasBeenSet;
+    bool m_deviceDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_functionDefinitionVersionArn;
-    bool m_functionDefinitionVersionArnHasBeenSet;
+    bool m_functionDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_loggerDefinitionVersionArn;
-    bool m_loggerDefinitionVersionArnHasBeenSet;
+    bool m_loggerDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_resourceDefinitionVersionArn;
-    bool m_resourceDefinitionVersionArnHasBeenSet;
+    bool m_resourceDefinitionVersionArnHasBeenSet = false;
 
     Aws::String m_subscriptionDefinitionVersionArn;
-    bool m_subscriptionDefinitionVersionArnHasBeenSet;
+    bool m_subscriptionDefinitionVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

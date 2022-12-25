@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/HeaderObject">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API HeaderObject
+  class HeaderObject
   {
   public:
-    HeaderObject();
-    HeaderObject(Aws::Utils::Json::JsonView jsonValue);
-    HeaderObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API HeaderObject();
+    AWS_LIGHTSAIL_API HeaderObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API HeaderObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ForwardValues m_option;
-    bool m_optionHasBeenSet;
+    bool m_optionHasBeenSet = false;
 
     Aws::Vector<HeaderEnum> m_headersAllowList;
-    bool m_headersAllowListHasBeenSet;
+    bool m_headersAllowListHasBeenSet = false;
   };
 
 } // namespace Model

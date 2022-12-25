@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/MatchAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API MatchAttributes
+  class MatchAttributes
   {
   public:
-    MatchAttributes();
-    MatchAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API MatchAttributes();
+    AWS_NETWORKFIREWALL_API MatchAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API MatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -372,22 +372,22 @@ namespace Model
   private:
 
     Aws::Vector<Address> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::Vector<Address> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<PortRange> m_sourcePorts;
-    bool m_sourcePortsHasBeenSet;
+    bool m_sourcePortsHasBeenSet = false;
 
     Aws::Vector<PortRange> m_destinationPorts;
-    bool m_destinationPortsHasBeenSet;
+    bool m_destinationPortsHasBeenSet = false;
 
     Aws::Vector<int> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     Aws::Vector<TCPFlagField> m_tCPFlags;
-    bool m_tCPFlagsHasBeenSet;
+    bool m_tCPFlagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncOrganizationalUnit">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncOrganizationalUnit
+  class ResourceDataSyncOrganizationalUnit
   {
   public:
-    ResourceDataSyncOrganizationalUnit();
-    ResourceDataSyncOrganizationalUnit(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncOrganizationalUnit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncOrganizationalUnit();
+    AWS_SSM_API ResourceDataSyncOrganizationalUnit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncOrganizationalUnit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

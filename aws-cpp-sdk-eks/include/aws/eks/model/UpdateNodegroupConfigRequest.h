@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API UpdateNodegroupConfigRequest : public EKSRequest
+  class UpdateNodegroupConfigRequest : public EKSRequest
   {
   public:
-    UpdateNodegroupConfigRequest();
+    AWS_EKS_API UpdateNodegroupConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNodegroupConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -332,25 +332,25 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     UpdateLabelsPayload m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     UpdateTaintsPayload m_taints;
-    bool m_taintsHasBeenSet;
+    bool m_taintsHasBeenSet = false;
 
     NodegroupScalingConfig m_scalingConfig;
-    bool m_scalingConfigHasBeenSet;
+    bool m_scalingConfigHasBeenSet = false;
 
     NodegroupUpdateConfig m_updateConfig;
-    bool m_updateConfigHasBeenSet;
+    bool m_updateConfigHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

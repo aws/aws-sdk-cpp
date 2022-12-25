@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PrivateRegistryAccessRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API PrivateRegistryAccessRequest
+  class PrivateRegistryAccessRequest
   {
   public:
-    PrivateRegistryAccessRequest();
-    PrivateRegistryAccessRequest(Aws::Utils::Json::JsonView jsonValue);
-    PrivateRegistryAccessRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API PrivateRegistryAccessRequest();
+    AWS_LIGHTSAIL_API PrivateRegistryAccessRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API PrivateRegistryAccessRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     ContainerServiceECRImagePullerRoleRequest m_ecrImagePullerRole;
-    bool m_ecrImagePullerRoleHasBeenSet;
+    bool m_ecrImagePullerRoleHasBeenSet = false;
   };
 
 } // namespace Model

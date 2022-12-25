@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AnalysisResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AnalysisResult
+  class AnalysisResult
   {
   public:
-    AnalysisResult();
-    AnalysisResult(Aws::Utils::Json::JsonView jsonValue);
-    AnalysisResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AnalysisResult();
+    AWS_IOTEVENTS_API AnalysisResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AnalysisResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -392,16 +392,16 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AnalysisResultLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<AnalysisResultLocation> m_locations;
-    bool m_locationsHasBeenSet;
+    bool m_locationsHasBeenSet = false;
   };
 
 } // namespace Model

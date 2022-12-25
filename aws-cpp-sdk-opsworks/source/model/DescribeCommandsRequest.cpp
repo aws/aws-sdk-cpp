@@ -37,7 +37,7 @@ Aws::String DescribeCommandsRequest::SerializePayload() const
 
   if(m_commandIdsHasBeenSet)
   {
-   Array<JsonValue> commandIdsJsonList(m_commandIds.size());
+   Aws::Utils::Array<JsonValue> commandIdsJsonList(m_commandIds.size());
    for(unsigned commandIdsIndex = 0; commandIdsIndex < commandIdsJsonList.GetLength(); ++commandIdsIndex)
    {
      commandIdsJsonList[commandIdsIndex].AsString(m_commandIds[commandIdsIndex]);

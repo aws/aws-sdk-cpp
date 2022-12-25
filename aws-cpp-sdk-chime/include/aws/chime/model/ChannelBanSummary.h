@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelBanSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelBanSummary
+  class ChannelBanSummary
   {
   public:
-    ChannelBanSummary();
-    ChannelBanSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelBanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelBanSummary();
+    AWS_CHIME_API ChannelBanSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelBanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_member;
-    bool m_memberHasBeenSet;
+    bool m_memberHasBeenSet = false;
   };
 
 } // namespace Model

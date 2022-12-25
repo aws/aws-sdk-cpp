@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TemplateVersionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TemplateVersionsResponse
+  class TemplateVersionsResponse
   {
   public:
-    TemplateVersionsResponse();
-    TemplateVersionsResponse(Aws::Utils::Json::JsonView jsonValue);
-    TemplateVersionsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TemplateVersionsResponse();
+    AWS_PINPOINT_API TemplateVersionsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TemplateVersionsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::Vector<TemplateVersionResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestID;
-    bool m_requestIDHasBeenSet;
+    bool m_requestIDHasBeenSet = false;
   };
 
 } // namespace Model

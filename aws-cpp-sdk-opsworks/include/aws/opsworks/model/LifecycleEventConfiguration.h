@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/LifecycleEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API LifecycleEventConfiguration
+  class LifecycleEventConfiguration
   {
   public:
-    LifecycleEventConfiguration();
-    LifecycleEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LifecycleEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API LifecycleEventConfiguration();
+    AWS_OPSWORKS_API LifecycleEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API LifecycleEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ShutdownEventConfiguration m_shutdown;
-    bool m_shutdownHasBeenSet;
+    bool m_shutdownHasBeenSet = false;
   };
 
 } // namespace Model

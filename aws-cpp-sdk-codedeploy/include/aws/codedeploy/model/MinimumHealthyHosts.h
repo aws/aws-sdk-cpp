@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/MinimumHealthyHosts">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API MinimumHealthyHosts
+  class MinimumHealthyHosts
   {
   public:
-    MinimumHealthyHosts();
-    MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
-    MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API MinimumHealthyHosts();
+    AWS_CODEDEPLOY_API MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -52,13 +52,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline const MinimumHealthyHostsType& GetType() const{ return m_type; }
 
@@ -77,13 +77,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -102,13 +102,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline void SetType(const MinimumHealthyHostsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -127,13 +127,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -152,13 +152,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline MinimumHealthyHosts& WithType(const MinimumHealthyHostsType& value) { SetType(value); return *this;}
 
@@ -177,13 +177,13 @@ namespace Model
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
      * MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
-     * CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all
-     * instances but one are kept in a healthy state during the deployment. Although
-     * this allows one instance at a time to be taken offline for a new deployment, it
-     * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p>  <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
-     * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+     * CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances
+     * but one are kept in a healthy state during the deployment. Although this allows
+     * one instance at a time to be taken offline for a new deployment, it also means
+     * that if the deployment to the last instance fails, the overall deployment is
+     * still successful.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
+     * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
 
@@ -211,10 +211,10 @@ namespace Model
   private:
 
     MinimumHealthyHostsType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

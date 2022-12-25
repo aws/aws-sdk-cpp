@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API GetMapSpritesRequest : public LocationServiceRequest
+  class GetMapSpritesRequest : public LocationServiceRequest
   {
   public:
-    GetMapSpritesRequest();
+    AWS_LOCATIONSERVICE_API GetMapSpritesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,15 +29,15 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMapSprites"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline const Aws::String& GetFileName() const{ return m_fileName; }
@@ -46,8 +46,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
@@ -56,8 +56,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
@@ -66,8 +66,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
@@ -76,8 +76,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
@@ -86,8 +86,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline GetMapSpritesRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
@@ -96,8 +96,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline GetMapSpritesRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
@@ -106,8 +106,8 @@ namespace Model
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
-     * <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
-     * <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
+     * <p>For the JSON document containing image offsets. Use the following ﬁle
+     * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
     inline GetMapSpritesRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

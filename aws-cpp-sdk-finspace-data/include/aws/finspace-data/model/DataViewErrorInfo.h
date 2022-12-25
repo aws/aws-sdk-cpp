@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DataViewErrorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DataViewErrorInfo
+  class DataViewErrorInfo
   {
   public:
-    DataViewErrorInfo();
-    DataViewErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    DataViewErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DataViewErrorInfo();
+    AWS_FINSPACEDATA_API DataViewErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DataViewErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     ErrorCategory m_errorCategory;
-    bool m_errorCategoryHasBeenSet;
+    bool m_errorCategoryHasBeenSet = false;
   };
 
 } // namespace Model

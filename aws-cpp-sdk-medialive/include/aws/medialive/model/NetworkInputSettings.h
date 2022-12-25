@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NetworkInputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NetworkInputSettings
+  class NetworkInputSettings
   {
   public:
-    NetworkInputSettings();
-    NetworkInputSettings(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NetworkInputSettings();
+    AWS_MEDIALIVE_API NetworkInputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NetworkInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     HlsInputSettings m_hlsInputSettings;
-    bool m_hlsInputSettingsHasBeenSet;
+    bool m_hlsInputSettingsHasBeenSet = false;
 
     NetworkInputServerValidation m_serverValidation;
-    bool m_serverValidationHasBeenSet;
+    bool m_serverValidationHasBeenSet = false;
   };
 
 } // namespace Model

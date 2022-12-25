@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API CreateFuotaTaskRequest : public IoTWirelessRequest
+  class CreateFuotaTaskRequest : public IoTWirelessRequest
   {
   public:
-    CreateFuotaTaskRequest();
+    AWS_IOTWIRELESS_API CreateFuotaTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFuotaTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
     
@@ -207,25 +207,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     LoRaWANFuotaTask m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     Aws::String m_firmwareUpdateImage;
-    bool m_firmwareUpdateImageHasBeenSet;
+    bool m_firmwareUpdateImageHasBeenSet = false;
 
     Aws::String m_firmwareUpdateRole;
-    bool m_firmwareUpdateRoleHasBeenSet;
+    bool m_firmwareUpdateRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

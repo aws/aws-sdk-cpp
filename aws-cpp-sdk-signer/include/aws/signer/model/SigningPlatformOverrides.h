@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatformOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningPlatformOverrides
+  class SigningPlatformOverrides
   {
   public:
-    SigningPlatformOverrides();
-    SigningPlatformOverrides(Aws::Utils::Json::JsonView jsonValue);
-    SigningPlatformOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningPlatformOverrides();
+    AWS_SIGNER_API SigningPlatformOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningPlatformOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     SigningConfigurationOverrides m_signingConfiguration;
-    bool m_signingConfigurationHasBeenSet;
+    bool m_signingConfigurationHasBeenSet = false;
 
     ImageFormat m_signingImageFormat;
-    bool m_signingImageFormatHasBeenSet;
+    bool m_signingImageFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,21 +27,21 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to redact or flag specified personally identifiable information
-   * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-   * also include the sub-parameters: <code>PiiEntityTypes</code>,
+   * <p>Makes it possible to redact or flag specified personally identifiable
+   * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+   * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
    * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API ContentRedaction
+  class ContentRedaction
   {
   public:
-    ContentRedaction();
-    ContentRedaction(Aws::Utils::Json::JsonView jsonValue);
-    ContentRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API ContentRedaction();
+    AWS_TRANSCRIBESERVICE_API ContentRedaction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API ContentRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,13 +201,13 @@ namespace Model
   private:
 
     RedactionType m_redactionType;
-    bool m_redactionTypeHasBeenSet;
+    bool m_redactionTypeHasBeenSet = false;
 
     RedactionOutput m_redactionOutput;
-    bool m_redactionOutputHasBeenSet;
+    bool m_redactionOutputHasBeenSet = false;
 
     Aws::Vector<PiiEntityType> m_piiEntityTypes;
-    bool m_piiEntityTypesHasBeenSet;
+    bool m_piiEntityTypesHasBeenSet = false;
   };
 
 } // namespace Model

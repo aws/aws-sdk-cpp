@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ActionParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ActionParameter
+  class ActionParameter
   {
   public:
-    ActionParameter();
-    ActionParameter(Aws::Utils::Json::JsonView jsonValue);
-    ActionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ActionParameter();
+    AWS_FIS_API ActionParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ActionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
   };
 
 } // namespace Model

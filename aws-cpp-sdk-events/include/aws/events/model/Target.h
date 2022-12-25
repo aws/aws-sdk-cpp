@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API Target
+  class Target
   {
   public:
-    Target();
-    Target(Aws::Utils::Json::JsonView jsonValue);
-    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API Target();
+    AWS_CLOUDWATCHEVENTS_API Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -838,52 +838,52 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_inputPath;
-    bool m_inputPathHasBeenSet;
+    bool m_inputPathHasBeenSet = false;
 
     InputTransformer m_inputTransformer;
-    bool m_inputTransformerHasBeenSet;
+    bool m_inputTransformerHasBeenSet = false;
 
     KinesisParameters m_kinesisParameters;
-    bool m_kinesisParametersHasBeenSet;
+    bool m_kinesisParametersHasBeenSet = false;
 
     RunCommandParameters m_runCommandParameters;
-    bool m_runCommandParametersHasBeenSet;
+    bool m_runCommandParametersHasBeenSet = false;
 
     EcsParameters m_ecsParameters;
-    bool m_ecsParametersHasBeenSet;
+    bool m_ecsParametersHasBeenSet = false;
 
     BatchParameters m_batchParameters;
-    bool m_batchParametersHasBeenSet;
+    bool m_batchParametersHasBeenSet = false;
 
     SqsParameters m_sqsParameters;
-    bool m_sqsParametersHasBeenSet;
+    bool m_sqsParametersHasBeenSet = false;
 
     HttpParameters m_httpParameters;
-    bool m_httpParametersHasBeenSet;
+    bool m_httpParametersHasBeenSet = false;
 
     RedshiftDataParameters m_redshiftDataParameters;
-    bool m_redshiftDataParametersHasBeenSet;
+    bool m_redshiftDataParametersHasBeenSet = false;
 
     SageMakerPipelineParameters m_sageMakerPipelineParameters;
-    bool m_sageMakerPipelineParametersHasBeenSet;
+    bool m_sageMakerPipelineParametersHasBeenSet = false;
 
     DeadLetterConfig m_deadLetterConfig;
-    bool m_deadLetterConfigHasBeenSet;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     RetryPolicy m_retryPolicy;
-    bool m_retryPolicyHasBeenSet;
+    bool m_retryPolicyHasBeenSet = false;
   };
 
 } // namespace Model

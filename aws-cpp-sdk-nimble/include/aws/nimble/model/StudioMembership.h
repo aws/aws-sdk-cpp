@@ -28,23 +28,23 @@ namespace Model
    * <p>A studio member is an association of a user from your studio identity source
    * to elevated permissions that they are granted in the studio.</p> <p>When you add
    * a user to your studio using the Nimble Studio console, they are given access to
-   * the studio's AWS SSO application and are given access to log in to the Nimble
-   * Studio portal. These users have the permissions provided by the studio's user
-   * IAM role and do not appear in the studio membership collection. Only studio
-   * admins appear in studio membership.</p> <p>When you add a user to studio
-   * membership with the persona ADMIN, upon logging in to the Nimble Studio portal,
-   * they are granted permissions specified by the Studio's Admin IAM
+   * the studio's IAM Identity Center application and are given access to log in to
+   * the Nimble Studio portal. These users have the permissions provided by the
+   * studio's user IAM role and do not appear in the studio membership collection.
+   * Only studio admins appear in studio membership.</p> <p>When you add a user to
+   * studio membership with the ADMIN persona, upon logging in to the Nimble Studio
+   * portal, they are granted permissions specified by the Studio's Admin IAM
    * role.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioMembership
+  class StudioMembership
   {
   public:
-    StudioMembership();
-    StudioMembership(Aws::Utils::Json::JsonView jsonValue);
-    StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioMembership();
+    AWS_NIMBLESTUDIO_API StudioMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     StudioPersona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_sid;
-    bool m_sidHasBeenSet;
+    bool m_sidHasBeenSet = false;
   };
 
 } // namespace Model

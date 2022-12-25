@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AccountGrouping">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API AccountGrouping
+  class AccountGrouping
   {
   public:
-    AccountGrouping();
-    AccountGrouping(Aws::Utils::Json::JsonView jsonValue);
-    AccountGrouping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API AccountGrouping();
+    AWS_BILLINGCONDUCTOR_API AccountGrouping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API AccountGrouping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_linkedAccountIds;
-    bool m_linkedAccountIdsHasBeenSet;
+    bool m_linkedAccountIdsHasBeenSet = false;
   };
 
 } // namespace Model

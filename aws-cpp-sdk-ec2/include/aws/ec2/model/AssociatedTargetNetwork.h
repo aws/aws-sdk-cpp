@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociatedTargetNetwork">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AssociatedTargetNetwork
+  class AssociatedTargetNetwork
   {
   public:
-    AssociatedTargetNetwork();
-    AssociatedTargetNetwork(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AssociatedTargetNetwork& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AssociatedTargetNetwork();
+    AWS_EC2_API AssociatedTargetNetwork(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AssociatedTargetNetwork& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     AssociatedNetworkType m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

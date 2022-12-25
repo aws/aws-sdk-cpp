@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/AlgorithmSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API AlgorithmSpecification
+  class AlgorithmSpecification
   {
   public:
-    AlgorithmSpecification();
-    AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API AlgorithmSpecification();
+    AWS_BRAKET_API AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     ContainerImage m_containerImage;
-    bool m_containerImageHasBeenSet;
+    bool m_containerImageHasBeenSet = false;
 
     ScriptModeConfig m_scriptModeConfig;
-    bool m_scriptModeConfigHasBeenSet;
+    bool m_scriptModeConfigHasBeenSet = false;
   };
 
 } // namespace Model

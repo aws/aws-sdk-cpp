@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ICD10CMEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API ICD10CMEntity
+  class ICD10CMEntity
   {
   public:
-    ICD10CMEntity();
-    ICD10CMEntity(Aws::Utils::Json::JsonView jsonValue);
-    ICD10CMEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity();
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -434,34 +434,34 @@ namespace Model
   private:
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     ICD10CMEntityCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     ICD10CMEntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     Aws::Vector<ICD10CMAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<ICD10CMTrait> m_traits;
-    bool m_traitsHasBeenSet;
+    bool m_traitsHasBeenSet = false;
 
     Aws::Vector<ICD10CMConcept> m_iCD10CMConcepts;
-    bool m_iCD10CMConceptsHasBeenSet;
+    bool m_iCD10CMConceptsHasBeenSet = false;
   };
 
 } // namespace Model

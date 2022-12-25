@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizerRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateAuthorizerRequest : public ApiGatewayV2Request
+  class CreateAuthorizerRequest : public ApiGatewayV2Request
   {
   public:
-    CreateAuthorizerRequest();
+    AWS_APIGATEWAYV2_API CreateAuthorizerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAuthorizer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -810,37 +810,37 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_authorizerCredentialsArn;
-    bool m_authorizerCredentialsArnHasBeenSet;
+    bool m_authorizerCredentialsArnHasBeenSet = false;
 
     Aws::String m_authorizerPayloadFormatVersion;
-    bool m_authorizerPayloadFormatVersionHasBeenSet;
+    bool m_authorizerPayloadFormatVersionHasBeenSet = false;
 
     int m_authorizerResultTtlInSeconds;
-    bool m_authorizerResultTtlInSecondsHasBeenSet;
+    bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
     AuthorizerType m_authorizerType;
-    bool m_authorizerTypeHasBeenSet;
+    bool m_authorizerTypeHasBeenSet = false;
 
     Aws::String m_authorizerUri;
-    bool m_authorizerUriHasBeenSet;
+    bool m_authorizerUriHasBeenSet = false;
 
     bool m_enableSimpleResponses;
-    bool m_enableSimpleResponsesHasBeenSet;
+    bool m_enableSimpleResponsesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_identitySource;
-    bool m_identitySourceHasBeenSet;
+    bool m_identitySourceHasBeenSet = false;
 
     Aws::String m_identityValidationExpression;
-    bool m_identityValidationExpressionHasBeenSet;
+    bool m_identityValidationExpressionHasBeenSet = false;
 
     JWTConfiguration m_jwtConfiguration;
-    bool m_jwtConfigurationHasBeenSet;
+    bool m_jwtConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

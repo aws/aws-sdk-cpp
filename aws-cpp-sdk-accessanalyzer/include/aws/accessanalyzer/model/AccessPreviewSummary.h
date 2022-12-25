@@ -32,13 +32,54 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AccessPreviewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AccessPreviewSummary
+  class AccessPreviewSummary
   {
   public:
-    AccessPreviewSummary();
-    AccessPreviewSummary(Aws::Utils::Json::JsonView jsonValue);
-    AccessPreviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AccessPreviewSummary();
+    AWS_ACCESSANALYZER_API AccessPreviewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AccessPreviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
@@ -111,47 +152,6 @@ namespace Model
      * <p>The time at which the access preview was created.</p>
      */
     inline AccessPreviewSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
@@ -229,20 +229,20 @@ namespace Model
 
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AccessPreviewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AccessPreviewStatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

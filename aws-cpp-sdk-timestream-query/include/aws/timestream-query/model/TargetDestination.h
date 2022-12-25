@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/TargetDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API TargetDestination
+  class TargetDestination
   {
   public:
-    TargetDestination();
-    TargetDestination(Aws::Utils::Json::JsonView jsonValue);
-    TargetDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API TargetDestination();
+    AWS_TIMESTREAMQUERY_API TargetDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API TargetDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimestreamDestination m_timestreamDestination;
-    bool m_timestreamDestinationHasBeenSet;
+    bool m_timestreamDestinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,64 +25,20 @@ namespace Model
 {
 
   /**
-   * <p>The criteria to use in the filter that defines the archive
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>The criteria to use in the filter that defines the archive rule. For more
+   * information on available filter keys, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+   * Access Analyzer filter keys</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Criterion">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Criterion
+  class Criterion
   {
   public:
-    Criterion();
-    Criterion(Aws::Utils::Json::JsonView jsonValue);
-    Criterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetContains() const{ return m_contains; }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline void SetContains(const Aws::Vector<Aws::String>& value) { m_containsHasBeenSet = true; m_contains = value; }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline void SetContains(Aws::Vector<Aws::String>&& value) { m_containsHasBeenSet = true; m_contains = std::move(value); }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline Criterion& WithContains(const Aws::Vector<Aws::String>& value) { SetContains(value); return *this;}
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline Criterion& WithContains(Aws::Vector<Aws::String>&& value) { SetContains(std::move(value)); return *this;}
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline Criterion& AddContains(const Aws::String& value) { m_containsHasBeenSet = true; m_contains.push_back(value); return *this; }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline Criterion& AddContains(Aws::String&& value) { m_containsHasBeenSet = true; m_contains.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A "contains" operator to match for the filter used to create the rule.</p>
-     */
-    inline Criterion& AddContains(const char* value) { m_containsHasBeenSet = true; m_contains.push_back(value); return *this; }
+    AWS_ACCESSANALYZER_API Criterion();
+    AWS_ACCESSANALYZER_API Criterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Criterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,27 +88,6 @@ namespace Model
 
 
     /**
-     * <p>An "exists" operator to match for the filter used to create the rule. </p>
-     */
-    inline bool GetExists() const{ return m_exists; }
-
-    /**
-     * <p>An "exists" operator to match for the filter used to create the rule. </p>
-     */
-    inline bool ExistsHasBeenSet() const { return m_existsHasBeenSet; }
-
-    /**
-     * <p>An "exists" operator to match for the filter used to create the rule. </p>
-     */
-    inline void SetExists(bool value) { m_existsHasBeenSet = true; m_exists = value; }
-
-    /**
-     * <p>An "exists" operator to match for the filter used to create the rule. </p>
-     */
-    inline Criterion& WithExists(bool value) { SetExists(value); return *this;}
-
-
-    /**
      * <p>A "not equals" operator to match for the filter used to create the rule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNeq() const{ return m_neq; }
@@ -197,19 +132,86 @@ namespace Model
      */
     inline Criterion& AddNeq(const char* value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
 
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetContains() const{ return m_contains; }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline void SetContains(const Aws::Vector<Aws::String>& value) { m_containsHasBeenSet = true; m_contains = value; }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline void SetContains(Aws::Vector<Aws::String>&& value) { m_containsHasBeenSet = true; m_contains = std::move(value); }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline Criterion& WithContains(const Aws::Vector<Aws::String>& value) { SetContains(value); return *this;}
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline Criterion& WithContains(Aws::Vector<Aws::String>&& value) { SetContains(std::move(value)); return *this;}
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline Criterion& AddContains(const Aws::String& value) { m_containsHasBeenSet = true; m_contains.push_back(value); return *this; }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline Criterion& AddContains(Aws::String&& value) { m_containsHasBeenSet = true; m_contains.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A "contains" operator to match for the filter used to create the rule.</p>
+     */
+    inline Criterion& AddContains(const char* value) { m_containsHasBeenSet = true; m_contains.push_back(value); return *this; }
+
+
+    /**
+     * <p>An "exists" operator to match for the filter used to create the rule. </p>
+     */
+    inline bool GetExists() const{ return m_exists; }
+
+    /**
+     * <p>An "exists" operator to match for the filter used to create the rule. </p>
+     */
+    inline bool ExistsHasBeenSet() const { return m_existsHasBeenSet; }
+
+    /**
+     * <p>An "exists" operator to match for the filter used to create the rule. </p>
+     */
+    inline void SetExists(bool value) { m_existsHasBeenSet = true; m_exists = value; }
+
+    /**
+     * <p>An "exists" operator to match for the filter used to create the rule. </p>
+     */
+    inline Criterion& WithExists(bool value) { SetExists(value); return *this;}
+
   private:
 
-    Aws::Vector<Aws::String> m_contains;
-    bool m_containsHasBeenSet;
-
     Aws::Vector<Aws::String> m_eq;
-    bool m_eqHasBeenSet;
-
-    bool m_exists;
-    bool m_existsHasBeenSet;
+    bool m_eqHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;
-    bool m_neqHasBeenSet;
+    bool m_neqHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_contains;
+    bool m_containsHasBeenSet = false;
+
+    bool m_exists;
+    bool m_existsHasBeenSet = false;
   };
 
 } // namespace Model

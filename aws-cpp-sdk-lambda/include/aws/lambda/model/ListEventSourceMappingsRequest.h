@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API ListEventSourceMappingsRequest : public LambdaRequest
+  class ListEventSourceMappingsRequest : public LambdaRequest
   {
   public:
-    ListEventSourceMappingsRequest();
+    AWS_LAMBDA_API ListEventSourceMappingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListEventSourceMappings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -44,7 +44,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -54,7 +55,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -64,7 +66,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -74,7 +77,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -84,7 +88,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -94,7 +99,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -104,7 +110,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -114,7 +121,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -304,16 +312,16 @@ namespace Model
   private:
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

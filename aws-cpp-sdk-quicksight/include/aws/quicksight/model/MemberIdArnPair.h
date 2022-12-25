@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MemberIdArnPair">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MemberIdArnPair
+  class MemberIdArnPair
   {
   public:
-    MemberIdArnPair();
-    MemberIdArnPair(Aws::Utils::Json::JsonView jsonValue);
-    MemberIdArnPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MemberIdArnPair();
+    AWS_QUICKSIGHT_API MemberIdArnPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MemberIdArnPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_memberArn;
-    bool m_memberArnHasBeenSet;
+    bool m_memberArnHasBeenSet = false;
   };
 
 } // namespace Model

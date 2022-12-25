@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDHSMV2_API InitializeClusterRequest : public CloudHSMV2Request
+  class InitializeClusterRequest : public CloudHSMV2Request
   {
   public:
-    InitializeClusterRequest();
+    AWS_CLOUDHSMV2_API InitializeClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InitializeCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSMV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_signedCert;
-    bool m_signedCertHasBeenSet;
+    bool m_signedCertHasBeenSet = false;
 
     Aws::String m_trustAnchor;
-    bool m_trustAnchorHasBeenSet;
+    bool m_trustAnchorHasBeenSet = false;
   };
 
 } // namespace Model

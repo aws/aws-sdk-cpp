@@ -8,6 +8,7 @@
 #include <aws/inspector2/model/Ec2Metadata.h>
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
+#include <aws/inspector2/model/LambdaFunctionMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResourceScanMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ResourceScanMetadata
+  class ResourceScanMetadata
   {
   public:
-    ResourceScanMetadata();
-    ResourceScanMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ResourceScanMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ResourceScanMetadata();
+    AWS_INSPECTOR2_API ResourceScanMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ResourceScanMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,16 +145,50 @@ namespace Model
      */
     inline ResourceScanMetadata& WithEcrRepository(EcrRepositoryMetadata&& value) { SetEcrRepository(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline const LambdaFunctionMetadata& GetLambdaFunction() const{ return m_lambdaFunction; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunction(const LambdaFunctionMetadata& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunction(LambdaFunctionMetadata&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline ResourceScanMetadata& WithLambdaFunction(const LambdaFunctionMetadata& value) { SetLambdaFunction(value); return *this;}
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline ResourceScanMetadata& WithLambdaFunction(LambdaFunctionMetadata&& value) { SetLambdaFunction(std::move(value)); return *this;}
+
   private:
 
     Ec2Metadata m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     EcrContainerImageMetadata m_ecrImage;
-    bool m_ecrImageHasBeenSet;
+    bool m_ecrImageHasBeenSet = false;
 
     EcrRepositoryMetadata m_ecrRepository;
-    bool m_ecrRepositoryHasBeenSet;
+    bool m_ecrRepositoryHasBeenSet = false;
+
+    LambdaFunctionMetadata m_lambdaFunction;
+    bool m_lambdaFunctionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FlowLogsConfigurationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API FlowLogsConfigurationResult
+  class FlowLogsConfigurationResult
   {
   public:
-    FlowLogsConfigurationResult();
-    FlowLogsConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
-    FlowLogsConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API FlowLogsConfigurationResult();
+    AWS_GUARDDUTY_API FlowLogsConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API FlowLogsConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DataSourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

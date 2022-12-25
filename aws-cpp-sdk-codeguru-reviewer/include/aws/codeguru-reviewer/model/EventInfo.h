@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/EventInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API EventInfo
+  class EventInfo
   {
   public:
-    EventInfo();
-    EventInfo(Aws::Utils::Json::JsonView jsonValue);
-    EventInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API EventInfo();
+    AWS_CODEGURUREVIEWER_API EventInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API EventInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

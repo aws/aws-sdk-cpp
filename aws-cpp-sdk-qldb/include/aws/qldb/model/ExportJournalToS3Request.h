@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_QLDB_API ExportJournalToS3Request : public QLDBRequest
+  class ExportJournalToS3Request : public QLDBRequest
   {
   public:
-    ExportJournalToS3Request();
+    AWS_QLDB_API ExportJournalToS3Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportJournalToS3"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QLDB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -389,22 +389,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_inclusiveStartTime;
-    bool m_inclusiveStartTimeHasBeenSet;
+    bool m_inclusiveStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_exclusiveEndTime;
-    bool m_exclusiveEndTimeHasBeenSet;
+    bool m_exclusiveEndTimeHasBeenSet = false;
 
     S3ExportConfiguration m_s3ExportConfiguration;
-    bool m_s3ExportConfigurationHasBeenSet;
+    bool m_s3ExportConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
   };
 
 } // namespace Model

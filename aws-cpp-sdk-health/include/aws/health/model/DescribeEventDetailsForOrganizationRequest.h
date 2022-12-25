@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_HEALTH_API DescribeEventDetailsForOrganizationRequest : public HealthRequest
+  class DescribeEventDetailsForOrganizationRequest : public HealthRequest
   {
   public:
-    DescribeEventDetailsForOrganizationRequest();
+    AWS_HEALTH_API DescribeEventDetailsForOrganizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEventDetailsForOrganization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HEALTH_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_HEALTH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<EventAccountFilter> m_organizationEventDetailFilters;
-    bool m_organizationEventDetailFiltersHasBeenSet;
+    bool m_organizationEventDetailFiltersHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

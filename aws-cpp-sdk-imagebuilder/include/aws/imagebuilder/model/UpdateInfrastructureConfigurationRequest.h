@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest
+  class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest
   {
   public:
-    UpdateInfrastructureConfigurationRequest();
+    AWS_IMAGEBUILDER_API UpdateInfrastructureConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInfrastructureConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -724,43 +724,43 @@ namespace Model
   private:
 
     Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet;
+    bool m_infrastructureConfigurationArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     Aws::String m_keyPair;
-    bool m_keyPairHasBeenSet;
+    bool m_keyPairHasBeenSet = false;
 
     bool m_terminateInstanceOnFailure;
-    bool m_terminateInstanceOnFailureHasBeenSet;
+    bool m_terminateInstanceOnFailureHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     InstanceMetadataOptions m_instanceMetadataOptions;
-    bool m_instanceMetadataOptionsHasBeenSet;
+    bool m_instanceMetadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary
+  class InferenceExecutionSummary
   {
   public:
-    InferenceExecutionSummary();
-    InferenceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    InferenceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -530,40 +530,40 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerArn;
-    bool m_inferenceSchedulerArnHasBeenSet;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledStartTime;
-    bool m_scheduledStartTimeHasBeenSet;
+    bool m_scheduledStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataStartTime;
-    bool m_dataStartTimeHasBeenSet;
+    bool m_dataStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataEndTime;
-    bool m_dataEndTimeHasBeenSet;
+    bool m_dataEndTimeHasBeenSet = false;
 
     InferenceInputConfiguration m_dataInputConfiguration;
-    bool m_dataInputConfigurationHasBeenSet;
+    bool m_dataInputConfigurationHasBeenSet = false;
 
     InferenceOutputConfiguration m_dataOutputConfiguration;
-    bool m_dataOutputConfigurationHasBeenSet;
+    bool m_dataOutputConfigurationHasBeenSet = false;
 
     S3Object m_customerResultObject;
-    bool m_customerResultObjectHasBeenSet;
+    bool m_customerResultObjectHasBeenSet = false;
 
     InferenceExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failedReason;
-    bool m_failedReasonHasBeenSet;
+    bool m_failedReasonHasBeenSet = false;
   };
 
 } // namespace Model

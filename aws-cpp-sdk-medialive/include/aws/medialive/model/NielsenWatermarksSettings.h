@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NielsenWatermarksSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NielsenWatermarksSettings
+  class NielsenWatermarksSettings
   {
   public:
-    NielsenWatermarksSettings();
-    NielsenWatermarksSettings(Aws::Utils::Json::JsonView jsonValue);
-    NielsenWatermarksSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NielsenWatermarksSettings();
+    AWS_MEDIALIVE_API NielsenWatermarksSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NielsenWatermarksSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     NielsenCBET m_nielsenCbetSettings;
-    bool m_nielsenCbetSettingsHasBeenSet;
+    bool m_nielsenCbetSettingsHasBeenSet = false;
 
     NielsenWatermarksDistributionTypes m_nielsenDistributionType;
-    bool m_nielsenDistributionTypeHasBeenSet;
+    bool m_nielsenDistributionTypeHasBeenSet = false;
 
     NielsenNaesIiNw m_nielsenNaesIiNwSettings;
-    bool m_nielsenNaesIiNwSettingsHasBeenSet;
+    bool m_nielsenNaesIiNwSettingsHasBeenSet = false;
   };
 
 } // namespace Model

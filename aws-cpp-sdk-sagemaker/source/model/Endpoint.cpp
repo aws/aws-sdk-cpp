@@ -30,7 +30,8 @@ Endpoint::Endpoint() :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,7 +78,7 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProductionVariants"))
   {
-    Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
+    Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
     for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
     {
       m_productionVariants.push_back(productionVariantsJsonList[productionVariantsIndex].AsObject());
@@ -121,7 +123,7 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MonitoringSchedules"))
   {
-    Array<JsonView> monitoringSchedulesJsonList = jsonValue.GetArray("MonitoringSchedules");
+    Aws::Utils::Array<JsonView> monitoringSchedulesJsonList = jsonValue.GetArray("MonitoringSchedules");
     for(unsigned monitoringSchedulesIndex = 0; monitoringSchedulesIndex < monitoringSchedulesJsonList.GetLength(); ++monitoringSchedulesIndex)
     {
       m_monitoringSchedules.push_back(monitoringSchedulesJsonList[monitoringSchedulesIndex].AsObject());
@@ -131,12 +133,22 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ShadowProductionVariants"))
+  {
+    Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
+    for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+    {
+      m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
+    }
+    m_shadowProductionVariantsHasBeenSet = true;
   }
 
   return *this;
@@ -166,7 +178,7 @@ JsonValue Endpoint::Jsonize() const
 
   if(m_productionVariantsHasBeenSet)
   {
-   Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
+   Aws::Utils::Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
    for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
    {
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());
@@ -204,7 +216,7 @@ JsonValue Endpoint::Jsonize() const
 
   if(m_monitoringSchedulesHasBeenSet)
   {
-   Array<JsonValue> monitoringSchedulesJsonList(m_monitoringSchedules.size());
+   Aws::Utils::Array<JsonValue> monitoringSchedulesJsonList(m_monitoringSchedules.size());
    for(unsigned monitoringSchedulesIndex = 0; monitoringSchedulesIndex < monitoringSchedulesJsonList.GetLength(); ++monitoringSchedulesIndex)
    {
      monitoringSchedulesJsonList[monitoringSchedulesIndex].AsObject(m_monitoringSchedules[monitoringSchedulesIndex].Jsonize());
@@ -215,12 +227,23 @@ JsonValue Endpoint::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_shadowProductionVariantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shadowProductionVariantsJsonList(m_shadowProductionVariants.size());
+   for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+   {
+     shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
+   }
+   payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
 
   }
 

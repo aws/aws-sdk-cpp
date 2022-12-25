@@ -184,7 +184,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputClippings"))
   {
-    Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
+    Aws::Utils::Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
     for(unsigned inputClippingsIndex = 0; inputClippingsIndex < inputClippingsJsonList.GetLength(); ++inputClippingsIndex)
     {
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());
@@ -222,7 +222,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supplementalImps"))
   {
-    Array<JsonView> supplementalImpsJsonList = jsonValue.GetArray("supplementalImps");
+    Aws::Utils::Array<JsonView> supplementalImpsJsonList = jsonValue.GetArray("supplementalImps");
     for(unsigned supplementalImpsIndex = 0; supplementalImpsIndex < supplementalImpsJsonList.GetLength(); ++supplementalImpsIndex)
     {
       m_supplementalImps.push_back(supplementalImpsJsonList[supplementalImpsIndex].AsString());
@@ -351,7 +351,7 @@ JsonValue Input::Jsonize() const
 
   if(m_inputClippingsHasBeenSet)
   {
-   Array<JsonValue> inputClippingsJsonList(m_inputClippings.size());
+   Aws::Utils::Array<JsonValue> inputClippingsJsonList(m_inputClippings.size());
    for(unsigned inputClippingsIndex = 0; inputClippingsIndex < inputClippingsJsonList.GetLength(); ++inputClippingsIndex)
    {
      inputClippingsJsonList[inputClippingsIndex].AsObject(m_inputClippings[inputClippingsIndex].Jsonize());
@@ -384,7 +384,7 @@ JsonValue Input::Jsonize() const
 
   if(m_supplementalImpsHasBeenSet)
   {
-   Array<JsonValue> supplementalImpsJsonList(m_supplementalImps.size());
+   Aws::Utils::Array<JsonValue> supplementalImpsJsonList(m_supplementalImps.size());
    for(unsigned supplementalImpsIndex = 0; supplementalImpsIndex < supplementalImpsJsonList.GetLength(); ++supplementalImpsIndex)
    {
      supplementalImpsJsonList[supplementalImpsIndex].AsString(m_supplementalImps[supplementalImpsIndex]);

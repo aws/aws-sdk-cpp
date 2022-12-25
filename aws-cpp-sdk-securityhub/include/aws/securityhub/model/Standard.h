@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/StandardsManagedBy.h>
 #include <utility>
 
 namespace Aws
@@ -24,17 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a specific standard.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about a specific security standard.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Standard">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Standard
+  class Standard
   {
   public:
-    Standard();
-    Standard(Aws::Utils::Json::JsonView jsonValue);
-    Standard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Standard();
+    AWS_SECURITYHUB_API Standard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Standard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,19 +198,53 @@ namespace Model
      */
     inline Standard& WithEnabledByDefault(bool value) { SetEnabledByDefault(value); return *this;}
 
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline const StandardsManagedBy& GetStandardsManagedBy() const{ return m_standardsManagedBy; }
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline bool StandardsManagedByHasBeenSet() const { return m_standardsManagedByHasBeenSet; }
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline void SetStandardsManagedBy(const StandardsManagedBy& value) { m_standardsManagedByHasBeenSet = true; m_standardsManagedBy = value; }
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline void SetStandardsManagedBy(StandardsManagedBy&& value) { m_standardsManagedByHasBeenSet = true; m_standardsManagedBy = std::move(value); }
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline Standard& WithStandardsManagedBy(const StandardsManagedBy& value) { SetStandardsManagedBy(value); return *this;}
+
+    /**
+     * <p>Provides details about the management of a standard. </p>
+     */
+    inline Standard& WithStandardsManagedBy(StandardsManagedBy&& value) { SetStandardsManagedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_standardsArn;
-    bool m_standardsArnHasBeenSet;
+    bool m_standardsArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabledByDefault;
-    bool m_enabledByDefaultHasBeenSet;
+    bool m_enabledByDefaultHasBeenSet = false;
+
+    StandardsManagedBy m_standardsManagedBy;
+    bool m_standardsManagedByHasBeenSet = false;
   };
 
 } // namespace Model

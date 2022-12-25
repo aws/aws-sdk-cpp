@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SFN_API ListExecutionsRequest : public SFNRequest
+  class ListExecutionsRequest : public SFNRequest
   {
   public:
-    ListExecutionsRequest();
+    AWS_SFN_API ListExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,56 +30,64 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SFN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
-     * listed.</p>
+     * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
+     * <code>stateMachineArn</code>, but not both.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
@@ -238,19 +246,119 @@ namespace Model
      */
     inline ListExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline ListExecutionsRequest& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline ListExecutionsRequest& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * executions. If the <code>mapRunArn</code> field is specified, a list of all of
+     * the child workflow executions started by a Map Run is returned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+     * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p> <p>You can specify
+     * either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not
+     * both.</p>
+     */
+    inline ListExecutionsRequest& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     ExecutionStatus m_statusFilter;
-    bool m_statusFilterHasBeenSet;
+    bool m_statusFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_mapRunArn;
+    bool m_mapRunArnHasBeenSet = false;
   };
 
 } // namespace Model

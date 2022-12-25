@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramSettings
+  class MultiplexProgramSettings
   {
   public:
-    MultiplexProgramSettings();
-    MultiplexProgramSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramSettings();
+    AWS_MEDIALIVE_API MultiplexProgramSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,16 +155,16 @@ namespace Model
   private:
 
     PreferredChannelPipeline m_preferredChannelPipeline;
-    bool m_preferredChannelPipelineHasBeenSet;
+    bool m_preferredChannelPipelineHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     MultiplexProgramServiceDescriptor m_serviceDescriptor;
-    bool m_serviceDescriptorHasBeenSet;
+    bool m_serviceDescriptorHasBeenSet = false;
 
     MultiplexVideoSettings m_videoSettings;
-    bool m_videoSettingsHasBeenSet;
+    bool m_videoSettingsHasBeenSet = false;
   };
 
 } // namespace Model

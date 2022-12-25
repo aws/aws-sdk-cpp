@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredictiveScalingConfiguration
+  class PredictiveScalingConfiguration
   {
   public:
-    PredictiveScalingConfiguration();
-    PredictiveScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredictiveScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingConfiguration();
+    AWS_AUTOSCALING_API PredictiveScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -346,19 +346,19 @@ namespace Model
   private:
 
     Aws::Vector<PredictiveScalingMetricSpecification> m_metricSpecifications;
-    bool m_metricSpecificationsHasBeenSet;
+    bool m_metricSpecificationsHasBeenSet = false;
 
     PredictiveScalingMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     int m_schedulingBufferTime;
-    bool m_schedulingBufferTimeHasBeenSet;
+    bool m_schedulingBufferTimeHasBeenSet = false;
 
     PredictiveScalingMaxCapacityBreachBehavior m_maxCapacityBreachBehavior;
-    bool m_maxCapacityBreachBehaviorHasBeenSet;
+    bool m_maxCapacityBreachBehaviorHasBeenSet = false;
 
     int m_maxCapacityBuffer;
-    bool m_maxCapacityBufferHasBeenSet;
+    bool m_maxCapacityBufferHasBeenSet = false;
   };
 
 } // namespace Model

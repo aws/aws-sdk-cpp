@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CloudWatchDimensionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration
+  class CloudWatchDimensionConfiguration
   {
   public:
-    CloudWatchDimensionConfiguration();
-    CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration();
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     DimensionValueSource m_dimensionValueSource;
-    bool m_dimensionValueSourceHasBeenSet;
+    bool m_dimensionValueSourceHasBeenSet = false;
 
     Aws::String m_defaultDimensionValue;
-    bool m_defaultDimensionValueHasBeenSet;
+    bool m_defaultDimensionValueHasBeenSet = false;
   };
 
 } // namespace Model

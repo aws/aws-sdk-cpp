@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DescribeExpressionsRequest : public CloudSearchRequest
+  class DescribeExpressionsRequest : public CloudSearchRequest
   {
   public:
-    DescribeExpressionsRequest();
+    AWS_CLOUDSEARCH_API DescribeExpressionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,10 +38,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeExpressions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_expressionNames;
-    bool m_expressionNamesHasBeenSet;
+    bool m_expressionNamesHasBeenSet = false;
 
     bool m_deployed;
-    bool m_deployedHasBeenSet;
+    bool m_deployedHasBeenSet = false;
   };
 
 } // namespace Model

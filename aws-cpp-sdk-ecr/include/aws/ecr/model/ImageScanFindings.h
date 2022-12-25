@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageScanFindings">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageScanFindings
+  class ImageScanFindings
   {
   public:
-    ImageScanFindings();
-    ImageScanFindings(Aws::Utils::Json::JsonView jsonValue);
-    ImageScanFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageScanFindings();
+    AWS_ECR_API ImageScanFindings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageScanFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_imageScanCompletedAt;
-    bool m_imageScanCompletedAtHasBeenSet;
+    bool m_imageScanCompletedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt;
-    bool m_vulnerabilitySourceUpdatedAtHasBeenSet;
+    bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
     Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
-    bool m_findingSeverityCountsHasBeenSet;
+    bool m_findingSeverityCountsHasBeenSet = false;
 
     Aws::Vector<ImageScanFinding> m_findings;
-    bool m_findingsHasBeenSet;
+    bool m_findingsHasBeenSet = false;
 
     Aws::Vector<EnhancedImageScanFinding> m_enhancedFindings;
-    bool m_enhancedFindingsHasBeenSet;
+    bool m_enhancedFindingsHasBeenSet = false;
   };
 
 } // namespace Model

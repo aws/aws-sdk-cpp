@@ -5,118 +5,16 @@
 
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
-#include <aws/codestar-connections/CodeStarconnectionsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codestar-connections/model/CreateConnectionResult.h>
-#include <aws/codestar-connections/model/CreateHostResult.h>
-#include <aws/codestar-connections/model/DeleteConnectionResult.h>
-#include <aws/codestar-connections/model/DeleteHostResult.h>
-#include <aws/codestar-connections/model/GetConnectionResult.h>
-#include <aws/codestar-connections/model/GetHostResult.h>
-#include <aws/codestar-connections/model/ListConnectionsResult.h>
-#include <aws/codestar-connections/model/ListHostsResult.h>
-#include <aws/codestar-connections/model/ListTagsForResourceResult.h>
-#include <aws/codestar-connections/model/TagResourceResult.h>
-#include <aws/codestar-connections/model/UntagResourceResult.h>
-#include <aws/codestar-connections/model/UpdateHostResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeStarconnections
 {
-
-namespace Model
-{
-        class CreateConnectionRequest;
-        class CreateHostRequest;
-        class DeleteConnectionRequest;
-        class DeleteHostRequest;
-        class GetConnectionRequest;
-        class GetHostRequest;
-        class ListConnectionsRequest;
-        class ListHostsRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateHostRequest;
-
-        typedef Aws::Utils::Outcome<CreateConnectionResult, CodeStarconnectionsError> CreateConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreateHostResult, CodeStarconnectionsError> CreateHostOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectionResult, CodeStarconnectionsError> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteHostResult, CodeStarconnectionsError> DeleteHostOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, CodeStarconnectionsError> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetHostResult, CodeStarconnectionsError> GetHostOutcome;
-        typedef Aws::Utils::Outcome<ListConnectionsResult, CodeStarconnectionsError> ListConnectionsOutcome;
-        typedef Aws::Utils::Outcome<ListHostsResult, CodeStarconnectionsError> ListHostsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarconnectionsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CodeStarconnectionsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarconnectionsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateHostResult, CodeStarconnectionsError> UpdateHostOutcome;
-
-        typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
-        typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;
-        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
-        typedef std::future<DeleteHostOutcome> DeleteHostOutcomeCallable;
-        typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
-        typedef std::future<GetHostOutcome> GetHostOutcomeCallable;
-        typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
-        typedef std::future<ListHostsOutcome> ListHostsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateHostOutcome> UpdateHostOutcomeCallable;
-} // namespace Model
-
-  class CodeStarconnectionsClient;
-
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::CreateHostRequest&, const Model::CreateHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::DeleteHostRequest&, const Model::DeleteHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::GetHostRequest&, const Model::GetHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::ListHostsRequest&, const Model::ListHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostsResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeStarconnectionsClient*, const Model::UpdateHostRequest&, const Model::UpdateHostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHostResponseReceivedHandler;
-
   /**
    * <fullname>AWS CodeStar Connections</fullname> <p>This AWS CodeStar Connections
    * API Reference provides descriptions and usage examples of the operations and
@@ -158,32 +56,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
    * Tools User Guide</a>.</p>
    */
-  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient
+  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarconnectionsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeStarconnectionsClient(const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration(),
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeStarconnectionsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeStarconnectionsClient(const Aws::Auth::AWSCredentials& credentials,
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeStarconnectionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeStarconnectionsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeStarconnectionsClient(const Aws::Auth::AWSCredentials& credentials,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeStarconnectionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeStarconnectionsClient();
-
 
         /**
          * <p>Creates a connection that can then be given to other AWS services like
@@ -409,24 +335,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHostAsyncHelper(const Model::CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHostAsyncHelper(const Model::DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConnectionAsyncHelper(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostAsyncHelper(const Model::GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConnectionsAsyncHelper(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHostsAsyncHelper(const Model::ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateHostAsyncHelper(const Model::UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>;
+      void init(const CodeStarconnectionsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeStarconnectionsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeStarconnectionsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeStarconnections

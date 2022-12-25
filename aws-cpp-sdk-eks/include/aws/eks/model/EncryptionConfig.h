@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/EncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API EncryptionConfig
+  class EncryptionConfig
   {
   public:
-    EncryptionConfig();
-    EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API EncryptionConfig();
+    AWS_EKS_API EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Provider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

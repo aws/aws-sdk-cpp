@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/AudioParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API AudioParameters
+  class AudioParameters
   {
   public:
-    AudioParameters();
-    AudioParameters(Aws::Utils::Json::JsonView jsonValue);
-    AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API AudioParameters();
+    AWS_ELASTICTRANSCODER_API AudioParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1020,22 +1020,22 @@ namespace Model
   private:
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     Aws::String m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     Aws::String m_bitRate;
-    bool m_bitRateHasBeenSet;
+    bool m_bitRateHasBeenSet = false;
 
     Aws::String m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     Aws::String m_audioPackingMode;
-    bool m_audioPackingModeHasBeenSet;
+    bool m_audioPackingModeHasBeenSet = false;
 
     AudioCodecOptions m_codecOptions;
-    bool m_codecOptionsHasBeenSet;
+    bool m_codecOptionsHasBeenSet = false;
   };
 
 } // namespace Model

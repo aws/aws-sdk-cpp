@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SelectionCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API SelectionCriteria
+  class SelectionCriteria
   {
   public:
-    SelectionCriteria();
-    SelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API SelectionCriteria();
+    AWS_S3CONTROL_API SelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API SelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     int m_maxDepth;
-    bool m_maxDepthHasBeenSet;
+    bool m_maxDepthHasBeenSet = false;
 
     double m_minStorageBytesPercentage;
-    bool m_minStorageBytesPercentageHasBeenSet;
+    bool m_minStorageBytesPercentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ValueWithServiceIds">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ValueWithServiceIds
+  class ValueWithServiceIds
   {
   public:
-    ValueWithServiceIds();
-    ValueWithServiceIds(Aws::Utils::Json::JsonView jsonValue);
-    ValueWithServiceIds& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ValueWithServiceIds();
+    AWS_XRAY_API ValueWithServiceIds(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ValueWithServiceIds& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     AnnotationValue m_annotationValue;
-    bool m_annotationValueHasBeenSet;
+    bool m_annotationValueHasBeenSet = false;
 
     Aws::Vector<ServiceId> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
   };
 
 } // namespace Model

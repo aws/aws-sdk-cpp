@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/JobSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API JobSettings
+  class JobSettings
   {
   public:
-    JobSettings();
-    JobSettings(Aws::Utils::Json::JsonView jsonValue);
-    JobSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API JobSettings();
+    AWS_MEDIACONVERT_API JobSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API JobSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -699,40 +699,40 @@ namespace Model
   private:
 
     int m_adAvailOffset;
-    bool m_adAvailOffsetHasBeenSet;
+    bool m_adAvailOffsetHasBeenSet = false;
 
     AvailBlanking m_availBlanking;
-    bool m_availBlankingHasBeenSet;
+    bool m_availBlankingHasBeenSet = false;
 
     EsamSettings m_esam;
-    bool m_esamHasBeenSet;
+    bool m_esamHasBeenSet = false;
 
     ExtendedDataServices m_extendedDataServices;
-    bool m_extendedDataServicesHasBeenSet;
+    bool m_extendedDataServicesHasBeenSet = false;
 
     Aws::Vector<Input> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     KantarWatermarkSettings m_kantarWatermark;
-    bool m_kantarWatermarkHasBeenSet;
+    bool m_kantarWatermarkHasBeenSet = false;
 
     MotionImageInserter m_motionImageInserter;
-    bool m_motionImageInserterHasBeenSet;
+    bool m_motionImageInserterHasBeenSet = false;
 
     NielsenConfiguration m_nielsenConfiguration;
-    bool m_nielsenConfigurationHasBeenSet;
+    bool m_nielsenConfigurationHasBeenSet = false;
 
     NielsenNonLinearWatermarkSettings m_nielsenNonLinearWatermark;
-    bool m_nielsenNonLinearWatermarkHasBeenSet;
+    bool m_nielsenNonLinearWatermarkHasBeenSet = false;
 
     Aws::Vector<OutputGroup> m_outputGroups;
-    bool m_outputGroupsHasBeenSet;
+    bool m_outputGroupsHasBeenSet = false;
 
     TimecodeConfig m_timecodeConfig;
-    bool m_timecodeConfigHasBeenSet;
+    bool m_timecodeConfigHasBeenSet = false;
 
     TimedMetadataInsertion m_timedMetadataInsertion;
-    bool m_timedMetadataInsertionHasBeenSet;
+    bool m_timedMetadataInsertionHasBeenSet = false;
   };
 
 } // namespace Model

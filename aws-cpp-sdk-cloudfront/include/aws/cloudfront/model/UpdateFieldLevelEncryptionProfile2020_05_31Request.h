@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Request : public CloudFrontRequest
+  class UpdateFieldLevelEncryptionProfile2020_05_31Request : public CloudFrontRequest
   {
   public:
-    UpdateFieldLevelEncryptionProfile2020_05_31Request();
+    AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,79 +30,79 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFieldLevelEncryptionProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline const FieldLevelEncryptionProfileConfig& GetFieldLevelEncryptionProfileConfig() const{ return m_fieldLevelEncryptionProfileConfig; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline bool FieldLevelEncryptionProfileConfigHasBeenSet() const { return m_fieldLevelEncryptionProfileConfigHasBeenSet; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline void SetFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = value; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline void SetFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = std::move(value); }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { SetFieldLevelEncryptionProfileConfig(value); return *this;}
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { SetFieldLevelEncryptionProfileConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     FieldLevelEncryptionProfileConfig m_fieldLevelEncryptionProfileConfig;
-    bool m_fieldLevelEncryptionProfileConfigHasBeenSet;
+    bool m_fieldLevelEncryptionProfileConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

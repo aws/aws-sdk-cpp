@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API Output();
+    AWS_PROTON_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_valueString;
-    bool m_valueStringHasBeenSet;
+    bool m_valueStringHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,7 +38,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_exactCidrMatchesHasBeenSet)
   {
-   Array<JsonValue> exactCidrMatchesJsonList(m_exactCidrMatches.size());
+   Aws::Utils::Array<JsonValue> exactCidrMatchesJsonList(m_exactCidrMatches.size());
    for(unsigned exactCidrMatchesIndex = 0; exactCidrMatchesIndex < exactCidrMatchesJsonList.GetLength(); ++exactCidrMatchesIndex)
    {
      exactCidrMatchesJsonList[exactCidrMatchesIndex].AsString(m_exactCidrMatches[exactCidrMatchesIndex]);
@@ -49,7 +49,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_longestPrefixMatchesHasBeenSet)
   {
-   Array<JsonValue> longestPrefixMatchesJsonList(m_longestPrefixMatches.size());
+   Aws::Utils::Array<JsonValue> longestPrefixMatchesJsonList(m_longestPrefixMatches.size());
    for(unsigned longestPrefixMatchesIndex = 0; longestPrefixMatchesIndex < longestPrefixMatchesJsonList.GetLength(); ++longestPrefixMatchesIndex)
    {
      longestPrefixMatchesJsonList[longestPrefixMatchesIndex].AsString(m_longestPrefixMatches[longestPrefixMatchesIndex]);
@@ -60,7 +60,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_subnetOfMatchesHasBeenSet)
   {
-   Array<JsonValue> subnetOfMatchesJsonList(m_subnetOfMatches.size());
+   Aws::Utils::Array<JsonValue> subnetOfMatchesJsonList(m_subnetOfMatches.size());
    for(unsigned subnetOfMatchesIndex = 0; subnetOfMatchesIndex < subnetOfMatchesJsonList.GetLength(); ++subnetOfMatchesIndex)
    {
      subnetOfMatchesJsonList[subnetOfMatchesIndex].AsString(m_subnetOfMatches[subnetOfMatchesIndex]);
@@ -71,7 +71,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_supernetOfMatchesHasBeenSet)
   {
-   Array<JsonValue> supernetOfMatchesJsonList(m_supernetOfMatches.size());
+   Aws::Utils::Array<JsonValue> supernetOfMatchesJsonList(m_supernetOfMatches.size());
    for(unsigned supernetOfMatchesIndex = 0; supernetOfMatchesIndex < supernetOfMatchesJsonList.GetLength(); ++supernetOfMatchesIndex)
    {
      supernetOfMatchesJsonList[supernetOfMatchesIndex].AsString(m_supernetOfMatches[supernetOfMatchesIndex]);
@@ -82,7 +82,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_prefixListIdsHasBeenSet)
   {
-   Array<JsonValue> prefixListIdsJsonList(m_prefixListIds.size());
+   Aws::Utils::Array<JsonValue> prefixListIdsJsonList(m_prefixListIds.size());
    for(unsigned prefixListIdsIndex = 0; prefixListIdsIndex < prefixListIdsJsonList.GetLength(); ++prefixListIdsIndex)
    {
      prefixListIdsJsonList[prefixListIdsIndex].AsString(m_prefixListIds[prefixListIdsIndex]);
@@ -93,7 +93,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_statesHasBeenSet)
   {
-   Array<JsonValue> statesJsonList(m_states.size());
+   Aws::Utils::Array<JsonValue> statesJsonList(m_states.size());
    for(unsigned statesIndex = 0; statesIndex < statesJsonList.GetLength(); ++statesIndex)
    {
      statesJsonList[statesIndex].AsString(RouteStateMapper::GetNameForRouteState(m_states[statesIndex]));
@@ -104,7 +104,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(RouteTypeMapper::GetNameForRouteType(m_types[typesIndex]));
@@ -118,7 +118,7 @@ Aws::String GetNetworkRoutesRequest::SerializePayload() const
    JsonValue destinationFiltersJsonMap;
    for(auto& destinationFiltersItem : m_destinationFilters)
    {
-     Array<JsonValue> filterValuesJsonList(destinationFiltersItem.second.size());
+     Aws::Utils::Array<JsonValue> filterValuesJsonList(destinationFiltersItem.second.size());
      for(unsigned filterValuesIndex = 0; filterValuesIndex < filterValuesJsonList.GetLength(); ++filterValuesIndex)
      {
        filterValuesJsonList[filterValuesIndex].AsString(destinationFiltersItem.second[filterValuesIndex]);

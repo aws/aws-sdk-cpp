@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AlarmModelVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AlarmModelVersionSummary
+  class AlarmModelVersionSummary
   {
   public:
-    AlarmModelVersionSummary();
-    AlarmModelVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    AlarmModelVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AlarmModelVersionSummary();
+    AWS_IOTEVENTS_API AlarmModelVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AlarmModelVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -427,28 +427,28 @@ namespace Model
   private:
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_alarmModelArn;
-    bool m_alarmModelArnHasBeenSet;
+    bool m_alarmModelArnHasBeenSet = false;
 
     Aws::String m_alarmModelVersion;
-    bool m_alarmModelVersionHasBeenSet;
+    bool m_alarmModelVersionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     AlarmModelVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

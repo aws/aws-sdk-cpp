@@ -1,0 +1,74 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($endpointPrefix = $metadata.endpointPrefix)
+#set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
+#set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Endpoint
+{
+#if ($serviceModel.endpointRules)
+#if ($serviceModel.clientContextParams)
+#foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
+#if(${memberEntry.value.type} == "boolean")
+#set($paramType = "bool")
+#else
+#set($paramType = "Aws::String")
+#end
+  void ${epContextClassName}::Set${memberEntry.key}(${paramType} value)
+  {
+#if(${memberEntry.value.type} == "boolean")
+    return SetBooleanParameter(Aws::String("${memberEntry.key}"), value);
+#else
+    return SetStringParameter(Aws::String("${memberEntry.key}"), std::move(value));
+#end
+  }
+  const ${epContextClassName}::ClientContextParameters::EndpointParameter& ${epContextClassName}::Get${memberEntry.key}() const
+  {
+    return GetParameter("${memberEntry.key}");
+  }
+#end
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+  void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config)
+  {
+    SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config));
+
+#if($serviceModel.metadata.serviceId == "S3")
+    static const Aws::String AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
+    if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
+      SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);
+    }
+
+    // Not supported by this SDK:
+    // static const Aws::String AWS_S3_ACCELERATE = "Accelerate";
+    // static const Aws::String AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
+
+    static const Aws::String AWS_S3_USE_ARN_REGION = "UseArnRegion";
+    SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
+
+    static const Aws::String AWS_S3_DISABLE_MRAP = "DisableMultiRegionAccessPoints";
+    SetBooleanParameter(AWS_S3_DISABLE_MRAP, config.disableMultiRegionAccessPoints);
+
+    static const Aws::String AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
+    if (!config.useVirtualAddressing) {
+      SetBooleanParameter(AWS_S3_FORCE_PATH_STYLE, true);
+    }
+#end
+#if($serviceModel.metadata.serviceId == "S3 Control")
+    static const Aws::String AWS_S3_USE_ARN_REGION = "UseArnRegion";
+    SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
+#end
+  }
+#end
+#end
+} // namespace Endpoint
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

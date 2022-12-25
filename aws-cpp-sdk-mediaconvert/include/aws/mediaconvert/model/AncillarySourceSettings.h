@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AncillarySourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AncillarySourceSettings
+  class AncillarySourceSettings
   {
   public:
-    AncillarySourceSettings();
-    AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AncillarySourceSettings();
+    AWS_MEDIACONVERT_API AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     AncillaryConvert608To708 m_convert608To708;
-    bool m_convert608To708HasBeenSet;
+    bool m_convert608To708HasBeenSet = false;
 
     int m_sourceAncillaryChannelNumber;
-    bool m_sourceAncillaryChannelNumberHasBeenSet;
+    bool m_sourceAncillaryChannelNumberHasBeenSet = false;
 
     AncillaryTerminateCaptions m_terminateCaptions;
-    bool m_terminateCaptionsHasBeenSet;
+    bool m_terminateCaptionsHasBeenSet = false;
   };
 
 } // namespace Model

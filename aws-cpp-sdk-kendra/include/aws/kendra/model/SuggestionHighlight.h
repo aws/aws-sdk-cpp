@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SuggestionHighlight">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SuggestionHighlight
+  class SuggestionHighlight
   {
   public:
-    SuggestionHighlight();
-    SuggestionHighlight(Aws::Utils::Json::JsonView jsonValue);
-    SuggestionHighlight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SuggestionHighlight();
+    AWS_KENDRA_API SuggestionHighlight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SuggestionHighlight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
   };
 
 } // namespace Model

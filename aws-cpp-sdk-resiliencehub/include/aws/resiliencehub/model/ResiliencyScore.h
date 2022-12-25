@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResiliencyScore">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ResiliencyScore
+  class ResiliencyScore
   {
   public:
-    ResiliencyScore();
-    ResiliencyScore(Aws::Utils::Json::JsonView jsonValue);
-    ResiliencyScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ResiliencyScore();
+    AWS_RESILIENCEHUB_API ResiliencyScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ResiliencyScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::Map<DisruptionType, double> m_disruptionScore;
-    bool m_disruptionScoreHasBeenSet;
+    bool m_disruptionScoreHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

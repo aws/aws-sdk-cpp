@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API StringAttributeConstraintsType
+  class StringAttributeConstraintsType
   {
   public:
-    StringAttributeConstraintsType();
-    StringAttributeConstraintsType(Aws::Utils::Json::JsonView jsonValue);
-    StringAttributeConstraintsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API StringAttributeConstraintsType();
+    AWS_COGNITOIDENTITYPROVIDER_API StringAttributeConstraintsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API StringAttributeConstraintsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_minLength;
-    bool m_minLengthHasBeenSet;
+    bool m_minLengthHasBeenSet = false;
 
     Aws::String m_maxLength;
-    bool m_maxLengthHasBeenSet;
+    bool m_maxLengthHasBeenSet = false;
   };
 
 } // namespace Model

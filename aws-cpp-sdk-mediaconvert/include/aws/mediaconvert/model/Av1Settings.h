@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Av1Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Av1Settings
+  class Av1Settings
   {
   public:
-    Av1Settings();
-    Av1Settings(Aws::Utils::Json::JsonView jsonValue);
-    Av1Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Av1Settings();
+    AWS_MEDIACONVERT_API Av1Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Av1Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -683,43 +683,43 @@ namespace Model
   private:
 
     Av1AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     Av1BitDepth m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     Av1FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     Av1FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_numberBFramesBetweenReferenceFrames;
-    bool m_numberBFramesBetweenReferenceFramesHasBeenSet;
+    bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
     Av1QvbrSettings m_qvbrSettings;
-    bool m_qvbrSettingsHasBeenSet;
+    bool m_qvbrSettingsHasBeenSet = false;
 
     Av1RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     int m_slices;
-    bool m_slicesHasBeenSet;
+    bool m_slicesHasBeenSet = false;
 
     Av1SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
-    bool m_spatialAdaptiveQuantizationHasBeenSet;
+    bool m_spatialAdaptiveQuantizationHasBeenSet = false;
   };
 
 } // namespace Model

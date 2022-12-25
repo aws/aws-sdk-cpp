@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReportsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API GetBlacklistReportsRequest : public PinpointEmailRequest
+  class GetBlacklistReportsRequest : public PinpointEmailRequest
   {
   public:
-    GetBlacklistReportsRequest();
+    AWS_PINPOINTEMAIL_API GetBlacklistReportsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetBlacklistReports"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PINPOINTEMAIL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_blacklistItemNames;
-    bool m_blacklistItemNamesHasBeenSet;
+    bool m_blacklistItemNamesHasBeenSet = false;
   };
 
 } // namespace Model

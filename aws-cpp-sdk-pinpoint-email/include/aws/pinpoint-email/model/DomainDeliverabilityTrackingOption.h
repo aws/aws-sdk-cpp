@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainDeliverabilityTrackingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption
+  class DomainDeliverabilityTrackingOption
   {
   public:
-    DomainDeliverabilityTrackingOption();
-    DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption();
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::Utils::DateTime m_subscriptionStartDate;
-    bool m_subscriptionStartDateHasBeenSet;
+    bool m_subscriptionStartDateHasBeenSet = false;
 
     InboxPlacementTrackingOption m_inboxPlacementTrackingOption;
-    bool m_inboxPlacementTrackingOptionHasBeenSet;
+    bool m_inboxPlacementTrackingOptionHasBeenSet = false;
   };
 
 } // namespace Model

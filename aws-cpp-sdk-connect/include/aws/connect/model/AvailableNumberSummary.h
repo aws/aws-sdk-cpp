@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AvailableNumberSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AvailableNumberSummary
+  class AvailableNumberSummary
   {
   public:
-    AvailableNumberSummary();
-    AvailableNumberSummary(Aws::Utils::Json::JsonView jsonValue);
-    AvailableNumberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AvailableNumberSummary();
+    AWS_CONNECT_API AvailableNumberSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AvailableNumberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,9 @@ StackSetOperationSummary::StackSetOperationSummary() :
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
+    m_operationPreferencesHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
+    m_operationPreferencesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -72,13 +76,13 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     XmlNode creationTimestampNode = resultNode.FirstChild("CreationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode endTimestampNode = resultNode.FirstChild("EndTimestamp");
     if(!endTimestampNode.IsNull())
     {
-      m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
@@ -86,6 +90,18 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+    }
+    XmlNode statusDetailsNode = resultNode.FirstChild("StatusDetails");
+    if(!statusDetailsNode.IsNull())
+    {
+      m_statusDetails = statusDetailsNode;
+      m_statusDetailsHasBeenSet = true;
+    }
+    XmlNode operationPreferencesNode = resultNode.FirstChild("OperationPreferences");
+    if(!operationPreferencesNode.IsNull())
+    {
+      m_operationPreferences = operationPreferencesNode;
+      m_operationPreferencesHasBeenSet = true;
     }
   }
 
@@ -111,17 +127,31 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_endTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+
+  if(m_statusDetailsHasBeenSet)
+  {
+      Aws::StringStream statusDetailsLocationAndMemberSs;
+      statusDetailsLocationAndMemberSs << location << index << locationValue << ".StatusDetails";
+      m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_operationPreferencesHasBeenSet)
+  {
+      Aws::StringStream operationPreferencesLocationAndMemberSs;
+      operationPreferencesLocationAndMemberSs << location << index << locationValue << ".OperationPreferences";
+      m_operationPreferences.OutputToStream(oStream, operationPreferencesLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -142,15 +172,27 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimestampHasBeenSet)
   {
-      oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+  if(m_statusDetailsHasBeenSet)
+  {
+      Aws::String statusDetailsLocationAndMember(location);
+      statusDetailsLocationAndMember += ".StatusDetails";
+      m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMember.c_str());
+  }
+  if(m_operationPreferencesHasBeenSet)
+  {
+      Aws::String operationPreferencesLocationAndMember(location);
+      operationPreferencesLocationAndMember += ".OperationPreferences";
+      m_operationPreferences.OutputToStream(oStream, operationPreferencesLocationAndMember.c_str());
   }
 }
 

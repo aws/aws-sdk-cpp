@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientData">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API ClientData
+  class ClientData
   {
   public:
-    ClientData();
-    ClientData(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientData();
+    AWS_EC2_API ClientData(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadEnd;
-    bool m_uploadEndHasBeenSet;
+    bool m_uploadEndHasBeenSet = false;
 
     double m_uploadSize;
-    bool m_uploadSizeHasBeenSet;
+    bool m_uploadSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadStart;
-    bool m_uploadStartHasBeenSet;
+    bool m_uploadStartHasBeenSet = false;
   };
 
 } // namespace Model

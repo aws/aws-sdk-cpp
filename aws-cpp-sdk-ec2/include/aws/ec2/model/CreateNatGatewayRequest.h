@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateNatGatewayRequest : public EC2Request
+  class CreateNatGatewayRequest : public EC2Request
   {
   public:
-    CreateNatGatewayRequest();
+    AWS_EC2_API CreateNatGatewayRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNatGateway"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -321,25 +321,77 @@ namespace Model
      */
     inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
+     * an address, a private IPv4 address will be automatically assigned.</p>
+     */
+    inline CreateNatGatewayRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     ConnectivityType m_connectivityType;
-    bool m_connectivityTypeHasBeenSet;
+    bool m_connectivityTypeHasBeenSet = false;
+
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

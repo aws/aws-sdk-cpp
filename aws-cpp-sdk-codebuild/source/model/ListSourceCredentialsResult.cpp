@@ -30,7 +30,7 @@ ListSourceCredentialsResult& ListSourceCredentialsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("sourceCredentialsInfos"))
   {
-    Array<JsonView> sourceCredentialsInfosJsonList = jsonValue.GetArray("sourceCredentialsInfos");
+    Aws::Utils::Array<JsonView> sourceCredentialsInfosJsonList = jsonValue.GetArray("sourceCredentialsInfos");
     for(unsigned sourceCredentialsInfosIndex = 0; sourceCredentialsInfosIndex < sourceCredentialsInfosJsonList.GetLength(); ++sourceCredentialsInfosIndex)
     {
       m_sourceCredentialsInfos.push_back(sourceCredentialsInfosJsonList[sourceCredentialsInfosIndex].AsObject());

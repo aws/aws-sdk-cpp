@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SalesforceConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SalesforceConnectorProfileCredentials
+  class SalesforceConnectorProfileCredentials
   {
   public:
-    SalesforceConnectorProfileCredentials();
-    SalesforceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials();
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     ConnectorOAuthRequest m_oAuthRequest;
-    bool m_oAuthRequestHasBeenSet;
+    bool m_oAuthRequestHasBeenSet = false;
 
     Aws::String m_clientCredentialsArn;
-    bool m_clientCredentialsArnHasBeenSet;
+    bool m_clientCredentialsArnHasBeenSet = false;
   };
 
 } // namespace Model

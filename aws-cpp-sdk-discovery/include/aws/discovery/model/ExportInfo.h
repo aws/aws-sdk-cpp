@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ExportInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API ExportInfo
+  class ExportInfo
   {
   public:
-    ExportInfo();
-    ExportInfo(Aws::Utils::Json::JsonView jsonValue);
-    ExportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API ExportInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ExportInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API ExportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -354,28 +354,28 @@ namespace Model
   private:
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
 
     ExportStatus m_exportStatus;
-    bool m_exportStatusHasBeenSet;
+    bool m_exportStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_configurationsDownloadUrl;
-    bool m_configurationsDownloadUrlHasBeenSet;
+    bool m_configurationsDownloadUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_exportRequestTime;
-    bool m_exportRequestTimeHasBeenSet;
+    bool m_exportRequestTimeHasBeenSet = false;
 
     bool m_isTruncated;
-    bool m_isTruncatedHasBeenSet;
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedStartTime;
-    bool m_requestedStartTimeHasBeenSet;
+    bool m_requestedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedEndTime;
-    bool m_requestedEndTimeHasBeenSet;
+    bool m_requestedEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

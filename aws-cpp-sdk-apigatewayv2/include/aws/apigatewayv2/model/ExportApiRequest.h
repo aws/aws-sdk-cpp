@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_APIGATEWAYV2_API ExportApiRequest : public ApiGatewayV2Request
+  class ExportApiRequest : public ApiGatewayV2Request
   {
   public:
-    ExportApiRequest();
+    AWS_APIGATEWAYV2_API ExportApiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportApi"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APIGATEWAYV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -310,22 +310,22 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_exportVersion;
-    bool m_exportVersionHasBeenSet;
+    bool m_exportVersionHasBeenSet = false;
 
     bool m_includeExtensions;
-    bool m_includeExtensionsHasBeenSet;
+    bool m_includeExtensionsHasBeenSet = false;
 
     Aws::String m_outputType;
-    bool m_outputTypeHasBeenSet;
+    bool m_outputTypeHasBeenSet = false;
 
     Aws::String m_specification;
-    bool m_specificationHasBeenSet;
+    bool m_specificationHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

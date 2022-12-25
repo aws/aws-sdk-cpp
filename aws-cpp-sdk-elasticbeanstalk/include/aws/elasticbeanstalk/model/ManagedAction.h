@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ManagedAction">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ManagedAction
+  class ManagedAction
   {
   public:
-    ManagedAction();
-    ManagedAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ManagedAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ManagedAction();
+    AWS_ELASTICBEANSTALK_API ManagedAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ManagedAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_actionDescription;
-    bool m_actionDescriptionHasBeenSet;
+    bool m_actionDescriptionHasBeenSet = false;
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     ActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_windowStartTime;
-    bool m_windowStartTimeHasBeenSet;
+    bool m_windowStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

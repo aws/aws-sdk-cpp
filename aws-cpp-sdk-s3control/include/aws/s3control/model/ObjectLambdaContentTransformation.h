@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaContentTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API ObjectLambdaContentTransformation
+  class ObjectLambdaContentTransformation
   {
   public:
-    ObjectLambdaContentTransformation();
-    ObjectLambdaContentTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectLambdaContentTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaContentTransformation();
+    AWS_S3CONTROL_API ObjectLambdaContentTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaContentTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AwsLambdaTransformation m_awsLambda;
-    bool m_awsLambdaHasBeenSet;
+    bool m_awsLambdaHasBeenSet = false;
   };
 
 } // namespace Model

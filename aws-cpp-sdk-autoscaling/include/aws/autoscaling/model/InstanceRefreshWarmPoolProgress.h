@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshWarmPoolProgress">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API InstanceRefreshWarmPoolProgress
+  class InstanceRefreshWarmPoolProgress
   {
   public:
-    InstanceRefreshWarmPoolProgress();
-    InstanceRefreshWarmPoolProgress(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceRefreshWarmPoolProgress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefreshWarmPoolProgress();
+    AWS_AUTOSCALING_API InstanceRefreshWarmPoolProgress(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefreshWarmPoolProgress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_percentageComplete;
-    bool m_percentageCompleteHasBeenSet;
+    bool m_percentageCompleteHasBeenSet = false;
 
     int m_instancesToUpdate;
-    bool m_instancesToUpdateHasBeenSet;
+    bool m_instancesToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

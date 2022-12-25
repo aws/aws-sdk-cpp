@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ConfigurationProfileSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API ConfigurationProfileSummary
+  class ConfigurationProfileSummary
   {
   public:
-    ConfigurationProfileSummary();
-    ConfigurationProfileSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API ConfigurationProfileSummary();
+    AWS_APPCONFIG_API ConfigurationProfileSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API ConfigurationProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_locationUri;
-    bool m_locationUriHasBeenSet;
+    bool m_locationUriHasBeenSet = false;
 
     Aws::Vector<ValidatorType> m_validatorTypes;
-    bool m_validatorTypesHasBeenSet;
+    bool m_validatorTypesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

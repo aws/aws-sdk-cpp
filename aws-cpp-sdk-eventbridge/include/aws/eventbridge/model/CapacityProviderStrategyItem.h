@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API CapacityProviderStrategyItem
+  class CapacityProviderStrategyItem
   {
   public:
-    CapacityProviderStrategyItem();
-    CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
-    CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API CapacityProviderStrategyItem();
+    AWS_EVENTBRIDGE_API CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_capacityProvider;
-    bool m_capacityProviderHasBeenSet;
+    bool m_capacityProviderHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     int m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

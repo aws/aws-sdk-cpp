@@ -38,7 +38,7 @@ Aws::String ModifyCapacityReservationFleetRequest::SerializePayload() const
 
   if(m_endDateHasBeenSet)
   {
-    ss << "EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

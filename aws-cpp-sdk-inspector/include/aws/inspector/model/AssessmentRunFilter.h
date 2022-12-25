@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRunFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentRunFilter
+  class AssessmentRunFilter
   {
   public:
-    AssessmentRunFilter();
-    AssessmentRunFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentRunFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentRunFilter();
+    AWS_INSPECTOR_API AssessmentRunFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentRunFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -412,25 +412,25 @@ namespace Model
   private:
 
     Aws::String m_namePattern;
-    bool m_namePatternHasBeenSet;
+    bool m_namePatternHasBeenSet = false;
 
     Aws::Vector<AssessmentRunState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     DurationRange m_durationRange;
-    bool m_durationRangeHasBeenSet;
+    bool m_durationRangeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     TimestampRange m_startTimeRange;
-    bool m_startTimeRangeHasBeenSet;
+    bool m_startTimeRangeHasBeenSet = false;
 
     TimestampRange m_completionTimeRange;
-    bool m_completionTimeRangeHasBeenSet;
+    bool m_completionTimeRangeHasBeenSet = false;
 
     TimestampRange m_stateChangeTimeRange;
-    bool m_stateChangeTimeRangeHasBeenSet;
+    bool m_stateChangeTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

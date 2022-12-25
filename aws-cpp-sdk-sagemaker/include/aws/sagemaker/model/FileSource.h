@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FileSource
+  class FileSource
   {
   public:
-    FileSource();
-    FileSource(Aws::Utils::Json::JsonView jsonValue);
-    FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FileSource();
+    AWS_SAGEMAKER_API FileSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_contentDigest;
-    bool m_contentDigestHasBeenSet;
+    bool m_contentDigestHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

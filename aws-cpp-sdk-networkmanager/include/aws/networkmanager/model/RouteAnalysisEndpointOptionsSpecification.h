@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteAnalysisEndpointOptionsSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteAnalysisEndpointOptionsSpecification
+  class RouteAnalysisEndpointOptionsSpecification
   {
   public:
-    RouteAnalysisEndpointOptionsSpecification();
-    RouteAnalysisEndpointOptionsSpecification(Aws::Utils::Json::JsonView jsonValue);
-    RouteAnalysisEndpointOptionsSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteAnalysisEndpointOptionsSpecification();
+    AWS_NETWORKMANAGER_API RouteAnalysisEndpointOptionsSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteAnalysisEndpointOptionsSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAttachmentArn;
-    bool m_transitGatewayAttachmentArnHasBeenSet;
+    bool m_transitGatewayAttachmentArnHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutPortfolioPreferencesRequest::PutPortfolioPreferencesRequest() : 
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false),
     m_applicationPreferencesHasBeenSet(false),
     m_databasePreferencesHasBeenSet(false),
     m_prioritizeBusinessGoalsHasBeenSet(false)
@@ -22,6 +24,11 @@ PutPortfolioPreferencesRequest::PutPortfolioPreferencesRequest() :
 Aws::String PutPortfolioPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("applicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
+  }
 
   if(m_applicationPreferencesHasBeenSet)
   {

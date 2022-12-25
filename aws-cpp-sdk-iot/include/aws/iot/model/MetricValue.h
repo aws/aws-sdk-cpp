@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MetricValue">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API MetricValue
+  class MetricValue
   {
   public:
-    MetricValue();
-    MetricValue(Aws::Utils::Json::JsonView jsonValue);
-    MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MetricValue();
+    AWS_IOT_API MetricValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
 
     Aws::Vector<int> m_ports;
-    bool m_portsHasBeenSet;
+    bool m_portsHasBeenSet = false;
 
     double m_number;
-    bool m_numberHasBeenSet;
+    bool m_numberHasBeenSet = false;
 
     Aws::Vector<double> m_numbers;
-    bool m_numbersHasBeenSet;
+    bool m_numbersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_strings;
-    bool m_stringsHasBeenSet;
+    bool m_stringsHasBeenSet = false;
   };
 
 } // namespace Model

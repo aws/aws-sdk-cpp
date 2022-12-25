@@ -30,22 +30,18 @@ namespace Model
 {
 
   /**
-   * <p>Object that describes a <a>StartGameSessionPlacement</a> request. This object
-   * includes the full details of the original request plus the current status and
-   * start/end time stamps.</p> <p>Game session placement-related operations
-   * include:</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-   * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
-   * <a>StopGameSessionPlacement</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>This object includes the full details of the original request plus the
+   * current status and start/end time stamps.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionPlacement">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameSessionPlacement
+  class GameSessionPlacement
   {
   public:
-    GameSessionPlacement();
-    GameSessionPlacement(Aws::Utils::Json::JsonView jsonValue);
-    GameSessionPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameSessionPlacement();
+    AWS_GAMELIFT_API GameSessionPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameSessionPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +140,13 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline const GameSessionPlacementState& GetStatus() const{ return m_status; }
 
@@ -160,13 +156,13 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -176,13 +172,13 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const GameSessionPlacementState& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -192,13 +188,13 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -208,13 +204,13 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline GameSessionPlacement& WithStatus(const GameSessionPlacementState& value) { SetStatus(value); return *this;}
 
@@ -224,21 +220,21 @@ namespace Model
      * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
-     * game session was not successfully created before the time limit expired. You can
-     * resubmit the placement request as needed.</p> </li> <li> <p> <b>FAILED</b> --
-     * GameLift is not able to complete the process of placing the game session. Common
-     * reasons are the game session terminated before the placement process was
-     * completed, or an unexpected internal error.</p> </li> </ul>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
+     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
+     * the time limit expired. You can resubmit the placement request as needed.</p>
+     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
+     * placing the game session. Common reasons are the game session terminated before
+     * the placement process was completed, or an unexpected internal error.</p> </li>
+     * </ul>
      */
     inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -246,8 +242,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -255,8 +251,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -264,8 +260,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -273,8 +269,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -282,8 +278,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -291,8 +287,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -300,8 +296,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -555,49 +551,57 @@ namespace Model
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline void SetPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { SetPlayerLatencies(value); return *this;}
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(const PlayerLatency& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
 
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to @aws; Regions.</p>
+     * latency that a player experiences when connected to Amazon Web Services
+     * Regions.</p>
      */
     inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
@@ -886,9 +890,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const{ return m_placedPlayerSessions; }
 
@@ -897,9 +899,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline bool PlacedPlayerSessionsHasBeenSet() const { return m_placedPlayerSessionsHasBeenSet; }
 
@@ -908,9 +908,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline void SetPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = value; }
 
@@ -919,9 +917,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline void SetPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = std::move(value); }
 
@@ -930,9 +926,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { SetPlacedPlayerSessions(value); return *this;}
 
@@ -941,9 +935,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { SetPlacedPlayerSessions(std::move(value)); return *this;}
 
@@ -952,9 +944,7 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(const PlacedPlayerSession& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(value); return *this; }
 
@@ -963,17 +953,15 @@ namespace Model
      * game session placement request. These player sessions are created only once a
      * new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID. Retrieve full
-     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
-     * ID.</p>
+     * the placement request) and the corresponding player session ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSession&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -981,8 +969,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -990,8 +978,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -999,8 +987,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -1008,8 +996,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -1017,8 +1005,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -1026,8 +1014,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -1035,8 +1023,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process in the <code>GameSession</code>
+     * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -1134,58 +1122,58 @@ namespace Model
   private:
 
     Aws::String m_placementId;
-    bool m_placementIdHasBeenSet;
+    bool m_placementIdHasBeenSet = false;
 
     Aws::String m_gameSessionQueueName;
-    bool m_gameSessionQueueNameHasBeenSet;
+    bool m_gameSessionQueueNameHasBeenSet = false;
 
     GameSessionPlacementState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_gameSessionName;
-    bool m_gameSessionNameHasBeenSet;
+    bool m_gameSessionNameHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_gameSessionArn;
-    bool m_gameSessionArnHasBeenSet;
+    bool m_gameSessionArnHasBeenSet = false;
 
     Aws::String m_gameSessionRegion;
-    bool m_gameSessionRegionHasBeenSet;
+    bool m_gameSessionRegionHasBeenSet = false;
 
     Aws::Vector<PlayerLatency> m_playerLatencies;
-    bool m_playerLatenciesHasBeenSet;
+    bool m_playerLatenciesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
-    bool m_placedPlayerSessionsHasBeenSet;
+    bool m_placedPlayerSessionsHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     Aws::String m_matchmakerData;
-    bool m_matchmakerDataHasBeenSet;
+    bool m_matchmakerDataHasBeenSet = false;
   };
 
 } // namespace Model

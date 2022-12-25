@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GluePolicy">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API GluePolicy
+  class GluePolicy
   {
   public:
-    GluePolicy();
-    GluePolicy(Aws::Utils::Json::JsonView jsonValue);
-    GluePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GluePolicy();
+    AWS_GLUE_API GluePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GluePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_policyInJson;
-    bool m_policyInJsonHasBeenSet;
+    bool m_policyInJsonHasBeenSet = false;
 
     Aws::String m_policyHash;
-    bool m_policyHashHasBeenSet;
+    bool m_policyHashHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

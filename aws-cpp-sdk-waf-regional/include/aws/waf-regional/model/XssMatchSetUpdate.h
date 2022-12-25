@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API XssMatchSetUpdate
+  class XssMatchSetUpdate
   {
   public:
-    XssMatchSetUpdate();
-    XssMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    XssMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API XssMatchSetUpdate();
+    AWS_WAFREGIONAL_API XssMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API XssMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     XssMatchTuple m_xssMatchTuple;
-    bool m_xssMatchTupleHasBeenSet;
+    bool m_xssMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

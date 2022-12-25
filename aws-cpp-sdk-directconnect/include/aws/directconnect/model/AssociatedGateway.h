@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociatedGateway">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API AssociatedGateway
+  class AssociatedGateway
   {
   public:
-    AssociatedGateway();
-    AssociatedGateway(Aws::Utils::Json::JsonView jsonValue);
-    AssociatedGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API AssociatedGateway();
+    AWS_DIRECTCONNECT_API AssociatedGateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API AssociatedGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     GatewayType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

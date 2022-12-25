@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LocalVolumeResourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API LocalVolumeResourceData
+  class LocalVolumeResourceData
   {
   public:
-    LocalVolumeResourceData();
-    LocalVolumeResourceData(Aws::Utils::Json::JsonView jsonValue);
-    LocalVolumeResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API LocalVolumeResourceData();
+    AWS_GREENGRASS_API LocalVolumeResourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API LocalVolumeResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     GroupOwnerSetting m_groupOwnerSetting;
-    bool m_groupOwnerSettingHasBeenSet;
+    bool m_groupOwnerSettingHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

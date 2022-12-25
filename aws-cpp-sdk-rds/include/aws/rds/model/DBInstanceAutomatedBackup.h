@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBInstanceAutomatedBackup
+  class DBInstanceAutomatedBackup
   {
   public:
-    DBInstanceAutomatedBackup();
-    DBInstanceAutomatedBackup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBInstanceAutomatedBackup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBInstanceAutomatedBackup();
+    AWS_RDS_API DBInstanceAutomatedBackup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBInstanceAutomatedBackup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -445,42 +445,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -1167,88 +1167,112 @@ namespace Model
      */
     inline DBInstanceAutomatedBackup& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceArn;
-    bool m_dBInstanceArnHasBeenSet;
+    bool m_dBInstanceArnHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     RestoreWindow m_restoreWindow;
-    bool m_restoreWindowHasBeenSet;
+    bool m_restoreWindowHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_dBInstanceAutomatedBackupsArn;
-    bool m_dBInstanceAutomatedBackupsArnHasBeenSet;
+    bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
 
     Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
-    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet;
+    bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = false;
 
     Aws::String m_backupTarget;
-    bool m_backupTargetHasBeenSet;
+    bool m_backupTargetHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/NotificationProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API NotificationProperty
+  class NotificationProperty
   {
   public:
-    NotificationProperty();
-    NotificationProperty(Aws::Utils::Json::JsonView jsonValue);
-    NotificationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API NotificationProperty();
+    AWS_GLUE_API NotificationProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API NotificationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_notifyDelayAfter;
-    bool m_notifyDelayAfterHasBeenSet;
+    bool m_notifyDelayAfterHasBeenSet = false;
   };
 
 } // namespace Model

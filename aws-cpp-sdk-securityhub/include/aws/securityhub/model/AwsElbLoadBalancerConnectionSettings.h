@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerConnectionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionSettings
+  class AwsElbLoadBalancerConnectionSettings
   {
   public:
-    AwsElbLoadBalancerConnectionSettings();
-    AwsElbLoadBalancerConnectionSettings(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerConnectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionSettings();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_idleTimeout;
-    bool m_idleTimeoutHasBeenSet;
+    bool m_idleTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

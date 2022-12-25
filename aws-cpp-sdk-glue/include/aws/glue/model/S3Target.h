@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Target">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API S3Target
+  class S3Target
   {
   public:
-    S3Target();
-    S3Target(Aws::Utils::Json::JsonView jsonValue);
-    S3Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3Target();
+    AWS_GLUE_API S3Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,22 +331,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     int m_sampleSize;
-    bool m_sampleSizeHasBeenSet;
+    bool m_sampleSizeHasBeenSet = false;
 
     Aws::String m_eventQueueArn;
-    bool m_eventQueueArnHasBeenSet;
+    bool m_eventQueueArnHasBeenSet = false;
 
     Aws::String m_dlqEventQueueArn;
-    bool m_dlqEventQueueArnHasBeenSet;
+    bool m_dlqEventQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

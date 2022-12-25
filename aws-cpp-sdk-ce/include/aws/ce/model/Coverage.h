@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Coverage">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Coverage
+  class Coverage
   {
   public:
-    Coverage();
-    Coverage(Aws::Utils::Json::JsonView jsonValue);
-    Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Coverage();
+    AWS_COSTEXPLORER_API Coverage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,13 +141,13 @@ namespace Model
   private:
 
     CoverageHours m_coverageHours;
-    bool m_coverageHoursHasBeenSet;
+    bool m_coverageHoursHasBeenSet = false;
 
     CoverageNormalizedUnits m_coverageNormalizedUnits;
-    bool m_coverageNormalizedUnitsHasBeenSet;
+    bool m_coverageNormalizedUnitsHasBeenSet = false;
 
     CoverageCost m_coverageCost;
-    bool m_coverageCostHasBeenSet;
+    bool m_coverageCostHasBeenSet = false;
   };
 
 } // namespace Model

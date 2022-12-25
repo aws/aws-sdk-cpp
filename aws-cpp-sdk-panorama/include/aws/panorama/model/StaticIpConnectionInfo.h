@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/StaticIpConnectionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API StaticIpConnectionInfo
+  class StaticIpConnectionInfo
   {
   public:
-    StaticIpConnectionInfo();
-    StaticIpConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
-    StaticIpConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API StaticIpConnectionInfo();
+    AWS_PANORAMA_API StaticIpConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API StaticIpConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_defaultGateway;
-    bool m_defaultGatewayHasBeenSet;
+    bool m_defaultGatewayHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dns;
-    bool m_dnsHasBeenSet;
+    bool m_dnsHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_mask;
-    bool m_maskHasBeenSet;
+    bool m_maskHasBeenSet = false;
   };
 
 } // namespace Model

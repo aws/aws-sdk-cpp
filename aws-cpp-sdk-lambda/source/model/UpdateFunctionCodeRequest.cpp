@@ -82,7 +82,7 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
 
   if(m_architecturesHasBeenSet)
   {
-   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
    {
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/TitleAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API TitleAggregation
+  class TitleAggregation
   {
   public:
-    TitleAggregation();
-    TitleAggregation(Aws::Utils::Json::JsonView jsonValue);
-    TitleAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API TitleAggregation();
+    AWS_INSPECTOR2_API TitleAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API TitleAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,19 +219,19 @@ namespace Model
   private:
 
     AggregationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     TitleSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_titles;
-    bool m_titlesHasBeenSet;
+    bool m_titlesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilityIds;
-    bool m_vulnerabilityIdsHasBeenSet;
+    bool m_vulnerabilityIdsHasBeenSet = false;
   };
 
 } // namespace Model

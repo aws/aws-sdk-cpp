@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ParallelDataProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API ParallelDataProperties
+  class ParallelDataProperties
   {
   public:
-    ParallelDataProperties();
-    ParallelDataProperties(Aws::Utils::Json::JsonView jsonValue);
-    ParallelDataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API ParallelDataProperties();
+    AWS_TRANSLATE_API ParallelDataProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API ParallelDataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -645,55 +645,55 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParallelDataStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetLanguageCodes;
-    bool m_targetLanguageCodesHasBeenSet;
+    bool m_targetLanguageCodesHasBeenSet = false;
 
     ParallelDataConfig m_parallelDataConfig;
-    bool m_parallelDataConfigHasBeenSet;
+    bool m_parallelDataConfigHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     long long m_importedDataSize;
-    bool m_importedDataSizeHasBeenSet;
+    bool m_importedDataSizeHasBeenSet = false;
 
     long long m_importedRecordCount;
-    bool m_importedRecordCountHasBeenSet;
+    bool m_importedRecordCountHasBeenSet = false;
 
     long long m_failedRecordCount;
-    bool m_failedRecordCountHasBeenSet;
+    bool m_failedRecordCountHasBeenSet = false;
 
     long long m_skippedRecordCount;
-    bool m_skippedRecordCountHasBeenSet;
+    bool m_skippedRecordCountHasBeenSet = false;
 
     EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     ParallelDataStatus m_latestUpdateAttemptStatus;
-    bool m_latestUpdateAttemptStatusHasBeenSet;
+    bool m_latestUpdateAttemptStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestUpdateAttemptAt;
-    bool m_latestUpdateAttemptAtHasBeenSet;
+    bool m_latestUpdateAttemptAtHasBeenSet = false;
   };
 
 } // namespace Model

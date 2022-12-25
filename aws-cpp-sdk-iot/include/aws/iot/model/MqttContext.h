@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MqttContext">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API MqttContext
+  class MqttContext
   {
   public:
-    MqttContext();
-    MqttContext(Aws::Utils::Json::JsonView jsonValue);
-    MqttContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MqttContext();
+    AWS_IOT_API MqttContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MqttContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

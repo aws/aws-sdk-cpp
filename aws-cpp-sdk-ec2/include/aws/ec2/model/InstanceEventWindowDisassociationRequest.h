@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceEventWindowDisassociationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceEventWindowDisassociationRequest
+  class InstanceEventWindowDisassociationRequest
   {
   public:
-    InstanceEventWindowDisassociationRequest();
-    InstanceEventWindowDisassociationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceEventWindowDisassociationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceEventWindowDisassociationRequest();
+    AWS_EC2_API InstanceEventWindowDisassociationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceEventWindowDisassociationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_instanceTags;
-    bool m_instanceTagsHasBeenSet;
+    bool m_instanceTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dedicatedHostIds;
-    bool m_dedicatedHostIdsHasBeenSet;
+    bool m_dedicatedHostIdsHasBeenSet = false;
   };
 
 } // namespace Model

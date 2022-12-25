@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RecordsIngested">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API RecordsIngested
+  class RecordsIngested
   {
   public:
-    RecordsIngested();
-    RecordsIngested(Aws::Utils::Json::JsonView jsonValue);
-    RecordsIngested& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API RecordsIngested();
+    AWS_TIMESTREAMWRITE_API RecordsIngested(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API RecordsIngested& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_memoryStore;
-    bool m_memoryStoreHasBeenSet;
+    bool m_memoryStoreHasBeenSet = false;
 
     int m_magneticStore;
-    bool m_magneticStoreHasBeenSet;
+    bool m_magneticStoreHasBeenSet = false;
   };
 
 } // namespace Model

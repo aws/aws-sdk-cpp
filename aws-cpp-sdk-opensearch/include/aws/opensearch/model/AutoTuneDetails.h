@@ -24,44 +24,56 @@ namespace Model
 {
 
   /**
-   * <p>Specifies details about the Auto-Tune action. See <a
-   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-   * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-   * information. </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies details about a scheduled Auto-Tune action. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+   * for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AutoTuneDetails
+  class AutoTuneDetails
   {
   public:
-    AutoTuneDetails();
-    AutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AutoTuneDetails();
+    AWS_OPENSEARCHSERVICE_API AutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline const ScheduledAutoTuneDetails& GetScheduledAutoTuneDetails() const{ return m_scheduledAutoTuneDetails; }
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline bool ScheduledAutoTuneDetailsHasBeenSet() const { return m_scheduledAutoTuneDetailsHasBeenSet; }
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline void SetScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = value; }
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline void SetScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = std::move(value); }
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline AutoTuneDetails& WithScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { SetScheduledAutoTuneDetails(value); return *this;}
 
-    
+    /**
+     * <p>Container for details about a scheduled Auto-Tune action.</p>
+     */
     inline AutoTuneDetails& WithScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { SetScheduledAutoTuneDetails(std::move(value)); return *this;}
 
   private:
 
     ScheduledAutoTuneDetails m_scheduledAutoTuneDetails;
-    bool m_scheduledAutoTuneDetailsHasBeenSet;
+    bool m_scheduledAutoTuneDetailsHasBeenSet = false;
   };
 
 } // namespace Model

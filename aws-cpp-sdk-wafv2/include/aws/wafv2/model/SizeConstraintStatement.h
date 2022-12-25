@@ -32,8 +32,8 @@ namespace Model
    * less than (&lt;). For example, you can use a size constraint statement to look
    * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
    * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
-   * the request body for your web requests never exceeds 8192 bytes, you can create
-   * a size constraint condition and block requests that have a request body greater
+   * the request body for your web requests never exceeds 8192 bytes, you could use a
+   * size constraint statement to block requests that have a request body greater
    * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
    * to filter on, the slash (/) in the URI counts as one character. For example, the
    * URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See Also:</h3>  
@@ -41,48 +41,42 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SizeConstraintStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SizeConstraintStatement
+  class SizeConstraintStatement
   {
   public:
-    SizeConstraintStatement();
-    SizeConstraintStatement(Aws::Utils::Json::JsonView jsonValue);
-    SizeConstraintStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SizeConstraintStatement();
+    AWS_WAFV2_API SizeConstraintStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SizeConstraintStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of the web request that you want WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -226,16 +220,16 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
-    bool m_textTransformationsHasBeenSet;
+    bool m_textTransformationsHasBeenSet = false;
   };
 
 } // namespace Model

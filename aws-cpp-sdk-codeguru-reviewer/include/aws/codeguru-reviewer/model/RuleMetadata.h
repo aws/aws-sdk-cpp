@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RuleMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RuleMetadata
+  class RuleMetadata
   {
   public:
-    RuleMetadata();
-    RuleMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RuleMetadata();
+    AWS_CODEGURUREVIEWER_API RuleMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_shortDescription;
-    bool m_shortDescriptionHasBeenSet;
+    bool m_shortDescriptionHasBeenSet = false;
 
     Aws::String m_longDescription;
-    bool m_longDescriptionHasBeenSet;
+    bool m_longDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ruleTags;
-    bool m_ruleTagsHasBeenSet;
+    bool m_ruleTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/MultipleOperatingModes">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API MultipleOperatingModes
+  class MultipleOperatingModes
   {
   public:
-    MultipleOperatingModes();
-    MultipleOperatingModes(Aws::Utils::Json::JsonView jsonValue);
-    MultipleOperatingModes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API MultipleOperatingModes();
+    AWS_LOOKOUTEQUIPMENT_API MultipleOperatingModes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API MultipleOperatingModes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     StatisticalIssueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

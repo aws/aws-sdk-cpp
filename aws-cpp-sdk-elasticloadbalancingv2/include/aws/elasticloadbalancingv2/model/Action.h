@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API Action
+  class Action
   {
   public:
-    Action();
-    Action(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Action& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Action();
+    AWS_ELASTICLOADBALANCINGV2_API Action(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Action& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -392,28 +392,28 @@ namespace Model
   private:
 
     ActionTypeEnum m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     AuthenticateOidcActionConfig m_authenticateOidcConfig;
-    bool m_authenticateOidcConfigHasBeenSet;
+    bool m_authenticateOidcConfigHasBeenSet = false;
 
     AuthenticateCognitoActionConfig m_authenticateCognitoConfig;
-    bool m_authenticateCognitoConfigHasBeenSet;
+    bool m_authenticateCognitoConfigHasBeenSet = false;
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     RedirectActionConfig m_redirectConfig;
-    bool m_redirectConfigHasBeenSet;
+    bool m_redirectConfigHasBeenSet = false;
 
     FixedResponseActionConfig m_fixedResponseConfig;
-    bool m_fixedResponseConfigHasBeenSet;
+    bool m_fixedResponseConfigHasBeenSet = false;
 
     ForwardActionConfig m_forwardConfig;
-    bool m_forwardConfigHasBeenSet;
+    bool m_forwardConfigHasBeenSet = false;
   };
 
 } // namespace Model

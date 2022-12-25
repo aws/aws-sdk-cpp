@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeHttp2ConnectionPool">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeHttp2ConnectionPool
+  class VirtualNodeHttp2ConnectionPool
   {
   public:
-    VirtualNodeHttp2ConnectionPool();
-    VirtualNodeHttp2ConnectionPool(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeHttp2ConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeHttp2ConnectionPool();
+    AWS_APPMESH_API VirtualNodeHttp2ConnectionPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeHttp2ConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_maxRequests;
-    bool m_maxRequestsHasBeenSet;
+    bool m_maxRequestsHasBeenSet = false;
   };
 
 } // namespace Model

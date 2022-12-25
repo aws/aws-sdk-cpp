@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCacheInput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API RefreshCacheRequest : public StorageGatewayRequest
+  class RefreshCacheRequest : public StorageGatewayRequest
   {
   public:
-    RefreshCacheRequest();
+    AWS_STORAGEGATEWAY_API RefreshCacheRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RefreshCache"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_folderList;
-    bool m_folderListHasBeenSet;
+    bool m_folderListHasBeenSet = false;
 
     bool m_recursive;
-    bool m_recursiveHasBeenSet;
+    bool m_recursiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RollbackInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API RollbackInfo
+  class RollbackInfo
   {
   public:
-    RollbackInfo();
-    RollbackInfo(Aws::Utils::Json::JsonView jsonValue);
-    RollbackInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API RollbackInfo();
+    AWS_CODEDEPLOY_API RollbackInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API RollbackInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_rollbackDeploymentId;
-    bool m_rollbackDeploymentIdHasBeenSet;
+    bool m_rollbackDeploymentIdHasBeenSet = false;
 
     Aws::String m_rollbackTriggeringDeploymentId;
-    bool m_rollbackTriggeringDeploymentIdHasBeenSet;
+    bool m_rollbackTriggeringDeploymentIdHasBeenSet = false;
 
     Aws::String m_rollbackMessage;
-    bool m_rollbackMessageHasBeenSet;
+    bool m_rollbackMessageHasBeenSet = false;
   };
 
 } // namespace Model

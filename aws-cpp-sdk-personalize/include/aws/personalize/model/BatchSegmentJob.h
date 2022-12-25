@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchSegmentJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchSegmentJob
+  class BatchSegmentJob
   {
   public:
-    BatchSegmentJob();
-    BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
-    BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchSegmentJob();
+    AWS_PERSONALIZE_API BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -522,40 +522,40 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_batchSegmentJobArn;
-    bool m_batchSegmentJobArnHasBeenSet;
+    bool m_batchSegmentJobArnHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     int m_numResults;
-    bool m_numResultsHasBeenSet;
+    bool m_numResultsHasBeenSet = false;
 
     BatchSegmentJobInput m_jobInput;
-    bool m_jobInputHasBeenSet;
+    bool m_jobInputHasBeenSet = false;
 
     BatchSegmentJobOutput m_jobOutput;
-    bool m_jobOutputHasBeenSet;
+    bool m_jobOutputHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

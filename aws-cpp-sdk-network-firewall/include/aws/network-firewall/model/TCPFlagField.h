@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TCPFlagField">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API TCPFlagField
+  class TCPFlagField
   {
   public:
-    TCPFlagField();
-    TCPFlagField(Aws::Utils::Json::JsonView jsonValue);
-    TCPFlagField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API TCPFlagField();
+    AWS_NETWORKFIREWALL_API TCPFlagField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API TCPFlagField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::Vector<TCPFlag> m_flags;
-    bool m_flagsHasBeenSet;
+    bool m_flagsHasBeenSet = false;
 
     Aws::Vector<TCPFlag> m_masks;
-    bool m_masksHasBeenSet;
+    bool m_masksHasBeenSet = false;
   };
 
 } // namespace Model

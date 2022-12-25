@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ListMembersRequest : public ManagedBlockchainRequest
+  class ListMembersRequest : public ManagedBlockchainRequest
   {
   public:
-    ListMembersRequest();
+    AWS_MANAGEDBLOCKCHAIN_API ListMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MANAGEDBLOCKCHAIN_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -160,29 +160,33 @@ namespace Model
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline bool GetIsOwned() const{ return m_isOwned; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline bool IsOwnedHasBeenSet() const { return m_isOwnedHasBeenSet; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline void SetIsOwned(bool value) { m_isOwnedHasBeenSet = true; m_isOwned = value; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline ListMembersRequest& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
 
@@ -251,22 +255,22 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     MemberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_isOwned;
-    bool m_isOwnedHasBeenSet;
+    bool m_isOwnedHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ProgressCounters">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ProgressCounters
+  class ProgressCounters
   {
   public:
-    ProgressCounters();
-    ProgressCounters(Aws::Utils::Json::JsonView jsonValue);
-    ProgressCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ProgressCounters();
+    AWS_SSM_API ProgressCounters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ProgressCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,19 +180,19 @@ namespace Model
   private:
 
     int m_totalSteps;
-    bool m_totalStepsHasBeenSet;
+    bool m_totalStepsHasBeenSet = false;
 
     int m_successSteps;
-    bool m_successStepsHasBeenSet;
+    bool m_successStepsHasBeenSet = false;
 
     int m_failedSteps;
-    bool m_failedStepsHasBeenSet;
+    bool m_failedStepsHasBeenSet = false;
 
     int m_cancelledSteps;
-    bool m_cancelledStepsHasBeenSet;
+    bool m_cancelledStepsHasBeenSet = false;
 
     int m_timedOutSteps;
-    bool m_timedOutStepsHasBeenSet;
+    bool m_timedOutStepsHasBeenSet = false;
   };
 
 } // namespace Model

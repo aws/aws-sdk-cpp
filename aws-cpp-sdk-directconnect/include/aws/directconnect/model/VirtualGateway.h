@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateway">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API VirtualGateway
+  class VirtualGateway
   {
   public:
-    VirtualGateway();
-    VirtualGateway(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API VirtualGateway();
+    AWS_DIRECTCONNECT_API VirtualGateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API VirtualGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_virtualGatewayState;
-    bool m_virtualGatewayStateHasBeenSet;
+    bool m_virtualGatewayStateHasBeenSet = false;
   };
 
 } // namespace Model

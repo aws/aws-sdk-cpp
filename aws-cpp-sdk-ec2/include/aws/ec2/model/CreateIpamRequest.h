@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateIpamRequest : public EC2Request
+  class CreateIpamRequest : public EC2Request
   {
   public:
-    CreateIpamRequest();
+    AWS_EC2_API CreateIpamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIpam"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -119,8 +119,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline const Aws::Vector<AddIpamOperatingRegion>& GetOperatingRegions() const{ return m_operatingRegions; }
 
@@ -129,8 +129,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline bool OperatingRegionsHasBeenSet() const { return m_operatingRegionsHasBeenSet; }
 
@@ -139,8 +139,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline void SetOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = value; }
 
@@ -149,8 +149,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline void SetOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = std::move(value); }
 
@@ -159,8 +159,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline CreateIpamRequest& WithOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { SetOperatingRegions(value); return *this;}
 
@@ -169,8 +169,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline CreateIpamRequest& WithOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { SetOperatingRegions(std::move(value)); return *this;}
 
@@ -179,8 +179,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline CreateIpamRequest& AddOperatingRegions(const AddIpamOperatingRegion& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(value); return *this; }
 
@@ -189,8 +189,8 @@ namespace Model
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
      * discovers and monitors resources in the Amazon Web Services Regions you select
      * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>. </p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline CreateIpamRequest& AddOperatingRegions(AddIpamOperatingRegion&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(std::move(value)); return *this; }
 
@@ -335,19 +335,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<AddIpamOperatingRegion> m_operatingRegions;
-    bool m_operatingRegionsHasBeenSet;
+    bool m_operatingRegionsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

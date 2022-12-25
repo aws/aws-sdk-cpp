@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API SNOMEDCTEntity
+  class SNOMEDCTEntity
   {
   public:
-    SNOMEDCTEntity();
-    SNOMEDCTEntity(Aws::Utils::Json::JsonView jsonValue);
-    SNOMEDCTEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTEntity();
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -409,34 +409,34 @@ namespace Model
   private:
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     SNOMEDCTEntityCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     SNOMEDCTEntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     Aws::Vector<SNOMEDCTAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<SNOMEDCTTrait> m_traits;
-    bool m_traitsHasBeenSet;
+    bool m_traitsHasBeenSet = false;
 
     Aws::Vector<SNOMEDCTConcept> m_sNOMEDCTConcepts;
-    bool m_sNOMEDCTConceptsHasBeenSet;
+    bool m_sNOMEDCTConceptsHasBeenSet = false;
   };
 
 } // namespace Model

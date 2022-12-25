@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/iottwinmaker/model/Status.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -31,126 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/EntitySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API EntitySummary
+  class EntitySummary
   {
   public:
-    EntitySummary();
-    EntitySummary(Aws::Utils::Json::JsonView jsonValue);
-    EntitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline EntitySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline EntitySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the entity.</p>
-     */
-    inline EntitySummary& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline EntitySummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the entity was created.</p>
-     */
-    inline EntitySummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline EntitySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline EntitySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline EntitySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    AWS_IOTTWINMAKER_API EntitySummary();
+    AWS_IOTTWINMAKER_API EntitySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API EntitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,28 +123,44 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>The ARN of the entity.</p>
      */
-    inline bool GetHasChildEntities() const{ return m_hasChildEntities; }
+    inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>The ARN of the entity.</p>
      */
-    inline bool HasChildEntitiesHasBeenSet() const { return m_hasChildEntitiesHasBeenSet; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>The ARN of the entity.</p>
      */
-    inline void SetHasChildEntities(bool value) { m_hasChildEntitiesHasBeenSet = true; m_hasChildEntities = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>A Boolean value that specifies whether the entity has child entities or
-     * not.</p>
+     * <p>The ARN of the entity.</p>
      */
-    inline EntitySummary& WithHasChildEntities(bool value) { SetHasChildEntities(value); return *this;}
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the entity.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the entity.</p>
+     */
+    inline EntitySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the entity.</p>
+     */
+    inline EntitySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the entity.</p>
+     */
+    inline EntitySummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -333,6 +236,103 @@ namespace Model
 
 
     /**
+     * <p>The description of the entity.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline EntitySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline EntitySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline EntitySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>A Boolean value that specifies whether the entity has child entities or
+     * not.</p>
+     */
+    inline bool GetHasChildEntities() const{ return m_hasChildEntities; }
+
+    /**
+     * <p>A Boolean value that specifies whether the entity has child entities or
+     * not.</p>
+     */
+    inline bool HasChildEntitiesHasBeenSet() const { return m_hasChildEntitiesHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether the entity has child entities or
+     * not.</p>
+     */
+    inline void SetHasChildEntities(bool value) { m_hasChildEntitiesHasBeenSet = true; m_hasChildEntities = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether the entity has child entities or
+     * not.</p>
+     */
+    inline EntitySummary& WithHasChildEntities(bool value) { SetHasChildEntities(value); return *this;}
+
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline EntitySummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the entity was created.</p>
+     */
+    inline EntitySummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The last date and time when the entity was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
@@ -364,32 +364,32 @@ namespace Model
 
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet;
-
-    Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
-    bool m_hasChildEntities;
-    bool m_hasChildEntitiesHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    bool m_hasChildEntities;
+    bool m_hasChildEntitiesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationDateTime;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

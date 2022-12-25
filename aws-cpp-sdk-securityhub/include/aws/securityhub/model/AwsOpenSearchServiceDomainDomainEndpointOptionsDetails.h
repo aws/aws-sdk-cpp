@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainDomainEndpointOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDomainEndpointOptionsDetails
+  class AwsOpenSearchServiceDomainDomainEndpointOptionsDetails
   {
   public:
-    AwsOpenSearchServiceDomainDomainEndpointOptionsDetails();
-    AwsOpenSearchServiceDomainDomainEndpointOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDomainEndpointOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDomainEndpointOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_customEndpointCertificateArn;
-    bool m_customEndpointCertificateArnHasBeenSet;
+    bool m_customEndpointCertificateArnHasBeenSet = false;
 
     bool m_customEndpointEnabled;
-    bool m_customEndpointEnabledHasBeenSet;
+    bool m_customEndpointEnabledHasBeenSet = false;
 
     bool m_enforceHTTPS;
-    bool m_enforceHTTPSHasBeenSet;
+    bool m_enforceHTTPSHasBeenSet = false;
 
     Aws::String m_customEndpoint;
-    bool m_customEndpointHasBeenSet;
+    bool m_customEndpointHasBeenSet = false;
 
     Aws::String m_tLSSecurityPolicy;
-    bool m_tLSSecurityPolicyHasBeenSet;
+    bool m_tLSSecurityPolicyHasBeenSet = false;
   };
 
 } // namespace Model

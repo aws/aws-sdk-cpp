@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteRunInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API SuiteRunInformation
+  class SuiteRunInformation
   {
   public:
-    SuiteRunInformation();
-    SuiteRunInformation(Aws::Utils::Json::JsonView jsonValue);
-    SuiteRunInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API SuiteRunInformation();
+    AWS_IOTDEVICEADVISOR_API SuiteRunInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API SuiteRunInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -373,34 +373,34 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionId;
-    bool m_suiteDefinitionIdHasBeenSet;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     Aws::String m_suiteDefinitionVersion;
-    bool m_suiteDefinitionVersionHasBeenSet;
+    bool m_suiteDefinitionVersionHasBeenSet = false;
 
     Aws::String m_suiteDefinitionName;
-    bool m_suiteDefinitionNameHasBeenSet;
+    bool m_suiteDefinitionNameHasBeenSet = false;
 
     Aws::String m_suiteRunId;
-    bool m_suiteRunIdHasBeenSet;
+    bool m_suiteRunIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_endAt;
-    bool m_endAtHasBeenSet;
+    bool m_endAtHasBeenSet = false;
 
     SuiteRunStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_passed;
-    bool m_passedHasBeenSet;
+    bool m_passedHasBeenSet = false;
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
   };
 
 } // namespace Model

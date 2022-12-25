@@ -18,13 +18,15 @@ using namespace Aws;
 
 UpdateRuleResult::UpdateRuleResult() : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
 }
 
 UpdateRuleResult::UpdateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
   *this = result;
 }
@@ -58,7 +60,7 @@ UpdateRuleResult& UpdateRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
@@ -68,6 +70,18 @@ UpdateRuleResult& UpdateRuleResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RuleStatusMapper::GetRuleStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("LockState"))
+  {
+    m_lockState = LockStateMapper::GetLockStateForName(jsonValue.GetString("LockState"));
+
+  }
+
+  if(jsonValue.ValueExists("LockEndTime"))
+  {
+    m_lockEndTime = jsonValue.GetDouble("LockEndTime");
 
   }
 

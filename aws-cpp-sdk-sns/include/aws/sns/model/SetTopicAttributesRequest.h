@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API SetTopicAttributesRequest : public SNSRequest
+  class SetTopicAttributesRequest : public SNSRequest
   {
   public:
-    SetTopicAttributesRequest();
+    AWS_SNS_API SetTopicAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetTopicAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -89,8 +89,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -98,8 +103,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -125,8 +133,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -134,8 +147,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -161,8 +177,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -170,8 +191,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -197,8 +221,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -206,8 +235,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -233,8 +265,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -242,8 +279,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -269,8 +309,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -278,8 +323,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -305,8 +353,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -314,8 +367,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -341,8 +397,13 @@ namespace Model
      * <code>DisplayName</code> – The display name to use for a topic with SMS
      * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>TracingConfig</code> – Tracing
+     * mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it
+     * receives from an Amazon SNS publisher to its subscriptions. If set to Active,
+     * Amazon SNS will vend X-Ray segment data to topic owner account if the sampled
+     * flag in the tracing header is true. This is only supported on standard
+     * topics.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -350,8 +411,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
-     * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
-     * following attribute applies only to <a
+     * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
+     * </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -412,13 +476,13 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

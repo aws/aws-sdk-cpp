@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloudFormationStackRecordSourceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API CloudFormationStackRecordSourceInfo
+  class CloudFormationStackRecordSourceInfo
   {
   public:
-    CloudFormationStackRecordSourceInfo();
-    CloudFormationStackRecordSourceInfo(Aws::Utils::Json::JsonView jsonValue);
-    CloudFormationStackRecordSourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API CloudFormationStackRecordSourceInfo();
+    AWS_LIGHTSAIL_API CloudFormationStackRecordSourceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API CloudFormationStackRecordSourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     CloudFormationStackRecordSourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

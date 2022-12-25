@@ -28,12 +28,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API CreateExportResult
+  class CreateExportResult
   {
   public:
-    CreateExportResult();
-    CreateExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateExportResult();
+    AWS_LEXMODELSV2_API CreateExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
      * operation to get the pre-signed S3 URL link to your exported bot or bot
      * locale.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
      * operation to get the pre-signed S3 URL link to your exported bot or bot
      * locale.</p>
      */
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
      * operation to get the pre-signed S3 URL link to your exported bot or bot
      * locale.</p>
      */
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
      * operation to get the pre-signed S3 URL link to your exported bot or bot
      * locale.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
-     * href="https://docs.aws.amazon.com/latest/dg/API_DescribeExport.html">DescribeExport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
      * operation to get the pre-signed S3 URL link to your exported bot or bot
      * locale.</p>
      */

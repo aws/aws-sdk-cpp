@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CaptionSourceSettings
+  class CaptionSourceSettings
   {
   public:
-    CaptionSourceSettings();
-    CaptionSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    CaptionSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CaptionSourceSettings();
+    AWS_MEDIACONVERT_API CaptionSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CaptionSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,28 +381,28 @@ namespace Model
   private:
 
     AncillarySourceSettings m_ancillarySourceSettings;
-    bool m_ancillarySourceSettingsHasBeenSet;
+    bool m_ancillarySourceSettingsHasBeenSet = false;
 
     DvbSubSourceSettings m_dvbSubSourceSettings;
-    bool m_dvbSubSourceSettingsHasBeenSet;
+    bool m_dvbSubSourceSettingsHasBeenSet = false;
 
     EmbeddedSourceSettings m_embeddedSourceSettings;
-    bool m_embeddedSourceSettingsHasBeenSet;
+    bool m_embeddedSourceSettingsHasBeenSet = false;
 
     FileSourceSettings m_fileSourceSettings;
-    bool m_fileSourceSettingsHasBeenSet;
+    bool m_fileSourceSettingsHasBeenSet = false;
 
     CaptionSourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     TeletextSourceSettings m_teletextSourceSettings;
-    bool m_teletextSourceSettingsHasBeenSet;
+    bool m_teletextSourceSettingsHasBeenSet = false;
 
     TrackSourceSettings m_trackSourceSettings;
-    bool m_trackSourceSettingsHasBeenSet;
+    bool m_trackSourceSettingsHasBeenSet = false;
 
     WebvttHlsSourceSettings m_webvttHlsSourceSettings;
-    bool m_webvttHlsSourceSettingsHasBeenSet;
+    bool m_webvttHlsSourceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

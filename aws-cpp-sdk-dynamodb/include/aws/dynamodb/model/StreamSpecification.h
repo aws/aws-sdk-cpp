@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StreamSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API StreamSpecification
+  class StreamSpecification
   {
   public:
-    StreamSpecification();
-    StreamSpecification(Aws::Utils::Json::JsonView jsonValue);
-    StreamSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API StreamSpecification();
+    AWS_DYNAMODB_API StreamSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API StreamSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     bool m_streamEnabled;
-    bool m_streamEnabledHasBeenSet;
+    bool m_streamEnabledHasBeenSet = false;
 
     StreamViewType m_streamViewType;
-    bool m_streamViewTypeHasBeenSet;
+    bool m_streamViewTypeHasBeenSet = false;
   };
 
 } // namespace Model

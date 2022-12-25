@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CustomLabel">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API CustomLabel
+  class CustomLabel
   {
   public:
-    CustomLabel();
-    CustomLabel(Aws::Utils::Json::JsonView jsonValue);
-    CustomLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API CustomLabel();
+    AWS_REKOGNITION_API CustomLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API CustomLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

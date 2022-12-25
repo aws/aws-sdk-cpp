@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Country">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Country
+  class Country
   {
   public:
-    Country();
-    Country(Aws::Utils::Json::JsonView jsonValue);
-    Country& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Country();
+    AWS_SECURITYHUB_API Country(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Country& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_countryName;
-    bool m_countryNameHasBeenSet;
+    bool m_countryNameHasBeenSet = false;
   };
 
 } // namespace Model

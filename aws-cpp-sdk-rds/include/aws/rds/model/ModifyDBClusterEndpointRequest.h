@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API ModifyDBClusterEndpointRequest : public RDSRequest
+  class ModifyDBClusterEndpointRequest : public RDSRequest
   {
   public:
-    ModifyDBClusterEndpointRequest();
+    AWS_RDS_API ModifyDBClusterEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyDBClusterEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
     Aws::String m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_staticMembers;
-    bool m_staticMembersHasBeenSet;
+    bool m_staticMembersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedMembers;
-    bool m_excludedMembersHasBeenSet;
+    bool m_excludedMembersHasBeenSet = false;
   };
 
 } // namespace Model

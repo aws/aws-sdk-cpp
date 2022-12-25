@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceResourceCost">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ServiceResourceCost
+  class ServiceResourceCost
   {
   public:
-    ServiceResourceCost();
-    ServiceResourceCost(Aws::Utils::Json::JsonView jsonValue);
-    ServiceResourceCost& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ServiceResourceCost();
+    AWS_DEVOPSGURU_API ServiceResourceCost(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ServiceResourceCost& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CostEstimationServiceResourceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_unitCost;
-    bool m_unitCostHasBeenSet;
+    bool m_unitCostHasBeenSet = false;
 
     double m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
   };
 
 } // namespace Model

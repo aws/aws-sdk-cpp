@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AncillarySourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AncillarySourceSettings
+  class AncillarySourceSettings
   {
   public:
-    AncillarySourceSettings();
-    AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AncillarySourceSettings();
+    AWS_MEDIALIVE_API AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,7 +74,7 @@ namespace Model
   private:
 
     int m_sourceAncillaryChannelNumber;
-    bool m_sourceAncillaryChannelNumberHasBeenSet;
+    bool m_sourceAncillaryChannelNumberHasBeenSet = false;
   };
 
 } // namespace Model

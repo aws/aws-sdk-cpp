@@ -20,7 +20,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_sourceFlowConfigHasBeenSet(false),
     m_destinationFlowConfigListHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_metadataCatalogConfigHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_destinationFlowConfigListHasBeenSet)
   {
-   Array<JsonValue> destinationFlowConfigListJsonList(m_destinationFlowConfigList.size());
+   Aws::Utils::Array<JsonValue> destinationFlowConfigListJsonList(m_destinationFlowConfigList.size());
    for(unsigned destinationFlowConfigListIndex = 0; destinationFlowConfigListIndex < destinationFlowConfigListJsonList.GetLength(); ++destinationFlowConfigListIndex)
    {
      destinationFlowConfigListJsonList[destinationFlowConfigListIndex].AsObject(m_destinationFlowConfigList[destinationFlowConfigListIndex].Jsonize());
@@ -71,7 +72,7 @@ Aws::String CreateFlowRequest::SerializePayload() const
 
   if(m_tasksHasBeenSet)
   {
-   Array<JsonValue> tasksJsonList(m_tasks.size());
+   Aws::Utils::Array<JsonValue> tasksJsonList(m_tasks.size());
    for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
    {
      tasksJsonList[tasksIndex].AsObject(m_tasks[tasksIndex].Jsonize());
@@ -88,6 +89,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_metadataCatalogConfigHasBeenSet)
+  {
+   payload.WithObject("metadataCatalogConfig", m_metadataCatalogConfig.Jsonize());
 
   }
 

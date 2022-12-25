@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API UpdateDistributionRequest : public LightsailRequest
+  class UpdateDistributionRequest : public LightsailRequest
   {
   public:
-    UpdateDistributionRequest();
+    AWS_LIGHTSAIL_API UpdateDistributionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDistribution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_distributionName;
-    bool m_distributionNameHasBeenSet;
+    bool m_distributionNameHasBeenSet = false;
 
     InputOrigin m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     CacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheSettings m_cacheBehaviorSettings;
-    bool m_cacheBehaviorSettingsHasBeenSet;
+    bool m_cacheBehaviorSettingsHasBeenSet = false;
 
     Aws::Vector<CacheBehaviorPerPath> m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
   };
 
 } // namespace Model

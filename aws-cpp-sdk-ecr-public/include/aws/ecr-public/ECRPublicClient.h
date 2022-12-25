@@ -5,173 +5,16 @@
 
 #pragma once
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
-#include <aws/ecr-public/ECRPublicErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ecr-public/model/BatchCheckLayerAvailabilityResult.h>
-#include <aws/ecr-public/model/BatchDeleteImageResult.h>
-#include <aws/ecr-public/model/CompleteLayerUploadResult.h>
-#include <aws/ecr-public/model/CreateRepositoryResult.h>
-#include <aws/ecr-public/model/DeleteRepositoryResult.h>
-#include <aws/ecr-public/model/DeleteRepositoryPolicyResult.h>
-#include <aws/ecr-public/model/DescribeImageTagsResult.h>
-#include <aws/ecr-public/model/DescribeImagesResult.h>
-#include <aws/ecr-public/model/DescribeRegistriesResult.h>
-#include <aws/ecr-public/model/DescribeRepositoriesResult.h>
-#include <aws/ecr-public/model/GetAuthorizationTokenResult.h>
-#include <aws/ecr-public/model/GetRegistryCatalogDataResult.h>
-#include <aws/ecr-public/model/GetRepositoryCatalogDataResult.h>
-#include <aws/ecr-public/model/GetRepositoryPolicyResult.h>
-#include <aws/ecr-public/model/InitiateLayerUploadResult.h>
-#include <aws/ecr-public/model/ListTagsForResourceResult.h>
-#include <aws/ecr-public/model/PutImageResult.h>
-#include <aws/ecr-public/model/PutRegistryCatalogDataResult.h>
-#include <aws/ecr-public/model/PutRepositoryCatalogDataResult.h>
-#include <aws/ecr-public/model/SetRepositoryPolicyResult.h>
-#include <aws/ecr-public/model/TagResourceResult.h>
-#include <aws/ecr-public/model/UntagResourceResult.h>
-#include <aws/ecr-public/model/UploadLayerPartResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ecr-public/ECRPublicServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ECRPublic
 {
-
-namespace Model
-{
-        class BatchCheckLayerAvailabilityRequest;
-        class BatchDeleteImageRequest;
-        class CompleteLayerUploadRequest;
-        class CreateRepositoryRequest;
-        class DeleteRepositoryRequest;
-        class DeleteRepositoryPolicyRequest;
-        class DescribeImageTagsRequest;
-        class DescribeImagesRequest;
-        class DescribeRegistriesRequest;
-        class DescribeRepositoriesRequest;
-        class GetAuthorizationTokenRequest;
-        class GetRegistryCatalogDataRequest;
-        class GetRepositoryCatalogDataRequest;
-        class GetRepositoryPolicyRequest;
-        class InitiateLayerUploadRequest;
-        class ListTagsForResourceRequest;
-        class PutImageRequest;
-        class PutRegistryCatalogDataRequest;
-        class PutRepositoryCatalogDataRequest;
-        class SetRepositoryPolicyRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UploadLayerPartRequest;
-
-        typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, ECRPublicError> BatchCheckLayerAvailabilityOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteImageResult, ECRPublicError> BatchDeleteImageOutcome;
-        typedef Aws::Utils::Outcome<CompleteLayerUploadResult, ECRPublicError> CompleteLayerUploadOutcome;
-        typedef Aws::Utils::Outcome<CreateRepositoryResult, ECRPublicError> CreateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryResult, ECRPublicError> DeleteRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, ECRPublicError> DeleteRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeImageTagsResult, ECRPublicError> DescribeImageTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeImagesResult, ECRPublicError> DescribeImagesOutcome;
-        typedef Aws::Utils::Outcome<DescribeRegistriesResult, ECRPublicError> DescribeRegistriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeRepositoriesResult, ECRPublicError> DescribeRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, ECRPublicError> GetAuthorizationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetRegistryCatalogDataResult, ECRPublicError> GetRegistryCatalogDataOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryCatalogDataResult, ECRPublicError> GetRepositoryCatalogDataOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, ECRPublicError> GetRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRPublicError> InitiateLayerUploadOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECRPublicError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutImageResult, ECRPublicError> PutImageOutcome;
-        typedef Aws::Utils::Outcome<PutRegistryCatalogDataResult, ECRPublicError> PutRegistryCatalogDataOutcome;
-        typedef Aws::Utils::Outcome<PutRepositoryCatalogDataResult, ECRPublicError> PutRepositoryCatalogDataOutcome;
-        typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, ECRPublicError> SetRepositoryPolicyOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ECRPublicError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ECRPublicError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UploadLayerPartResult, ECRPublicError> UploadLayerPartOutcome;
-
-        typedef std::future<BatchCheckLayerAvailabilityOutcome> BatchCheckLayerAvailabilityOutcomeCallable;
-        typedef std::future<BatchDeleteImageOutcome> BatchDeleteImageOutcomeCallable;
-        typedef std::future<CompleteLayerUploadOutcome> CompleteLayerUploadOutcomeCallable;
-        typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
-        typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
-        typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
-        typedef std::future<DescribeImageTagsOutcome> DescribeImageTagsOutcomeCallable;
-        typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
-        typedef std::future<DescribeRegistriesOutcome> DescribeRegistriesOutcomeCallable;
-        typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
-        typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
-        typedef std::future<GetRegistryCatalogDataOutcome> GetRegistryCatalogDataOutcomeCallable;
-        typedef std::future<GetRepositoryCatalogDataOutcome> GetRepositoryCatalogDataOutcomeCallable;
-        typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
-        typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
-        typedef std::future<PutRegistryCatalogDataOutcome> PutRegistryCatalogDataOutcomeCallable;
-        typedef std::future<PutRepositoryCatalogDataOutcome> PutRepositoryCatalogDataOutcomeCallable;
-        typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
-} // namespace Model
-
-  class ECRPublicClient;
-
-    typedef std::function<void(const ECRPublicClient*, const Model::BatchCheckLayerAvailabilityRequest&, const Model::BatchCheckLayerAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCheckLayerAvailabilityResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::BatchDeleteImageRequest&, const Model::BatchDeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteImageResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::CompleteLayerUploadRequest&, const Model::CompleteLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLayerUploadResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPolicyResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DescribeImageTagsRequest&, const Model::DescribeImageTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageTagsResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DescribeRegistriesRequest&, const Model::DescribeRegistriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegistriesResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::GetRegistryCatalogDataRequest&, const Model::GetRegistryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegistryCatalogDataResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::GetRepositoryCatalogDataRequest&, const Model::GetRepositoryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryCatalogDataResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPolicyResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::PutRegistryCatalogDataRequest&, const Model::PutRegistryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRegistryCatalogDataResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::PutRepositoryCatalogDataRequest&, const Model::PutRepositoryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryCatalogDataResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ECRPublicClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Elastic Container Registry Public</fullname> <p>Amazon Elastic
    * Container Registry (Amazon ECR) is a managed container image registry service.
@@ -184,32 +27,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon
    * Elastic Container Registry API Reference</a>.</p>
    */
-  class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient
+  class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ECRPublicClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ECRPublicClient(const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration(),
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ECRPublicClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ECRPublicClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ECRPublicClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ECRPublicClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ECRPublicClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ECRPublicClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ECRPublicClient();
-
 
         /**
          * <p>Checks the availability of one or more image layers within a repository in a
@@ -676,35 +547,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchCheckLayerAvailabilityAsyncHelper(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteImageAsyncHelper(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CompleteLayerUploadAsyncHelper(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRepositoryPolicyAsyncHelper(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeImageTagsAsyncHelper(const Model::DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRegistriesAsyncHelper(const Model::DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRepositoriesAsyncHelper(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRegistryCatalogDataAsyncHelper(const Model::GetRegistryCatalogDataRequest& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryCatalogDataAsyncHelper(const Model::GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryPolicyAsyncHelper(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitiateLayerUploadAsyncHelper(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRegistryCatalogDataAsyncHelper(const Model::PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRepositoryCatalogDataAsyncHelper(const Model::PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UploadLayerPartAsyncHelper(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;
+      void init(const ECRPublicClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ECRPublicClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ECRPublicEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ECRPublic

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API PutWarmPoolRequest : public AutoScalingRequest
+  class PutWarmPoolRequest : public AutoScalingRequest
   {
   public:
-    PutWarmPoolRequest();
+    AWS_AUTOSCALING_API PutWarmPoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutWarmPool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -275,19 +275,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     int m_maxGroupPreparedCapacity;
-    bool m_maxGroupPreparedCapacityHasBeenSet;
+    bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     WarmPoolState m_poolState;
-    bool m_poolStateHasBeenSet;
+    bool m_poolStateHasBeenSet = false;
 
     InstanceReusePolicy m_instanceReusePolicy;
-    bool m_instanceReusePolicyHasBeenSet;
+    bool m_instanceReusePolicyHasBeenSet = false;
   };
 
 } // namespace Model

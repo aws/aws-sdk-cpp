@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the list of Custom Headers for each origin.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains the list of Custom Headers for each
+   * origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomHeaders">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CustomHeaders
+  class CustomHeaders
   {
   public:
-    CustomHeaders();
-    CustomHeaders(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomHeaders& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomHeaders();
+    AWS_CLOUDFRONT_API CustomHeaders(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomHeaders& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<OriginCustomHeader> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

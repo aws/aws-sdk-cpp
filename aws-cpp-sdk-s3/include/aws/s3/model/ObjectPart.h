@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectPart">AWS API
    * Reference</a></p>
    */
-  class AWS_S3_API ObjectPart
+  class ObjectPart
   {
   public:
-    ObjectPart();
-    ObjectPart(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectPart& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectPart();
+    AWS_S3_API ObjectPart(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectPart& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -410,22 +410,22 @@ namespace Model
   private:
 
     int m_partNumber;
-    bool m_partNumberHasBeenSet;
+    bool m_partNumberHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_checksumCRC32;
-    bool m_checksumCRC32HasBeenSet;
+    bool m_checksumCRC32HasBeenSet = false;
 
     Aws::String m_checksumCRC32C;
-    bool m_checksumCRC32CHasBeenSet;
+    bool m_checksumCRC32CHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
-    bool m_checksumSHA1HasBeenSet;
+    bool m_checksumSHA1HasBeenSet = false;
 
     Aws::String m_checksumSHA256;
-    bool m_checksumSHA256HasBeenSet;
+    bool m_checksumSHA256HasBeenSet = false;
   };
 
 } // namespace Model

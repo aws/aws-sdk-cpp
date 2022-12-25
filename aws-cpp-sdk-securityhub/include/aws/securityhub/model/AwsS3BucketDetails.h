@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketDetails
+  class AwsS3BucketDetails
   {
   public:
-    AwsS3BucketDetails();
-    AwsS3BucketDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketDetails();
+    AWS_SECURITYHUB_API AwsS3BucketDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -514,40 +514,40 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ownerName;
-    bool m_ownerNameHasBeenSet;
+    bool m_ownerNameHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AwsS3BucketServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     AwsS3BucketBucketLifecycleConfigurationDetails m_bucketLifecycleConfiguration;
-    bool m_bucketLifecycleConfigurationHasBeenSet;
+    bool m_bucketLifecycleConfigurationHasBeenSet = false;
 
     AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
-    bool m_publicAccessBlockConfigurationHasBeenSet;
+    bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
     Aws::String m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     AwsS3BucketLoggingConfiguration m_bucketLoggingConfiguration;
-    bool m_bucketLoggingConfigurationHasBeenSet;
+    bool m_bucketLoggingConfigurationHasBeenSet = false;
 
     AwsS3BucketWebsiteConfiguration m_bucketWebsiteConfiguration;
-    bool m_bucketWebsiteConfigurationHasBeenSet;
+    bool m_bucketWebsiteConfigurationHasBeenSet = false;
 
     AwsS3BucketNotificationConfiguration m_bucketNotificationConfiguration;
-    bool m_bucketNotificationConfigurationHasBeenSet;
+    bool m_bucketNotificationConfigurationHasBeenSet = false;
 
     AwsS3BucketBucketVersioningConfiguration m_bucketVersioningConfiguration;
-    bool m_bucketVersioningConfigurationHasBeenSet;
+    bool m_bucketVersioningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

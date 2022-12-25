@@ -30,7 +30,7 @@ ListDevEndpointsResult& ListDevEndpointsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DevEndpointNames"))
   {
-    Array<JsonView> devEndpointNamesJsonList = jsonValue.GetArray("DevEndpointNames");
+    Aws::Utils::Array<JsonView> devEndpointNamesJsonList = jsonValue.GetArray("DevEndpointNames");
     for(unsigned devEndpointNamesIndex = 0; devEndpointNamesIndex < devEndpointNamesJsonList.GetLength(); ++devEndpointNamesIndex)
     {
       m_devEndpointNames.push_back(devEndpointNamesJsonList[devEndpointNamesIndex].AsString());

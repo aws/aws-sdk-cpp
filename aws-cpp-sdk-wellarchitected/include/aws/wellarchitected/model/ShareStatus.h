@@ -20,7 +20,10 @@ namespace Model
     REJECTED,
     PENDING,
     REVOKED,
-    EXPIRED
+    EXPIRED,
+    ASSOCIATING,
+    ASSOCIATED,
+    FAILED
   };
 
 namespace ShareStatusMapper

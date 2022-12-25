@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DailyVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DailyVolume
+  class DailyVolume
   {
   public:
-    DailyVolume();
-    DailyVolume(Aws::Utils::Json::JsonView jsonValue);
-    DailyVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DailyVolume();
+    AWS_SESV2_API DailyVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DailyVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     VolumeStatistics m_volumeStatistics;
-    bool m_volumeStatisticsHasBeenSet;
+    bool m_volumeStatisticsHasBeenSet = false;
 
     Aws::Vector<DomainIspPlacement> m_domainIspPlacements;
-    bool m_domainIspPlacementsHasBeenSet;
+    bool m_domainIspPlacementsHasBeenSet = false;
   };
 
 } // namespace Model

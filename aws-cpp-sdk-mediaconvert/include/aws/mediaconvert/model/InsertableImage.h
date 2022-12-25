@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InsertableImage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API InsertableImage
+  class InsertableImage
   {
   public:
-    InsertableImage();
-    InsertableImage(Aws::Utils::Json::JsonView jsonValue);
-    InsertableImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API InsertableImage();
+    AWS_MEDIACONVERT_API InsertableImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API InsertableImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -403,37 +403,37 @@ namespace Model
   private:
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_fadeIn;
-    bool m_fadeInHasBeenSet;
+    bool m_fadeInHasBeenSet = false;
 
     int m_fadeOut;
-    bool m_fadeOutHasBeenSet;
+    bool m_fadeOutHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_imageInserterInput;
-    bool m_imageInserterInputHasBeenSet;
+    bool m_imageInserterInputHasBeenSet = false;
 
     int m_imageX;
-    bool m_imageXHasBeenSet;
+    bool m_imageXHasBeenSet = false;
 
     int m_imageY;
-    bool m_imageYHasBeenSet;
+    bool m_imageYHasBeenSet = false;
 
     int m_layer;
-    bool m_layerHasBeenSet;
+    bool m_layerHasBeenSet = false;
 
     int m_opacity;
-    bool m_opacityHasBeenSet;
+    bool m_opacityHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

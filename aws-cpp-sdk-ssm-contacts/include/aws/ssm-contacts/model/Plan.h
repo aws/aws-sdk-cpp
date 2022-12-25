@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Plan">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Plan
+  class Plan
   {
   public:
-    Plan();
-    Plan(Aws::Utils::Json::JsonView jsonValue);
-    Plan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Plan();
+    AWS_SSMCONTACTS_API Plan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Plan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Stage> m_stages;
-    bool m_stagesHasBeenSet;
+    bool m_stagesHasBeenSet = false;
   };
 
 } // namespace Model

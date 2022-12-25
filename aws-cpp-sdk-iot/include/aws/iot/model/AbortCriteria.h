@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AbortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AbortCriteria
+  class AbortCriteria
   {
   public:
-    AbortCriteria();
-    AbortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    AbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AbortCriteria();
+    AWS_IOT_API AbortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,16 +157,16 @@ namespace Model
   private:
 
     JobExecutionFailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     AbortAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     double m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet;
+    bool m_thresholdPercentageHasBeenSet = false;
 
     int m_minNumberOfExecutedThings;
-    bool m_minNumberOfExecutedThingsHasBeenSet;
+    bool m_minNumberOfExecutedThingsHasBeenSet = false;
   };
 
 } // namespace Model

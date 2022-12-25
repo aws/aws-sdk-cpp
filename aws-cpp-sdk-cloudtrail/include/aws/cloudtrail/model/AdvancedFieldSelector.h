@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedFieldSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API AdvancedFieldSelector
+  class AdvancedFieldSelector
   {
   public:
-    AdvancedFieldSelector();
-    AdvancedFieldSelector(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedFieldSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector();
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API AdvancedFieldSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -46,8 +46,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -145,8 +145,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -244,8 +244,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -343,8 +343,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -442,8 +442,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -541,8 +541,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -640,8 +640,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -739,8 +739,8 @@ namespace Model
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
      * value of <code>true</code> or <code>false</code>. If you do not add this field,
-     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
-     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
+     * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
      * <code>eventSource</code> </b> - For filtering management events only. This can
      * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
@@ -1182,25 +1182,25 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_startsWith;
-    bool m_startsWithHasBeenSet;
+    bool m_startsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endsWith;
-    bool m_endsWithHasBeenSet;
+    bool m_endsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEquals;
-    bool m_notEqualsHasBeenSet;
+    bool m_notEqualsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notStartsWith;
-    bool m_notStartsWithHasBeenSet;
+    bool m_notStartsWithHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEndsWith;
-    bool m_notEndsWithHasBeenSet;
+    bool m_notEndsWithHasBeenSet = false;
   };
 
 } // namespace Model

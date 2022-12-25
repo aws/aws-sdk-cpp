@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainDeliverabilityCampaign">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign
+  class DomainDeliverabilityCampaign
   {
   public:
-    DomainDeliverabilityCampaign();
-    DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign();
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -585,46 +585,46 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sendingIps;
-    bool m_sendingIpsHasBeenSet;
+    bool m_sendingIpsHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSeenDateTime;
-    bool m_firstSeenDateTimeHasBeenSet;
+    bool m_firstSeenDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenDateTime;
-    bool m_lastSeenDateTimeHasBeenSet;
+    bool m_lastSeenDateTimeHasBeenSet = false;
 
     long long m_inboxCount;
-    bool m_inboxCountHasBeenSet;
+    bool m_inboxCountHasBeenSet = false;
 
     long long m_spamCount;
-    bool m_spamCountHasBeenSet;
+    bool m_spamCountHasBeenSet = false;
 
     double m_readRate;
-    bool m_readRateHasBeenSet;
+    bool m_readRateHasBeenSet = false;
 
     double m_deleteRate;
-    bool m_deleteRateHasBeenSet;
+    bool m_deleteRateHasBeenSet = false;
 
     double m_readDeleteRate;
-    bool m_readDeleteRateHasBeenSet;
+    bool m_readDeleteRateHasBeenSet = false;
 
     long long m_projectedVolume;
-    bool m_projectedVolumeHasBeenSet;
+    bool m_projectedVolumeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_esps;
-    bool m_espsHasBeenSet;
+    bool m_espsHasBeenSet = false;
   };
 
 } // namespace Model

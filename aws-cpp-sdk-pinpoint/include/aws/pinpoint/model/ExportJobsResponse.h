@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ExportJobsResponse
+  class ExportJobsResponse
   {
   public:
-    ExportJobsResponse();
-    ExportJobsResponse(Aws::Utils::Json::JsonView jsonValue);
-    ExportJobsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ExportJobsResponse();
+    AWS_PINPOINT_API ExportJobsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ExportJobsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Vector<ExportJobResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

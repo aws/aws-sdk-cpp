@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/SelfservicePermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API SelfservicePermissions
+  class SelfservicePermissions
   {
   public:
-    SelfservicePermissions();
-    SelfservicePermissions(Aws::Utils::Json::JsonView jsonValue);
-    SelfservicePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API SelfservicePermissions();
+    AWS_WORKSPACES_API SelfservicePermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API SelfservicePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     ReconnectEnum m_restartWorkspace;
-    bool m_restartWorkspaceHasBeenSet;
+    bool m_restartWorkspaceHasBeenSet = false;
 
     ReconnectEnum m_increaseVolumeSize;
-    bool m_increaseVolumeSizeHasBeenSet;
+    bool m_increaseVolumeSizeHasBeenSet = false;
 
     ReconnectEnum m_changeComputeType;
-    bool m_changeComputeTypeHasBeenSet;
+    bool m_changeComputeTypeHasBeenSet = false;
 
     ReconnectEnum m_switchRunningMode;
-    bool m_switchRunningModeHasBeenSet;
+    bool m_switchRunningModeHasBeenSet = false;
 
     ReconnectEnum m_rebuildWorkspace;
-    bool m_rebuildWorkspaceHasBeenSet;
+    bool m_rebuildWorkspaceHasBeenSet = false;
   };
 
 } // namespace Model

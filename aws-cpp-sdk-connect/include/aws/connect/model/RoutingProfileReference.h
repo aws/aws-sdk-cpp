@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfileReference
+  class RoutingProfileReference
   {
   public:
-    RoutingProfileReference();
-    RoutingProfileReference(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfileReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfileReference();
+    AWS_CONNECT_API RoutingProfileReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfileReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

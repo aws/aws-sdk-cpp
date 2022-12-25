@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TaskTemplateConstraints">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API TaskTemplateConstraints
+  class TaskTemplateConstraints
   {
   public:
-    TaskTemplateConstraints();
-    TaskTemplateConstraints(Aws::Utils::Json::JsonView jsonValue);
-    TaskTemplateConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API TaskTemplateConstraints();
+    AWS_CONNECT_API TaskTemplateConstraints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API TaskTemplateConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<RequiredFieldInfo> m_requiredFields;
-    bool m_requiredFieldsHasBeenSet;
+    bool m_requiredFieldsHasBeenSet = false;
 
     Aws::Vector<ReadOnlyFieldInfo> m_readOnlyFields;
-    bool m_readOnlyFieldsHasBeenSet;
+    bool m_readOnlyFieldsHasBeenSet = false;
 
     Aws::Vector<InvisibleFieldInfo> m_invisibleFields;
-    bool m_invisibleFieldsHasBeenSet;
+    bool m_invisibleFieldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,36 +25,41 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API ModifyAquaConfigurationResult
+  class ModifyAquaConfigurationResult
   {
   public:
-    ModifyAquaConfigurationResult();
-    ModifyAquaConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyAquaConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyAquaConfigurationResult();
+    AWS_REDSHIFT_API ModifyAquaConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyAquaConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
-     * <p>The updated AQUA configuration of the cluster. </p>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
 
     /**
-     * <p>The updated AQUA configuration of the cluster. </p>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfiguration = value; }
 
     /**
-     * <p>The updated AQUA configuration of the cluster. </p>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfiguration = std::move(value); }
 
     /**
-     * <p>The updated AQUA configuration of the cluster. </p>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline ModifyAquaConfigurationResult& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
 
     /**
-     * <p>The updated AQUA configuration of the cluster. </p>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline ModifyAquaConfigurationResult& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
 

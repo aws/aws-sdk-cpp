@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/chime-sdk-messaging/model/Identity.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API Channel();
+    AWS_CHIMESDKMESSAGING_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -390,37 +391,77 @@ namespace Model
      */
     inline Channel& WithChannelFlowArn(const char* value) { SetChannelFlowArn(value); return *this;}
 
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const{ return m_elasticChannelConfiguration; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline bool ElasticChannelConfigurationHasBeenSet() const { return m_elasticChannelConfigurationHasBeenSet; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline void SetElasticChannelConfiguration(const ElasticChannelConfiguration& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = value; }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline void SetElasticChannelConfiguration(ElasticChannelConfiguration&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::move(value); }
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline Channel& WithElasticChannelConfiguration(const ElasticChannelConfiguration& value) { SetElasticChannelConfiguration(value); return *this;}
+
+    /**
+     * <p>The attributes required to configure and create an elastic channel. An
+     * elastic channel can support a maximum of 1-million members.</p>
+     */
+    inline Channel& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     ChannelMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ChannelPrivacy m_privacy;
-    bool m_privacyHasBeenSet;
+    bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Identity m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageTimestamp;
-    bool m_lastMessageTimestampHasBeenSet;
+    bool m_lastMessageTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet;
+    bool m_channelFlowArnHasBeenSet = false;
+
+    ElasticChannelConfiguration m_elasticChannelConfiguration;
+    bool m_elasticChannelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

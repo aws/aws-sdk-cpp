@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectOwner">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3ObjectOwner
+  class S3ObjectOwner
   {
   public:
-    S3ObjectOwner();
-    S3ObjectOwner(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3ObjectOwner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ObjectOwner();
+    AWS_S3CONTROL_API S3ObjectOwner(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ObjectOwner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

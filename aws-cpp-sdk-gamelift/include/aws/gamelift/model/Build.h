@@ -27,21 +27,19 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a custom game build.</p> <p> <b>Related actions</b>
-   * </p> <p> <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> |
-   * <a>UpdateBuild</a> | <a>DeleteBuild</a> | <a
+   * <p>Properties describing a custom game build.</p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */
-  class AWS_GAMELIFT_API Build
+  class Build
   {
   public:
-    Build();
-    Build(Aws::Utils::Json::JsonView jsonValue);
-    Build& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Build();
+    AWS_GAMELIFT_API Build(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Build& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,8 +86,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -98,8 +96,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -108,8 +106,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -118,8 +116,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -128,8 +126,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -138,8 +136,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -148,8 +146,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -158,8 +156,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * assigned to a GameLift build resource and uniquely identifies it. ARNs are
+     * unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -167,107 +165,123 @@ namespace Model
 
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline Build& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline Build& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a build. Build names do not need
-     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
     inline Build& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Build& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Build& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
-     * or <a>UpdateBuild</a>.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -459,31 +473,75 @@ namespace Model
      */
     inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline const Aws::String& GetServerSdkVersion() const{ return m_serverSdkVersion; }
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline void SetServerSdkVersion(const Aws::String& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = value; }
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline void SetServerSdkVersion(Aws::String&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::move(value); }
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline void SetServerSdkVersion(const char* value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion.assign(value); }
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline Build& WithServerSdkVersion(const Aws::String& value) { SetServerSdkVersion(value); return *this;}
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline Build& WithServerSdkVersion(Aws::String&& value) { SetServerSdkVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The GameLift Server SDK version used to develop your game server.</p>
+     */
+    inline Build& WithServerSdkVersion(const char* value) { SetServerSdkVersion(value); return *this;}
+
   private:
 
     Aws::String m_buildId;
-    bool m_buildIdHasBeenSet;
+    bool m_buildIdHasBeenSet = false;
 
     Aws::String m_buildArn;
-    bool m_buildArnHasBeenSet;
+    bool m_buildArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     BuildStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_sizeOnDisk;
-    bool m_sizeOnDiskHasBeenSet;
+    bool m_sizeOnDiskHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::String m_serverSdkVersion;
+    bool m_serverSdkVersionHasBeenSet = false;
   };
 
 } // namespace Model

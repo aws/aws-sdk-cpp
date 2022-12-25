@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueSuccessEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry
+  class BatchGetAssetPropertyValueSuccessEntry
   {
   public:
-    BatchGetAssetPropertyValueSuccessEntry();
-    BatchGetAssetPropertyValueSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyValueSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     AssetPropertyValue m_assetPropertyValue;
-    bool m_assetPropertyValueHasBeenSet;
+    bool m_assetPropertyValueHasBeenSet = false;
   };
 
 } // namespace Model

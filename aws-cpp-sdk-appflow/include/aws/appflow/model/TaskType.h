@@ -24,7 +24,8 @@ namespace Model
     Merge,
     Passthrough,
     Truncate,
-    Validate
+    Validate,
+    Partition
   };
 
 namespace TaskTypeMapper

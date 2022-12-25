@@ -32,7 +32,7 @@ ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamNames"))
   {
-    Array<JsonView> streamNamesJsonList = jsonValue.GetArray("StreamNames");
+    Aws::Utils::Array<JsonView> streamNamesJsonList = jsonValue.GetArray("StreamNames");
     for(unsigned streamNamesIndex = 0; streamNamesIndex < streamNamesJsonList.GetLength(); ++streamNamesIndex)
     {
       m_streamNames.push_back(streamNamesJsonList[streamNamesIndex].AsString());
@@ -43,6 +43,21 @@ ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResu
   {
     m_hasMoreStreams = jsonValue.GetBool("HasMoreStreams");
 
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
+  if(jsonValue.ValueExists("StreamSummaries"))
+  {
+    Aws::Utils::Array<JsonView> streamSummariesJsonList = jsonValue.GetArray("StreamSummaries");
+    for(unsigned streamSummariesIndex = 0; streamSummariesIndex < streamSummariesJsonList.GetLength(); ++streamSummariesIndex)
+    {
+      m_streamSummaries.push_back(streamSummariesJsonList[streamSummariesIndex].AsObject());
+    }
   }
 
 

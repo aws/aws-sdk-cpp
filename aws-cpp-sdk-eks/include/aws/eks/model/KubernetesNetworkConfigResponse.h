@@ -31,22 +31,23 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/KubernetesNetworkConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API KubernetesNetworkConfigResponse
+  class KubernetesNetworkConfigResponse
   {
   public:
-    KubernetesNetworkConfigResponse();
-    KubernetesNetworkConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    KubernetesNetworkConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API KubernetesNetworkConfigResponse();
+    AWS_EKS_API KubernetesNetworkConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API KubernetesNetworkConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline const Aws::String& GetServiceIpv4Cidr() const{ return m_serviceIpv4Cidr; }
 
@@ -54,9 +55,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline bool ServiceIpv4CidrHasBeenSet() const { return m_serviceIpv4CidrHasBeenSet; }
 
@@ -64,9 +66,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline void SetServiceIpv4Cidr(const Aws::String& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = value; }
 
@@ -74,9 +77,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline void SetServiceIpv4Cidr(Aws::String&& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = std::move(value); }
 
@@ -84,9 +88,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline void SetServiceIpv4Cidr(const char* value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr.assign(value); }
 
@@ -94,9 +99,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv4Cidr(const Aws::String& value) { SetServiceIpv4Cidr(value); return *this;}
 
@@ -104,9 +110,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv4Cidr(Aws::String&& value) { SetServiceIpv4Cidr(std::move(value)); return *this;}
 
@@ -114,9 +121,10 @@ namespace Model
      * <p>The CIDR block that Kubernetes pod and service IP addresses are assigned
      * from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet
      * that the node is in. If you didn't specify a CIDR block when you created the
-     * cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     * 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-     * cluster was created and it can't be changed.</p>
+     * cluster, then Kubernetes assigns addresses from either the
+     * <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this
+     * was specified, then it was specified when the cluster was created and it can't
+     * be changed.</p>
      */
     inline KubernetesNetworkConfigResponse& WithServiceIpv4Cidr(const char* value) { SetServiceIpv4Cidr(value); return *this;}
 
@@ -253,13 +261,13 @@ namespace Model
   private:
 
     Aws::String m_serviceIpv4Cidr;
-    bool m_serviceIpv4CidrHasBeenSet;
+    bool m_serviceIpv4CidrHasBeenSet = false;
 
     Aws::String m_serviceIpv6Cidr;
-    bool m_serviceIpv6CidrHasBeenSet;
+    bool m_serviceIpv6CidrHasBeenSet = false;
 
     IpFamily m_ipFamily;
-    bool m_ipFamilyHasBeenSet;
+    bool m_ipFamilyHasBeenSet = false;
   };
 
 } // namespace Model

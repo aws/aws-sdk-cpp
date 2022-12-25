@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/SlotValueElicitationSetting.h>
 #include <aws/lexv2-models/model/ObfuscationSetting.h>
 #include <aws/lexv2-models/model/MultipleValuesSetting.h>
+#include <aws/lexv2-models/model/SubSlotSetting.h>
 #include <utility>
 
 namespace Aws
@@ -21,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API CreateSlotRequest : public LexModelsV2Request
+  class CreateSlotRequest : public LexModelsV2Request
   {
   public:
-    CreateSlotRequest();
+    AWS_LEXMODELSV2_API CreateSlotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSlot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -522,37 +523,77 @@ namespace Model
      */
     inline CreateSlotRequest& WithMultipleValuesSetting(MultipleValuesSetting&& value) { SetMultipleValuesSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline const SubSlotSetting& GetSubSlotSetting() const{ return m_subSlotSetting; }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline bool SubSlotSettingHasBeenSet() const { return m_subSlotSettingHasBeenSet; }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline void SetSubSlotSetting(const SubSlotSetting& value) { m_subSlotSettingHasBeenSet = true; m_subSlotSetting = value; }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline void SetSubSlotSetting(SubSlotSetting&& value) { m_subSlotSettingHasBeenSet = true; m_subSlotSetting = std::move(value); }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline CreateSlotRequest& WithSubSlotSetting(const SubSlotSetting& value) { SetSubSlotSetting(value); return *this;}
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline CreateSlotRequest& WithSubSlotSetting(SubSlotSetting&& value) { SetSubSlotSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotName;
-    bool m_slotNameHasBeenSet;
+    bool m_slotNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     SlotValueElicitationSetting m_valueElicitationSetting;
-    bool m_valueElicitationSettingHasBeenSet;
+    bool m_valueElicitationSettingHasBeenSet = false;
 
     ObfuscationSetting m_obfuscationSetting;
-    bool m_obfuscationSettingHasBeenSet;
+    bool m_obfuscationSettingHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     MultipleValuesSetting m_multipleValuesSetting;
-    bool m_multipleValuesSettingHasBeenSet;
+    bool m_multipleValuesSettingHasBeenSet = false;
+
+    SubSlotSetting m_subSlotSetting;
+    bool m_subSlotSettingHasBeenSet = false;
   };
 
 } // namespace Model

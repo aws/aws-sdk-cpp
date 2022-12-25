@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/AppIntegrationsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration
+  class AppIntegrationsConfiguration
   {
   public:
-    AppIntegrationsConfiguration();
-    AppIntegrationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AppIntegrationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,10 +244,10 @@ namespace Model
   private:
 
     Aws::String m_appIntegrationArn;
-    bool m_appIntegrationArnHasBeenSet;
+    bool m_appIntegrationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectFields;
-    bool m_objectFieldsHasBeenSet;
+    bool m_objectFieldsHasBeenSet = false;
   };
 
 } // namespace Model

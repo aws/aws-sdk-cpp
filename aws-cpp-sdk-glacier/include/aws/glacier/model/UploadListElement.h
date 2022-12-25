@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API UploadListElement
+  class UploadListElement
   {
   public:
-    UploadListElement();
-    UploadListElement(Aws::Utils::Json::JsonView jsonValue);
-    UploadListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API UploadListElement();
+    AWS_GLACIER_API UploadListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API UploadListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_multipartUploadId;
-    bool m_multipartUploadIdHasBeenSet;
+    bool m_multipartUploadIdHasBeenSet = false;
 
     Aws::String m_vaultARN;
-    bool m_vaultARNHasBeenSet;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_archiveDescription;
-    bool m_archiveDescriptionHasBeenSet;
+    bool m_archiveDescriptionHasBeenSet = false;
 
     long long m_partSizeInBytes;
-    bool m_partSizeInBytesHasBeenSet;
+    bool m_partSizeInBytesHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

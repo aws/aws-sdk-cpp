@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketWebsiteConfigurationRoutingRuleCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition
+  class AwsS3BucketWebsiteConfigurationRoutingRuleCondition
   {
   public:
-    AwsS3BucketWebsiteConfigurationRoutingRuleCondition();
-    AwsS3BucketWebsiteConfigurationRoutingRuleCondition(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketWebsiteConfigurationRoutingRuleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_httpErrorCodeReturnedEquals;
-    bool m_httpErrorCodeReturnedEqualsHasBeenSet;
+    bool m_httpErrorCodeReturnedEqualsHasBeenSet = false;
 
     Aws::String m_keyPrefixEquals;
-    bool m_keyPrefixEqualsHasBeenSet;
+    bool m_keyPrefixEqualsHasBeenSet = false;
   };
 
 } // namespace Model

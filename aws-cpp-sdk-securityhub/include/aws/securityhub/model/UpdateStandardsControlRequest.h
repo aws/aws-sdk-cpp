@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API UpdateStandardsControlRequest : public SecurityHubRequest
+  class UpdateStandardsControlRequest : public SecurityHubRequest
   {
   public:
-    UpdateStandardsControlRequest();
+    AWS_SECURITYHUB_API UpdateStandardsControlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStandardsControl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_standardsControlArn;
-    bool m_standardsControlArnHasBeenSet;
+    bool m_standardsControlArnHasBeenSet = false;
 
     ControlStatus m_controlStatus;
-    bool m_controlStatusHasBeenSet;
+    bool m_controlStatusHasBeenSet = false;
 
     Aws::String m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverState">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API FailoverState
+  class FailoverState
   {
   public:
-    FailoverState();
-    FailoverState(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FailoverState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API FailoverState();
+    AWS_RDS_API FailoverState(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API FailoverState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -240,13 +240,13 @@ namespace Model
   private:
 
     FailoverStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fromDbClusterArn;
-    bool m_fromDbClusterArnHasBeenSet;
+    bool m_fromDbClusterArnHasBeenSet = false;
 
     Aws::String m_toDbClusterArn;
-    bool m_toDbClusterArnHasBeenSet;
+    bool m_toDbClusterArnHasBeenSet = false;
   };
 
 } // namespace Model

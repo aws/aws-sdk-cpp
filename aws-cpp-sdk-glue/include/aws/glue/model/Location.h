@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Location">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Location
+  class Location
   {
   public:
-    Location();
-    Location(Aws::Utils::Json::JsonView jsonValue);
-    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Location();
+    AWS_GLUE_API Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::Vector<CodeGenNodeArg> m_jdbc;
-    bool m_jdbcHasBeenSet;
+    bool m_jdbcHasBeenSet = false;
 
     Aws::Vector<CodeGenNodeArg> m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     Aws::Vector<CodeGenNodeArg> m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
   };
 
 } // namespace Model

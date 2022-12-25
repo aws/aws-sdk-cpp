@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SvmActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API SvmActiveDirectoryConfiguration
+  class SvmActiveDirectoryConfiguration
   {
   public:
-    SvmActiveDirectoryConfiguration();
-    SvmActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SvmActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API SvmActiveDirectoryConfiguration();
+    AWS_FSX_API SvmActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API SvmActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_netBiosName;
-    bool m_netBiosNameHasBeenSet;
+    bool m_netBiosNameHasBeenSet = false;
 
     SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

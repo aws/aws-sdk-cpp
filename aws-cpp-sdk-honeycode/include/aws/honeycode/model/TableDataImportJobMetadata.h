@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TableDataImportJobMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API TableDataImportJobMetadata
+  class TableDataImportJobMetadata
   {
   public:
-    TableDataImportJobMetadata();
-    TableDataImportJobMetadata(Aws::Utils::Json::JsonView jsonValue);
-    TableDataImportJobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API TableDataImportJobMetadata();
+    AWS_HONEYCODE_API TableDataImportJobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API TableDataImportJobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     ImportJobSubmitter m_submitter;
-    bool m_submitterHasBeenSet;
+    bool m_submitterHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     ImportOptions m_importOptions;
-    bool m_importOptionsHasBeenSet;
+    bool m_importOptionsHasBeenSet = false;
 
     ImportDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
   };
 
 } // namespace Model

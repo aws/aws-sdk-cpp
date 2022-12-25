@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionLanguageMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionLanguageMapping
+  class CaptionLanguageMapping
   {
   public:
-    CaptionLanguageMapping();
-    CaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
-    CaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionLanguageMapping();
+    AWS_MEDIALIVE_API CaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     int m_captionChannel;
-    bool m_captionChannelHasBeenSet;
+    bool m_captionChannelHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

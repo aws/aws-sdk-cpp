@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateSecurityProfileRequest : public IoTRequest
+  class UpdateSecurityProfileRequest : public IoTRequest
   {
   public:
-    UpdateSecurityProfileRequest();
+    AWS_IOT_API UpdateSecurityProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,9 +39,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSecurityProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -413,31 +413,31 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Aws::String m_securityProfileDescription;
-    bool m_securityProfileDescriptionHasBeenSet;
+    bool m_securityProfileDescriptionHasBeenSet = false;
 
     Aws::Vector<Behavior> m_behaviors;
-    bool m_behaviorsHasBeenSet;
+    bool m_behaviorsHasBeenSet = false;
 
     Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
-    bool m_alertTargetsHasBeenSet;
+    bool m_alertTargetsHasBeenSet = false;
 
     Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
-    bool m_additionalMetricsToRetainV2HasBeenSet;
+    bool m_additionalMetricsToRetainV2HasBeenSet = false;
 
     bool m_deleteBehaviors;
-    bool m_deleteBehaviorsHasBeenSet;
+    bool m_deleteBehaviorsHasBeenSet = false;
 
     bool m_deleteAlertTargets;
-    bool m_deleteAlertTargetsHasBeenSet;
+    bool m_deleteAlertTargetsHasBeenSet = false;
 
     bool m_deleteAdditionalMetricsToRetain;
-    bool m_deleteAdditionalMetricsToRetainHasBeenSet;
+    bool m_deleteAdditionalMetricsToRetainHasBeenSet = false;
 
     long long m_expectedVersion;
-    bool m_expectedVersionHasBeenSet;
+    bool m_expectedVersionHasBeenSet = false;
   };
 
 } // namespace Model

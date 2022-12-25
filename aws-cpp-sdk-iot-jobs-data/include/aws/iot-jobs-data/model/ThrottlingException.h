@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTJOBSDATAPLANE_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTJOBSDATAPLANE_API ThrottlingException();
+    AWS_IOTJOBSDATAPLANE_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

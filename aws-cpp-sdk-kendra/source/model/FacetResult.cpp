@@ -53,7 +53,7 @@ FacetResult& FacetResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DocumentAttributeValueCountPairs"))
   {
-    Array<JsonView> documentAttributeValueCountPairsJsonList = jsonValue.GetArray("DocumentAttributeValueCountPairs");
+    Aws::Utils::Array<JsonView> documentAttributeValueCountPairsJsonList = jsonValue.GetArray("DocumentAttributeValueCountPairs");
     for(unsigned documentAttributeValueCountPairsIndex = 0; documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength(); ++documentAttributeValueCountPairsIndex)
     {
       m_documentAttributeValueCountPairs.push_back(documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue FacetResult::Jsonize() const
 
   if(m_documentAttributeValueCountPairsHasBeenSet)
   {
-   Array<JsonValue> documentAttributeValueCountPairsJsonList(m_documentAttributeValueCountPairs.size());
+   Aws::Utils::Array<JsonValue> documentAttributeValueCountPairsJsonList(m_documentAttributeValueCountPairs.size());
    for(unsigned documentAttributeValueCountPairsIndex = 0; documentAttributeValueCountPairsIndex < documentAttributeValueCountPairsJsonList.GetLength(); ++documentAttributeValueCountPairsIndex)
    {
      documentAttributeValueCountPairsJsonList[documentAttributeValueCountPairsIndex].AsObject(m_documentAttributeValueCountPairs[documentAttributeValueCountPairsIndex].Jsonize());

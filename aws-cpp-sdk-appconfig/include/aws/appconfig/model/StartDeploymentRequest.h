@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API StartDeploymentRequest : public AppConfigRequest
+  class StartDeploymentRequest : public AppConfigRequest
   {
   public:
-    StartDeploymentRequest();
+    AWS_APPCONFIG_API StartDeploymentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartDeployment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -373,25 +373,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_deploymentStrategyId;
-    bool m_deploymentStrategyIdHasBeenSet;
+    bool m_deploymentStrategyIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     Aws::String m_configurationVersion;
-    bool m_configurationVersionHasBeenSet;
+    bool m_configurationVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

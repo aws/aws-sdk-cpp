@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EventVariableSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EventVariableSummary
+  class EventVariableSummary
   {
   public:
-    EventVariableSummary();
-    EventVariableSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventVariableSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EventVariableSummary();
+    AWS_FRAUDDETECTOR_API EventVariableSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EventVariableSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

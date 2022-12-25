@@ -57,7 +57,7 @@ ConnectPeerConfiguration& ConnectPeerConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("InsideCidrBlocks"))
   {
-    Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
+    Aws::Utils::Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
     for(unsigned insideCidrBlocksIndex = 0; insideCidrBlocksIndex < insideCidrBlocksJsonList.GetLength(); ++insideCidrBlocksIndex)
     {
       m_insideCidrBlocks.push_back(insideCidrBlocksJsonList[insideCidrBlocksIndex].AsString());
@@ -74,7 +74,7 @@ ConnectPeerConfiguration& ConnectPeerConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("BgpConfigurations"))
   {
-    Array<JsonView> bgpConfigurationsJsonList = jsonValue.GetArray("BgpConfigurations");
+    Aws::Utils::Array<JsonView> bgpConfigurationsJsonList = jsonValue.GetArray("BgpConfigurations");
     for(unsigned bgpConfigurationsIndex = 0; bgpConfigurationsIndex < bgpConfigurationsJsonList.GetLength(); ++bgpConfigurationsIndex)
     {
       m_bgpConfigurations.push_back(bgpConfigurationsJsonList[bgpConfigurationsIndex].AsObject());
@@ -103,7 +103,7 @@ JsonValue ConnectPeerConfiguration::Jsonize() const
 
   if(m_insideCidrBlocksHasBeenSet)
   {
-   Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
+   Aws::Utils::Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
    for(unsigned insideCidrBlocksIndex = 0; insideCidrBlocksIndex < insideCidrBlocksJsonList.GetLength(); ++insideCidrBlocksIndex)
    {
      insideCidrBlocksJsonList[insideCidrBlocksIndex].AsString(m_insideCidrBlocks[insideCidrBlocksIndex]);
@@ -119,7 +119,7 @@ JsonValue ConnectPeerConfiguration::Jsonize() const
 
   if(m_bgpConfigurationsHasBeenSet)
   {
-   Array<JsonValue> bgpConfigurationsJsonList(m_bgpConfigurations.size());
+   Aws::Utils::Array<JsonValue> bgpConfigurationsJsonList(m_bgpConfigurations.size());
    for(unsigned bgpConfigurationsIndex = 0; bgpConfigurationsIndex < bgpConfigurationsJsonList.GetLength(); ++bgpConfigurationsIndex)
    {
      bgpConfigurationsJsonList[bgpConfigurationsIndex].AsObject(m_bgpConfigurations[bgpConfigurationsIndex].Jsonize());

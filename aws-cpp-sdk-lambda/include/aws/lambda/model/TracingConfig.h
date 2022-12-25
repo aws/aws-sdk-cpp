@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TracingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API TracingConfig
+  class TracingConfig
   {
   public:
-    TracingConfig();
-    TracingConfig(Aws::Utils::Json::JsonView jsonValue);
-    TracingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API TracingConfig();
+    AWS_LAMBDA_API TracingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API TracingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     TracingMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

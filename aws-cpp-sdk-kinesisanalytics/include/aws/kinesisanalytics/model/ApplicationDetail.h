@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ApplicationDetail
+  class ApplicationDetail
   {
   public:
-    ApplicationDetail();
-    ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ApplicationDetail();
+    AWS_KINESISANALYTICS_API ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -591,40 +591,40 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationDescription;
-    bool m_applicationDescriptionHasBeenSet;
+    bool m_applicationDescriptionHasBeenSet = false;
 
     Aws::String m_applicationARN;
-    bool m_applicationARNHasBeenSet;
+    bool m_applicationARNHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     Aws::Vector<InputDescription> m_inputDescriptions;
-    bool m_inputDescriptionsHasBeenSet;
+    bool m_inputDescriptionsHasBeenSet = false;
 
     Aws::Vector<OutputDescription> m_outputDescriptions;
-    bool m_outputDescriptionsHasBeenSet;
+    bool m_outputDescriptionsHasBeenSet = false;
 
     Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
-    bool m_referenceDataSourceDescriptionsHasBeenSet;
+    bool m_referenceDataSourceDescriptionsHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
-    bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
 
     Aws::String m_applicationCode;
-    bool m_applicationCodeHasBeenSet;
+    bool m_applicationCodeHasBeenSet = false;
 
     long long m_applicationVersionId;
-    bool m_applicationVersionIdHasBeenSet;
+    bool m_applicationVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkSpecifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedLinkSpecifier
+  class TypedLinkSpecifier
   {
   public:
-    TypedLinkSpecifier();
-    TypedLinkSpecifier(Aws::Utils::Json::JsonView jsonValue);
-    TypedLinkSpecifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedLinkSpecifier();
+    AWS_CLOUDDIRECTORY_API TypedLinkSpecifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedLinkSpecifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
-    bool m_typedLinkFacetHasBeenSet;
+    bool m_typedLinkFacetHasBeenSet = false;
 
     ObjectReference m_sourceObjectReference;
-    bool m_sourceObjectReferenceHasBeenSet;
+    bool m_sourceObjectReferenceHasBeenSet = false;
 
     ObjectReference m_targetObjectReference;
-    bool m_targetObjectReferenceHasBeenSet;
+    bool m_targetObjectReferenceHasBeenSet = false;
 
     Aws::Vector<AttributeNameAndValue> m_identityAttributeValues;
-    bool m_identityAttributeValuesHasBeenSet;
+    bool m_identityAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

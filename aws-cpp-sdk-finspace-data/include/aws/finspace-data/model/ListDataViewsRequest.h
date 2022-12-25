@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViewsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ListDataViewsRequest : public FinSpaceDataRequest
+  class ListDataViewsRequest : public FinSpaceDataRequest
   {
   public:
-    ListDataViewsRequest();
+    AWS_FINSPACEDATA_API ListDataViewsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDataViews"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FINSPACEDATA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_FINSPACEDATA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

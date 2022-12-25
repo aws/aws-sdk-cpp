@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskExceptionConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType
+  class RiskExceptionConfigurationType
   {
   public:
-    RiskExceptionConfigurationType();
-    RiskExceptionConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    RiskExceptionConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_blockedIPRangeList;
-    bool m_blockedIPRangeListHasBeenSet;
+    bool m_blockedIPRangeListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_skippedIPRangeList;
-    bool m_skippedIPRangeListHasBeenSet;
+    bool m_skippedIPRangeListHasBeenSet = false;
   };
 
 } // namespace Model

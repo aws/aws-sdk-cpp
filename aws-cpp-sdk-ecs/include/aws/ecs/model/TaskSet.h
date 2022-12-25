@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskSet">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API TaskSet
+  class TaskSet
   {
   public:
-    TaskSet();
-    TaskSet(Aws::Utils::Json::JsonView jsonValue);
-    TaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API TaskSet();
+    AWS_ECS_API TaskSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API TaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,7 +226,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
@@ -234,7 +234,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
@@ -242,7 +242,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
@@ -250,7 +250,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
@@ -258,7 +258,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
@@ -266,7 +266,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
@@ -274,7 +274,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
@@ -282,7 +282,7 @@ namespace Model
      * <p>The tag specified when a task set is started. If an CodeDeploy deployment
      * created the task set, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.</p>
+     * <code>startedBy</code> field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
@@ -1061,7 +1061,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1075,7 +1075,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1089,7 +1089,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1103,7 +1103,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1117,7 +1117,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1131,7 +1131,7 @@ namespace Model
 
     /**
      * <p>The stability status. This indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set sre in
+     * steady state. If the following conditions are met, the task set are in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
@@ -1344,76 +1344,76 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_taskSetArn;
-    bool m_taskSetArnHasBeenSet;
+    bool m_taskSetArnHasBeenSet = false;
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     int m_computedDesiredCount;
-    bool m_computedDesiredCountHasBeenSet;
+    bool m_computedDesiredCountHasBeenSet = false;
 
     int m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     int m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformFamily;
-    bool m_platformFamilyHasBeenSet;
+    bool m_platformFamilyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     Scale m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     StabilityStatus m_stabilityStatus;
-    bool m_stabilityStatusHasBeenSet;
+    bool m_stabilityStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_stabilityStatusAt;
-    bool m_stabilityStatusAtHasBeenSet;
+    bool m_stabilityStatusAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

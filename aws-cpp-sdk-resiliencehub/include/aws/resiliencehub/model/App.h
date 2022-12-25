@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/App">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API App
+  class App
   {
   public:
-    App();
-    App(Aws::Utils::Json::JsonView jsonValue);
-    App& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API App();
+    AWS_RESILIENCEHUB_API App(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,32 +463,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline const AppStatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline void SetStatus(const AppStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline void SetStatus(AppStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline App& WithStatus(const AppStatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>The status of the application.</p>
      */
     inline App& WithStatus(AppStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -574,40 +574,40 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     AppAssessmentScheduleType m_assessmentSchedule;
-    bool m_assessmentScheduleHasBeenSet;
+    bool m_assessmentScheduleHasBeenSet = false;
 
     AppComplianceStatusType m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAppComplianceEvaluationTime;
-    bool m_lastAppComplianceEvaluationTimeHasBeenSet;
+    bool m_lastAppComplianceEvaluationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastResiliencyScoreEvaluationTime;
-    bool m_lastResiliencyScoreEvaluationTimeHasBeenSet;
+    bool m_lastResiliencyScoreEvaluationTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     double m_resiliencyScore;
-    bool m_resiliencyScoreHasBeenSet;
+    bool m_resiliencyScoreHasBeenSet = false;
 
     AppStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

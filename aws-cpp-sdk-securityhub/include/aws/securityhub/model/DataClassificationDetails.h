@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DataClassificationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API DataClassificationDetails
+  class DataClassificationDetails
   {
   public:
-    DataClassificationDetails();
-    DataClassificationDetails(Aws::Utils::Json::JsonView jsonValue);
-    DataClassificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API DataClassificationDetails();
+    AWS_SECURITYHUB_API DataClassificationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API DataClassificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_detailedResultsLocation;
-    bool m_detailedResultsLocationHasBeenSet;
+    bool m_detailedResultsLocationHasBeenSet = false;
 
     ClassificationResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

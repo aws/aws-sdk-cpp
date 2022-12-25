@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaSettingsDescription
+  class ReplicaSettingsDescription
   {
   public:
-    ReplicaSettingsDescription();
-    ReplicaSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaSettingsDescription();
+    AWS_DYNAMODB_API ReplicaSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -372,31 +372,31 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     ReplicaStatus m_replicaStatus;
-    bool m_replicaStatusHasBeenSet;
+    bool m_replicaStatusHasBeenSet = false;
 
     BillingModeSummary m_replicaBillingModeSummary;
-    bool m_replicaBillingModeSummaryHasBeenSet;
+    bool m_replicaBillingModeSummaryHasBeenSet = false;
 
     long long m_replicaProvisionedReadCapacityUnits;
-    bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;
+    bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_replicaProvisionedReadCapacityAutoScalingSettings;
-    bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet;
+    bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
     long long m_replicaProvisionedWriteCapacityUnits;
-    bool m_replicaProvisionedWriteCapacityUnitsHasBeenSet;
+    bool m_replicaProvisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
-    bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet;
+    bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsDescription> m_replicaGlobalSecondaryIndexSettings;
-    bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet;
+    bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet = false;
 
     TableClassSummary m_replicaTableClassSummary;
-    bool m_replicaTableClassSummaryHasBeenSet;
+    bool m_replicaTableClassSummaryHasBeenSet = false;
   };
 
 } // namespace Model

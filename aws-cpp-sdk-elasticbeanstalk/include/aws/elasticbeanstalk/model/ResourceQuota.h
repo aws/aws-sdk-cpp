@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ResourceQuota
+  class ResourceQuota
   {
   public:
-    ResourceQuota();
-    ResourceQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuota();
+    AWS_ELASTICBEANSTALK_API ResourceQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
   };
 
 } // namespace Model

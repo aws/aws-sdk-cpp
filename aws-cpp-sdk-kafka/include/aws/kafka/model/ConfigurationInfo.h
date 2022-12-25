@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ConfigurationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ConfigurationInfo
+  class ConfigurationInfo
   {
   public:
-    ConfigurationInfo();
-    ConfigurationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ConfigurationInfo();
+    AWS_KAFKA_API ConfigurationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ConfigurationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

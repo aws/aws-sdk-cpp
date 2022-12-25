@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceIpv6Address">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfaceIpv6Address
+  class NetworkInterfaceIpv6Address
   {
   public:
-    NetworkInterfaceIpv6Address();
-    NetworkInterfaceIpv6Address(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfaceIpv6Address& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceIpv6Address();
+    AWS_EC2_API NetworkInterfaceIpv6Address(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceIpv6Address& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_ipv6Address;
-    bool m_ipv6AddressHasBeenSet;
+    bool m_ipv6AddressHasBeenSet = false;
   };
 
 } // namespace Model

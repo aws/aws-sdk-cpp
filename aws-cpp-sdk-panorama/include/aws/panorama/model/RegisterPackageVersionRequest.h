@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API RegisterPackageVersionRequest : public PanoramaRequest
+  class RegisterPackageVersionRequest : public PanoramaRequest
   {
   public:
-    RegisterPackageVersionRequest();
+    AWS_PANORAMA_API RegisterPackageVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterPackageVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -219,19 +219,19 @@ namespace Model
   private:
 
     bool m_markLatest;
-    bool m_markLatestHasBeenSet;
+    bool m_markLatestHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_patchVersion;
-    bool m_patchVersionHasBeenSet;
+    bool m_patchVersionHasBeenSet = false;
   };
 
 } // namespace Model

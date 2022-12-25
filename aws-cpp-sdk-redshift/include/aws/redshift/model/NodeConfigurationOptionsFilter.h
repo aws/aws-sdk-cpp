@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/NodeConfigurationOptionsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API NodeConfigurationOptionsFilter
+  class NodeConfigurationOptionsFilter
   {
   public:
-    NodeConfigurationOptionsFilter();
-    NodeConfigurationOptionsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeConfigurationOptionsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API NodeConfigurationOptionsFilter();
+    AWS_REDSHIFT_API NodeConfigurationOptionsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API NodeConfigurationOptionsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     NodeConfigurationOptionsFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OperatorType m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

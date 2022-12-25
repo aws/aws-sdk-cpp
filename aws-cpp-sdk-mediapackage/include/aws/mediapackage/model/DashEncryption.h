@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DashEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API DashEncryption
+  class DashEncryption
   {
   public:
-    DashEncryption();
-    DashEncryption(Aws::Utils::Json::JsonView jsonValue);
-    DashEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API DashEncryption();
+    AWS_MEDIAPACKAGE_API DashEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API DashEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_keyRotationIntervalSeconds;
-    bool m_keyRotationIntervalSecondsHasBeenSet;
+    bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

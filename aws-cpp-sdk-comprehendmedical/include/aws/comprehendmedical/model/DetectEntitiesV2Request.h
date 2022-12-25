@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Request : public ComprehendMedicalRequest
+  class DetectEntitiesV2Request : public ComprehendMedicalRequest
   {
   public:
-    DetectEntitiesV2Request();
+    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DetectEntitiesV2"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPREHENDMEDICAL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPREHENDMEDICAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

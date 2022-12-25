@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AccessLog">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API AccessLog
+  class AccessLog
   {
   public:
-    AccessLog();
-    AccessLog(Aws::Utils::Json::JsonView jsonValue);
-    AccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API AccessLog();
+    AWS_APPMESH_API AccessLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API AccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     FileAccessLog m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

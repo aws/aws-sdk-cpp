@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryTimeline">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryTimeline
+  class CanaryTimeline
   {
   public:
-    CanaryTimeline();
-    CanaryTimeline(Aws::Utils::Json::JsonView jsonValue);
-    CanaryTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryTimeline();
+    AWS_SYNTHETICS_API CanaryTimeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStarted;
-    bool m_lastStartedHasBeenSet;
+    bool m_lastStartedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStopped;
-    bool m_lastStoppedHasBeenSet;
+    bool m_lastStoppedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ RemoteAccessConfig& RemoteAccessConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sourceSecurityGroups"))
   {
-    Array<JsonView> sourceSecurityGroupsJsonList = jsonValue.GetArray("sourceSecurityGroups");
+    Aws::Utils::Array<JsonView> sourceSecurityGroupsJsonList = jsonValue.GetArray("sourceSecurityGroups");
     for(unsigned sourceSecurityGroupsIndex = 0; sourceSecurityGroupsIndex < sourceSecurityGroupsJsonList.GetLength(); ++sourceSecurityGroupsIndex)
     {
       m_sourceSecurityGroups.push_back(sourceSecurityGroupsJsonList[sourceSecurityGroupsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue RemoteAccessConfig::Jsonize() const
 
   if(m_sourceSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> sourceSecurityGroupsJsonList(m_sourceSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> sourceSecurityGroupsJsonList(m_sourceSecurityGroups.size());
    for(unsigned sourceSecurityGroupsIndex = 0; sourceSecurityGroupsIndex < sourceSecurityGroupsJsonList.GetLength(); ++sourceSecurityGroupsIndex)
    {
      sourceSecurityGroupsJsonList[sourceSecurityGroupsIndex].AsString(m_sourceSecurityGroups[sourceSecurityGroupsIndex]);

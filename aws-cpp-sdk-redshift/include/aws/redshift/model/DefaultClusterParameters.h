@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DefaultClusterParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DefaultClusterParameters
+  class DefaultClusterParameters
   {
   public:
-    DefaultClusterParameters();
-    DefaultClusterParameters(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DefaultClusterParameters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DefaultClusterParameters();
+    AWS_REDSHIFT_API DefaultClusterParameters(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DefaultClusterParameters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupFamily;
-    bool m_parameterGroupFamilyHasBeenSet;
+    bool m_parameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

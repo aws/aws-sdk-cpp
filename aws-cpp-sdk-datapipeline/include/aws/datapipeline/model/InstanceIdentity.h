@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/InstanceIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API InstanceIdentity
+  class InstanceIdentity
   {
   public:
-    InstanceIdentity();
-    InstanceIdentity(Aws::Utils::Json::JsonView jsonValue);
-    InstanceIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API InstanceIdentity();
+    AWS_DATAPIPELINE_API InstanceIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API InstanceIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API CreateBackendAuthResourceConfig
+  class CreateBackendAuthResourceConfig
   {
   public:
-    CreateBackendAuthResourceConfig();
-    CreateBackendAuthResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    CreateBackendAuthResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthResourceConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     AuthResources m_authResources;
-    bool m_authResourcesHasBeenSet;
+    bool m_authResourcesHasBeenSet = false;
 
     CreateBackendAuthIdentityPoolConfig m_identityPoolConfigs;
-    bool m_identityPoolConfigsHasBeenSet;
+    bool m_identityPoolConfigsHasBeenSet = false;
 
     Service m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     CreateBackendAuthUserPoolConfig m_userPoolConfigs;
-    bool m_userPoolConfigsHasBeenSet;
+    bool m_userPoolConfigsHasBeenSet = false;
   };
 
 } // namespace Model

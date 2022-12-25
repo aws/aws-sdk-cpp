@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryProcessingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategoryProcessingStatus
+  class CostCategoryProcessingStatus
   {
   public:
-    CostCategoryProcessingStatus();
-    CostCategoryProcessingStatus(Aws::Utils::Json::JsonView jsonValue);
-    CostCategoryProcessingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategoryProcessingStatus();
+    AWS_COSTEXPLORER_API CostCategoryProcessingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategoryProcessingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     CostCategoryStatusComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
 
     CostCategoryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

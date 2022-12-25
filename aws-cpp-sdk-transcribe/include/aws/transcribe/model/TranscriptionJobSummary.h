@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary
+  class TranscriptionJobSummary
   {
   public:
-    TranscriptionJobSummary();
-    TranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary();
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -678,46 +678,46 @@ namespace Model
   private:
 
     Aws::String m_transcriptionJobName;
-    bool m_transcriptionJobNameHasBeenSet;
+    bool m_transcriptionJobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscriptionJobStatus m_transcriptionJobStatus;
-    bool m_transcriptionJobStatusHasBeenSet;
+    bool m_transcriptionJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     OutputLocationType m_outputLocationType;
-    bool m_outputLocationTypeHasBeenSet;
+    bool m_outputLocationTypeHasBeenSet = false;
 
     ContentRedaction m_contentRedaction;
-    bool m_contentRedactionHasBeenSet;
+    bool m_contentRedactionHasBeenSet = false;
 
     ModelSettings m_modelSettings;
-    bool m_modelSettingsHasBeenSet;
+    bool m_modelSettingsHasBeenSet = false;
 
     bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet;
+    bool m_identifyLanguageHasBeenSet = false;
 
     bool m_identifyMultipleLanguages;
-    bool m_identifyMultipleLanguagesHasBeenSet;
+    bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     double m_identifiedLanguageScore;
-    bool m_identifiedLanguageScoreHasBeenSet;
+    bool m_identifiedLanguageScoreHasBeenSet = false;
 
     Aws::Vector<LanguageCodeItem> m_languageCodes;
-    bool m_languageCodesHasBeenSet;
+    bool m_languageCodesHasBeenSet = false;
   };
 
 } // namespace Model

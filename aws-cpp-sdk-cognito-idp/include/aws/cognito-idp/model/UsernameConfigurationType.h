@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UsernameConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType
+  class UsernameConfigurationType
   {
   public:
-    UsernameConfigurationType();
-    UsernameConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    UsernameConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     bool m_caseSensitive;
-    bool m_caseSensitiveHasBeenSet;
+    bool m_caseSensitiveHasBeenSet = false;
   };
 
 } // namespace Model

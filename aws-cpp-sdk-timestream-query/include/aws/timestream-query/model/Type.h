@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/Type">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API Type
+  class Type
   {
   public:
-    Type();
-    Type(Aws::Utils::Json::JsonView jsonValue);
-    Type& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API Type();
+    AWS_TIMESTREAMQUERY_API Type(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Type& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,63 +84,63 @@ namespace Model
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    const ColumnInfo& GetArrayColumnInfo() const;
+    AWS_TIMESTREAMQUERY_API const ColumnInfo& GetArrayColumnInfo() const;
 
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    bool ArrayColumnInfoHasBeenSet() const;
+    AWS_TIMESTREAMQUERY_API bool ArrayColumnInfoHasBeenSet() const;
 
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    void SetArrayColumnInfo(const ColumnInfo& value);
+    AWS_TIMESTREAMQUERY_API void SetArrayColumnInfo(const ColumnInfo& value);
 
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    void SetArrayColumnInfo(ColumnInfo&& value);
+    AWS_TIMESTREAMQUERY_API void SetArrayColumnInfo(ColumnInfo&& value);
 
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    Type& WithArrayColumnInfo(const ColumnInfo& value);
+    AWS_TIMESTREAMQUERY_API Type& WithArrayColumnInfo(const ColumnInfo& value);
 
     /**
      * <p>Indicates if the column is an array.</p>
      */
-    Type& WithArrayColumnInfo(ColumnInfo&& value);
+    AWS_TIMESTREAMQUERY_API Type& WithArrayColumnInfo(ColumnInfo&& value);
 
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    const ColumnInfo& GetTimeSeriesMeasureValueColumnInfo() const;
+    AWS_TIMESTREAMQUERY_API const ColumnInfo& GetTimeSeriesMeasureValueColumnInfo() const;
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    bool TimeSeriesMeasureValueColumnInfoHasBeenSet() const;
+    AWS_TIMESTREAMQUERY_API bool TimeSeriesMeasureValueColumnInfoHasBeenSet() const;
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    void SetTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value);
+    AWS_TIMESTREAMQUERY_API void SetTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value);
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    void SetTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value);
+    AWS_TIMESTREAMQUERY_API void SetTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value);
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    Type& WithTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value);
+    AWS_TIMESTREAMQUERY_API Type& WithTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value);
 
     /**
      * <p>Indicates if the column is a timeseries data type.</p>
      */
-    Type& WithTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value);
+    AWS_TIMESTREAMQUERY_API Type& WithTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value);
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     ScalarType m_scalarType;
-    bool m_scalarTypeHasBeenSet;
+    bool m_scalarTypeHasBeenSet = false;
 
     std::shared_ptr<ColumnInfo> m_arrayColumnInfo;
-    bool m_arrayColumnInfoHasBeenSet;
+    bool m_arrayColumnInfoHasBeenSet = false;
 
     std::shared_ptr<ColumnInfo> m_timeSeriesMeasureValueColumnInfo;
-    bool m_timeSeriesMeasureValueColumnInfoHasBeenSet;
+    bool m_timeSeriesMeasureValueColumnInfoHasBeenSet = false;
 
     Aws::Vector<ColumnInfo> m_rowColumnInfo;
-    bool m_rowColumnInfoHasBeenSet;
+    bool m_rowColumnInfoHasBeenSet = false;
   };
 
 } // namespace Model

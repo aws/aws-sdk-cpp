@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/RootDirectory">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API RootDirectory
+  class RootDirectory
   {
   public:
-    RootDirectory();
-    RootDirectory(Aws::Utils::Json::JsonView jsonValue);
-    RootDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API RootDirectory();
+    AWS_EFS_API RootDirectory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API RootDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     CreationInfo m_creationInfo;
-    bool m_creationInfoHasBeenSet;
+    bool m_creationInfoHasBeenSet = false;
   };
 
 } // namespace Model

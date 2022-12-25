@@ -20,10 +20,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscriptionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeSpotDatafeedSubscriptionRequest : public EC2Request
+  class DescribeSpotDatafeedSubscriptionRequest : public EC2Request
   {
   public:
-    DescribeSpotDatafeedSubscriptionRequest();
+    AWS_EC2_API DescribeSpotDatafeedSubscriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSpotDatafeedSubscription"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

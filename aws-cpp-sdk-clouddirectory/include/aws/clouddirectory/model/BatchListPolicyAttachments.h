@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListPolicyAttachments">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListPolicyAttachments
+  class BatchListPolicyAttachments
   {
   public:
-    BatchListPolicyAttachments();
-    BatchListPolicyAttachments(Aws::Utils::Json::JsonView jsonValue);
-    BatchListPolicyAttachments& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListPolicyAttachments();
+    AWS_CLOUDDIRECTORY_API BatchListPolicyAttachments(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListPolicyAttachments& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,13 +136,13 @@ namespace Model
   private:
 
     ObjectReference m_policyReference;
-    bool m_policyReferenceHasBeenSet;
+    bool m_policyReferenceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

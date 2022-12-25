@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RuleGroupsNamespaceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceStatus
+  class RuleGroupsNamespaceStatus
   {
   public:
-    RuleGroupsNamespaceStatus();
-    RuleGroupsNamespaceStatus(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupsNamespaceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceStatus();
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API RuleGroupsNamespaceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     RuleGroupsNamespaceStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

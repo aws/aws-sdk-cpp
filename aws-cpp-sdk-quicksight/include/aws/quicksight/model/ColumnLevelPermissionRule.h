@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnLevelPermissionRule">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnLevelPermissionRule
+  class ColumnLevelPermissionRule
   {
   public:
-    ColumnLevelPermissionRule();
-    ColumnLevelPermissionRule(Aws::Utils::Json::JsonView jsonValue);
-    ColumnLevelPermissionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnLevelPermissionRule();
+    AWS_QUICKSIGHT_API ColumnLevelPermissionRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnLevelPermissionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
   };
 
 } // namespace Model

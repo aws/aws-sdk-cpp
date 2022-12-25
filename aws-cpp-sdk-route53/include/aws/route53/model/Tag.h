@@ -28,14 +28,14 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_ROUTE53_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Tag();
+    AWS_ROUTE53_API Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

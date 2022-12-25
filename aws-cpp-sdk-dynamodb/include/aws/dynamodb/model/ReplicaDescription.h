@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaDescription
+  class ReplicaDescription
   {
   public:
-    ReplicaDescription();
-    ReplicaDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaDescription();
+    AWS_DYNAMODB_API ReplicaDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -466,31 +466,31 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     ReplicaStatus m_replicaStatus;
-    bool m_replicaStatusHasBeenSet;
+    bool m_replicaStatusHasBeenSet = false;
 
     Aws::String m_replicaStatusDescription;
-    bool m_replicaStatusDescriptionHasBeenSet;
+    bool m_replicaStatusDescriptionHasBeenSet = false;
 
     Aws::String m_replicaStatusPercentProgress;
-    bool m_replicaStatusPercentProgressHasBeenSet;
+    bool m_replicaStatusPercentProgressHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyId;
-    bool m_kMSMasterKeyIdHasBeenSet;
+    bool m_kMSMasterKeyIdHasBeenSet = false;
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicaInaccessibleDateTime;
-    bool m_replicaInaccessibleDateTimeHasBeenSet;
+    bool m_replicaInaccessibleDateTimeHasBeenSet = false;
 
     TableClassSummary m_replicaTableClassSummary;
-    bool m_replicaTableClassSummaryHasBeenSet;
+    bool m_replicaTableClassSummaryHasBeenSet = false;
   };
 
 } // namespace Model

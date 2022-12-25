@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserSearchFilter
+  class UserSearchFilter
   {
   public:
-    UserSearchFilter();
-    UserSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    UserSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserSearchFilter();
+    AWS_CONNECT_API UserSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     ControlPlaneTagFilter m_tagFilter;
-    bool m_tagFilterHasBeenSet;
+    bool m_tagFilterHasBeenSet = false;
   };
 
 } // namespace Model

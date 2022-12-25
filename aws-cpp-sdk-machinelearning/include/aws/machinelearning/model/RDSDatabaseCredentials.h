@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDatabaseCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSDatabaseCredentials
+  class RDSDatabaseCredentials
   {
   public:
-    RDSDatabaseCredentials();
-    RDSDatabaseCredentials(Aws::Utils::Json::JsonView jsonValue);
-    RDSDatabaseCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSDatabaseCredentials();
+    AWS_MACHINELEARNING_API RDSDatabaseCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSDatabaseCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,47 +25,47 @@ namespace Model
 {
 
   /**
-   * <p>Status of the EBS options for the specified domain.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The status of the EBS options for the specified OpenSearch Service
+   * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EBSOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API EBSOptionsStatus
+  class EBSOptionsStatus
   {
   public:
-    EBSOptionsStatus();
-    EBSOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    EBSOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API EBSOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API EBSOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API EBSOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline const EBSOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline void SetOptions(const EBSOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline void SetOptions(EBSOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline EBSOptionsStatus& WithOptions(const EBSOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The EBS options for the specified domain.</p>
+     * <p>The configured EBS options for the specified domain.</p>
      */
     inline EBSOptionsStatus& WithOptions(EBSOptions&& value) { SetOptions(std::move(value)); return *this;}
 
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     EBSOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

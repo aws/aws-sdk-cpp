@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildBatchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildBatchFilter
+  class BuildBatchFilter
   {
   public:
-    BuildBatchFilter();
-    BuildBatchFilter(Aws::Utils::Json::JsonView jsonValue);
-    BuildBatchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildBatchFilter();
+    AWS_CODEBUILD_API BuildBatchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildBatchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

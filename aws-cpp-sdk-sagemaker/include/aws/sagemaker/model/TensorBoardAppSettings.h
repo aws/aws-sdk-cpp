@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TensorBoardAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TensorBoardAppSettings
+  class TensorBoardAppSettings
   {
   public:
-    TensorBoardAppSettings();
-    TensorBoardAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    TensorBoardAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TensorBoardAppSettings();
+    AWS_SAGEMAKER_API TensorBoardAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TensorBoardAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

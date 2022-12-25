@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/S3Logs">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API S3Logs
+  class S3Logs
   {
   public:
-    S3Logs();
-    S3Logs(Aws::Utils::Json::JsonView jsonValue);
-    S3Logs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API S3Logs();
+    AWS_IMAGEBUILDER_API S3Logs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API S3Logs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

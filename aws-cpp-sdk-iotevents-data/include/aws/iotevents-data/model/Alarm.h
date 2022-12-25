@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/Alarm">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API Alarm
+  class Alarm
   {
   public:
-    Alarm();
-    Alarm(Aws::Utils::Json::JsonView jsonValue);
-    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API Alarm();
+    AWS_IOTEVENTSDATA_API Alarm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,25 +294,25 @@ namespace Model
   private:
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_alarmModelVersion;
-    bool m_alarmModelVersionHasBeenSet;
+    bool m_alarmModelVersionHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
 
     AlarmState m_alarmState;
-    bool m_alarmStateHasBeenSet;
+    bool m_alarmStateHasBeenSet = false;
 
     int m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

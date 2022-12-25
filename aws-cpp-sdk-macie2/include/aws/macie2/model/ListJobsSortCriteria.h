@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListJobsSortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ListJobsSortCriteria
+  class ListJobsSortCriteria
   {
   public:
-    ListJobsSortCriteria();
-    ListJobsSortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    ListJobsSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ListJobsSortCriteria();
+    AWS_MACIE2_API ListJobsSortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ListJobsSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ListJobsSortAttributeName m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

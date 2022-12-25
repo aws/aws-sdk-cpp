@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EventPredictionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EventPredictionSummary
+  class EventPredictionSummary
   {
   public:
-    EventPredictionSummary();
-    EventPredictionSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventPredictionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EventPredictionSummary();
+    AWS_FRAUDDETECTOR_API EventPredictionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EventPredictionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_eventTimestamp;
-    bool m_eventTimestampHasBeenSet;
+    bool m_eventTimestampHasBeenSet = false;
 
     Aws::String m_predictionTimestamp;
-    bool m_predictionTimestampHasBeenSet;
+    bool m_predictionTimestampHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

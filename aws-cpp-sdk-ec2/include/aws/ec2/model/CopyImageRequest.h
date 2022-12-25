@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CopyImageRequest : public EC2Request
+  class CopyImageRequest : public EC2Request
   {
   public:
-    CopyImageRequest();
+    AWS_EC2_API CopyImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -152,7 +152,7 @@ namespace Model
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -163,7 +163,7 @@ namespace Model
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -174,7 +174,7 @@ namespace Model
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -185,7 +185,7 @@ namespace Model
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline CopyImageRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -465,8 +465,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetDestinationOutpostArn() const{ return m_destinationOutpostArn; }
 
@@ -477,8 +477,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
 
@@ -489,8 +489,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const Aws::String& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = value; }
 
@@ -501,8 +501,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(Aws::String&& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = std::move(value); }
 
@@ -513,8 +513,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const char* value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn.assign(value); }
 
@@ -525,8 +525,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(const Aws::String& value) { SetDestinationOutpostArn(value); return *this;}
 
@@ -537,8 +537,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(Aws::String&& value) { SetDestinationOutpostArn(std::move(value)); return *this;}
 
@@ -549,8 +549,8 @@ namespace Model
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copying AMIs from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
+     * EC2 User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(const char* value) { SetDestinationOutpostArn(value); return *this;}
 
@@ -587,34 +587,74 @@ namespace Model
      */
     inline CopyImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to include your user-defined AMI tags when copying the
+     * AMI.</p> <p>The following tags will not be copied:</p> <ul> <li> <p>System tags
+     * (prefixed with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
+     * user-defined tags that are attached by other Amazon Web Services accounts</p>
+     * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
+     */
+    inline bool GetCopyImageTags() const{ return m_copyImageTags; }
+
+    /**
+     * <p>Indicates whether to include your user-defined AMI tags when copying the
+     * AMI.</p> <p>The following tags will not be copied:</p> <ul> <li> <p>System tags
+     * (prefixed with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
+     * user-defined tags that are attached by other Amazon Web Services accounts</p>
+     * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
+     */
+    inline bool CopyImageTagsHasBeenSet() const { return m_copyImageTagsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to include your user-defined AMI tags when copying the
+     * AMI.</p> <p>The following tags will not be copied:</p> <ul> <li> <p>System tags
+     * (prefixed with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
+     * user-defined tags that are attached by other Amazon Web Services accounts</p>
+     * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
+     */
+    inline void SetCopyImageTags(bool value) { m_copyImageTagsHasBeenSet = true; m_copyImageTags = value; }
+
+    /**
+     * <p>Indicates whether to include your user-defined AMI tags when copying the
+     * AMI.</p> <p>The following tags will not be copied:</p> <ul> <li> <p>System tags
+     * (prefixed with <code>aws:</code>)</p> </li> <li> <p>For public and shared AMIs,
+     * user-defined tags that are attached by other Amazon Web Services accounts</p>
+     * </li> </ul> <p>Default: Your user-defined AMI tags are not copied.</p>
+     */
+    inline CopyImageRequest& WithCopyImageTags(bool value) { SetCopyImageTags(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sourceImageId;
-    bool m_sourceImageIdHasBeenSet;
+    bool m_sourceImageIdHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_destinationOutpostArn;
-    bool m_destinationOutpostArnHasBeenSet;
+    bool m_destinationOutpostArnHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
+
+    bool m_copyImageTags;
+    bool m_copyImageTagsHasBeenSet = false;
   };
 
 } // namespace Model

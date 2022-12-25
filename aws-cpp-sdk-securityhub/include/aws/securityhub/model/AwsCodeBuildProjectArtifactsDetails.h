@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectArtifactsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectArtifactsDetails
+  class AwsCodeBuildProjectArtifactsDetails
   {
   public:
-    AwsCodeBuildProjectArtifactsDetails();
-    AwsCodeBuildProjectArtifactsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectArtifactsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectArtifactsDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectArtifactsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectArtifactsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -441,31 +441,31 @@ namespace Model
   private:
 
     Aws::String m_artifactIdentifier;
-    bool m_artifactIdentifierHasBeenSet;
+    bool m_artifactIdentifierHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_namespaceType;
-    bool m_namespaceTypeHasBeenSet;
+    bool m_namespaceTypeHasBeenSet = false;
 
     bool m_overrideArtifactName;
-    bool m_overrideArtifactNameHasBeenSet;
+    bool m_overrideArtifactNameHasBeenSet = false;
 
     Aws::String m_packaging;
-    bool m_packagingHasBeenSet;
+    bool m_packagingHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

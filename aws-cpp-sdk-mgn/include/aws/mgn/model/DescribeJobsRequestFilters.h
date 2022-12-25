@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API DescribeJobsRequestFilters
+  class DescribeJobsRequestFilters
   {
   public:
-    DescribeJobsRequestFilters();
-    DescribeJobsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeJobsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API DescribeJobsRequestFilters();
+    AWS_MGN_API DescribeJobsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API DescribeJobsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_fromDate;
-    bool m_fromDateHasBeenSet;
+    bool m_fromDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobIDs;
-    bool m_jobIDsHasBeenSet;
+    bool m_jobIDsHasBeenSet = false;
 
     Aws::String m_toDate;
-    bool m_toDateHasBeenSet;
+    bool m_toDateHasBeenSet = false;
   };
 
 } // namespace Model

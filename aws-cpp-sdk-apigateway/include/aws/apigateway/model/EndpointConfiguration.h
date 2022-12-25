@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/EndpointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API EndpointConfiguration
+  class EndpointConfiguration
   {
   public:
-    EndpointConfiguration();
-    EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API EndpointConfiguration();
+    AWS_APIGATEWAY_API EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,10 +171,10 @@ namespace Model
   private:
 
     Aws::Vector<EndpointType> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;
-    bool m_vpcEndpointIdsHasBeenSet;
+    bool m_vpcEndpointIdsHasBeenSet = false;
   };
 
 } // namespace Model

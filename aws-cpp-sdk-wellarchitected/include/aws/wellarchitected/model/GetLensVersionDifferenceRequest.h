@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WELLARCHITECTED_API GetLensVersionDifferenceRequest : public WellArchitectedRequest
+  class GetLensVersionDifferenceRequest : public WellArchitectedRequest
   {
   public:
-    GetLensVersionDifferenceRequest();
+    AWS_WELLARCHITECTED_API GetLensVersionDifferenceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLensVersionDifference"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_baseLensVersion;
-    bool m_baseLensVersionHasBeenSet;
+    bool m_baseLensVersionHasBeenSet = false;
 
     Aws::String m_targetLensVersion;
-    bool m_targetLensVersionHasBeenSet;
+    bool m_targetLensVersionHasBeenSet = false;
   };
 
 } // namespace Model

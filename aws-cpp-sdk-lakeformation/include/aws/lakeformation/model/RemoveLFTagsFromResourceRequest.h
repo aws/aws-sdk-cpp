@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API RemoveLFTagsFromResourceRequest : public LakeFormationRequest
+  class RemoveLFTagsFromResourceRequest : public LakeFormationRequest
   {
   public:
-    RemoveLFTagsFromResourceRequest();
+    AWS_LAKEFORMATION_API RemoveLFTagsFromResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveLFTagsFromResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<LFTagPair> m_lFTags;
-    bool m_lFTagsHasBeenSet;
+    bool m_lFTagsHasBeenSet = false;
   };
 
 } // namespace Model

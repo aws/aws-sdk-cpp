@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserType
+  class UserType
   {
   public:
-    UserType();
-    UserType(Aws::Utils::Json::JsonView jsonValue);
-    UserType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,25 +335,25 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_userCreateDate;
-    bool m_userCreateDateHasBeenSet;
+    bool m_userCreateDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_userLastModifiedDate;
-    bool m_userLastModifiedDateHasBeenSet;
+    bool m_userLastModifiedDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     UserStatusType m_userStatus;
-    bool m_userStatusHasBeenSet;
+    bool m_userStatusHasBeenSet = false;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;
-    bool m_mFAOptionsHasBeenSet;
+    bool m_mFAOptionsHasBeenSet = false;
   };
 
 } // namespace Model

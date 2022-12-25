@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GeoMatchConstraint">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API GeoMatchConstraint
+  class GeoMatchConstraint
   {
   public:
-    GeoMatchConstraint();
-    GeoMatchConstraint(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API GeoMatchConstraint();
+    AWS_WAF_API GeoMatchConstraint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API GeoMatchConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     GeoMatchConstraintType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     GeoMatchConstraintValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

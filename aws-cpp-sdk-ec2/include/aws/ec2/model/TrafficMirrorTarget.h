@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TrafficMirrorTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TrafficMirrorTarget
+  class TrafficMirrorTarget
   {
   public:
-    TrafficMirrorTarget();
-    TrafficMirrorTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficMirrorTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorTarget();
+    AWS_EC2_API TrafficMirrorTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorTargetId;
-    bool m_trafficMirrorTargetIdHasBeenSet;
+    bool m_trafficMirrorTargetIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_networkLoadBalancerArn;
-    bool m_networkLoadBalancerArnHasBeenSet;
+    bool m_networkLoadBalancerArnHasBeenSet = false;
 
     TrafficMirrorTargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_gatewayLoadBalancerEndpointId;
-    bool m_gatewayLoadBalancerEndpointIdHasBeenSet;
+    bool m_gatewayLoadBalancerEndpointIdHasBeenSet = false;
   };
 
 } // namespace Model

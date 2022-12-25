@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayListenerTlsAcmCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayListenerTlsAcmCertificate
+  class VirtualGatewayListenerTlsAcmCertificate
   {
   public:
-    VirtualGatewayListenerTlsAcmCertificate();
-    VirtualGatewayListenerTlsAcmCertificate(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayListenerTlsAcmCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayListenerTlsAcmCertificate();
+    AWS_APPMESH_API VirtualGatewayListenerTlsAcmCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayListenerTlsAcmCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
   };
 
 } // namespace Model

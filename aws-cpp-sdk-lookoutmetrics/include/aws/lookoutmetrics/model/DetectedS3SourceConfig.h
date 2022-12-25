@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectedS3SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DetectedS3SourceConfig
+  class DetectedS3SourceConfig
   {
   public:
-    DetectedS3SourceConfig();
-    DetectedS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    DetectedS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DetectedS3SourceConfig();
+    AWS_LOOKOUTMETRICS_API DetectedS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DetectedS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DetectedFileFormatDescriptor m_fileFormatDescriptor;
-    bool m_fileFormatDescriptorHasBeenSet;
+    bool m_fileFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

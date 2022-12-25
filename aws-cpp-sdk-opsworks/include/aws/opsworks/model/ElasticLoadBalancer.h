@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ElasticLoadBalancer">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ElasticLoadBalancer
+  class ElasticLoadBalancer
   {
   public:
-    ElasticLoadBalancer();
-    ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
-    ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ElasticLoadBalancer();
+    AWS_OPSWORKS_API ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -433,31 +433,31 @@ namespace Model
   private:
 
     Aws::String m_elasticLoadBalancerName;
-    bool m_elasticLoadBalancerNameHasBeenSet;
+    bool m_elasticLoadBalancerNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2InstanceIds;
-    bool m_ec2InstanceIdsHasBeenSet;
+    bool m_ec2InstanceIdsHasBeenSet = false;
   };
 
 } // namespace Model

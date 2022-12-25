@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerTargets">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CrawlerTargets
+  class CrawlerTargets
   {
   public:
-    CrawlerTargets();
-    CrawlerTargets(Aws::Utils::Json::JsonView jsonValue);
-    CrawlerTargets& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CrawlerTargets();
+    AWS_GLUE_API CrawlerTargets(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CrawlerTargets& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::Vector<S3Target> m_s3Targets;
-    bool m_s3TargetsHasBeenSet;
+    bool m_s3TargetsHasBeenSet = false;
 
     Aws::Vector<JdbcTarget> m_jdbcTargets;
-    bool m_jdbcTargetsHasBeenSet;
+    bool m_jdbcTargetsHasBeenSet = false;
 
     Aws::Vector<MongoDBTarget> m_mongoDBTargets;
-    bool m_mongoDBTargetsHasBeenSet;
+    bool m_mongoDBTargetsHasBeenSet = false;
 
     Aws::Vector<DynamoDBTarget> m_dynamoDBTargets;
-    bool m_dynamoDBTargetsHasBeenSet;
+    bool m_dynamoDBTargetsHasBeenSet = false;
 
     Aws::Vector<CatalogTarget> m_catalogTargets;
-    bool m_catalogTargetsHasBeenSet;
+    bool m_catalogTargetsHasBeenSet = false;
 
     Aws::Vector<DeltaTarget> m_deltaTargets;
-    bool m_deltaTargetsHasBeenSet;
+    bool m_deltaTargetsHasBeenSet = false;
   };
 
 } // namespace Model

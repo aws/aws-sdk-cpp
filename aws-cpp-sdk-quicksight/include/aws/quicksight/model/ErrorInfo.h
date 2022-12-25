@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ErrorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ErrorInfo
+  class ErrorInfo
   {
   public:
-    ErrorInfo();
-    ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ErrorInfo();
+    AWS_QUICKSIGHT_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     IngestionErrorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

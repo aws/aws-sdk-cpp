@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API DescribeAddonVersionsRequest : public EKSRequest
+  class DescribeAddonVersionsRequest : public EKSRequest
   {
   public:
-    DescribeAddonVersionsRequest();
+    AWS_EKS_API DescribeAddonVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,48 +34,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAddonVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_EKS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline const Aws::String& GetKubernetesVersion() const{ return m_kubernetesVersion; }
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline bool KubernetesVersionHasBeenSet() const { return m_kubernetesVersionHasBeenSet; }
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline void SetKubernetesVersion(const Aws::String& value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion = value; }
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline void SetKubernetesVersion(Aws::String&& value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion = std::move(value); }
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline void SetKubernetesVersion(const char* value) { m_kubernetesVersionHasBeenSet = true; m_kubernetesVersion.assign(value); }
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline DescribeAddonVersionsRequest& WithKubernetesVersion(const Aws::String& value) { SetKubernetesVersion(value); return *this;}
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline DescribeAddonVersionsRequest& WithKubernetesVersion(Aws::String&& value) { SetKubernetesVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes versions that the add-on can be used with.</p>
+     * <p>The Kubernetes versions that you can use the add-on with.</p>
      */
     inline DescribeAddonVersionsRequest& WithKubernetesVersion(const char* value) { SetKubernetesVersion(value); return *this;}
 
@@ -245,19 +246,193 @@ namespace Model
      */
     inline DescribeAddonVersionsRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The type of the add-on. For valid <code>types</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPublishers() const{ return m_publishers; }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline bool PublishersHasBeenSet() const { return m_publishersHasBeenSet; }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline void SetPublishers(const Aws::Vector<Aws::String>& value) { m_publishersHasBeenSet = true; m_publishers = value; }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline void SetPublishers(Aws::Vector<Aws::String>&& value) { m_publishersHasBeenSet = true; m_publishers = std::move(value); }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithPublishers(const Aws::Vector<Aws::String>& value) { SetPublishers(value); return *this;}
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithPublishers(Aws::Vector<Aws::String>&& value) { SetPublishers(std::move(value)); return *this;}
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddPublishers(const Aws::String& value) { m_publishersHasBeenSet = true; m_publishers.push_back(value); return *this; }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddPublishers(Aws::String&& value) { m_publishersHasBeenSet = true; m_publishers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify
+     * a value for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddPublishers(const char* value) { m_publishersHasBeenSet = true; m_publishers.push_back(value); return *this; }
+
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value
+     * for this property.</p>
+     */
+    inline DescribeAddonVersionsRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+
   private:
 
     Aws::String m_kubernetesVersion;
-    bool m_kubernetesVersionHasBeenSet;
+    bool m_kubernetesVersionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_types;
+    bool m_typesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_publishers;
+    bool m_publishersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_owners;
+    bool m_ownersHasBeenSet = false;
   };
 
 } // namespace Model

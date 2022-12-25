@@ -26,152 +26,152 @@ namespace Model
 {
 
   /**
-   * Details from an import from Amazon Redshift datashare response.<p><h3>See
+   * <p>Details from an import from Amazon Redshift datashare response.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetsFromRedshiftDataSharesResponseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetsFromRedshiftDataSharesResponseDetails
+  class ImportAssetsFromRedshiftDataSharesResponseDetails
   {
   public:
-    ImportAssetsFromRedshiftDataSharesResponseDetails();
-    ImportAssetsFromRedshiftDataSharesResponseDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetsFromRedshiftDataSharesResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetsFromRedshiftDataSharesResponseDetails();
+    AWS_DATAEXCHANGE_API ImportAssetsFromRedshiftDataSharesResponseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetsFromRedshiftDataSharesResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline const Aws::Vector<RedshiftDataShareAssetSourceEntry>& GetAssetSources() const{ return m_assetSources; }
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline bool AssetSourcesHasBeenSet() const { return m_assetSourcesHasBeenSet; }
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline void SetAssetSources(const Aws::Vector<RedshiftDataShareAssetSourceEntry>& value) { m_assetSourcesHasBeenSet = true; m_assetSources = value; }
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline void SetAssetSources(Aws::Vector<RedshiftDataShareAssetSourceEntry>&& value) { m_assetSourcesHasBeenSet = true; m_assetSources = std::move(value); }
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithAssetSources(const Aws::Vector<RedshiftDataShareAssetSourceEntry>& value) { SetAssetSources(value); return *this;}
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithAssetSources(Aws::Vector<RedshiftDataShareAssetSourceEntry>&& value) { SetAssetSources(std::move(value)); return *this;}
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& AddAssetSources(const RedshiftDataShareAssetSourceEntry& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(value); return *this; }
 
     /**
-     * A list of Amazon Redshift datashare asset sources.
+     * <p>A list of Amazon Redshift datashare asset sources.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& AddAssetSources(RedshiftDataShareAssetSourceEntry&& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * The unique identifier for the data set associated with this import job.
+     * <p>The unique identifier for the data set associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * The unique identifier for the revision associated with this import job.
+     * <p>The unique identifier for the revision associated with this import job.</p>
      */
     inline ImportAssetsFromRedshiftDataSharesResponseDetails& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
   private:
 
     Aws::Vector<RedshiftDataShareAssetSourceEntry> m_assetSources;
-    bool m_assetSourcesHasBeenSet;
+    bool m_assetSourcesHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

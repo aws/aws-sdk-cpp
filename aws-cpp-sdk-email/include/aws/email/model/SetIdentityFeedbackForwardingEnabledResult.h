@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabledResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API SetIdentityFeedbackForwardingEnabledResult
+  class SetIdentityFeedbackForwardingEnabledResult
   {
   public:
-    SetIdentityFeedbackForwardingEnabledResult();
-    SetIdentityFeedbackForwardingEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIdentityFeedbackForwardingEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityFeedbackForwardingEnabledResult();
+    AWS_SES_API SetIdentityFeedbackForwardingEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityFeedbackForwardingEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

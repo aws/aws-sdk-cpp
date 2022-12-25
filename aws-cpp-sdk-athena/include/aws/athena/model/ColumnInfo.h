@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ColumnInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ColumnInfo
+  class ColumnInfo
   {
   public:
-    ColumnInfo();
-    ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
-    ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ColumnInfo();
+    AWS_ATHENA_API ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -389,34 +389,34 @@ namespace Model
   private:
 
     Aws::String m_catalogName;
-    bool m_catalogNameHasBeenSet;
+    bool m_catalogNameHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     ColumnNullable m_nullable;
-    bool m_nullableHasBeenSet;
+    bool m_nullableHasBeenSet = false;
 
     bool m_caseSensitive;
-    bool m_caseSensitiveHasBeenSet;
+    bool m_caseSensitiveHasBeenSet = false;
   };
 
 } // namespace Model

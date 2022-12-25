@@ -30,7 +30,7 @@ ListAnomalyGroupSummariesResult& ListAnomalyGroupSummariesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalyGroupSummaryList"))
   {
-    Array<JsonView> anomalyGroupSummaryListJsonList = jsonValue.GetArray("AnomalyGroupSummaryList");
+    Aws::Utils::Array<JsonView> anomalyGroupSummaryListJsonList = jsonValue.GetArray("AnomalyGroupSummaryList");
     for(unsigned anomalyGroupSummaryListIndex = 0; anomalyGroupSummaryListIndex < anomalyGroupSummaryListJsonList.GetLength(); ++anomalyGroupSummaryListIndex)
     {
       m_anomalyGroupSummaryList.push_back(anomalyGroupSummaryListJsonList[anomalyGroupSummaryListIndex].AsObject());

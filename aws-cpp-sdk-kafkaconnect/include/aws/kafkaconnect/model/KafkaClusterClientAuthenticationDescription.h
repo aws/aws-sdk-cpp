@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/KafkaClusterClientAuthenticationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API KafkaClusterClientAuthenticationDescription
+  class KafkaClusterClientAuthenticationDescription
   {
   public:
-    KafkaClusterClientAuthenticationDescription();
-    KafkaClusterClientAuthenticationDescription(Aws::Utils::Json::JsonView jsonValue);
-    KafkaClusterClientAuthenticationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API KafkaClusterClientAuthenticationDescription();
+    AWS_KAFKACONNECT_API KafkaClusterClientAuthenticationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API KafkaClusterClientAuthenticationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KafkaClusterClientAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

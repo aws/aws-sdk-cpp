@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API AddNotificationChannelRequest : public DevOpsGuruRequest
+  class AddNotificationChannelRequest : public DevOpsGuruRequest
   {
   public:
-    AddNotificationChannelRequest();
+    AWS_DEVOPSGURU_API AddNotificationChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddNotificationChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     NotificationChannelConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,12 +24,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API AssociateResourceSharePermissionResult
+  class AssociateResourceSharePermissionResult
   {
   public:
-    AssociateResourceSharePermissionResult();
-    AssociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateResourceSharePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API AssociateResourceSharePermissionResult();
+    AWS_RAM_API AssociateResourceSharePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API AssociateResourceSharePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

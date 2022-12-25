@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APIGATEWAYV2_API GetIntegrationResponseRequest : public ApiGatewayV2Request
+  class GetIntegrationResponseRequest : public ApiGatewayV2Request
   {
   public:
-    GetIntegrationResponseRequest();
+    AWS_APIGATEWAYV2_API GetIntegrationResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetIntegrationResponse"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_integrationId;
-    bool m_integrationIdHasBeenSet;
+    bool m_integrationIdHasBeenSet = false;
 
     Aws::String m_integrationResponseId;
-    bool m_integrationResponseIdHasBeenSet;
+    bool m_integrationResponseIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Record">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Record();
+    AWS_SECURITYHUB_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
 
     long long m_recordIndex;
-    bool m_recordIndexHasBeenSet;
+    bool m_recordIndexHasBeenSet = false;
   };
 
 } // namespace Model

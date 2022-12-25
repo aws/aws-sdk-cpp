@@ -26,12 +26,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API UpdateFunctionUrlConfigResult
+  class UpdateFunctionUrlConfigResult
   {
   public:
-    UpdateFunctionUrlConfigResult();
-    UpdateFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionUrlConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionUrlConfigResult();
+    AWS_LAMBDA_API UpdateFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionUrlConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -108,50 +108,50 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated
-     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
+     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
     inline const FunctionUrlAuthType& GetAuthType() const{ return m_authType; }
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated
-     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
+     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
     inline void SetAuthType(const FunctionUrlAuthType& value) { m_authType = value; }
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated
-     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
+     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
     inline void SetAuthType(FunctionUrlAuthType&& value) { m_authType = std::move(value); }
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated
-     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
+     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
     inline UpdateFunctionUrlConfigResult& WithAuthType(const FunctionUrlAuthType& value) { SetAuthType(value); return *this;}
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated
-     * <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
+     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
     inline UpdateFunctionUrlConfigResult& WithAuthType(FunctionUrlAuthType&& value) { SetAuthType(std::move(value)); return *this;}

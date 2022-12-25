@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API GetResourceSharesRequest : public RAMRequest
+  class GetResourceSharesRequest : public RAMRequest
   {
   public:
-    GetResourceSharesRequest();
+    AWS_RAM_API GetResourceSharesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResourceShares"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -492,28 +492,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceShareArns;
-    bool m_resourceShareArnsHasBeenSet;
+    bool m_resourceShareArnsHasBeenSet = false;
 
     ResourceShareStatus m_resourceShareStatus;
-    bool m_resourceShareStatusHasBeenSet;
+    bool m_resourceShareStatusHasBeenSet = false;
 
     ResourceOwner m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_permissionArn;
-    bool m_permissionArnHasBeenSet;
+    bool m_permissionArnHasBeenSet = false;
   };
 
 } // namespace Model

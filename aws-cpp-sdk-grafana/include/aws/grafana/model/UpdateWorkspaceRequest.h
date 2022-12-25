@@ -9,6 +9,7 @@
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/PermissionType.h>
+#include <aws/grafana/model/VpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/grafana/model/DataSourceType.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDGRAFANA_API UpdateWorkspaceRequest : public ManagedGrafanaRequest
+  class UpdateWorkspaceRequest : public ManagedGrafanaRequest
   {
   public:
-    UpdateWorkspaceRequest();
+    AWS_MANAGEDGRAFANA_API UpdateWorkspaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorkspace"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -245,6 +246,35 @@ namespace Model
 
 
     /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline bool GetRemoveVpcConfiguration() const{ return m_removeVpcConfiguration; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline bool RemoveVpcConfigurationHasBeenSet() const { return m_removeVpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline void SetRemoveVpcConfiguration(bool value) { m_removeVpcConfigurationHasBeenSet = true; m_removeVpcConfiguration = value; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline UpdateWorkspaceRequest& WithRemoveVpcConfiguration(bool value) { SetRemoveVpcConfiguration(value); return *this;}
+
+
+    /**
      * <p>The name of the CloudFormation stack set to use to generate IAM roles to be
      * used for this workspace.</p>
      */
@@ -291,6 +321,43 @@ namespace Model
      * used for this workspace.</p>
      */
     inline UpdateWorkspaceRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline UpdateWorkspaceRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline UpdateWorkspaceRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -725,37 +792,43 @@ namespace Model
   private:
 
     AccountAccessType m_accountAccessType;
-    bool m_accountAccessTypeHasBeenSet;
+    bool m_accountAccessTypeHasBeenSet = false;
 
     Aws::String m_organizationRoleName;
-    bool m_organizationRoleNameHasBeenSet;
+    bool m_organizationRoleNameHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
+
+    bool m_removeVpcConfiguration;
+    bool m_removeVpcConfigurationHasBeenSet = false;
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceType> m_workspaceDataSources;
-    bool m_workspaceDataSourcesHasBeenSet;
+    bool m_workspaceDataSourcesHasBeenSet = false;
 
     Aws::String m_workspaceDescription;
-    bool m_workspaceDescriptionHasBeenSet;
+    bool m_workspaceDescriptionHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_workspaceName;
-    bool m_workspaceNameHasBeenSet;
+    bool m_workspaceNameHasBeenSet = false;
 
     Aws::Vector<NotificationDestinationType> m_workspaceNotificationDestinations;
-    bool m_workspaceNotificationDestinationsHasBeenSet;
+    bool m_workspaceNotificationDestinationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
-    bool m_workspaceOrganizationalUnitsHasBeenSet;
+    bool m_workspaceOrganizationalUnitsHasBeenSet = false;
 
     Aws::String m_workspaceRoleArn;
-    bool m_workspaceRoleArnHasBeenSet;
+    bool m_workspaceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

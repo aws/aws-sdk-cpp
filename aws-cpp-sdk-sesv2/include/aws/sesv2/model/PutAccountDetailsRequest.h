@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetailsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountDetailsRequest : public SESV2Request
+  class PutAccountDetailsRequest : public SESV2Request
   {
   public:
-    PutAccountDetailsRequest();
+    AWS_SESV2_API PutAccountDetailsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountDetails"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -304,22 +304,22 @@ namespace Model
   private:
 
     MailType m_mailType;
-    bool m_mailTypeHasBeenSet;
+    bool m_mailTypeHasBeenSet = false;
 
     Aws::String m_websiteURL;
-    bool m_websiteURLHasBeenSet;
+    bool m_websiteURLHasBeenSet = false;
 
     ContactLanguage m_contactLanguage;
-    bool m_contactLanguageHasBeenSet;
+    bool m_contactLanguageHasBeenSet = false;
 
     Aws::String m_useCaseDescription;
-    bool m_useCaseDescriptionHasBeenSet;
+    bool m_useCaseDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalContactEmailAddresses;
-    bool m_additionalContactEmailAddressesHasBeenSet;
+    bool m_additionalContactEmailAddressesHasBeenSet = false;
 
     bool m_productionAccessEnabled;
-    bool m_productionAccessEnabledHasBeenSet;
+    bool m_productionAccessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

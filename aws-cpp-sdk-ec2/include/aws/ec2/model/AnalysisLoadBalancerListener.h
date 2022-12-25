@@ -26,15 +26,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AnalysisLoadBalancerListener">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AnalysisLoadBalancerListener
+  class AnalysisLoadBalancerListener
   {
   public:
-    AnalysisLoadBalancerListener();
-    AnalysisLoadBalancerListener(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisLoadBalancerListener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisLoadBalancerListener();
+    AWS_EC2_API AnalysisLoadBalancerListener(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisLoadBalancerListener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
   };
 
 } // namespace Model

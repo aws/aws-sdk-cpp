@@ -23,13 +23,13 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-  class AWS_APIGATEWAYV2_API MutualTlsAuthenticationInput
+  class MutualTlsAuthenticationInput
   {
   public:
-    MutualTlsAuthenticationInput();
-    MutualTlsAuthenticationInput(Aws::Utils::Json::JsonView jsonValue);
-    MutualTlsAuthenticationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API MutualTlsAuthenticationInput();
+    AWS_APIGATEWAYV2_API MutualTlsAuthenticationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API MutualTlsAuthenticationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_truststoreUri;
-    bool m_truststoreUriHasBeenSet;
+    bool m_truststoreUriHasBeenSet = false;
 
     Aws::String m_truststoreVersion;
-    bool m_truststoreVersionHasBeenSet;
+    bool m_truststoreVersionHasBeenSet = false;
   };
 
 } // namespace Model

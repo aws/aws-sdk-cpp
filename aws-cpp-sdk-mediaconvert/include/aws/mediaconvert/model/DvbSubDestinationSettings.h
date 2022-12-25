@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DvbSubDestinationSettings
+  class DvbSubDestinationSettings
   {
   public:
-    DvbSubDestinationSettings();
-    DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings();
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1393,85 +1393,85 @@ Within your
   private:
 
     DvbSubtitleAlignment m_alignment;
-    bool m_alignmentHasBeenSet;
+    bool m_alignmentHasBeenSet = false;
 
     DvbSubtitleApplyFontColor m_applyFontColor;
-    bool m_applyFontColorHasBeenSet;
+    bool m_applyFontColorHasBeenSet = false;
 
     DvbSubtitleBackgroundColor m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     int m_backgroundOpacity;
-    bool m_backgroundOpacityHasBeenSet;
+    bool m_backgroundOpacityHasBeenSet = false;
 
     DvbddsHandling m_ddsHandling;
-    bool m_ddsHandlingHasBeenSet;
+    bool m_ddsHandlingHasBeenSet = false;
 
     int m_ddsXCoordinate;
-    bool m_ddsXCoordinateHasBeenSet;
+    bool m_ddsXCoordinateHasBeenSet = false;
 
     int m_ddsYCoordinate;
-    bool m_ddsYCoordinateHasBeenSet;
+    bool m_ddsYCoordinateHasBeenSet = false;
 
     DvbSubSubtitleFallbackFont m_fallbackFont;
-    bool m_fallbackFontHasBeenSet;
+    bool m_fallbackFontHasBeenSet = false;
 
     DvbSubtitleFontColor m_fontColor;
-    bool m_fontColorHasBeenSet;
+    bool m_fontColorHasBeenSet = false;
 
     int m_fontOpacity;
-    bool m_fontOpacityHasBeenSet;
+    bool m_fontOpacityHasBeenSet = false;
 
     int m_fontResolution;
-    bool m_fontResolutionHasBeenSet;
+    bool m_fontResolutionHasBeenSet = false;
 
     FontScript m_fontScript;
-    bool m_fontScriptHasBeenSet;
+    bool m_fontScriptHasBeenSet = false;
 
     int m_fontSize;
-    bool m_fontSizeHasBeenSet;
+    bool m_fontSizeHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_hexFontColor;
-    bool m_hexFontColorHasBeenSet;
+    bool m_hexFontColorHasBeenSet = false;
 
     DvbSubtitleOutlineColor m_outlineColor;
-    bool m_outlineColorHasBeenSet;
+    bool m_outlineColorHasBeenSet = false;
 
     int m_outlineSize;
-    bool m_outlineSizeHasBeenSet;
+    bool m_outlineSizeHasBeenSet = false;
 
     DvbSubtitleShadowColor m_shadowColor;
-    bool m_shadowColorHasBeenSet;
+    bool m_shadowColorHasBeenSet = false;
 
     int m_shadowOpacity;
-    bool m_shadowOpacityHasBeenSet;
+    bool m_shadowOpacityHasBeenSet = false;
 
     int m_shadowXOffset;
-    bool m_shadowXOffsetHasBeenSet;
+    bool m_shadowXOffsetHasBeenSet = false;
 
     int m_shadowYOffset;
-    bool m_shadowYOffsetHasBeenSet;
+    bool m_shadowYOffsetHasBeenSet = false;
 
     DvbSubtitleStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
 
     DvbSubtitlingType m_subtitlingType;
-    bool m_subtitlingTypeHasBeenSet;
+    bool m_subtitlingTypeHasBeenSet = false;
 
     DvbSubtitleTeletextSpacing m_teletextSpacing;
-    bool m_teletextSpacingHasBeenSet;
+    bool m_teletextSpacingHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_xPosition;
-    bool m_xPositionHasBeenSet;
+    bool m_xPositionHasBeenSet = false;
 
     int m_yPosition;
-    bool m_yPositionHasBeenSet;
+    bool m_yPositionHasBeenSet = false;
   };
 
 } // namespace Model

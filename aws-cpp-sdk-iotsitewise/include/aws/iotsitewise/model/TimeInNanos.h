@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TimeInNanos">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API TimeInNanos
+  class TimeInNanos
   {
   public:
-    TimeInNanos();
-    TimeInNanos(Aws::Utils::Json::JsonView jsonValue);
-    TimeInNanos& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API TimeInNanos();
+    AWS_IOTSITEWISE_API TimeInNanos(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API TimeInNanos& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_timeInSeconds;
-    bool m_timeInSecondsHasBeenSet;
+    bool m_timeInSecondsHasBeenSet = false;
 
     int m_offsetInNanos;
-    bool m_offsetInNanosHasBeenSet;
+    bool m_offsetInNanosHasBeenSet = false;
   };
 
 } // namespace Model

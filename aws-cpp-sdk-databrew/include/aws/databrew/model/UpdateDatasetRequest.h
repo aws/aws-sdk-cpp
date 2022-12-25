@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUEDATABREW_API UpdateDatasetRequest : public GlueDataBrewRequest
+  class UpdateDatasetRequest : public GlueDataBrewRequest
   {
   public:
-    UpdateDatasetRequest();
+    AWS_GLUEDATABREW_API UpdateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUEDATABREW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -191,19 +191,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     FormatOptions m_formatOptions;
-    bool m_formatOptionsHasBeenSet;
+    bool m_formatOptionsHasBeenSet = false;
 
     Input m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     PathOptions m_pathOptions;
-    bool m_pathOptionsHasBeenSet;
+    bool m_pathOptionsHasBeenSet = false;
   };
 
 } // namespace Model

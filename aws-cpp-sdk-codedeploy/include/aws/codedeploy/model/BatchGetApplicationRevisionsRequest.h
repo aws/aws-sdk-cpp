@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API BatchGetApplicationRevisionsRequest : public CodeDeployRequest
+  class BatchGetApplicationRevisionsRequest : public CodeDeployRequest
   {
   public:
-    BatchGetApplicationRevisionsRequest();
+    AWS_CODEDEPLOY_API BatchGetApplicationRevisionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,55 +35,55 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchGetApplicationRevisions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Vector<RevisionLocation> m_revisions;
-    bool m_revisionsHasBeenSet;
+    bool m_revisionsHasBeenSet = false;
   };
 
 } // namespace Model

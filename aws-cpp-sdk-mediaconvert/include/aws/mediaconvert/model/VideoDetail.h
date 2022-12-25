@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API VideoDetail
+  class VideoDetail
   {
   public:
-    VideoDetail();
-    VideoDetail(Aws::Utils::Json::JsonView jsonValue);
-    VideoDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API VideoDetail();
+    AWS_MEDIACONVERT_API VideoDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API VideoDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_heightInPx;
-    bool m_heightInPxHasBeenSet;
+    bool m_heightInPxHasBeenSet = false;
 
     int m_widthInPx;
-    bool m_widthInPxHasBeenSet;
+    bool m_widthInPxHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ GetConnectPeerAssociationsResult& GetConnectPeerAssociationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectPeerAssociations"))
   {
-    Array<JsonView> connectPeerAssociationsJsonList = jsonValue.GetArray("ConnectPeerAssociations");
+    Aws::Utils::Array<JsonView> connectPeerAssociationsJsonList = jsonValue.GetArray("ConnectPeerAssociations");
     for(unsigned connectPeerAssociationsIndex = 0; connectPeerAssociationsIndex < connectPeerAssociationsJsonList.GetLength(); ++connectPeerAssociationsIndex)
     {
       m_connectPeerAssociations.push_back(connectPeerAssociationsJsonList[connectPeerAssociationsIndex].AsObject());

@@ -25,18 +25,18 @@ namespace Model
 
   /**
    * <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon
-   * Textract publishes the completion status of an asynchronous document operation,
-   * such as <a>StartDocumentTextDetection</a>. </p><p><h3>See Also:</h3>   <a
+   * Textract publishes the completion status of an asynchronous document operation.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/NotificationChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API NotificationChannel
+  class NotificationChannel
   {
   public:
-    NotificationChannel();
-    NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
-    NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API NotificationChannel();
+    AWS_TEXTRACT_API NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

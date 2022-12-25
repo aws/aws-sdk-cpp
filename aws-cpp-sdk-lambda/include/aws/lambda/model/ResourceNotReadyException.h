@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ResourceNotReadyException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ResourceNotReadyException
+  class ResourceNotReadyException
   {
   public:
-    ResourceNotReadyException();
-    ResourceNotReadyException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotReadyException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ResourceNotReadyException();
+    AWS_LAMBDA_API ResourceNotReadyException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ResourceNotReadyException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

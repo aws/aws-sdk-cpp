@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorRequest : public DatabaseMigrationServiceRequest
+  class CreateFleetAdvisorCollectorRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    CreateFleetAdvisorCollectorRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFleetAdvisorCollector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_collectorName;
-    bool m_collectorNameHasBeenSet;
+    bool m_collectorNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
   };
 
 } // namespace Model

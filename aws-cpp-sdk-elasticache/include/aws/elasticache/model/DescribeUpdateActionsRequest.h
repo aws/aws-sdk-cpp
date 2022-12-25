@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API DescribeUpdateActionsRequest : public ElastiCacheRequest
+  class DescribeUpdateActionsRequest : public ElastiCacheRequest
   {
   public:
-    DescribeUpdateActionsRequest();
+    AWS_ELASTICACHE_API DescribeUpdateActionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeUpdateActions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -450,34 +450,34 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationGroupIds;
-    bool m_replicationGroupIdsHasBeenSet;
+    bool m_replicationGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheClusterIds;
-    bool m_cacheClusterIdsHasBeenSet;
+    bool m_cacheClusterIdsHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::Vector<ServiceUpdateStatus> m_serviceUpdateStatus;
-    bool m_serviceUpdateStatusHasBeenSet;
+    bool m_serviceUpdateStatusHasBeenSet = false;
 
     TimeRangeFilter m_serviceUpdateTimeRange;
-    bool m_serviceUpdateTimeRangeHasBeenSet;
+    bool m_serviceUpdateTimeRangeHasBeenSet = false;
 
     Aws::Vector<UpdateActionStatus> m_updateActionStatus;
-    bool m_updateActionStatusHasBeenSet;
+    bool m_updateActionStatusHasBeenSet = false;
 
     bool m_showNodeLevelUpdateStatus;
-    bool m_showNodeLevelUpdateStatusHasBeenSet;
+    bool m_showNodeLevelUpdateStatusHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

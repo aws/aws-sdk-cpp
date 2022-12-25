@@ -31,60 +31,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalActions">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ProposalActions
+  class ProposalActions
   {
   public:
-    ProposalActions();
-    ProposalActions(Aws::Utils::Json::JsonView jsonValue);
-    ProposalActions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions();
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline const Aws::Vector<InviteAction>& GetInvitations() const{ return m_invitations; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline bool InvitationsHasBeenSet() const { return m_invitationsHasBeenSet; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline void SetInvitations(const Aws::Vector<InviteAction>& value) { m_invitationsHasBeenSet = true; m_invitations = value; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline void SetInvitations(Aws::Vector<InviteAction>&& value) { m_invitationsHasBeenSet = true; m_invitations = std::move(value); }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& WithInvitations(const Aws::Vector<InviteAction>& value) { SetInvitations(value); return *this;}
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& WithInvitations(Aws::Vector<InviteAction>&& value) { SetInvitations(std::move(value)); return *this;}
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& AddInvitations(const InviteAction& value) { m_invitationsHasBeenSet = true; m_invitations.push_back(value); return *this; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& AddInvitations(InviteAction&& value) { m_invitationsHasBeenSet = true; m_invitations.push_back(std::move(value)); return *this; }
 
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<InviteAction> m_invitations;
-    bool m_invitationsHasBeenSet;
+    bool m_invitationsHasBeenSet = false;
 
     Aws::Vector<RemoveAction> m_removals;
-    bool m_removalsHasBeenSet;
+    bool m_removalsHasBeenSet = false;
   };
 
 } // namespace Model

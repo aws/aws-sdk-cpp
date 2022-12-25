@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ResourcesAffected">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ResourcesAffected
+  class ResourcesAffected
   {
   public:
-    ResourcesAffected();
-    ResourcesAffected(Aws::Utils::Json::JsonView jsonValue);
-    ResourcesAffected& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ResourcesAffected();
+    AWS_MACIE2_API ResourcesAffected(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ResourcesAffected& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     S3Bucket m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     S3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet;
+    bool m_s3ObjectHasBeenSet = false;
   };
 
 } // namespace Model

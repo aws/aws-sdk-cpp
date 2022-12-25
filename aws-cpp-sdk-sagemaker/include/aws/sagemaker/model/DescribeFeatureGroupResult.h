@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/OfflineStoreConfig.h>
 #include <aws/sagemaker/model/FeatureGroupStatus.h>
 #include <aws/sagemaker/model/OfflineStoreStatus.h>
+#include <aws/sagemaker/model/LastUpdateStatus.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <utility>
 
@@ -31,12 +32,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeFeatureGroupResult
+  class DescribeFeatureGroupResult
   {
   public:
-    DescribeFeatureGroupResult();
-    DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFeatureGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult();
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeFeatureGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -300,6 +301,32 @@ namespace Model
 
 
     /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the feature group was last updated.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The configuration for the <code>OnlineStore</code>.</p>
      */
     inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
@@ -326,87 +353,95 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfig = value; }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfig = std::move(value); }
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
 
     /**
-     * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
-     * Services Hive data catalogue configurations, and the security configuration.</p>
+     * <p>The configuration of the offline store. It includes the following
+     * configurations:</p> <ul> <li> <p>Amazon S3 location of the offline store.</p>
+     * </li> <li> <p>Configuration of the Glue data catalog.</p> </li> <li> <p>Table
+     * format of the offline store.</p> </li> <li> <p>Option to disable the automatic
+     * creation of a Glue table for the offline store.</p> </li> <li> <p>Encryption
+     * configuration.</p> </li> </ul>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
-     * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
-     * provided.</p>
+     * into the OfflineStore if an OfflineStoreConfig is provided.</p>
      */
     inline DescribeFeatureGroupResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -471,6 +506,37 @@ namespace Model
      * <code>Active</code> or <code>Blocked</code> </p>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreStatus(OfflineStoreStatus&& value) { SetOfflineStoreStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline const LastUpdateStatus& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline void SetLastUpdateStatus(const LastUpdateStatus& value) { m_lastUpdateStatus = value; }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline void SetLastUpdateStatus(LastUpdateStatus&& value) { m_lastUpdateStatus = std::move(value); }
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastUpdateStatus(const LastUpdateStatus& value) { SetLastUpdateStatus(value); return *this;}
+
+    /**
+     * <p>A value indicating whether the update made to the feature group was
+     * successful.</p>
+     */
+    inline DescribeFeatureGroupResult& WithLastUpdateStatus(LastUpdateStatus&& value) { SetLastUpdateStatus(std::move(value)); return *this;}
 
 
     /**
@@ -615,6 +681,22 @@ namespace Model
      */
     inline DescribeFeatureGroupResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline long long GetOnlineStoreTotalSizeBytes() const{ return m_onlineStoreTotalSizeBytes; }
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline void SetOnlineStoreTotalSizeBytes(long long value) { m_onlineStoreTotalSizeBytes = value; }
+
+    /**
+     * <p>The size of the <code>OnlineStore</code> in bytes.</p>
+     */
+    inline DescribeFeatureGroupResult& WithOnlineStoreTotalSizeBytes(long long value) { SetOnlineStoreTotalSizeBytes(value); return *this;}
+
   private:
 
     Aws::String m_featureGroupArn;
@@ -629,6 +711,8 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
 
+    Aws::Utils::DateTime m_lastModifiedTime;
+
     OnlineStoreConfig m_onlineStoreConfig;
 
     OfflineStoreConfig m_offlineStoreConfig;
@@ -639,11 +723,15 @@ namespace Model
 
     OfflineStoreStatus m_offlineStoreStatus;
 
+    LastUpdateStatus m_lastUpdateStatus;
+
     Aws::String m_failureReason;
 
     Aws::String m_description;
 
     Aws::String m_nextToken;
+
+    long long m_onlineStoreTotalSizeBytes;
   };
 
 } // namespace Model

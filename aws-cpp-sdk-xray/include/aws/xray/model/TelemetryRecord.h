@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TelemetryRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TelemetryRecord
+  class TelemetryRecord
   {
   public:
-    TelemetryRecord();
-    TelemetryRecord(Aws::Utils::Json::JsonView jsonValue);
-    TelemetryRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TelemetryRecord();
+    AWS_XRAY_API TelemetryRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TelemetryRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,22 +186,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     int m_segmentsReceivedCount;
-    bool m_segmentsReceivedCountHasBeenSet;
+    bool m_segmentsReceivedCountHasBeenSet = false;
 
     int m_segmentsSentCount;
-    bool m_segmentsSentCountHasBeenSet;
+    bool m_segmentsSentCountHasBeenSet = false;
 
     int m_segmentsSpilloverCount;
-    bool m_segmentsSpilloverCountHasBeenSet;
+    bool m_segmentsSpilloverCountHasBeenSet = false;
 
     int m_segmentsRejectedCount;
-    bool m_segmentsRejectedCountHasBeenSet;
+    bool m_segmentsRejectedCountHasBeenSet = false;
 
     BackendConnectionErrors m_backendConnectionErrors;
-    bool m_backendConnectionErrorsHasBeenSet;
+    bool m_backendConnectionErrorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/LegGeometry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API LegGeometry
+  class LegGeometry
   {
   public:
-    LegGeometry();
-    LegGeometry(Aws::Utils::Json::JsonView jsonValue);
-    LegGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API LegGeometry();
+    AWS_LOCATIONSERVICE_API LegGeometry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API LegGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<double>> m_lineString;
-    bool m_lineStringHasBeenSet;
+    bool m_lineStringHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API InputDataConfig();
+    AWS_TRANSCRIBESERVICE_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,9 +157,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -170,9 +170,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -183,9 +183,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -196,9 +196,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -209,9 +209,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -222,9 +222,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -235,9 +235,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -248,9 +248,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -262,13 +262,13 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_tuningDataS3Uri;
-    bool m_tuningDataS3UriHasBeenSet;
+    bool m_tuningDataS3UriHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

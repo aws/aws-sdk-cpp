@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/H264QvbrSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API H264QvbrSettings
+  class H264QvbrSettings
   {
   public:
-    H264QvbrSettings();
-    H264QvbrSettings(Aws::Utils::Json::JsonView jsonValue);
-    H264QvbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API H264QvbrSettings();
+    AWS_MEDIACONVERT_API H264QvbrSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API H264QvbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     int m_maxAverageBitrate;
-    bool m_maxAverageBitrateHasBeenSet;
+    bool m_maxAverageBitrateHasBeenSet = false;
 
     int m_qvbrQualityLevel;
-    bool m_qvbrQualityLevelHasBeenSet;
+    bool m_qvbrQualityLevelHasBeenSet = false;
 
     double m_qvbrQualityLevelFineTune;
-    bool m_qvbrQualityLevelFineTuneHasBeenSet;
+    bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

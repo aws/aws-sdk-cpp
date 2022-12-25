@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bundle">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Bundle
+  class Bundle
   {
   public:
-    Bundle();
-    Bundle(Aws::Utils::Json::JsonView jsonValue);
-    Bundle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Bundle();
+    AWS_LIGHTSAIL_API Bundle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Bundle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -393,37 +393,37 @@ namespace Model
   private:
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     int m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     int m_diskSizeInGb;
-    bool m_diskSizeInGbHasBeenSet;
+    bool m_diskSizeInGbHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_power;
-    bool m_powerHasBeenSet;
+    bool m_powerHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
 
     int m_transferPerMonthInGb;
-    bool m_transferPerMonthInGbHasBeenSet;
+    bool m_transferPerMonthInGbHasBeenSet = false;
 
     Aws::Vector<InstancePlatform> m_supportedPlatforms;
-    bool m_supportedPlatformsHasBeenSet;
+    bool m_supportedPlatformsHasBeenSet = false;
   };
 
 } // namespace Model

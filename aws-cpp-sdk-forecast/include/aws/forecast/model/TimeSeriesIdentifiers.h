@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeSeriesIdentifiers">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeSeriesIdentifiers
+  class TimeSeriesIdentifiers
   {
   public:
-    TimeSeriesIdentifiers();
-    TimeSeriesIdentifiers(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeSeriesIdentifiers();
+    AWS_FORECASTSERVICE_API TimeSeriesIdentifiers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeSeriesIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -121,13 +121,13 @@ namespace Model
   private:
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Schema m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

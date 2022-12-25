@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ZoneAwarenessConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ZoneAwarenessConfig
+  class ZoneAwarenessConfig
   {
   public:
-    ZoneAwarenessConfig();
-    ZoneAwarenessConfig(Aws::Utils::Json::JsonView jsonValue);
-    ZoneAwarenessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ZoneAwarenessConfig();
+    AWS_ELASTICSEARCHSERVICE_API ZoneAwarenessConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ZoneAwarenessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_availabilityZoneCount;
-    bool m_availabilityZoneCountHasBeenSet;
+    bool m_availabilityZoneCountHasBeenSet = false;
   };
 
 } // namespace Model

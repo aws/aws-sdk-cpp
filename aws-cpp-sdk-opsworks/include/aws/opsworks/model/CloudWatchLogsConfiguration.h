@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloudWatchLogsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API CloudWatchLogsConfiguration
+  class CloudWatchLogsConfiguration
   {
   public:
-    CloudWatchLogsConfiguration();
-    CloudWatchLogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API CloudWatchLogsConfiguration();
+    AWS_OPSWORKS_API CloudWatchLogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API CloudWatchLogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<CloudWatchLogsLogStream> m_logStreams;
-    bool m_logStreamsHasBeenSet;
+    bool m_logStreamsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/InvalidKMSResourceException">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API InvalidKMSResourceException
+  class InvalidKMSResourceException
   {
   public:
-    InvalidKMSResourceException();
-    InvalidKMSResourceException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidKMSResourceException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API InvalidKMSResourceException();
+    AWS_FIREHOSE_API InvalidKMSResourceException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API InvalidKMSResourceException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -94,10 +94,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

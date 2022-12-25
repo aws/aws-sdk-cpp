@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SMSChannelResponse
+  class SMSChannelResponse
   {
   public:
-    SMSChannelResponse();
-    SMSChannelResponse(Aws::Utils::Json::JsonView jsonValue);
-    SMSChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SMSChannelResponse();
+    AWS_PINPOINT_API SMSChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SMSChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -550,46 +550,46 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_hasCredential;
-    bool m_hasCredentialHasBeenSet;
+    bool m_hasCredentialHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_isArchived;
-    bool m_isArchivedHasBeenSet;
+    bool m_isArchivedHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     int m_promotionalMessagesPerSecond;
-    bool m_promotionalMessagesPerSecondHasBeenSet;
+    bool m_promotionalMessagesPerSecondHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_shortCode;
-    bool m_shortCodeHasBeenSet;
+    bool m_shortCodeHasBeenSet = false;
 
     int m_transactionalMessagesPerSecond;
-    bool m_transactionalMessagesPerSecondHasBeenSet;
+    bool m_transactionalMessagesPerSecondHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

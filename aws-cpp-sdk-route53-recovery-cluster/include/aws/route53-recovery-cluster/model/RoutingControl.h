@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/RoutingControl">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API RoutingControl
+  class RoutingControl
   {
   public:
-    RoutingControl();
-    RoutingControl(Aws::Utils::Json::JsonView jsonValue);
-    RoutingControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCLUSTER_API RoutingControl();
+    AWS_ROUTE53RECOVERYCLUSTER_API RoutingControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API RoutingControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_controlPanelName;
-    bool m_controlPanelNameHasBeenSet;
+    bool m_controlPanelNameHasBeenSet = false;
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     Aws::String m_routingControlName;
-    bool m_routingControlNameHasBeenSet;
+    bool m_routingControlNameHasBeenSet = false;
 
     RoutingControlState m_routingControlState;
-    bool m_routingControlStateHasBeenSet;
+    bool m_routingControlStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionContext">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecutionContext
+  class QueryExecutionContext
   {
   public:
-    QueryExecutionContext();
-    QueryExecutionContext(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecutionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecutionContext();
+    AWS_ATHENA_API QueryExecutionContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecutionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
   };
 
 } // namespace Model

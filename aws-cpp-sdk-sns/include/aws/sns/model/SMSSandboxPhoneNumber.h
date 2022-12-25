@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SMSSandboxPhoneNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API SMSSandboxPhoneNumber
+  class SMSSandboxPhoneNumber
   {
   public:
-    SMSSandboxPhoneNumber();
-    SMSSandboxPhoneNumber(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SMSSandboxPhoneNumber& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API SMSSandboxPhoneNumber();
+    AWS_SNS_API SMSSandboxPhoneNumber(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API SMSSandboxPhoneNumber& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     SMSSandboxPhoneNumberVerificationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

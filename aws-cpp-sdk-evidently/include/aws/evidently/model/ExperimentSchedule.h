@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ExperimentSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API ExperimentSchedule
+  class ExperimentSchedule
   {
   public:
-    ExperimentSchedule();
-    ExperimentSchedule(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API ExperimentSchedule();
+    AWS_CLOUDWATCHEVIDENTLY_API ExperimentSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API ExperimentSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_analysisCompleteTime;
-    bool m_analysisCompleteTimeHasBeenSet;
+    bool m_analysisCompleteTimeHasBeenSet = false;
   };
 
 } // namespace Model

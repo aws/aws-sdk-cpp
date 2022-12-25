@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API RestApi
+  class RestApi
   {
   public:
-    RestApi();
-    RestApi(Aws::Utils::Json::JsonView jsonValue);
-    RestApi& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API RestApi();
+    AWS_APIGATEWAY_API RestApi(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API RestApi& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -645,43 +645,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_binaryMediaTypes;
-    bool m_binaryMediaTypesHasBeenSet;
+    bool m_binaryMediaTypesHasBeenSet = false;
 
     int m_minimumCompressionSize;
-    bool m_minimumCompressionSizeHasBeenSet;
+    bool m_minimumCompressionSizeHasBeenSet = false;
 
     ApiKeySourceType m_apiKeySource;
-    bool m_apiKeySourceHasBeenSet;
+    bool m_apiKeySourceHasBeenSet = false;
 
     EndpointConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_disableExecuteApiEndpoint;
-    bool m_disableExecuteApiEndpointHasBeenSet;
+    bool m_disableExecuteApiEndpointHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API ListWirelessDevicesRequest : public IoTWirelessRequest
+  class ListWirelessDevicesRequest : public IoTWirelessRequest
   {
   public:
-    ListWirelessDevicesRequest();
+    AWS_IOTWIRELESS_API ListWirelessDevicesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListWirelessDevices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTWIRELESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -329,28 +329,28 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_deviceProfileId;
-    bool m_deviceProfileIdHasBeenSet;
+    bool m_deviceProfileIdHasBeenSet = false;
 
     Aws::String m_serviceProfileId;
-    bool m_serviceProfileIdHasBeenSet;
+    bool m_serviceProfileIdHasBeenSet = false;
 
     WirelessDeviceType m_wirelessDeviceType;
-    bool m_wirelessDeviceTypeHasBeenSet;
+    bool m_wirelessDeviceTypeHasBeenSet = false;
 
     Aws::String m_fuotaTaskId;
-    bool m_fuotaTaskIdHasBeenSet;
+    bool m_fuotaTaskIdHasBeenSet = false;
 
     Aws::String m_multicastGroupId;
-    bool m_multicastGroupIdHasBeenSet;
+    bool m_multicastGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

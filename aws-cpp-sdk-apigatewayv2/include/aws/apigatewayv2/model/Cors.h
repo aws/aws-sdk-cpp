@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Cors">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Cors
+  class Cors
   {
   public:
-    Cors();
-    Cors(Aws::Utils::Json::JsonView jsonValue);
-    Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Cors();
+    AWS_APIGATEWAYV2_API Cors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,22 +285,22 @@ namespace Model
   private:
 
     bool m_allowCredentials;
-    bool m_allowCredentialsHasBeenSet;
+    bool m_allowCredentialsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowHeaders;
-    bool m_allowHeadersHasBeenSet;
+    bool m_allowHeadersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowMethods;
-    bool m_allowMethodsHasBeenSet;
+    bool m_allowMethodsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowOrigins;
-    bool m_allowOriginsHasBeenSet;
+    bool m_allowOriginsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exposeHeaders;
-    bool m_exposeHeadersHasBeenSet;
+    bool m_exposeHeadersHasBeenSet = false;
 
     int m_maxAge;
-    bool m_maxAgeHasBeenSet;
+    bool m_maxAgeHasBeenSet = false;
   };
 
 } // namespace Model

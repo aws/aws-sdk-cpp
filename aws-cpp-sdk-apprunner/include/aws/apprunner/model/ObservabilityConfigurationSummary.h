@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ObservabilityConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ObservabilityConfigurationSummary
+  class ObservabilityConfigurationSummary
   {
   public:
-    ObservabilityConfigurationSummary();
-    ObservabilityConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ObservabilityConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ObservabilityConfigurationSummary();
+    AWS_APPRUNNER_API ObservabilityConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ObservabilityConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationArn;
-    bool m_observabilityConfigurationArnHasBeenSet;
+    bool m_observabilityConfigurationArnHasBeenSet = false;
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     int m_observabilityConfigurationRevision;
-    bool m_observabilityConfigurationRevisionHasBeenSet;
+    bool m_observabilityConfigurationRevisionHasBeenSet = false;
   };
 
 } // namespace Model

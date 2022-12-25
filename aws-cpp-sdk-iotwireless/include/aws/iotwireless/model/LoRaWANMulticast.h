@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANMulticast">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANMulticast
+  class LoRaWANMulticast
   {
   public:
-    LoRaWANMulticast();
-    LoRaWANMulticast(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANMulticast& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANMulticast();
+    AWS_IOTWIRELESS_API LoRaWANMulticast(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANMulticast& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     DlClass m_dlClass;
-    bool m_dlClassHasBeenSet;
+    bool m_dlClassHasBeenSet = false;
   };
 
 } // namespace Model

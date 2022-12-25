@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm-pca/model/CertificateAuthorityUsageMode.h>
 #include <aws/acm-pca/model/Tag.h>
 #include <utility>
 
@@ -24,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACMPCA_API CreateCertificateAuthorityRequest : public ACMPCARequest
+  class CreateCertificateAuthorityRequest : public ACMPCARequest
   {
   public:
-    CreateCertificateAuthorityRequest();
+    AWS_ACMPCA_API CreateCertificateAuthorityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCertificateAuthority"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACMPCA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ACMPCA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -280,10 +281,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -292,10 +294,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -304,10 +307,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -316,10 +320,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -328,10 +333,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -340,10 +346,11 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
-     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
-     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
-     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>
+     * <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the
+     * following Regions:</p> <ul> <li> <p>ap-northeast-3</p> </li> <li>
+     * <p>ap-southeast-3</p> </li> </ul> <p>When creating a CA in these Regions, you
+     * must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
      * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
      * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
@@ -423,25 +430,77 @@ namespace Model
      */
     inline CreateCertificateAuthorityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline const CertificateAuthorityUsageMode& GetUsageMode() const{ return m_usageMode; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline bool UsageModeHasBeenSet() const { return m_usageModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline void SetUsageMode(const CertificateAuthorityUsageMode& value) { m_usageModeHasBeenSet = true; m_usageMode = value; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline void SetUsageMode(CertificateAuthorityUsageMode&& value) { m_usageModeHasBeenSet = true; m_usageMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithUsageMode(const CertificateAuthorityUsageMode& value) { SetUsageMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithUsageMode(CertificateAuthorityUsageMode&& value) { SetUsageMode(std::move(value)); return *this;}
+
   private:
 
     CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
-    bool m_certificateAuthorityConfigurationHasBeenSet;
+    bool m_certificateAuthorityConfigurationHasBeenSet = false;
 
     RevocationConfiguration m_revocationConfiguration;
-    bool m_revocationConfigurationHasBeenSet;
+    bool m_revocationConfigurationHasBeenSet = false;
 
     CertificateAuthorityType m_certificateAuthorityType;
-    bool m_certificateAuthorityTypeHasBeenSet;
+    bool m_certificateAuthorityTypeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     KeyStorageSecurityStandard m_keyStorageSecurityStandard;
-    bool m_keyStorageSecurityStandardHasBeenSet;
+    bool m_keyStorageSecurityStandardHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    CertificateAuthorityUsageMode m_usageMode;
+    bool m_usageModeHasBeenSet = false;
   };
 
 } // namespace Model

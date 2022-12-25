@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACESWEB_API CreateUserSettingsRequest : public WorkSpacesWebRequest
+  class CreateUserSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    CreateUserSettingsRequest();
+    AWS_WORKSPACESWEB_API CreateUserSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateUserSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -393,31 +393,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     EnabledType m_copyAllowed;
-    bool m_copyAllowedHasBeenSet;
+    bool m_copyAllowedHasBeenSet = false;
 
     int m_disconnectTimeoutInMinutes;
-    bool m_disconnectTimeoutInMinutesHasBeenSet;
+    bool m_disconnectTimeoutInMinutesHasBeenSet = false;
 
     EnabledType m_downloadAllowed;
-    bool m_downloadAllowedHasBeenSet;
+    bool m_downloadAllowedHasBeenSet = false;
 
     int m_idleDisconnectTimeoutInMinutes;
-    bool m_idleDisconnectTimeoutInMinutesHasBeenSet;
+    bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
 
     EnabledType m_pasteAllowed;
-    bool m_pasteAllowedHasBeenSet;
+    bool m_pasteAllowedHasBeenSet = false;
 
     EnabledType m_printAllowed;
-    bool m_printAllowedHasBeenSet;
+    bool m_printAllowedHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EnabledType m_uploadAllowed;
-    bool m_uploadAllowedHasBeenSet;
+    bool m_uploadAllowedHasBeenSet = false;
   };
 
 } // namespace Model

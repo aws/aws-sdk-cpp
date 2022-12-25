@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Id3Insertion">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Id3Insertion
+  class Id3Insertion
   {
   public:
-    Id3Insertion();
-    Id3Insertion(Aws::Utils::Json::JsonView jsonValue);
-    Id3Insertion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Id3Insertion();
+    AWS_MEDIACONVERT_API Id3Insertion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Id3Insertion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_id3;
-    bool m_id3HasBeenSet;
+    bool m_id3HasBeenSet = false;
 
     Aws::String m_timecode;
-    bool m_timecodeHasBeenSet;
+    bool m_timecodeHasBeenSet = false;
   };
 
 } // namespace Model

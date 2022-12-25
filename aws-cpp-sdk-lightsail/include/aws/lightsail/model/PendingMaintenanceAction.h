@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PendingMaintenanceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API PendingMaintenanceAction
+  class PendingMaintenanceAction
   {
   public:
-    PendingMaintenanceAction();
-    PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
-    PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API PendingMaintenanceAction();
+    AWS_LIGHTSAIL_API PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_currentApplyDate;
-    bool m_currentApplyDateHasBeenSet;
+    bool m_currentApplyDateHasBeenSet = false;
   };
 
 } // namespace Model

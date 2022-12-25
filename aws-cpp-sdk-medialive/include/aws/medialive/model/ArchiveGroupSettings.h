@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ArchiveGroupSettings
+  class ArchiveGroupSettings
   {
   public:
-    ArchiveGroupSettings();
-    ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ArchiveGroupSettings();
+    AWS_MEDIALIVE_API ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,13 +127,13 @@ namespace Model
   private:
 
     ArchiveCdnSettings m_archiveCdnSettings;
-    bool m_archiveCdnSettingsHasBeenSet;
+    bool m_archiveCdnSettingsHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     int m_rolloverInterval;
-    bool m_rolloverIntervalHasBeenSet;
+    bool m_rolloverIntervalHasBeenSet = false;
   };
 
 } // namespace Model

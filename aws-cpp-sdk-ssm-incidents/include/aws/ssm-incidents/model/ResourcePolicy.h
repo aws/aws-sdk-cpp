@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ResourcePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ResourcePolicy
+  class ResourcePolicy
   {
   public:
-    ResourcePolicy();
-    ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ResourcePolicy();
+    AWS_SSMINCIDENTS_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_ramResourceShareRegion;
-    bool m_ramResourceShareRegionHasBeenSet;
+    bool m_ramResourceShareRegionHasBeenSet = false;
   };
 
 } // namespace Model

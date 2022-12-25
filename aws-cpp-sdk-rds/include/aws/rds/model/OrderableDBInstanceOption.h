@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OrderableDBInstanceOption
+  class OrderableDBInstanceOption
   {
   public:
-    OrderableDBInstanceOption();
-    OrderableDBInstanceOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OrderableDBInstanceOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OrderableDBInstanceOption();
+    AWS_RDS_API OrderableDBInstanceOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OrderableDBInstanceOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -1042,97 +1042,217 @@ namespace Model
      */
     inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const char* value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline bool GetSupportsStorageThroughput() const{ return m_supportsStorageThroughput; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline bool SupportsStorageThroughputHasBeenSet() const { return m_supportsStorageThroughputHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline void SetSupportsStorageThroughput(bool value) { m_supportsStorageThroughputHasBeenSet = true; m_supportsStorageThroughput = value; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsStorageThroughput(bool value) { SetSupportsStorageThroughput(value); return *this;}
+
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline int GetMinStorageThroughputPerDbInstance() const{ return m_minStorageThroughputPerDbInstance; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline bool MinStorageThroughputPerDbInstanceHasBeenSet() const { return m_minStorageThroughputPerDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline void SetMinStorageThroughputPerDbInstance(int value) { m_minStorageThroughputPerDbInstanceHasBeenSet = true; m_minStorageThroughputPerDbInstance = value; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMinStorageThroughputPerDbInstance(int value) { SetMinStorageThroughputPerDbInstance(value); return *this;}
+
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline int GetMaxStorageThroughputPerDbInstance() const{ return m_maxStorageThroughputPerDbInstance; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline bool MaxStorageThroughputPerDbInstanceHasBeenSet() const { return m_maxStorageThroughputPerDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline void SetMaxStorageThroughputPerDbInstance(int value) { m_maxStorageThroughputPerDbInstanceHasBeenSet = true; m_maxStorageThroughputPerDbInstance = value; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMaxStorageThroughputPerDbInstance(int value) { SetMaxStorageThroughputPerDbInstance(value); return *this;}
+
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline double GetMinStorageThroughputPerIops() const{ return m_minStorageThroughputPerIops; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline bool MinStorageThroughputPerIopsHasBeenSet() const { return m_minStorageThroughputPerIopsHasBeenSet; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline void SetMinStorageThroughputPerIops(double value) { m_minStorageThroughputPerIopsHasBeenSet = true; m_minStorageThroughputPerIops = value; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMinStorageThroughputPerIops(double value) { SetMinStorageThroughputPerIops(value); return *this;}
+
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline double GetMaxStorageThroughputPerIops() const{ return m_maxStorageThroughputPerIops; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline bool MaxStorageThroughputPerIopsHasBeenSet() const { return m_maxStorageThroughputPerIopsHasBeenSet; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline void SetMaxStorageThroughputPerIops(double value) { m_maxStorageThroughputPerIopsHasBeenSet = true; m_maxStorageThroughputPerIops = value; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMaxStorageThroughputPerIops(double value) { SetMaxStorageThroughputPerIops(value); return *this;}
+
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::String m_availabilityZoneGroup;
-    bool m_availabilityZoneGroupHasBeenSet;
+    bool m_availabilityZoneGroupHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     bool m_multiAZCapable;
-    bool m_multiAZCapableHasBeenSet;
+    bool m_multiAZCapableHasBeenSet = false;
 
     bool m_readReplicaCapable;
-    bool m_readReplicaCapableHasBeenSet;
+    bool m_readReplicaCapableHasBeenSet = false;
 
     bool m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
 
     bool m_supportsStorageEncryption;
-    bool m_supportsStorageEncryptionHasBeenSet;
+    bool m_supportsStorageEncryptionHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_supportsIops;
-    bool m_supportsIopsHasBeenSet;
+    bool m_supportsIopsHasBeenSet = false;
 
     bool m_supportsEnhancedMonitoring;
-    bool m_supportsEnhancedMonitoringHasBeenSet;
+    bool m_supportsEnhancedMonitoringHasBeenSet = false;
 
     bool m_supportsIAMDatabaseAuthentication;
-    bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
+    bool m_supportsIAMDatabaseAuthenticationHasBeenSet = false;
 
     bool m_supportsPerformanceInsights;
-    bool m_supportsPerformanceInsightsHasBeenSet;
+    bool m_supportsPerformanceInsightsHasBeenSet = false;
 
     int m_minStorageSize;
-    bool m_minStorageSizeHasBeenSet;
+    bool m_minStorageSizeHasBeenSet = false;
 
     int m_maxStorageSize;
-    bool m_maxStorageSizeHasBeenSet;
+    bool m_maxStorageSizeHasBeenSet = false;
 
     int m_minIopsPerDbInstance;
-    bool m_minIopsPerDbInstanceHasBeenSet;
+    bool m_minIopsPerDbInstanceHasBeenSet = false;
 
     int m_maxIopsPerDbInstance;
-    bool m_maxIopsPerDbInstanceHasBeenSet;
+    bool m_maxIopsPerDbInstanceHasBeenSet = false;
 
     double m_minIopsPerGib;
-    bool m_minIopsPerGibHasBeenSet;
+    bool m_minIopsPerGibHasBeenSet = false;
 
     double m_maxIopsPerGib;
-    bool m_maxIopsPerGibHasBeenSet;
+    bool m_maxIopsPerGibHasBeenSet = false;
 
     Aws::Vector<AvailableProcessorFeature> m_availableProcessorFeatures;
-    bool m_availableProcessorFeaturesHasBeenSet;
+    bool m_availableProcessorFeaturesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedEngineModes;
-    bool m_supportedEngineModesHasBeenSet;
+    bool m_supportedEngineModesHasBeenSet = false;
 
     bool m_supportsStorageAutoscaling;
-    bool m_supportsStorageAutoscalingHasBeenSet;
+    bool m_supportsStorageAutoscalingHasBeenSet = false;
 
     bool m_supportsKerberosAuthentication;
-    bool m_supportsKerberosAuthenticationHasBeenSet;
+    bool m_supportsKerberosAuthenticationHasBeenSet = false;
 
     bool m_outpostCapable;
-    bool m_outpostCapableHasBeenSet;
+    bool m_outpostCapableHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedActivityStreamModes;
-    bool m_supportedActivityStreamModesHasBeenSet;
+    bool m_supportedActivityStreamModesHasBeenSet = false;
 
     bool m_supportsGlobalDatabases;
-    bool m_supportsGlobalDatabasesHasBeenSet;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
 
     bool m_supportsClusters;
-    bool m_supportsClustersHasBeenSet;
+    bool m_supportsClustersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedNetworkTypes;
-    bool m_supportedNetworkTypesHasBeenSet;
+    bool m_supportedNetworkTypesHasBeenSet = false;
+
+    bool m_supportsStorageThroughput;
+    bool m_supportsStorageThroughputHasBeenSet = false;
+
+    int m_minStorageThroughputPerDbInstance;
+    bool m_minStorageThroughputPerDbInstanceHasBeenSet = false;
+
+    int m_maxStorageThroughputPerDbInstance;
+    bool m_maxStorageThroughputPerDbInstanceHasBeenSet = false;
+
+    double m_minStorageThroughputPerIops;
+    bool m_minStorageThroughputPerIopsHasBeenSet = false;
+
+    double m_maxStorageThroughputPerIops;
+    bool m_maxStorageThroughputPerIopsHasBeenSet = false;
   };
 
 } // namespace Model

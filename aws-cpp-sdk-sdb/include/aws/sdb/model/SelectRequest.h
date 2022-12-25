@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIMPLEDB_API SelectRequest : public SimpleDBRequest
+  class SelectRequest : public SimpleDBRequest
   {
   public:
-    SelectRequest();
+    AWS_SIMPLEDB_API SelectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Select"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIMPLEDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SIMPLEDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_selectExpression;
-    bool m_selectExpressionHasBeenSet;
+    bool m_selectExpressionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
   };
 
 } // namespace Model

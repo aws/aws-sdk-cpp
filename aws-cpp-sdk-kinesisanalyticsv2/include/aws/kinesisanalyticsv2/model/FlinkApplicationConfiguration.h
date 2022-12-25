@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration
+  class FlinkApplicationConfiguration
   {
   public:
-    FlinkApplicationConfiguration();
-    FlinkApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FlinkApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     CheckpointConfiguration m_checkpointConfiguration;
-    bool m_checkpointConfigurationHasBeenSet;
+    bool m_checkpointConfigurationHasBeenSet = false;
 
     MonitoringConfiguration m_monitoringConfiguration;
-    bool m_monitoringConfigurationHasBeenSet;
+    bool m_monitoringConfigurationHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

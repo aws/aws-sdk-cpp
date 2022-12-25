@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Channel();
+    AWS_SAGEMAKER_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -474,25 +474,25 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     RecordWrapper m_recordWrapperType;
-    bool m_recordWrapperTypeHasBeenSet;
+    bool m_recordWrapperTypeHasBeenSet = false;
 
     TrainingInputMode m_inputMode;
-    bool m_inputModeHasBeenSet;
+    bool m_inputModeHasBeenSet = false;
 
     ShuffleConfig m_shuffleConfig;
-    bool m_shuffleConfigHasBeenSet;
+    bool m_shuffleConfigHasBeenSet = false;
   };
 
 } // namespace Model

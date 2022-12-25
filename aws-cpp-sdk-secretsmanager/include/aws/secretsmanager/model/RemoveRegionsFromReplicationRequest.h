@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationRequest : public SecretsManagerRequest
+  class RemoveRegionsFromReplicationRequest : public SecretsManagerRequest
   {
   public:
-    RemoveRegionsFromReplicationRequest();
+    AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveRegionsFromReplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeReplicaRegions;
-    bool m_removeReplicaRegionsHasBeenSet;
+    bool m_removeReplicaRegionsHasBeenSet = false;
   };
 
 } // namespace Model

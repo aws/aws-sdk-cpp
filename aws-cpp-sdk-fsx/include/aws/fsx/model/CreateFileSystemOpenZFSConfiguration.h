@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOpenZFSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemOpenZFSConfiguration
+  class CreateFileSystemOpenZFSConfiguration
   {
   public:
-    CreateFileSystemOpenZFSConfiguration();
-    CreateFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemOpenZFSConfiguration();
+    AWS_FSX_API CreateFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -104,46 +104,46 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline bool GetCopyTagsToVolumes() const{ return m_copyTagsToVolumes; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline bool CopyTagsToVolumesHasBeenSet() const { return m_copyTagsToVolumesHasBeenSet; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline void SetCopyTagsToVolumes(bool value) { m_copyTagsToVolumesHasBeenSet = true; m_copyTagsToVolumes = value; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithCopyTagsToVolumes(bool value) { SetCopyTagsToVolumes(value); return *this;}
 
@@ -174,77 +174,161 @@ namespace Model
 
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     * system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -332,31 +416,31 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     bool m_copyTagsToVolumes;
-    bool m_copyTagsToVolumesHasBeenSet;
+    bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OpenZFSDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     OpenZFSCreateRootVolumeConfiguration m_rootVolumeConfiguration;
-    bool m_rootVolumeConfigurationHasBeenSet;
+    bool m_rootVolumeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

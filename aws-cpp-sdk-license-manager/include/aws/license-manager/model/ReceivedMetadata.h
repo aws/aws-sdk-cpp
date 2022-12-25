@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReceivedMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ReceivedMetadata
+  class ReceivedMetadata
   {
   public:
-    ReceivedMetadata();
-    ReceivedMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ReceivedMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ReceivedMetadata();
+    AWS_LICENSEMANAGER_API ReceivedMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ReceivedMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     ReceivedStatus m_receivedStatus;
-    bool m_receivedStatusHasBeenSet;
+    bool m_receivedStatusHasBeenSet = false;
 
     Aws::String m_receivedStatusReason;
-    bool m_receivedStatusReasonHasBeenSet;
+    bool m_receivedStatusReasonHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

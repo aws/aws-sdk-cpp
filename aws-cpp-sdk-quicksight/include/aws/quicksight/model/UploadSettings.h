@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UploadSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API UploadSettings
+  class UploadSettings
   {
   public:
-    UploadSettings();
-    UploadSettings(Aws::Utils::Json::JsonView jsonValue);
-    UploadSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API UploadSettings();
+    AWS_QUICKSIGHT_API UploadSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API UploadSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,19 +187,19 @@ namespace Model
   private:
 
     FileFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     int m_startFromRow;
-    bool m_startFromRowHasBeenSet;
+    bool m_startFromRowHasBeenSet = false;
 
     bool m_containsHeader;
-    bool m_containsHeaderHasBeenSet;
+    bool m_containsHeaderHasBeenSet = false;
 
     TextQualifier m_textQualifier;
-    bool m_textQualifierHasBeenSet;
+    bool m_textQualifierHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
   };
 
 } // namespace Model

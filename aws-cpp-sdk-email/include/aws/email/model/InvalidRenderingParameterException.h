@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidRenderingParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API InvalidRenderingParameterException
+  class InvalidRenderingParameterException
   {
   public:
-    InvalidRenderingParameterException();
-    InvalidRenderingParameterException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidRenderingParameterException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidRenderingParameterException();
+    AWS_SES_API InvalidRenderingParameterException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidRenderingParameterException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -68,7 +68,7 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/City">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API City
+  class City
   {
   public:
-    City();
-    City(Aws::Utils::Json::JsonView jsonValue);
-    City& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API City();
+    AWS_SECURITYHUB_API City(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API City& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_cityName;
-    bool m_cityNameHasBeenSet;
+    bool m_cityNameHasBeenSet = false;
   };
 
 } // namespace Model

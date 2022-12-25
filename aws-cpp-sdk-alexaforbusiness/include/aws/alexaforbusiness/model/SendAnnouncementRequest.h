@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API SendAnnouncementRequest : public AlexaForBusinessRequest
+  class SendAnnouncementRequest : public AlexaForBusinessRequest
   {
   public:
-    SendAnnouncementRequest();
+    AWS_ALEXAFORBUSINESS_API SendAnnouncementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendAnnouncement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_roomFilters;
-    bool m_roomFiltersHasBeenSet;
+    bool m_roomFiltersHasBeenSet = false;
 
     Content m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     int m_timeToLiveInSeconds;
-    bool m_timeToLiveInSecondsHasBeenSet;
+    bool m_timeToLiveInSecondsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

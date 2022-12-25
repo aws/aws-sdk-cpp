@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API GetSignalingChannelEndpointRequest : public KinesisVideoRequest
+  class GetSignalingChannelEndpointRequest : public KinesisVideoRequest
   {
   public:
-    GetSignalingChannelEndpointRequest();
+    AWS_KINESISVIDEO_API GetSignalingChannelEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSignalingChannelEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     SingleMasterChannelEndpointConfiguration m_singleMasterChannelEndpointConfiguration;
-    bool m_singleMasterChannelEndpointConfigurationHasBeenSet;
+    bool m_singleMasterChannelEndpointConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

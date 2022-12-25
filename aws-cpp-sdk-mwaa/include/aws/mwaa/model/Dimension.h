@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/Dimension">AWS API
    * Reference</a></p>
    */
-  class AWS_MWAA_API Dimension
+  class Dimension
   {
   public:
-    Dimension();
-    Dimension(Aws::Utils::Json::JsonView jsonValue);
-    Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API Dimension();
+    AWS_MWAA_API Dimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

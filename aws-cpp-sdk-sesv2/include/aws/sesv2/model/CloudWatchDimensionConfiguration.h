@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CloudWatchDimensionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CloudWatchDimensionConfiguration
+  class CloudWatchDimensionConfiguration
   {
   public:
-    CloudWatchDimensionConfiguration();
-    CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API CloudWatchDimensionConfiguration();
+    AWS_SESV2_API CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,85 +176,93 @@ namespace Model
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline const Aws::String& GetDefaultDimensionValue() const{ return m_defaultDimensionValue; }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline bool DefaultDimensionValueHasBeenSet() const { return m_defaultDimensionValueHasBeenSet; }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(const Aws::String& value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue = value; }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(Aws::String&& value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue = std::move(value); }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline void SetDefaultDimensionValue(const char* value) { m_defaultDimensionValueHasBeenSet = true; m_defaultDimensionValue.assign(value); }
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(const Aws::String& value) { SetDefaultDimensionValue(value); return *this;}
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(Aws::String&& value) { SetDefaultDimensionValue(std::move(value)); return *this;}
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
      * you don't provide the value of the dimension when you send an email. This value
-     * has to meet the following criteria:</p> <ul> <li> <p>It can only contain ASCII
-     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-     * <li> <p>It can contain no more than 256 characters.</p> </li> </ul>
+     * has to meet the following criteria:</p> <ul> <li> <p>Can only contain ASCII
+     * letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@),
+     * and periods (.).</p> </li> <li> <p>It can contain no more than 256
+     * characters.</p> </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(const char* value) { SetDefaultDimensionValue(value); return *this;}
 
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     DimensionValueSource m_dimensionValueSource;
-    bool m_dimensionValueSourceHasBeenSet;
+    bool m_dimensionValueSourceHasBeenSet = false;
 
     Aws::String m_defaultDimensionValue;
-    bool m_defaultDimensionValueHasBeenSet;
+    bool m_defaultDimensionValueHasBeenSet = false;
   };
 
 } // namespace Model

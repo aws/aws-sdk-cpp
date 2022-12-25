@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONFIGSERVICE_API BatchGetAggregateResourceConfigRequest : public ConfigServiceRequest
+  class BatchGetAggregateResourceConfigRequest : public ConfigServiceRequest
   {
   public:
-    BatchGetAggregateResourceConfigRequest();
+    AWS_CONFIGSERVICE_API BatchGetAggregateResourceConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchGetAggregateResourceConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
 
     Aws::Vector<AggregateResourceIdentifier> m_resourceIdentifiers;
-    bool m_resourceIdentifiersHasBeenSet;
+    bool m_resourceIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

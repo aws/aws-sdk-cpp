@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/TunedHPOParams">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API TunedHPOParams
+  class TunedHPOParams
   {
   public:
-    TunedHPOParams();
-    TunedHPOParams(Aws::Utils::Json::JsonView jsonValue);
-    TunedHPOParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API TunedHPOParams();
+    AWS_PERSONALIZE_API TunedHPOParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API TunedHPOParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,7 +108,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_algorithmHyperParameters;
-    bool m_algorithmHyperParametersHasBeenSet;
+    bool m_algorithmHyperParametersHasBeenSet = false;
   };
 
 } // namespace Model

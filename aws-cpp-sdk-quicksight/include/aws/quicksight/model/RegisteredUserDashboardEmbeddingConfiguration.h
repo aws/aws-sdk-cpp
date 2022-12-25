@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserDashboardEmbeddingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration
+  class RegisteredUserDashboardEmbeddingConfiguration
   {
   public:
-    RegisteredUserDashboardEmbeddingConfiguration();
-    RegisteredUserDashboardEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredUserDashboardEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_initialDashboardId;
-    bool m_initialDashboardIdHasBeenSet;
+    bool m_initialDashboardIdHasBeenSet = false;
   };
 
 } // namespace Model

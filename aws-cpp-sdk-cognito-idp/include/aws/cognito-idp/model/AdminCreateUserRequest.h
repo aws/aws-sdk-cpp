@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserRequest : public CognitoIdentityProviderRequest
+  class AdminCreateUserRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AdminCreateUserRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AdminCreateUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1071,31 +1071,31 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_validationData;
-    bool m_validationDataHasBeenSet;
+    bool m_validationDataHasBeenSet = false;
 
     Aws::String m_temporaryPassword;
-    bool m_temporaryPasswordHasBeenSet;
+    bool m_temporaryPasswordHasBeenSet = false;
 
     bool m_forceAliasCreation;
-    bool m_forceAliasCreationHasBeenSet;
+    bool m_forceAliasCreationHasBeenSet = false;
 
     MessageActionType m_messageAction;
-    bool m_messageActionHasBeenSet;
+    bool m_messageActionHasBeenSet = false;
 
     Aws::Vector<DeliveryMediumType> m_desiredDeliveryMediums;
-    bool m_desiredDeliveryMediumsHasBeenSet;
+    bool m_desiredDeliveryMediumsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

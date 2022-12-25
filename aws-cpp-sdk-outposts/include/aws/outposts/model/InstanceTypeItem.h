@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/InstanceTypeItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API InstanceTypeItem
+  class InstanceTypeItem
   {
   public:
-    InstanceTypeItem();
-    InstanceTypeItem(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTypeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API InstanceTypeItem();
+    AWS_OUTPOSTS_API InstanceTypeItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API InstanceTypeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -64,7 +64,7 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

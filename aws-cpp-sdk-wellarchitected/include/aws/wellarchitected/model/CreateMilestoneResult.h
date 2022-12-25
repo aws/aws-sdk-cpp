@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateMilestoneOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API CreateMilestoneResult
+  class CreateMilestoneResult
   {
   public:
-    CreateMilestoneResult();
-    CreateMilestoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMilestoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateMilestoneResult();
+    AWS_WELLARCHITECTED_API CreateMilestoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateMilestoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaGlobalSecondaryIndexAutoScalingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingDescription
+  class ReplicaGlobalSecondaryIndexAutoScalingDescription
   {
   public:
-    ReplicaGlobalSecondaryIndexAutoScalingDescription();
-    ReplicaGlobalSecondaryIndexAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaGlobalSecondaryIndexAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingDescription();
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,54 +84,60 @@ namespace Model
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline ReplicaGlobalSecondaryIndexAutoScalingDescription& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
 
     /**
      * <p>The current state of the replica global secondary index:</p> <ul> <li> <p>
      * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
-     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
-     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
-     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
+     * <code>UPDATING</code> - The table/index configuration is being updated. The
+     * table/index remains available for data operations when <code>UPDATING</code>
+     * </p> </li> <li> <p> <code>DELETING</code> - The index is being deleted.</p>
+     * </li> <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline ReplicaGlobalSecondaryIndexAutoScalingDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
 
@@ -176,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     IndexStatus m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedReadCapacityAutoScalingSettings;
-    bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet;
+    bool m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
     AutoScalingSettingsDescription m_provisionedWriteCapacityAutoScalingSettings;
-    bool m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
   };
 
 } // namespace Model

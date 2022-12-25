@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRun">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRun
+  class CanaryRun
   {
   public:
-    CanaryRun();
-    CanaryRun(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRun();
+    AWS_SYNTHETICS_API CanaryRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CanaryRunStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CanaryRunTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
 
     Aws::String m_artifactS3Location;
-    bool m_artifactS3LocationHasBeenSet;
+    bool m_artifactS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

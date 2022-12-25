@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/EndpointAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API EndpointAttributes
+  class EndpointAttributes
   {
   public:
-    EndpointAttributes();
-    EndpointAttributes(Aws::Utils::Json::JsonView jsonValue);
-    EndpointAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API EndpointAttributes();
+    AWS_CHIMESDKIDENTITY_API EndpointAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API EndpointAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_deviceToken;
-    bool m_deviceTokenHasBeenSet;
+    bool m_deviceTokenHasBeenSet = false;
 
     Aws::String m_voipDeviceToken;
-    bool m_voipDeviceTokenHasBeenSet;
+    bool m_voipDeviceTokenHasBeenSet = false;
   };
 
 } // namespace Model

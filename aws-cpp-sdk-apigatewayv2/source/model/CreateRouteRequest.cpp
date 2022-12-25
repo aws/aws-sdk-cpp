@@ -42,7 +42,7 @@ Aws::String CreateRouteRequest::SerializePayload() const
 
   if(m_authorizationScopesHasBeenSet)
   {
-   Array<JsonValue> authorizationScopesJsonList(m_authorizationScopes.size());
+   Aws::Utils::Array<JsonValue> authorizationScopesJsonList(m_authorizationScopes.size());
    for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
    {
      authorizationScopesJsonList[authorizationScopesIndex].AsString(m_authorizationScopes[authorizationScopesIndex]);

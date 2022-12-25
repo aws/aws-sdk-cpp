@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PendingResource">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API PendingResource
+  class PendingResource
   {
   public:
-    PendingResource();
-    PendingResource(Aws::Utils::Json::JsonView jsonValue);
-    PendingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API PendingResource();
+    AWS_RESOURCEGROUPS_API PendingResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API PendingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API UpdateEmailTemplateRequest : public SESV2Request
+  class UpdateEmailTemplateRequest : public SESV2Request
   {
   public:
-    UpdateEmailTemplateRequest();
+    AWS_SESV2_API UpdateEmailTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEmailTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     EmailTemplateContent m_templateContent;
-    bool m_templateContentHasBeenSet;
+    bool m_templateContentHasBeenSet = false;
   };
 
 } // namespace Model

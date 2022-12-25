@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramPipelineDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramPipelineDetail
+  class MultiplexProgramPipelineDetail
   {
   public:
-    MultiplexProgramPipelineDetail();
-    MultiplexProgramPipelineDetail(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramPipelineDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramPipelineDetail();
+    AWS_MEDIALIVE_API MultiplexProgramPipelineDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramPipelineDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_activeChannelPipeline;
-    bool m_activeChannelPipelineHasBeenSet;
+    bool m_activeChannelPipelineHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetModifyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceFleetModifyConfig
+  class InstanceFleetModifyConfig
   {
   public:
-    InstanceFleetModifyConfig();
-    InstanceFleetModifyConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceFleetModifyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceFleetModifyConfig();
+    AWS_EMR_API InstanceFleetModifyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceFleetModifyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_instanceFleetId;
-    bool m_instanceFleetIdHasBeenSet;
+    bool m_instanceFleetIdHasBeenSet = false;
 
     int m_targetOnDemandCapacity;
-    bool m_targetOnDemandCapacityHasBeenSet;
+    bool m_targetOnDemandCapacityHasBeenSet = false;
 
     int m_targetSpotCapacity;
-    bool m_targetSpotCapacityHasBeenSet;
+    bool m_targetSpotCapacityHasBeenSet = false;
   };
 
 } // namespace Model

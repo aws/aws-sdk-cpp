@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Hits">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API Hits
+  class Hits
   {
   public:
-    Hits();
-    Hits(Aws::Utils::Json::JsonView jsonValue);
-    Hits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API Hits();
+    AWS_CLOUDSEARCHDOMAIN_API Hits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Hits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     long long m_found;
-    bool m_foundHasBeenSet;
+    bool m_foundHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_cursor;
-    bool m_cursorHasBeenSet;
+    bool m_cursorHasBeenSet = false;
 
     Aws::Vector<Hit> m_hit;
-    bool m_hitHasBeenSet;
+    bool m_hitHasBeenSet = false;
   };
 
 } // namespace Model

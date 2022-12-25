@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/MilestoneSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API MilestoneSummary
+  class MilestoneSummary
   {
   public:
-    MilestoneSummary();
-    MilestoneSummary(Aws::Utils::Json::JsonView jsonValue);
-    MilestoneSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API MilestoneSummary();
+    AWS_WELLARCHITECTED_API MilestoneSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API MilestoneSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -117,16 +117,16 @@ namespace Model
   private:
 
     int m_milestoneNumber;
-    bool m_milestoneNumberHasBeenSet;
+    bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_milestoneName;
-    bool m_milestoneNameHasBeenSet;
+    bool m_milestoneNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_recordedAt;
-    bool m_recordedAtHasBeenSet;
+    bool m_recordedAtHasBeenSet = false;
 
     WorkloadSummary m_workloadSummary;
-    bool m_workloadSummaryHasBeenSet;
+    bool m_workloadSummaryHasBeenSet = false;
   };
 
 } // namespace Model

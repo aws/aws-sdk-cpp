@@ -116,7 +116,7 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("MaintenanceOperationsInProgress"))
   {
-    Array<JsonView> maintenanceOperationsInProgressJsonList = jsonValue.GetArray("MaintenanceOperationsInProgress");
+    Aws::Utils::Array<JsonView> maintenanceOperationsInProgressJsonList = jsonValue.GetArray("MaintenanceOperationsInProgress");
     for(unsigned maintenanceOperationsInProgressIndex = 0; maintenanceOperationsInProgressIndex < maintenanceOperationsInProgressJsonList.GetLength(); ++maintenanceOperationsInProgressIndex)
     {
       m_maintenanceOperationsInProgress.push_back(FileSystemMaintenanceOperationMapper::GetFileSystemMaintenanceOperationForName(maintenanceOperationsInProgressJsonList[maintenanceOperationsInProgressIndex].AsString()));
@@ -154,7 +154,7 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("Aliases"))
   {
-    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
@@ -219,7 +219,7 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
 
   if(m_maintenanceOperationsInProgressHasBeenSet)
   {
-   Array<JsonValue> maintenanceOperationsInProgressJsonList(m_maintenanceOperationsInProgress.size());
+   Aws::Utils::Array<JsonValue> maintenanceOperationsInProgressJsonList(m_maintenanceOperationsInProgress.size());
    for(unsigned maintenanceOperationsInProgressIndex = 0; maintenanceOperationsInProgressIndex < maintenanceOperationsInProgressJsonList.GetLength(); ++maintenanceOperationsInProgressIndex)
    {
      maintenanceOperationsInProgressJsonList[maintenanceOperationsInProgressIndex].AsString(FileSystemMaintenanceOperationMapper::GetNameForFileSystemMaintenanceOperation(m_maintenanceOperationsInProgress[maintenanceOperationsInProgressIndex]));
@@ -254,7 +254,7 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
 
   if(m_aliasesHasBeenSet)
   {
-   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   Aws::Utils::Array<JsonValue> aliasesJsonList(m_aliases.size());
    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
    {
      aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());

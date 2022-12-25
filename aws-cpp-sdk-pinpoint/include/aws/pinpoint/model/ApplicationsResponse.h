@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ApplicationsResponse
+  class ApplicationsResponse
   {
   public:
-    ApplicationsResponse();
-    ApplicationsResponse(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ApplicationsResponse();
+    AWS_PINPOINT_API ApplicationsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ApplicationsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<ApplicationResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

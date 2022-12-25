@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR2_API CreateFindingsReportRequest : public Inspector2Request
+  class CreateFindingsReportRequest : public Inspector2Request
   {
   public:
-    CreateFindingsReportRequest();
+    AWS_INSPECTOR2_API CreateFindingsReportRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFindingsReport"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     ReportFormat m_reportFormat;
-    bool m_reportFormatHasBeenSet;
+    bool m_reportFormatHasBeenSet = false;
 
     Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

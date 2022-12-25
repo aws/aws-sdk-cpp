@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/InferenceAccelerator">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API InferenceAccelerator
+  class InferenceAccelerator
   {
   public:
-    InferenceAccelerator();
-    InferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
-    InferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API InferenceAccelerator();
+    AWS_ECS_API InferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API InferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

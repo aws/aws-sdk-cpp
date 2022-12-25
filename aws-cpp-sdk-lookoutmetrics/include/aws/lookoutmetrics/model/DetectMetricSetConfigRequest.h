@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API DetectMetricSetConfigRequest : public LookoutMetricsRequest
+  class DetectMetricSetConfigRequest : public LookoutMetricsRequest
   {
   public:
-    DetectMetricSetConfigRequest();
+    AWS_LOOKOUTMETRICS_API DetectMetricSetConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DetectMetricSetConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     AutoDetectionMetricSource m_autoDetectionMetricSource;
-    bool m_autoDetectionMetricSourceHasBeenSet;
+    bool m_autoDetectionMetricSourceHasBeenSet = false;
   };
 
 } // namespace Model

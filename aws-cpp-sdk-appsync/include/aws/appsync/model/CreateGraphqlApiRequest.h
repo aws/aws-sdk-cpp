@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSYNC_API CreateGraphqlApiRequest : public AppSyncRequest
+  class CreateGraphqlApiRequest : public AppSyncRequest
   {
   public:
-    CreateGraphqlApiRequest();
+    AWS_APPSYNC_API CreateGraphqlApiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGraphqlApi"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -384,31 +384,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LogConfig m_logConfig;
-    bool m_logConfigHasBeenSet;
+    bool m_logConfigHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     UserPoolConfig m_userPoolConfig;
-    bool m_userPoolConfigHasBeenSet;
+    bool m_userPoolConfigHasBeenSet = false;
 
     OpenIDConnectConfig m_openIDConnectConfig;
-    bool m_openIDConnectConfigHasBeenSet;
+    bool m_openIDConnectConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-    bool m_additionalAuthenticationProvidersHasBeenSet;
+    bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
     bool m_xrayEnabled;
-    bool m_xrayEnabledHasBeenSet;
+    bool m_xrayEnabledHasBeenSet = false;
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-    bool m_lambdaAuthorizerConfigHasBeenSet;
+    bool m_lambdaAuthorizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

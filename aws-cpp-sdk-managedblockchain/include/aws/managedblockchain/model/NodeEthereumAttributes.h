@@ -28,90 +28,90 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeEthereumAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes
+  class NodeEthereumAttributes
   {
   public:
-    NodeEthereumAttributes();
-    NodeEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
-    NodeEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline const Aws::String& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline void SetHttpEndpoint(const Aws::String& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline void SetHttpEndpoint(Aws::String&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline void SetHttpEndpoint(const char* value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline NodeEthereumAttributes& WithHttpEndpoint(const Aws::String& value) { SetHttpEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
     inline NodeEthereumAttributes& WithHttpEndpoint(Aws::String&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over HTTP connections from a client. Use this endpoint in client code
-     * for smart contracts when using an HTTP connection. Connections to this endpoint
-     * are authenticated using <a
+     * <p>The endpoint on which the Ethereum node listens to run Ethereum API methods
+     * over HTTP connections from a client. Use this endpoint in client code for smart
+     * contracts when using an HTTP connection. Connections to this endpoint are
+     * authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
@@ -120,8 +120,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -130,8 +130,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -140,8 +140,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -150,8 +150,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -160,8 +160,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -170,8 +170,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -180,8 +180,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -190,8 +190,8 @@ namespace Model
 
     /**
      * <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC
-     * methods over WebSockets connections from a client. Use this endpoint in client
-     * code for smart contracts when using a WebSockets connection. Connections to this
+     * methods over WebSocket connections from a client. Use this endpoint in client
+     * code for smart contracts when using a WebSocket connection. Connections to this
      * endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
@@ -201,10 +201,10 @@ namespace Model
   private:
 
     Aws::String m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     Aws::String m_webSocketEndpoint;
-    bool m_webSocketEndpointHasBeenSet;
+    bool m_webSocketEndpointHasBeenSet = false;
   };
 
 } // namespace Model

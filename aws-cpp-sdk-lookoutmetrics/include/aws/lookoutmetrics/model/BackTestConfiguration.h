@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/BackTestConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API BackTestConfiguration
+  class BackTestConfiguration
   {
   public:
-    BackTestConfiguration();
-    BackTestConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BackTestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API BackTestConfiguration();
+    AWS_LOOKOUTMETRICS_API BackTestConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API BackTestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_runBackTestMode;
-    bool m_runBackTestModeHasBeenSet;
+    bool m_runBackTestModeHasBeenSet = false;
   };
 
 } // namespace Model

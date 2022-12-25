@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TypeFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API TypeFilters
+  class TypeFilters
   {
   public:
-    TypeFilters();
-    TypeFilters(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TypeFilters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeFilters();
+    AWS_CLOUDFORMATION_API TypeFilters(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeFilters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -226,13 +226,13 @@ namespace Model
   private:
 
     Category m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_typeNamePrefix;
-    bool m_typeNamePrefixHasBeenSet;
+    bool m_typeNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

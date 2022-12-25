@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CoipAddressUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CoipAddressUsage
+  class CoipAddressUsage
   {
   public:
-    CoipAddressUsage();
-    CoipAddressUsage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CoipAddressUsage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CoipAddressUsage();
+    AWS_EC2_API CoipAddressUsage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CoipAddressUsage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     Aws::String m_coIp;
-    bool m_coIpHasBeenSet;
+    bool m_coIpHasBeenSet = false;
   };
 
 } // namespace Model

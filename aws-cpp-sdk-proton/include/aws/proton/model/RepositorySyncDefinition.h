@@ -24,17 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>The repository sync definition.</p><p><h3>See Also:</h3>   <a
+   * <p>A repository sync definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySyncDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API RepositorySyncDefinition
+  class RepositorySyncDefinition
   {
   public:
-    RepositorySyncDefinition();
-    RepositorySyncDefinition(Aws::Utils::Json::JsonView jsonValue);
-    RepositorySyncDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API RepositorySyncDefinition();
+    AWS_PROTON_API RepositorySyncDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API RepositorySyncDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_directory;
-    bool m_directoryHasBeenSet;
+    bool m_directoryHasBeenSet = false;
 
     Aws::String m_parent;
-    bool m_parentHasBeenSet;
+    bool m_parentHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ServiceActionAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ServiceActionAssociation
+  class ServiceActionAssociation
   {
   public:
-    ServiceActionAssociation();
-    ServiceActionAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ServiceActionAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ServiceActionAssociation();
+    AWS_SERVICECATALOG_API ServiceActionAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ServiceActionAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_serviceActionId;
-    bool m_serviceActionIdHasBeenSet;
+    bool m_serviceActionIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
   };
 
 } // namespace Model

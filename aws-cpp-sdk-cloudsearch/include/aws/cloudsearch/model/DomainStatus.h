@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DomainStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DomainStatus
+  class DomainStatus
   {
   public:
-    DomainStatus();
-    DomainStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DomainStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainStatus();
+    AWS_CLOUDSEARCH_API DomainStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -406,43 +406,43 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     bool m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     bool m_deleted;
-    bool m_deletedHasBeenSet;
+    bool m_deletedHasBeenSet = false;
 
     ServiceEndpoint m_docService;
-    bool m_docServiceHasBeenSet;
+    bool m_docServiceHasBeenSet = false;
 
     ServiceEndpoint m_searchService;
-    bool m_searchServiceHasBeenSet;
+    bool m_searchServiceHasBeenSet = false;
 
     bool m_requiresIndexDocuments;
-    bool m_requiresIndexDocumentsHasBeenSet;
+    bool m_requiresIndexDocumentsHasBeenSet = false;
 
     bool m_processing;
-    bool m_processingHasBeenSet;
+    bool m_processingHasBeenSet = false;
 
     Aws::String m_searchInstanceType;
-    bool m_searchInstanceTypeHasBeenSet;
+    bool m_searchInstanceTypeHasBeenSet = false;
 
     int m_searchPartitionCount;
-    bool m_searchPartitionCountHasBeenSet;
+    bool m_searchPartitionCountHasBeenSet = false;
 
     int m_searchInstanceCount;
-    bool m_searchInstanceCountHasBeenSet;
+    bool m_searchInstanceCountHasBeenSet = false;
 
     Limits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
   };
 
 } // namespace Model

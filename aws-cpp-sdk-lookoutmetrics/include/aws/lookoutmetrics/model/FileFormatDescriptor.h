@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/FileFormatDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API FileFormatDescriptor
+  class FileFormatDescriptor
   {
   public:
-    FileFormatDescriptor();
-    FileFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    FileFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API FileFormatDescriptor();
+    AWS_LOOKOUTMETRICS_API FileFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API FileFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     CsvFormatDescriptor m_csvFormatDescriptor;
-    bool m_csvFormatDescriptorHasBeenSet;
+    bool m_csvFormatDescriptorHasBeenSet = false;
 
     JsonFormatDescriptor m_jsonFormatDescriptor;
-    bool m_jsonFormatDescriptorHasBeenSet;
+    bool m_jsonFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

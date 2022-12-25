@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/InsightImpactGraphService">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API InsightImpactGraphService
+  class InsightImpactGraphService
   {
   public:
-    InsightImpactGraphService();
-    InsightImpactGraphService(Aws::Utils::Json::JsonView jsonValue);
-    InsightImpactGraphService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API InsightImpactGraphService();
+    AWS_XRAY_API InsightImpactGraphService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API InsightImpactGraphService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -354,22 +354,22 @@ namespace Model
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<InsightImpactGraphEdge> m_edges;
-    bool m_edgesHasBeenSet;
+    bool m_edgesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouterType">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API RouterType
+  class RouterType
   {
   public:
-    RouterType();
-    RouterType(Aws::Utils::Json::JsonView jsonValue);
-    RouterType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API RouterType();
+    AWS_DIRECTCONNECT_API RouterType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API RouterType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_software;
-    bool m_softwareHasBeenSet;
+    bool m_softwareHasBeenSet = false;
 
     Aws::String m_xsltTemplateName;
-    bool m_xsltTemplateNameHasBeenSet;
+    bool m_xsltTemplateNameHasBeenSet = false;
 
     Aws::String m_xsltTemplateNameForMacSec;
-    bool m_xsltTemplateNameForMacSecHasBeenSet;
+    bool m_xsltTemplateNameForMacSecHasBeenSet = false;
 
     Aws::String m_routerTypeIdentifier;
-    bool m_routerTypeIdentifierHasBeenSet;
+    bool m_routerTypeIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

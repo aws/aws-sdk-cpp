@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationDetail
+  class ApplicationDetail
   {
   public:
-    ApplicationDetail();
-    ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationDetail();
+    AWS_KINESISANALYTICSV2_API ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,38 +171,32 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 
@@ -640,55 +634,55 @@ namespace Model
   private:
 
     Aws::String m_applicationARN;
-    bool m_applicationARNHasBeenSet;
+    bool m_applicationARNHasBeenSet = false;
 
     Aws::String m_applicationDescription;
-    bool m_applicationDescriptionHasBeenSet;
+    bool m_applicationDescriptionHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
-    bool m_runtimeEnvironmentHasBeenSet;
+    bool m_runtimeEnvironmentHasBeenSet = false;
 
     Aws::String m_serviceExecutionRole;
-    bool m_serviceExecutionRoleHasBeenSet;
+    bool m_serviceExecutionRoleHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
 
     long long m_applicationVersionId;
-    bool m_applicationVersionIdHasBeenSet;
+    bool m_applicationVersionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     ApplicationConfigurationDescription m_applicationConfigurationDescription;
-    bool m_applicationConfigurationDescriptionHasBeenSet;
+    bool m_applicationConfigurationDescriptionHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
-    bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
 
     ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
-    bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet;
+    bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
 
     long long m_applicationVersionUpdatedFrom;
-    bool m_applicationVersionUpdatedFromHasBeenSet;
+    bool m_applicationVersionUpdatedFromHasBeenSet = false;
 
     long long m_applicationVersionRolledBackFrom;
-    bool m_applicationVersionRolledBackFromHasBeenSet;
+    bool m_applicationVersionRolledBackFromHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
 
     long long m_applicationVersionRolledBackTo;
-    bool m_applicationVersionRolledBackToHasBeenSet;
+    bool m_applicationVersionRolledBackToHasBeenSet = false;
 
     ApplicationMode m_applicationMode;
-    bool m_applicationModeHasBeenSet;
+    bool m_applicationModeHasBeenSet = false;
   };
 
 } // namespace Model

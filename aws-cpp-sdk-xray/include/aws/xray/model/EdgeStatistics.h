@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/EdgeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API EdgeStatistics
+  class EdgeStatistics
   {
   public:
-    EdgeStatistics();
-    EdgeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    EdgeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API EdgeStatistics();
+    AWS_XRAY_API EdgeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API EdgeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,19 +177,19 @@ namespace Model
   private:
 
     long long m_okCount;
-    bool m_okCountHasBeenSet;
+    bool m_okCountHasBeenSet = false;
 
     ErrorStatistics m_errorStatistics;
-    bool m_errorStatisticsHasBeenSet;
+    bool m_errorStatisticsHasBeenSet = false;
 
     FaultStatistics m_faultStatistics;
-    bool m_faultStatisticsHasBeenSet;
+    bool m_faultStatisticsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
 
     double m_totalResponseTime;
-    bool m_totalResponseTimeHasBeenSet;
+    bool m_totalResponseTimeHasBeenSet = false;
   };
 
 } // namespace Model

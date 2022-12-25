@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Ec2InstanceAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Ec2InstanceAggregation
+  class Ec2InstanceAggregation
   {
   public:
-    Ec2InstanceAggregation();
-    Ec2InstanceAggregation(Aws::Utils::Json::JsonView jsonValue);
-    Ec2InstanceAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Ec2InstanceAggregation();
+    AWS_INSPECTOR2_API Ec2InstanceAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Ec2InstanceAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_amis;
-    bool m_amisHasBeenSet;
+    bool m_amisHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_instanceTags;
-    bool m_instanceTagsHasBeenSet;
+    bool m_instanceTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_operatingSystems;
-    bool m_operatingSystemsHasBeenSet;
+    bool m_operatingSystemsHasBeenSet = false;
 
     Ec2InstanceSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

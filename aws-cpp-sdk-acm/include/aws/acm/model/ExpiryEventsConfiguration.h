@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExpiryEventsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API ExpiryEventsConfiguration
+  class ExpiryEventsConfiguration
   {
   public:
-    ExpiryEventsConfiguration();
-    ExpiryEventsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExpiryEventsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API ExpiryEventsConfiguration();
+    AWS_ACM_API ExpiryEventsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API ExpiryEventsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     int m_daysBeforeExpiry;
-    bool m_daysBeforeExpiryHasBeenSet;
+    bool m_daysBeforeExpiryHasBeenSet = false;
   };
 
 } // namespace Model

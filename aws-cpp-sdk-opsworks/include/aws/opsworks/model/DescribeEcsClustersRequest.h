@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API DescribeEcsClustersRequest : public OpsWorksRequest
+  class DescribeEcsClustersRequest : public OpsWorksRequest
   {
   public:
-    DescribeEcsClustersRequest();
+    AWS_OPSWORKS_API DescribeEcsClustersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEcsClusters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -258,16 +258,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ecsClusterArns;
-    bool m_ecsClusterArnsHasBeenSet;
+    bool m_ecsClusterArnsHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

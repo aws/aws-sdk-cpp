@@ -5,297 +5,73 @@
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
-#include <aws/robomaker/RoboMakerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/robomaker/model/BatchDeleteWorldsResult.h>
-#include <aws/robomaker/model/BatchDescribeSimulationJobResult.h>
-#include <aws/robomaker/model/CancelSimulationJobResult.h>
-#include <aws/robomaker/model/CancelSimulationJobBatchResult.h>
-#include <aws/robomaker/model/CancelWorldExportJobResult.h>
-#include <aws/robomaker/model/CancelWorldGenerationJobResult.h>
-#include <aws/robomaker/model/CreateRobotApplicationResult.h>
-#include <aws/robomaker/model/CreateRobotApplicationVersionResult.h>
-#include <aws/robomaker/model/CreateSimulationApplicationResult.h>
-#include <aws/robomaker/model/CreateSimulationApplicationVersionResult.h>
-#include <aws/robomaker/model/CreateSimulationJobResult.h>
-#include <aws/robomaker/model/CreateWorldExportJobResult.h>
-#include <aws/robomaker/model/CreateWorldGenerationJobResult.h>
-#include <aws/robomaker/model/CreateWorldTemplateResult.h>
-#include <aws/robomaker/model/DeleteRobotApplicationResult.h>
-#include <aws/robomaker/model/DeleteSimulationApplicationResult.h>
-#include <aws/robomaker/model/DeleteWorldTemplateResult.h>
-#include <aws/robomaker/model/DescribeRobotApplicationResult.h>
-#include <aws/robomaker/model/DescribeSimulationApplicationResult.h>
-#include <aws/robomaker/model/DescribeSimulationJobResult.h>
-#include <aws/robomaker/model/DescribeSimulationJobBatchResult.h>
-#include <aws/robomaker/model/DescribeWorldResult.h>
-#include <aws/robomaker/model/DescribeWorldExportJobResult.h>
-#include <aws/robomaker/model/DescribeWorldGenerationJobResult.h>
-#include <aws/robomaker/model/DescribeWorldTemplateResult.h>
-#include <aws/robomaker/model/GetWorldTemplateBodyResult.h>
-#include <aws/robomaker/model/ListRobotApplicationsResult.h>
-#include <aws/robomaker/model/ListSimulationApplicationsResult.h>
-#include <aws/robomaker/model/ListSimulationJobBatchesResult.h>
-#include <aws/robomaker/model/ListSimulationJobsResult.h>
-#include <aws/robomaker/model/ListTagsForResourceResult.h>
-#include <aws/robomaker/model/ListWorldExportJobsResult.h>
-#include <aws/robomaker/model/ListWorldGenerationJobsResult.h>
-#include <aws/robomaker/model/ListWorldTemplatesResult.h>
-#include <aws/robomaker/model/ListWorldsResult.h>
-#include <aws/robomaker/model/RestartSimulationJobResult.h>
-#include <aws/robomaker/model/StartSimulationJobBatchResult.h>
-#include <aws/robomaker/model/TagResourceResult.h>
-#include <aws/robomaker/model/UntagResourceResult.h>
-#include <aws/robomaker/model/UpdateRobotApplicationResult.h>
-#include <aws/robomaker/model/UpdateSimulationApplicationResult.h>
-#include <aws/robomaker/model/UpdateWorldTemplateResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/robomaker/RoboMakerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace RoboMaker
 {
-
-namespace Model
-{
-        class BatchDeleteWorldsRequest;
-        class BatchDescribeSimulationJobRequest;
-        class CancelSimulationJobRequest;
-        class CancelSimulationJobBatchRequest;
-        class CancelWorldExportJobRequest;
-        class CancelWorldGenerationJobRequest;
-        class CreateRobotApplicationRequest;
-        class CreateRobotApplicationVersionRequest;
-        class CreateSimulationApplicationRequest;
-        class CreateSimulationApplicationVersionRequest;
-        class CreateSimulationJobRequest;
-        class CreateWorldExportJobRequest;
-        class CreateWorldGenerationJobRequest;
-        class CreateWorldTemplateRequest;
-        class DeleteRobotApplicationRequest;
-        class DeleteSimulationApplicationRequest;
-        class DeleteWorldTemplateRequest;
-        class DescribeRobotApplicationRequest;
-        class DescribeSimulationApplicationRequest;
-        class DescribeSimulationJobRequest;
-        class DescribeSimulationJobBatchRequest;
-        class DescribeWorldRequest;
-        class DescribeWorldExportJobRequest;
-        class DescribeWorldGenerationJobRequest;
-        class DescribeWorldTemplateRequest;
-        class GetWorldTemplateBodyRequest;
-        class ListRobotApplicationsRequest;
-        class ListSimulationApplicationsRequest;
-        class ListSimulationJobBatchesRequest;
-        class ListSimulationJobsRequest;
-        class ListTagsForResourceRequest;
-        class ListWorldExportJobsRequest;
-        class ListWorldGenerationJobsRequest;
-        class ListWorldTemplatesRequest;
-        class ListWorldsRequest;
-        class RestartSimulationJobRequest;
-        class StartSimulationJobBatchRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateRobotApplicationRequest;
-        class UpdateSimulationApplicationRequest;
-        class UpdateWorldTemplateRequest;
-
-        typedef Aws::Utils::Outcome<BatchDeleteWorldsResult, RoboMakerError> BatchDeleteWorldsOutcome;
-        typedef Aws::Utils::Outcome<BatchDescribeSimulationJobResult, RoboMakerError> BatchDescribeSimulationJobOutcome;
-        typedef Aws::Utils::Outcome<CancelSimulationJobResult, RoboMakerError> CancelSimulationJobOutcome;
-        typedef Aws::Utils::Outcome<CancelSimulationJobBatchResult, RoboMakerError> CancelSimulationJobBatchOutcome;
-        typedef Aws::Utils::Outcome<CancelWorldExportJobResult, RoboMakerError> CancelWorldExportJobOutcome;
-        typedef Aws::Utils::Outcome<CancelWorldGenerationJobResult, RoboMakerError> CancelWorldGenerationJobOutcome;
-        typedef Aws::Utils::Outcome<CreateRobotApplicationResult, RoboMakerError> CreateRobotApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateRobotApplicationVersionResult, RoboMakerError> CreateRobotApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateSimulationApplicationResult, RoboMakerError> CreateSimulationApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateSimulationApplicationVersionResult, RoboMakerError> CreateSimulationApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateSimulationJobResult, RoboMakerError> CreateSimulationJobOutcome;
-        typedef Aws::Utils::Outcome<CreateWorldExportJobResult, RoboMakerError> CreateWorldExportJobOutcome;
-        typedef Aws::Utils::Outcome<CreateWorldGenerationJobResult, RoboMakerError> CreateWorldGenerationJobOutcome;
-        typedef Aws::Utils::Outcome<CreateWorldTemplateResult, RoboMakerError> CreateWorldTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteRobotApplicationResult, RoboMakerError> DeleteRobotApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSimulationApplicationResult, RoboMakerError> DeleteSimulationApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorldTemplateResult, RoboMakerError> DeleteWorldTemplateOutcome;
-        typedef Aws::Utils::Outcome<DescribeRobotApplicationResult, RoboMakerError> DescribeRobotApplicationOutcome;
-        typedef Aws::Utils::Outcome<DescribeSimulationApplicationResult, RoboMakerError> DescribeSimulationApplicationOutcome;
-        typedef Aws::Utils::Outcome<DescribeSimulationJobResult, RoboMakerError> DescribeSimulationJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeSimulationJobBatchResult, RoboMakerError> DescribeSimulationJobBatchOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorldResult, RoboMakerError> DescribeWorldOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorldExportJobResult, RoboMakerError> DescribeWorldExportJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorldGenerationJobResult, RoboMakerError> DescribeWorldGenerationJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorldTemplateResult, RoboMakerError> DescribeWorldTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetWorldTemplateBodyResult, RoboMakerError> GetWorldTemplateBodyOutcome;
-        typedef Aws::Utils::Outcome<ListRobotApplicationsResult, RoboMakerError> ListRobotApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListSimulationApplicationsResult, RoboMakerError> ListSimulationApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListSimulationJobBatchesResult, RoboMakerError> ListSimulationJobBatchesOutcome;
-        typedef Aws::Utils::Outcome<ListSimulationJobsResult, RoboMakerError> ListSimulationJobsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, RoboMakerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorldExportJobsResult, RoboMakerError> ListWorldExportJobsOutcome;
-        typedef Aws::Utils::Outcome<ListWorldGenerationJobsResult, RoboMakerError> ListWorldGenerationJobsOutcome;
-        typedef Aws::Utils::Outcome<ListWorldTemplatesResult, RoboMakerError> ListWorldTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListWorldsResult, RoboMakerError> ListWorldsOutcome;
-        typedef Aws::Utils::Outcome<RestartSimulationJobResult, RoboMakerError> RestartSimulationJobOutcome;
-        typedef Aws::Utils::Outcome<StartSimulationJobBatchResult, RoboMakerError> StartSimulationJobBatchOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, RoboMakerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, RoboMakerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateRobotApplicationResult, RoboMakerError> UpdateRobotApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateSimulationApplicationResult, RoboMakerError> UpdateSimulationApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateWorldTemplateResult, RoboMakerError> UpdateWorldTemplateOutcome;
-
-        typedef std::future<BatchDeleteWorldsOutcome> BatchDeleteWorldsOutcomeCallable;
-        typedef std::future<BatchDescribeSimulationJobOutcome> BatchDescribeSimulationJobOutcomeCallable;
-        typedef std::future<CancelSimulationJobOutcome> CancelSimulationJobOutcomeCallable;
-        typedef std::future<CancelSimulationJobBatchOutcome> CancelSimulationJobBatchOutcomeCallable;
-        typedef std::future<CancelWorldExportJobOutcome> CancelWorldExportJobOutcomeCallable;
-        typedef std::future<CancelWorldGenerationJobOutcome> CancelWorldGenerationJobOutcomeCallable;
-        typedef std::future<CreateRobotApplicationOutcome> CreateRobotApplicationOutcomeCallable;
-        typedef std::future<CreateRobotApplicationVersionOutcome> CreateRobotApplicationVersionOutcomeCallable;
-        typedef std::future<CreateSimulationApplicationOutcome> CreateSimulationApplicationOutcomeCallable;
-        typedef std::future<CreateSimulationApplicationVersionOutcome> CreateSimulationApplicationVersionOutcomeCallable;
-        typedef std::future<CreateSimulationJobOutcome> CreateSimulationJobOutcomeCallable;
-        typedef std::future<CreateWorldExportJobOutcome> CreateWorldExportJobOutcomeCallable;
-        typedef std::future<CreateWorldGenerationJobOutcome> CreateWorldGenerationJobOutcomeCallable;
-        typedef std::future<CreateWorldTemplateOutcome> CreateWorldTemplateOutcomeCallable;
-        typedef std::future<DeleteRobotApplicationOutcome> DeleteRobotApplicationOutcomeCallable;
-        typedef std::future<DeleteSimulationApplicationOutcome> DeleteSimulationApplicationOutcomeCallable;
-        typedef std::future<DeleteWorldTemplateOutcome> DeleteWorldTemplateOutcomeCallable;
-        typedef std::future<DescribeRobotApplicationOutcome> DescribeRobotApplicationOutcomeCallable;
-        typedef std::future<DescribeSimulationApplicationOutcome> DescribeSimulationApplicationOutcomeCallable;
-        typedef std::future<DescribeSimulationJobOutcome> DescribeSimulationJobOutcomeCallable;
-        typedef std::future<DescribeSimulationJobBatchOutcome> DescribeSimulationJobBatchOutcomeCallable;
-        typedef std::future<DescribeWorldOutcome> DescribeWorldOutcomeCallable;
-        typedef std::future<DescribeWorldExportJobOutcome> DescribeWorldExportJobOutcomeCallable;
-        typedef std::future<DescribeWorldGenerationJobOutcome> DescribeWorldGenerationJobOutcomeCallable;
-        typedef std::future<DescribeWorldTemplateOutcome> DescribeWorldTemplateOutcomeCallable;
-        typedef std::future<GetWorldTemplateBodyOutcome> GetWorldTemplateBodyOutcomeCallable;
-        typedef std::future<ListRobotApplicationsOutcome> ListRobotApplicationsOutcomeCallable;
-        typedef std::future<ListSimulationApplicationsOutcome> ListSimulationApplicationsOutcomeCallable;
-        typedef std::future<ListSimulationJobBatchesOutcome> ListSimulationJobBatchesOutcomeCallable;
-        typedef std::future<ListSimulationJobsOutcome> ListSimulationJobsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorldExportJobsOutcome> ListWorldExportJobsOutcomeCallable;
-        typedef std::future<ListWorldGenerationJobsOutcome> ListWorldGenerationJobsOutcomeCallable;
-        typedef std::future<ListWorldTemplatesOutcome> ListWorldTemplatesOutcomeCallable;
-        typedef std::future<ListWorldsOutcome> ListWorldsOutcomeCallable;
-        typedef std::future<RestartSimulationJobOutcome> RestartSimulationJobOutcomeCallable;
-        typedef std::future<StartSimulationJobBatchOutcome> StartSimulationJobBatchOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateRobotApplicationOutcome> UpdateRobotApplicationOutcomeCallable;
-        typedef std::future<UpdateSimulationApplicationOutcome> UpdateSimulationApplicationOutcomeCallable;
-        typedef std::future<UpdateWorldTemplateOutcome> UpdateWorldTemplateOutcomeCallable;
-} // namespace Model
-
-  class RoboMakerClient;
-
-    typedef std::function<void(const RoboMakerClient*, const Model::BatchDeleteWorldsRequest&, const Model::BatchDeleteWorldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteWorldsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::BatchDescribeSimulationJobRequest&, const Model::BatchDescribeSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeSimulationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CancelSimulationJobRequest&, const Model::CancelSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSimulationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CancelSimulationJobBatchRequest&, const Model::CancelSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSimulationJobBatchResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CancelWorldExportJobRequest&, const Model::CancelWorldExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelWorldExportJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CancelWorldGenerationJobRequest&, const Model::CancelWorldGenerationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelWorldGenerationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateRobotApplicationRequest&, const Model::CreateRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRobotApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateRobotApplicationVersionRequest&, const Model::CreateRobotApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRobotApplicationVersionResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateSimulationApplicationRequest&, const Model::CreateSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSimulationApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateSimulationApplicationVersionRequest&, const Model::CreateSimulationApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSimulationApplicationVersionResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateSimulationJobRequest&, const Model::CreateSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSimulationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateWorldExportJobRequest&, const Model::CreateWorldExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorldExportJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateWorldGenerationJobRequest&, const Model::CreateWorldGenerationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorldGenerationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::CreateWorldTemplateRequest&, const Model::CreateWorldTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorldTemplateResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DeleteRobotApplicationRequest&, const Model::DeleteRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRobotApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DeleteSimulationApplicationRequest&, const Model::DeleteSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSimulationApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DeleteWorldTemplateRequest&, const Model::DeleteWorldTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorldTemplateResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeRobotApplicationRequest&, const Model::DescribeRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRobotApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationApplicationRequest&, const Model::DescribeSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationJobRequest&, const Model::DescribeSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationJobBatchRequest&, const Model::DescribeSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationJobBatchResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeWorldRequest&, const Model::DescribeWorldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorldResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeWorldExportJobRequest&, const Model::DescribeWorldExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorldExportJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeWorldGenerationJobRequest&, const Model::DescribeWorldGenerationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorldGenerationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::DescribeWorldTemplateRequest&, const Model::DescribeWorldTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorldTemplateResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::GetWorldTemplateBodyRequest&, const Model::GetWorldTemplateBodyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorldTemplateBodyResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListRobotApplicationsRequest&, const Model::ListRobotApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRobotApplicationsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationApplicationsRequest&, const Model::ListSimulationApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationApplicationsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationJobBatchesRequest&, const Model::ListSimulationJobBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationJobBatchesResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationJobsRequest&, const Model::ListSimulationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationJobsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListWorldExportJobsRequest&, const Model::ListWorldExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorldExportJobsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListWorldGenerationJobsRequest&, const Model::ListWorldGenerationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorldGenerationJobsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListWorldTemplatesRequest&, const Model::ListWorldTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorldTemplatesResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::ListWorldsRequest&, const Model::ListWorldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorldsResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::RestartSimulationJobRequest&, const Model::RestartSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestartSimulationJobResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::StartSimulationJobBatchRequest&, const Model::StartSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSimulationJobBatchResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::UpdateRobotApplicationRequest&, const Model::UpdateRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRobotApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::UpdateSimulationApplicationRequest&, const Model::UpdateSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSimulationApplicationResponseReceivedHandler;
-    typedef std::function<void(const RoboMakerClient*, const Model::UpdateWorldTemplateRequest&, const Model::UpdateWorldTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorldTemplateResponseReceivedHandler;
-
   /**
    * <p>This section provides documentation for the AWS RoboMaker API operations.</p>
    */
-  class AWS_ROBOMAKER_API RoboMakerClient : public Aws::Client::AWSJsonClient
+  class AWS_ROBOMAKER_API RoboMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RoboMakerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        RoboMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        RoboMakerClient(const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration(),
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        RoboMakerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        RoboMakerClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         RoboMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        RoboMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        RoboMakerClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        RoboMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~RoboMakerClient();
-
 
         /**
          * <p>Deletes one or more worlds in a batch operation.</p><p><h3>See Also:</h3>  
@@ -1034,54 +810,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<RoboMakerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchDeleteWorldsAsyncHelper(const Model::BatchDeleteWorldsRequest& request, const BatchDeleteWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDescribeSimulationJobAsyncHelper(const Model::BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelSimulationJobAsyncHelper(const Model::CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelSimulationJobBatchAsyncHelper(const Model::CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelWorldExportJobAsyncHelper(const Model::CancelWorldExportJobRequest& request, const CancelWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelWorldGenerationJobAsyncHelper(const Model::CancelWorldGenerationJobRequest& request, const CancelWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRobotApplicationAsyncHelper(const Model::CreateRobotApplicationRequest& request, const CreateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRobotApplicationVersionAsyncHelper(const Model::CreateRobotApplicationVersionRequest& request, const CreateRobotApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSimulationApplicationAsyncHelper(const Model::CreateSimulationApplicationRequest& request, const CreateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSimulationApplicationVersionAsyncHelper(const Model::CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSimulationJobAsyncHelper(const Model::CreateSimulationJobRequest& request, const CreateSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorldExportJobAsyncHelper(const Model::CreateWorldExportJobRequest& request, const CreateWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorldGenerationJobAsyncHelper(const Model::CreateWorldGenerationJobRequest& request, const CreateWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorldTemplateAsyncHelper(const Model::CreateWorldTemplateRequest& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRobotApplicationAsyncHelper(const Model::DeleteRobotApplicationRequest& request, const DeleteRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSimulationApplicationAsyncHelper(const Model::DeleteSimulationApplicationRequest& request, const DeleteSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorldTemplateAsyncHelper(const Model::DeleteWorldTemplateRequest& request, const DeleteWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRobotApplicationAsyncHelper(const Model::DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSimulationApplicationAsyncHelper(const Model::DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSimulationJobAsyncHelper(const Model::DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSimulationJobBatchAsyncHelper(const Model::DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorldAsyncHelper(const Model::DescribeWorldRequest& request, const DescribeWorldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorldExportJobAsyncHelper(const Model::DescribeWorldExportJobRequest& request, const DescribeWorldExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorldGenerationJobAsyncHelper(const Model::DescribeWorldGenerationJobRequest& request, const DescribeWorldGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorldTemplateAsyncHelper(const Model::DescribeWorldTemplateRequest& request, const DescribeWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWorldTemplateBodyAsyncHelper(const Model::GetWorldTemplateBodyRequest& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRobotApplicationsAsyncHelper(const Model::ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSimulationApplicationsAsyncHelper(const Model::ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSimulationJobBatchesAsyncHelper(const Model::ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSimulationJobsAsyncHelper(const Model::ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorldExportJobsAsyncHelper(const Model::ListWorldExportJobsRequest& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorldGenerationJobsAsyncHelper(const Model::ListWorldGenerationJobsRequest& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorldTemplatesAsyncHelper(const Model::ListWorldTemplatesRequest& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorldsAsyncHelper(const Model::ListWorldsRequest& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestartSimulationJobAsyncHelper(const Model::RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSimulationJobBatchAsyncHelper(const Model::StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRobotApplicationAsyncHelper(const Model::UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSimulationApplicationAsyncHelper(const Model::UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWorldTemplateAsyncHelper(const Model::UpdateWorldTemplateRequest& request, const UpdateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RoboMakerClient>;
+      void init(const RoboMakerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      RoboMakerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<RoboMakerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace RoboMaker

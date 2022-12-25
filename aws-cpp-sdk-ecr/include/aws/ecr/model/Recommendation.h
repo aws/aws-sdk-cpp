@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Recommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API Recommendation
+  class Recommendation
   {
   public:
-    Recommendation();
-    Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API Recommendation();
+    AWS_ECR_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

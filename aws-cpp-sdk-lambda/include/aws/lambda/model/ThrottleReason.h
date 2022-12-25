@@ -20,7 +20,8 @@ namespace Model
     FunctionInvocationRateLimitExceeded,
     ReservedFunctionConcurrentInvocationLimitExceeded,
     ReservedFunctionInvocationRateLimitExceeded,
-    CallerRateLimitExceeded
+    CallerRateLimitExceeded,
+    ConcurrentSnapshotCreateLimitExceeded
   };
 
 namespace ThrottleReasonMapper

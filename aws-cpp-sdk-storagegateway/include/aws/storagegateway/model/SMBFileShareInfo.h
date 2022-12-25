@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBFileShareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API SMBFileShareInfo
+  class SMBFileShareInfo
   {
   public:
-    SMBFileShareInfo();
-    SMBFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
-    SMBFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo();
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -1378,91 +1378,91 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::String m_fileShareId;
-    bool m_fileShareIdHasBeenSet;
+    bool m_fileShareIdHasBeenSet = false;
 
     Aws::String m_fileShareStatus;
-    bool m_fileShareStatusHasBeenSet;
+    bool m_fileShareStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_locationARN;
-    bool m_locationARNHasBeenSet;
+    bool m_locationARNHasBeenSet = false;
 
     Aws::String m_defaultStorageClass;
-    bool m_defaultStorageClassHasBeenSet;
+    bool m_defaultStorageClassHasBeenSet = false;
 
     ObjectACL m_objectACL;
-    bool m_objectACLHasBeenSet;
+    bool m_objectACLHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     bool m_guessMIMETypeEnabled;
-    bool m_guessMIMETypeEnabledHasBeenSet;
+    bool m_guessMIMETypeEnabledHasBeenSet = false;
 
     bool m_requesterPays;
-    bool m_requesterPaysHasBeenSet;
+    bool m_requesterPaysHasBeenSet = false;
 
     bool m_sMBACLEnabled;
-    bool m_sMBACLEnabledHasBeenSet;
+    bool m_sMBACLEnabledHasBeenSet = false;
 
     bool m_accessBasedEnumeration;
-    bool m_accessBasedEnumerationHasBeenSet;
+    bool m_accessBasedEnumerationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_adminUserList;
-    bool m_adminUserListHasBeenSet;
+    bool m_adminUserListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_validUserList;
-    bool m_validUserListHasBeenSet;
+    bool m_validUserListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_invalidUserList;
-    bool m_invalidUserListHasBeenSet;
+    bool m_invalidUserListHasBeenSet = false;
 
     Aws::String m_auditDestinationARN;
-    bool m_auditDestinationARNHasBeenSet;
+    bool m_auditDestinationARNHasBeenSet = false;
 
     Aws::String m_authentication;
-    bool m_authenticationHasBeenSet;
+    bool m_authenticationHasBeenSet = false;
 
     CaseSensitivity m_caseSensitivity;
-    bool m_caseSensitivityHasBeenSet;
+    bool m_caseSensitivityHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_fileShareName;
-    bool m_fileShareNameHasBeenSet;
+    bool m_fileShareNameHasBeenSet = false;
 
     CacheAttributes m_cacheAttributes;
-    bool m_cacheAttributesHasBeenSet;
+    bool m_cacheAttributesHasBeenSet = false;
 
     Aws::String m_notificationPolicy;
-    bool m_notificationPolicyHasBeenSet;
+    bool m_notificationPolicyHasBeenSet = false;
 
     Aws::String m_vPCEndpointDNSName;
-    bool m_vPCEndpointDNSNameHasBeenSet;
+    bool m_vPCEndpointDNSNameHasBeenSet = false;
 
     Aws::String m_bucketRegion;
-    bool m_bucketRegionHasBeenSet;
+    bool m_bucketRegionHasBeenSet = false;
 
     bool m_oplocksEnabled;
-    bool m_oplocksEnabledHasBeenSet;
+    bool m_oplocksEnabledHasBeenSet = false;
   };
 
 } // namespace Model

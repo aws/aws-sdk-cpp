@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKDOCS_API AddResourcePermissionsRequest : public WorkDocsRequest
+  class AddResourcePermissionsRequest : public WorkDocsRequest
   {
   public:
-    AddResourcePermissionsRequest();
+    AWS_WORKDOCS_API AddResourcePermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddResourcePermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKDOCS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKDOCS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<SharePrincipal> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     NotificationOptions m_notificationOptions;
-    bool m_notificationOptionsHasBeenSet;
+    bool m_notificationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

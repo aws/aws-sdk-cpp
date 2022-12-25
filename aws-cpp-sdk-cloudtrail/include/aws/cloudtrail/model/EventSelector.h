@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API EventSelector
+  class EventSelector
   {
   public:
-    EventSelector();
-    EventSelector(Aws::Utils::Json::JsonView jsonValue);
-    EventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API EventSelector();
+    AWS_CLOUDTRAIL_API EventSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API EventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Management
      * Events</a> in the <i>CloudTrail User Guide</i>.</p> <p>By default, the value is
      * <code>true</code>.</p> <p>The first copy of management events is free. You are
      * charged for additional copies of management events that you are logging on any
@@ -157,7 +157,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -171,7 +171,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -185,7 +185,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -199,7 +199,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -213,7 +213,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -227,7 +227,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -241,7 +241,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -255,7 +255,7 @@ namespace Model
      * number of data resources cannot exceed 250 across all event selectors in a
      * trail. This limit does not apply if you configure resource logging for all data
      * events.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
@@ -374,16 +374,16 @@ namespace Model
   private:
 
     ReadWriteType m_readWriteType;
-    bool m_readWriteTypeHasBeenSet;
+    bool m_readWriteTypeHasBeenSet = false;
 
     bool m_includeManagementEvents;
-    bool m_includeManagementEventsHasBeenSet;
+    bool m_includeManagementEventsHasBeenSet = false;
 
     Aws::Vector<DataResource> m_dataResources;
-    bool m_dataResourcesHasBeenSet;
+    bool m_dataResourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeManagementEventSources;
-    bool m_excludeManagementEventSourcesHasBeenSet;
+    bool m_excludeManagementEventSourcesHasBeenSet = false;
   };
 
 } // namespace Model

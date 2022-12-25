@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API GetHostedConfigurationVersionRequest : public AppConfigRequest
+  class GetHostedConfigurationVersionRequest : public AppConfigRequest
   {
   public:
-    GetHostedConfigurationVersionRequest();
+    AWS_APPCONFIG_API GetHostedConfigurationVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetHostedConfigurationVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API GetDataEndpointRequest : public KinesisVideoRequest
+  class GetDataEndpointRequest : public KinesisVideoRequest
   {
   public:
-    GetDataEndpointRequest();
+    AWS_KINESISVIDEO_API GetDataEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDataEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     APIName m_aPIName;
-    bool m_aPINameHasBeenSet;
+    bool m_aPINameHasBeenSet = false;
   };
 
 } // namespace Model

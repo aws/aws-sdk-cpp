@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationRunStageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ReplicationRunStageDetails
+  class ReplicationRunStageDetails
   {
   public:
-    ReplicationRunStageDetails();
-    ReplicationRunStageDetails(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationRunStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ReplicationRunStageDetails();
+    AWS_SMS_API ReplicationRunStageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ReplicationRunStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_stageProgress;
-    bool m_stageProgressHasBeenSet;
+    bool m_stageProgressHasBeenSet = false;
   };
 
 } // namespace Model

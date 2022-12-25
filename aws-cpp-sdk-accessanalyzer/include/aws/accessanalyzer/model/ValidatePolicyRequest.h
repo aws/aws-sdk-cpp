@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACCESSANALYZER_API ValidatePolicyRequest : public AccessAnalyzerRequest
+  class ValidatePolicyRequest : public AccessAnalyzerRequest
   {
   public:
-    ValidatePolicyRequest();
+    AWS_ACCESSANALYZER_API ValidatePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ValidatePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     ValidatePolicyResourceType m_validatePolicyResourceType;
-    bool m_validatePolicyResourceTypeHasBeenSet;
+    bool m_validatePolicyResourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

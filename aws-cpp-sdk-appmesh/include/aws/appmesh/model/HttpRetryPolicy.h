@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRetryPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpRetryPolicy
+  class HttpRetryPolicy
   {
   public:
-    HttpRetryPolicy();
-    HttpRetryPolicy(Aws::Utils::Json::JsonView jsonValue);
-    HttpRetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpRetryPolicy();
+    AWS_APPMESH_API HttpRetryPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpRetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_httpRetryEvents;
-    bool m_httpRetryEventsHasBeenSet;
+    bool m_httpRetryEventsHasBeenSet = false;
 
     long long m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     Duration m_perRetryTimeout;
-    bool m_perRetryTimeoutHasBeenSet;
+    bool m_perRetryTimeoutHasBeenSet = false;
 
     Aws::Vector<TcpRetryPolicyEvent> m_tcpRetryEvents;
-    bool m_tcpRetryEventsHasBeenSet;
+    bool m_tcpRetryEventsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncAlreadyExistsException
+  class ResourceDataSyncAlreadyExistsException
   {
   public:
-    ResourceDataSyncAlreadyExistsException();
-    ResourceDataSyncAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncAlreadyExistsException();
+    AWS_SSM_API ResourceDataSyncAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
   };
 
 } // namespace Model

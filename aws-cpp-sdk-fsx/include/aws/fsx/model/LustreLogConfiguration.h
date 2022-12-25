@@ -26,22 +26,18 @@ namespace Model
 
   /**
    * <p>The configuration for Lustre logging used to write the enabled logging events
-   * for your file system to Amazon CloudWatch Logs.</p> <p>When logging is enabled,
-   * Lustre logs error and warning events from data repository operations such as
-   * automatic export and data repository tasks. To learn more about Lustre logging,
-   * see <a
-   * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging
-   * with Amazon CloudWatch Logs</a>. </p><p><h3>See Also:</h3>   <a
+   * for your Amazon FSx for Lustre file system or Amazon File Cache resource to
+   * Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreLogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LustreLogConfiguration
+  class LustreLogConfiguration
   {
   public:
-    LustreLogConfiguration();
-    LustreLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LustreLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LustreLogConfiguration();
+    AWS_FSX_API LustreLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LustreLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -50,7 +46,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline const LustreAccessAuditLogLevel& GetLevel() const{ return m_level; }
 
@@ -60,7 +57,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
@@ -70,7 +68,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline void SetLevel(const LustreAccessAuditLogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
 
@@ -80,7 +79,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline void SetLevel(LustreAccessAuditLogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
 
@@ -90,7 +90,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline LustreLogConfiguration& WithLevel(const LustreAccessAuditLogLevel& value) { SetLevel(value); return *this;}
 
@@ -100,7 +101,8 @@ namespace Model
      * <code>ERROR_ONLY</code> - only error events are logged.</p> </li> <li> <p>
      * <code>WARN_ERROR</code> - both warning events and error events are logged.</p>
      * </li> <li> <p> <code>DISABLED</code> - logging of data repository events is
-     * turned off.</p> </li> </ul>
+     * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
+     * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
     inline LustreLogConfiguration& WithLevel(LustreAccessAuditLogLevel&& value) { SetLevel(std::move(value)); return *this;}
 
@@ -172,10 +174,10 @@ namespace Model
   private:
 
     LustreAccessAuditLogLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

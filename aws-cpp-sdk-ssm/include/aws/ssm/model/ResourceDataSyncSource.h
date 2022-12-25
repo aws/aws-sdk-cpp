@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncSource
+  class ResourceDataSyncSource
   {
   public:
-    ResourceDataSyncSource();
-    ResourceDataSyncSource(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncSource();
+    AWS_SSM_API ResourceDataSyncSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     ResourceDataSyncAwsOrganizationsSource m_awsOrganizationsSource;
-    bool m_awsOrganizationsSourceHasBeenSet;
+    bool m_awsOrganizationsSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceRegions;
-    bool m_sourceRegionsHasBeenSet;
+    bool m_sourceRegionsHasBeenSet = false;
 
     bool m_includeFutureRegions;
-    bool m_includeFutureRegionsHasBeenSet;
+    bool m_includeFutureRegionsHasBeenSet = false;
 
     bool m_enableAllOpsDataSources;
-    bool m_enableAllOpsDataSourcesHasBeenSet;
+    bool m_enableAllOpsDataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

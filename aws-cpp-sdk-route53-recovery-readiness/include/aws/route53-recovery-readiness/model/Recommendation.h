@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/Recommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API Recommendation
+  class Recommendation
   {
   public:
-    Recommendation();
-    Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API Recommendation();
+    AWS_ROUTE53RECOVERYREADINESS_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_recommendationText;
-    bool m_recommendationTextHasBeenSet;
+    bool m_recommendationTextHasBeenSet = false;
   };
 
 } // namespace Model

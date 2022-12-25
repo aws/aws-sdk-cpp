@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AttachmentInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AttachmentInformation
+  class AttachmentInformation
   {
   public:
-    AttachmentInformation();
-    AttachmentInformation(Aws::Utils::Json::JsonView jsonValue);
-    AttachmentInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AttachmentInformation();
+    AWS_SSM_API AttachmentInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AttachmentInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

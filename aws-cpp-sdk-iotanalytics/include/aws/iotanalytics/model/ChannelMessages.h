@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelMessages">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ChannelMessages
+  class ChannelMessages
   {
   public:
-    ChannelMessages();
-    ChannelMessages(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMessages& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ChannelMessages();
+    AWS_IOTANALYTICS_API ChannelMessages(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ChannelMessages& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,7 +131,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_s3Paths;
-    bool m_s3PathsHasBeenSet;
+    bool m_s3PathsHasBeenSet = false;
   };
 
 } // namespace Model

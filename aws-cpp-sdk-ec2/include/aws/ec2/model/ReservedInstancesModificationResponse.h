@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesModificationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstancesModificationResponse
+  class ReservedInstancesModificationResponse
   {
   public:
-    ReservedInstancesModificationResponse();
-    ReservedInstancesModificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstancesModificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesModificationResponse();
+    AWS_EC2_API ReservedInstancesModificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesModificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     ReservedInstancesConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

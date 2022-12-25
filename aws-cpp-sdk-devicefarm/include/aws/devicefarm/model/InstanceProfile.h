@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstanceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API InstanceProfile
+  class InstanceProfile
   {
   public:
-    InstanceProfile();
-    InstanceProfile(Aws::Utils::Json::JsonView jsonValue);
-    InstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API InstanceProfile();
+    AWS_DEVICEFARM_API InstanceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API InstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     bool m_packageCleanup;
-    bool m_packageCleanupHasBeenSet;
+    bool m_packageCleanupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAppPackagesFromCleanup;
-    bool m_excludeAppPackagesFromCleanupHasBeenSet;
+    bool m_excludeAppPackagesFromCleanupHasBeenSet = false;
 
     bool m_rebootAfterUse;
-    bool m_rebootAfterUseHasBeenSet;
+    bool m_rebootAfterUseHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

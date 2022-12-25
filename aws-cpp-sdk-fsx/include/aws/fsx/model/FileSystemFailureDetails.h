@@ -24,72 +24,64 @@ namespace Model
 {
 
   /**
-   * <p>A structure providing details of any failures that occurred when creating a
-   * file system.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure providing details of any failures that occurred.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemFailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileSystemFailureDetails
+  class FileSystemFailureDetails
   {
   public:
-    FileSystemFailureDetails();
-    FileSystemFailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileSystemFailureDetails();
+    AWS_FSX_API FileSystemFailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileSystemFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline FileSystemFailureDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline FileSystemFailureDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message describing any failures that occurred during file system
-     * creation.</p>
+     * <p>A message describing any failures that occurred.</p>
      */
     inline FileSystemFailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

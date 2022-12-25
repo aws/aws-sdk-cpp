@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionCacheBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior
+  class AwsCloudFrontDistributionCacheBehavior
   {
   public:
-    AwsCloudFrontDistributionCacheBehavior();
-    AwsCloudFrontDistributionCacheBehavior(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionCacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_viewerProtocolPolicy;
-    bool m_viewerProtocolPolicyHasBeenSet;
+    bool m_viewerProtocolPolicyHasBeenSet = false;
   };
 
 } // namespace Model

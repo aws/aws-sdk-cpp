@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Behavior">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Behavior
+  class Behavior
   {
   public:
-    Behavior();
-    Behavior(Aws::Utils::Json::JsonView jsonValue);
-    Behavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Behavior();
+    AWS_IOT_API Behavior(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Behavior& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     MetricDimension m_metricDimension;
-    bool m_metricDimensionHasBeenSet;
+    bool m_metricDimensionHasBeenSet = false;
 
     BehaviorCriteria m_criteria;
-    bool m_criteriaHasBeenSet;
+    bool m_criteriaHasBeenSet = false;
 
     bool m_suppressAlerts;
-    bool m_suppressAlertsHasBeenSet;
+    bool m_suppressAlertsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservationFleetInstanceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservationFleetInstanceSpecification
+  class ReservationFleetInstanceSpecification
   {
   public:
-    ReservationFleetInstanceSpecification();
-    ReservationFleetInstanceSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservationFleetInstanceSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservationFleetInstanceSpecification();
+    AWS_EC2_API ReservationFleetInstanceSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservationFleetInstanceSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -367,25 +367,25 @@ namespace Model
   private:
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     CapacityReservationInstancePlatform m_instancePlatform;
-    bool m_instancePlatformHasBeenSet;
+    bool m_instancePlatformHasBeenSet = false;
 
     double m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,10 @@ UpdateWorkspaceRequest::UpdateWorkspaceRequest() :
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
+    m_removeVpcConfiguration(false),
+    m_removeVpcConfigurationHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceDataSourcesHasBeenSet(false),
     m_workspaceDescriptionHasBeenSet(false),
     m_workspaceIdHasBeenSet(false),
@@ -49,15 +52,27 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
    payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
   }
 
+  if(m_removeVpcConfigurationHasBeenSet)
+  {
+   payload.WithBool("removeVpcConfiguration", m_removeVpcConfiguration);
+
+  }
+
   if(m_stackSetNameHasBeenSet)
   {
    payload.WithString("stackSetName", m_stackSetName);
 
   }
 
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
   if(m_workspaceDataSourcesHasBeenSet)
   {
-   Array<JsonValue> workspaceDataSourcesJsonList(m_workspaceDataSources.size());
+   Aws::Utils::Array<JsonValue> workspaceDataSourcesJsonList(m_workspaceDataSources.size());
    for(unsigned workspaceDataSourcesIndex = 0; workspaceDataSourcesIndex < workspaceDataSourcesJsonList.GetLength(); ++workspaceDataSourcesIndex)
    {
      workspaceDataSourcesJsonList[workspaceDataSourcesIndex].AsString(DataSourceTypeMapper::GetNameForDataSourceType(m_workspaceDataSources[workspaceDataSourcesIndex]));
@@ -80,7 +95,7 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
 
   if(m_workspaceNotificationDestinationsHasBeenSet)
   {
-   Array<JsonValue> workspaceNotificationDestinationsJsonList(m_workspaceNotificationDestinations.size());
+   Aws::Utils::Array<JsonValue> workspaceNotificationDestinationsJsonList(m_workspaceNotificationDestinations.size());
    for(unsigned workspaceNotificationDestinationsIndex = 0; workspaceNotificationDestinationsIndex < workspaceNotificationDestinationsJsonList.GetLength(); ++workspaceNotificationDestinationsIndex)
    {
      workspaceNotificationDestinationsJsonList[workspaceNotificationDestinationsIndex].AsString(NotificationDestinationTypeMapper::GetNameForNotificationDestinationType(m_workspaceNotificationDestinations[workspaceNotificationDestinationsIndex]));
@@ -91,7 +106,7 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
 
   if(m_workspaceOrganizationalUnitsHasBeenSet)
   {
-   Array<JsonValue> workspaceOrganizationalUnitsJsonList(m_workspaceOrganizationalUnits.size());
+   Aws::Utils::Array<JsonValue> workspaceOrganizationalUnitsJsonList(m_workspaceOrganizationalUnits.size());
    for(unsigned workspaceOrganizationalUnitsIndex = 0; workspaceOrganizationalUnitsIndex < workspaceOrganizationalUnitsJsonList.GetLength(); ++workspaceOrganizationalUnitsIndex)
    {
      workspaceOrganizationalUnitsJsonList[workspaceOrganizationalUnitsIndex].AsString(m_workspaceOrganizationalUnits[workspaceOrganizationalUnitsIndex]);

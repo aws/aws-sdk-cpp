@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SWF_API RegisterWorkflowTypeRequest : public SWFRequest
+  class RegisterWorkflowTypeRequest : public SWFRequest
   {
   public:
-    RegisterWorkflowTypeRequest();
+    AWS_SWF_API RegisterWorkflowTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterWorkflowType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -804,34 +804,34 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_defaultTaskStartToCloseTimeout;
-    bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
     Aws::String m_defaultExecutionStartToCloseTimeout;
-    bool m_defaultExecutionStartToCloseTimeoutHasBeenSet;
+    bool m_defaultExecutionStartToCloseTimeoutHasBeenSet = false;
 
     TaskList m_defaultTaskList;
-    bool m_defaultTaskListHasBeenSet;
+    bool m_defaultTaskListHasBeenSet = false;
 
     Aws::String m_defaultTaskPriority;
-    bool m_defaultTaskPriorityHasBeenSet;
+    bool m_defaultTaskPriorityHasBeenSet = false;
 
     ChildPolicy m_defaultChildPolicy;
-    bool m_defaultChildPolicyHasBeenSet;
+    bool m_defaultChildPolicyHasBeenSet = false;
 
     Aws::String m_defaultLambdaRole;
-    bool m_defaultLambdaRoleHasBeenSet;
+    bool m_defaultLambdaRoleHasBeenSet = false;
   };
 
 } // namespace Model

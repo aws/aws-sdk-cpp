@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JDBCConnectorSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API JDBCConnectorSource
+  class JDBCConnectorSource
   {
   public:
-    JDBCConnectorSource();
-    JDBCConnectorSource(Aws::Utils::Json::JsonView jsonValue);
-    JDBCConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JDBCConnectorSource();
+    AWS_GLUE_API JDBCConnectorSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JDBCConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -384,28 +384,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     Aws::String m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     JDBCConnectorOptions m_additionalOptions;
-    bool m_additionalOptionsHasBeenSet;
+    bool m_additionalOptionsHasBeenSet = false;
 
     Aws::String m_connectionTable;
-    bool m_connectionTableHasBeenSet;
+    bool m_connectionTableHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsTimedMetadataScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsTimedMetadataScheduleActionSettings
+  class HlsTimedMetadataScheduleActionSettings
   {
   public:
-    HlsTimedMetadataScheduleActionSettings();
-    HlsTimedMetadataScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsTimedMetadataScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsTimedMetadataScheduleActionSettings();
+    AWS_MEDIALIVE_API HlsTimedMetadataScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsTimedMetadataScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_id3;
-    bool m_id3HasBeenSet;
+    bool m_id3HasBeenSet = false;
   };
 
 } // namespace Model

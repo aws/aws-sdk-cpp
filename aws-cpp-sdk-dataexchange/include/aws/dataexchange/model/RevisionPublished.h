@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevisionPublished">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API RevisionPublished
+  class RevisionPublished
   {
   public:
-    RevisionPublished();
-    RevisionPublished(Aws::Utils::Json::JsonView jsonValue);
-    RevisionPublished& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API RevisionPublished();
+    AWS_DATAEXCHANGE_API RevisionPublished(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API RevisionPublished& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
   };
 
 } // namespace Model

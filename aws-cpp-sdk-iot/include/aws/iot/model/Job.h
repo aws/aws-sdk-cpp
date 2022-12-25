@@ -17,6 +17,7 @@
 #include <aws/iot/model/TimeoutConfig.h>
 #include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/SchedulingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -40,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Job();
+    AWS_IOT_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1019,85 +1020,141 @@ namespace Model
     inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool GetIsConcurrent() const{ return m_isConcurrent; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline Job& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
+
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline const SchedulingConfig& GetSchedulingConfig() const{ return m_schedulingConfig; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline bool SchedulingConfigHasBeenSet() const { return m_schedulingConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(const SchedulingConfig& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = value; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(SchedulingConfig&& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = std::move(value); }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline Job& WithSchedulingConfig(const SchedulingConfig& value) { SetSchedulingConfig(value); return *this;}
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline Job& WithSchedulingConfig(SchedulingConfig&& value) { SetSchedulingConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_forceCanceled;
-    bool m_forceCanceledHasBeenSet;
+    bool m_forceCanceledHasBeenSet = false;
 
     Aws::String m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PresignedUrlConfig m_presignedUrlConfig;
-    bool m_presignedUrlConfigHasBeenSet;
+    bool m_presignedUrlConfigHasBeenSet = false;
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     AbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
 
     JobProcessDetails m_jobProcessDetails;
-    bool m_jobProcessDetailsHasBeenSet;
+    bool m_jobProcessDetailsHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_jobTemplateArn;
-    bool m_jobTemplateArnHasBeenSet;
+    bool m_jobTemplateArnHasBeenSet = false;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-    bool m_jobExecutionsRetryConfigHasBeenSet;
+    bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
-    bool m_documentParametersHasBeenSet;
+    bool m_documentParametersHasBeenSet = false;
 
     bool m_isConcurrent;
-    bool m_isConcurrentHasBeenSet;
+    bool m_isConcurrentHasBeenSet = false;
+
+    SchedulingConfig m_schedulingConfig;
+    bool m_schedulingConfigHasBeenSet = false;
   };
 
 } // namespace Model

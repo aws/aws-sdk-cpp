@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry
+  class ChangeMessageVisibilityBatchRequestEntry
   {
   public:
-    ChangeMessageVisibilityBatchRequestEntry();
-    ChangeMessageVisibilityBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ChangeMessageVisibilityBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry();
+    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     int m_visibilityTimeout;
-    bool m_visibilityTimeoutHasBeenSet;
+    bool m_visibilityTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

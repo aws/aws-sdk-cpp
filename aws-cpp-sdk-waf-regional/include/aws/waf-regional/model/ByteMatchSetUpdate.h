@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API ByteMatchSetUpdate
+  class ByteMatchSetUpdate
   {
   public:
-    ByteMatchSetUpdate();
-    ByteMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ByteMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API ByteMatchSetUpdate();
+    AWS_WAFREGIONAL_API ByteMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API ByteMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ByteMatchTuple m_byteMatchTuple;
-    bool m_byteMatchTupleHasBeenSet;
+    bool m_byteMatchTupleHasBeenSet = false;
   };
 
 } // namespace Model

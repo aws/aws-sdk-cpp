@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizationRule">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AuthorizationRule
+  class AuthorizationRule
   {
   public:
-    AuthorizationRule();
-    AuthorizationRule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AuthorizationRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AuthorizationRule();
+    AWS_EC2_API AuthorizationRule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AuthorizationRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -282,22 +282,22 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     bool m_accessAll;
-    bool m_accessAllHasBeenSet;
+    bool m_accessAllHasBeenSet = false;
 
     Aws::String m_destinationCidr;
-    bool m_destinationCidrHasBeenSet;
+    bool m_destinationCidrHasBeenSet = false;
 
     ClientVpnAuthorizationRuleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

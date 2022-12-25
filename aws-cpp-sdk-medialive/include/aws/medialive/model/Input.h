@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Input">AWS API
    * Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Input
+  class Input
   {
   public:
-    Input();
-    Input(Aws::Utils::Json::JsonView jsonValue);
-    Input& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Input();
+    AWS_MEDIALIVE_API Input(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -770,52 +770,52 @@ during input switch actions. Presently, this
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attachedChannels;
-    bool m_attachedChannelsHasBeenSet;
+    bool m_attachedChannelsHasBeenSet = false;
 
     Aws::Vector<InputDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InputClass m_inputClass;
-    bool m_inputClassHasBeenSet;
+    bool m_inputClassHasBeenSet = false;
 
     Aws::Vector<InputDeviceSettings> m_inputDevices;
-    bool m_inputDevicesHasBeenSet;
+    bool m_inputDevicesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputPartnerIds;
-    bool m_inputPartnerIdsHasBeenSet;
+    bool m_inputPartnerIdsHasBeenSet = false;
 
     InputSourceType m_inputSourceType;
-    bool m_inputSourceTypeHasBeenSet;
+    bool m_inputSourceTypeHasBeenSet = false;
 
     Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
-    bool m_mediaConnectFlowsHasBeenSet;
+    bool m_mediaConnectFlowsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<InputSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     InputState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     InputType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

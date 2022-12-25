@@ -24,17 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>The Athena engine version for running queries.</p><p><h3>See Also:</h3>   <a
+   * <p>The Athena engine version for running queries, or the PySpark engine version
+   * for running sessions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API EngineVersion
+  class EngineVersion
   {
   public:
-    EngineVersion();
-    EngineVersion(Aws::Utils::Json::JsonView jsonValue);
-    EngineVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API EngineVersion();
+    AWS_ATHENA_API EngineVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API EngineVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_selectedEngineVersion;
-    bool m_selectedEngineVersionHasBeenSet;
+    bool m_selectedEngineVersionHasBeenSet = false;
 
     Aws::String m_effectiveEngineVersion;
-    bool m_effectiveEngineVersionHasBeenSet;
+    bool m_effectiveEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

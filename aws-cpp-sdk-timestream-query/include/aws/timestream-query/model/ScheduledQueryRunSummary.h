@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ScheduledQueryRunSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary
+  class ScheduledQueryRunSummary
   {
   public:
-    ScheduledQueryRunSummary();
-    ScheduledQueryRunSummary(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledQueryRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary();
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_triggerTime;
-    bool m_triggerTimeHasBeenSet;
+    bool m_triggerTimeHasBeenSet = false;
 
     ScheduledQueryRunStatus m_runStatus;
-    bool m_runStatusHasBeenSet;
+    bool m_runStatusHasBeenSet = false;
 
     ExecutionStats m_executionStats;
-    bool m_executionStatsHasBeenSet;
+    bool m_executionStatsHasBeenSet = false;
 
     ErrorReportLocation m_errorReportLocation;
-    bool m_errorReportLocationHasBeenSet;
+    bool m_errorReportLocationHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

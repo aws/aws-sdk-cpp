@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelInputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelInputConfiguration
+  class ModelInputConfiguration
   {
   public:
-    ModelInputConfiguration();
-    ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration();
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     ModelInputDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_useEventVariables;
-    bool m_useEventVariablesHasBeenSet;
+    bool m_useEventVariablesHasBeenSet = false;
 
     Aws::String m_jsonInputTemplate;
-    bool m_jsonInputTemplateHasBeenSet;
+    bool m_jsonInputTemplateHasBeenSet = false;
 
     Aws::String m_csvInputTemplate;
-    bool m_csvInputTemplateHasBeenSet;
+    bool m_csvInputTemplateHasBeenSet = false;
   };
 
 } // namespace Model

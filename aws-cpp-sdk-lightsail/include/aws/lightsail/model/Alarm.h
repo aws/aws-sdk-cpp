@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Alarm">AWS API
    * Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Alarm
+  class Alarm
   {
   public:
-    Alarm();
-    Alarm(Aws::Utils::Json::JsonView jsonValue);
-    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Alarm();
+    AWS_LIGHTSAIL_API Alarm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -886,64 +886,64 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     MonitoredResourceInfo m_monitoredResourceInfo;
-    bool m_monitoredResourceInfoHasBeenSet;
+    bool m_monitoredResourceInfoHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     int m_evaluationPeriods;
-    bool m_evaluationPeriodsHasBeenSet;
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     int m_datapointsToAlarm;
-    bool m_datapointsToAlarmHasBeenSet;
+    bool m_datapointsToAlarmHasBeenSet = false;
 
     TreatMissingData m_treatMissingData;
-    bool m_treatMissingDataHasBeenSet;
+    bool m_treatMissingDataHasBeenSet = false;
 
     MetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     MetricName m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     AlarmState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     MetricUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     Aws::Vector<ContactProtocol> m_contactProtocols;
-    bool m_contactProtocolsHasBeenSet;
+    bool m_contactProtocolsHasBeenSet = false;
 
     Aws::Vector<AlarmState> m_notificationTriggers;
-    bool m_notificationTriggersHasBeenSet;
+    bool m_notificationTriggersHasBeenSet = false;
 
     bool m_notificationEnabled;
-    bool m_notificationEnabledHasBeenSet;
+    bool m_notificationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarksEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API JobBookmarksEncryption
+  class JobBookmarksEncryption
   {
   public:
-    JobBookmarksEncryption();
-    JobBookmarksEncryption(Aws::Utils::Json::JsonView jsonValue);
-    JobBookmarksEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JobBookmarksEncryption();
+    AWS_GLUE_API JobBookmarksEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JobBookmarksEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     JobBookmarksEncryptionMode m_jobBookmarksEncryptionMode;
-    bool m_jobBookmarksEncryptionModeHasBeenSet;
+    bool m_jobBookmarksEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

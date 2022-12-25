@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_FMS_API PutAppsListRequest : public FMSRequest
+  class PutAppsListRequest : public FMSRequest
   {
   public:
-    PutAppsListRequest();
+    AWS_FMS_API PutAppsListRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAppsList"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     AppsListData m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

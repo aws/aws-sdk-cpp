@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API CreateTrailResult
+  class CreateTrailResult
   {
   public:
-    CreateTrailResult();
-    CreateTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CreateTrailResult();
+    AWS_CLOUDTRAIL_API CreateTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CreateTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -412,56 +412,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CreateTrailResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CreateTrailResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
-     * value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */

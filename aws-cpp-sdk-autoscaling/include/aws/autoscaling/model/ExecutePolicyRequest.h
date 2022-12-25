@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API ExecutePolicyRequest : public AutoScalingRequest
+  class ExecutePolicyRequest : public AutoScalingRequest
   {
   public:
-    ExecutePolicyRequest();
+    AWS_AUTOSCALING_API ExecutePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExecutePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     bool m_honorCooldown;
-    bool m_honorCooldownHasBeenSet;
+    bool m_honorCooldownHasBeenSet = false;
 
     double m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     double m_breachThreshold;
-    bool m_breachThresholdHasBeenSet;
+    bool m_breachThresholdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API SourceDetail
+  class SourceDetail
   {
   public:
-    SourceDetail();
-    SourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    SourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API SourceDetail();
+    AWS_CONFIGSERVICE_API SourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API SourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -282,13 +282,13 @@ namespace Model
   private:
 
     EventSource m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

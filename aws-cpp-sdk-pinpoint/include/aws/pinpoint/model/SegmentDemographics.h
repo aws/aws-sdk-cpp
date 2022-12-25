@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDemographics">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentDemographics
+  class SegmentDemographics
   {
   public:
-    SegmentDemographics();
-    SegmentDemographics(Aws::Utils::Json::JsonView jsonValue);
-    SegmentDemographics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentDemographics();
+    AWS_PINPOINT_API SegmentDemographics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentDemographics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,22 +227,22 @@ namespace Model
   private:
 
     SetDimension m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     SetDimension m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     SetDimension m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     SetDimension m_make;
-    bool m_makeHasBeenSet;
+    bool m_makeHasBeenSet = false;
 
     SetDimension m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     SetDimension m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

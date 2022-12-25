@@ -32,7 +32,7 @@ PutProjectEventsResult& PutProjectEventsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventResults"))
   {
-    Array<JsonView> eventResultsJsonList = jsonValue.GetArray("eventResults");
+    Aws::Utils::Array<JsonView> eventResultsJsonList = jsonValue.GetArray("eventResults");
     for(unsigned eventResultsIndex = 0; eventResultsIndex < eventResultsJsonList.GetLength(); ++eventResultsIndex)
     {
       m_eventResults.push_back(eventResultsJsonList[eventResultsIndex].AsObject());

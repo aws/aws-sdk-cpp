@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorOutput
+  class StreamProcessorOutput
   {
   public:
-    StreamProcessorOutput();
-    StreamProcessorOutput(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorOutput();
+    AWS_REKOGNITION_API StreamProcessorOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     KinesisDataStream m_kinesisDataStream;
-    bool m_kinesisDataStreamHasBeenSet;
+    bool m_kinesisDataStreamHasBeenSet = false;
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

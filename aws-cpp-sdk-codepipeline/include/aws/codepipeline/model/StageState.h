@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageState">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API StageState
+  class StageState
   {
   public:
-    StageState();
-    StageState(Aws::Utils::Json::JsonView jsonValue);
-    StageState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API StageState();
+    AWS_CODEPIPELINE_API StageState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API StageState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     StageExecution m_inboundExecution;
-    bool m_inboundExecutionHasBeenSet;
+    bool m_inboundExecutionHasBeenSet = false;
 
     TransitionState m_inboundTransitionState;
-    bool m_inboundTransitionStateHasBeenSet;
+    bool m_inboundTransitionStateHasBeenSet = false;
 
     Aws::Vector<ActionState> m_actionStates;
-    bool m_actionStatesHasBeenSet;
+    bool m_actionStatesHasBeenSet = false;
 
     StageExecution m_latestExecution;
-    bool m_latestExecutionHasBeenSet;
+    bool m_latestExecutionHasBeenSet = false;
   };
 
 } // namespace Model

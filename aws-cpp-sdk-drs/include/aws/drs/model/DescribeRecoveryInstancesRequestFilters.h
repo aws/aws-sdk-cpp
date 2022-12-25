@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoveryInstancesRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DescribeRecoveryInstancesRequestFilters
+  class DescribeRecoveryInstancesRequestFilters
   {
   public:
-    DescribeRecoveryInstancesRequestFilters();
-    DescribeRecoveryInstancesRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeRecoveryInstancesRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DescribeRecoveryInstancesRequestFilters();
+    AWS_DRS_API DescribeRecoveryInstancesRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DescribeRecoveryInstancesRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_recoveryInstanceIDs;
-    bool m_recoveryInstanceIDsHasBeenSet;
+    bool m_recoveryInstanceIDsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API CreateFleetRequest : public AppStreamRequest
+  class CreateFleetRequest : public AppStreamRequest
   {
   public:
-    CreateFleetRequest();
+    AWS_APPSTREAM_API CreateFleetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFleet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -170,17 +170,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -193,8 +194,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
@@ -202,17 +204,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -225,8 +228,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -234,17 +238,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -257,8 +262,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -266,17 +272,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -289,8 +296,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -298,17 +306,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -321,8 +330,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
@@ -330,17 +340,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -353,8 +364,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline CreateFleetRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
@@ -362,17 +374,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -385,8 +398,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline CreateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -394,17 +408,18 @@ namespace Model
      * <p>The instance type to use when launching fleet instances. The following
      * instance types are available:</p> <ul> <li> <p>stream.standard.small</p> </li>
      * <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li>
-     * <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li>
-     * <li> <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p>
-     * </li> <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p>
-     * </li> <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p>
-     * </li> <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.large</p> </li> <li>
-     * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
-     * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
-     * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-     * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
+     * </li> <li> <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p>
+     * </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.memory.z1d.large</p>
+     * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
@@ -417,8 +432,9 @@ namespace Model
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul> <p>The following
      * instance types are available for Elastic fleets:</p> <ul> <li>
-     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li>
-     * </ul>
+     * <p>stream.standard.small</p> </li> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.standard.xlarge</p> </li> <li>
+     * <p>stream.standard.2xlarge</p> </li> </ul>
      */
     inline CreateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -1393,67 +1409,67 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_imageArn;
-    bool m_imageArnHasBeenSet;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     FleetType m_fleetType;
-    bool m_fleetTypeHasBeenSet;
+    bool m_fleetTypeHasBeenSet = false;
 
     ComputeCapacity m_computeCapacity;
-    bool m_computeCapacityHasBeenSet;
+    bool m_computeCapacityHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     int m_maxUserDurationInSeconds;
-    bool m_maxUserDurationInSecondsHasBeenSet;
+    bool m_maxUserDurationInSecondsHasBeenSet = false;
 
     int m_disconnectTimeoutInSeconds;
-    bool m_disconnectTimeoutInSecondsHasBeenSet;
+    bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     bool m_enableDefaultInternetAccess;
-    bool m_enableDefaultInternetAccessHasBeenSet;
+    bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     DomainJoinInfo m_domainJoinInfo;
-    bool m_domainJoinInfoHasBeenSet;
+    bool m_domainJoinInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_idleDisconnectTimeoutInSeconds;
-    bool m_idleDisconnectTimeoutInSecondsHasBeenSet;
+    bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     StreamView m_streamView;
-    bool m_streamViewHasBeenSet;
+    bool m_streamViewHasBeenSet = false;
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     int m_maxConcurrentSessions;
-    bool m_maxConcurrentSessionsHasBeenSet;
+    bool m_maxConcurrentSessionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
-    bool m_usbDeviceFilterStringsHasBeenSet;
+    bool m_usbDeviceFilterStringsHasBeenSet = false;
 
     S3Location m_sessionScriptS3Location;
-    bool m_sessionScriptS3LocationHasBeenSet;
+    bool m_sessionScriptS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

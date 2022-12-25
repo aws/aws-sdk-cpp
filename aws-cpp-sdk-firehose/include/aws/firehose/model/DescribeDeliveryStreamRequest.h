@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIREHOSE_API DescribeDeliveryStreamRequest : public FirehoseRequest
+  class DescribeDeliveryStreamRequest : public FirehoseRequest
   {
   public:
-    DescribeDeliveryStreamRequest();
+    AWS_FIREHOSE_API DescribeDeliveryStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDeliveryStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIREHOSE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FIREHOSE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartDestinationId;
-    bool m_exclusiveStartDestinationIdHasBeenSet;
+    bool m_exclusiveStartDestinationIdHasBeenSet = false;
   };
 
 } // namespace Model

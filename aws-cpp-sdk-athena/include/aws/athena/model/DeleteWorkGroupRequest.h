@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ATHENA_API DeleteWorkGroupRequest : public AthenaRequest
+  class DeleteWorkGroupRequest : public AthenaRequest
   {
   public:
-    DeleteWorkGroupRequest();
+    AWS_ATHENA_API DeleteWorkGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteWorkGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ATHENA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     bool m_recursiveDeleteOption;
-    bool m_recursiveDeleteOptionHasBeenSet;
+    bool m_recursiveDeleteOptionHasBeenSet = false;
   };
 
 } // namespace Model

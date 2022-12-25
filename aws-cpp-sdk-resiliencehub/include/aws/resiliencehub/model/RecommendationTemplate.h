@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RecommendationTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API RecommendationTemplate
+  class RecommendationTemplate
   {
   public:
-    RecommendationTemplate();
-    RecommendationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API RecommendationTemplate();
+    AWS_RESILIENCEHUB_API RecommendationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API RecommendationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -710,46 +710,46 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_assessmentArn;
-    bool m_assessmentArnHasBeenSet;
+    bool m_assessmentArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     TemplateFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_needsReplacements;
-    bool m_needsReplacementsHasBeenSet;
+    bool m_needsReplacementsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     Aws::String m_recommendationTemplateArn;
-    bool m_recommendationTemplateArnHasBeenSet;
+    bool m_recommendationTemplateArnHasBeenSet = false;
 
     Aws::Vector<RenderRecommendationType> m_recommendationTypes;
-    bool m_recommendationTypesHasBeenSet;
+    bool m_recommendationTypesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     RecommendationTemplateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     S3Location m_templatesLocation;
-    bool m_templatesLocationHasBeenSet;
+    bool m_templatesLocationHasBeenSet = false;
   };
 
 } // namespace Model

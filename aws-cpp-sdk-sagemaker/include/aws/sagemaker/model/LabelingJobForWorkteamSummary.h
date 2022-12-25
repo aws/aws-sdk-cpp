@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobForWorkteamSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobForWorkteamSummary
+  class LabelingJobForWorkteamSummary
   {
   public:
-    LabelingJobForWorkteamSummary();
-    LabelingJobForWorkteamSummary(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobForWorkteamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobForWorkteamSummary();
+    AWS_SAGEMAKER_API LabelingJobForWorkteamSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobForWorkteamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,22 +263,22 @@ namespace Model
   private:
 
     Aws::String m_labelingJobName;
-    bool m_labelingJobNameHasBeenSet;
+    bool m_labelingJobNameHasBeenSet = false;
 
     Aws::String m_jobReferenceCode;
-    bool m_jobReferenceCodeHasBeenSet;
+    bool m_jobReferenceCodeHasBeenSet = false;
 
     Aws::String m_workRequesterAccountId;
-    bool m_workRequesterAccountIdHasBeenSet;
+    bool m_workRequesterAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     LabelCountersForWorkteam m_labelCounters;
-    bool m_labelCountersHasBeenSet;
+    bool m_labelCountersHasBeenSet = false;
 
     int m_numberOfHumanWorkersPerDataObject;
-    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet;
+    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
   };
 
 } // namespace Model

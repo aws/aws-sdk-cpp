@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnGroupSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnGroupSchema
+  class ColumnGroupSchema
   {
   public:
-    ColumnGroupSchema();
-    ColumnGroupSchema(Aws::Utils::Json::JsonView jsonValue);
-    ColumnGroupSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnGroupSchema();
+    AWS_QUICKSIGHT_API ColumnGroupSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnGroupSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ColumnGroupColumnSchema> m_columnGroupColumnSchemaList;
-    bool m_columnGroupColumnSchemaListHasBeenSet;
+    bool m_columnGroupColumnSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

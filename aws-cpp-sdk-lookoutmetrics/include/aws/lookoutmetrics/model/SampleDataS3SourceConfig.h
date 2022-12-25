@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/SampleDataS3SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig
+  class SampleDataS3SourceConfig
   {
   public:
-    SampleDataS3SourceConfig();
-    SampleDataS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    SampleDataS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig();
+    AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_templatedPathList;
-    bool m_templatedPathListHasBeenSet;
+    bool m_templatedPathListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_historicalDataPathList;
-    bool m_historicalDataPathListHasBeenSet;
+    bool m_historicalDataPathListHasBeenSet = false;
 
     FileFormatDescriptor m_fileFormatDescriptor;
-    bool m_fileFormatDescriptorHasBeenSet;
+    bool m_fileFormatDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

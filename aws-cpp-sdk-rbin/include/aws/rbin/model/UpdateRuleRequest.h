@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_RECYCLEBIN_API UpdateRuleRequest : public RecycleBinRequest
+  class UpdateRuleRequest : public RecycleBinRequest
   {
   public:
-    UpdateRuleRequest();
+    AWS_RECYCLEBIN_API UpdateRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RECYCLEBIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,50 +156,38 @@ namespace Model
 
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline UpdateRuleRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline UpdateRuleRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -327,19 +315,19 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

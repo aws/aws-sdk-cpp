@@ -228,7 +228,7 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
   if(m_expiresHasBeenSet)
   {
-    headers.emplace("x-amz-fwd-header-expires", m_expires.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-fwd-header-expires", m_expires.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_expirationHasBeenSet)
@@ -240,7 +240,7 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
   if(m_lastModifiedHasBeenSet)
   {
-    headers.emplace("x-amz-fwd-header-last-modified", m_lastModified.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-fwd-header-last-modified", m_lastModified.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   if(m_missingMetaHasBeenSet)
@@ -272,7 +272,7 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
   if(m_objectLockRetainUntilDateHasBeenSet)
   {
-    headers.emplace("x-amz-fwd-header-x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
+    headers.emplace("x-amz-fwd-header-x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_partsCountHasBeenSet)
@@ -353,4 +353,12 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
 
   return headers;
 
+}
+
+WriteGetObjectResponseRequest::EndpointParameters WriteGetObjectResponseRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("UseObjectLambdaEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    return parameters;
 }

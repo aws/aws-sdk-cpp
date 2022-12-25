@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMRCONTAINERS_API StartJobRunRequest : public EMRContainersRequest
+  class StartJobRunRequest : public EMRContainersRequest
   {
   public:
-    StartJobRunRequest();
+    AWS_EMRCONTAINERS_API StartJobRunRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartJobRun"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMRCONTAINERS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -368,31 +368,144 @@ namespace Model
      */
     inline StartJobRunRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline const Aws::String& GetJobTemplateId() const{ return m_jobTemplateId; }
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline void SetJobTemplateId(const Aws::String& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = value; }
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline void SetJobTemplateId(Aws::String&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::move(value); }
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline void SetJobTemplateId(const char* value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId.assign(value); }
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline StartJobRunRequest& WithJobTemplateId(const Aws::String& value) { SetJobTemplateId(value); return *this;}
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline StartJobRunRequest& WithJobTemplateId(Aws::String&& value) { SetJobTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The job template ID to be used to start the job run.</p>
+     */
+    inline StartJobRunRequest& WithJobTemplateId(const char* value) { SetJobTemplateId(value); return *this;}
+
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetJobTemplateParameters() const{ return m_jobTemplateParameters; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline bool JobTemplateParametersHasBeenSet() const { return m_jobTemplateParametersHasBeenSet; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline void SetJobTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters = value; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline void SetJobTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters = std::move(value); }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& WithJobTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetJobTemplateParameters(value); return *this;}
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& WithJobTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetJobTemplateParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(const Aws::String& key, const Aws::String& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, const Aws::String& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(const Aws::String& key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(const char* key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, const char* value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The values of job template parameters to start a job run.</p>
+     */
+    inline StartJobRunRequest& AddJobTemplateParameters(const char* key, const char* value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     JobDriver m_jobDriver;
-    bool m_jobDriverHasBeenSet;
+    bool m_jobDriverHasBeenSet = false;
 
     ConfigurationOverrides m_configurationOverrides;
-    bool m_configurationOverridesHasBeenSet;
+    bool m_configurationOverridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_jobTemplateId;
+    bool m_jobTemplateIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_jobTemplateParameters;
+    bool m_jobTemplateParametersHasBeenSet = false;
   };
 
 } // namespace Model

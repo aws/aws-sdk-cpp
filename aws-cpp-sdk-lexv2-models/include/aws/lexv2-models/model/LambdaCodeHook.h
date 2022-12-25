@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/LambdaCodeHook">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API LambdaCodeHook
+  class LambdaCodeHook
   {
   public:
-    LambdaCodeHook();
-    LambdaCodeHook(Aws::Utils::Json::JsonView jsonValue);
-    LambdaCodeHook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API LambdaCodeHook();
+    AWS_LEXMODELSV2_API LambdaCodeHook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API LambdaCodeHook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_lambdaARN;
-    bool m_lambdaARNHasBeenSet;
+    bool m_lambdaARNHasBeenSet = false;
 
     Aws::String m_codeHookInterfaceVersion;
-    bool m_codeHookInterfaceVersionHasBeenSet;
+    bool m_codeHookInterfaceVersionHasBeenSet = false;
   };
 
 } // namespace Model

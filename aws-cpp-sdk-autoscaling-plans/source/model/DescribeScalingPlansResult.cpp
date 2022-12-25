@@ -30,7 +30,7 @@ DescribeScalingPlansResult& DescribeScalingPlansResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalingPlans"))
   {
-    Array<JsonView> scalingPlansJsonList = jsonValue.GetArray("ScalingPlans");
+    Aws::Utils::Array<JsonView> scalingPlansJsonList = jsonValue.GetArray("ScalingPlans");
     for(unsigned scalingPlansIndex = 0; scalingPlansIndex < scalingPlansJsonList.GetLength(); ++scalingPlansIndex)
     {
       m_scalingPlans.push_back(scalingPlansJsonList[scalingPlansIndex].AsObject());

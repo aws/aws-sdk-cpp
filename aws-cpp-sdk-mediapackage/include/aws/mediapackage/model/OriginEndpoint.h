@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/OriginEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API OriginEndpoint
+  class OriginEndpoint
   {
   public:
-    OriginEndpoint();
-    OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API OriginEndpoint();
+    AWS_MEDIAPACKAGE_API OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -622,52 +622,52 @@ If not
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Authorization m_authorization;
-    bool m_authorizationHasBeenSet;
+    bool m_authorizationHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     CmafPackage m_cmafPackage;
-    bool m_cmafPackageHasBeenSet;
+    bool m_cmafPackageHasBeenSet = false;
 
     DashPackage m_dashPackage;
-    bool m_dashPackageHasBeenSet;
+    bool m_dashPackageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
-    bool m_hlsPackageHasBeenSet;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     MssPackage m_mssPackage;
-    bool m_mssPackageHasBeenSet;
+    bool m_mssPackageHasBeenSet = false;
 
     Origination m_origination;
-    bool m_originationHasBeenSet;
+    bool m_originationHasBeenSet = false;
 
     int m_startoverWindowSeconds;
-    bool m_startoverWindowSecondsHasBeenSet;
+    bool m_startoverWindowSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_timeDelaySeconds;
-    bool m_timeDelaySecondsHasBeenSet;
+    bool m_timeDelaySecondsHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_whitelist;
-    bool m_whitelistHasBeenSet;
+    bool m_whitelistHasBeenSet = false;
   };
 
 } // namespace Model

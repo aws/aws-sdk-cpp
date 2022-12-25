@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFileEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API DeleteFileEntry
+  class DeleteFileEntry
   {
   public:
-    DeleteFileEntry();
-    DeleteFileEntry(Aws::Utils::Json::JsonView jsonValue);
-    DeleteFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API DeleteFileEntry();
+    AWS_CODECOMMIT_API DeleteFileEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API DeleteFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
   };
 
 } // namespace Model

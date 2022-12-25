@@ -17,14 +17,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorizationInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CreateVpcPeeringAuthorizationRequest : public GameLiftRequest
+  class CreateVpcPeeringAuthorizationRequest : public GameLiftRequest
   {
   public:
-    CreateVpcPeeringAuthorizationRequest();
+    AWS_GAMELIFT_API CreateVpcPeeringAuthorizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcPeeringAuthorization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -177,10 +174,10 @@ namespace Model
   private:
 
     Aws::String m_gameLiftAwsAccountId;
-    bool m_gameLiftAwsAccountIdHasBeenSet;
+    bool m_gameLiftAwsAccountIdHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
   };
 
 } // namespace Model

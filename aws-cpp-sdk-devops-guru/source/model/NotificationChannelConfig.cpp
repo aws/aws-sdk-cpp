@@ -19,12 +19,14 @@ namespace Model
 {
 
 NotificationChannelConfig::NotificationChannelConfig() : 
-    m_snsHasBeenSet(false)
+    m_snsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
 NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue) : 
-    m_snsHasBeenSet(false)
+    m_snsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ NotificationChannelConfig& NotificationChannelConfig::operator =(JsonView jsonVa
     m_snsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Filters"))
+  {
+    m_filters = jsonValue.GetObject("Filters");
+
+    m_filtersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue NotificationChannelConfig::Jsonize() const
   if(m_snsHasBeenSet)
   {
    payload.WithObject("Sns", m_sns.Jsonize());
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

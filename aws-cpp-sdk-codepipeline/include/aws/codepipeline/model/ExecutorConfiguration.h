@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ExecutorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ExecutorConfiguration
+  class ExecutorConfiguration
   {
   public:
-    ExecutorConfiguration();
-    ExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ExecutorConfiguration();
+    AWS_CODEPIPELINE_API ExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     LambdaExecutorConfiguration m_lambdaExecutorConfiguration;
-    bool m_lambdaExecutorConfigurationHasBeenSet;
+    bool m_lambdaExecutorConfigurationHasBeenSet = false;
 
     JobWorkerExecutorConfiguration m_jobWorkerExecutorConfiguration;
-    bool m_jobWorkerExecutorConfigurationHasBeenSet;
+    bool m_jobWorkerExecutorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FirewallManagerRuleGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API FirewallManagerRuleGroup
+  class FirewallManagerRuleGroup
   {
   public:
-    FirewallManagerRuleGroup();
-    FirewallManagerRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-    FirewallManagerRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API FirewallManagerRuleGroup();
+    AWS_WAFV2_API FirewallManagerRuleGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API FirewallManagerRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,8 +169,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
@@ -183,8 +183,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
@@ -197,8 +197,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
@@ -211,8 +211,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
@@ -225,8 +225,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline FirewallManagerRuleGroup& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
 
@@ -239,8 +239,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline FirewallManagerRuleGroup& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 
@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     FirewallManagerStatement m_firewallManagerStatement;
-    bool m_firewallManagerStatementHasBeenSet;
+    bool m_firewallManagerStatementHasBeenSet = false;
 
     OverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
   };
 
 } // namespace Model

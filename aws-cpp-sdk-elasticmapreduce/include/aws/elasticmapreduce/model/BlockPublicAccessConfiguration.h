@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BlockPublicAccessConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API BlockPublicAccessConfiguration
+  class BlockPublicAccessConfiguration
   {
   public:
-    BlockPublicAccessConfiguration();
-    BlockPublicAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API BlockPublicAccessConfiguration();
+    AWS_EMR_API BlockPublicAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API BlockPublicAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,10 +184,10 @@ namespace Model
   private:
 
     bool m_blockPublicSecurityGroupRules;
-    bool m_blockPublicSecurityGroupRulesHasBeenSet;
+    bool m_blockPublicSecurityGroupRulesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_permittedPublicSecurityGroupRuleRanges;
-    bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet;
+    bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet = false;
   };
 
 } // namespace Model

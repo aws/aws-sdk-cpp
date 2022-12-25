@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CredentialPair">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CredentialPair
+  class CredentialPair
   {
   public:
-    CredentialPair();
-    CredentialPair(Aws::Utils::Json::JsonView jsonValue);
-    CredentialPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CredentialPair();
+    AWS_QUICKSIGHT_API CredentialPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CredentialPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,13 +237,13 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
-    bool m_alternateDataSourceParametersHasBeenSet;
+    bool m_alternateDataSourceParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupOptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionGroupOptionSetting
+  class OptionGroupOptionSetting
   {
   public:
-    OptionGroupOptionSetting();
-    OptionGroupOptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroupOptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOptionSetting();
+    AWS_RDS_API OptionGroupOptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -349,28 +349,28 @@ namespace Model
   private:
 
     Aws::String m_settingName;
-    bool m_settingNameHasBeenSet;
+    bool m_settingNameHasBeenSet = false;
 
     Aws::String m_settingDescription;
-    bool m_settingDescriptionHasBeenSet;
+    bool m_settingDescriptionHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     bool m_isRequired;
-    bool m_isRequiredHasBeenSet;
+    bool m_isRequiredHasBeenSet = false;
 
     Aws::Vector<MinimumEngineVersionPerAllowedValue> m_minimumEngineVersionPerAllowedValue;
-    bool m_minimumEngineVersionPerAllowedValueHasBeenSet;
+    bool m_minimumEngineVersionPerAllowedValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCINGV2_API CreateListenerRequest : public ElasticLoadBalancingv2Request
+  class CreateListenerRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    CreateListenerRequest();
+    AWS_ELASTICLOADBALANCINGV2_API CreateListenerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateListener"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCINGV2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCINGV2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -493,28 +493,28 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
 
     ProtocolEnum m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_sslPolicy;
-    bool m_sslPolicyHasBeenSet;
+    bool m_sslPolicyHasBeenSet = false;
 
     Aws::Vector<Certificate> m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
 
     Aws::Vector<Action> m_defaultActions;
-    bool m_defaultActionsHasBeenSet;
+    bool m_defaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alpnPolicy;
-    bool m_alpnPolicyHasBeenSet;
+    bool m_alpnPolicyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,14 +32,14 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/VPC">AWS API
    * Reference</a></p>
    */
-  class AWS_ROUTE53_API VPC
+  class VPC
   {
   public:
-    VPC();
-    VPC(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VPC& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API VPC();
+    AWS_ROUTE53_API VPC(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API VPC& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -100,10 +100,10 @@ namespace Model
   private:
 
     VPCRegion m_vPCRegion;
-    bool m_vPCRegionHasBeenSet;
+    bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
   };
 
 } // namespace Model

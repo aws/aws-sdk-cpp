@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Ac3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Ac3Settings
+  class Ac3Settings
   {
   public:
-    Ac3Settings();
-    Ac3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Ac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Ac3Settings();
+    AWS_MEDIALIVE_API Ac3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Ac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -274,25 +274,25 @@ namespace Model
   private:
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Ac3BitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Ac3CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     int m_dialnorm;
-    bool m_dialnormHasBeenSet;
+    bool m_dialnormHasBeenSet = false;
 
     Ac3DrcProfile m_drcProfile;
-    bool m_drcProfileHasBeenSet;
+    bool m_drcProfileHasBeenSet = false;
 
     Ac3LfeFilter m_lfeFilter;
-    bool m_lfeFilterHasBeenSet;
+    bool m_lfeFilterHasBeenSet = false;
 
     Ac3MetadataControl m_metadataControl;
-    bool m_metadataControlHasBeenSet;
+    bool m_metadataControlHasBeenSet = false;
   };
 
 } // namespace Model

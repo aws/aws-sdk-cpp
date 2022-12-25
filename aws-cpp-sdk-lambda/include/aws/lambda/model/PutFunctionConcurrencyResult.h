@@ -22,19 +22,19 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PutFunctionConcurrencyResult
+  class PutFunctionConcurrencyResult
   {
   public:
-    PutFunctionConcurrencyResult();
-    PutFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutFunctionConcurrencyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionConcurrencyResult();
+    AWS_LAMBDA_API PutFunctionConcurrencyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionConcurrencyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
-     * Concurrency</a>.</p>
+     * Lambda reserved concurrency</a>.</p>
      */
     inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
 
@@ -42,7 +42,7 @@ namespace Model
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
-     * Concurrency</a>.</p>
+     * Lambda reserved concurrency</a>.</p>
      */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutions = value; }
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>The number of concurrent executions that are reserved for this function. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
-     * Concurrency</a>.</p>
+     * Lambda reserved concurrency</a>.</p>
      */
     inline PutFunctionConcurrencyResult& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}
 

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Prediction">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API Prediction
+  class Prediction
   {
   public:
-    Prediction();
-    Prediction(Aws::Utils::Json::JsonView jsonValue);
-    Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API Prediction();
+    AWS_MACHINELEARNING_API Prediction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_predictedLabel;
-    bool m_predictedLabelHasBeenSet;
+    bool m_predictedLabelHasBeenSet = false;
 
     double m_predictedValue;
-    bool m_predictedValueHasBeenSet;
+    bool m_predictedValueHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_predictedScores;
-    bool m_predictedScoresHasBeenSet;
+    bool m_predictedScoresHasBeenSet = false;
 
     Aws::Map<DetailsAttributes, Aws::String> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

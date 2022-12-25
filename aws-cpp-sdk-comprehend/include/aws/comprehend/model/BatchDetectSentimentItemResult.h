@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentimentItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectSentimentItemResult
+  class BatchDetectSentimentItemResult
   {
   public:
-    BatchDetectSentimentItemResult();
-    BatchDetectSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectSentimentItemResult();
+    AWS_COMPREHEND_API BatchDetectSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,13 +131,13 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     SentimentType m_sentiment;
-    bool m_sentimentHasBeenSet;
+    bool m_sentimentHasBeenSet = false;
 
     SentimentScore m_sentimentScore;
-    bool m_sentimentScoreHasBeenSet;
+    bool m_sentimentScoreHasBeenSet = false;
   };
 
 } // namespace Model

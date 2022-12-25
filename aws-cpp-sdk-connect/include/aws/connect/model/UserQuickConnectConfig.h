@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserQuickConnectConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserQuickConnectConfig
+  class UserQuickConnectConfig
   {
   public:
-    UserQuickConnectConfig();
-    UserQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
-    UserQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserQuickConnectConfig();
+    AWS_CONNECT_API UserQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,52 +81,52 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UserQuickConnectConfig& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UserQuickConnectConfig& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow.</p>
+     * <p>The identifier of the flow.</p>
      */
     inline UserQuickConnectConfig& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
 
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
   };
 
 } // namespace Model

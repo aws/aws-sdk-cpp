@@ -24,12 +24,12 @@ namespace MachineLearning
 {
 namespace Model
 {
-  class AWS_MACHINELEARNING_API PredictResult
+  class PredictResult
   {
   public:
-    PredictResult();
-    PredictResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PredictResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API PredictResult();
+    AWS_MACHINELEARNING_API PredictResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API PredictResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

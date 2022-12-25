@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API RecommendationSummary
+  class RecommendationSummary
   {
   public:
-    RecommendationSummary();
-    RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API RecommendationSummary();
+    AWS_COMPUTEOPTIMIZER_API RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::Vector<Summary> m_summaries;
-    bool m_summariesHasBeenSet;
+    bool m_summariesHasBeenSet = false;
 
     RecommendationSourceType m_recommendationResourceType;
-    bool m_recommendationResourceTypeHasBeenSet;
+    bool m_recommendationResourceTypeHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
 
     CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
-    bool m_currentPerformanceRiskRatingsHasBeenSet;
+    bool m_currentPerformanceRiskRatingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinMonitoringConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate
+  class ZeppelinMonitoringConfigurationUpdate
   {
   public:
-    ZeppelinMonitoringConfigurationUpdate();
-    ZeppelinMonitoringConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ZeppelinMonitoringConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LogLevel m_logLevelUpdate;
-    bool m_logLevelUpdateHasBeenSet;
+    bool m_logLevelUpdateHasBeenSet = false;
   };
 
 } // namespace Model

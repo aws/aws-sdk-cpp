@@ -26,12 +26,12 @@ namespace IoTDataPlane
 {
 namespace Model
 {
-  class AWS_IOTDATAPLANE_API ListRetainedMessagesResult
+  class ListRetainedMessagesResult
   {
   public:
-    ListRetainedMessagesResult();
-    ListRetainedMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRetainedMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API ListRetainedMessagesResult();
+    AWS_IOTDATAPLANE_API ListRetainedMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API ListRetainedMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

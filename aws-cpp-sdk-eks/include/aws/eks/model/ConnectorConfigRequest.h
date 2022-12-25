@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ConnectorConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ConnectorConfigRequest
+  class ConnectorConfigRequest
   {
   public:
-    ConnectorConfigRequest();
-    ConnectorConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ConnectorConfigRequest();
+    AWS_EKS_API ConnectorConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ConnectorConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ConnectorConfigProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UnableToDetectSchemaException">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API UnableToDetectSchemaException
+  class UnableToDetectSchemaException
   {
   public:
-    UnableToDetectSchemaException();
-    UnableToDetectSchemaException(Aws::Utils::Json::JsonView jsonValue);
-    UnableToDetectSchemaException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API UnableToDetectSchemaException();
+    AWS_KINESISANALYTICS_API UnableToDetectSchemaException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API UnableToDetectSchemaException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rawInputRecords;
-    bool m_rawInputRecordsHasBeenSet;
+    bool m_rawInputRecordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_processedInputRecords;
-    bool m_processedInputRecordsHasBeenSet;
+    bool m_processedInputRecordsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PasswordField">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API PasswordField
+  class PasswordField
   {
   public:
-    PasswordField();
-    PasswordField(Aws::Utils::Json::JsonView jsonValue);
-    PasswordField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API PasswordField();
+    AWS_WAFV2_API PasswordField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API PasswordField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

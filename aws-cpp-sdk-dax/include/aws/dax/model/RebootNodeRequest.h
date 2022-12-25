@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DAX_API RebootNodeRequest : public DAXRequest
+  class RebootNodeRequest : public DAXRequest
   {
   public:
-    RebootNodeRequest();
+    AWS_DAX_API RebootNodeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RebootNode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DAX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DAX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
   };
 
 } // namespace Model

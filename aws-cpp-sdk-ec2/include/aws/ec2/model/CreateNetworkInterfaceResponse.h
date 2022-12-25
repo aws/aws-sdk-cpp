@@ -26,17 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of CreateNetworkInterface.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfaceResult">AWS
-   * API Reference</a></p>
-   */
-  class AWS_EC2_API CreateNetworkInterfaceResponse
+  class CreateNetworkInterfaceResponse
   {
   public:
-    CreateNetworkInterfaceResponse();
-    CreateNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateNetworkInterfaceResponse();
+    AWS_EC2_API CreateNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

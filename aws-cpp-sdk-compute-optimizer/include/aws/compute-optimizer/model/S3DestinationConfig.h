@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/S3DestinationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API S3DestinationConfig
+  class S3DestinationConfig
   {
   public:
-    S3DestinationConfig();
-    S3DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API S3DestinationConfig();
+    AWS_COMPUTEOPTIMIZER_API S3DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API S3DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,15 +41,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetData">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API FleetData
+  class FleetData
   {
   public:
-    FleetData();
-    FleetData(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FleetData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetData();
+    AWS_EC2_API FleetData(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -947,67 +947,67 @@ namespace Model
   private:
 
     FleetActivityStatus m_activityStatus;
-    bool m_activityStatusHasBeenSet;
+    bool m_activityStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     FleetStateCode m_fleetState;
-    bool m_fleetStateHasBeenSet;
+    bool m_fleetStateHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     FleetExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     double m_fulfilledCapacity;
-    bool m_fulfilledCapacityHasBeenSet;
+    bool m_fulfilledCapacityHasBeenSet = false;
 
     double m_fulfilledOnDemandCapacity;
-    bool m_fulfilledOnDemandCapacityHasBeenSet;
+    bool m_fulfilledOnDemandCapacityHasBeenSet = false;
 
     Aws::Vector<FleetLaunchTemplateConfig> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     TargetCapacitySpecification m_targetCapacitySpecification;
-    bool m_targetCapacitySpecificationHasBeenSet;
+    bool m_targetCapacitySpecificationHasBeenSet = false;
 
     bool m_terminateInstancesWithExpiration;
-    bool m_terminateInstancesWithExpirationHasBeenSet;
+    bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
     FleetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     bool m_replaceUnhealthyInstances;
-    bool m_replaceUnhealthyInstancesHasBeenSet;
+    bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
     SpotOptions m_spotOptions;
-    bool m_spotOptionsHasBeenSet;
+    bool m_spotOptionsHasBeenSet = false;
 
     OnDemandOptions m_onDemandOptions;
-    bool m_onDemandOptionsHasBeenSet;
+    bool m_onDemandOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<DescribeFleetError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<DescribeFleetsInstances> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

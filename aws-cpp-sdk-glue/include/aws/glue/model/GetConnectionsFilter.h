@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnectionsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API GetConnectionsFilter
+  class GetConnectionsFilter
   {
   public:
-    GetConnectionsFilter();
-    GetConnectionsFilter(Aws::Utils::Json::JsonView jsonValue);
-    GetConnectionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GetConnectionsFilter();
+    AWS_GLUE_API GetConnectionsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GetConnectionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_matchCriteria;
-    bool m_matchCriteriaHasBeenSet;
+    bool m_matchCriteriaHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,15 +42,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexField">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API IndexField
+  class IndexField
   {
   public:
-    IndexField();
-    IndexField(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IndexField& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IndexField();
+    AWS_CLOUDSEARCH_API IndexField(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IndexField& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -404,43 +404,43 @@ namespace Model
   private:
 
     Aws::String m_indexFieldName;
-    bool m_indexFieldNameHasBeenSet;
+    bool m_indexFieldNameHasBeenSet = false;
 
     IndexFieldType m_indexFieldType;
-    bool m_indexFieldTypeHasBeenSet;
+    bool m_indexFieldTypeHasBeenSet = false;
 
     IntOptions m_intOptions;
-    bool m_intOptionsHasBeenSet;
+    bool m_intOptionsHasBeenSet = false;
 
     DoubleOptions m_doubleOptions;
-    bool m_doubleOptionsHasBeenSet;
+    bool m_doubleOptionsHasBeenSet = false;
 
     LiteralOptions m_literalOptions;
-    bool m_literalOptionsHasBeenSet;
+    bool m_literalOptionsHasBeenSet = false;
 
     TextOptions m_textOptions;
-    bool m_textOptionsHasBeenSet;
+    bool m_textOptionsHasBeenSet = false;
 
     DateOptions m_dateOptions;
-    bool m_dateOptionsHasBeenSet;
+    bool m_dateOptionsHasBeenSet = false;
 
     LatLonOptions m_latLonOptions;
-    bool m_latLonOptionsHasBeenSet;
+    bool m_latLonOptionsHasBeenSet = false;
 
     IntArrayOptions m_intArrayOptions;
-    bool m_intArrayOptionsHasBeenSet;
+    bool m_intArrayOptionsHasBeenSet = false;
 
     DoubleArrayOptions m_doubleArrayOptions;
-    bool m_doubleArrayOptionsHasBeenSet;
+    bool m_doubleArrayOptionsHasBeenSet = false;
 
     LiteralArrayOptions m_literalArrayOptions;
-    bool m_literalArrayOptionsHasBeenSet;
+    bool m_literalArrayOptionsHasBeenSet = false;
 
     TextArrayOptions m_textArrayOptions;
-    bool m_textArrayOptionsHasBeenSet;
+    bool m_textArrayOptionsHasBeenSet = false;
 
     DateArrayOptions m_dateArrayOptions;
-    bool m_dateArrayOptionsHasBeenSet;
+    bool m_dateArrayOptionsHasBeenSet = false;
   };
 
 } // namespace Model

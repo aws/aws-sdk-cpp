@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotRecycleBinInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SnapshotRecycleBinInfo
+  class SnapshotRecycleBinInfo
   {
   public:
-    SnapshotRecycleBinInfo();
-    SnapshotRecycleBinInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotRecycleBinInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotRecycleBinInfo();
+    AWS_EC2_API SnapshotRecycleBinInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotRecycleBinInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinEnterTime;
-    bool m_recycleBinEnterTimeHasBeenSet;
+    bool m_recycleBinEnterTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinExitTime;
-    bool m_recycleBinExitTimeHasBeenSet;
+    bool m_recycleBinExitTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

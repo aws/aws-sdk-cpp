@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ResourceLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ResourceLimitExceededException
+  class ResourceLimitExceededException
   {
   public:
-    ResourceLimitExceededException();
-    ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ResourceLimitExceededException();
+    AWS_CHIMESDKMESSAGING_API ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     ErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

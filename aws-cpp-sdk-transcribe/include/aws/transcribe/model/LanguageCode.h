@@ -19,7 +19,6 @@ namespace Model
     af_ZA,
     ar_AE,
     ar_SA,
-    cy_GB,
     da_DK,
     de_CH,
     de_DE,
@@ -35,8 +34,6 @@ namespace Model
     fa_IR,
     fr_CA,
     fr_FR,
-    ga_IE,
-    gd_GB,
     he_IL,
     hi_IN,
     id_ID,
@@ -55,7 +52,9 @@ namespace Model
     zh_TW,
     th_TH,
     en_ZA,
-    en_NZ
+    en_NZ,
+    vi_VN,
+    sv_SE
   };
 
 namespace LanguageCodeMapper

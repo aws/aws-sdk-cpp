@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedCloudWatchMetricsSourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API RecommendationRelatedCloudWatchMetricsSourceDetail
+  class RecommendationRelatedCloudWatchMetricsSourceDetail
   {
   public:
-    RecommendationRelatedCloudWatchMetricsSourceDetail();
-    RecommendationRelatedCloudWatchMetricsSourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationRelatedCloudWatchMetricsSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API RecommendationRelatedCloudWatchMetricsSourceDetail();
+    AWS_DEVOPSGURU_API RecommendationRelatedCloudWatchMetricsSourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API RecommendationRelatedCloudWatchMetricsSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

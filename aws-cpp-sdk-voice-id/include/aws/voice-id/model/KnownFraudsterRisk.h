@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/KnownFraudsterRisk">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API KnownFraudsterRisk
+  class KnownFraudsterRisk
   {
   public:
-    KnownFraudsterRisk();
-    KnownFraudsterRisk(Aws::Utils::Json::JsonView jsonValue);
-    KnownFraudsterRisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API KnownFraudsterRisk();
+    AWS_VOICEID_API KnownFraudsterRisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API KnownFraudsterRisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_generatedFraudsterId;
-    bool m_generatedFraudsterIdHasBeenSet;
+    bool m_generatedFraudsterIdHasBeenSet = false;
 
     int m_riskScore;
-    bool m_riskScoreHasBeenSet;
+    bool m_riskScoreHasBeenSet = false;
   };
 
 } // namespace Model

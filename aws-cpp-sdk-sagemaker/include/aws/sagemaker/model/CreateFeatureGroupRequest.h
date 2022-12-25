@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateFeatureGroupRequest : public SageMakerRequest
+  class CreateFeatureGroupRequest : public SageMakerRequest
   {
   public:
-    CreateFeatureGroupRequest();
+    AWS_SAGEMAKER_API CreateFeatureGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFeatureGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -547,7 +547,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
@@ -563,7 +565,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline bool OfflineStoreConfigHasBeenSet() const { return m_offlineStoreConfigHasBeenSet; }
@@ -579,7 +583,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = value; }
@@ -595,7 +601,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::move(value); }
@@ -611,7 +619,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
@@ -627,7 +637,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
@@ -782,31 +794,31 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierFeatureName;
-    bool m_recordIdentifierFeatureNameHasBeenSet;
+    bool m_recordIdentifierFeatureNameHasBeenSet = false;
 
     Aws::String m_eventTimeFeatureName;
-    bool m_eventTimeFeatureNameHasBeenSet;
+    bool m_eventTimeFeatureNameHasBeenSet = false;
 
     Aws::Vector<FeatureDefinition> m_featureDefinitions;
-    bool m_featureDefinitionsHasBeenSet;
+    bool m_featureDefinitionsHasBeenSet = false;
 
     OnlineStoreConfig m_onlineStoreConfig;
-    bool m_onlineStoreConfigHasBeenSet;
+    bool m_onlineStoreConfigHasBeenSet = false;
 
     OfflineStoreConfig m_offlineStoreConfig;
-    bool m_offlineStoreConfigHasBeenSet;
+    bool m_offlineStoreConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,7 +39,7 @@ Aws::String ModifyDocumentPermissionRequest::SerializePayload() const
 
   if(m_accountIdsToAddHasBeenSet)
   {
-   Array<JsonValue> accountIdsToAddJsonList(m_accountIdsToAdd.size());
+   Aws::Utils::Array<JsonValue> accountIdsToAddJsonList(m_accountIdsToAdd.size());
    for(unsigned accountIdsToAddIndex = 0; accountIdsToAddIndex < accountIdsToAddJsonList.GetLength(); ++accountIdsToAddIndex)
    {
      accountIdsToAddJsonList[accountIdsToAddIndex].AsString(m_accountIdsToAdd[accountIdsToAddIndex]);
@@ -50,7 +50,7 @@ Aws::String ModifyDocumentPermissionRequest::SerializePayload() const
 
   if(m_accountIdsToRemoveHasBeenSet)
   {
-   Array<JsonValue> accountIdsToRemoveJsonList(m_accountIdsToRemove.size());
+   Aws::Utils::Array<JsonValue> accountIdsToRemoveJsonList(m_accountIdsToRemove.size());
    for(unsigned accountIdsToRemoveIndex = 0; accountIdsToRemoveIndex < accountIdsToRemoveJsonList.GetLength(); ++accountIdsToRemoveIndex)
    {
      accountIdsToRemoveJsonList[accountIdsToRemoveIndex].AsString(m_accountIdsToRemove[accountIdsToRemoveIndex]);

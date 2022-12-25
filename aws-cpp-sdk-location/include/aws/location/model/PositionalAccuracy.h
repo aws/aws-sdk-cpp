@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PositionalAccuracy">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API PositionalAccuracy
+  class PositionalAccuracy
   {
   public:
-    PositionalAccuracy();
-    PositionalAccuracy(Aws::Utils::Json::JsonView jsonValue);
-    PositionalAccuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API PositionalAccuracy();
+    AWS_LOCATIONSERVICE_API PositionalAccuracy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API PositionalAccuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,7 +62,7 @@ namespace Model
   private:
 
     double m_horizontal;
-    bool m_horizontalHasBeenSet;
+    bool m_horizontalHasBeenSet = false;
   };
 
 } // namespace Model

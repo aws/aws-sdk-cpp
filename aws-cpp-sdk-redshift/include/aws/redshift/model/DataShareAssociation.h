@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DataShareAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DataShareAssociation
+  class DataShareAssociation
   {
   public:
-    DataShareAssociation();
-    DataShareAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DataShareAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShareAssociation();
+    AWS_REDSHIFT_API DataShareAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShareAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_consumerIdentifier;
-    bool m_consumerIdentifierHasBeenSet;
+    bool m_consumerIdentifierHasBeenSet = false;
 
     DataShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_consumerRegion;
-    bool m_consumerRegionHasBeenSet;
+    bool m_consumerRegionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusChangeDate;
-    bool m_statusChangeDateHasBeenSet;
+    bool m_statusChangeDateHasBeenSet = false;
   };
 
 } // namespace Model

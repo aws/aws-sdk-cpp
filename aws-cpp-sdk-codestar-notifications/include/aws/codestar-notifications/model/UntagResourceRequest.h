@@ -12,6 +12,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace CodeStarNotifications
 {
 namespace Model
@@ -19,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODESTARNOTIFICATIONS_API UntagResourceRequest : public CodeStarNotificationsRequest
+  class UntagResourceRequest : public CodeStarNotificationsRequest
   {
   public:
-    UntagResourceRequest();
+    AWS_CODESTARNOTIFICATIONS_API UntagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
+
+    AWS_CODESTARNOTIFICATIONS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -130,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

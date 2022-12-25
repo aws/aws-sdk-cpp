@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DetectorModelConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DetectorModelConfiguration
+  class DetectorModelConfiguration
   {
   public:
-    DetectorModelConfiguration();
-    DetectorModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DetectorModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DetectorModelConfiguration();
+    AWS_IOTEVENTS_API DetectorModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DetectorModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -483,34 +483,34 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_detectorModelVersion;
-    bool m_detectorModelVersionHasBeenSet;
+    bool m_detectorModelVersionHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::String m_detectorModelArn;
-    bool m_detectorModelArnHasBeenSet;
+    bool m_detectorModelArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     DetectorModelVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     EvaluationMethod m_evaluationMethod;
-    bool m_evaluationMethodHasBeenSet;
+    bool m_evaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

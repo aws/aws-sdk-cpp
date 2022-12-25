@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ParticipatingServer">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API ParticipatingServer
+  class ParticipatingServer
   {
   public:
-    ParticipatingServer();
-    ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
-    ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API ParticipatingServer();
+    AWS_DRS_API ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     LaunchStatus m_launchStatus;
-    bool m_launchStatusHasBeenSet;
+    bool m_launchStatusHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

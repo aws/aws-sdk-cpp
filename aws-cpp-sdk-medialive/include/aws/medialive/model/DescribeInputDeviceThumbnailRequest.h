@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnailRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DescribeInputDeviceThumbnailRequest : public MediaLiveRequest
+  class DescribeInputDeviceThumbnailRequest : public MediaLiveRequest
   {
   public:
-    DescribeInputDeviceThumbnailRequest();
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeInputDeviceThumbnail"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MEDIALIVE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     AcceptHeader m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
   };
 
 } // namespace Model

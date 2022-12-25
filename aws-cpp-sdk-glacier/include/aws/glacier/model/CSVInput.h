@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CSVInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API CSVInput
+  class CSVInput
   {
   public:
-    CSVInput();
-    CSVInput(Aws::Utils::Json::JsonView jsonValue);
-    CSVInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API CSVInput();
+    AWS_GLACIER_API CSVInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API CSVInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,22 +315,22 @@ namespace Model
   private:
 
     FileHeaderInfo m_fileHeaderInfo;
-    bool m_fileHeaderInfoHasBeenSet;
+    bool m_fileHeaderInfoHasBeenSet = false;
 
     Aws::String m_comments;
-    bool m_commentsHasBeenSet;
+    bool m_commentsHasBeenSet = false;
 
     Aws::String m_quoteEscapeCharacter;
-    bool m_quoteEscapeCharacterHasBeenSet;
+    bool m_quoteEscapeCharacterHasBeenSet = false;
 
     Aws::String m_recordDelimiter;
-    bool m_recordDelimiterHasBeenSet;
+    bool m_recordDelimiterHasBeenSet = false;
 
     Aws::String m_fieldDelimiter;
-    bool m_fieldDelimiterHasBeenSet;
+    bool m_fieldDelimiterHasBeenSet = false;
 
     Aws::String m_quoteCharacter;
-    bool m_quoteCharacterHasBeenSet;
+    bool m_quoteCharacterHasBeenSet = false;
   };
 
 } // namespace Model

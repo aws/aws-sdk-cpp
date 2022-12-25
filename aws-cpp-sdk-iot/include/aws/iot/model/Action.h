@@ -27,6 +27,7 @@
 #include <aws/iot/model/HttpAction.h>
 #include <aws/iot/model/KafkaAction.h>
 #include <aws/iot/model/OpenSearchAction.h>
+#include <aws/iot/model/LocationAction.h>
 #include <utility>
 
 namespace Aws
@@ -49,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Action();
+    AWS_IOT_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -811,73 +812,113 @@ namespace Model
      */
     inline Action& WithOpenSearch(OpenSearchAction&& value) { SetOpenSearch(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline const LocationAction& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline void SetLocation(const LocationAction& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline void SetLocation(LocationAction&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline Action& WithLocation(const LocationAction& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline Action& WithLocation(LocationAction&& value) { SetLocation(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
 
     DynamoDBv2Action m_dynamoDBv2;
-    bool m_dynamoDBv2HasBeenSet;
+    bool m_dynamoDBv2HasBeenSet = false;
 
     LambdaAction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     SnsAction m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
 
     SqsAction m_sqs;
-    bool m_sqsHasBeenSet;
+    bool m_sqsHasBeenSet = false;
 
     KinesisAction m_kinesis;
-    bool m_kinesisHasBeenSet;
+    bool m_kinesisHasBeenSet = false;
 
     RepublishAction m_republish;
-    bool m_republishHasBeenSet;
+    bool m_republishHasBeenSet = false;
 
     S3Action m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     FirehoseAction m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     CloudwatchMetricAction m_cloudwatchMetric;
-    bool m_cloudwatchMetricHasBeenSet;
+    bool m_cloudwatchMetricHasBeenSet = false;
 
     CloudwatchAlarmAction m_cloudwatchAlarm;
-    bool m_cloudwatchAlarmHasBeenSet;
+    bool m_cloudwatchAlarmHasBeenSet = false;
 
     CloudwatchLogsAction m_cloudwatchLogs;
-    bool m_cloudwatchLogsHasBeenSet;
+    bool m_cloudwatchLogsHasBeenSet = false;
 
     ElasticsearchAction m_elasticsearch;
-    bool m_elasticsearchHasBeenSet;
+    bool m_elasticsearchHasBeenSet = false;
 
     SalesforceAction m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     IotAnalyticsAction m_iotAnalytics;
-    bool m_iotAnalyticsHasBeenSet;
+    bool m_iotAnalyticsHasBeenSet = false;
 
     IotEventsAction m_iotEvents;
-    bool m_iotEventsHasBeenSet;
+    bool m_iotEventsHasBeenSet = false;
 
     IotSiteWiseAction m_iotSiteWise;
-    bool m_iotSiteWiseHasBeenSet;
+    bool m_iotSiteWiseHasBeenSet = false;
 
     StepFunctionsAction m_stepFunctions;
-    bool m_stepFunctionsHasBeenSet;
+    bool m_stepFunctionsHasBeenSet = false;
 
     TimestreamAction m_timestream;
-    bool m_timestreamHasBeenSet;
+    bool m_timestreamHasBeenSet = false;
 
     HttpAction m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     KafkaAction m_kafka;
-    bool m_kafkaHasBeenSet;
+    bool m_kafkaHasBeenSet = false;
 
     OpenSearchAction m_openSearch;
-    bool m_openSearchHasBeenSet;
+    bool m_openSearchHasBeenSet = false;
+
+    LocationAction m_location;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

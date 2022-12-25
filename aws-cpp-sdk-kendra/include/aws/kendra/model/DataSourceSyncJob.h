@@ -33,52 +33,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSyncJob">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceSyncJob
+  class DataSourceSyncJob
   {
   public:
-    DataSourceSyncJob();
-    DataSourceSyncJob(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceSyncJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceSyncJob();
+    AWS_KENDRA_API DataSourceSyncJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceSyncJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 
@@ -396,28 +396,28 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     DataSourceSyncJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_dataSourceErrorCode;
-    bool m_dataSourceErrorCodeHasBeenSet;
+    bool m_dataSourceErrorCodeHasBeenSet = false;
 
     DataSourceSyncJobMetrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListDatasetImportJobsResult& ListDatasetImportJobsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DatasetImportJobs"))
   {
-    Array<JsonView> datasetImportJobsJsonList = jsonValue.GetArray("DatasetImportJobs");
+    Aws::Utils::Array<JsonView> datasetImportJobsJsonList = jsonValue.GetArray("DatasetImportJobs");
     for(unsigned datasetImportJobsIndex = 0; datasetImportJobsIndex < datasetImportJobsJsonList.GetLength(); ++datasetImportJobsIndex)
     {
       m_datasetImportJobs.push_back(datasetImportJobsJsonList[datasetImportJobsIndex].AsObject());

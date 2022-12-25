@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PartialMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PartialMatch
+  class PartialMatch
   {
   public:
-    PartialMatch();
-    PartialMatch(Aws::Utils::Json::JsonView jsonValue);
-    PartialMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PartialMatch();
+    AWS_FMS_API PartialMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PartialMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_reference;
-    bool m_referenceHasBeenSet;
+    bool m_referenceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetViolationReasons;
-    bool m_targetViolationReasonsHasBeenSet;
+    bool m_targetViolationReasonsHasBeenSet = false;
   };
 
 } // namespace Model

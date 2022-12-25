@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API CreateRecommendationTemplateRequest : public ResilienceHubRequest
+  class CreateRecommendationTemplateRequest : public ResilienceHubRequest
   {
   public:
-    CreateRecommendationTemplateRequest();
+    AWS_RESILIENCEHUB_API CreateRecommendationTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRecommendationTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -509,28 +509,28 @@ namespace Model
   private:
 
     Aws::String m_assessmentArn;
-    bool m_assessmentArnHasBeenSet;
+    bool m_assessmentArnHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     TemplateFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     Aws::Vector<RenderRecommendationType> m_recommendationTypes;
-    bool m_recommendationTypesHasBeenSet;
+    bool m_recommendationTypesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

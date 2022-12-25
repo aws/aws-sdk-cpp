@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/FileFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API FileFormatConfiguration
+  class FileFormatConfiguration
   {
   public:
-    FileFormatConfiguration();
-    FileFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FileFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API FileFormatConfiguration();
+    AWS_IOTANALYTICS_API FileFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API FileFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     JsonConfiguration m_jsonConfiguration;
-    bool m_jsonConfigurationHasBeenSet;
+    bool m_jsonConfigurationHasBeenSet = false;
 
     ParquetConfiguration m_parquetConfiguration;
-    bool m_parquetConfigurationHasBeenSet;
+    bool m_parquetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

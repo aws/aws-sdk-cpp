@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/Characters">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API Characters
+  class Characters
   {
   public:
-    Characters();
-    Characters(Aws::Utils::Json::JsonView jsonValue);
-    Characters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API Characters();
+    AWS_COMPREHENDMEDICAL_API Characters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Characters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_originalTextCharacters;
-    bool m_originalTextCharactersHasBeenSet;
+    bool m_originalTextCharactersHasBeenSet = false;
   };
 
 } // namespace Model

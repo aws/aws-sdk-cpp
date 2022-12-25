@@ -35,7 +35,7 @@ AutomaticTapeCreationPolicyInfo& AutomaticTapeCreationPolicyInfo::operator =(Jso
 {
   if(jsonValue.ValueExists("AutomaticTapeCreationRules"))
   {
-    Array<JsonView> automaticTapeCreationRulesJsonList = jsonValue.GetArray("AutomaticTapeCreationRules");
+    Aws::Utils::Array<JsonView> automaticTapeCreationRulesJsonList = jsonValue.GetArray("AutomaticTapeCreationRules");
     for(unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength(); ++automaticTapeCreationRulesIndex)
     {
       m_automaticTapeCreationRules.push_back(automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue AutomaticTapeCreationPolicyInfo::Jsonize() const
 
   if(m_automaticTapeCreationRulesHasBeenSet)
   {
-   Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
+   Aws::Utils::Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
    for(unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength(); ++automaticTapeCreationRulesIndex)
    {
      automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject(m_automaticTapeCreationRules[automaticTapeCreationRulesIndex].Jsonize());

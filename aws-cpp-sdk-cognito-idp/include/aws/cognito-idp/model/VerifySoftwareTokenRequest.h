@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenRequest : public CognitoIdentityProviderRequest
+  class VerifySoftwareTokenRequest : public CognitoIdentityProviderRequest
   {
   public:
-    VerifySoftwareTokenRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "VerifySoftwareToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_userCode;
-    bool m_userCodeHasBeenSet;
+    bool m_userCodeHasBeenSet = false;
 
     Aws::String m_friendlyDeviceName;
-    bool m_friendlyDeviceNameHasBeenSet;
+    bool m_friendlyDeviceNameHasBeenSet = false;
   };
 
 } // namespace Model

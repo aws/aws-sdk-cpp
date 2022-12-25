@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API CreateListenerRequest : public GlobalAcceleratorRequest
+  class CreateListenerRequest : public GlobalAcceleratorRequest
   {
   public:
-    CreateListenerRequest();
+    AWS_GLOBALACCELERATOR_API CreateListenerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateListener"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -164,8 +164,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -184,8 +184,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -204,8 +204,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -224,8 +224,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -244,8 +244,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -264,8 +264,8 @@ namespace Model
      * <p>Client affinity lets you direct all requests from a user to the same
      * endpoint, if you have stateful applications, regardless of the port and protocol
      * of the client request. Client affinity gives you control over whether to always
-     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
-     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * route each client to the same specific endpoint.</p> <p>Global Accelerator uses
+     * a consistent-flow hashing algorithm to choose the optimal endpoint for a
      * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
      * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
      * address, destination port, and protocol—to select the hash value, and then
@@ -332,19 +332,19 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     ClientAffinity m_clientAffinity;
-    bool m_clientAffinityHasBeenSet;
+    bool m_clientAffinityHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorOperator">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorOperator
+  class ConnectorOperator
   {
   public:
-    ConnectorOperator();
-    ConnectorOperator(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorOperator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorOperator();
+    AWS_APPFLOW_API ConnectorOperator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorOperator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -569,52 +569,52 @@ namespace Model
   private:
 
     AmplitudeConnectorOperator m_amplitude;
-    bool m_amplitudeHasBeenSet;
+    bool m_amplitudeHasBeenSet = false;
 
     DatadogConnectorOperator m_datadog;
-    bool m_datadogHasBeenSet;
+    bool m_datadogHasBeenSet = false;
 
     DynatraceConnectorOperator m_dynatrace;
-    bool m_dynatraceHasBeenSet;
+    bool m_dynatraceHasBeenSet = false;
 
     GoogleAnalyticsConnectorOperator m_googleAnalytics;
-    bool m_googleAnalyticsHasBeenSet;
+    bool m_googleAnalyticsHasBeenSet = false;
 
     InforNexusConnectorOperator m_inforNexus;
-    bool m_inforNexusHasBeenSet;
+    bool m_inforNexusHasBeenSet = false;
 
     MarketoConnectorOperator m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     S3ConnectorOperator m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceConnectorOperator m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowConnectorOperator m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     SingularConnectorOperator m_singular;
-    bool m_singularHasBeenSet;
+    bool m_singularHasBeenSet = false;
 
     SlackConnectorOperator m_slack;
-    bool m_slackHasBeenSet;
+    bool m_slackHasBeenSet = false;
 
     TrendmicroConnectorOperator m_trendmicro;
-    bool m_trendmicroHasBeenSet;
+    bool m_trendmicroHasBeenSet = false;
 
     VeevaConnectorOperator m_veeva;
-    bool m_veevaHasBeenSet;
+    bool m_veevaHasBeenSet = false;
 
     ZendeskConnectorOperator m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     SAPODataConnectorOperator m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
 
     Operator m_customConnector;
-    bool m_customConnectorHasBeenSet;
+    bool m_customConnectorHasBeenSet = false;
   };
 
 } // namespace Model

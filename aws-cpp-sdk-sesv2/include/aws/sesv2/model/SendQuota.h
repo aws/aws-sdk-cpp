@@ -28,40 +28,40 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendQuota">AWS API
    * Reference</a></p>
    */
-  class AWS_SESV2_API SendQuota
+  class SendQuota
   {
   public:
-    SendQuota();
-    SendQuota(Aws::Utils::Json::JsonView jsonValue);
-    SendQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SendQuota();
+    AWS_SESV2_API SendQuota(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SendQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline double GetMax24HourSend() const{ return m_max24HourSend; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline bool Max24HourSendHasBeenSet() const { return m_max24HourSendHasBeenSet; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline void SetMax24HourSend(double value) { m_max24HourSendHasBeenSet = true; m_max24HourSend = value; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline SendQuota& WithMax24HourSend(double value) { SetMax24HourSend(value); return *this;}
 
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     double m_max24HourSend;
-    bool m_max24HourSendHasBeenSet;
+    bool m_max24HourSendHasBeenSet = false;
 
     double m_maxSendRate;
-    bool m_maxSendRateHasBeenSet;
+    bool m_maxSendRateHasBeenSet = false;
 
     double m_sentLast24Hours;
-    bool m_sentLast24HoursHasBeenSet;
+    bool m_sentLast24HoursHasBeenSet = false;
   };
 
 } // namespace Model

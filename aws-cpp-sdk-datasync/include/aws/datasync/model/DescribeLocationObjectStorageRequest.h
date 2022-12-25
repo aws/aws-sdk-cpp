@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API DescribeLocationObjectStorageRequest : public DataSyncRequest
+  class DescribeLocationObjectStorageRequest : public DataSyncRequest
   {
   public:
-    DescribeLocationObjectStorageRequest();
+    AWS_DATASYNC_API DescribeLocationObjectStorageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,63 +32,63 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLocationObjectStorage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
   };
 
 } // namespace Model

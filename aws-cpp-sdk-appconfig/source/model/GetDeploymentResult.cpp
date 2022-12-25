@@ -128,7 +128,7 @@ GetDeploymentResult& GetDeploymentResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("EventLog"))
   {
-    Array<JsonView> eventLogJsonList = jsonValue.GetArray("EventLog");
+    Aws::Utils::Array<JsonView> eventLogJsonList = jsonValue.GetArray("EventLog");
     for(unsigned eventLogIndex = 0; eventLogIndex < eventLogJsonList.GetLength(); ++eventLogIndex)
     {
       m_eventLog.push_back(eventLogJsonList[eventLogIndex].AsObject());
@@ -151,6 +151,15 @@ GetDeploymentResult& GetDeploymentResult::operator =(const Aws::AmazonWebService
   {
     m_completedAt = jsonValue.GetString("CompletedAt");
 
+  }
+
+  if(jsonValue.ValueExists("AppliedExtensions"))
+  {
+    Aws::Utils::Array<JsonView> appliedExtensionsJsonList = jsonValue.GetArray("AppliedExtensions");
+    for(unsigned appliedExtensionsIndex = 0; appliedExtensionsIndex < appliedExtensionsJsonList.GetLength(); ++appliedExtensionsIndex)
+    {
+      m_appliedExtensions.push_back(appliedExtensionsJsonList[appliedExtensionsIndex].AsObject());
+    }
   }
 
 

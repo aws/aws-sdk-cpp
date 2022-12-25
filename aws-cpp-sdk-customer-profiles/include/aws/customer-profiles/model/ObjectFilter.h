@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ObjectFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ObjectFilter
+  class ObjectFilter
   {
   public:
-    ObjectFilter();
-    ObjectFilter(Aws::Utils::Json::JsonView jsonValue);
-    ObjectFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ObjectFilter();
+    AWS_CUSTOMERPROFILES_API ObjectFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ObjectFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

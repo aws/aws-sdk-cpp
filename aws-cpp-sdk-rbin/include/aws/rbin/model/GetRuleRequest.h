@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RECYCLEBIN_API GetRuleRequest : public RecycleBinRequest
+  class GetRuleRequest : public RecycleBinRequest
   {
   public:
-    GetRuleRequest();
+    AWS_RECYCLEBIN_API GetRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RECYCLEBIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

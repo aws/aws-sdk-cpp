@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingJobDefinition
+  class TrainingJobDefinition
   {
   public:
-    TrainingJobDefinition();
-    TrainingJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TrainingJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingJobDefinition();
+    AWS_SAGEMAKER_API TrainingJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -316,22 +316,22 @@ namespace Model
   private:
 
     TrainingInputMode m_trainingInputMode;
-    bool m_trainingInputModeHasBeenSet;
+    bool m_trainingInputModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-    bool m_hyperParametersHasBeenSet;
+    bool m_hyperParametersHasBeenSet = false;
 
     Aws::Vector<Channel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
-    bool m_resourceConfigHasBeenSet;
+    bool m_resourceConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
   };
 
 } // namespace Model

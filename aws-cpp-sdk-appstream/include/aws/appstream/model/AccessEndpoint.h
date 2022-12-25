@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AccessEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API AccessEndpoint
+  class AccessEndpoint
   {
   public:
-    AccessEndpoint();
-    AccessEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    AccessEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API AccessEndpoint();
+    AWS_APPSTREAM_API AccessEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API AccessEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     AccessEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_vpceId;
-    bool m_vpceIdHasBeenSet;
+    bool m_vpceIdHasBeenSet = false;
   };
 
 } // namespace Model

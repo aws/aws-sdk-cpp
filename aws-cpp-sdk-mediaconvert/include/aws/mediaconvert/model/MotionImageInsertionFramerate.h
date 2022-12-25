@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInsertionFramerate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MotionImageInsertionFramerate
+  class MotionImageInsertionFramerate
   {
   public:
-    MotionImageInsertionFramerate();
-    MotionImageInsertionFramerate(Aws::Utils::Json::JsonView jsonValue);
-    MotionImageInsertionFramerate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MotionImageInsertionFramerate();
+    AWS_MEDIACONVERT_API MotionImageInsertionFramerate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MotionImageInsertionFramerate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
   };
 
 } // namespace Model

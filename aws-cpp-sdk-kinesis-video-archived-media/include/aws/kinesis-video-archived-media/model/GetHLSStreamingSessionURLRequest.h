@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
+  class GetHLSStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    GetHLSStreamingSessionURLRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetHLSStreamingSessionURL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -966,31 +966,31 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     HLSPlaybackMode m_playbackMode;
-    bool m_playbackModeHasBeenSet;
+    bool m_playbackModeHasBeenSet = false;
 
     HLSFragmentSelector m_hLSFragmentSelector;
-    bool m_hLSFragmentSelectorHasBeenSet;
+    bool m_hLSFragmentSelectorHasBeenSet = false;
 
     ContainerFormat m_containerFormat;
-    bool m_containerFormatHasBeenSet;
+    bool m_containerFormatHasBeenSet = false;
 
     HLSDiscontinuityMode m_discontinuityMode;
-    bool m_discontinuityModeHasBeenSet;
+    bool m_discontinuityModeHasBeenSet = false;
 
     HLSDisplayFragmentTimestamp m_displayFragmentTimestamp;
-    bool m_displayFragmentTimestampHasBeenSet;
+    bool m_displayFragmentTimestampHasBeenSet = false;
 
     int m_expires;
-    bool m_expiresHasBeenSet;
+    bool m_expiresHasBeenSet = false;
 
     long long m_maxMediaPlaylistFragmentResults;
-    bool m_maxMediaPlaylistFragmentResultsHasBeenSet;
+    bool m_maxMediaPlaylistFragmentResultsHasBeenSet = false;
   };
 
 } // namespace Model

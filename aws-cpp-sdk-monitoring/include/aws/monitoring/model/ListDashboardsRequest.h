@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API ListDashboardsRequest : public CloudWatchRequest
+  class ListDashboardsRequest : public CloudWatchRequest
   {
   public:
-    ListDashboardsRequest();
+    AWS_CLOUDWATCH_API ListDashboardsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDashboards"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_dashboardNamePrefix;
-    bool m_dashboardNamePrefixHasBeenSet;
+    bool m_dashboardNamePrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

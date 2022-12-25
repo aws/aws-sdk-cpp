@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Cluster">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Cluster();
+    AWS_DAX_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -803,58 +803,58 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     int m_totalNodes;
-    bool m_totalNodesHasBeenSet;
+    bool m_totalNodesHasBeenSet = false;
 
     int m_activeNodes;
-    bool m_activeNodesHasBeenSet;
+    bool m_activeNodesHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Endpoint m_clusterDiscoveryEndpoint;
-    bool m_clusterDiscoveryEndpointHasBeenSet;
+    bool m_clusterDiscoveryEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodeIdsToRemove;
-    bool m_nodeIdsToRemoveHasBeenSet;
+    bool m_nodeIdsToRemoveHasBeenSet = false;
 
     Aws::Vector<Node> m_nodes;
-    bool m_nodesHasBeenSet;
+    bool m_nodesHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     Aws::String m_subnetGroup;
-    bool m_subnetGroupHasBeenSet;
+    bool m_subnetGroupHasBeenSet = false;
 
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     ParameterGroupStatus m_parameterGroup;
-    bool m_parameterGroupHasBeenSet;
+    bool m_parameterGroupHasBeenSet = false;
 
     SSEDescription m_sSEDescription;
-    bool m_sSEDescriptionHasBeenSet;
+    bool m_sSEDescriptionHasBeenSet = false;
 
     ClusterEndpointEncryptionType m_clusterEndpointEncryptionType;
-    bool m_clusterEndpointEncryptionTypeHasBeenSet;
+    bool m_clusterEndpointEncryptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

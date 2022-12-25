@@ -41,7 +41,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
     m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false)
+    m_enableExecuteCommandHasBeenSet(false),
+    m_serviceConnectConfigurationHasBeenSet(false)
 {
 }
 
@@ -69,7 +70,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_loadBalancersHasBeenSet)
   {
-   Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+   Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
    for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
    {
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
@@ -80,7 +81,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_serviceRegistriesHasBeenSet)
   {
-   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
    {
      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
@@ -108,7 +109,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
    {
      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
@@ -137,7 +138,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -148,7 +149,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_placementStrategyHasBeenSet)
   {
-   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   Aws::Utils::Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
    {
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
@@ -182,7 +183,7 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -205,6 +206,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_enableExecuteCommandHasBeenSet)
   {
    payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
+  }
+
+  if(m_serviceConnectConfigurationHasBeenSet)
+  {
+   payload.WithObject("serviceConnectConfiguration", m_serviceConnectConfiguration.Jsonize());
 
   }
 

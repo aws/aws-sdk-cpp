@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API JobInput
+  class JobInput
   {
   public:
-    JobInput();
-    JobInput(Aws::Utils::Json::JsonView jsonValue);
-    JobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API JobInput();
+    AWS_ELASTICTRANSCODER_API JobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API JobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -876,34 +876,34 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_aspectRatio;
-    bool m_aspectRatioHasBeenSet;
+    bool m_aspectRatioHasBeenSet = false;
 
     Aws::String m_interlaced;
-    bool m_interlacedHasBeenSet;
+    bool m_interlacedHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     TimeSpan m_timeSpan;
-    bool m_timeSpanHasBeenSet;
+    bool m_timeSpanHasBeenSet = false;
 
     InputCaptions m_inputCaptions;
-    bool m_inputCaptionsHasBeenSet;
+    bool m_inputCaptionsHasBeenSet = false;
 
     DetectedProperties m_detectedProperties;
-    bool m_detectedPropertiesHasBeenSet;
+    bool m_detectedPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

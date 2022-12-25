@@ -30,7 +30,7 @@ DescribeServiceActionExecutionParametersResult& DescribeServiceActionExecutionPa
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ServiceActionParameters"))
   {
-    Array<JsonView> serviceActionParametersJsonList = jsonValue.GetArray("ServiceActionParameters");
+    Aws::Utils::Array<JsonView> serviceActionParametersJsonList = jsonValue.GetArray("ServiceActionParameters");
     for(unsigned serviceActionParametersIndex = 0; serviceActionParametersIndex < serviceActionParametersJsonList.GetLength(); ++serviceActionParametersIndex)
     {
       m_serviceActionParameters.push_back(serviceActionParametersJsonList[serviceActionParametersIndex].AsObject());

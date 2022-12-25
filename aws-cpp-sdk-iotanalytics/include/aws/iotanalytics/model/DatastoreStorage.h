@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatastoreStorage
+  class DatastoreStorage
   {
   public:
-    DatastoreStorage();
-    DatastoreStorage(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatastoreStorage();
+    AWS_IOTANALYTICS_API DatastoreStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatastoreStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     ServiceManagedDatastoreS3Storage m_serviceManagedS3;
-    bool m_serviceManagedS3HasBeenSet;
+    bool m_serviceManagedS3HasBeenSet = false;
 
     CustomerManagedDatastoreS3Storage m_customerManagedS3;
-    bool m_customerManagedS3HasBeenSet;
+    bool m_customerManagedS3HasBeenSet = false;
 
     DatastoreIotSiteWiseMultiLayerStorage m_iotSiteWiseMultiLayerStorage;
-    bool m_iotSiteWiseMultiLayerStorageHasBeenSet;
+    bool m_iotSiteWiseMultiLayerStorageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,165 +5,76 @@
 
 #pragma once
 #include <aws/honeycode/Honeycode_EXPORTS.h>
-#include <aws/honeycode/HoneycodeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/honeycode/model/BatchCreateTableRowsResult.h>
-#include <aws/honeycode/model/BatchDeleteTableRowsResult.h>
-#include <aws/honeycode/model/BatchUpdateTableRowsResult.h>
-#include <aws/honeycode/model/BatchUpsertTableRowsResult.h>
-#include <aws/honeycode/model/DescribeTableDataImportJobResult.h>
-#include <aws/honeycode/model/GetScreenDataResult.h>
-#include <aws/honeycode/model/InvokeScreenAutomationResult.h>
-#include <aws/honeycode/model/ListTableColumnsResult.h>
-#include <aws/honeycode/model/ListTableRowsResult.h>
-#include <aws/honeycode/model/ListTablesResult.h>
-#include <aws/honeycode/model/ListTagsForResourceResult.h>
-#include <aws/honeycode/model/QueryTableRowsResult.h>
-#include <aws/honeycode/model/StartTableDataImportJobResult.h>
-#include <aws/honeycode/model/TagResourceResult.h>
-#include <aws/honeycode/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/honeycode/HoneycodeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Honeycode
 {
-
-namespace Model
-{
-        class BatchCreateTableRowsRequest;
-        class BatchDeleteTableRowsRequest;
-        class BatchUpdateTableRowsRequest;
-        class BatchUpsertTableRowsRequest;
-        class DescribeTableDataImportJobRequest;
-        class GetScreenDataRequest;
-        class InvokeScreenAutomationRequest;
-        class ListTableColumnsRequest;
-        class ListTableRowsRequest;
-        class ListTablesRequest;
-        class ListTagsForResourceRequest;
-        class QueryTableRowsRequest;
-        class StartTableDataImportJobRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<BatchCreateTableRowsResult, HoneycodeError> BatchCreateTableRowsOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteTableRowsResult, HoneycodeError> BatchDeleteTableRowsOutcome;
-        typedef Aws::Utils::Outcome<BatchUpdateTableRowsResult, HoneycodeError> BatchUpdateTableRowsOutcome;
-        typedef Aws::Utils::Outcome<BatchUpsertTableRowsResult, HoneycodeError> BatchUpsertTableRowsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableDataImportJobResult, HoneycodeError> DescribeTableDataImportJobOutcome;
-        typedef Aws::Utils::Outcome<GetScreenDataResult, HoneycodeError> GetScreenDataOutcome;
-        typedef Aws::Utils::Outcome<InvokeScreenAutomationResult, HoneycodeError> InvokeScreenAutomationOutcome;
-        typedef Aws::Utils::Outcome<ListTableColumnsResult, HoneycodeError> ListTableColumnsOutcome;
-        typedef Aws::Utils::Outcome<ListTableRowsResult, HoneycodeError> ListTableRowsOutcome;
-        typedef Aws::Utils::Outcome<ListTablesResult, HoneycodeError> ListTablesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, HoneycodeError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<QueryTableRowsResult, HoneycodeError> QueryTableRowsOutcome;
-        typedef Aws::Utils::Outcome<StartTableDataImportJobResult, HoneycodeError> StartTableDataImportJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, HoneycodeError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, HoneycodeError> UntagResourceOutcome;
-
-        typedef std::future<BatchCreateTableRowsOutcome> BatchCreateTableRowsOutcomeCallable;
-        typedef std::future<BatchDeleteTableRowsOutcome> BatchDeleteTableRowsOutcomeCallable;
-        typedef std::future<BatchUpdateTableRowsOutcome> BatchUpdateTableRowsOutcomeCallable;
-        typedef std::future<BatchUpsertTableRowsOutcome> BatchUpsertTableRowsOutcomeCallable;
-        typedef std::future<DescribeTableDataImportJobOutcome> DescribeTableDataImportJobOutcomeCallable;
-        typedef std::future<GetScreenDataOutcome> GetScreenDataOutcomeCallable;
-        typedef std::future<InvokeScreenAutomationOutcome> InvokeScreenAutomationOutcomeCallable;
-        typedef std::future<ListTableColumnsOutcome> ListTableColumnsOutcomeCallable;
-        typedef std::future<ListTableRowsOutcome> ListTableRowsOutcomeCallable;
-        typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<QueryTableRowsOutcome> QueryTableRowsOutcomeCallable;
-        typedef std::future<StartTableDataImportJobOutcome> StartTableDataImportJobOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class HoneycodeClient;
-
-    typedef std::function<void(const HoneycodeClient*, const Model::BatchCreateTableRowsRequest&, const Model::BatchCreateTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::BatchDeleteTableRowsRequest&, const Model::BatchDeleteTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::BatchUpdateTableRowsRequest&, const Model::BatchUpdateTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::BatchUpsertTableRowsRequest&, const Model::BatchUpsertTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpsertTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::DescribeTableDataImportJobRequest&, const Model::DescribeTableDataImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableDataImportJobResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::GetScreenDataRequest&, const Model::GetScreenDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetScreenDataResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::InvokeScreenAutomationRequest&, const Model::InvokeScreenAutomationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeScreenAutomationResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::ListTableColumnsRequest&, const Model::ListTableColumnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableColumnsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::ListTableRowsRequest&, const Model::ListTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::QueryTableRowsRequest&, const Model::QueryTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryTableRowsResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::StartTableDataImportJobRequest&, const Model::StartTableDataImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTableDataImportJobResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const HoneycodeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p> Amazon Honeycode is a fully managed service that allows you to quickly build
    * mobile and web apps for teams—without programming. Build Honeycode apps for
    * managing almost anything, like projects, customers, operations, approvals,
    * resources, and even your team. </p>
    */
-  class AWS_HONEYCODE_API HoneycodeClient : public Aws::Client::AWSJsonClient
+  class AWS_HONEYCODE_API HoneycodeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HoneycodeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        HoneycodeClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        HoneycodeClient(const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration(),
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        HoneycodeClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        HoneycodeClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         HoneycodeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        HoneycodeClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        HoneycodeClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        HoneycodeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~HoneycodeClient();
-
 
         /**
          * <p> The BatchCreateTableRows API allows you to create one or more rows at the
@@ -467,27 +378,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<HoneycodeEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchCreateTableRowsAsyncHelper(const Model::BatchCreateTableRowsRequest& request, const BatchCreateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteTableRowsAsyncHelper(const Model::BatchDeleteTableRowsRequest& request, const BatchDeleteTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchUpdateTableRowsAsyncHelper(const Model::BatchUpdateTableRowsRequest& request, const BatchUpdateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchUpsertTableRowsAsyncHelper(const Model::BatchUpsertTableRowsRequest& request, const BatchUpsertTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTableDataImportJobAsyncHelper(const Model::DescribeTableDataImportJobRequest& request, const DescribeTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetScreenDataAsyncHelper(const Model::GetScreenDataRequest& request, const GetScreenDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InvokeScreenAutomationAsyncHelper(const Model::InvokeScreenAutomationRequest& request, const InvokeScreenAutomationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTableColumnsAsyncHelper(const Model::ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTableRowsAsyncHelper(const Model::ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void QueryTableRowsAsyncHelper(const Model::QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartTableDataImportJobAsyncHelper(const Model::StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<HoneycodeClient>;
+      void init(const HoneycodeClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      HoneycodeClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<HoneycodeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Honeycode

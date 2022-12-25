@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API MetricFilter
+  class MetricFilter
   {
   public:
-    MetricFilter();
-    MetricFilter(Aws::Utils::Json::JsonView jsonValue);
-    MetricFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API MetricFilter();
+    AWS_CLOUDWATCHLOGS_API MetricFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API MetricFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,25 +150,25 @@ namespace Model
 
     /**
      * <p>The creation time of the metric filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the metric filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the metric filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the metric filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline MetricFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::Vector<MetricTransformation> m_metricTransformations;
-    bool m_metricTransformationsHasBeenSet;
+    bool m_metricTransformationsHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

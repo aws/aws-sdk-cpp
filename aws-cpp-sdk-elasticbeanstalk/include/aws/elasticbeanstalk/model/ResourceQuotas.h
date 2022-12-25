@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuotas">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ResourceQuotas
+  class ResourceQuotas
   {
   public:
-    ResourceQuotas();
-    ResourceQuotas(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceQuotas& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuotas();
+    AWS_ELASTICBEANSTALK_API ResourceQuotas(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuotas& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -198,19 +198,19 @@ namespace Model
   private:
 
     ResourceQuota m_applicationQuota;
-    bool m_applicationQuotaHasBeenSet;
+    bool m_applicationQuotaHasBeenSet = false;
 
     ResourceQuota m_applicationVersionQuota;
-    bool m_applicationVersionQuotaHasBeenSet;
+    bool m_applicationVersionQuotaHasBeenSet = false;
 
     ResourceQuota m_environmentQuota;
-    bool m_environmentQuotaHasBeenSet;
+    bool m_environmentQuotaHasBeenSet = false;
 
     ResourceQuota m_configurationTemplateQuota;
-    bool m_configurationTemplateQuotaHasBeenSet;
+    bool m_configurationTemplateQuotaHasBeenSet = false;
 
     ResourceQuota m_customPlatformQuota;
-    bool m_customPlatformQuotaHasBeenSet;
+    bool m_customPlatformQuotaHasBeenSet = false;
   };
 
 } // namespace Model

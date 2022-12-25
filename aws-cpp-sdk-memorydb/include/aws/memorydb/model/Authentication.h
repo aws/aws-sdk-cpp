@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Authentication">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API Authentication
+  class Authentication
   {
   public:
-    Authentication();
-    Authentication(Aws::Utils::Json::JsonView jsonValue);
-    Authentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Authentication();
+    AWS_MEMORYDB_API Authentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Authentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,10 +93,10 @@ namespace Model
   private:
 
     AuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_passwordCount;
-    bool m_passwordCountHasBeenSet;
+    bool m_passwordCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/BookingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API BookingOptions
+  class BookingOptions
   {
   public:
-    BookingOptions();
-    BookingOptions(Aws::Utils::Json::JsonView jsonValue);
-    BookingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API BookingOptions();
+    AWS_WORKMAIL_API BookingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API BookingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,13 +105,13 @@ namespace Model
   private:
 
     bool m_autoAcceptRequests;
-    bool m_autoAcceptRequestsHasBeenSet;
+    bool m_autoAcceptRequestsHasBeenSet = false;
 
     bool m_autoDeclineRecurringRequests;
-    bool m_autoDeclineRecurringRequestsHasBeenSet;
+    bool m_autoDeclineRecurringRequestsHasBeenSet = false;
 
     bool m_autoDeclineConflictingRequests;
-    bool m_autoDeclineConflictingRequestsHasBeenSet;
+    bool m_autoDeclineConflictingRequestsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ClusterSetting
+  class ClusterSetting
   {
   public:
-    ClusterSetting();
-    ClusterSetting(Aws::Utils::Json::JsonView jsonValue);
-    ClusterSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ClusterSetting();
+    AWS_ECS_API ClusterSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ClusterSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     ClusterSettingName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

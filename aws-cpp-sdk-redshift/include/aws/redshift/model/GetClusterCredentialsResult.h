@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API GetClusterCredentialsResult
+  class GetClusterCredentialsResult
   {
   public:
-    GetClusterCredentialsResult();
-    GetClusterCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetClusterCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetClusterCredentialsResult();
+    AWS_REDSHIFT_API GetClusterCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetClusterCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -29,15 +29,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixList">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PrefixList
+  class PrefixList
   {
   public:
-    PrefixList();
-    PrefixList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrefixList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrefixList();
+    AWS_EC2_API PrefixList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrefixList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_prefixListName;
-    bool m_prefixListNameHasBeenSet;
+    bool m_prefixListNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/Timer">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API Timer
+  class Timer
   {
   public:
-    Timer();
-    Timer(Aws::Utils::Json::JsonView jsonValue);
-    Timer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API Timer();
+    AWS_IOTEVENTSDATA_API Timer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Timer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

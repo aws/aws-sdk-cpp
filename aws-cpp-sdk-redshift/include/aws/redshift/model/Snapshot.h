@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Snapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Snapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API Snapshot();
+    AWS_REDSHIFT_API Snapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API Snapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -1351,106 +1351,106 @@ namespace Model
   private:
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Utils::DateTime m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_engineFullVersion;
-    bool m_engineFullVersionHasBeenSet;
+    bool m_engineFullVersionHasBeenSet = false;
 
     Aws::String m_snapshotType;
-    bool m_snapshotTypeHasBeenSet;
+    bool m_snapshotTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_encryptedWithHSM;
-    bool m_encryptedWithHSMHasBeenSet;
+    bool m_encryptedWithHSMHasBeenSet = false;
 
     Aws::Vector<AccountWithRestoreAccess> m_accountsWithRestoreAccess;
-    bool m_accountsWithRestoreAccessHasBeenSet;
+    bool m_accountsWithRestoreAccessHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     double m_totalBackupSizeInMegaBytes;
-    bool m_totalBackupSizeInMegaBytesHasBeenSet;
+    bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
 
     double m_actualIncrementalBackupSizeInMegaBytes;
-    bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet;
+    bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
 
     double m_backupProgressInMegaBytes;
-    bool m_backupProgressInMegaBytesHasBeenSet;
+    bool m_backupProgressInMegaBytesHasBeenSet = false;
 
     double m_currentBackupRateInMegaBytesPerSecond;
-    bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_estimatedSecondsToCompletion;
-    bool m_estimatedSecondsToCompletionHasBeenSet;
+    bool m_estimatedSecondsToCompletionHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_restorableNodeTypes;
-    bool m_restorableNodeTypesHasBeenSet;
+    bool m_restorableNodeTypesHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRemainingDays;
-    bool m_manualSnapshotRemainingDaysHasBeenSet;
+    bool m_manualSnapshotRemainingDaysHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotRetentionStartTime;
-    bool m_snapshotRetentionStartTimeHasBeenSet;
+    bool m_snapshotRetentionStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

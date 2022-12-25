@@ -30,7 +30,7 @@ GetTableVersionsResult& GetTableVersionsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableVersions"))
   {
-    Array<JsonView> tableVersionsJsonList = jsonValue.GetArray("TableVersions");
+    Aws::Utils::Array<JsonView> tableVersionsJsonList = jsonValue.GetArray("TableVersions");
     for(unsigned tableVersionsIndex = 0; tableVersionsIndex < tableVersionsJsonList.GetLength(); ++tableVersionsIndex)
     {
       m_tableVersions.push_back(tableVersionsJsonList[tableVersionsIndex].AsObject());

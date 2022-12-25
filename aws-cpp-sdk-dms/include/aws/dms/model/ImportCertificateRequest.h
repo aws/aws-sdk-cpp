@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ImportCertificateRequest : public DatabaseMigrationServiceRequest
+  class ImportCertificateRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    ImportCertificateRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ImportCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_certificateWallet;
-    bool m_certificateWalletHasBeenSet;
+    bool m_certificateWalletHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

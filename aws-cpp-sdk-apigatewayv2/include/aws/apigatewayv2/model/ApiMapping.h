@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ApiMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API ApiMapping
+  class ApiMapping
   {
   public:
-    ApiMapping();
-    ApiMapping(Aws::Utils::Json::JsonView jsonValue);
-    ApiMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API ApiMapping();
+    AWS_APIGATEWAYV2_API ApiMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API ApiMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiMappingId;
-    bool m_apiMappingIdHasBeenSet;
+    bool m_apiMappingIdHasBeenSet = false;
 
     Aws::String m_apiMappingKey;
-    bool m_apiMappingKeyHasBeenSet;
+    bool m_apiMappingKeyHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

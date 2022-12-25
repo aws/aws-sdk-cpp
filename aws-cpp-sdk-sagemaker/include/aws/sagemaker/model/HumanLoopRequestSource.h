@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanLoopRequestSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HumanLoopRequestSource
+  class HumanLoopRequestSource
   {
   public:
-    HumanLoopRequestSource();
-    HumanLoopRequestSource(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopRequestSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HumanLoopRequestSource();
+    AWS_SAGEMAKER_API HumanLoopRequestSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HumanLoopRequestSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     AwsManagedHumanLoopRequestSource m_awsManagedHumanLoopRequestSource;
-    bool m_awsManagedHumanLoopRequestSourceHasBeenSet;
+    bool m_awsManagedHumanLoopRequestSourceHasBeenSet = false;
   };
 
 } // namespace Model

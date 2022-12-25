@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ImageSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ImageSource
+  class ImageSource
   {
   public:
-    ImageSource();
-    ImageSource(Aws::Utils::Json::JsonView jsonValue);
-    ImageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ImageSource();
+    AWS_LOOKOUTFORVISION_API ImageSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ImageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

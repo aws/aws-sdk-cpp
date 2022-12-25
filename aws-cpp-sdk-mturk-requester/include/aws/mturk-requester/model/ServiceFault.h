@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ServiceFault">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ServiceFault
+  class ServiceFault
   {
   public:
-    ServiceFault();
-    ServiceFault(Aws::Utils::Json::JsonView jsonValue);
-    ServiceFault& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ServiceFault();
+    AWS_MTURK_API ServiceFault(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ServiceFault& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_turkErrorCode;
-    bool m_turkErrorCodeHasBeenSet;
+    bool m_turkErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

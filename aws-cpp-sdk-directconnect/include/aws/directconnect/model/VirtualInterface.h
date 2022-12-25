@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API VirtualInterface
+  class VirtualInterface
   {
   public:
-    VirtualInterface();
-    VirtualInterface(Aws::Utils::Json::JsonView jsonValue);
-    VirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API VirtualInterface();
+    AWS_DIRECTCONNECT_API VirtualInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API VirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1177,82 +1177,82 @@ namespace Model
   private:
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_virtualInterfaceType;
-    bool m_virtualInterfaceTypeHasBeenSet;
+    bool m_virtualInterfaceTypeHasBeenSet = false;
 
     Aws::String m_virtualInterfaceName;
-    bool m_virtualInterfaceNameHasBeenSet;
+    bool m_virtualInterfaceNameHasBeenSet = false;
 
     int m_vlan;
-    bool m_vlanHasBeenSet;
+    bool m_vlanHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     VirtualInterfaceState m_virtualInterfaceState;
-    bool m_virtualInterfaceStateHasBeenSet;
+    bool m_virtualInterfaceStateHasBeenSet = false;
 
     Aws::String m_customerRouterConfig;
-    bool m_customerRouterConfigHasBeenSet;
+    bool m_customerRouterConfigHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     bool m_jumboFrameCapable;
-    bool m_jumboFrameCapableHasBeenSet;
+    bool m_jumboFrameCapableHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
-    bool m_routeFilterPrefixesHasBeenSet;
+    bool m_routeFilterPrefixesHasBeenSet = false;
 
     Aws::Vector<BGPPeer> m_bgpPeers;
-    bool m_bgpPeersHasBeenSet;
+    bool m_bgpPeersHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_awsDeviceV2;
-    bool m_awsDeviceV2HasBeenSet;
+    bool m_awsDeviceV2HasBeenSet = false;
 
     Aws::String m_awsLogicalDeviceId;
-    bool m_awsLogicalDeviceIdHasBeenSet;
+    bool m_awsLogicalDeviceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_siteLinkEnabled;
-    bool m_siteLinkEnabledHasBeenSet;
+    bool m_siteLinkEnabledHasBeenSet = false;
   };
 
 } // namespace Model

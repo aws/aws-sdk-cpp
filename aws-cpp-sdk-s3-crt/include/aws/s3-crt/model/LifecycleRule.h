@@ -36,14 +36,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRule">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API LifecycleRule
+  class LifecycleRule
   {
   public:
-    LifecycleRule();
-    LifecycleRule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LifecycleRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LifecycleRule();
+    AWS_S3CRT_API LifecycleRule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LifecycleRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -386,28 +386,28 @@ namespace Model
   private:
 
     LifecycleExpiration m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     LifecycleRuleFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     ExpirationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Transition> m_transitions;
-    bool m_transitionsHasBeenSet;
+    bool m_transitionsHasBeenSet = false;
 
     Aws::Vector<NoncurrentVersionTransition> m_noncurrentVersionTransitions;
-    bool m_noncurrentVersionTransitionsHasBeenSet;
+    bool m_noncurrentVersionTransitionsHasBeenSet = false;
 
     NoncurrentVersionExpiration m_noncurrentVersionExpiration;
-    bool m_noncurrentVersionExpirationHasBeenSet;
+    bool m_noncurrentVersionExpirationHasBeenSet = false;
 
     AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
-    bool m_abortIncompleteMultipartUploadHasBeenSet;
+    bool m_abortIncompleteMultipartUploadHasBeenSet = false;
   };
 
 } // namespace Model

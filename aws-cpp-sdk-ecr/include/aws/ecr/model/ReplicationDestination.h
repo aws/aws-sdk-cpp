@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ReplicationDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ReplicationDestination
+  class ReplicationDestination
   {
   public:
-    ReplicationDestination();
-    ReplicationDestination(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ReplicationDestination();
+    AWS_ECR_API ReplicationDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ReplicationDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

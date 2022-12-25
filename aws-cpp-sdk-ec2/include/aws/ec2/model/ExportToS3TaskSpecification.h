@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3TaskSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ExportToS3TaskSpecification
+  class ExportToS3TaskSpecification
   {
   public:
-    ExportToS3TaskSpecification();
-    ExportToS3TaskSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExportToS3TaskSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3TaskSpecification();
+    AWS_EC2_API ExportToS3TaskSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3TaskSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -111,57 +111,81 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
-     * account <code>vm-import-export@amazon.com</code>.</p>
+     * exist and have an access control list (ACL) attached that specifies the
+     * Region-specific canonical account ID for the <code>Grantee</code>. For more
+     * information about the ACL to your S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
@@ -217,16 +241,16 @@ namespace Model
   private:
 
     ContainerFormat m_containerFormat;
-    bool m_containerFormatHasBeenSet;
+    bool m_containerFormatHasBeenSet = false;
 
     DiskImageFormat m_diskImageFormat;
-    bool m_diskImageFormatHasBeenSet;
+    bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

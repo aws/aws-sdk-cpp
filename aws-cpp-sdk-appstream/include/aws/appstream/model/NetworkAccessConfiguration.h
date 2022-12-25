@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/NetworkAccessConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API NetworkAccessConfiguration
+  class NetworkAccessConfiguration
   {
   public:
-    NetworkAccessConfiguration();
-    NetworkAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NetworkAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API NetworkAccessConfiguration();
+    AWS_APPSTREAM_API NetworkAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API NetworkAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_eniPrivateIpAddress;
-    bool m_eniPrivateIpAddressHasBeenSet;
+    bool m_eniPrivateIpAddressHasBeenSet = false;
 
     Aws::String m_eniId;
-    bool m_eniIdHasBeenSet;
+    bool m_eniIdHasBeenSet = false;
   };
 
 } // namespace Model

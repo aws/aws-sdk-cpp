@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleAndOperator">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API LifecycleRuleAndOperator
+  class LifecycleRuleAndOperator
   {
   public:
-    LifecycleRuleAndOperator();
-    LifecycleRuleAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LifecycleRuleAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LifecycleRuleAndOperator();
+    AWS_S3CRT_API LifecycleRuleAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LifecycleRuleAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_objectSizeGreaterThan;
-    bool m_objectSizeGreaterThanHasBeenSet;
+    bool m_objectSizeGreaterThanHasBeenSet = false;
 
     long long m_objectSizeLessThan;
-    bool m_objectSizeLessThanHasBeenSet;
+    bool m_objectSizeLessThanHasBeenSet = false;
   };
 
 } // namespace Model

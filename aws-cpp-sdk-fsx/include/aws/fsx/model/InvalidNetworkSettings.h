@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/InvalidNetworkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API InvalidNetworkSettings
+  class InvalidNetworkSettings
   {
   public:
-    InvalidNetworkSettings();
-    InvalidNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
-    InvalidNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API InvalidNetworkSettings();
+    AWS_FSX_API InvalidNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API InvalidNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_invalidSubnetId;
-    bool m_invalidSubnetIdHasBeenSet;
+    bool m_invalidSubnetIdHasBeenSet = false;
 
     Aws::String m_invalidSecurityGroupId;
-    bool m_invalidSecurityGroupIdHasBeenSet;
+    bool m_invalidSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_invalidRouteTableId;
-    bool m_invalidRouteTableIdHasBeenSet;
+    bool m_invalidRouteTableIdHasBeenSet = false;
   };
 
 } // namespace Model
