@@ -41,6 +41,8 @@
 #include <aws/memorydb/model/DescribeEventsRequest.h>
 #include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
 #include <aws/memorydb/model/DescribeParametersRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesOfferingsRequest.h>
 #include <aws/memorydb/model/DescribeServiceUpdatesRequest.h>
 #include <aws/memorydb/model/DescribeSnapshotsRequest.h>
 #include <aws/memorydb/model/DescribeSubnetGroupsRequest.h>
@@ -48,6 +50,7 @@
 #include <aws/memorydb/model/FailoverShardRequest.h>
 #include <aws/memorydb/model/ListAllowedNodeTypeUpdatesRequest.h>
 #include <aws/memorydb/model/ListTagsRequest.h>
+#include <aws/memorydb/model/PurchaseReservedNodesOfferingRequest.h>
 #include <aws/memorydb/model/ResetParameterGroupRequest.h>
 #include <aws/memorydb/model/TagResourceRequest.h>
 #include <aws/memorydb/model/UntagResourceRequest.h>
@@ -664,6 +667,54 @@ void MemoryDBClient::DescribeParametersAsync(const DescribeParametersRequest& re
     } );
 }
 
+DescribeReservedNodesOutcome MemoryDBClient::DescribeReservedNodes(const DescribeReservedNodesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeReservedNodesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReservedNodesOutcomeCallable MemoryDBClient::DescribeReservedNodesCallable(const DescribeReservedNodesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedNodesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedNodes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MemoryDBClient::DescribeReservedNodesAsync(const DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReservedNodes(request), context);
+    } );
+}
+
+DescribeReservedNodesOfferingsOutcome MemoryDBClient::DescribeReservedNodesOfferings(const DescribeReservedNodesOfferingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedNodesOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedNodesOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeReservedNodesOfferingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReservedNodesOfferingsOutcomeCallable MemoryDBClient::DescribeReservedNodesOfferingsCallable(const DescribeReservedNodesOfferingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReservedNodesOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReservedNodesOfferings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MemoryDBClient::DescribeReservedNodesOfferingsAsync(const DescribeReservedNodesOfferingsRequest& request, const DescribeReservedNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReservedNodesOfferings(request), context);
+    } );
+}
+
 DescribeServiceUpdatesOutcome MemoryDBClient::DescribeServiceUpdates(const DescribeServiceUpdatesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeServiceUpdates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -829,6 +880,30 @@ void MemoryDBClient::ListTagsAsync(const ListTagsRequest& request, const ListTag
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListTags(request), context);
+    } );
+}
+
+PurchaseReservedNodesOfferingOutcome MemoryDBClient::PurchaseReservedNodesOffering(const PurchaseReservedNodesOfferingRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseReservedNodesOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PurchaseReservedNodesOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PurchaseReservedNodesOfferingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PurchaseReservedNodesOfferingOutcomeCallable MemoryDBClient::PurchaseReservedNodesOfferingCallable(const PurchaseReservedNodesOfferingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PurchaseReservedNodesOfferingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseReservedNodesOffering(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MemoryDBClient::PurchaseReservedNodesOfferingAsync(const PurchaseReservedNodesOfferingRequest& request, const PurchaseReservedNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PurchaseReservedNodesOffering(request), context);
     } );
 }
 
