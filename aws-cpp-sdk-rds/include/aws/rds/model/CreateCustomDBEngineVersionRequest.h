@@ -275,6 +275,55 @@ namespace Model
 
 
     /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
+     * SQL Server.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
      * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
      * <p>If you have an existing symmetric encryption KMS key in your account, you can
@@ -626,6 +675,9 @@ namespace Model
 
     Aws::String m_databaseInstallationFilesS3Prefix;
     bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
     bool m_kMSKeyIdHasBeenSet = false;

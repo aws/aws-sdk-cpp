@@ -430,46 +430,30 @@ namespace Model
 
 
     /**
-     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
-     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
-     * To enable in-transit encryption on a cluster you must set
-     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
-     * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
-     * later.</p>
+     * <p>A flag that enables in-transit encryption when set to true.</p> <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon
+     * VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
     /**
-     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
-     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
-     * To enable in-transit encryption on a cluster you must set
-     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
-     * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
-     * later.</p>
+     * <p>A flag that enables in-transit encryption when set to true.</p> <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon
+     * VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
-     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
-     * To enable in-transit encryption on a cluster you must set
-     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
-     * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
-     * later.</p>
+     * <p>A flag that enables in-transit encryption when set to true.</p> <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon
+     * VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
     /**
-     * <p>A flag that enables in-transit encryption when set to true. You cannot modify
-     * the value of <code>TransitEncryptionEnabled</code> after the cluster is created.
-     * To enable in-transit encryption on a cluster you must set
-     * <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
-     * <p> <b>Required:</b> Only available when creating a replication group in an
-     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
-     * later.</p>
+     * <p>A flag that enables in-transit encryption when set to true.</p> <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon
+     * VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
      */
     inline GlobalReplicationGroup& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 

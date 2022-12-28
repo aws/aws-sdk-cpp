@@ -17,6 +17,7 @@
 #include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
+#include <aws/elasticache/model/TransitEncryptionMode.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
@@ -807,45 +808,33 @@ namespace Model
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * <p> <b>Required:</b> Only available when creating a replication group in an
+     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * <p> <b>Required:</b> Only available when creating a replication group in an
+     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * <p> <b>Required:</b> Only available when creating a replication group in an
+     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * later.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
-     * or later.</p> <p>Default: <code>false</code> </p>
+     * <p> <b>Required:</b> Only available when creating a replication group in an
+     * Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or
+     * later.</p> <p>Default: <code>false</code> </p>
      */
     inline ReplicationGroup& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
@@ -1197,30 +1186,30 @@ namespace Model
 
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions. </p>
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions. </p>
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions. </p>
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions. </p>
+     * parameter is disabled for previous versions.  </p>
      */
     inline ReplicationGroup& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1328,6 +1317,43 @@ namespace Model
      */
     inline ReplicationGroup& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline const TransitEncryptionMode& GetTransitEncryptionMode() const{ return m_transitEncryptionMode; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline bool TransitEncryptionModeHasBeenSet() const { return m_transitEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline void SetTransitEncryptionMode(const TransitEncryptionMode& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline void SetTransitEncryptionMode(TransitEncryptionMode&& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = std::move(value); }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline ReplicationGroup& WithTransitEncryptionMode(const TransitEncryptionMode& value) { SetTransitEncryptionMode(value); return *this;}
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline ReplicationGroup& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1416,6 +1442,9 @@ namespace Model
 
     IpDiscovery m_ipDiscovery;
     bool m_ipDiscoveryHasBeenSet = false;
+
+    TransitEncryptionMode m_transitEncryptionMode;
+    bool m_transitEncryptionModeHasBeenSet = false;
   };
 
 } // namespace Model

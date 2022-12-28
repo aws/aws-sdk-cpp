@@ -30,7 +30,7 @@ namespace Model
    * <p>An assertion rule enforces that, when you change a routing control state,
    * that the criteria that you set in the rule configuration is met. Otherwise, the
    * change to the routing control is not accepted. For example, the criteria might
-   * be that at least one routing control state is On after the transation so that
+   * be that at least one routing control state is On after the transaction so that
    * traffic continues to flow to at least one cell for the application. This ensures
    * that you avoid a fail-open scenario.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/AssertionRule">AWS
@@ -212,7 +212,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
@@ -222,7 +222,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
@@ -232,7 +232,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
@@ -242,7 +242,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
@@ -252,7 +252,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
@@ -262,7 +262,7 @@ namespace Model
      * <p>The criteria that you set for specific assertion routing controls
      * (AssertedControls) that designate how many routing control states must be ON as
      * the result of a transaction. For example, if you have three assertion routing
-     * controls, you might specify atleast 2 for your rule configuration. This means
+     * controls, you might specify ATLEAST 2 for your rule configuration. This means
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */

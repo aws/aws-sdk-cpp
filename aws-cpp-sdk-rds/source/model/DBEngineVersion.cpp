@@ -27,6 +27,8 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
+    m_imageHasBeenSet(false),
+    m_dBEngineMediaTypeHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
     m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
@@ -64,6 +66,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineDescriptionHasBeenSet(false),
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
+    m_imageHasBeenSet(false),
+    m_dBEngineMediaTypeHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
     m_supportedNcharCharacterSetsHasBeenSet(false),
     m_validUpgradeTargetHasBeenSet(false),
@@ -136,6 +140,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_defaultCharacterSet = defaultCharacterSetNode;
       m_defaultCharacterSetHasBeenSet = true;
+    }
+    XmlNode imageNode = resultNode.FirstChild("Image");
+    if(!imageNode.IsNull())
+    {
+      m_image = imageNode;
+      m_imageHasBeenSet = true;
+    }
+    XmlNode dBEngineMediaTypeNode = resultNode.FirstChild("DBEngineMediaType");
+    if(!dBEngineMediaTypeNode.IsNull())
+    {
+      m_dBEngineMediaType = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineMediaTypeNode.GetText());
+      m_dBEngineMediaTypeHasBeenSet = true;
     }
     XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
     if(!supportedCharacterSetsNode.IsNull())
@@ -350,6 +366,18 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       m_defaultCharacterSet.OutputToStream(oStream, defaultCharacterSetLocationAndMemberSs.str().c_str());
   }
 
+  if(m_imageHasBeenSet)
+  {
+      Aws::StringStream imageLocationAndMemberSs;
+      imageLocationAndMemberSs << location << index << locationValue << ".Image";
+      m_image.OutputToStream(oStream, imageLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_dBEngineMediaTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBEngineMediaType=" << StringUtils::URLEncode(m_dBEngineMediaType.c_str()) << "&";
+  }
+
   if(m_supportedCharacterSetsHasBeenSet)
   {
       unsigned supportedCharacterSetsIdx = 1;
@@ -533,6 +561,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       Aws::String defaultCharacterSetLocationAndMember(location);
       defaultCharacterSetLocationAndMember += ".DefaultCharacterSet";
       m_defaultCharacterSet.OutputToStream(oStream, defaultCharacterSetLocationAndMember.c_str());
+  }
+  if(m_imageHasBeenSet)
+  {
+      Aws::String imageLocationAndMember(location);
+      imageLocationAndMember += ".Image";
+      m_image.OutputToStream(oStream, imageLocationAndMember.c_str());
+  }
+  if(m_dBEngineMediaTypeHasBeenSet)
+  {
+      oStream << location << ".DBEngineMediaType=" << StringUtils::URLEncode(m_dBEngineMediaType.c_str()) << "&";
   }
   if(m_supportedCharacterSetsHasBeenSet)
   {

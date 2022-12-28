@@ -43,7 +43,11 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_removeUserGroupsHasBeenSet(false),
     m_logDeliveryConfigurationsHasBeenSet(false),
     m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
+    m_ipDiscoveryHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
 }
 
@@ -203,6 +207,16 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_ipDiscoveryHasBeenSet)
   {
     ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+    ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+    ss << "TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 
   ss << "Version=2015-02-02";

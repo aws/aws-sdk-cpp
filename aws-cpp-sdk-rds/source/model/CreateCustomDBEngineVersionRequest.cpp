@@ -15,6 +15,7 @@ CreateCustomDBEngineVersionRequest::CreateCustomDBEngineVersionRequest() :
     m_engineVersionHasBeenSet(false),
     m_databaseInstallationFilesS3BucketNameHasBeenSet(false),
     m_databaseInstallationFilesS3PrefixHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_manifestHasBeenSet(false),
@@ -44,6 +45,11 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const
   if(m_databaseInstallationFilesS3PrefixHasBeenSet)
   {
     ss << "DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+    ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
   if(m_kMSKeyIdHasBeenSet)

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
+#include <aws/elasticache/model/TransitEncryptionMode.h>
 #include <aws/elasticache/model/NodeGroupConfiguration.h>
 #include <aws/elasticache/model/Tag.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
@@ -1238,49 +1239,49 @@ namespace Model
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group. Must be Redis.</p>
+     * group. The value must be set to <code>Redis</code>.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -2427,11 +2428,8 @@ namespace Model
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
-     * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
+     * <p>This parameter is valid only if the <code>Engine</code> parameter is
+     * <code>redis</code>, the <code>EngineVersion</code> parameter is
      * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
      * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
@@ -2445,11 +2443,8 @@ namespace Model
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
-     * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
+     * <p>This parameter is valid only if the <code>Engine</code> parameter is
+     * <code>redis</code>, the <code>EngineVersion</code> parameter is
      * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
      * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
@@ -2463,11 +2458,8 @@ namespace Model
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
-     * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
+     * <p>This parameter is valid only if the <code>Engine</code> parameter is
+     * <code>redis</code>, the <code>EngineVersion</code> parameter is
      * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
      * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
@@ -2481,11 +2473,8 @@ namespace Model
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
-     * the cluster is created. To enable in-transit encryption on a cluster you must
-     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
-     * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
+     * <p>This parameter is valid only if the <code>Engine</code> parameter is
+     * <code>redis</code>, the <code>EngineVersion</code> parameter is
      * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
      * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
@@ -2815,6 +2804,97 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline const TransitEncryptionMode& GetTransitEncryptionMode() const{ return m_transitEncryptionMode; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline bool TransitEncryptionModeHasBeenSet() const { return m_transitEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline void SetTransitEncryptionMode(const TransitEncryptionMode& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline void SetTransitEncryptionMode(TransitEncryptionMode&& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = std::move(value); }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline CreateReplicationGroupRequest& WithTransitEncryptionMode(const TransitEncryptionMode& value) { SetTransitEncryptionMode(value); return *this;}
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p> <p>When setting
+     * <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same
+     * request, to allow both encrypted and unencrypted connections at the same time.
+     * Once you migrate all your Redis clients to use encrypted connections you can
+     * modify the value to <code>required</code> to allow encrypted connections
+     * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
+     * is a two-step process that requires you to first set the
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
+     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     */
+    inline CreateReplicationGroupRequest& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -2924,6 +3004,9 @@ namespace Model
 
     IpDiscovery m_ipDiscovery;
     bool m_ipDiscoveryHasBeenSet = false;
+
+    TransitEncryptionMode m_transitEncryptionMode;
+    bool m_transitEncryptionModeHasBeenSet = false;
   };
 
 } // namespace Model
