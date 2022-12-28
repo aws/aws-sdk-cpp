@@ -27,14 +27,14 @@ namespace Model
 {
 
   /**
-   * <p>A gating rule verifies that a gating routing control or set of gating
-   * rounting controls, evaluates as true, based on a rule configuration that you
-   * specify, which allows a set of routing control state changes to complete.</p>
-   * <p>For example, if you specify one gating routing control and you set the Type
-   * in the rule configuration to OR, that indicates that you must set the gating
-   * routing control to On for the rule to evaluate as true; that is, for the gating
-   * control "switch" to be "On". When you do that, then you can update the routing
-   * control states for the target routing controls that you specify in the gating
+   * <p>A gating rule verifies that a gating routing control or set of gating routing
+   * controls, evaluates as true, based on a rule configuration that you specify,
+   * which allows a set of routing control state changes to complete.</p> <p>For
+   * example, if you specify one gating routing control and you set the Type in the
+   * rule configuration to OR, that indicates that you must set the gating routing
+   * control to On for the rule to evaluate as true; that is, for the gating control
+   * "switch" to be "On". When you do that, then you can update the routing control
+   * states for the target routing controls that you specify in the gating
    * rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GatingRule">AWS
    * API Reference</a></p>
@@ -212,44 +212,44 @@ namespace Model
 
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline const RuleConfig& GetRuleConfig() const{ return m_ruleConfig; }
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline bool RuleConfigHasBeenSet() const { return m_ruleConfigHasBeenSet; }
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline void SetRuleConfig(const RuleConfig& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = value; }
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline void SetRuleConfig(RuleConfig&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::move(value); }
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline GatingRule& WithRuleConfig(const RuleConfig& value) { SetRuleConfig(value); return *this;}
 
     /**
-     * <p>The criteria that you set for gating routing controls that designates how
-     * many of the routing control states must be ON to allow you to update target
-     * routing control states.</p>
+     * <p>The criteria that you set for gating routing controls that designate how many
+     * of the routing control states must be ON to allow you to update target routing
+     * control states.</p>
      */
     inline GatingRule& WithRuleConfig(RuleConfig&& value) { SetRuleConfig(std::move(value)); return *this;}
 
@@ -337,7 +337,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetControls() const{ return m_targetControls; }
@@ -347,7 +347,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline bool TargetControlsHasBeenSet() const { return m_targetControlsHasBeenSet; }
@@ -357,7 +357,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline void SetTargetControls(const Aws::Vector<Aws::String>& value) { m_targetControlsHasBeenSet = true; m_targetControls = value; }
@@ -367,7 +367,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline void SetTargetControls(Aws::Vector<Aws::String>&& value) { m_targetControlsHasBeenSet = true; m_targetControls = std::move(value); }
@@ -377,7 +377,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline GatingRule& WithTargetControls(const Aws::Vector<Aws::String>& value) { SetTargetControls(value); return *this;}
@@ -387,7 +387,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline GatingRule& WithTargetControls(Aws::Vector<Aws::String>&& value) { SetTargetControls(std::move(value)); return *this;}
@@ -397,7 +397,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline GatingRule& AddTargetControls(const Aws::String& value) { m_targetControlsHasBeenSet = true; m_targetControls.push_back(value); return *this; }
@@ -407,7 +407,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline GatingRule& AddTargetControls(Aws::String&& value) { m_targetControlsHasBeenSet = true; m_targetControls.push_back(std::move(value)); return *this; }
@@ -417,7 +417,7 @@ namespace Model
      * states can only be updated if the rule configuration that you specify evaluates
      * to true for the gating routing control. As a simple example, if you have a
      * single gating control, it acts as an overall "on/off" switch for a set of target
-     * routing controls. You can use this to manually override automated fail over, for
+     * routing controls. You can use this to manually override automated failover, for
      * example.</p>
      */
     inline GatingRule& AddTargetControls(const char* value) { m_targetControlsHasBeenSet = true; m_targetControls.push_back(value); return *this; }

@@ -22,7 +22,8 @@ Attachment::Attachment() :
     m_subnetIdHasBeenSet(false),
     m_endpointIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Attachment::Attachment(JsonView jsonValue) :
     m_subnetIdHasBeenSet(false),
     m_endpointIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue Attachment::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", AttachmentStatusMapper::GetNameForAttachmentStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
+
   }
 
   return payload;

@@ -160,8 +160,8 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline const AttachmentStatus& GetStatus() const{ return m_status; }
 
@@ -171,8 +171,8 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -182,8 +182,8 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline void SetStatus(const AttachmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -193,8 +193,8 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -204,8 +204,8 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline Attachment& WithStatus(const AttachmentStatus& value) { SetStatus(value); return *this;}
 
@@ -215,10 +215,107 @@ namespace Model
      * states that are reported in the <code>Config</code> settings. When this value is
      * <code>READY</code>, the endpoint is available and configured properly to handle
      * network traffic. When the endpoint isn't available for traffic, this value will
-     * reflect its state, for example <code>CREATING</code>, <code>DELETING</code>, or
-     * <code>FAILED</code>.</p>
+     * reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.</p>
      */
     inline Attachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline Attachment& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline Attachment& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>If Network Firewall fails to create or delete the firewall endpoint in the
+     * subnet, it populates this with the reason for the failure and how to resolve it.
+     * Depending on the error, it can take as many as 15 minutes to populate this
+     * field. For more information about the errors and solutions available for this
+     * field, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+     * firewall endpoint failures</a> in the <i>Network Firewall Developer
+     * Guide</i>.</p>
+     */
+    inline Attachment& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
 
@@ -230,6 +327,9 @@ namespace Model
 
     AttachmentStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

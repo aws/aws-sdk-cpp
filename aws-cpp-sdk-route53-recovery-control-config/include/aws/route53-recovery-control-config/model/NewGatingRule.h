@@ -178,43 +178,43 @@ namespace Model
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline const RuleConfig& GetRuleConfig() const{ return m_ruleConfig; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline bool RuleConfigHasBeenSet() const { return m_ruleConfigHasBeenSet; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline void SetRuleConfig(const RuleConfig& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = value; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline void SetRuleConfig(RuleConfig&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::move(value); }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline NewGatingRule& WithRuleConfig(const RuleConfig& value) { SetRuleConfig(value); return *this;}
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many control states must be ON to allow you to change (set
-     * or unset) the target control states.</p>
+     * that designate how many control states must be ON to allow you to change (set or
+     * unset) the target control states.</p>
      */
     inline NewGatingRule& WithRuleConfig(RuleConfig&& value) { SetRuleConfig(std::move(value)); return *this;}
 
@@ -223,7 +223,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -236,7 +236,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -249,7 +249,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -262,7 +262,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -275,7 +275,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -288,7 +288,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -301,7 +301,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -314,7 +314,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls
@@ -327,7 +327,7 @@ namespace Model
      * <p>Routing controls that can only be set or unset if the specified RuleConfig
      * evaluates to true for the specified GatingControls. For example, say you have
      * three gating controls, one for each of three Amazon Web Services Regions. Now
-     * you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     * you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      * change (set or unset) the routing controls that you have specified as
      * TargetControls if that rule evaluates to true.</p> <p>In other words, your
      * ability to change the routing controls that you have specified as TargetControls

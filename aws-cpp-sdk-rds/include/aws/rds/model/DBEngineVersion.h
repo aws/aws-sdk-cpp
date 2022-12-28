@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/CharacterSet.h>
+#include <aws/rds/model/CustomDBEngineVersionAMI.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -293,6 +294,86 @@ namespace Model
      * specified.</p>
      */
     inline DBEngineVersion& WithDefaultCharacterSet(CharacterSet&& value) { SetDefaultCharacterSet(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline const CustomDBEngineVersionAMI& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline void SetImage(const CustomDBEngineVersionAMI& value) { m_imageHasBeenSet = true; m_image = value; }
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline void SetImage(CustomDBEngineVersionAMI&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline DBEngineVersion& WithImage(const CustomDBEngineVersionAMI& value) { SetImage(value); return *this;}
+
+    /**
+     * <p>The EC2 image</p>
+     */
+    inline DBEngineVersion& WithImage(CustomDBEngineVersionAMI&& value) { SetImage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline const Aws::String& GetDBEngineMediaType() const{ return m_dBEngineMediaType; }
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline bool DBEngineMediaTypeHasBeenSet() const { return m_dBEngineMediaTypeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline void SetDBEngineMediaType(const Aws::String& value) { m_dBEngineMediaTypeHasBeenSet = true; m_dBEngineMediaType = value; }
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline void SetDBEngineMediaType(Aws::String&& value) { m_dBEngineMediaTypeHasBeenSet = true; m_dBEngineMediaType = std::move(value); }
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline void SetDBEngineMediaType(const char* value) { m_dBEngineMediaTypeHasBeenSet = true; m_dBEngineMediaType.assign(value); }
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline DBEngineVersion& WithDBEngineMediaType(const Aws::String& value) { SetDBEngineMediaType(value); return *this;}
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline DBEngineVersion& WithDBEngineMediaType(Aws::String&& value) { SetDBEngineMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>A value that indicates the source media provider of the AMI based on the
+     * usage operation. Applicable for RDS Custom for SQL Server.</p>
+     */
+    inline DBEngineVersion& WithDBEngineMediaType(const char* value) { SetDBEngineMediaType(value); return *this;}
 
 
     /**
@@ -1316,6 +1397,12 @@ namespace Model
 
     CharacterSet m_defaultCharacterSet;
     bool m_defaultCharacterSetHasBeenSet = false;
+
+    CustomDBEngineVersionAMI m_image;
+    bool m_imageHasBeenSet = false;
+
+    Aws::String m_dBEngineMediaType;
+    bool m_dBEngineMediaTypeHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
     bool m_supportedCharacterSetsHasBeenSet = false;

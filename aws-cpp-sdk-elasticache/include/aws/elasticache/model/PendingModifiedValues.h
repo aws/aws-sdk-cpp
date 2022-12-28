@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AuthTokenUpdateStatus.h>
+#include <aws/elasticache/model/TransitEncryptionMode.h>
 #include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
@@ -280,6 +281,64 @@ namespace Model
      */
     inline PendingModifiedValues& AddLogDeliveryConfigurations(PendingLogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true.</p>
+     */
+    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true.</p>
+     */
+    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true.</p>
+     */
+    inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to true.</p>
+     */
+    inline PendingModifiedValues& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
+
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline const TransitEncryptionMode& GetTransitEncryptionMode() const{ return m_transitEncryptionMode; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline bool TransitEncryptionModeHasBeenSet() const { return m_transitEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline void SetTransitEncryptionMode(const TransitEncryptionMode& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline void SetTransitEncryptionMode(TransitEncryptionMode&& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = std::move(value); }
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline PendingModifiedValues& WithTransitEncryptionMode(const TransitEncryptionMode& value) { SetTransitEncryptionMode(value); return *this;}
+
+    /**
+     * <p>A setting that allows you to migrate your clients to use in-transit
+     * encryption, with no downtime.</p>
+     */
+    inline PendingModifiedValues& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+
   private:
 
     int m_numCacheNodes;
@@ -299,6 +358,12 @@ namespace Model
 
     Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
     bool m_logDeliveryConfigurationsHasBeenSet = false;
+
+    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
+
+    TransitEncryptionMode m_transitEncryptionMode;
+    bool m_transitEncryptionModeHasBeenSet = false;
   };
 
 } // namespace Model
