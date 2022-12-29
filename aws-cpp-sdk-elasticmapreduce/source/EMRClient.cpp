@@ -40,6 +40,7 @@
 #include <aws/elasticmapreduce/model/DescribeStudioRequest.h>
 #include <aws/elasticmapreduce/model/GetAutoTerminationPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/GetClusterSessionCredentialsRequest.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
@@ -653,6 +654,30 @@ void EMRClient::GetBlockPublicAccessConfigurationAsync(const GetBlockPublicAcces
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetBlockPublicAccessConfiguration(request), context);
+    } );
+}
+
+GetClusterSessionCredentialsOutcome EMRClient::GetClusterSessionCredentials(const GetClusterSessionCredentialsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClusterSessionCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClusterSessionCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetClusterSessionCredentialsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetClusterSessionCredentialsOutcomeCallable EMRClient::GetClusterSessionCredentialsCallable(const GetClusterSessionCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClusterSessionCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClusterSessionCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::GetClusterSessionCredentialsAsync(const GetClusterSessionCredentialsRequest& request, const GetClusterSessionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetClusterSessionCredentials(request), context);
     } );
 }
 

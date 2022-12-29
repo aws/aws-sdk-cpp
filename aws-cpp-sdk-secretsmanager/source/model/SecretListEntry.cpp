@@ -31,6 +31,7 @@ SecretListEntry::SecretListEntry() :
     m_lastChangedDateHasBeenSet(false),
     m_lastAccessedDateHasBeenSet(false),
     m_deletedDateHasBeenSet(false),
+    m_nextRotationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
     m_owningServiceHasBeenSet(false),
@@ -52,6 +53,7 @@ SecretListEntry::SecretListEntry(JsonView jsonValue) :
     m_lastChangedDateHasBeenSet(false),
     m_lastAccessedDateHasBeenSet(false),
     m_deletedDateHasBeenSet(false),
+    m_nextRotationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
     m_owningServiceHasBeenSet(false),
@@ -138,6 +140,13 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     m_deletedDate = jsonValue.GetDouble("DeletedDate");
 
     m_deletedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextRotationDate"))
+  {
+    m_nextRotationDate = jsonValue.GetDouble("NextRotationDate");
+
+    m_nextRotationDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -255,6 +264,11 @@ JsonValue SecretListEntry::Jsonize() const
   if(m_deletedDateHasBeenSet)
   {
    payload.WithDouble("DeletedDate", m_deletedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_nextRotationDateHasBeenSet)
+  {
+   payload.WithDouble("NextRotationDate", m_nextRotationDate.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

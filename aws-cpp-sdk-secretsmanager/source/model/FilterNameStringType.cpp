@@ -25,6 +25,7 @@ namespace Aws
         static const int tag_key_HASH = HashingUtils::HashString("tag-key");
         static const int tag_value_HASH = HashingUtils::HashString("tag-value");
         static const int primary_region_HASH = HashingUtils::HashString("primary-region");
+        static const int owning_service_HASH = HashingUtils::HashString("owning-service");
         static const int all_HASH = HashingUtils::HashString("all");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == primary_region_HASH)
           {
             return FilterNameStringType::primary_region;
+          }
+          else if (hashCode == owning_service_HASH)
+          {
+            return FilterNameStringType::owning_service;
           }
           else if (hashCode == all_HASH)
           {
@@ -79,6 +84,8 @@ namespace Aws
             return "tag-value";
           case FilterNameStringType::primary_region:
             return "primary-region";
+          case FilterNameStringType::owning_service:
+            return "owning-service";
           case FilterNameStringType::all:
             return "all";
           default:

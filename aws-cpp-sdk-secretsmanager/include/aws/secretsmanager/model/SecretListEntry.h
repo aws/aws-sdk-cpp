@@ -551,6 +551,25 @@ namespace Model
     inline SecretListEntry& WithDeletedDate(Aws::Utils::DateTime&& value) { SetDeletedDate(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
+
+    
+    inline bool NextRotationDateHasBeenSet() const { return m_nextRotationDateHasBeenSet; }
+
+    
+    inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = value; }
+
+    
+    inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = std::move(value); }
+
+    
+    inline SecretListEntry& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
+
+    
+    inline SecretListEntry& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
+
+
     /**
      * <p>The list of user-defined tags associated with the secret. To add tags to a
      * secret, use <a
@@ -899,6 +918,9 @@ namespace Model
 
     Aws::Utils::DateTime m_deletedDate;
     bool m_deletedDateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_nextRotationDate;
+    bool m_nextRotationDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -34,6 +34,7 @@
 #include <aws/elasticmapreduce/model/DescribeStudioResult.h>
 #include <aws/elasticmapreduce/model/GetAutoTerminationPolicyResult.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationResult.h>
+#include <aws/elasticmapreduce/model/GetClusterSessionCredentialsResult.h>
 #include <aws/elasticmapreduce/model/GetManagedScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/GetStudioSessionMappingResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
@@ -118,6 +119,7 @@ namespace Aws
       class DescribeStudioRequest;
       class GetAutoTerminationPolicyRequest;
       class GetBlockPublicAccessConfigurationRequest;
+      class GetClusterSessionCredentialsRequest;
       class GetManagedScalingPolicyRequest;
       class GetStudioSessionMappingRequest;
       class ListBootstrapActionsRequest;
@@ -172,6 +174,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeStudioResult, EMRError> DescribeStudioOutcome;
       typedef Aws::Utils::Outcome<GetAutoTerminationPolicyResult, EMRError> GetAutoTerminationPolicyOutcome;
       typedef Aws::Utils::Outcome<GetBlockPublicAccessConfigurationResult, EMRError> GetBlockPublicAccessConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetClusterSessionCredentialsResult, EMRError> GetClusterSessionCredentialsOutcome;
       typedef Aws::Utils::Outcome<GetManagedScalingPolicyResult, EMRError> GetManagedScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<GetStudioSessionMappingResult, EMRError> GetStudioSessionMappingOutcome;
       typedef Aws::Utils::Outcome<ListBootstrapActionsResult, EMRError> ListBootstrapActionsOutcome;
@@ -226,6 +229,7 @@ namespace Aws
       typedef std::future<DescribeStudioOutcome> DescribeStudioOutcomeCallable;
       typedef std::future<GetAutoTerminationPolicyOutcome> GetAutoTerminationPolicyOutcomeCallable;
       typedef std::future<GetBlockPublicAccessConfigurationOutcome> GetBlockPublicAccessConfigurationOutcomeCallable;
+      typedef std::future<GetClusterSessionCredentialsOutcome> GetClusterSessionCredentialsOutcomeCallable;
       typedef std::future<GetManagedScalingPolicyOutcome> GetManagedScalingPolicyOutcomeCallable;
       typedef std::future<GetStudioSessionMappingOutcome> GetStudioSessionMappingOutcomeCallable;
       typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
@@ -283,6 +287,7 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::DescribeStudioRequest&, const Model::DescribeStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStudioResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::GetAutoTerminationPolicyRequest&, const Model::GetAutoTerminationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoTerminationPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::GetBlockPublicAccessConfigurationRequest&, const Model::GetBlockPublicAccessConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlockPublicAccessConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::GetClusterSessionCredentialsRequest&, const Model::GetClusterSessionCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterSessionCredentialsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::GetManagedScalingPolicyRequest&, const Model::GetManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::GetStudioSessionMappingRequest&, const Model::GetStudioSessionMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioSessionMappingResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBootstrapActionsResponseReceivedHandler;

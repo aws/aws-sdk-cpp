@@ -120,38 +120,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline CreateStudioRequest& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>Specifies whether the Studio authenticates users using IAM or Amazon Web
-     * Services SSO.</p>
+     * <p>Specifies whether the Studio authenticates users using IAM or IAM Identity
+     * Center.</p>
      */
     inline CreateStudioRequest& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
 
@@ -337,73 +337,65 @@ namespace Model
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline const Aws::String& GetUserRole() const{ return m_userRole; }
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline bool UserRoleHasBeenSet() const { return m_userRoleHasBeenSet; }
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline void SetUserRole(const Aws::String& value) { m_userRoleHasBeenSet = true; m_userRole = value; }
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline void SetUserRole(Aws::String&& value) { m_userRoleHasBeenSet = true; m_userRole = std::move(value); }
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline void SetUserRole(const char* value) { m_userRoleHasBeenSet = true; m_userRole.assign(value); }
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(const Aws::String& value) { SetUserRole(value); return *this;}
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(Aws::String&& value) { SetUserRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM user role that users and groups assume when logged in to an Amazon
-     * EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web
-     * Services SSO authentication. The permissions attached to the
-     * <code>UserRole</code> can be scoped down for each user or group using session
-     * policies.</p>
+     * EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity
+     * Center authentication. The permissions attached to the <code>UserRole</code> can
+     * be scoped down for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(const char* value) { SetUserRole(value); return *this;}
 
