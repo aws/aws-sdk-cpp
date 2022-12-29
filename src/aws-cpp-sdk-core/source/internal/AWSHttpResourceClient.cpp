@@ -406,7 +406,11 @@ namespace Aws
 
         void InitEC2MetadataClient()
         {
-            if (s_ec2metadataClient || (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) == "true"))
+            /// In ClickHouse we load EC2 metadata by ourselves - see DB::S3::ClientFactory::create() in src/IO/S3Common.cpp.
+            /// We have to do that because we need PocoHTTPClientConfiguration (not just Aws::Client::ClientConfiguration) to download things in ClickHouse.
+            /// Here we just disable loading EC2 metadata by aws-sdk-core.
+            #if 0
+            if (s_ec2metadataClient)
             {
                 return;
             }
@@ -443,6 +447,7 @@ namespace Aws
             }
             AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Using IMDS endpoint: " << ec2MetadataServiceEndpoint);
             s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, ec2MetadataServiceEndpoint.c_str());
+            #endif
         }
 
         void CleanupEC2MetadataClient()
