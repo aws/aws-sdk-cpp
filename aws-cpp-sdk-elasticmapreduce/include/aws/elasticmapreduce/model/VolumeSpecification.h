@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline VolumeSpecification& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline VolumeSpecification& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
-     * <p>The volume type. Volume types supported are gp2, io1, and standard.</p>
+     * <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and
+     * standard.</p>
      */
     inline VolumeSpecification& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 

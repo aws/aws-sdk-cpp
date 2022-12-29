@@ -453,6 +453,22 @@ namespace Model
     inline DescribeSecretResult& WithDeletedDate(Aws::Utils::DateTime&& value) { SetDeletedDate(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
+
+    
+    inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDate = value; }
+
+    
+    inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDate = std::move(value); }
+
+    
+    inline DescribeSecretResult& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
+
+    
+    inline DescribeSecretResult& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
+
+
     /**
      * <p>The list of tags attached to the secret. To add tags to a secret, use
      * <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
@@ -922,6 +938,8 @@ namespace Model
     Aws::Utils::DateTime m_lastAccessedDate;
 
     Aws::Utils::DateTime m_deletedDate;
+
+    Aws::Utils::DateTime m_nextRotationDate;
 
     Aws::Vector<Tag> m_tags;
 
