@@ -1,3 +1,4 @@
+fix--IDO-parser.json
 # Using official gcc docker image
 FROM gcc:7.4
 
