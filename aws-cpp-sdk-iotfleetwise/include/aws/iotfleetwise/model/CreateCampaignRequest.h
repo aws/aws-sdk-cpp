@@ -260,42 +260,42 @@ namespace Model
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = value; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = std::move(value); }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline CreateCampaignRequest& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
      * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
-     * expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>
+     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline CreateCampaignRequest& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
 
