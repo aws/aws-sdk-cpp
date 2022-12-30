@@ -59,7 +59,9 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_networkType(NetworkType::NOT_SET),
     m_networkTypeHasBeenSet(false),
     m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
+    m_ipDiscoveryHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
 }
 
@@ -290,6 +292,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_ipDiscoveryHasBeenSet)
   {
     ss << "IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+  }
+
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+    ss << "TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 
   ss << "Version=2015-02-02";

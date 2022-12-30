@@ -37,6 +37,19 @@ namespace Model
     AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    
+    inline bool GetIncludePlannedDeletion() const{ return m_includePlannedDeletion; }
+
+    
+    inline bool IncludePlannedDeletionHasBeenSet() const { return m_includePlannedDeletionHasBeenSet; }
+
+    
+    inline void SetIncludePlannedDeletion(bool value) { m_includePlannedDeletionHasBeenSet = true; m_includePlannedDeletion = value; }
+
+    
+    inline ListSecretsRequest& WithIncludePlannedDeletion(bool value) { SetIncludePlannedDeletion(value); return *this;}
+
+
     /**
      * <p>The number of results to include in the response.</p> <p>If there are more
      * results available, in the response, Secrets Manager includes
@@ -199,6 +212,9 @@ namespace Model
     inline ListSecretsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 
   private:
+
+    bool m_includePlannedDeletion;
+    bool m_includePlannedDeletionHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

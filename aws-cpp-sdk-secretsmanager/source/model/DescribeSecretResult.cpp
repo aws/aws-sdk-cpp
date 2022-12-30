@@ -96,6 +96,12 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("NextRotationDate"))
+  {
+    m_nextRotationDate = jsonValue.GetDouble("NextRotationDate");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

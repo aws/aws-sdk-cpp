@@ -28,7 +28,11 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
     m_authTokenStatusHasBeenSet(false),
     m_userGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
 }
 
@@ -40,7 +44,11 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
     m_authTokenStatusHasBeenSet(false),
     m_userGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +101,18 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
 
       m_logDeliveryConfigurationsHasBeenSet = true;
     }
+    XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
+    if(!transitEncryptionEnabledNode.IsNull())
+    {
+      m_transitEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionEnabledNode.GetText()).c_str()).c_str());
+      m_transitEncryptionEnabledHasBeenSet = true;
+    }
+    XmlNode transitEncryptionModeNode = resultNode.FirstChild("TransitEncryptionMode");
+    if(!transitEncryptionModeNode.IsNull())
+    {
+      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
+      m_transitEncryptionModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -140,6 +160,16 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       }
   }
 
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -177,6 +207,14 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
         logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
+  }
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+      oStream << location << ".TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
+  }
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+      oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 }
 

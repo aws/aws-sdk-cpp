@@ -459,6 +459,41 @@ namespace MemoryDB
         virtual void DescribeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about reserved nodes for this account, or about a
+         * specified reserved node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReservedNodesOutcome DescribeReservedNodes(const Model::DescribeReservedNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReservedNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReservedNodesOutcomeCallable DescribeReservedNodesCallable(const Model::DescribeReservedNodesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeReservedNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReservedNodesAsync(const Model::DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists available reserved node offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReservedNodesOfferingsOutcome DescribeReservedNodesOfferings(const Model::DescribeReservedNodesOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReservedNodesOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReservedNodesOfferingsOutcomeCallable DescribeReservedNodesOfferingsCallable(const Model::DescribeReservedNodesOfferingsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeReservedNodesOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReservedNodesOfferingsAsync(const Model::DescribeReservedNodesOfferingsRequest& request, const DescribeReservedNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeServiceUpdates">AWS
          * API Reference</a></p>
@@ -592,6 +627,24 @@ namespace MemoryDB
          * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows you to purchase a reserved node offering. Reserved nodes are not
+         * eligible for cancellation and are non-refundable.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PurchaseReservedNodesOfferingOutcome PurchaseReservedNodesOffering(const Model::PurchaseReservedNodesOfferingRequest& request) const;
+
+        /**
+         * A Callable wrapper for PurchaseReservedNodesOffering that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PurchaseReservedNodesOfferingOutcomeCallable PurchaseReservedNodesOfferingCallable(const Model::PurchaseReservedNodesOfferingRequest& request) const;
+
+        /**
+         * An Async wrapper for PurchaseReservedNodesOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PurchaseReservedNodesOfferingAsync(const Model::PurchaseReservedNodesOfferingRequest& request, const PurchaseReservedNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters of a parameter group to the engine or system default

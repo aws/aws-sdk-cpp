@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListSecretsRequest::ListSecretsRequest() : 
+    m_includePlannedDeletion(false),
+    m_includePlannedDeletionHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -25,6 +27,12 @@ ListSecretsRequest::ListSecretsRequest() :
 Aws::String ListSecretsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_includePlannedDeletionHasBeenSet)
+  {
+   payload.WithBool("IncludePlannedDeletion", m_includePlannedDeletion);
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

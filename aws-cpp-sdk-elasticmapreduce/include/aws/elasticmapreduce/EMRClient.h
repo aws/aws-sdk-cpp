@@ -120,21 +120,18 @@ namespace EMR
          * Hive data warehouse) or complex, you may require more than 256 steps to process
          * your data. You can bypass the 256-step limitation in various ways, including
          * using SSH to connect to the master node and submitting queries directly to the
-         * software running on the master node, such as Hive and Hadoop. For more
-         * information on how to do this, see <a
-         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
-         * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
-         * the master node of the cluster or in Amazon S3. Each step is performed by the
-         * main function of the main class of the JAR file. The main class can be specified
-         * either in the manifest of the JAR or by using the MainFunction parameter of the
-         * step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be
-         * considered complete, the main function must exit with a zero exit code and all
-         * Hadoop jobs started while the step was running must have completed and run
-         * successfully.</p> <p>You can only add steps to a cluster that is in one of the
-         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> 
-         * <p>The string values passed into <code>HadoopJarStep</code> object cannot exceed
-         * a total of 10240 characters.</p> <p><h3>See Also:</h3>   <a
+         * software running on the master node, such as Hive and Hadoop.</p> <p>A step
+         * specifies the location of a JAR file stored either on the master node of the
+         * cluster or in Amazon S3. Each step is performed by the main function of the main
+         * class of the JAR file. The main class can be specified either in the manifest of
+         * the JAR or by using the MainFunction parameter of the step.</p> <p>Amazon EMR
+         * executes each step in the order listed. For a step to be considered complete,
+         * the main function must exit with a zero exit code and all Hadoop jobs started
+         * while the step was running must have completed and run successfully.</p> <p>You
+         * can only add steps to a cluster that is in one of the following states:
+         * STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>  <p>The string values
+         * passed into <code>HadoopJarStep</code> object cannot exceed a total of 10240
+         * characters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
          * API Reference</a></p>
          */
@@ -236,7 +233,7 @@ namespace EMR
          * <p>Maps a user or group to the Amazon EMR Studio specified by
          * <code>StudioId</code>, and applies a session policy to refine Studio permissions
          * for that user or group. Use <code>CreateStudioSessionMapping</code> to assign
-         * users to a Studio when you use Amazon Web Services SSO authentication. For
+         * users to a Studio when you use IAM Identity Center authentication. For
          * instructions on how to assign users to a Studio when you use IAM authentication,
          * see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
@@ -455,6 +452,27 @@ namespace EMR
          * An Async wrapper for GetBlockPublicAccessConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBlockPublicAccessConfigurationAsync(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides Temporary, basic HTTP credentials that are associated with a given
+         * runtime IAM role and used by a cluster with fine-grained access control
+         * activated. You can use these credentials to connect to cluster endpoints that
+         * support username-based and password-based authentication.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClusterSessionCredentialsOutcome GetClusterSessionCredentials(const Model::GetClusterSessionCredentialsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClusterSessionCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetClusterSessionCredentialsOutcomeCallable GetClusterSessionCredentialsCallable(const Model::GetClusterSessionCredentialsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetClusterSessionCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetClusterSessionCredentialsAsync(const Model::GetClusterSessionCredentialsRequest& request, const GetClusterSessionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Fetches the attached managed scaling policy for an Amazon EMR cluster.
@@ -948,14 +966,11 @@ namespace EMR
          * than 256 steps to process your data. You can bypass the 256-step limitation in
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
-         * Hive and Hadoop. For more information on how to do this, see <a
-         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
-         * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
-         * store your results.</p>  <p>The instance fleets configuration is available
-         * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
-         * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
-         * parameters, but not both.</p> <p><h3>See Also:</h3>   <a
+         * Hive and Hadoop.</p> <p>For long-running clusters, we recommend that you
+         * periodically store your results.</p>  <p>The instance fleets configuration
+         * is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+         * versions. The RunJobFlow request can contain InstanceFleets parameters or
+         * InstanceGroups parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          */

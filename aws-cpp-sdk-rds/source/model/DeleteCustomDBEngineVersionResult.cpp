@@ -78,6 +78,16 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     {
       m_defaultCharacterSet = defaultCharacterSetNode;
     }
+    XmlNode imageNode = resultNode.FirstChild("Image");
+    if(!imageNode.IsNull())
+    {
+      m_image = imageNode;
+    }
+    XmlNode dBEngineMediaTypeNode = resultNode.FirstChild("DBEngineMediaType");
+    if(!dBEngineMediaTypeNode.IsNull())
+    {
+      m_dBEngineMediaType = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineMediaTypeNode.GetText());
+    }
     XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
     if(!supportedCharacterSetsNode.IsNull())
     {

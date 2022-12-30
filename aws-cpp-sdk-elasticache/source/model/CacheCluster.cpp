@@ -61,7 +61,9 @@ CacheCluster::CacheCluster() :
     m_networkType(NetworkType::NOT_SET),
     m_networkTypeHasBeenSet(false),
     m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
+    m_ipDiscoveryHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
 }
 
@@ -106,7 +108,9 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_networkType(NetworkType::NOT_SET),
     m_networkTypeHasBeenSet(false),
     m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
+    m_ipDiscoveryHasBeenSet(false),
+    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
+    m_transitEncryptionModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -333,6 +337,12 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipDiscoveryNode.GetText()).c_str()).c_str());
       m_ipDiscoveryHasBeenSet = true;
     }
+    XmlNode transitEncryptionModeNode = resultNode.FirstChild("TransitEncryptionMode");
+    if(!transitEncryptionModeNode.IsNull())
+    {
+      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
+      m_transitEncryptionModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -532,6 +542,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
   }
 
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+
 }
 
 void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -695,6 +710,10 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_ipDiscoveryHasBeenSet)
   {
       oStream << location << ".IpDiscovery=" << IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery) << "&";
+  }
+  if(m_transitEncryptionModeHasBeenSet)
+  {
+      oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 }
 

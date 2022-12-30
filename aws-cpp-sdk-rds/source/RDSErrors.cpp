@@ -135,6 +135,7 @@ static const int S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString
 static const int INVALID_BLUE_GREEN_DEPLOYMENT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidBlueGreenDeploymentStateFault");
 static const int D_B_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.DBSecurityGroup");
 static const int CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CustomDBEngineVersionAlreadyExistsFault");
+static const int EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("Ec2ImagePropertiesNotSupportedFault");
 static const int INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBClusterCapacityFault");
 static const int POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT_HASH = HashingUtils::HashString("PointInTimeRestoreNotEnabled");
 static const int SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SourceNotFound");
@@ -736,6 +737,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT), false);
     return true;
   }
+  else if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT), false);
+    return true;
+  }
   else if (hashCode == INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT), false);
@@ -756,17 +762,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
     return true;
   }
-  else if (hashCode == INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT_HASH)
+  if (hashCode == INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT), false);
+    return true;
+  }
+  else if (hashCode == CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT), false);
     return true;

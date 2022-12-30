@@ -21,6 +21,7 @@ namespace Model
     tag_key,
     tag_value,
     primary_region,
+    owning_service,
     all
   };
 

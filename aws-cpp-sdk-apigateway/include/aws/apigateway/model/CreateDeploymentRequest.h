@@ -233,38 +233,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline const CacheClusterSize& GetCacheClusterSize() const{ return m_cacheClusterSize; }
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline bool CacheClusterSizeHasBeenSet() const { return m_cacheClusterSizeHasBeenSet; }
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline void SetCacheClusterSize(const CacheClusterSize& value) { m_cacheClusterSizeHasBeenSet = true; m_cacheClusterSize = value; }
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline void SetCacheClusterSize(CacheClusterSize&& value) { m_cacheClusterSizeHasBeenSet = true; m_cacheClusterSize = std::move(value); }
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline CreateDeploymentRequest& WithCacheClusterSize(const CacheClusterSize& value) { SetCacheClusterSize(value); return *this;}
 
     /**
-     * <p>Specifies the cache cluster size for the Stage resource specified in the
-     * input, if a cache cluster is enabled.</p>
+     * <p>The stage's cache capacity in GB. For more information about choosing a cache
+     * size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling
+     * API caching to enhance responsiveness</a>.</p>
      */
     inline CreateDeploymentRequest& WithCacheClusterSize(CacheClusterSize&& value) { SetCacheClusterSize(std::move(value)); return *this;}
 

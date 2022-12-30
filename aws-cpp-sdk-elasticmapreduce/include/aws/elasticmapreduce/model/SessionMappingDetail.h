@@ -127,7 +127,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline const Aws::String& GetIdentityName() const{ return m_identityName; }
 
@@ -136,7 +136,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
 
@@ -145,7 +145,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
 
@@ -154,7 +154,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
 
@@ -163,7 +163,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
 
@@ -172,7 +172,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline SessionMappingDetail& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
 
@@ -181,7 +181,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline SessionMappingDetail& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
 
@@ -190,7 +190,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>.</p>
+     * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
     inline SessionMappingDetail& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
 
