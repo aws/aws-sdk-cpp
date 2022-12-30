@@ -155,6 +155,7 @@ static const int DISTRIBUTION_NOT_DISABLED_HASH = HashingUtils::HashString("Dist
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgument");
 static const int TOO_MANY_KEY_GROUPS_HASH = HashingUtils::HashString("TooManyKeyGroups");
 static const int PUBLIC_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString("PublicKeyAlreadyExists");
+static const int TOO_MANY_REMOVE_HEADERS_IN_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("TooManyRemoveHeadersInResponseHeadersPolicy");
 static const int REALTIME_LOG_CONFIG_IN_USE_HASH = HashingUtils::HashString("RealtimeLogConfigInUse");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityInUse");
 static const int TOO_MANY_CUSTOM_HEADERS_IN_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("TooManyCustomHeadersInResponseHeadersPolicy");
@@ -858,6 +859,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == PUBLIC_KEY_ALREADY_EXISTS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::PUBLIC_KEY_ALREADY_EXISTS), false);
+    return true;
+  }
+  else if (hashCode == TOO_MANY_REMOVE_HEADERS_IN_RESPONSE_HEADERS_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_REMOVE_HEADERS_IN_RESPONSE_HEADERS_POLICY), false);
     return true;
   }
   else if (hashCode == REALTIME_LOG_CONFIG_IN_USE_HASH)

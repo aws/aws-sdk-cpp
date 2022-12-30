@@ -26,15 +26,16 @@ namespace Model
 
   /**
    * <p>A response headers policy.</p> <p>A response headers policy contains
-   * information about a set of HTTP response headers and their values.</p> <p>After
-   * you create a response headers policy, you can use its ID to attach it to one or
-   * more cache behaviors in a CloudFront distribution. When it's attached to a cache
-   * behavior, CloudFront adds the headers in the policy to HTTP responses that it
-   * sends for requests that match the cache behavior.</p> <p>For more information,
-   * see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding
-   * HTTP headers to CloudFront responses</a> in the <i>Amazon CloudFront Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * information about a set of HTTP response headers.</p> <p>After you create a
+   * response headers policy, you can use its ID to attach it to one or more cache
+   * behaviors in a CloudFront distribution. When it's attached to a cache behavior,
+   * the response headers policy affects the HTTP headers that CloudFront includes in
+   * HTTP responses to requests that match the cache behavior. CloudFront adds or
+   * removes response headers according to the configuration of the response headers
+   * policy.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding
+   * or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicy">AWS
    * API Reference</a></p>
    */
@@ -121,50 +122,32 @@ namespace Model
 
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline const ResponseHeadersPolicyConfig& GetResponseHeadersPolicyConfig() const{ return m_responseHeadersPolicyConfig; }
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline bool ResponseHeadersPolicyConfigHasBeenSet() const { return m_responseHeadersPolicyConfigHasBeenSet; }
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline void SetResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = value; }
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline void SetResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = std::move(value); }
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { SetResponseHeadersPolicyConfig(value); return *this;}
 
     /**
-     * <p>A response headers policy configuration.</p> <p>A response headers policy
-     * contains information about a set of HTTP response headers and their values.
-     * CloudFront adds the headers in the policy to HTTP responses that it sends for
-     * requests that match a cache behavior that's associated with the policy.</p>
+     * <p>A response headers policy configuration.</p>
      */
     inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { SetResponseHeadersPolicyConfig(std::move(value)); return *this;}
 

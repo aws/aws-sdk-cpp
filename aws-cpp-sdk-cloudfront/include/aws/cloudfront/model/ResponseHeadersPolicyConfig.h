@@ -10,6 +10,7 @@
 #include <aws/cloudfront/model/ResponseHeadersPolicySecurityHeadersConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyServerTimingHeadersConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyCustomHeadersConfig.h>
+#include <aws/cloudfront/model/ResponseHeadersPolicyRemoveHeadersConfig.h>
 #include <utility>
 
 namespace Aws
@@ -29,9 +30,7 @@ namespace Model
   /**
    * <p>A response headers policy configuration.</p> <p>A response headers policy
    * configuration contains metadata about the response headers policy, and
-   * configurations for sets of HTTP response headers and their values. CloudFront
-   * adds the headers in the policy to HTTP responses that it sends for requests that
-   * match a cache behavior associated with the policy.</p><p><h3>See Also:</h3>   <a
+   * configurations for sets of HTTP response headers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyConfig">AWS
    * API Reference</a></p>
    */
@@ -278,6 +277,43 @@ namespace Model
      */
     inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { SetCustomHeadersConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline const ResponseHeadersPolicyRemoveHeadersConfig& GetRemoveHeadersConfig() const{ return m_removeHeadersConfig; }
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline bool RemoveHeadersConfigHasBeenSet() const { return m_removeHeadersConfigHasBeenSet; }
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline void SetRemoveHeadersConfig(const ResponseHeadersPolicyRemoveHeadersConfig& value) { m_removeHeadersConfigHasBeenSet = true; m_removeHeadersConfig = value; }
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline void SetRemoveHeadersConfig(ResponseHeadersPolicyRemoveHeadersConfig&& value) { m_removeHeadersConfigHasBeenSet = true; m_removeHeadersConfig = std::move(value); }
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithRemoveHeadersConfig(const ResponseHeadersPolicyRemoveHeadersConfig& value) { SetRemoveHeadersConfig(value); return *this;}
+
+    /**
+     * <p>A configuration for a set of HTTP headers to remove from the HTTP
+     * response.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithRemoveHeadersConfig(ResponseHeadersPolicyRemoveHeadersConfig&& value) { SetRemoveHeadersConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_comment;
@@ -297,6 +333,9 @@ namespace Model
 
     ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
     bool m_customHeadersConfigHasBeenSet = false;
+
+    ResponseHeadersPolicyRemoveHeadersConfig m_removeHeadersConfig;
+    bool m_removeHeadersConfigHasBeenSet = false;
   };
 
 } // namespace Model
