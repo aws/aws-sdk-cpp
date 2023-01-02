@@ -418,7 +418,11 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const std::shared_ptr<HttpRequ
             }
             else
             {
+#if LIBCURL_VERSION_NUM >= 0x070c01 // 7.12.1
+                curl_easy_setopt(requestHandle, CURLOPT_UPLOAD, 1L);
+#else
                 curl_easy_setopt(requestHandle, CURLOPT_PUT, 1L);
+#endif
             }
             break;
         case HttpMethod::HTTP_HEAD:
