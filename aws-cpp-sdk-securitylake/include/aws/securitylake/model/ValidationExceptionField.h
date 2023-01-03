@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The input fails to meet the constraints specified in Amazon Security Lake
+   * <p>The input fails to meet the constraints specified in Amazon Security Lake.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ValidationExceptionField">AWS
    * API Reference</a></p>

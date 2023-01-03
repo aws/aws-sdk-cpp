@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of lake configuration object in Amazon Security
-   * Lake.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details of Amazon Security Lake lake configuration
+   * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LakeConfigurationResponse">AWS
    * API Reference</a></p>
    */
@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline LakeConfigurationResponse& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline LakeConfigurationResponse& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration</p>
+     * <p>The type of encryption key used by secure the Security Lake configuration
+     * object.</p>
      */
     inline LakeConfigurationResponse& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -95,152 +95,152 @@ namespace Model
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline const Aws::Vector<Region>& GetReplicationDestinationRegions() const{ return m_replicationDestinationRegions; }
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline bool ReplicationDestinationRegionsHasBeenSet() const { return m_replicationDestinationRegionsHasBeenSet; }
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline void SetReplicationDestinationRegions(const Aws::Vector<Region>& value) { m_replicationDestinationRegionsHasBeenSet = true; m_replicationDestinationRegions = value; }
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline void SetReplicationDestinationRegions(Aws::Vector<Region>&& value) { m_replicationDestinationRegionsHasBeenSet = true; m_replicationDestinationRegions = std::move(value); }
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline LakeConfigurationResponse& WithReplicationDestinationRegions(const Aws::Vector<Region>& value) { SetReplicationDestinationRegions(value); return *this;}
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline LakeConfigurationResponse& WithReplicationDestinationRegions(Aws::Vector<Region>&& value) { SetReplicationDestinationRegions(std::move(value)); return *this;}
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline LakeConfigurationResponse& AddReplicationDestinationRegions(const Region& value) { m_replicationDestinationRegionsHasBeenSet = true; m_replicationDestinationRegions.push_back(value); return *this; }
 
     /**
      * <p>Replication enables automatic, asynchronous copying of objects across Amazon
      * S3 buckets. Amazon S3 buckets that are configured for object replication can be
-     * owned by the same AWS account or by different accounts. You can replicate
-     * objects to a single destination bucket or to multiple destination buckets. The
-     * destination buckets can be in different Amazon Web Services Regions or within
-     * the same Region as the source bucket.</p> <p>Set up one or more rollup Regions
-     * by providing the Region or Regions that should contribute to the central rollup
-     * Region. </p>
+     * owned by the same Amazon Web Services account or by different accounts. You can
+     * replicate objects to a single destination bucket or to multiple destination
+     * buckets. The destination buckets can be in different Amazon Web Services Regions
+     * or within the same Region as the source bucket.</p> <p>Set up one or more rollup
+     * Regions by providing the Region or Regions that should contribute to the central
+     * rollup Region. </p>
      */
     inline LakeConfigurationResponse& AddReplicationDestinationRegions(Region&& value) { m_replicationDestinationRegionsHasBeenSet = true; m_replicationDestinationRegions.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline const Aws::String& GetReplicationRoleArn() const{ return m_replicationRoleArn; }
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline bool ReplicationRoleArnHasBeenSet() const { return m_replicationRoleArnHasBeenSet; }
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline void SetReplicationRoleArn(const Aws::String& value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn = value; }
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline void SetReplicationRoleArn(Aws::String&& value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn = std::move(value); }
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline void SetReplicationRoleArn(const char* value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn.assign(value); }
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline LakeConfigurationResponse& WithReplicationRoleArn(const Aws::String& value) { SetReplicationRoleArn(value); return *this;}
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline LakeConfigurationResponse& WithReplicationRoleArn(Aws::String&& value) { SetReplicationRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
+     * role you created that is managed by Security Lake, to ensure the replication
      * setting is correct. </p>
      */
     inline LakeConfigurationResponse& WithReplicationRoleArn(const char* value) { SetReplicationRoleArn(value); return *this;}

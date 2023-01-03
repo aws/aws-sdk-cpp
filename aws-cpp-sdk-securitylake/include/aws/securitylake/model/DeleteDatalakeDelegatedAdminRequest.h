@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline DeleteDatalakeDelegatedAdminRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline DeleteDatalakeDelegatedAdminRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>Account ID the Security Lake delegated administrator.</p>
+     * <p>The account ID the Security Lake delegated administrator.</p>
      */
     inline DeleteDatalakeDelegatedAdminRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
 

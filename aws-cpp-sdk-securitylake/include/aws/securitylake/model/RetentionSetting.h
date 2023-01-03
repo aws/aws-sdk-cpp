@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Retention settings for the destination Amazon S3 buckets in Security Lake.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Retention settings for the destination Amazon S3 buckets in Amazon Security
+   * Lake. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RetentionSetting">AWS
    * API Reference</a></p>
    */
@@ -40,29 +40,29 @@ namespace Model
 
     /**
      * <p>The retention period specifies a fixed period of time during which the
-     * Security Lake object remains locked. You can specify the retention period for
-     * one or more source in days. </p>
+     * Security Lake object remains locked. You can specify the retention period in
+     * days for one or more sources. </p>
      */
     inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p>The retention period specifies a fixed period of time during which the
-     * Security Lake object remains locked. You can specify the retention period for
-     * one or more source in days. </p>
+     * Security Lake object remains locked. You can specify the retention period in
+     * days for one or more sources. </p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>The retention period specifies a fixed period of time during which the
-     * Security Lake object remains locked. You can specify the retention period for
-     * one or more source in days. </p>
+     * Security Lake object remains locked. You can specify the retention period in
+     * days for one or more sources. </p>
      */
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p>The retention period specifies a fixed period of time during which the
-     * Security Lake object remains locked. You can specify the retention period for
-     * one or more source in days. </p>
+     * Security Lake object remains locked. You can specify the retention period in
+     * days for one or more sources. </p>
      */
     inline RetentionSetting& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 

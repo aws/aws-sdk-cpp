@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Log status for the Security Lake account.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the Logs status for the Amazon Security Lake account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LogsStatus">AWS
    * API Reference</a></p>
    */
@@ -39,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline const SourceStatus& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline void SetHealthStatus(const SourceStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline void SetHealthStatus(SourceStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline LogsStatus& WithHealthStatus(const SourceStatus& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>Health status of services including error codes and patterns.</p>
+     * <p>The health status of services, including error codes and patterns.</p>
      */
     inline LogsStatus& WithHealthStatus(SourceStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 

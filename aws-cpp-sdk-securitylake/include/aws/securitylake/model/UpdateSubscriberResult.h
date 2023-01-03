@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The account subscriber in Amazon Security Lake.</p>
+     * <p>The account of the subscriber.</p>
      */
     inline const SubscriberResource& GetSubscriber() const{ return m_subscriber; }
 
     /**
-     * <p>The account subscriber in Amazon Security Lake.</p>
+     * <p>The account of the subscriber.</p>
      */
     inline void SetSubscriber(const SubscriberResource& value) { m_subscriber = value; }
 
     /**
-     * <p>The account subscriber in Amazon Security Lake.</p>
+     * <p>The account of the subscriber.</p>
      */
     inline void SetSubscriber(SubscriberResource&& value) { m_subscriber = std::move(value); }
 
     /**
-     * <p>The account subscriber in Amazon Security Lake.</p>
+     * <p>The account of the subscriber.</p>
      */
     inline UpdateSubscriberResult& WithSubscriber(const SubscriberResource& value) { SetSubscriber(value); return *this;}
 
     /**
-     * <p>The account subscriber in Amazon Security Lake.</p>
+     * <p>The account of the subscriber.</p>
      */
     inline UpdateSubscriberResult& WithSubscriber(SubscriberResource&& value) { SetSubscriber(std::move(value)); return *this;}
 

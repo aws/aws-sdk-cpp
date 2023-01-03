@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Response element for actions which make changes namely create, update, or
+   * <p>Response element for actions that make changes, namely create, update, or
    * delete actions. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/FailuresResponse">AWS
    * API Reference</a></p>
@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline FailuresResponse& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline FailuresResponse& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>List of Regions where the failure occurred. </p>
+     * <p>List of Amazon Web Services Regions where the failure occurred. </p>
      */
     inline FailuresResponse& WithRegion(const char* value) { SetRegion(value); return *this;}
 

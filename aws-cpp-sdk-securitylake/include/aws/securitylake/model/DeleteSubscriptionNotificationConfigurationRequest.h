@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline DeleteSubscriptionNotificationConfigurationRequest& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline DeleteSubscriptionNotificationConfigurationRequest& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
+     * <p>The ID of the Security Lake subscriber account.</p>
      */
     inline DeleteSubscriptionNotificationConfigurationRequest& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
 

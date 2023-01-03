@@ -34,73 +34,81 @@ namespace Model
 
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline const Aws::String& GetNotificationEndpoint() const{ return m_notificationEndpoint; }
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline bool NotificationEndpointHasBeenSet() const { return m_notificationEndpointHasBeenSet; }
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline void SetNotificationEndpoint(const Aws::String& value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint = value; }
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline void SetNotificationEndpoint(Aws::String&& value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint = std::move(value); }
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline void SetNotificationEndpoint(const char* value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint.assign(value); }
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline CreateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(const Aws::String& value) { SetNotificationEndpoint(value); return *this;}
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline CreateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(Aws::String&& value) { SetNotificationEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The account in which the exception notifications subscription is created.</p>
+     * <p>The Amazon Web Services account where you want to receive exception
+     * notifications.</p>
      */
     inline CreateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(const char* value) { SetNotificationEndpoint(value); return *this;}
 
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline const SubscriptionProtocolType& GetSubscriptionProtocol() const{ return m_subscriptionProtocol; }
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline bool SubscriptionProtocolHasBeenSet() const { return m_subscriptionProtocolHasBeenSet; }
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline void SetSubscriptionProtocol(const SubscriptionProtocolType& value) { m_subscriptionProtocolHasBeenSet = true; m_subscriptionProtocol = value; }
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline void SetSubscriptionProtocol(SubscriptionProtocolType&& value) { m_subscriptionProtocolHasBeenSet = true; m_subscriptionProtocol = std::move(value); }
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline CreateDatalakeExceptionsSubscriptionRequest& WithSubscriptionProtocol(const SubscriptionProtocolType& value) { SetSubscriptionProtocol(value); return *this;}
 
     /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
+     * <p>The subscription protocol to which exception notifications are posted. </p>
      */
     inline CreateDatalakeExceptionsSubscriptionRequest& WithSubscriptionProtocol(SubscriptionProtocolType&& value) { SetSubscriptionProtocol(std::move(value)); return *this;}
 

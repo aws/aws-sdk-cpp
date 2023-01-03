@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline const Aws::String& GetCustomDataLocation() const{ return m_customDataLocation; }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(const Aws::String& value) { m_customDataLocation = value; }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(Aws::String&& value) { m_customDataLocation = std::move(value); }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(const char* value) { m_customDataLocation.assign(value); }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline CreateCustomLogSourceResult& WithCustomDataLocation(const Aws::String& value) { SetCustomDataLocation(value); return *this;}
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline CreateCustomLogSourceResult& WithCustomDataLocation(Aws::String&& value) { SetCustomDataLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline CreateCustomLogSourceResult& WithCustomDataLocation(const char* value) { SetCustomDataLocation(value); return *this;}
 
@@ -184,65 +184,65 @@ namespace Model
 
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline const Aws::String& GetLogProviderAccessRoleArn() const{ return m_logProviderAccessRoleArn; }
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline void SetLogProviderAccessRoleArn(const Aws::String& value) { m_logProviderAccessRoleArn = value; }
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline void SetLogProviderAccessRoleArn(Aws::String&& value) { m_logProviderAccessRoleArn = std::move(value); }
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline void SetLogProviderAccessRoleArn(const char* value) { m_logProviderAccessRoleArn.assign(value); }
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(const Aws::String& value) { SetLogProviderAccessRoleArn(value); return *this;}
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(Aws::String&& value) { SetLogProviderAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> IAM Role ARN to be used by the entity putting logs into your Custom Source
-     * partition. Security Lake will apply the correct access policies to this Role,
-     * but this Role must have the trust policy created manually. This Role's name must
-     * start with the text 'Security Lake'. It must trust the
-     * <code>logProviderAccountId</code> to assume it.</p>
+     * <p>The ARN of the IAM role to be used by the entity putting logs into your
+     * custom source partition. Security Lake will apply the correct access policies to
+     * this role, but you must first manually create the trust policy for this role.
+     * The IAM role name must start with the text 'Security Lake'. The IAM role must
+     * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
     inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(const char* value) { SetLogProviderAccessRoleArn(value); return *this;}
 

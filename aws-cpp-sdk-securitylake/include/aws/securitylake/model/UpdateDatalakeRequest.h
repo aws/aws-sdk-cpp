@@ -35,52 +35,62 @@ namespace Model
 
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline const Aws::Map<Region, LakeConfigurationRequest>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline void SetConfigurations(const Aws::Map<Region, LakeConfigurationRequest>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline void SetConfigurations(Aws::Map<Region, LakeConfigurationRequest>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& WithConfigurations(const Aws::Map<Region, LakeConfigurationRequest>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& WithConfigurations(Aws::Map<Region, LakeConfigurationRequest>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& AddConfigurations(const Region& key, const LakeConfigurationRequest& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& AddConfigurations(Region&& key, const LakeConfigurationRequest& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& AddConfigurations(const Region& key, LakeConfigurationRequest&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The configuration object</p>
+     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * region.</p>
      */
     inline UpdateDatalakeRequest& AddConfigurations(Region&& key, LakeConfigurationRequest&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), std::move(value)); return *this; }
 

@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline const Aws::Vector<AutoEnableNewRegionConfiguration>& GetConfigurationForNewAccounts() const{ return m_configurationForNewAccounts; }
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline bool ConfigurationForNewAccountsHasBeenSet() const { return m_configurationForNewAccountsHasBeenSet; }
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline void SetConfigurationForNewAccounts(const Aws::Vector<AutoEnableNewRegionConfiguration>& value) { m_configurationForNewAccountsHasBeenSet = true; m_configurationForNewAccounts = value; }
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline void SetConfigurationForNewAccounts(Aws::Vector<AutoEnableNewRegionConfiguration>&& value) { m_configurationForNewAccountsHasBeenSet = true; m_configurationForNewAccounts = std::move(value); }
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline CreateDatalakeAutoEnableRequest& WithConfigurationForNewAccounts(const Aws::Vector<AutoEnableNewRegionConfiguration>& value) { SetConfigurationForNewAccounts(value); return *this;}
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline CreateDatalakeAutoEnableRequest& WithConfigurationForNewAccounts(Aws::Vector<AutoEnableNewRegionConfiguration>&& value) { SetConfigurationForNewAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline CreateDatalakeAutoEnableRequest& AddConfigurationForNewAccounts(const AutoEnableNewRegionConfiguration& value) { m_configurationForNewAccountsHasBeenSet = true; m_configurationForNewAccounts.push_back(value); return *this; }
 
     /**
-     * <p>Enable Amazon Security Lake with the specified configurations settings to
-     * begin ingesting security data for new accounts in Security Lake. </p>
+     * <p>Enable Security Lake with the specified configuration settings to begin
+     * collecting security data for new accounts in your organization. </p>
      */
     inline CreateDatalakeAutoEnableRequest& AddConfigurationForNewAccounts(AutoEnableNewRegionConfiguration&& value) { m_configurationForNewAccountsHasBeenSet = true; m_configurationForNewAccounts.push_back(std::move(value)); return *this; }
 

@@ -35,25 +35,25 @@ namespace Model
 
     /**
      * <p>Create a new subscription notification for the specified subscription ID in
-     * Security Lake.</p>
+     * Amazon Security Lake.</p>
      */
     inline bool GetCreateSqs() const{ return m_createSqs; }
 
     /**
      * <p>Create a new subscription notification for the specified subscription ID in
-     * Security Lake.</p>
+     * Amazon Security Lake.</p>
      */
     inline bool CreateSqsHasBeenSet() const { return m_createSqsHasBeenSet; }
 
     /**
      * <p>Create a new subscription notification for the specified subscription ID in
-     * Security Lake.</p>
+     * Amazon Security Lake.</p>
      */
     inline void SetCreateSqs(bool value) { m_createSqsHasBeenSet = true; m_createSqs = value; }
 
     /**
      * <p>Create a new subscription notification for the specified subscription ID in
-     * Security Lake.</p>
+     * Amazon Security Lake.</p>
      */
     inline UpdateSubscriptionNotificationConfigurationRequest& WithCreateSqs(bool value) { SetCreateSqs(value); return *this;}
 

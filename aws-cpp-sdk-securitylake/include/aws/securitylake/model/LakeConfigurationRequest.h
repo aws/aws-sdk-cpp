@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of lake configuration object in Amazon Security
-   * Lake.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details of Amazon Security Lake configuration object.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LakeConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline LakeConfigurationRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline LakeConfigurationRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The type of encryption key used by Security Lake to encrypt the lake
-     * configuration object.</p>
+     * <p>The type of encryption key used by Amazon Security Lake to encrypt the
+     * Security Lake configuration object.</p>
      */
     inline LakeConfigurationRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -189,58 +189,58 @@ namespace Model
 
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline const Aws::String& GetReplicationRoleArn() const{ return m_replicationRoleArn; }
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline bool ReplicationRoleArnHasBeenSet() const { return m_replicationRoleArnHasBeenSet; }
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline void SetReplicationRoleArn(const Aws::String& value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn = value; }
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline void SetReplicationRoleArn(Aws::String&& value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn = std::move(value); }
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline void SetReplicationRoleArn(const char* value) { m_replicationRoleArnHasBeenSet = true; m_replicationRoleArn.assign(value); }
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline LakeConfigurationRequest& WithReplicationRoleArn(const Aws::String& value) { SetReplicationRoleArn(value); return *this;}
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline LakeConfigurationRequest& WithReplicationRoleArn(Aws::String&& value) { SetReplicationRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the IAM
-     * role created by you that is managed by Security Lake, to ensure the replication
-     * setting is correct. </p>
+     * <p>Replication settings for the Amazon S3 buckets. This parameter uses the
+     * Identity and Access Management (IAM) role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct. </p>
      */
     inline LakeConfigurationRequest& WithReplicationRoleArn(const char* value) { SetReplicationRoleArn(value); return *this;}
 

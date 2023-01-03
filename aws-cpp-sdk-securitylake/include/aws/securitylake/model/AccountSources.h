@@ -27,8 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>Security Lake can collect logs and events from supported Amazon Web Services
-   * services and custom sources. </p><p><h3>See Also:</h3>   <a
+   * <p>Amazon Security Lake collects logs and events from supported Amazon Web
+   * Services and custom sources. For the list of supported Amazon Web Services, see
+   * the <a
+   * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+   * Security Lake User Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AccountSources">AWS
    * API Reference</a></p>
    */
@@ -42,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline AccountSources& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline AccountSources& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>Account ID of the Security Lake account for which logs are collected.</p>
+     * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
     inline AccountSources& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -114,107 +117,99 @@ namespace Model
 
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline const Aws::Vector<LogsStatus>& GetLogsStatus() const{ return m_logsStatus; }
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline bool LogsStatusHasBeenSet() const { return m_logsStatusHasBeenSet; }
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline void SetLogsStatus(const Aws::Vector<LogsStatus>& value) { m_logsStatusHasBeenSet = true; m_logsStatus = value; }
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline void SetLogsStatus(Aws::Vector<LogsStatus>&& value) { m_logsStatusHasBeenSet = true; m_logsStatus = std::move(value); }
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline AccountSources& WithLogsStatus(const Aws::Vector<LogsStatus>& value) { SetLogsStatus(value); return *this;}
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline AccountSources& WithLogsStatus(Aws::Vector<LogsStatus>&& value) { SetLogsStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline AccountSources& AddLogsStatus(const LogsStatus& value) { m_logsStatusHasBeenSet = true; m_logsStatus.push_back(value); return *this; }
 
     /**
-     * <p>Log status for the Security Lake account.</p>
+     * <p>The log status for the Security Lake account.</p>
      */
     inline AccountSources& AddLogsStatus(LogsStatus&& value) { m_logsStatusHasBeenSet = true; m_logsStatus.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline AccountSources& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline AccountSources& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The supported Amazon Web Services services from which logs and events are
-     * collected. Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide. </p>
+     * <p>The supported Amazon Web Services from which logs and events are collected.
+     * Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline AccountSources& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

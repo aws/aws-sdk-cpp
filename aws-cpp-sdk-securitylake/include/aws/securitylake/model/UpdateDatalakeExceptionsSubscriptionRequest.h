@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline const Aws::String& GetNotificationEndpoint() const{ return m_notificationEndpoint; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline bool NotificationEndpointHasBeenSet() const { return m_notificationEndpointHasBeenSet; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline void SetNotificationEndpoint(const Aws::String& value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint = value; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline void SetNotificationEndpoint(Aws::String&& value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint = std::move(value); }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline void SetNotificationEndpoint(const char* value) { m_notificationEndpointHasBeenSet = true; m_notificationEndpoint.assign(value); }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline UpdateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(const Aws::String& value) { SetNotificationEndpoint(value); return *this;}
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline UpdateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(Aws::String&& value) { SetNotificationEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The account which is subscribed to receive exception notifications.</p>
+     * <p>The account that is subscribed to receive exception notifications.</p>
      */
     inline UpdateDatalakeExceptionsSubscriptionRequest& WithNotificationEndpoint(const char* value) { SetNotificationEndpoint(value); return *this;}
 

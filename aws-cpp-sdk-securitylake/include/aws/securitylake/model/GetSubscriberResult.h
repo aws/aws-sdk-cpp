@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Subscription information for the specified subscription ID</p>
+     * <p>The subscription information for the specified subscription ID.</p>
      */
     inline const SubscriberResource& GetSubscriber() const{ return m_subscriber; }
 
     /**
-     * <p>Subscription information for the specified subscription ID</p>
+     * <p>The subscription information for the specified subscription ID.</p>
      */
     inline void SetSubscriber(const SubscriberResource& value) { m_subscriber = value; }
 
     /**
-     * <p>Subscription information for the specified subscription ID</p>
+     * <p>The subscription information for the specified subscription ID.</p>
      */
     inline void SetSubscriber(SubscriberResource&& value) { m_subscriber = std::move(value); }
 
     /**
-     * <p>Subscription information for the specified subscription ID</p>
+     * <p>The subscription information for the specified subscription ID.</p>
      */
     inline GetSubscriberResult& WithSubscriber(const SubscriberResource& value) { SetSubscriber(value); return *this;}
 
     /**
-     * <p>Subscription information for the specified subscription ID</p>
+     * <p>The subscription information for the specified subscription ID.</p>
      */
     inline GetSubscriberResult& WithSubscriber(SubscriberResource&& value) { SetSubscriber(std::move(value)); return *this;}
 
