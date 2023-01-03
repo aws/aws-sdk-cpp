@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>The supported source types from which logs and events are collected in Amazon
-   * Security Lake. </p><p><h3>See Also:</h3>   <a
+   * Security Lake. For the list of supported Amazon Web Services, see the <a
+   * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+   * Security Lake User Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SourceType">AWS
    * API Reference</a></p>
    */
@@ -40,92 +42,86 @@ namespace Model
 
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline const AwsLogSourceType& GetAwsSourceType() const{ return m_awsSourceType; }
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline bool AwsSourceTypeHasBeenSet() const { return m_awsSourceTypeHasBeenSet; }
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline void SetAwsSourceType(const AwsLogSourceType& value) { m_awsSourceTypeHasBeenSet = true; m_awsSourceType = value; }
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline void SetAwsSourceType(AwsLogSourceType&& value) { m_awsSourceTypeHasBeenSet = true; m_awsSourceType = std::move(value); }
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline SourceType& WithAwsSourceType(const AwsLogSourceType& value) { SetAwsSourceType(value); return *this;}
 
     /**
-     * <p>Amazon Security Lake supports logs and events collection for
-     * natively-supported Amazon Web Services services. For more information, see the
-     * Amazon Security Lake User Guide.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. </p>
      */
     inline SourceType& WithAwsSourceType(AwsLogSourceType&& value) { SetAwsSourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline const Aws::String& GetCustomSourceType() const{ return m_customSourceType; }
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline bool CustomSourceTypeHasBeenSet() const { return m_customSourceTypeHasBeenSet; }
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline void SetCustomSourceType(const Aws::String& value) { m_customSourceTypeHasBeenSet = true; m_customSourceType = value; }
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline void SetCustomSourceType(Aws::String&& value) { m_customSourceTypeHasBeenSet = true; m_customSourceType = std::move(value); }
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline void SetCustomSourceType(const char* value) { m_customSourceTypeHasBeenSet = true; m_customSourceType.assign(value); }
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline SourceType& WithCustomSourceType(const Aws::String& value) { SetCustomSourceType(value); return *this;}
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline SourceType& WithCustomSourceType(Aws::String&& value) { SetCustomSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Security Lake supports custom source types. For the detailed list, see
+     * <p>Amazon Security Lake supports custom source types. For a detailed list, see
      * the Amazon Security Lake User Guide.</p>
      */
     inline SourceType& WithCustomSourceType(const char* value) { SetCustomSourceType(value); return *this;}

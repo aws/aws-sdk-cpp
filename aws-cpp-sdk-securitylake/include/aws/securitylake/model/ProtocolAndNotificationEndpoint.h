@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Notifications in Security Lake which dictates how notifications are posted at
-   * the endpoint. </p><p><h3>See Also:</h3>   <a
+   * <p>Protocol used in Amazon Security Lake that dictates how notifications are
+   * posted at the endpoint. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ProtocolAndNotificationEndpoint">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline ProtocolAndNotificationEndpoint& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline ProtocolAndNotificationEndpoint& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The account which is subscribed to receive exception notifications. </p>
+     * <p>The account that is subscribed to receive exception notifications. </p>
      */
     inline ProtocolAndNotificationEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

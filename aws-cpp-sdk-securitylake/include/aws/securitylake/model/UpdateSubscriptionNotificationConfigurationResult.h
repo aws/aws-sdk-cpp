@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline void SetQueueArn(const Aws::String& value) { m_queueArn = value; }
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline void SetQueueArn(Aws::String&& value) { m_queueArn = std::move(value); }
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline void SetQueueArn(const char* value) { m_queueArn.assign(value); }
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline UpdateSubscriptionNotificationConfigurationResult& WithQueueArn(const Aws::String& value) { SetQueueArn(value); return *this;}
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline UpdateSubscriptionNotificationConfigurationResult& WithQueueArn(Aws::String&& value) { SetQueueArn(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the Amazon resource name (ARN) of the queue.</p>
+     * <p>Returns the ARN of the queue.</p>
      */
     inline UpdateSubscriptionNotificationConfigurationResult& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
 

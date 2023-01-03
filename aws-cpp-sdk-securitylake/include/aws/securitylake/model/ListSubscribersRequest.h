@@ -60,50 +60,50 @@ namespace Model
 
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline ListSubscribersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline ListSubscribersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If nextToken is returned, there are more results available. You can make the
-     * call again using the returned token to retrieve the next page.</p>
+     * <p>If nextToken is returned, there are more results available. You can repeat
+     * the call using the returned token to retrieve the next page.</p>
      */
     inline ListSubscribersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

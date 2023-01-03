@@ -36,218 +36,251 @@ namespace Model
 
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetEnableAllDimensions() const{ return m_enableAllDimensions; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline bool EnableAllDimensionsHasBeenSet() const { return m_enableAllDimensionsHasBeenSet; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline void SetEnableAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions = value; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline void SetEnableAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions = std::move(value); }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetEnableAllDimensions(value); return *this;}
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetEnableAllDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(key, value); return *this; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific sources in all Regions and source types.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in all
+     * specific accounts and specific Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableAllDimensions(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_enableAllDimensionsHasBeenSet = true; m_enableAllDimensions.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableSingleDimension() const{ return m_enableSingleDimension; }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline bool EnableSingleDimensionHasBeenSet() const { return m_enableSingleDimensionHasBeenSet; }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline void SetEnableSingleDimension(const Aws::Vector<Aws::String>& value) { m_enableSingleDimensionHasBeenSet = true; m_enableSingleDimension = value; }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline void SetEnableSingleDimension(Aws::Vector<Aws::String>&& value) { m_enableSingleDimensionHasBeenSet = true; m_enableSingleDimension = std::move(value); }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableSingleDimension(const Aws::Vector<Aws::String>& value) { SetEnableSingleDimension(value); return *this;}
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableSingleDimension(Aws::Vector<Aws::String>&& value) { SetEnableSingleDimension(std::move(value)); return *this;}
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableSingleDimension(const Aws::String& value) { m_enableSingleDimensionHasBeenSet = true; m_enableSingleDimension.push_back(value); return *this; }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableSingleDimension(Aws::String&& value) { m_enableSingleDimensionHasBeenSet = true; m_enableSingleDimension.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Enables all sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from all Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableSingleDimension(const char* value) { m_enableSingleDimensionHasBeenSet = true; m_enableSingleDimension.push_back(value); return *this; }
 
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetEnableTwoDimensions() const{ return m_enableTwoDimensions; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline bool EnableTwoDimensionsHasBeenSet() const { return m_enableTwoDimensionsHasBeenSet; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline void SetEnableTwoDimensions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions = value; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline void SetEnableTwoDimensions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions = std::move(value); }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableTwoDimensions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetEnableTwoDimensions(value); return *this;}
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& WithEnableTwoDimensions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetEnableTwoDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(key, value); return *this; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(const char* key, Aws::Vector<Aws::String>&& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Enables specific service sources in specific accounts or Regions.</p>
+     * <p>Enables data collection from specific Amazon Web Services sources in specific
+     * accounts or Regions.</p>
      */
     inline CreateAwsLogSourceRequest& AddEnableTwoDimensions(const char* key, const Aws::Vector<Aws::String>& value) { m_enableTwoDimensionsHasBeenSet = true; m_enableTwoDimensions.emplace(key, value); return *this; }
 
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline const Aws::Vector<Dimension>& GetInputOrder() const{ return m_inputOrder; }
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline bool InputOrderHasBeenSet() const { return m_inputOrderHasBeenSet; }
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline void SetInputOrder(const Aws::Vector<Dimension>& value) { m_inputOrderHasBeenSet = true; m_inputOrder = value; }
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline void SetInputOrder(Aws::Vector<Dimension>&& value) { m_inputOrderHasBeenSet = true; m_inputOrder = std::move(value); }
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline CreateAwsLogSourceRequest& WithInputOrder(const Aws::Vector<Dimension>& value) { SetInputOrder(value); return *this;}
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline CreateAwsLogSourceRequest& WithInputOrder(Aws::Vector<Dimension>&& value) { SetInputOrder(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline CreateAwsLogSourceRequest& AddInputOrder(const Dimension& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(value); return *this; }
 
     /**
      * <p>Specifies the input order to enable dimensions in Security Lake, namely
-     * region, source type, and member account.</p>
+     * Region, source type, and member account.</p>
      */
     inline CreateAwsLogSourceRequest& AddInputOrder(Dimension&& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(std::move(value)); return *this; }
 

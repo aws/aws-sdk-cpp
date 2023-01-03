@@ -36,74 +36,74 @@ namespace Model
 
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetDisableAllDimensions() const{ return m_disableAllDimensions; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline bool DisableAllDimensionsHasBeenSet() const { return m_disableAllDimensionsHasBeenSet; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline void SetDisableAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions = value; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline void SetDisableAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions = std::move(value); }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& WithDisableAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetDisableAllDimensions(value); return *this;}
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& WithDisableAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetDisableAllDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(key, value); return *this; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Removes the specific Amazon Web Services sources from all Regions and source
-     * types.</p>
+     * <p>Removes the specific Amazon Web Services sources from specific accounts and
+     * specific Regions.</p>
      */
     inline DeleteAwsLogSourceRequest& AddDisableAllDimensions(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_disableAllDimensionsHasBeenSet = true; m_disableAllDimensions.emplace(key, value); return *this; }
 
@@ -237,50 +237,58 @@ namespace Model
 
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline const Aws::Vector<Dimension>& GetInputOrder() const{ return m_inputOrder; }
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline bool InputOrderHasBeenSet() const { return m_inputOrderHasBeenSet; }
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline void SetInputOrder(const Aws::Vector<Dimension>& value) { m_inputOrderHasBeenSet = true; m_inputOrder = value; }
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline void SetInputOrder(Aws::Vector<Dimension>&& value) { m_inputOrderHasBeenSet = true; m_inputOrder = std::move(value); }
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline DeleteAwsLogSourceRequest& WithInputOrder(const Aws::Vector<Dimension>& value) { SetInputOrder(value); return *this;}
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline DeleteAwsLogSourceRequest& WithInputOrder(Aws::Vector<Dimension>&& value) { SetInputOrder(std::move(value)); return *this;}
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline DeleteAwsLogSourceRequest& AddInputOrder(const Dimension& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(value); return *this; }
 
     /**
-     * <p>This is a mandatory input. Specifies the input order to disable dimensions in
-     * Security Lake, namely Region, source type, and member. </p>
+     * <p>This is a mandatory input. Specify the input order to disable dimensions in
+     * Security Lake, namely Region (Amazon Web Services Region code, source type, and
+     * member (account ID of a specific Amazon Web Services account). </p>
      */
     inline DeleteAwsLogSourceRequest& AddInputOrder(Dimension&& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(std::move(value)); return *this; }
 

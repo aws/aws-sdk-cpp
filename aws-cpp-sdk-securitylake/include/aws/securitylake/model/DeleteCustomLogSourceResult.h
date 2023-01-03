@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline const Aws::String& GetCustomDataLocation() const{ return m_customDataLocation; }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(const Aws::String& value) { m_customDataLocation = value; }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(Aws::String&& value) { m_customDataLocation = std::move(value); }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline void SetCustomDataLocation(const char* value) { m_customDataLocation.assign(value); }
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline DeleteCustomLogSourceResult& WithCustomDataLocation(const Aws::String& value) { SetCustomDataLocation(value); return *this;}
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline DeleteCustomLogSourceResult& WithCustomDataLocation(Aws::String&& value) { SetCustomDataLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The location of the partition in the Security Lake S3 bucket.</p>
+     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
     inline DeleteCustomLogSourceResult& WithCustomDataLocation(const char* value) { SetCustomDataLocation(value); return *this;}
 
