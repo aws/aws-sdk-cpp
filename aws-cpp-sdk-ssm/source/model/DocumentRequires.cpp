@@ -20,13 +20,17 @@ namespace Model
 
 DocumentRequires::DocumentRequires() : 
     m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_requireTypeHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
 DocumentRequires::DocumentRequires(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_requireTypeHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ DocumentRequires& DocumentRequires::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequireType"))
+  {
+    m_requireType = jsonValue.GetString("RequireType");
+
+    m_requireTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+    m_versionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue DocumentRequires::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
+
+  }
+
+  if(m_requireTypeHasBeenSet)
+  {
+   payload.WithString("RequireType", m_requireType);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

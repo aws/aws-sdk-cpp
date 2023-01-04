@@ -40,42 +40,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the scaling policy.</p>
+     * <p>The name of the scaling policy.</p> <p>You cannot change the name of a
+     * scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
@@ -586,7 +602,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -633,7 +649,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -680,7 +696,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -727,7 +743,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -774,7 +790,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -821,7 +837,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -848,8 +864,8 @@ namespace Model
 
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more
@@ -862,8 +878,8 @@ namespace Model
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more
@@ -876,8 +892,8 @@ namespace Model
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more
@@ -890,8 +906,8 @@ namespace Model
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more
@@ -904,8 +920,8 @@ namespace Model
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more
@@ -918,8 +934,8 @@ namespace Model
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <p>The scaling policy type. This parameter is required if you are creating a
+     * scaling policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
      * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p> <p>For more

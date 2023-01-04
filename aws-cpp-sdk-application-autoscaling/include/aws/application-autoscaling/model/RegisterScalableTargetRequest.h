@@ -543,7 +543,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -590,7 +590,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -637,7 +637,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -684,7 +684,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -731,7 +731,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -778,7 +778,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -808,10 +808,19 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. This property is required
-     * when registering a new scalable target.</p> <p>For certain resources, the
-     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
-     * all other resources, the minimum value allowed is 1.</p>
+     * when registering a new scalable target.</p> <p>For the following resources, the
+     * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
+     * specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale
+     * on a metric like average CPU utilization.</p> <p>For all other resources, the
+     * minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs.
+     * In which case, the error message will provide the minimum value that the
+     * resource can accept.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
@@ -819,10 +828,19 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. This property is required
-     * when registering a new scalable target.</p> <p>For certain resources, the
-     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
-     * all other resources, the minimum value allowed is 1.</p>
+     * when registering a new scalable target.</p> <p>For the following resources, the
+     * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
+     * specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale
+     * on a metric like average CPU utilization.</p> <p>For all other resources, the
+     * minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs.
+     * In which case, the error message will provide the minimum value that the
+     * resource can accept.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
@@ -830,10 +848,19 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. This property is required
-     * when registering a new scalable target.</p> <p>For certain resources, the
-     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
-     * all other resources, the minimum value allowed is 1.</p>
+     * when registering a new scalable target.</p> <p>For the following resources, the
+     * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
+     * specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale
+     * on a metric like average CPU utilization.</p> <p>For all other resources, the
+     * minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs.
+     * In which case, the error message will provide the minimum value that the
+     * resource can accept.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
@@ -841,10 +868,19 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. This property is required
-     * when registering a new scalable target.</p> <p>For certain resources, the
-     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
-     * all other resources, the minimum value allowed is 1.</p>
+     * when registering a new scalable target.</p> <p>For the following resources, the
+     * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
+     * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
+     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
+     * specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale
+     * on a metric like average CPU utilization.</p> <p>For all other resources, the
+     * minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs.
+     * In which case, the error message will provide the minimum value that the
+     * resource can accept.</p>
      */
     inline RegisterScalableTargetRequest& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
@@ -860,7 +896,7 @@ namespace Model
      * consult the documentation for that service. For information about the default
      * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
-     * Endpoints and Quotas</a> in the <i>Amazon Web Services General
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
@@ -876,7 +912,7 @@ namespace Model
      * consult the documentation for that service. For information about the default
      * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
-     * Endpoints and Quotas</a> in the <i>Amazon Web Services General
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
@@ -892,7 +928,7 @@ namespace Model
      * consult the documentation for that service. For information about the default
      * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
-     * Endpoints and Quotas</a> in the <i>Amazon Web Services General
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
@@ -908,7 +944,7 @@ namespace Model
      * consult the documentation for that service. For information about the default
      * quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
-     * Endpoints and Quotas</a> in the <i>Amazon Web Services General
+     * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}

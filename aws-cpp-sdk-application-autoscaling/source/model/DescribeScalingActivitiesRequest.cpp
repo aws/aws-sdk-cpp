@@ -20,7 +20,9 @@ DescribeScalingActivitiesRequest::DescribeScalingActivitiesRequest() :
     m_scalableDimensionHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeNotScaledActivities(false),
+    m_includeNotScaledActivitiesHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,12 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_includeNotScaledActivitiesHasBeenSet)
+  {
+   payload.WithBool("IncludeNotScaledActivities", m_includeNotScaledActivities);
 
   }
 

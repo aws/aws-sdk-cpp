@@ -161,89 +161,89 @@ namespace Model
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline const Aws::String& GetSequenceToken() const{ return m_sequenceToken; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline bool SequenceTokenHasBeenSet() const { return m_sequenceTokenHasBeenSet; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline void SetSequenceToken(const Aws::String& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = std::move(value); }
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline void SetSequenceToken(const char* value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken.assign(value); }
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline PutLogEventsRequest& WithSequenceToken(const Aws::String& value) { SetSequenceToken(value); return *this;}
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(std::move(value)); return *this;}
 
     /**
      * <p>The sequence token obtained from the response of the previous
-     * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
-     * If you call <code>PutLogEvents</code> twice within a narrow time period using
-     * the same value for <code>sequenceToken</code>, both calls might be successful or
-     * one might be rejected.</p>
+     * <code>PutLogEvents</code> call.</p>  <p>The
+     * <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
+     * actions. <code>PutLogEvents</code> actions are now accepted and never return
+     * <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not
+     * valid.</p> 
      */
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 

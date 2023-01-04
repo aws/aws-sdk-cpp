@@ -45,7 +45,10 @@ namespace Model
      * Values must be in the range of -2^360 to 2^360. The value must be a valid number
      * based on the choice of metric. For example, if the metric is CPU utilization,
      * then the target value is a percent value that represents how much of the CPU can
-     * be used before scaling out. </p>
+     * be used before scaling out. </p>  <p>If the scaling policy specifies the
+     * <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any
+     * one-minute interval.</p> 
      */
     inline double GetTargetValue() const{ return m_targetValue; }
 
@@ -55,7 +58,10 @@ namespace Model
      * Values must be in the range of -2^360 to 2^360. The value must be a valid number
      * based on the choice of metric. For example, if the metric is CPU utilization,
      * then the target value is a percent value that represents how much of the CPU can
-     * be used before scaling out. </p>
+     * be used before scaling out. </p>  <p>If the scaling policy specifies the
+     * <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any
+     * one-minute interval.</p> 
      */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
 
@@ -65,7 +71,10 @@ namespace Model
      * Values must be in the range of -2^360 to 2^360. The value must be a valid number
      * based on the choice of metric. For example, if the metric is CPU utilization,
      * then the target value is a percent value that represents how much of the CPU can
-     * be used before scaling out. </p>
+     * be used before scaling out. </p>  <p>If the scaling policy specifies the
+     * <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any
+     * one-minute interval.</p> 
      */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
 
@@ -75,7 +84,10 @@ namespace Model
      * Values must be in the range of -2^360 to 2^360. The value must be a valid number
      * based on the choice of metric. For example, if the metric is CPU utilization,
      * then the target value is a percent value that represents how much of the CPU can
-     * be used before scaling out. </p>
+     * be used before scaling out. </p>  <p>If the scaling policy specifies the
+     * <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any
+     * one-minute interval.</p> 
      */
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
 

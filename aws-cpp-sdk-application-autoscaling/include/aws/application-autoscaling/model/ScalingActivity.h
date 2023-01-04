@@ -10,6 +10,8 @@
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/application-autoscaling/model/ScalingActivityStatusCode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-autoscaling/model/NotScaledReason.h>
 #include <utility>
 
 namespace Aws
@@ -582,7 +584,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -629,7 +631,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -676,7 +678,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -723,7 +725,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -770,7 +772,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -817,7 +819,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -1107,6 +1109,71 @@ namespace Model
      */
     inline ScalingActivity& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline const Aws::Vector<NotScaledReason>& GetNotScaledReasons() const{ return m_notScaledReasons; }
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline bool NotScaledReasonsHasBeenSet() const { return m_notScaledReasonsHasBeenSet; }
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline void SetNotScaledReasons(const Aws::Vector<NotScaledReason>& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons = value; }
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline void SetNotScaledReasons(Aws::Vector<NotScaledReason>&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons = std::move(value); }
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline ScalingActivity& WithNotScaledReasons(const Aws::Vector<NotScaledReason>& value) { SetNotScaledReasons(value); return *this;}
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline ScalingActivity& WithNotScaledReasons(Aws::Vector<NotScaledReason>&& value) { SetNotScaledReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline ScalingActivity& AddNotScaledReasons(const NotScaledReason& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons.push_back(value); return *this; }
+
+    /**
+     * <p>Machine-readable data that describes the reason for a not scaled activity.
+     * Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+     * includes not scaled activities.</p>
+     */
+    inline ScalingActivity& AddNotScaledReasons(NotScaledReason&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_activityId;
@@ -1141,6 +1208,9 @@ namespace Model
 
     Aws::String m_details;
     bool m_detailsHasBeenSet = false;
+
+    Aws::Vector<NotScaledReason> m_notScaledReasons;
+    bool m_notScaledReasonsHasBeenSet = false;
   };
 
 } // namespace Model
