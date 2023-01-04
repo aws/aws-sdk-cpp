@@ -191,7 +191,8 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
-bool WriteConfigFileWithSSO(Aws::OStream& stream, const Aws::String& profileName, const Aws::String& ssoSessionName) {
+bool WriteConfigFileWithSSO(Aws::OStream& stream, const char* profileNameC, const Aws::String& ssoSessionName) {
+    const Aws::String profileName(profileNameC);
     const Aws::String configFileContent =
             R"([ default]
   aws_access_key_id = ACCESS_KEY_0
@@ -219,10 +220,10 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
     ASSERT_TRUE(configFile.good());
-    static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
+    static const char* SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
     Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
                                   configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)") + 1);
-    static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
+    const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
@@ -262,10 +263,10 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
     ASSERT_TRUE(configFile.good());
-    static const Aws::String SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
+    static const char* SSO_AWS_PROFILE = "AwsSdkBearerIntegrationTest-profile"; // arbitrary
     Aws::String profileFileName = configFile.GetFileName().find_last_of(R"(/\)") == std::string::npos ?
                                   configFile.GetFileName() : configFile.GetFileName().substr(configFile.GetFileName().find_last_of(R"(/\)") + 1);
-    static const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
+    const Aws::String SSO_SESSION_NAME = profileFileName + "-sso-session"; // arbitrary
     ASSERT_TRUE(WriteConfigFileWithSSO(configFile, SSO_AWS_PROFILE, SSO_SESSION_NAME));
 
     // Parse static test profile config
