@@ -20,8 +20,7 @@ AmazonWebServiceRequest::AmazonWebServiceRequest() :
 
 AmazonWebServiceRequest::EndpointParameters AmazonWebServiceRequest::GetEndpointContextParams() const
 {
-    static const AmazonWebServiceRequest::EndpointParameters EMPTY_CONTEXT;
-    return EMPTY_CONTEXT;
+    return AmazonWebServiceRequest::EndpointParameters();
 }
 
 const Aws::Http::HeaderValueCollection& AmazonWebServiceRequest::GetAdditionalCustomHeaders() const

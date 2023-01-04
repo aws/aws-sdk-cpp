@@ -9,11 +9,9 @@ namespace Aws
 {
 namespace Endpoint
 {
-    static const BuiltInParameters::EndpointParameter BUILTIN_NOT_FOUND_PARAMETER("PARAMETER_NOT_SET", false, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT);
-
     void BuiltInParameters::OverrideEndpoint(const Aws::String& endpoint, const Aws::Http::Scheme& scheme)
     {
-        static const Aws::String SDK_ENDPOINT = "Endpoint";
+        static const char* SDK_ENDPOINT = "Endpoint";
 
         if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
         {
@@ -35,17 +33,17 @@ namespace Endpoint
     void BuiltInParameters::SetFromClientConfiguration(const Client::ClientConfiguration& config)
     {
         bool forceFIPS = false;
-        static const Aws::String AWS_REGION = "Region";
+        static const char* AWS_REGION = "Region";
         if (!config.region.empty()) {
-            static const Aws::String FIPS_PREFIX = "fips-";
-            static const Aws::String FIPS_SUFFIX = "-fips";
+            static const char* FIPS_PREFIX = "fips-";
+            static const char* FIPS_SUFFIX = "-fips";
             if (config.region.rfind(FIPS_PREFIX, 0) == 0) {
                 // Backward compatibility layer for code hacking previous SDK version
-                Aws::String regionOverride = config.region.substr(FIPS_PREFIX.length());
+                Aws::String regionOverride = config.region.substr(sizeof(FIPS_PREFIX) - 1);
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else if (StringEndsWith(config.region, FIPS_SUFFIX)) {
-                Aws::String regionOverride = config.region.substr(0, config.region.size() - FIPS_SUFFIX.size());
+                Aws::String regionOverride = config.region.substr(0, config.region.size() - sizeof(FIPS_SUFFIX) - 1);
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else {
@@ -53,10 +51,10 @@ namespace Endpoint
             }
         }
 
-        static const Aws::String AWS_USE_FIPS = "UseFIPS";
+        static const char* AWS_USE_FIPS = "UseFIPS";
         SetBooleanParameter(AWS_USE_FIPS, config.useFIPS || forceFIPS);
 
-        static const Aws::String AWS_USE_DUAL_STACK = "UseDualStack";
+        static const char* AWS_USE_DUAL_STACK = "UseDualStack";
         SetBooleanParameter(AWS_USE_DUAL_STACK, config.useDualStack);
 
         if (!config.endpointOverride.empty()) {
@@ -88,6 +86,7 @@ namespace Endpoint
         }
         else
         {
+            static const BuiltInParameters::EndpointParameter BUILTIN_NOT_FOUND_PARAMETER("PARAMETER_NOT_SET", false, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT);
             return BUILTIN_NOT_FOUND_PARAMETER;
         }
     }

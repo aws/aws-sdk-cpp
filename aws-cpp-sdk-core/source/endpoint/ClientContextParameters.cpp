@@ -9,8 +9,6 @@ namespace Aws
 {
 namespace Endpoint
 {
-    static const ClientContextParameters::EndpointParameter CTX_NOT_FOUND_PARAMETER("PARAMETER_NOT_SET", false, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT);
-
     const ClientContextParameters::EndpointParameter& ClientContextParameters::GetParameter(const Aws::String& name) const
     {
         const auto foundIt = std::find_if(m_params.begin(), m_params.end(),
@@ -25,6 +23,7 @@ namespace Endpoint
         }
         else
         {
+            static const ClientContextParameters::EndpointParameter CTX_NOT_FOUND_PARAMETER("PARAMETER_NOT_SET", false, EndpointParameter::ParameterOrigin::CLIENT_CONTEXT);
             return CTX_NOT_FOUND_PARAMETER;
         }
     }

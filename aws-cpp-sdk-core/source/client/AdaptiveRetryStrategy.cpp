@@ -25,6 +25,14 @@ namespace Aws
         static const double BETA = 0.7;
         static const double SCALE_CONSTANT = 0.4;
 
+        // A static list containing all service exception names classified as throttled.
+        static const char* THROTTLING_EXCEPTIONS[] {
+                "Throttling", "ThrottlingException", "ThrottledException", "RequestThrottledException",
+                "TooManyRequestsException", "ProvisionedThroughputExceededException", "TransactionInProgressException",
+                "RequestLimitExceeded", "BandwidthLimitExceeded", "LimitExceededException", "RequestThrottled",
+                "SlowDown", "PriorRequestNotComplete", "EC2ThrottledException"};
+        static const size_t THROTTLING_EXCEPTIONS_SZ = sizeof(THROTTLING_EXCEPTIONS) / sizeof(THROTTLING_EXCEPTIONS[0]);
+
 
         // C-tor for unit testing
         RetryTokenBucket::RetryTokenBucket(double fillRate, double maxCapacity, double currentCapacity,
@@ -208,14 +216,8 @@ namespace Aws
                     break;
             }
 
-            // A static list containing all service exception names classified as throttled.
-            static const Aws::UnorderedSet<Aws::String> THROTTLING_EXCEPTIONS {
-                    "Throttling", "ThrottlingException", "ThrottledException", "RequestThrottledException",
-                    "TooManyRequestsException", "ProvisionedThroughputExceededException", "TransactionInProgressException",
-                    "RequestLimitExceeded", "BandwidthLimitExceeded", "LimitExceededException", "RequestThrottled",
-                    "SlowDown", "PriorRequestNotComplete", "EC2ThrottledException"};
-
-            if ((THROTTLING_EXCEPTIONS.find(error.GetExceptionName())) != THROTTLING_EXCEPTIONS.end())
+            if(std::find(THROTTLING_EXCEPTIONS,
+                         THROTTLING_EXCEPTIONS + THROTTLING_EXCEPTIONS_SZ, error.GetExceptionName()) != THROTTLING_EXCEPTIONS + THROTTLING_EXCEPTIONS_SZ)
             {
                 return true;
             }

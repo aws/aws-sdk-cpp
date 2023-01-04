@@ -30,7 +30,7 @@ TEST(AWSMemory, DeleteViaSecondInterface)
 }
 #endif
 
-
+#if !defined(USE_AWS_MEMORY_MANAGEMENT)
 /* static UniquePtr destruction order test begin*/
 struct TestDummy
 {
@@ -119,3 +119,4 @@ TEST(AWSMemory, StaticUniquePtrDtorOrder)
     // After main returns, s_TestDummyPtr will be destructed first and the destructor of s_testWrapperPtr will ensure that s_TestDummyPtr is NULL.
 }
 /* static UniquePtr destruction order test end*/
+#endif // !defined(USE_AWS_MEMORY_MANAGEMENT)

@@ -19,7 +19,7 @@ using namespace Aws::Http;
 #endif
 
 using ErrorsMapperContainer = Aws::Map<Aws::String, AWSError<CoreErrors> >;
-static Aws::UniquePtrSafeDeleted<ErrorsMapperContainer> s_CoreErrorsMapper(nullptr);
+static ErrorsMapperContainer* s_CoreErrorsMapper(nullptr);
 
 #ifdef _MSC_VER
 #pragma warning(pop)
@@ -31,7 +31,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     {
       return;
     }
-    s_CoreErrorsMapper = Aws::MakeUniqueSafeDeleted<ErrorsMapperContainer>("InitCoreErrorsMapper");
+    s_CoreErrorsMapper = Aws::New<ErrorsMapperContainer>("InitCoreErrorsMapper", Aws::get_aws_allocator());
 
     s_CoreErrorsMapper->emplace("IncompleteSignature", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
     s_CoreErrorsMapper->emplace("IncompleteSignatureException", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
@@ -93,10 +93,8 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
 
 void CoreErrorsMapper::CleanupCoreErrorsMapper()
 {
-    if (s_CoreErrorsMapper)
-    {
-      s_CoreErrorsMapper = nullptr;
-    }
+    Aws::Delete(s_CoreErrorsMapper);
+    s_CoreErrorsMapper = nullptr;
 }
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
