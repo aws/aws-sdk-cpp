@@ -29,7 +29,8 @@ namespace Model
     ProblemAnalysis,
     ProblemAnalysisTemplate,
     CloudFormation,
-    ConformancePackTemplate
+    ConformancePackTemplate,
+    QuickSetup
   };
 
 namespace DocumentTypeMapper

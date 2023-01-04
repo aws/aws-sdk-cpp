@@ -35,9 +35,9 @@ namespace Model
    * <p>Represents a scaling policy to use with Application Auto Scaling.</p> <p>For
    * more information about configuring scaling policies for a specific service, see
    * <a
-   * href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting
-   * started with Application Auto Scaling</a> in the <i>Application Auto Scaling
-   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon
+   * Web Services services that you can use with Application Auto Scaling</a> in the
+   * <i>Application Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy">AWS
    * API Reference</a></p>
    */
@@ -632,7 +632,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -679,7 +679,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -726,7 +726,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -773,7 +773,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -820,7 +820,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -867,7 +867,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -894,32 +894,50 @@ namespace Model
 
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline ScalingPolicy& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The scaling policy type.</p>
+     * <p>The scaling policy type.</p> <p>The following policy types are supported:
+     * </p> <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
+     * Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
      */
     inline ScalingPolicy& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

@@ -543,7 +543,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -591,7 +591,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -639,7 +639,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -687,7 +687,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -735,7 +735,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -783,7 +783,7 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
-     * instances for an SageMaker model endpoint variant.</p> </li> <li> <p>
+     * instances for a SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
@@ -894,6 +894,51 @@ namespace Model
      */
     inline DescribeScalingActivitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to include activities that aren't scaled (<i>not scaled
+     * activities</i>) in the response. Not scaled activities are activities that
+     * aren't completed or started for various reasons, such as preventing infinite
+     * scaling loops. For help interpreting the not scaled reason details in the
+     * response, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+     * activities for Application Auto Scaling</a>.</p>
+     */
+    inline bool GetIncludeNotScaledActivities() const{ return m_includeNotScaledActivities; }
+
+    /**
+     * <p>Specifies whether to include activities that aren't scaled (<i>not scaled
+     * activities</i>) in the response. Not scaled activities are activities that
+     * aren't completed or started for various reasons, such as preventing infinite
+     * scaling loops. For help interpreting the not scaled reason details in the
+     * response, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+     * activities for Application Auto Scaling</a>.</p>
+     */
+    inline bool IncludeNotScaledActivitiesHasBeenSet() const { return m_includeNotScaledActivitiesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to include activities that aren't scaled (<i>not scaled
+     * activities</i>) in the response. Not scaled activities are activities that
+     * aren't completed or started for various reasons, such as preventing infinite
+     * scaling loops. For help interpreting the not scaled reason details in the
+     * response, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+     * activities for Application Auto Scaling</a>.</p>
+     */
+    inline void SetIncludeNotScaledActivities(bool value) { m_includeNotScaledActivitiesHasBeenSet = true; m_includeNotScaledActivities = value; }
+
+    /**
+     * <p>Specifies whether to include activities that aren't scaled (<i>not scaled
+     * activities</i>) in the response. Not scaled activities are activities that
+     * aren't completed or started for various reasons, such as preventing infinite
+     * scaling loops. For help interpreting the not scaled reason details in the
+     * response, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
+     * activities for Application Auto Scaling</a>.</p>
+     */
+    inline DescribeScalingActivitiesRequest& WithIncludeNotScaledActivities(bool value) { SetIncludeNotScaledActivities(value); return *this;}
+
   private:
 
     ServiceNamespace m_serviceNamespace;
@@ -910,6 +955,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_includeNotScaledActivities;
+    bool m_includeNotScaledActivitiesHasBeenSet = false;
   };
 
 } // namespace Model

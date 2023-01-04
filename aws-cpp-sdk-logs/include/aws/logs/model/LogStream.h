@@ -168,66 +168,106 @@ namespace Model
 
     /**
      * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
-     * 1, 1970 00:00:00 UTC</code>.</p>
+     * 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on
+     * an eventual consistency basis. It typically updates in less than an hour after
+     * ingestion, but in rare situations might take longer.</p>
      */
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
 
     /**
      * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
-     * 1, 1970 00:00:00 UTC</code>.</p>
+     * 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on
+     * an eventual consistency basis. It typically updates in less than an hour after
+     * ingestion, but in rare situations might take longer.</p>
      */
     inline bool LastIngestionTimeHasBeenSet() const { return m_lastIngestionTimeHasBeenSet; }
 
     /**
      * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
-     * 1, 1970 00:00:00 UTC</code>.</p>
+     * 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on
+     * an eventual consistency basis. It typically updates in less than an hour after
+     * ingestion, but in rare situations might take longer.</p>
      */
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     /**
      * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
-     * 1, 1970 00:00:00 UTC</code>.</p>
+     * 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on
+     * an eventual consistency basis. It typically updates in less than an hour after
+     * ingestion, but in rare situations might take longer.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
 
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline const Aws::String& GetUploadSequenceToken() const{ return m_uploadSequenceToken; }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline bool UploadSequenceTokenHasBeenSet() const { return m_uploadSequenceTokenHasBeenSet; }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline void SetUploadSequenceToken(const Aws::String& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = value; }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline void SetUploadSequenceToken(Aws::String&& value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken = std::move(value); }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline void SetUploadSequenceToken(const char* value) { m_uploadSequenceTokenHasBeenSet = true; m_uploadSequenceToken.assign(value); }
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline LogStream& WithUploadSequenceToken(const Aws::String& value) { SetUploadSequenceToken(value); return *this;}
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline LogStream& WithUploadSequenceToken(Aws::String&& value) { SetUploadSequenceToken(std::move(value)); return *this;}
 
     /**
-     * <p>The sequence token.</p>
+     * <p>The sequence token.</p>  <p>The sequence token is now ignored in
+     * <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always
+     * accepted regardless of receiving an invalid sequence token. You don't need to
+     * obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code>
+     * action.</p> 
      */
     inline LogStream& WithUploadSequenceToken(const char* value) { SetUploadSequenceToken(value); return *this;}
 

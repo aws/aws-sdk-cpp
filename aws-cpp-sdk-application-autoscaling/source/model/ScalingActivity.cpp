@@ -32,7 +32,8 @@ ScalingActivity::ScalingActivity() :
     m_statusCode(ScalingActivityStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_notScaledReasonsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ScalingActivity::ScalingActivity(JsonView jsonValue) :
     m_statusCode(ScalingActivityStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_notScaledReasonsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,16 @@ ScalingActivity& ScalingActivity::operator =(JsonView jsonValue)
     m_detailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotScaledReasons"))
+  {
+    Aws::Utils::Array<JsonView> notScaledReasonsJsonList = jsonValue.GetArray("NotScaledReasons");
+    for(unsigned notScaledReasonsIndex = 0; notScaledReasonsIndex < notScaledReasonsJsonList.GetLength(); ++notScaledReasonsIndex)
+    {
+      m_notScaledReasons.push_back(notScaledReasonsJsonList[notScaledReasonsIndex].AsObject());
+    }
+    m_notScaledReasonsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +211,17 @@ JsonValue ScalingActivity::Jsonize() const
   if(m_detailsHasBeenSet)
   {
    payload.WithString("Details", m_details);
+
+  }
+
+  if(m_notScaledReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> notScaledReasonsJsonList(m_notScaledReasons.size());
+   for(unsigned notScaledReasonsIndex = 0; notScaledReasonsIndex < notScaledReasonsJsonList.GetLength(); ++notScaledReasonsIndex)
+   {
+     notScaledReasonsJsonList[notScaledReasonsIndex].AsObject(m_notScaledReasons[notScaledReasonsIndex].Jsonize());
+   }
+   payload.WithArray("NotScaledReasons", std::move(notScaledReasonsJsonList));
 
   }
 

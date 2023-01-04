@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The event was already logged.</p><p><h3>See Also:</h3>   <a
+   * <p>The event was already logged.</p>  <p> <code>PutLogEvents</code>
+   * actions are now always accepted and never return
+   * <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of
+   * log events has already been accepted. </p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DataAlreadyAcceptedException">AWS
    * API Reference</a></p>
    */
