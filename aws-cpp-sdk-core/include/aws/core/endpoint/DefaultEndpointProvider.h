@@ -49,8 +49,8 @@ namespace Aws
         class AWS_CORE_API DefaultEndpointProvider : public EndpointProviderBase<ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>
         {
         public:
-            DefaultEndpointProvider(const Aws::Vector<char>& endpointRulesBLOB)
-                : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBLOB.data(), endpointRulesBLOB.size()),
+            DefaultEndpointProvider(const char* endpointRulesBlob, const size_t endpointRulesBlobSz)
+                : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBlob, endpointRulesBlobSz),
                                   Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::GetPartitionsBlob(), AWSPartitions::PartitionsBlobSize))
             {
                 if(!m_crtRuleEngine) {

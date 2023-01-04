@@ -465,7 +465,7 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
         bool xAmznTraceIdHeaderExpected;
     };
 
-    static const std::vector<AWSClientTestSuite_TestRecursionDetection_TestCase> TEST_CASES =
+    const std::vector<AWSClientTestSuite_TestRecursionDetection_TestCase> TEST_CASES =
             {
                     {{}, {}, {}, false},
 

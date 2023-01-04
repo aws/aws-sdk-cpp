@@ -24,10 +24,10 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   }
   else
   {
-    static const Aws::String AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
-    static const Aws::String AWS_ENABLE_ENDPOINT_DISCOVERY_PROFILE_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
-    static const Aws::String AWS_ENABLE_ENDPOINT_ENABLED = "true";
-    static const Aws::String AWS_ENABLE_ENDPOINT_DISABLED = "false";
+    static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
+    static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_PROFILE_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
+    static const char* AWS_ENABLE_ENDPOINT_ENABLED = "true";
+    static const char* AWS_ENABLE_ENDPOINT_DISABLED = "false";
 
     Aws::String enableEndpointDiscovery = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY,
                                                                                           profileName,
