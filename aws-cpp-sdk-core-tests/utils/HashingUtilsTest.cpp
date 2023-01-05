@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 
@@ -484,4 +485,40 @@ TEST(HashingUtilsTest, TestCRC32CFromStream)
         largeValue[i] = 0;
     }
     TestCRC32CFromStream(largeValue.GetUnderlyingData(), 26214400, "fb5b991d");
+}
+
+TEST(HashingUtilsTest, HashString)
+{
+    //
+    // Check that the string hashing algorithm is not poor.
+    // The original hashing algorithm inb the SDK was too
+    // simplistic and on a test of all two letter string
+    // combinations the algorithm produced 56,897 collisions
+    // out of 65,536 combinations.
+    //
+    // Switching to the Aws::Crt::HashString function
+    // produces far better results with no collisions.
+    //
+
+    int failureCount = 0;
+    Aws::Map<size_t, std::pair<int, int>> hashResults;
+    for (int c1 = 0; c1 < 256; ++c1) {
+        for (int c2 = 0; c2 < 256; ++c2) {
+            char check[3];
+            check[0] = c1;
+            check[1] = c2;
+            check[2] = 0x00;
+            int hashValue = Aws::Utils::HashingUtils::HashString(check);
+            auto insertResult = hashResults.insert(
+                Aws::Map<size_t, std::pair<int, int>>::value_type(hashValue, std::pair<int, int>(c1, c2)));
+            if (!insertResult.second && c1 && c2) {
+                if (++failureCount < 10) {
+                    printf("HashString result %d identical for inputs %02x%02x and %02x%02x\n",
+                        hashValue, insertResult.first->second.first, insertResult.first->second.second, c1, c2);
+                }
+            }
+        }
+    }
+
+    ASSERT_EQ(failureCount, 0);  // no collisions
 }

@@ -11,6 +11,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 
+#include <aws/crt/StringUtils.h>
+
 namespace Aws
 {
     namespace Utils
@@ -107,7 +109,17 @@ namespace Aws
              */
             static ByteBuffer CalculateCRC32C(Aws::IOStream& stream);
 
-            static int HashString(const char* strToHash);
+            /**
+             * Hash a string to a 32-bit number.  Returning the native size_t
+             * would be better, but there seems to be a lot of code that expects
+             * this to return a signed int, so keeping it that way for now.
+             */
+            static inline int HashString(const char* strToHash) {
+                // take 0x00000FFFFFFFF000 from the 64-bit value
+                // this choice is based on trial and error, as taking
+                // just the lower bits caused one collision in the test
+                return static_cast<int>(Aws::Crt::HashString(strToHash) << 12UL >> 32UL);
+            }
 
         };
 
