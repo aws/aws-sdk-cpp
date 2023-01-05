@@ -221,15 +221,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -237,15 +234,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -253,15 +247,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -269,15 +260,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -285,15 +273,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -301,15 +286,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline StartExportTaskRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -317,15 +299,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline StartExportTaskRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -333,15 +312,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot
      * exported to Amazon S3. The Amazon Web Services KMS key identifier is the key
      * ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this
-     * operation must be authorized to execute the following operations. These can be
-     * set in the Amazon Web Services KMS key policy:</p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
-     * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
-     * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
-     * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
-     * <p>GrantOperation.DescribeKey</p> </li> <li> <p>GrantOperation.RetireGrant</p>
-     * </li> </ul>
+     * operation must be authorized to run the following operations. These can be set
+     * in the Amazon Web Services KMS key policy:</p> <ul> <li> <p>kms:Encrypt</p>
+     * </li> <li> <p>kms:Decrypt</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> <li> <p>kms:ReEncryptFrom</p>
+     * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
+     * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
     inline StartExportTaskRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

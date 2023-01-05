@@ -212,94 +212,277 @@ namespace Model
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentVariables() const{ return m_runtimeEnvironmentVariables; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline bool RuntimeEnvironmentVariablesHasBeenSet() const { return m_runtimeEnvironmentVariablesHasBeenSet; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline void SetRuntimeEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables = value; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline void SetRuntimeEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables = std::move(value); }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& WithRuntimeEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetRuntimeEnvironmentVariables(value); return *this;}
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& WithRuntimeEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetRuntimeEnvironmentVariables(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, value); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(const char* key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(Aws::String&& key, const char* value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The environment variables that are available to your running App Runner
-     * service. An array of key-value pairs. Keys with a prefix of
-     * <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
+     * service. An array of key-value pairs.</p>
      */
     inline CodeConfigurationValues& AddRuntimeEnvironmentVariables(const char* key, const char* value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentSecrets() const{ return m_runtimeEnvironmentSecrets; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline bool RuntimeEnvironmentSecretsHasBeenSet() const { return m_runtimeEnvironmentSecretsHasBeenSet; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline void SetRuntimeEnvironmentSecrets(const Aws::Map<Aws::String, Aws::String>& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets = value; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline void SetRuntimeEnvironmentSecrets(Aws::Map<Aws::String, Aws::String>&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets = std::move(value); }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& WithRuntimeEnvironmentSecrets(const Aws::Map<Aws::String, Aws::String>& value) { SetRuntimeEnvironmentSecrets(value); return *this;}
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& WithRuntimeEnvironmentSecrets(Aws::Map<Aws::String, Aws::String>&& value) { SetRuntimeEnvironmentSecrets(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(const Aws::String& key, const Aws::String& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, value); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(Aws::String&& key, const Aws::String& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(const Aws::String& key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(Aws::String&& key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(const char* key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(Aws::String&& key, const char* value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An array of key-value pairs representing the secrets and parameters that get
+     * referenced to your service as an environment variable. The supported values are
+     * either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the
+     * full ARN of the parameter in the Amazon Web Services Systems Manager Parameter
+     * Store.</p>  <ul> <li> <p> If the Amazon Web Services Systems Manager
+     * Parameter Store parameter exists in the same Amazon Web Services Region as the
+     * service that you're launching, you can use either the full ARN or name of the
+     * secret. If the parameter exists in a different Region, then the full ARN must be
+     * specified. </p> </li> <li> <p> Currently, cross account referencing of Amazon
+     * Web Services Systems Manager Parameter Store parameter is not supported. </p>
+     * </li> </ul> 
+     */
+    inline CodeConfigurationValues& AddRuntimeEnvironmentSecrets(const char* key, const char* value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, value); return *this; }
 
   private:
 
@@ -317,6 +500,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
     bool m_runtimeEnvironmentVariablesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentSecrets;
+    bool m_runtimeEnvironmentSecretsHasBeenSet = false;
   };
 
 } // namespace Model

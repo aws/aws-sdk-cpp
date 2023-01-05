@@ -42,6 +42,12 @@ GetBackendAPIModelsResult& GetBackendAPIModelsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("modelIntrospectionSchema"))
+  {
+    m_modelIntrospectionSchema = jsonValue.GetString("modelIntrospectionSchema");
+
+  }
+
 
 
   return *this;

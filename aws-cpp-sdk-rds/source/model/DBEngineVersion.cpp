@@ -55,6 +55,9 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
     m_customDBEngineVersionManifestHasBeenSet(false),
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -94,6 +97,9 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
     m_customDBEngineVersionManifestHasBeenSet(false),
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -327,6 +333,24 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
       m_customDBEngineVersionManifestHasBeenSet = true;
     }
+    XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
+    if(!supportsCertificateRotationWithoutRestartNode.IsNull())
+    {
+      m_supportsCertificateRotationWithoutRestart = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsCertificateRotationWithoutRestartNode.GetText()).c_str()).c_str());
+      m_supportsCertificateRotationWithoutRestartHasBeenSet = true;
+    }
+    XmlNode supportedCACertificateIdentifiersNode = resultNode.FirstChild("SupportedCACertificateIdentifiers");
+    if(!supportedCACertificateIdentifiersNode.IsNull())
+    {
+      XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      while(!supportedCACertificateIdentifiersMember.IsNull())
+      {
+        m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());
+        supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
+      }
+
+      m_supportedCACertificateIdentifiersHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -525,6 +549,20 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
 
+  if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
+  }
+
+  if(m_supportedCACertificateIdentifiersHasBeenSet)
+  {
+      unsigned supportedCACertificateIdentifiersIdx = 1;
+      for(auto& item : m_supportedCACertificateIdentifiers)
+      {
+        oStream << location << index << locationValue << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -697,6 +735,18 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_customDBEngineVersionManifestHasBeenSet)
   {
       oStream << location << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
+  }
+  if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
+  {
+      oStream << location << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
+  }
+  if(m_supportedCACertificateIdentifiersHasBeenSet)
+  {
+      unsigned supportedCACertificateIdentifiersIdx = 1;
+      for(auto& item : m_supportedCACertificateIdentifiers)
+      {
+        oStream << location << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_responseMetadataHasBeenSet)
   {

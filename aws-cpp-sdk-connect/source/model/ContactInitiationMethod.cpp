@@ -26,6 +26,8 @@ namespace Aws
         static const int QUEUE_TRANSFER_HASH = HashingUtils::HashString("QUEUE_TRANSFER");
         static const int CALLBACK_HASH = HashingUtils::HashString("CALLBACK");
         static const int API_HASH = HashingUtils::HashString("API");
+        static const int DISCONNECT_HASH = HashingUtils::HashString("DISCONNECT");
+        static const int MONITOR_HASH = HashingUtils::HashString("MONITOR");
 
 
         ContactInitiationMethod GetContactInitiationMethodForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return ContactInitiationMethod::API;
           }
+          else if (hashCode == DISCONNECT_HASH)
+          {
+            return ContactInitiationMethod::DISCONNECT;
+          }
+          else if (hashCode == MONITOR_HASH)
+          {
+            return ContactInitiationMethod::MONITOR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "CALLBACK";
           case ContactInitiationMethod::API:
             return "API";
+          case ContactInitiationMethod::DISCONNECT:
+            return "DISCONNECT";
+          case ContactInitiationMethod::MONITOR:
+            return "MONITOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

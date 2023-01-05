@@ -13,7 +13,9 @@
 #include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
 #include <aws/emr-serverless/model/Architecture.h>
+#include <aws/emr-serverless/model/ImageConfigurationInput.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
+#include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -363,6 +365,182 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline const ImageConfigurationInput& GetImageConfiguration() const{ return m_imageConfiguration; }
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline void SetImageConfiguration(const ImageConfigurationInput& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline void SetImageConfiguration(ImageConfigurationInput&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline UpdateApplicationRequest& WithImageConfiguration(const ImageConfigurationInput& value) { SetImageConfiguration(value); return *this;}
+
+    /**
+     * <p>The image configuration to be used for all worker types. You can either set
+     * this parameter or <code>imageConfiguration</code> for each worker type in
+     * <code>WorkerTypeSpecificationInput</code>.</p>
+     */
+    inline UpdateApplicationRequest& WithImageConfiguration(ImageConfigurationInput&& value) { SetImageConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& GetWorkerTypeSpecifications() const{ return m_workerTypeSpecifications; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline bool WorkerTypeSpecificationsHasBeenSet() const { return m_workerTypeSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline void SetWorkerTypeSpecifications(const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications = value; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline void SetWorkerTypeSpecifications(Aws::Map<Aws::String, WorkerTypeSpecificationInput>&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications = std::move(value); }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& WithWorkerTypeSpecifications(const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& value) { SetWorkerTypeSpecifications(value); return *this;}
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& WithWorkerTypeSpecifications(Aws::Map<Aws::String, WorkerTypeSpecificationInput>&& value) { SetWorkerTypeSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const Aws::String& key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(Aws::String&& key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const Aws::String& key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(Aws::String&& key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The key-value pairs that specify worker type to
+     * <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid
+     * worker types for a Spark or Hive application. Valid worker types include
+     * <code>Driver</code> and <code>Executor</code> for Spark applications and
+     * <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can
+     * either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.</p>
+     */
+    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_applicationId;
@@ -388,6 +566,12 @@ namespace Model
 
     Architecture m_architecture;
     bool m_architectureHasBeenSet = false;
+
+    ImageConfigurationInput m_imageConfiguration;
+    bool m_imageConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, WorkerTypeSpecificationInput> m_workerTypeSpecifications;
+    bool m_workerTypeSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

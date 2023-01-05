@@ -21,14 +21,16 @@ namespace Model
 ImageConfiguration::ImageConfiguration() : 
     m_runtimeEnvironmentVariablesHasBeenSet(false),
     m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_runtimeEnvironmentSecretsHasBeenSet(false)
 {
 }
 
 ImageConfiguration::ImageConfiguration(JsonView jsonValue) : 
     m_runtimeEnvironmentVariablesHasBeenSet(false),
     m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_runtimeEnvironmentSecretsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ ImageConfiguration& ImageConfiguration::operator =(JsonView jsonValue)
     m_portHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuntimeEnvironmentSecrets"))
+  {
+    Aws::Map<Aws::String, JsonView> runtimeEnvironmentSecretsJsonMap = jsonValue.GetObject("RuntimeEnvironmentSecrets").GetAllObjects();
+    for(auto& runtimeEnvironmentSecretsItem : runtimeEnvironmentSecretsJsonMap)
+    {
+      m_runtimeEnvironmentSecrets[runtimeEnvironmentSecretsItem.first] = runtimeEnvironmentSecretsItem.second.AsString();
+    }
+    m_runtimeEnvironmentSecretsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +98,17 @@ JsonValue ImageConfiguration::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithString("Port", m_port);
+
+  }
+
+  if(m_runtimeEnvironmentSecretsHasBeenSet)
+  {
+   JsonValue runtimeEnvironmentSecretsJsonMap;
+   for(auto& runtimeEnvironmentSecretsItem : m_runtimeEnvironmentSecrets)
+   {
+     runtimeEnvironmentSecretsJsonMap.WithString(runtimeEnvironmentSecretsItem.first, runtimeEnvironmentSecretsItem.second);
+   }
+   payload.WithObject("RuntimeEnvironmentSecrets", std::move(runtimeEnvironmentSecretsJsonMap));
 
   }
 

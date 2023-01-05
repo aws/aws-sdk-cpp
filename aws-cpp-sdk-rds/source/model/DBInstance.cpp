@@ -123,7 +123,8 @@ DBInstance::DBInstance() :
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false)
+    m_masterUserSecretHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
@@ -230,7 +231,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false)
+    m_masterUserSecretHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -793,6 +795,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_masterUserSecret = masterUserSecretNode;
       m_masterUserSecretHasBeenSet = true;
     }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1277,6 +1285,13 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMemberSs.str().c_str());
   }
 
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1678,6 +1693,12 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       Aws::String masterUserSecretLocationAndMember(location);
       masterUserSecretLocationAndMember += ".MasterUserSecret";
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMember.c_str());
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

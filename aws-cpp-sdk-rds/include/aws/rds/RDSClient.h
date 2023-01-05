@@ -1319,7 +1319,13 @@ namespace Aws
 
         /**
          * <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web
-         * Services account.</p><p><h3>See Also:</h3>   <a
+         * Services account.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+         * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+         * Guide</i> and <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+         * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+         * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          */

@@ -24,7 +24,8 @@ CodeConfigurationValues::CodeConfigurationValues() :
     m_buildCommandHasBeenSet(false),
     m_startCommandHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_runtimeEnvironmentVariablesHasBeenSet(false)
+    m_runtimeEnvironmentVariablesHasBeenSet(false),
+    m_runtimeEnvironmentSecretsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ CodeConfigurationValues::CodeConfigurationValues(JsonView jsonValue) :
     m_buildCommandHasBeenSet(false),
     m_startCommandHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_runtimeEnvironmentVariablesHasBeenSet(false)
+    m_runtimeEnvironmentVariablesHasBeenSet(false),
+    m_runtimeEnvironmentSecretsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,16 @@ CodeConfigurationValues& CodeConfigurationValues::operator =(JsonView jsonValue)
     m_runtimeEnvironmentVariablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuntimeEnvironmentSecrets"))
+  {
+    Aws::Map<Aws::String, JsonView> runtimeEnvironmentSecretsJsonMap = jsonValue.GetObject("RuntimeEnvironmentSecrets").GetAllObjects();
+    for(auto& runtimeEnvironmentSecretsItem : runtimeEnvironmentSecretsJsonMap)
+    {
+      m_runtimeEnvironmentSecrets[runtimeEnvironmentSecretsItem.first] = runtimeEnvironmentSecretsItem.second.AsString();
+    }
+    m_runtimeEnvironmentSecretsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +129,17 @@ JsonValue CodeConfigurationValues::Jsonize() const
      runtimeEnvironmentVariablesJsonMap.WithString(runtimeEnvironmentVariablesItem.first, runtimeEnvironmentVariablesItem.second);
    }
    payload.WithObject("RuntimeEnvironmentVariables", std::move(runtimeEnvironmentVariablesJsonMap));
+
+  }
+
+  if(m_runtimeEnvironmentSecretsHasBeenSet)
+  {
+   JsonValue runtimeEnvironmentSecretsJsonMap;
+   for(auto& runtimeEnvironmentSecretsItem : m_runtimeEnvironmentSecrets)
+   {
+     runtimeEnvironmentSecretsJsonMap.WithString(runtimeEnvironmentSecretsItem.first, runtimeEnvironmentSecretsItem.second);
+   }
+   payload.WithObject("RuntimeEnvironmentSecrets", std::move(runtimeEnvironmentSecretsJsonMap));
 
   }
 

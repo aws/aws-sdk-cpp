@@ -336,8 +336,8 @@ namespace AmplifyBackend
         virtual void GetBackendAPIAsync(const Model::GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a model schema for existing backend API resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a model introspection schema for an existing backend API
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">AWS
          * API Reference</a></p>
          */
