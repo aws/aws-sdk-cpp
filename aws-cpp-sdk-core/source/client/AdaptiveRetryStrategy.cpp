@@ -69,7 +69,7 @@ namespace Aws
                 return;
             }
 
-            double fillAmount = (now.Millis() - m_lastTimestamp.Millis())/1000.0 * m_fillRate;
+            double fillAmount = (std::abs(now.Millis() - m_lastTimestamp.Millis()))/1000.0 * m_fillRate;
             m_currentCapacity = (std::min)(m_maxCapacity, m_currentCapacity + fillAmount);
             m_lastTimestamp = now;
         }
