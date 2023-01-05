@@ -191,3 +191,11 @@ TEST(AdaptiveRetryStrategyTest, TestAdaptiveRetryStrategyUpdateClientSendingRate
         EXPECT_NEAR(step.measuredTxRate, retryTokenBucket.T_GetMeasuredTxRate(), EPSILON);
     }
 }
+
+TEST(AdaptiveRetryStrategyTest, TestRetryTokenBucketDateInFutureRuns) {
+    RetryTokenBucket retryTokenBucket;
+    ASSERT_TRUE(retryTokenBucket.Acquire(1));
+    auto oneDayMillis = 86400000;
+    retryTokenBucket.UpdateClientSendingRate(true, Aws::Utils::DateTime::Now() + std::chrono::milliseconds(oneDayMillis));
+    ASSERT_TRUE(retryTokenBucket.Acquire(1));
+}
