@@ -94,11 +94,56 @@ namespace Model
      */
     inline GetBackendAPIModelsResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline const Aws::String& GetModelIntrospectionSchema() const{ return m_modelIntrospectionSchema; }
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline void SetModelIntrospectionSchema(const Aws::String& value) { m_modelIntrospectionSchema = value; }
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline void SetModelIntrospectionSchema(Aws::String&& value) { m_modelIntrospectionSchema = std::move(value); }
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline void SetModelIntrospectionSchema(const char* value) { m_modelIntrospectionSchema.assign(value); }
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline GetBackendAPIModelsResult& WithModelIntrospectionSchema(const Aws::String& value) { SetModelIntrospectionSchema(value); return *this;}
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline GetBackendAPIModelsResult& WithModelIntrospectionSchema(Aws::String&& value) { SetModelIntrospectionSchema(std::move(value)); return *this;}
+
+    /**
+     * <p>Stringified JSON of the model introspection schema for an existing backend
+     * API resource.</p>
+     */
+    inline GetBackendAPIModelsResult& WithModelIntrospectionSchema(const char* value) { SetModelIntrospectionSchema(value); return *this;}
+
   private:
 
     Aws::String m_models;
 
     Status m_status;
+
+    Aws::String m_modelIntrospectionSchema;
   };
 
 } // namespace Model

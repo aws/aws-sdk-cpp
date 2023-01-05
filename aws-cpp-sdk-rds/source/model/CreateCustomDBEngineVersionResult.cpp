@@ -22,7 +22,8 @@ CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult() :
     m_supportsReadReplica(false),
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
-    m_supportsBabelfish(false)
+    m_supportsBabelfish(false),
+    m_supportsCertificateRotationWithoutRestart(false)
 {
 }
 
@@ -31,7 +32,8 @@ CreateCustomDBEngineVersionResult::CreateCustomDBEngineVersionResult(const Aws::
     m_supportsReadReplica(false),
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
-    m_supportsBabelfish(false)
+    m_supportsBabelfish(false),
+    m_supportsCertificateRotationWithoutRestart(false)
 {
   *this = result;
 }
@@ -240,6 +242,22 @@ CreateCustomDBEngineVersionResult& CreateCustomDBEngineVersionResult::operator =
     if(!customDBEngineVersionManifestNode.IsNull())
     {
       m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+    }
+    XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
+    if(!supportsCertificateRotationWithoutRestartNode.IsNull())
+    {
+      m_supportsCertificateRotationWithoutRestart = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsCertificateRotationWithoutRestartNode.GetText()).c_str()).c_str());
+    }
+    XmlNode supportedCACertificateIdentifiersNode = resultNode.FirstChild("SupportedCACertificateIdentifiers");
+    if(!supportedCACertificateIdentifiersNode.IsNull())
+    {
+      XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      while(!supportedCACertificateIdentifiersMember.IsNull())
+      {
+        m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());
+        supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
+      }
+
     }
   }
 

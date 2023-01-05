@@ -22,7 +22,9 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_autoStopConfigurationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_imageConfigurationHasBeenSet(false),
+    m_workerTypeSpecificationsHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,23 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_architectureHasBeenSet)
   {
    payload.WithString("architecture", ArchitectureMapper::GetNameForArchitecture(m_architecture));
+  }
+
+  if(m_imageConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageConfiguration", m_imageConfiguration.Jsonize());
+
+  }
+
+  if(m_workerTypeSpecificationsHasBeenSet)
+  {
+   JsonValue workerTypeSpecificationsJsonMap;
+   for(auto& workerTypeSpecificationsItem : m_workerTypeSpecifications)
+   {
+     workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
+   }
+   payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

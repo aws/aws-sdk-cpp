@@ -36,7 +36,9 @@ Application::Application() :
     m_autoStopConfigurationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_imageConfigurationHasBeenSet(false),
+    m_workerTypeSpecificationsHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ Application::Application(JsonView jsonValue) :
     m_autoStopConfigurationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_imageConfigurationHasBeenSet(false),
+    m_workerTypeSpecificationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -183,6 +187,23 @@ Application& Application::operator =(JsonView jsonValue)
     m_architectureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageConfiguration"))
+  {
+    m_imageConfiguration = jsonValue.GetObject("imageConfiguration");
+
+    m_imageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("workerTypeSpecifications"))
+  {
+    Aws::Map<Aws::String, JsonView> workerTypeSpecificationsJsonMap = jsonValue.GetObject("workerTypeSpecifications").GetAllObjects();
+    for(auto& workerTypeSpecificationsItem : workerTypeSpecificationsJsonMap)
+    {
+      m_workerTypeSpecifications[workerTypeSpecificationsItem.first] = workerTypeSpecificationsItem.second.AsObject();
+    }
+    m_workerTypeSpecificationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +311,23 @@ JsonValue Application::Jsonize() const
   if(m_architectureHasBeenSet)
   {
    payload.WithString("architecture", ArchitectureMapper::GetNameForArchitecture(m_architecture));
+  }
+
+  if(m_imageConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageConfiguration", m_imageConfiguration.Jsonize());
+
+  }
+
+  if(m_workerTypeSpecificationsHasBeenSet)
+  {
+   JsonValue workerTypeSpecificationsJsonMap;
+   for(auto& workerTypeSpecificationsItem : m_workerTypeSpecifications)
+   {
+     workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
+   }
+   payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+
   }
 
   return payload;

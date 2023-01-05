@@ -43,9 +43,9 @@ namespace MWAA
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html
    * ">CreateCliToken</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
-   * </p> </li> </ul><br /> </li> <li> <p>
-   * <code>ops.airflow.{region}.amazonaws.com</code> - This endpoint is used to push
-   * environment metrics that track environment health.</p> <ul> <li> <p> <a
+   * </p> </li> </ul> </li> <li> <p> <code>ops.airflow.{region}.amazonaws.com</code>
+   * - This endpoint is used to push environment metrics that track environment
+   * health.</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html
    * ">PublishMetrics</a> </p> </li> </ul> </li> </ul> <p> <b>Regions</b> </p> <p>For
    * a list of regions that Amazon MWAA supports, see <a

@@ -18,6 +18,7 @@
 #include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/ActivityStreamPolicyStatus.h>
 #include <aws/rds/model/MasterUserSecret.h>
+#include <aws/rds/model/CertificateDetails.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -1993,42 +1994,98 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline DBInstance& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline DBInstance& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the CA certificate for this DB instance.</p>
+     * <p>The identifier of the CA certificate for this DB instance.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
      */
     inline DBInstance& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
@@ -3743,6 +3800,37 @@ namespace Model
      */
     inline DBInstance& WithMasterUserSecret(MasterUserSecret&& value) { SetMasterUserSecret(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(const CertificateDetails& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = value; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(CertificateDetails&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::move(value); }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(const CertificateDetails& value) { SetCertificateDetails(value); return *this;}
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3981,6 +4069,9 @@ namespace Model
 
     MasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;
+
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

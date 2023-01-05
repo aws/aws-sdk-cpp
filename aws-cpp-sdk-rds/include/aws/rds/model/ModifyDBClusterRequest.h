@@ -114,7 +114,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline const Aws::String& GetNewDBClusterIdentifier() const{ return m_newDBClusterIdentifier; }
 
@@ -124,7 +125,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool NewDBClusterIdentifierHasBeenSet() const { return m_newDBClusterIdentifierHasBeenSet; }
 
@@ -134,7 +136,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetNewDBClusterIdentifier(const Aws::String& value) { m_newDBClusterIdentifierHasBeenSet = true; m_newDBClusterIdentifier = value; }
 
@@ -144,7 +147,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetNewDBClusterIdentifier(Aws::String&& value) { m_newDBClusterIdentifierHasBeenSet = true; m_newDBClusterIdentifier = std::move(value); }
 
@@ -154,7 +158,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetNewDBClusterIdentifier(const char* value) { m_newDBClusterIdentifierHasBeenSet = true; m_newDBClusterIdentifier.assign(value); }
 
@@ -164,7 +169,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(const Aws::String& value) { SetNewDBClusterIdentifier(value); return *this;}
 
@@ -174,7 +180,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(Aws::String&& value) { SetNewDBClusterIdentifier(std::move(value)); return *this;}
 
@@ -184,7 +191,8 @@ namespace Model
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
      * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
-     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     * <code>my-cluster2</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(const char* value) { SetNewDBClusterIdentifier(value); return *this;}
 

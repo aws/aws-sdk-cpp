@@ -21,7 +21,9 @@ namespace Model
     TRANSFER,
     QUEUE_TRANSFER,
     CALLBACK,
-    API
+    API,
+    DISCONNECT,
+    MONITOR
   };
 
 namespace ContactInitiationMethodMapper

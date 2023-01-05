@@ -151,7 +151,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -160,7 +161,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -169,7 +171,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -178,7 +181,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -187,7 +191,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -196,7 +201,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -205,7 +211,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
@@ -214,7 +221,8 @@ namespace Model
     /**
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. Valid values: <code>1.10.12</code>,
-     * <code>2.0.2</code>, and <code>2.2.2</code>. To learn more, see <a
+     * <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
      */
