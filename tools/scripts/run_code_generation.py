@@ -63,7 +63,7 @@ def is_endpoints_enabled(sdk_root: str) -> bool:
 
     :param sdk_root (str): filepath (absolute or relative) to the dir aws-cpp-sdk-core
     """
-    with open(sdk_root + "/" + "aws-cpp-sdk-core/include/aws/core/VersionConfig.h") as version_config_file:
+    with open(sdk_root + "../src" + "/aws-cpp-sdk-core/include/aws/core/VersionConfig.h") as version_config_file:
         version_config = version_config_file.read()
         m_major = re.search("#define AWS_SDK_VERSION_MAJOR (?P<version_major>\d+)", version_config)
         m_minor = re.search("#define AWS_SDK_VERSION_MINOR (?P<version_minor>\d+)", version_config)
@@ -331,8 +331,9 @@ def generate_single_client(service_name: str,
         run_command += [f"--{key}", val]
 
     output_zip_file = run_generator_once(service_name, run_command, output_filename)
-    dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}"
-    service_name, status = extract_zip(output_zip_file, service_name, output_dir, dir_to_delete_before_extract)
+    dir_to_delete_before_extract = f"{output_dir}/src/aws-cpp-sdk-{service_name}"
+    dir_to_extract = f"{output_dir}/src/"
+    service_name, status = extract_zip(output_zip_file, service_name, dir_to_extract, dir_to_delete_before_extract)
 
     if model_files.endpoint_rule_set and model_files.endpoint_tests:
         run_command.append("--generate-tests")
@@ -342,10 +343,10 @@ def generate_single_client(service_name: str,
         else:
             output_filename = "STDOUT"
         output_zip_file = run_generator_once(service_name, run_command, output_filename)
-        if not os.path.exists(f"{output_dir}/generated/tests"):
-            os.makedirs(f"{output_dir}/generated/tests")
-        dir_to_delete_before_extract = f"{output_dir}/generated/tests/{service_name}-gen-tests"
-        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/generated/tests", dir_to_delete_before_extract)
+        if not os.path.exists(f"{output_dir}/tests"):
+            os.makedirs(f"{output_dir}/tests")
+        dir_to_delete_before_extract = f"{output_dir}/tests/{service_name}-gen-tests"
+        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/tests", dir_to_delete_before_extract)
 
     return service_name, status
 
@@ -508,7 +509,7 @@ def main():
                                        CORE_COMPONENT_TO_MODEL[core_component],
                                        args["path_to_api_definitions"],
                                        args["path_to_generator"],
-                                       args["output_location"],
+                                       f"{args['output_location']}/../src/",
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
