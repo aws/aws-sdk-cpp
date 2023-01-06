@@ -2,21 +2,8 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required (VERSION 3.1)
-if(POLICY CMP0056)
-    cmake_policy(SET CMP0056 NEW) # CMP0056: Honor link flags in try_compile() source-file signature. Introduced in 3.2
-endif()
-if(POLICY CMP0057)
-    cmake_policy(SET CMP0057 NEW) # CMP0057: Support new IN_LIST if() operator. Introduced in 3.3.
-endif()
 if (POLICY CMP0077)
     cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
-endif()
-
-# 3.12 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
-# Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
-if(CMAKE_VERSION VERSION_LESS 3.12)
-    message(WARNING "Building with CMake 3.12 or higher is strongly suggested; current version is ${CMAKE_VERSION}")
 endif()
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
@@ -114,7 +101,7 @@ set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
 # Add ${CMAKE_INSTALL_LIBDIR}/cmake and ${CMAKE_PREFIX_PATH}/lib/cmake to search list
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_legacy")
 set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
 string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
 list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
@@ -138,8 +125,6 @@ if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
 endif()
 
-include(initialize_project_version)
-
 if (BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
     set(STATIC_CRT OFF)
 else()
@@ -150,7 +135,6 @@ endif()
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 
 # build the sdk targets
-project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 if (UNIX AND NOT APPLE)
     include(GNUInstallDirs)
@@ -185,7 +169,7 @@ set(CMAKE_CONFIGURATION_TYPES
 # build third-party targets
 if (BUILD_DEPS)
     set(CMAKE_INSTALL_RPATH "$ORIGIN")
-    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/crt/aws-crt-cpp/crt/aws-c-common/cmake")
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/../crt/aws-crt-cpp/crt/aws-c-common/cmake")
 
     include(AwsFindPackage)
 

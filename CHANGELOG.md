@@ -1,6 +1,12 @@
 # Breaking changes in AWS SDK for C++
+## [1.11.0](https://github.com/aws/aws-sdk-cpp/tree/1.11.0) (2022-01-24)
+This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
+* Asynchronous API refactoring is a partially breaking, backward incompatible change: all client methods such as OperationAsync and OperationCallable are no longer virtual methods but instead are conditionally compiled template methods. Having these methods as templates reduces the total binary size of the SDK by 40%. Individual client binary size may vary. In addition, it reduces build time of the SDK by up to 50% (release, unity build, SDK clients only).
+  A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
+  Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
+* Scripts and IDE project files not using the provided cmake build infrastructure must be reviewed and updated to reflect source tree changes.
 
-## [1.10.0]
+## [1.10.0](https://github.com/aws/aws-sdk-cpp/tree/1.10.0) (2021-11-07)
 This release introduces a new endpoint resolution based on client configuration and request input parameters. Endpoint Discovery and ARN Resource APIs are deprecated.
 
 ## [1.9.0](https://github.com/aws/aws-sdk-cpp/tree/1.9.0) (2021-04-19)
