@@ -25,7 +25,8 @@ Settings::Settings() :
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
-    m_evidenceFinderEnablementHasBeenSet(false)
+    m_evidenceFinderEnablementHasBeenSet(false),
+    m_deregistrationPolicyHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ Settings::Settings(JsonView jsonValue) :
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
-    m_evidenceFinderEnablementHasBeenSet(false)
+    m_evidenceFinderEnablementHasBeenSet(false),
+    m_deregistrationPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,13 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_evidenceFinderEnablementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deregistrationPolicy"))
+  {
+    m_deregistrationPolicy = jsonValue.GetObject("deregistrationPolicy");
+
+    m_deregistrationPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,12 @@ JsonValue Settings::Jsonize() const
   if(m_evidenceFinderEnablementHasBeenSet)
   {
    payload.WithObject("evidenceFinderEnablement", m_evidenceFinderEnablement.Jsonize());
+
+  }
+
+  if(m_deregistrationPolicyHasBeenSet)
+  {
+   payload.WithObject("deregistrationPolicy", m_deregistrationPolicy.Jsonize());
 
   }
 

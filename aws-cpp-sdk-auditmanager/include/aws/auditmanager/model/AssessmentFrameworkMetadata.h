@@ -368,63 +368,63 @@ namespace Model
 
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline AssessmentFrameworkMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p> Specifies when the framework was created. </p>
+     * <p> The time when the framework was created. </p>
      */
     inline AssessmentFrameworkMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline AssessmentFrameworkMetadata& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p> Specifies when the framework was most recently updated. </p>
+     * <p> The time when the framework was most recently updated. </p>
      */
     inline AssessmentFrameworkMetadata& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 

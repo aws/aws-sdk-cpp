@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The response object for the <code>UpdateAssessmentRequest</code> API. This
-     * is the name of the updated assessment.</p>
+     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
+     * name of the updated assessment.</p>
      */
     inline const Assessment& GetAssessment() const{ return m_assessment; }
 
     /**
-     * <p> The response object for the <code>UpdateAssessmentRequest</code> API. This
-     * is the name of the updated assessment.</p>
+     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
+     * name of the updated assessment.</p>
      */
     inline void SetAssessment(const Assessment& value) { m_assessment = value; }
 
     /**
-     * <p> The response object for the <code>UpdateAssessmentRequest</code> API. This
-     * is the name of the updated assessment.</p>
+     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
+     * name of the updated assessment.</p>
      */
     inline void SetAssessment(Assessment&& value) { m_assessment = std::move(value); }
 
     /**
-     * <p> The response object for the <code>UpdateAssessmentRequest</code> API. This
-     * is the name of the updated assessment.</p>
+     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
+     * name of the updated assessment.</p>
      */
     inline UpdateAssessmentResult& WithAssessment(const Assessment& value) { SetAssessment(value); return *this;}
 
     /**
-     * <p> The response object for the <code>UpdateAssessmentRequest</code> API. This
-     * is the name of the updated assessment.</p>
+     * <p> The response object for the <code>UpdateAssessment</code> API. This is the
+     * name of the updated assessment.</p>
      */
     inline UpdateAssessmentResult& WithAssessment(Assessment&& value) { SetAssessment(std::move(value)); return *this;}
 

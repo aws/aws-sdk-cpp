@@ -37,13 +37,13 @@ namespace Model
    * verify that the entity named in the certificate <b>Subject</b> field owns or
    * controls the public key contained in the <b>Subject Public Key Info</b> field.
    * Call the <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+   * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
    * action to create your private CA. You must then call the <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
+   * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
    * action to retrieve a private CA certificate signing request (CSR). Sign the CSR
-   * with your ACM Private CA-hosted or on-premises root or subordinate CA
-   * certificate. Call the <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+   * with your Amazon Web Services Private CA-hosted or on-premises root or
+   * subordinate CA certificate. Call the <a
+   * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
    * action to import the signed certificate into Certificate Manager (ACM).
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthority">AWS
@@ -483,7 +483,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline const Aws::Utils::DateTime& GetRestorableUntil() const{ return m_restorableUntil; }
@@ -491,7 +491,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline bool RestorableUntilHasBeenSet() const { return m_restorableUntilHasBeenSet; }
@@ -499,7 +499,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline void SetRestorableUntil(const Aws::Utils::DateTime& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = value; }
@@ -507,7 +507,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline void SetRestorableUntil(Aws::Utils::DateTime&& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = std::move(value); }
@@ -515,7 +515,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline CertificateAuthority& WithRestorableUntil(const Aws::Utils::DateTime& value) { SetRestorableUntil(value); return *this;}
@@ -523,7 +523,7 @@ namespace Model
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
      * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
      * action. </p>
      */
     inline CertificateAuthority& WithRestorableUntil(Aws::Utils::DateTime&& value) { SetRestorableUntil(std::move(value)); return *this;}

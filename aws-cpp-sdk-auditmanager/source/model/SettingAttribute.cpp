@@ -26,6 +26,7 @@ namespace Aws
         static const int DEFAULT_ASSESSMENT_REPORTS_DESTINATION_HASH = HashingUtils::HashString("DEFAULT_ASSESSMENT_REPORTS_DESTINATION");
         static const int DEFAULT_PROCESS_OWNERS_HASH = HashingUtils::HashString("DEFAULT_PROCESS_OWNERS");
         static const int EVIDENCE_FINDER_ENABLEMENT_HASH = HashingUtils::HashString("EVIDENCE_FINDER_ENABLEMENT");
+        static const int DEREGISTRATION_POLICY_HASH = HashingUtils::HashString("DEREGISTRATION_POLICY");
 
 
         SettingAttribute GetSettingAttributeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SettingAttribute::EVIDENCE_FINDER_ENABLEMENT;
           }
+          else if (hashCode == DEREGISTRATION_POLICY_HASH)
+          {
+            return SettingAttribute::DEREGISTRATION_POLICY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "DEFAULT_PROCESS_OWNERS";
           case SettingAttribute::EVIDENCE_FINDER_ENABLEMENT:
             return "EVIDENCE_FINDER_ENABLEMENT";
+          case SettingAttribute::DEREGISTRATION_POLICY:
+            return "DEREGISTRATION_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

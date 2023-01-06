@@ -27,7 +27,7 @@ namespace Model
    * <p/> <p>Specifies the X.509 extension information for a certificate.</p>
    * <p>Extensions present in <code>CustomExtensions</code> follow the
    * <code>ApiPassthrough</code> <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">template
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template
    * rules</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CustomExtension">AWS
    * API Reference</a></p>

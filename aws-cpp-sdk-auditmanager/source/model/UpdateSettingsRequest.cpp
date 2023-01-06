@@ -18,7 +18,8 @@ UpdateSettingsRequest::UpdateSettingsRequest() :
     m_defaultProcessOwnersHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
     m_evidenceFinderEnabled(false),
-    m_evidenceFinderEnabledHasBeenSet(false)
+    m_evidenceFinderEnabledHasBeenSet(false),
+    m_deregistrationPolicyHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
   if(m_evidenceFinderEnabledHasBeenSet)
   {
    payload.WithBool("evidenceFinderEnabled", m_evidenceFinderEnabled);
+
+  }
+
+  if(m_deregistrationPolicyHasBeenSet)
+  {
+   payload.WithObject("deregistrationPolicy", m_deregistrationPolicy.Jsonize());
 
   }
 

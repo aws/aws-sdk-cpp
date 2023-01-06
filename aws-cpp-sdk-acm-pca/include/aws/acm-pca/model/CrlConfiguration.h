@@ -33,10 +33,10 @@ namespace Model
    * hide the name of your bucket by specifying a value for the <b>CustomCname</b>
    * parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL
    * Distribution Points</b> extension of each certificate it issues. Your S3 bucket
-   * policy must give write permission to ACM Private CA. </p> <p>ACM Private CA
-   * assets that are stored in Amazon S3 can be protected with encryption. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+   * policy must give write permission to Amazon Web Services Private CA. </p>
+   * <p>Amazon Web Services Private CA assets that are stored in Amazon S3 can be
+   * protected with encryption. For more information, see <a
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
    * Your CRLs</a>.</p> <p>Your private CA uses the value in the
    * <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in
    * the CRL. The CRL is refreshed prior to a certificate's expiration date or when a
@@ -44,34 +44,34 @@ namespace Model
    * until the certificate expires, and then in one additional CRL after expiration,
    * and it always appears in the audit report.</p> <p>A CRL is typically updated
    * approximately 30 minutes after a certificate is revoked. If for any reason a CRL
-   * update fails, ACM Private CA makes further attempts every 15 minutes.</p>
-   * <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The
-   * current version number defined in RFC 5280 is V2. The integer value is 0x1. </p>
-   * </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to
-   * sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of
-   * your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The
-   * issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day
-   * and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked
-   * Certificates</b>: List of revoked certificates. Each list item contains the
-   * following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial
-   * number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p>
-   * <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li>
-   * <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p>
-   * <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was
-   * revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>:
-   * Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key
-   * Identifier</b>: Identifies the public key associated with the private key used
-   * to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal
-   * sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature
-   * Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li>
-   * <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul>
-   * <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You
-   * can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl
-   * -inform DER -text -in <i>crl_path</i> -noout</code> </p> <p>For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
-   * a certificate revocation list (CRL)</a> in the <i>Private Certificate Authority
-   * (PCA) User Guide</i> </p><p><h3>See Also:</h3>   <a
+   * update fails, Amazon Web Services Private CA makes further attempts every 15
+   * minutes.</p> <p>CRLs contain the following fields:</p> <ul> <li> <p>
+   * <b>Version</b>: The current version number defined in RFC 5280 is V2. The
+   * integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name
+   * of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The
+   * X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li>
+   * <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p>
+   * <b>Next Update</b>: The day and time by which the next CRL will be issued.</p>
+   * </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each
+   * list item contains the following information.</p> <ul> <li> <p> <b>Serial
+   * Number</b>: The serial number, in hexadecimal format, of the revoked
+   * certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the
+   * certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>:
+   * Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason
+   * Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li>
+   * <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li>
+   * <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated
+   * with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3
+   * CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li>
+   * <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the
+   * CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the
+   * CRL.</p> </li> </ul> <p>Certificate revocation lists created by Amazon Web
+   * Services Private CA are DER-encoded. You can use the following OpenSSL command
+   * to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i>
+   * -noout</code> </p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html">Planning
+   * a certificate revocation list (CRL)</a> in the <i>Amazon Web Services Private
+   * Certificate Authority User Guide</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration">AWS
    * API Reference</a></p>
    */
@@ -88,9 +88,9 @@ namespace Model
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
      * when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
      * action or for an existing CA when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * action. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -99,9 +99,9 @@ namespace Model
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
      * when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
      * action or for an existing CA when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * action. </p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -110,9 +110,9 @@ namespace Model
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
      * when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
      * action or for an existing CA when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * action. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
@@ -121,9 +121,9 @@ namespace Model
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
      * when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
      * action or for an existing CA when you call the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * action. </p>
      */
     inline CrlConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -153,56 +153,88 @@ namespace Model
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline const Aws::String& GetCustomCname() const{ return m_customCname; }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline bool CustomCnameHasBeenSet() const { return m_customCnameHasBeenSet; }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline void SetCustomCname(const Aws::String& value) { m_customCnameHasBeenSet = true; m_customCname = value; }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline void SetCustomCname(Aws::String&& value) { m_customCnameHasBeenSet = true; m_customCname = std::move(value); }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline void SetCustomCname(const char* value) { m_customCnameHasBeenSet = true; m_customCname.assign(value); }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline CrlConfiguration& WithCustomCname(const Aws::String& value) { SetCustomCname(value); return *this;}
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline CrlConfiguration& WithCustomCname(Aws::String&& value) { SetCustomCname(std::move(value)); return *this;}
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
      * that enables the use of an alias for the CRL distribution point. Use this value
-     * if you don't want the name of your S3 bucket to be public.</p>
+     * if you don't want the name of your S3 bucket to be public.</p>  <p>The
+     * content of a Canonical Name (CNAME) record must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in URIs. Additionally, the value of the CNAME must not
+     * include a protocol prefix such as "http://" or "https://".</p> 
      */
     inline CrlConfiguration& WithCustomCname(const char* value) { SetCustomCname(value); return *this;}
 
@@ -212,10 +244,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
@@ -224,10 +260,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
@@ -236,10 +276,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
@@ -248,10 +292,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
@@ -260,10 +308,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
@@ -272,10 +324,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline CrlConfiguration& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
@@ -284,10 +340,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline CrlConfiguration& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
@@ -296,10 +356,14 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * operation. You must specify a <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-     * policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     * policy</a> that allows Amazon Web Services Private CA to write the CRL to your
+     * bucket.</p>  <p>The <code>S3BucketName</code> parameter must conform to
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+     * bucket naming rules</a>.</p> 
      */
     inline CrlConfiguration& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -317,7 +381,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline const S3ObjectAcl& GetS3ObjectAcl() const{ return m_s3ObjectAcl; }
@@ -335,7 +399,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline bool S3ObjectAclHasBeenSet() const { return m_s3ObjectAclHasBeenSet; }
@@ -353,7 +417,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline void SetS3ObjectAcl(const S3ObjectAcl& value) { m_s3ObjectAclHasBeenSet = true; m_s3ObjectAcl = value; }
@@ -371,7 +435,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline void SetS3ObjectAcl(S3ObjectAcl&& value) { m_s3ObjectAclHasBeenSet = true; m_s3ObjectAcl = std::move(value); }
@@ -389,7 +453,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline CrlConfiguration& WithS3ObjectAcl(const S3ObjectAcl& value) { SetS3ObjectAcl(value); return *this;}
@@ -407,7 +471,7 @@ namespace Model
      * results in an error. If you have disabled BPA in S3, then you can specify either
      * <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
      * value.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
     inline CrlConfiguration& WithS3ObjectAcl(S3ObjectAcl&& value) { SetS3ObjectAcl(std::move(value)); return *this;}

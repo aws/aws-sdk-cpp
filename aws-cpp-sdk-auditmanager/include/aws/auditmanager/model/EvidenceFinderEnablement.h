@@ -105,14 +105,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline const EvidenceFinderEnablementStatus& GetEnablementStatus() const{ return m_enablementStatus; }
 
@@ -122,14 +123,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline bool EnablementStatusHasBeenSet() const { return m_enablementStatusHasBeenSet; }
 
@@ -139,14 +141,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline void SetEnablementStatus(const EvidenceFinderEnablementStatus& value) { m_enablementStatusHasBeenSet = true; m_enablementStatus = value; }
 
@@ -156,14 +159,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline void SetEnablementStatus(EvidenceFinderEnablementStatus&& value) { m_enablementStatusHasBeenSet = true; m_enablementStatus = std::move(value); }
 
@@ -173,14 +177,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline EvidenceFinderEnablement& WithEnablementStatus(const EvidenceFinderEnablementStatus& value) { SetEnablementStatus(value); return *this;}
 
@@ -190,14 +195,15 @@ namespace Model
      * requested to enable evidence finder. An event data store is currently being
      * created to support evidence finder queries.</p> </li> <li> <p>
      * <code>ENABLED</code> means that an event data store was successfully created and
-     * evidence finder is enabled. We recommend that you wait 24 hours until the event
-     * data store is backfilled with your past evidence data. You can use evidence
-     * finder in the meantime, but not all data might be available until the backfill
-     * is complete.</p> </li> <li> <p> <code>DISABLE_IN_PROGRESS</code> means that you
-     * requested to disable evidence finder, and your request is pending the deletion
-     * of the event data store.</p> </li> <li> <p> <code>DISABLED</code> means that you
-     * have permanently disabled evidence finder and the event data store has been
-     * deleted. You can't re-enable evidence finder after this point.</p> </li> </ul>
+     * evidence finder is enabled. We recommend that you wait 7 days until the event
+     * data store is backfilled with your past two years’ worth of evidence data. You
+     * can use evidence finder in the meantime, but not all data might be available
+     * until the backfill is complete.</p> </li> <li> <p>
+     * <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence
+     * finder, and your request is pending the deletion of the event data store.</p>
+     * </li> <li> <p> <code>DISABLED</code> means that you have permanently disabled
+     * evidence finder and the event data store has been deleted. You can't re-enable
+     * evidence finder after this point.</p> </li> </ul>
      */
     inline EvidenceFinderEnablement& WithEnablementStatus(EvidenceFinderEnablementStatus&& value) { SetEnablementStatus(std::move(value)); return *this;}
 
@@ -205,78 +211,78 @@ namespace Model
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline const EvidenceFinderBackfillStatus& GetBackfillStatus() const{ return m_backfillStatus; }
 
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline bool BackfillStatusHasBeenSet() const { return m_backfillStatusHasBeenSet; }
 
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline void SetBackfillStatus(const EvidenceFinderBackfillStatus& value) { m_backfillStatusHasBeenSet = true; m_backfillStatus = value; }
 
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline void SetBackfillStatus(EvidenceFinderBackfillStatus&& value) { m_backfillStatusHasBeenSet = true; m_backfillStatus = std::move(value); }
 
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline EvidenceFinderEnablement& WithBackfillStatus(const EvidenceFinderBackfillStatus& value) { SetBackfillStatus(value); return *this;}
 
     /**
      * <p>The current status of the evidence data backfill process. </p> <p>The
      * backfill starts after you enable evidence finder. During this task, Audit
-     * Manager populates an event data store with your past evidence data so that your
-     * evidence can be queried.</p> <ul> <li> <p> <code>NOT_STARTED</code> means that
-     * the backfill hasn’t started yet. </p> </li> <li> <p> <code>IN_PROGRESS</code>
-     * means that the backfill is in progress. This can take up to 24 hours to
-     * complete, depending on the amount of evidence data. </p> </li> <li> <p>
-     * <code>COMPLETED</code> means that the backfill is complete. All of your past
-     * evidence is now queryable. </p> </li> </ul>
+     * Manager populates an event data store with your past two years’ worth of
+     * evidence data so that your evidence can be queried.</p> <ul> <li> <p>
+     * <code>NOT_STARTED</code> means that the backfill hasn’t started yet. </p> </li>
+     * <li> <p> <code>IN_PROGRESS</code> means that the backfill is in progress. This
+     * can take up to 7 days to complete, depending on the amount of evidence data.
+     * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
+     * All of your past evidence is now queryable. </p> </li> </ul>
      */
     inline EvidenceFinderEnablement& WithBackfillStatus(EvidenceFinderBackfillStatus&& value) { SetBackfillStatus(std::move(value)); return *this;}
 

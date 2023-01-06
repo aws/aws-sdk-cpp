@@ -106,50 +106,58 @@ namespace Model
 
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline const Aws::Vector<PolicyQualifierInfo>& GetPolicyQualifiers() const{ return m_policyQualifiers; }
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline bool PolicyQualifiersHasBeenSet() const { return m_policyQualifiersHasBeenSet; }
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline void SetPolicyQualifiers(const Aws::Vector<PolicyQualifierInfo>& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers = value; }
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline void SetPolicyQualifiers(Aws::Vector<PolicyQualifierInfo>&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers = std::move(value); }
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline PolicyInformation& WithPolicyQualifiers(const Aws::Vector<PolicyQualifierInfo>& value) { SetPolicyQualifiers(value); return *this;}
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline PolicyInformation& WithPolicyQualifiers(Aws::Vector<PolicyQualifierInfo>&& value) { SetPolicyQualifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline PolicyInformation& AddPolicyQualifiers(const PolicyQualifierInfo& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers.push_back(value); return *this; }
 
     /**
-     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA
-     * supports the certification practice statement (CPS) qualifier.</p>
+     * <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web
+     * Services Private CA supports the certification practice statement (CPS)
+     * qualifier.</p>
      */
     inline PolicyInformation& AddPolicyQualifiers(PolicyQualifierInfo&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers.push_back(std::move(value)); return *this; }
 

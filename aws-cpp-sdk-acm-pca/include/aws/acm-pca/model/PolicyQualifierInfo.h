@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code>
-   * object with a qualifier. ACM Private CA supports the certification practice
-   * statement (CPS) qualifier.</p><p><h3>See Also:</h3>   <a
+   * object with a qualifier. Amazon Web Services Private CA supports the
+   * certification practice statement (CPS) qualifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PolicyQualifierInfo">AWS
    * API Reference</a></p>
    */
@@ -72,38 +72,38 @@ namespace Model
 
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline const Qualifier& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline void SetQualifier(const Qualifier& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline void SetQualifier(Qualifier&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline PolicyQualifierInfo& WithQualifier(const Qualifier& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a
-     * CPS qualifier in this field.</p>
+     * <p>Defines the qualifier type. Amazon Web Services Private CA supports the use
+     * of a URI for a CPS qualifier in this field.</p>
      */
     inline PolicyQualifierInfo& WithQualifier(Qualifier&& value) { SetQualifier(std::move(value)); return *this;}
 

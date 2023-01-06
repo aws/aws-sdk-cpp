@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p> A record that contains the information needed to demonstrate compliance with
    * the requirements specified by a control. Examples of evidence include change
-   * activity triggered by a user, or a system configuration snapshot. </p><p><h3>See
+   * activity invoked by a user, or a system configuration snapshot. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Evidence">AWS
    * API Reference</a></p>

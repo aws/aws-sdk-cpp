@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/auditmanager/model/AssessmentReportsDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/auditmanager/model/DeregistrationPolicy.h>
 #include <aws/auditmanager/model/Role.h>
 #include <utility>
 
@@ -206,10 +207,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
      * and then <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
-     * Audit Manager. </p> <p>Disabling evidence finder is permanent, so consider this
-     * decision carefully before you proceed. If you’re using Audit Manager as a
-     * delegated administrator, keep in mind that this action applies to all member
-     * accounts in your organization.</p> 
+     * Audit Manager. </p> 
      */
     inline bool GetEvidenceFinderEnabled() const{ return m_evidenceFinderEnabled; }
 
@@ -222,10 +220,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
      * and then <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
-     * Audit Manager. </p> <p>Disabling evidence finder is permanent, so consider this
-     * decision carefully before you proceed. If you’re using Audit Manager as a
-     * delegated administrator, keep in mind that this action applies to all member
-     * accounts in your organization.</p> 
+     * Audit Manager. </p> 
      */
     inline bool EvidenceFinderEnabledHasBeenSet() const { return m_evidenceFinderEnabledHasBeenSet; }
 
@@ -238,10 +233,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
      * and then <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
-     * Audit Manager. </p> <p>Disabling evidence finder is permanent, so consider this
-     * decision carefully before you proceed. If you’re using Audit Manager as a
-     * delegated administrator, keep in mind that this action applies to all member
-     * accounts in your organization.</p> 
+     * Audit Manager. </p> 
      */
     inline void SetEvidenceFinderEnabled(bool value) { m_evidenceFinderEnabledHasBeenSet = true; m_evidenceFinderEnabled = value; }
 
@@ -254,12 +246,52 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
      * and then <a
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
-     * Audit Manager. </p> <p>Disabling evidence finder is permanent, so consider this
-     * decision carefully before you proceed. If you’re using Audit Manager as a
-     * delegated administrator, keep in mind that this action applies to all member
-     * accounts in your organization.</p> 
+     * Audit Manager. </p> 
      */
     inline UpdateSettingsRequest& WithEvidenceFinderEnabled(bool value) { SetEvidenceFinderEnabled(value); return *this;}
+
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline const DeregistrationPolicy& GetDeregistrationPolicy() const{ return m_deregistrationPolicy; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline bool DeregistrationPolicyHasBeenSet() const { return m_deregistrationPolicyHasBeenSet; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline void SetDeregistrationPolicy(const DeregistrationPolicy& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = value; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline void SetDeregistrationPolicy(DeregistrationPolicy&& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = std::move(value); }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline UpdateSettingsRequest& WithDeregistrationPolicy(const DeregistrationPolicy& value) { SetDeregistrationPolicy(value); return *this;}
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline UpdateSettingsRequest& WithDeregistrationPolicy(DeregistrationPolicy&& value) { SetDeregistrationPolicy(std::move(value)); return *this;}
 
   private:
 
@@ -277,6 +309,9 @@ namespace Model
 
     bool m_evidenceFinderEnabled;
     bool m_evidenceFinderEnabledHasBeenSet = false;
+
+    DeregistrationPolicy m_deregistrationPolicy;
+    bool m_deregistrationPolicyHasBeenSet = false;
   };
 
 } // namespace Model
