@@ -203,38 +203,32 @@ namespace Model
 
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline ControlMappingSource& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies one of the five data source types for evidence collection. </p>
      */
     inline ControlMappingSource& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 

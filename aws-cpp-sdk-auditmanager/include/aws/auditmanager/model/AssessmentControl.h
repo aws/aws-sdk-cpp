@@ -315,22 +315,22 @@ namespace Model
 
 
     /**
-     * <p> The amount of evidence that's generated for the control. </p>
+     * <p> The amount of evidence that's collected for the control. </p>
      */
     inline int GetEvidenceCount() const{ return m_evidenceCount; }
 
     /**
-     * <p> The amount of evidence that's generated for the control. </p>
+     * <p> The amount of evidence that's collected for the control. </p>
      */
     inline bool EvidenceCountHasBeenSet() const { return m_evidenceCountHasBeenSet; }
 
     /**
-     * <p> The amount of evidence that's generated for the control. </p>
+     * <p> The amount of evidence that's collected for the control. </p>
      */
     inline void SetEvidenceCount(int value) { m_evidenceCountHasBeenSet = true; m_evidenceCount = value; }
 
     /**
-     * <p> The amount of evidence that's generated for the control. </p>
+     * <p> The amount of evidence that's collected for the control. </p>
      */
     inline AssessmentControl& WithEvidenceCount(int value) { SetEvidenceCount(value); return *this;}
 

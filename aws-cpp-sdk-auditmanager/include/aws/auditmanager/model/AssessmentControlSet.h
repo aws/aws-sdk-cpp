@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline const ControlSetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline void SetStatus(const ControlSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline void SetStatus(ControlSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline AssessmentControlSet& WithStatus(const ControlSetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> Specifies the current status of the control set. </p>
+     * <p> The current status of the control set. </p>
      */
     inline AssessmentControlSet& WithStatus(ControlSetStatus&& value) { SetStatus(std::move(value)); return *this;}
 

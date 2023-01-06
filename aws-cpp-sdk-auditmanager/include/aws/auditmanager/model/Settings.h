@@ -9,6 +9,7 @@
 #include <aws/auditmanager/model/AssessmentReportsDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/auditmanager/model/EvidenceFinderEnablement.h>
+#include <aws/auditmanager/model/DeregistrationPolicy.h>
 #include <aws/auditmanager/model/Role.h>
 #include <utility>
 
@@ -247,6 +248,49 @@ namespace Model
      */
     inline Settings& WithEvidenceFinderEnablement(EvidenceFinderEnablement&& value) { SetEvidenceFinderEnablement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline const DeregistrationPolicy& GetDeregistrationPolicy() const{ return m_deregistrationPolicy; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline bool DeregistrationPolicyHasBeenSet() const { return m_deregistrationPolicyHasBeenSet; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline void SetDeregistrationPolicy(const DeregistrationPolicy& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = value; }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline void SetDeregistrationPolicy(DeregistrationPolicy&& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = std::move(value); }
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline Settings& WithDeregistrationPolicy(const DeregistrationPolicy& value) { SetDeregistrationPolicy(value); return *this;}
+
+    /**
+     * <p>The deregistration policy for your Audit Manager data. You can use this
+     * attribute to determine how your data is handled when you deregister Audit
+     * Manager.</p>
+     */
+    inline Settings& WithDeregistrationPolicy(DeregistrationPolicy&& value) { SetDeregistrationPolicy(std::move(value)); return *this;}
+
   private:
 
     bool m_isAwsOrgEnabled;
@@ -266,6 +310,9 @@ namespace Model
 
     EvidenceFinderEnablement m_evidenceFinderEnablement;
     bool m_evidenceFinderEnablementHasBeenSet = false;
+
+    DeregistrationPolicy m_deregistrationPolicy;
+    bool m_deregistrationPolicyHasBeenSet = false;
   };
 
 } // namespace Model

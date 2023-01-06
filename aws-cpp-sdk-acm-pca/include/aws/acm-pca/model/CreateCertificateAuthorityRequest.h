@@ -82,10 +82,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
@@ -94,10 +107,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
@@ -106,10 +132,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
@@ -118,10 +157,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
@@ -130,10 +182,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
@@ -142,10 +207,23 @@ namespace Model
      * <p>Contains information to enable Online Certificate Status Protocol (OCSP)
      * support, to enable a certificate revocation list (CRL), to enable both, or to
      * enable neither. The default is for both certificate validation mechanisms to be
-     * disabled. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
+     * disabled. </p>  <p>The following requirements apply to revocation
+     * configurations.</p> <ul> <li> <p>A configuration disabling CRLs or OCSP must
+     * contain only the <code>Enabled=False</code> parameter, and will fail if other
+     * parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code> are
+     * included.</p> </li> <li> <p>In a CRL configuration, the
+     * <code>S3BucketName</code> parameter must conform to <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+     * S3 bucket naming rules</a>.</p> </li> <li> <p>A configuration containing a
+     * custom Canonical Name (CNAME) parameter for CRLs or OCSP must conform to <a
+     * href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use
+     * of special characters in a CNAME. </p> </li> <li> <p>In a CRL or OCSP
+     * configuration, the value of a CNAME parameter must not include a protocol prefix
+     * such as "http://" or "https://".</p> </li> </ul>  <p> For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
      * and <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
     inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
@@ -187,10 +265,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -199,10 +277,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -211,10 +289,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -223,10 +301,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -235,10 +313,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -247,10 +325,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -259,10 +337,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -271,10 +349,10 @@ namespace Model
      * <b>CreateCertificateAuthority</b> action. Idempotency tokens for
      * <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you
      * call <b>CreateCertificateAuthority</b> multiple times with the same idempotency
-     * token within five minutes, ACM Private CA recognizes that you are requesting
-     * only certificate authority and will issue only one. If you change the
-     * idempotency token for each call, PCA recognizes that you are requesting multiple
-     * certificate authorities.</p>
+     * token within five minutes, Amazon Web Services Private CA recognizes that you
+     * are requesting only certificate authority and will issue only one. If you change
+     * the idempotency token for each call, Amazon Web Services Private CA recognizes
+     * that you are requesting multiple certificate authorities.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

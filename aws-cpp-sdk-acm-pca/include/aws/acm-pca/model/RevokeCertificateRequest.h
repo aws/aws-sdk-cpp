@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -193,7 +193,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>Serial number of the certificate to be revoked. This must be in hexadecimal
      * format. You can retrieve the serial number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
      * with the Amazon Resource Name (ARN) of the certificate you want and the ARN of
      * your private CA. The <b>GetCertificate</b> action retrieves the certificate in
      * the PEM format. You can use the following OpenSSL command to list the
