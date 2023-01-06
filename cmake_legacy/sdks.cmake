@@ -2,6 +2,8 @@ include(sdksCommon)
 
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
+set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
+
 if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
@@ -53,8 +55,12 @@ else()
     # remove any missing targets from the build list, factoring in dependencies appropriately
     foreach(SDK IN LISTS TEMP_SDK_BUILD_LIST)
         set(REMOVE_SDK 0)
-
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+        else()
+            set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+        endif()
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}" AND NOT REGENERATE_CLIENTS)
             set(REMOVE_SDK 1)
@@ -78,7 +84,6 @@ endif()
 
 if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Regenerating clients/defaults that have been selected for build.")
-    set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
     if(REGENERATE_CLIENTS AND BUILD_ONLY)
         foreach(build_only ${BUILD_ONLY})
             list (FIND NON_GENERATED_CLIENT_LIST ${build_only} _index)
@@ -107,7 +112,7 @@ if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     endif()
 
     execute_process(
-        COMMAND ${PYTHON3_CMD} scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output_location ./
+        COMMAND ${PYTHON3_CMD} tools/scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output_location ./generated/
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         RESULT_VARIABLE ret
     )
@@ -137,7 +142,7 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-            COMMAND ${PYTHON3_CMD} scripts/legacy/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
+            COMMAND ${PYTHON3_CMD} tools/scripts/legacy/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
@@ -149,7 +154,12 @@ endforeach(custom_client)
 if(BUILD_ONLY)
     # make sure all the sdks/c2js are present; a missing sdk-directory or c2j file is a build error when building a manually-specified set
     foreach(SDK IN LISTS SDK_BUILD_LIST)
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+        else()
+            set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+        endif()
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
@@ -162,7 +172,12 @@ if(BUILD_ONLY)
         if(DEPENDENCY_INDEX LESS 0)
             # test dependencies should also be built from source instead of locating by calling find_package
             # which may cause version conflicts as well as double targeting built targets
-            set(SDK_DIR "aws-cpp-sdk-${SDK}")
+            list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+            if (${_index} GREATER -1) # old cmake search in a list syntax
+                set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+            else()
+                set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+            endif()
             if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
             endif ()
@@ -182,15 +197,23 @@ LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 function(add_sdks)
     LIST(APPEND EXPORTS "")
     foreach(SDK IN LISTS SDK_BUILD_LIST)
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        message(STATUS "Adding ${SDK} to SDK build")
+        set(SDK_TARGET "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/${SDK_TARGET}")
+        else()
+            set(SDK_DIR "generated/src/${SDK_TARGET}")
+        endif()
 
         add_subdirectory("${SDK_DIR}")
-        LIST(APPEND EXPORTS "${SDK_DIR}")
+        LIST(APPEND EXPORTS "${SDK_TARGET}")
+        unset(SDK_TARGET)
     endforeach()
 
     #testing
     if(ENABLE_TESTING)
-        add_subdirectory(testing-resources)
+        add_subdirectory(tests/testing-resources)
 
         if(ENABLE_FUNCTIONAL_TESTING)
             message(STATUS "Clearing existing directory for document-test to prepare for generation.")
@@ -198,7 +221,7 @@ function(add_sdks)
 
             # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
             execute_process(
-                COMMAND ${PYTHON3_CMD} scripts/legacy/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./ --prepareTool
+                COMMAND ${PYTHON3_CMD} tools/scripts/legacy/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./generated/ --prepareTool
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: document-test, version: 2021-06-28")

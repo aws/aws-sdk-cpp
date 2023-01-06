@@ -78,10 +78,11 @@ credentials
 toolchains/android/
 
 # codegen
-code-generation/generator/target/
+tools/code-generation/generator/target/
 
 #config output
 aws-cpp-sdk-core/include/aws/core/SDKConfig.h
+src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #nuget
 *.nupkg

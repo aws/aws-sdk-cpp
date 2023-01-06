@@ -64,7 +64,7 @@ endfunction()
 #
 # Uses selection sort (stable).
 function(sort_links targets_list)
-    # Special case of empty input list. Futher code assumes list to be non-empty.
+    # Special case of empty input list. Further code assumes list to be non-empty.
     if(NOT ${targets_list})
         return()
     endif()
