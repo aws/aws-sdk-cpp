@@ -104,7 +104,7 @@ namespace Aws
                 return;
             }
             assert(Aws::get_aws_allocator() != nullptr);
-            s_monitors = Aws::New<Monitors>(MonitoringTag, Aws::get_aws_allocator());
+            s_monitors = Aws::New<Monitors>(MonitoringTag);
             for (const auto& function: monitoringFactoryCreateFunctions)
             {
                 auto factory = function();

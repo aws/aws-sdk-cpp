@@ -132,10 +132,11 @@ public class C2jModelToGeneratorModelTransformer {
             String shortenedRules = c2jServiceModel.getEndpointRules();
             try {
                 jsonNode = objectMapper.readValue(shortenedRules, JsonNode.class);
+                shortenedRules = jsonNode.toString();
             } catch (JsonProcessingException e) {
                 System.err.println("Unable to parse endpoint rules as a json: " + e.getMessage());
             }
-            shortenedRules = jsonNode.toString();
+            shortenedRules += "\0";
             serviceModel.setEndpointRules(shortenedRules);
         }
         serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());

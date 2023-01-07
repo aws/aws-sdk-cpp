@@ -31,7 +31,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     {
       return;
     }
-    s_CoreErrorsMapper = Aws::New<ErrorsMapperContainer>("InitCoreErrorsMapper", Aws::get_aws_allocator());
+    s_CoreErrorsMapper = Aws::New<ErrorsMapperContainer>("InitCoreErrorsMapper");
 
     s_CoreErrorsMapper->emplace("IncompleteSignature", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
     s_CoreErrorsMapper->emplace("IncompleteSignatureException", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));

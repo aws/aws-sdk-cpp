@@ -1,6 +1,7 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 \#include <aws/core/endpoint/AWSPartitions.h>
+\#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
