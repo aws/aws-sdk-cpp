@@ -124,7 +124,7 @@ public:
     using ${metadata.classNamePrefix}ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ${epProviderClassName}()
-      : ${metadata.classNamePrefix}DefaultEpProviderBase(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules)
+      : ${metadata.classNamePrefix}DefaultEpProviderBase(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::GetRulesBlob(), ${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::RulesBlobSize)
     {}
 
     ~${metadata.classNamePrefix}EndpointProvider()
