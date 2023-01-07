@@ -47,22 +47,22 @@ namespace Endpoint
   {
     SetFromClientConfiguration(static_cast<const S3ClientConfiguration::BaseClientConfigClass&>(config));
 
-    static const Aws::String AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
+    static const char* AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
     if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
       SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);
     }
 
     // Not supported by this SDK:
-    // static const Aws::String AWS_S3_ACCELERATE = "Accelerate";
-    // static const Aws::String AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
+    // static const char* AWS_S3_ACCELERATE = "Accelerate";
+    // static const char* AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
 
-    static const Aws::String AWS_S3_USE_ARN_REGION = "UseArnRegion";
+    static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
     SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
 
-    static const Aws::String AWS_S3_DISABLE_MRAP = "DisableMultiRegionAccessPoints";
+    static const char* AWS_S3_DISABLE_MRAP = "DisableMultiRegionAccessPoints";
     SetBooleanParameter(AWS_S3_DISABLE_MRAP, config.disableMultiRegionAccessPoints);
 
-    static const Aws::String AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
+    static const char* AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
     if (!config.useVirtualAddressing) {
       SetBooleanParameter(AWS_S3_FORCE_PATH_STYLE, true);
     }
