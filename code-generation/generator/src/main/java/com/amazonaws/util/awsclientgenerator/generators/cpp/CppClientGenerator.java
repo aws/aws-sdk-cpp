@@ -106,6 +106,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("serviceModel", serviceModel);
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());
+        context.put("nullChar", '\0');
         return context;
     }
 
