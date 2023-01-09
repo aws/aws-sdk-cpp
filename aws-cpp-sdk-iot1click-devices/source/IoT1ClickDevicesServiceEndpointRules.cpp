@@ -4,18 +4,17 @@
  */
 
 #include <aws/iot1click-devices/IoT1ClickDevicesServiceEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace IoT1ClickDevicesService
 {
+const size_t IoT1ClickDevicesServiceEndpointRules::RulesBlobStrLen = 3456;
+const size_t IoT1ClickDevicesServiceEndpointRules::RulesBlobSize = 3457;
 
-Aws::String IoT1ClickDevicesServiceEndpointRules::GetRulesAsString()
-{
-    return Aws::String(IoT1ClickDevicesServiceEndpointRules::Rules.begin(), IoT1ClickDevicesServiceEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> IoT1ClickDevicesServiceEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, IoT1ClickDevicesServiceEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> IoT1ClickDevicesServiceEndpointRules::Rules = {
 '{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i',
 'x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d',
 'e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t',
-'"','}',']','}',']','}'};
+'"','}',']','}',']','}','\0'
+}};
+
+const char* IoT1ClickDevicesServiceEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace IoT1ClickDevicesService
 } // namespace Aws

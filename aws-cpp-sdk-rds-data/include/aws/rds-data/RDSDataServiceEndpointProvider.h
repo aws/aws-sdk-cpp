@@ -49,7 +49,7 @@ public:
     using RDSDataServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RDSDataServiceEndpointProvider()
-      : RDSDataServiceDefaultEpProviderBase(Aws::RDSDataService::RDSDataServiceEndpointRules::Rules)
+      : RDSDataServiceDefaultEpProviderBase(Aws::RDSDataService::RDSDataServiceEndpointRules::GetRulesBlob(), Aws::RDSDataService::RDSDataServiceEndpointRules::RulesBlobSize)
     {}
 
     ~RDSDataServiceEndpointProvider()

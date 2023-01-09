@@ -49,7 +49,7 @@ public:
     using ServerlessApplicationRepositoryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ServerlessApplicationRepositoryEndpointProvider()
-      : ServerlessApplicationRepositoryDefaultEpProviderBase(Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::Rules)
+      : ServerlessApplicationRepositoryDefaultEpProviderBase(Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::GetRulesBlob(), Aws::ServerlessApplicationRepository::ServerlessApplicationRepositoryEndpointRules::RulesBlobSize)
     {}
 
     ~ServerlessApplicationRepositoryEndpointProvider()

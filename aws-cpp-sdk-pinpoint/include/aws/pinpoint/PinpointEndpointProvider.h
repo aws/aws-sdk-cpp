@@ -49,7 +49,7 @@ public:
     using PinpointResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PinpointEndpointProvider()
-      : PinpointDefaultEpProviderBase(Aws::Pinpoint::PinpointEndpointRules::Rules)
+      : PinpointDefaultEpProviderBase(Aws::Pinpoint::PinpointEndpointRules::GetRulesBlob(), Aws::Pinpoint::PinpointEndpointRules::RulesBlobSize)
     {}
 
     ~PinpointEndpointProvider()

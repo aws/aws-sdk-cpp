@@ -4,18 +4,17 @@
  */
 
 #include <aws/cloud9/Cloud9EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Cloud9
 {
+const size_t Cloud9EndpointRules::RulesBlobStrLen = 3454;
+const size_t Cloud9EndpointRules::RulesBlobSize = 3455;
 
-Aws::String Cloud9EndpointRules::GetRulesAsString()
-{
-    return Aws::String(Cloud9EndpointRules::Rules.begin(), Cloud9EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> Cloud9EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, Cloud9EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> Cloud9EndpointRules::Rules = {
 'a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}',
 '"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r',
 's','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',
-']','}',']','}'};
+']','}',']','}','\0'
+}};
+
+const char* Cloud9EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Cloud9
 } // namespace Aws

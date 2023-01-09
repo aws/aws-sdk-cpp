@@ -49,7 +49,7 @@ public:
     using GreengrassResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GreengrassEndpointProvider()
-      : GreengrassDefaultEpProviderBase(Aws::Greengrass::GreengrassEndpointRules::Rules)
+      : GreengrassDefaultEpProviderBase(Aws::Greengrass::GreengrassEndpointRules::GetRulesBlob(), Aws::Greengrass::GreengrassEndpointRules::RulesBlobSize)
     {}
 
     ~GreengrassEndpointProvider()

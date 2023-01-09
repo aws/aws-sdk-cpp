@@ -49,7 +49,7 @@ public:
     using EMRServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EMRServerlessEndpointProvider()
-      : EMRServerlessDefaultEpProviderBase(Aws::EMRServerless::EMRServerlessEndpointRules::Rules)
+      : EMRServerlessDefaultEpProviderBase(Aws::EMRServerless::EMRServerlessEndpointRules::GetRulesBlob(), Aws::EMRServerless::EMRServerlessEndpointRules::RulesBlobSize)
     {}
 
     ~EMRServerlessEndpointProvider()

@@ -4,18 +4,17 @@
  */
 
 #include <aws/monitoring/CloudWatchEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CloudWatch
 {
+const size_t CloudWatchEndpointRules::RulesBlobStrLen = 3652;
+const size_t CloudWatchEndpointRules::RulesBlobSize = 3653;
 
-Aws::String CloudWatchEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CloudWatchEndpointRules::Rules.begin(), CloudWatchEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CloudWatchEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CloudWatchEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -162,7 +161,13 @@ const Aws::Vector<char> CloudWatchEndpointRules::Rules = {
 't','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',',
 '"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',
 ':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',
-']','}'};
+']','}','\0'
+}};
+
+const char* CloudWatchEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CloudWatch
 } // namespace Aws

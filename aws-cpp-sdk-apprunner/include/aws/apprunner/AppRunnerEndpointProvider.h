@@ -49,7 +49,7 @@ public:
     using AppRunnerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppRunnerEndpointProvider()
-      : AppRunnerDefaultEpProviderBase(Aws::AppRunner::AppRunnerEndpointRules::Rules)
+      : AppRunnerDefaultEpProviderBase(Aws::AppRunner::AppRunnerEndpointRules::GetRulesBlob(), Aws::AppRunner::AppRunnerEndpointRules::RulesBlobSize)
     {}
 
     ~AppRunnerEndpointProvider()

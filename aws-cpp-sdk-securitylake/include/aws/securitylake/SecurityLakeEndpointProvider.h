@@ -49,7 +49,7 @@ public:
     using SecurityLakeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SecurityLakeEndpointProvider()
-      : SecurityLakeDefaultEpProviderBase(Aws::SecurityLake::SecurityLakeEndpointRules::Rules)
+      : SecurityLakeDefaultEpProviderBase(Aws::SecurityLake::SecurityLakeEndpointRules::GetRulesBlob(), Aws::SecurityLake::SecurityLakeEndpointRules::RulesBlobSize)
     {}
 
     ~SecurityLakeEndpointProvider()

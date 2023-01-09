@@ -49,7 +49,7 @@ public:
     using IoTSiteWiseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTSiteWiseEndpointProvider()
-      : IoTSiteWiseDefaultEpProviderBase(Aws::IoTSiteWise::IoTSiteWiseEndpointRules::Rules)
+      : IoTSiteWiseDefaultEpProviderBase(Aws::IoTSiteWise::IoTSiteWiseEndpointRules::GetRulesBlob(), Aws::IoTSiteWise::IoTSiteWiseEndpointRules::RulesBlobSize)
     {}
 
     ~IoTSiteWiseEndpointProvider()

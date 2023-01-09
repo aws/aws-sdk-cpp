@@ -4,18 +4,17 @@
  */
 
 #include <aws/lexv2-models/LexModelsV2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace LexModelsV2
 {
+const size_t LexModelsV2EndpointRules::RulesBlobStrLen = 3482;
+const size_t LexModelsV2EndpointRules::RulesBlobSize = 3483;
 
-Aws::String LexModelsV2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(LexModelsV2EndpointRules::Rules.begin(), LexModelsV2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> LexModelsV2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, LexModelsV2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> LexModelsV2EndpointRules::Rules = {
 '.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f',
 'i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a',
 'd','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n',
-'t','"','}',']','}',']','}'};
+'t','"','}',']','}',']','}','\0'
+}};
+
+const char* LexModelsV2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace LexModelsV2
 } // namespace Aws

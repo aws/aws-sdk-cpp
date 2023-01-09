@@ -49,7 +49,7 @@ public:
     using LexModelsV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LexModelsV2EndpointProvider()
-      : LexModelsV2DefaultEpProviderBase(Aws::LexModelsV2::LexModelsV2EndpointRules::Rules)
+      : LexModelsV2DefaultEpProviderBase(Aws::LexModelsV2::LexModelsV2EndpointRules::GetRulesBlob(), Aws::LexModelsV2::LexModelsV2EndpointRules::RulesBlobSize)
     {}
 
     ~LexModelsV2EndpointProvider()

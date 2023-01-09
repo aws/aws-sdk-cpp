@@ -49,7 +49,7 @@ public:
     using BraketResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BraketEndpointProvider()
-      : BraketDefaultEpProviderBase(Aws::Braket::BraketEndpointRules::Rules)
+      : BraketDefaultEpProviderBase(Aws::Braket::BraketEndpointRules::GetRulesBlob(), Aws::Braket::BraketEndpointRules::RulesBlobSize)
     {}
 
     ~BraketEndpointProvider()

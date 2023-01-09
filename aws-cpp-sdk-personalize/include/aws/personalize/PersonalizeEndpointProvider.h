@@ -49,7 +49,7 @@ public:
     using PersonalizeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PersonalizeEndpointProvider()
-      : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::Rules)
+      : PersonalizeDefaultEpProviderBase(Aws::Personalize::PersonalizeEndpointRules::GetRulesBlob(), Aws::Personalize::PersonalizeEndpointRules::RulesBlobSize)
     {}
 
     ~PersonalizeEndpointProvider()

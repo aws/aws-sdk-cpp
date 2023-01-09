@@ -49,7 +49,7 @@ public:
     using InspectorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     InspectorEndpointProvider()
-      : InspectorDefaultEpProviderBase(Aws::Inspector::InspectorEndpointRules::Rules)
+      : InspectorDefaultEpProviderBase(Aws::Inspector::InspectorEndpointRules::GetRulesBlob(), Aws::Inspector::InspectorEndpointRules::RulesBlobSize)
     {}
 
     ~InspectorEndpointProvider()

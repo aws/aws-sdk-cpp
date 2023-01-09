@@ -49,7 +49,7 @@ public:
     using EC2InstanceConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EC2InstanceConnectEndpointProvider()
-      : EC2InstanceConnectDefaultEpProviderBase(Aws::EC2InstanceConnect::EC2InstanceConnectEndpointRules::Rules)
+      : EC2InstanceConnectDefaultEpProviderBase(Aws::EC2InstanceConnect::EC2InstanceConnectEndpointRules::GetRulesBlob(), Aws::EC2InstanceConnect::EC2InstanceConnectEndpointRules::RulesBlobSize)
     {}
 
     ~EC2InstanceConnectEndpointProvider()

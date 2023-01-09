@@ -49,7 +49,7 @@ public:
     using AmplifyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AmplifyEndpointProvider()
-      : AmplifyDefaultEpProviderBase(Aws::Amplify::AmplifyEndpointRules::Rules)
+      : AmplifyDefaultEpProviderBase(Aws::Amplify::AmplifyEndpointRules::GetRulesBlob(), Aws::Amplify::AmplifyEndpointRules::RulesBlobSize)
     {}
 
     ~AmplifyEndpointProvider()

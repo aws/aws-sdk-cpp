@@ -49,7 +49,7 @@ public:
     using DevOpsGuruResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DevOpsGuruEndpointProvider()
-      : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::Rules)
+      : DevOpsGuruDefaultEpProviderBase(Aws::DevOpsGuru::DevOpsGuruEndpointRules::GetRulesBlob(), Aws::DevOpsGuru::DevOpsGuruEndpointRules::RulesBlobSize)
     {}
 
     ~DevOpsGuruEndpointProvider()

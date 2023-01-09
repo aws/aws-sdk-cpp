@@ -4,18 +4,17 @@
  */
 
 #include <aws/lexv2-runtime/LexRuntimeV2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace LexRuntimeV2
 {
+const size_t LexRuntimeV2EndpointRules::RulesBlobStrLen = 3486;
+const size_t LexRuntimeV2EndpointRules::RulesBlobSize = 3487;
 
-Aws::String LexRuntimeV2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(LexRuntimeV2EndpointRules::Rules.begin(), LexRuntimeV2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> LexRuntimeV2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, LexRuntimeV2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> LexRuntimeV2EndpointRules::Rules = {
 'i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s',
 'S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',',
 '"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d',
-'p','o','i','n','t','"','}',']','}',']','}'};
+'p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* LexRuntimeV2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace LexRuntimeV2
 } // namespace Aws

@@ -49,7 +49,7 @@ public:
     using StorageGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     StorageGatewayEndpointProvider()
-      : StorageGatewayDefaultEpProviderBase(Aws::StorageGateway::StorageGatewayEndpointRules::Rules)
+      : StorageGatewayDefaultEpProviderBase(Aws::StorageGateway::StorageGatewayEndpointRules::GetRulesBlob(), Aws::StorageGateway::StorageGatewayEndpointRules::RulesBlobSize)
     {}
 
     ~StorageGatewayEndpointProvider()

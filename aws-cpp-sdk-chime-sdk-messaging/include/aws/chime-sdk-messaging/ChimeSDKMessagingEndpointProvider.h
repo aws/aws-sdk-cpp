@@ -49,7 +49,7 @@ public:
     using ChimeSDKMessagingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeSDKMessagingEndpointProvider()
-      : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::Rules)
+      : ChimeSDKMessagingDefaultEpProviderBase(Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::GetRulesBlob(), Aws::ChimeSDKMessaging::ChimeSDKMessagingEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeSDKMessagingEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using SWFResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SWFEndpointProvider()
-      : SWFDefaultEpProviderBase(Aws::SWF::SWFEndpointRules::Rules)
+      : SWFDefaultEpProviderBase(Aws::SWF::SWFEndpointRules::GetRulesBlob(), Aws::SWF::SWFEndpointRules::RulesBlobSize)
     {}
 
     ~SWFEndpointProvider()

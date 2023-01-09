@@ -49,7 +49,7 @@ public:
     using ChimeSDKMediaPipelinesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeSDKMediaPipelinesEndpointProvider()
-      : ChimeSDKMediaPipelinesDefaultEpProviderBase(Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesEndpointRules::Rules)
+      : ChimeSDKMediaPipelinesDefaultEpProviderBase(Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesEndpointRules::GetRulesBlob(), Aws::ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeSDKMediaPipelinesEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using AugmentedAIRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AugmentedAIRuntimeEndpointProvider()
-      : AugmentedAIRuntimeDefaultEpProviderBase(Aws::AugmentedAIRuntime::AugmentedAIRuntimeEndpointRules::Rules)
+      : AugmentedAIRuntimeDefaultEpProviderBase(Aws::AugmentedAIRuntime::AugmentedAIRuntimeEndpointRules::GetRulesBlob(), Aws::AugmentedAIRuntime::AugmentedAIRuntimeEndpointRules::RulesBlobSize)
     {}
 
     ~AugmentedAIRuntimeEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using IAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IAMEndpointProvider()
-      : IAMDefaultEpProviderBase(Aws::IAM::IAMEndpointRules::Rules)
+      : IAMDefaultEpProviderBase(Aws::IAM::IAMEndpointRules::GetRulesBlob(), Aws::IAM::IAMEndpointRules::RulesBlobSize)
     {}
 
     ~IAMEndpointProvider()

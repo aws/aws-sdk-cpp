@@ -49,7 +49,7 @@ public:
     using MarketplaceCommerceAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MarketplaceCommerceAnalyticsEndpointProvider()
-      : MarketplaceCommerceAnalyticsDefaultEpProviderBase(Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::Rules)
+      : MarketplaceCommerceAnalyticsDefaultEpProviderBase(Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::GetRulesBlob(), Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsEndpointRules::RulesBlobSize)
     {}
 
     ~MarketplaceCommerceAnalyticsEndpointProvider()

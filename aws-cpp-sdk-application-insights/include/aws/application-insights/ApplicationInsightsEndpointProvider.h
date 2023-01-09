@@ -49,7 +49,7 @@ public:
     using ApplicationInsightsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ApplicationInsightsEndpointProvider()
-      : ApplicationInsightsDefaultEpProviderBase(Aws::ApplicationInsights::ApplicationInsightsEndpointRules::Rules)
+      : ApplicationInsightsDefaultEpProviderBase(Aws::ApplicationInsights::ApplicationInsightsEndpointRules::GetRulesBlob(), Aws::ApplicationInsights::ApplicationInsightsEndpointRules::RulesBlobSize)
     {}
 
     ~ApplicationInsightsEndpointProvider()

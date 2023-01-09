@@ -49,7 +49,7 @@ public:
     using EC2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EC2EndpointProvider()
-      : EC2DefaultEpProviderBase(Aws::EC2::EC2EndpointRules::Rules)
+      : EC2DefaultEpProviderBase(Aws::EC2::EC2EndpointRules::GetRulesBlob(), Aws::EC2::EC2EndpointRules::RulesBlobSize)
     {}
 
     ~EC2EndpointProvider()

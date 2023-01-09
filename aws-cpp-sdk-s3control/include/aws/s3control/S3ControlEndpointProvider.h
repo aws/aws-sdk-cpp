@@ -84,7 +84,7 @@ public:
     using S3ControlResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     S3ControlEndpointProvider()
-      : S3ControlDefaultEpProviderBase(Aws::S3Control::S3ControlEndpointRules::Rules)
+      : S3ControlDefaultEpProviderBase(Aws::S3Control::S3ControlEndpointRules::GetRulesBlob(), Aws::S3Control::S3ControlEndpointRules::RulesBlobSize)
     {}
 
     ~S3ControlEndpointProvider()

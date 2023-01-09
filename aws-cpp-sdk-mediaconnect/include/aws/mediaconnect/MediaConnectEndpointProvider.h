@@ -49,7 +49,7 @@ public:
     using MediaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaConnectEndpointProvider()
-      : MediaConnectDefaultEpProviderBase(Aws::MediaConnect::MediaConnectEndpointRules::Rules)
+      : MediaConnectDefaultEpProviderBase(Aws::MediaConnect::MediaConnectEndpointRules::GetRulesBlob(), Aws::MediaConnect::MediaConnectEndpointRules::RulesBlobSize)
     {}
 
     ~MediaConnectEndpointProvider()

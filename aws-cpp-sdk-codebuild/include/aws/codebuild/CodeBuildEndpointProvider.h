@@ -49,7 +49,7 @@ public:
     using CodeBuildResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeBuildEndpointProvider()
-      : CodeBuildDefaultEpProviderBase(Aws::CodeBuild::CodeBuildEndpointRules::Rules)
+      : CodeBuildDefaultEpProviderBase(Aws::CodeBuild::CodeBuildEndpointRules::GetRulesBlob(), Aws::CodeBuild::CodeBuildEndpointRules::RulesBlobSize)
     {}
 
     ~CodeBuildEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using DeviceFarmResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DeviceFarmEndpointProvider()
-      : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::Rules)
+      : DeviceFarmDefaultEpProviderBase(Aws::DeviceFarm::DeviceFarmEndpointRules::GetRulesBlob(), Aws::DeviceFarm::DeviceFarmEndpointRules::RulesBlobSize)
     {}
 
     ~DeviceFarmEndpointProvider()

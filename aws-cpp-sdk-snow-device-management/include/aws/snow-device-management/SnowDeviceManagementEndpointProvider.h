@@ -49,7 +49,7 @@ public:
     using SnowDeviceManagementResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SnowDeviceManagementEndpointProvider()
-      : SnowDeviceManagementDefaultEpProviderBase(Aws::SnowDeviceManagement::SnowDeviceManagementEndpointRules::Rules)
+      : SnowDeviceManagementDefaultEpProviderBase(Aws::SnowDeviceManagement::SnowDeviceManagementEndpointRules::GetRulesBlob(), Aws::SnowDeviceManagement::SnowDeviceManagementEndpointRules::RulesBlobSize)
     {}
 
     ~SnowDeviceManagementEndpointProvider()

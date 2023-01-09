@@ -4,18 +4,17 @@
  */
 
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace WorkMailMessageFlow
 {
+const size_t WorkMailMessageFlowEndpointRules::RulesBlobStrLen = 3464;
+const size_t WorkMailMessageFlowEndpointRules::RulesBlobSize = 3465;
 
-Aws::String WorkMailMessageFlowEndpointRules::GetRulesAsString()
-{
-    return Aws::String(WorkMailMessageFlowEndpointRules::Rules.begin(), WorkMailMessageFlowEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> WorkMailMessageFlowEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, WorkMailMessageFlowEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> WorkMailMessageFlowEndpointRules::Rules = {
 'R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#',
 'd','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':',
 '{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"',
-'e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* WorkMailMessageFlowEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace WorkMailMessageFlow
 } // namespace Aws

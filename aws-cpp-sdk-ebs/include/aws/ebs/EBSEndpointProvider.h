@@ -49,7 +49,7 @@ public:
     using EBSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EBSEndpointProvider()
-      : EBSDefaultEpProviderBase(Aws::EBS::EBSEndpointRules::Rules)
+      : EBSDefaultEpProviderBase(Aws::EBS::EBSEndpointRules::GetRulesBlob(), Aws::EBS::EBSEndpointRules::RulesBlobSize)
     {}
 
     ~EBSEndpointProvider()

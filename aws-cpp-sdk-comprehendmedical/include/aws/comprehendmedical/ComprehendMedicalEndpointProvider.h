@@ -49,7 +49,7 @@ public:
     using ComprehendMedicalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ComprehendMedicalEndpointProvider()
-      : ComprehendMedicalDefaultEpProviderBase(Aws::ComprehendMedical::ComprehendMedicalEndpointRules::Rules)
+      : ComprehendMedicalDefaultEpProviderBase(Aws::ComprehendMedical::ComprehendMedicalEndpointRules::GetRulesBlob(), Aws::ComprehendMedical::ComprehendMedicalEndpointRules::RulesBlobSize)
     {}
 
     ~ComprehendMedicalEndpointProvider()

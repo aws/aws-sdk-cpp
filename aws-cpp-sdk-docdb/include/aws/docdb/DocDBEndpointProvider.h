@@ -49,7 +49,7 @@ public:
     using DocDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DocDBEndpointProvider()
-      : DocDBDefaultEpProviderBase(Aws::DocDB::DocDBEndpointRules::Rules)
+      : DocDBDefaultEpProviderBase(Aws::DocDB::DocDBEndpointRules::GetRulesBlob(), Aws::DocDB::DocDBEndpointRules::RulesBlobSize)
     {}
 
     ~DocDBEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using QLDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     QLDBEndpointProvider()
-      : QLDBDefaultEpProviderBase(Aws::QLDB::QLDBEndpointRules::Rules)
+      : QLDBDefaultEpProviderBase(Aws::QLDB::QLDBEndpointRules::GetRulesBlob(), Aws::QLDB::QLDBEndpointRules::RulesBlobSize)
     {}
 
     ~QLDBEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ChimeSDKIdentityResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeSDKIdentityEndpointProvider()
-      : ChimeSDKIdentityDefaultEpProviderBase(Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::Rules)
+      : ChimeSDKIdentityDefaultEpProviderBase(Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::GetRulesBlob(), Aws::ChimeSDKIdentity::ChimeSDKIdentityEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeSDKIdentityEndpointProvider()

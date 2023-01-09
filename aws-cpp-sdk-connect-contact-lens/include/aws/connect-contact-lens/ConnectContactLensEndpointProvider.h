@@ -49,7 +49,7 @@ public:
     using ConnectContactLensResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConnectContactLensEndpointProvider()
-      : ConnectContactLensDefaultEpProviderBase(Aws::ConnectContactLens::ConnectContactLensEndpointRules::Rules)
+      : ConnectContactLensDefaultEpProviderBase(Aws::ConnectContactLens::ConnectContactLensEndpointRules::GetRulesBlob(), Aws::ConnectContactLens::ConnectContactLensEndpointRules::RulesBlobSize)
     {}
 
     ~ConnectContactLensEndpointProvider()

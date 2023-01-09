@@ -49,7 +49,7 @@ public:
     using CodeArtifactResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeArtifactEndpointProvider()
-      : CodeArtifactDefaultEpProviderBase(Aws::CodeArtifact::CodeArtifactEndpointRules::Rules)
+      : CodeArtifactDefaultEpProviderBase(Aws::CodeArtifact::CodeArtifactEndpointRules::GetRulesBlob(), Aws::CodeArtifact::CodeArtifactEndpointRules::RulesBlobSize)
     {}
 
     ~CodeArtifactEndpointProvider()

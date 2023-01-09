@@ -4,18 +4,17 @@
  */
 
 #include <aws/evidently/CloudWatchEvidentlyEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CloudWatchEvidently
 {
+const size_t CloudWatchEvidentlyEndpointRules::RulesBlobStrLen = 3466;
+const size_t CloudWatchEvidentlyEndpointRules::RulesBlobSize = 3467;
 
-Aws::String CloudWatchEvidentlyEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CloudWatchEvidentlyEndpointRules::Rules.begin(), CloudWatchEvidentlyEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CloudWatchEvidentlyEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CloudWatchEvidentlyEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> CloudWatchEvidentlyEndpointRules::Rules = {
 '.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l',
 't','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s',
 '"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',
-':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* CloudWatchEvidentlyEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CloudWatchEvidently
 } // namespace Aws

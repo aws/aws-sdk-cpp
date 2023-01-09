@@ -49,7 +49,7 @@ public:
     using EMRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EMREndpointProvider()
-      : EMRDefaultEpProviderBase(Aws::EMR::EMREndpointRules::Rules)
+      : EMRDefaultEpProviderBase(Aws::EMR::EMREndpointRules::GetRulesBlob(), Aws::EMR::EMREndpointRules::RulesBlobSize)
     {}
 
     ~EMREndpointProvider()

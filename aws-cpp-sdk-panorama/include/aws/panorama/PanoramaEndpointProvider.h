@@ -49,7 +49,7 @@ public:
     using PanoramaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PanoramaEndpointProvider()
-      : PanoramaDefaultEpProviderBase(Aws::Panorama::PanoramaEndpointRules::Rules)
+      : PanoramaDefaultEpProviderBase(Aws::Panorama::PanoramaEndpointRules::GetRulesBlob(), Aws::Panorama::PanoramaEndpointRules::RulesBlobSize)
     {}
 
     ~PanoramaEndpointProvider()

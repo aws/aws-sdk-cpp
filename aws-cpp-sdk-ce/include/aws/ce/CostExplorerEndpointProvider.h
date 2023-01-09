@@ -49,7 +49,7 @@ public:
     using CostExplorerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CostExplorerEndpointProvider()
-      : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::Rules)
+      : CostExplorerDefaultEpProviderBase(Aws::CostExplorer::CostExplorerEndpointRules::GetRulesBlob(), Aws::CostExplorer::CostExplorerEndpointRules::RulesBlobSize)
     {}
 
     ~CostExplorerEndpointProvider()

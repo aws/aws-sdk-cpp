@@ -49,7 +49,7 @@ public:
     using AccountResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AccountEndpointProvider()
-      : AccountDefaultEpProviderBase(Aws::Account::AccountEndpointRules::Rules)
+      : AccountDefaultEpProviderBase(Aws::Account::AccountEndpointRules::GetRulesBlob(), Aws::Account::AccountEndpointRules::RulesBlobSize)
     {}
 
     ~AccountEndpointProvider()

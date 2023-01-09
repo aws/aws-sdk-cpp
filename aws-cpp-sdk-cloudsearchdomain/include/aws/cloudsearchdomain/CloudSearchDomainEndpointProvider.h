@@ -49,7 +49,7 @@ public:
     using CloudSearchDomainResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudSearchDomainEndpointProvider()
-      : CloudSearchDomainDefaultEpProviderBase(Aws::CloudSearchDomain::CloudSearchDomainEndpointRules::Rules)
+      : CloudSearchDomainDefaultEpProviderBase(Aws::CloudSearchDomain::CloudSearchDomainEndpointRules::GetRulesBlob(), Aws::CloudSearchDomain::CloudSearchDomainEndpointRules::RulesBlobSize)
     {}
 
     ~CloudSearchDomainEndpointProvider()

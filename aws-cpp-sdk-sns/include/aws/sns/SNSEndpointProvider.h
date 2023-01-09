@@ -49,7 +49,7 @@ public:
     using SNSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SNSEndpointProvider()
-      : SNSDefaultEpProviderBase(Aws::SNS::SNSEndpointRules::Rules)
+      : SNSDefaultEpProviderBase(Aws::SNS::SNSEndpointRules::GetRulesBlob(), Aws::SNS::SNSEndpointRules::RulesBlobSize)
     {}
 
     ~SNSEndpointProvider()

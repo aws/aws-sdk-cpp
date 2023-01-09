@@ -49,7 +49,7 @@ public:
     using SSMContactsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSMContactsEndpointProvider()
-      : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::Rules)
+      : SSMContactsDefaultEpProviderBase(Aws::SSMContacts::SSMContactsEndpointRules::GetRulesBlob(), Aws::SSMContacts::SSMContactsEndpointRules::RulesBlobSize)
     {}
 
     ~SSMContactsEndpointProvider()

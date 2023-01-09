@@ -49,7 +49,7 @@ public:
     using IoTJobsDataPlaneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTJobsDataPlaneEndpointProvider()
-      : IoTJobsDataPlaneDefaultEpProviderBase(Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::Rules)
+      : IoTJobsDataPlaneDefaultEpProviderBase(Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::GetRulesBlob(), Aws::IoTJobsDataPlane::IoTJobsDataPlaneEndpointRules::RulesBlobSize)
     {}
 
     ~IoTJobsDataPlaneEndpointProvider()

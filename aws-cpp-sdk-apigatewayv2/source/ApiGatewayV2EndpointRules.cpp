@@ -4,18 +4,17 @@
  */
 
 #include <aws/apigatewayv2/ApiGatewayV2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ApiGatewayV2
 {
+const size_t ApiGatewayV2EndpointRules::RulesBlobStrLen = 3470;
+const size_t ApiGatewayV2EndpointRules::RulesBlobSize = 3471;
 
-Aws::String ApiGatewayV2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(ApiGatewayV2EndpointRules::Rules.begin(), ApiGatewayV2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ApiGatewayV2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ApiGatewayV2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> ApiGatewayV2EndpointRules::Rules = {
 'e','w','a','y','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R',
 'e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r',
 't','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t',
-'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* ApiGatewayV2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ApiGatewayV2
 } // namespace Aws

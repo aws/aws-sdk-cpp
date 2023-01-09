@@ -49,7 +49,7 @@ public:
     using LicenseManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LicenseManagerEndpointProvider()
-      : LicenseManagerDefaultEpProviderBase(Aws::LicenseManager::LicenseManagerEndpointRules::Rules)
+      : LicenseManagerDefaultEpProviderBase(Aws::LicenseManager::LicenseManagerEndpointRules::GetRulesBlob(), Aws::LicenseManager::LicenseManagerEndpointRules::RulesBlobSize)
     {}
 
     ~LicenseManagerEndpointProvider()

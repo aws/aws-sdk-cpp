@@ -49,7 +49,7 @@ public:
     using SupportResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SupportEndpointProvider()
-      : SupportDefaultEpProviderBase(Aws::Support::SupportEndpointRules::Rules)
+      : SupportDefaultEpProviderBase(Aws::Support::SupportEndpointRules::GetRulesBlob(), Aws::Support::SupportEndpointRules::RulesBlobSize)
     {}
 
     ~SupportEndpointProvider()

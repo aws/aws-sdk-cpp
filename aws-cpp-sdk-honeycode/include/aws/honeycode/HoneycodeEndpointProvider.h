@@ -49,7 +49,7 @@ public:
     using HoneycodeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     HoneycodeEndpointProvider()
-      : HoneycodeDefaultEpProviderBase(Aws::Honeycode::HoneycodeEndpointRules::Rules)
+      : HoneycodeDefaultEpProviderBase(Aws::Honeycode::HoneycodeEndpointRules::GetRulesBlob(), Aws::Honeycode::HoneycodeEndpointRules::RulesBlobSize)
     {}
 
     ~HoneycodeEndpointProvider()

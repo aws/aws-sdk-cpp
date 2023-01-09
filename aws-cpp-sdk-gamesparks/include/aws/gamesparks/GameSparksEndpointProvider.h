@@ -49,7 +49,7 @@ public:
     using GameSparksResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GameSparksEndpointProvider()
-      : GameSparksDefaultEpProviderBase(Aws::GameSparks::GameSparksEndpointRules::Rules)
+      : GameSparksDefaultEpProviderBase(Aws::GameSparks::GameSparksEndpointRules::GetRulesBlob(), Aws::GameSparks::GameSparksEndpointRules::RulesBlobSize)
     {}
 
     ~GameSparksEndpointProvider()

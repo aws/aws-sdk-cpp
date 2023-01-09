@@ -49,7 +49,7 @@ public:
     using MainframeModernizationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MainframeModernizationEndpointProvider()
-      : MainframeModernizationDefaultEpProviderBase(Aws::MainframeModernization::MainframeModernizationEndpointRules::Rules)
+      : MainframeModernizationDefaultEpProviderBase(Aws::MainframeModernization::MainframeModernizationEndpointRules::GetRulesBlob(), Aws::MainframeModernization::MainframeModernizationEndpointRules::RulesBlobSize)
     {}
 
     ~MainframeModernizationEndpointProvider()

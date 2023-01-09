@@ -49,7 +49,7 @@ public:
     using IoTTwinMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTTwinMakerEndpointProvider()
-      : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::Rules)
+      : IoTTwinMakerDefaultEpProviderBase(Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::GetRulesBlob(), Aws::IoTTwinMaker::IoTTwinMakerEndpointRules::RulesBlobSize)
     {}
 
     ~IoTTwinMakerEndpointProvider()

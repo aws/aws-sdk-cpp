@@ -49,7 +49,7 @@ public:
     using CodePipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodePipelineEndpointProvider()
-      : CodePipelineDefaultEpProviderBase(Aws::CodePipeline::CodePipelineEndpointRules::Rules)
+      : CodePipelineDefaultEpProviderBase(Aws::CodePipeline::CodePipelineEndpointRules::GetRulesBlob(), Aws::CodePipeline::CodePipelineEndpointRules::RulesBlobSize)
     {}
 
     ~CodePipelineEndpointProvider()

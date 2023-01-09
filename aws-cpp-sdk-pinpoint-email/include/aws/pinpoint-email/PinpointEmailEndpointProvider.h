@@ -49,7 +49,7 @@ public:
     using PinpointEmailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PinpointEmailEndpointProvider()
-      : PinpointEmailDefaultEpProviderBase(Aws::PinpointEmail::PinpointEmailEndpointRules::Rules)
+      : PinpointEmailDefaultEpProviderBase(Aws::PinpointEmail::PinpointEmailEndpointRules::GetRulesBlob(), Aws::PinpointEmail::PinpointEmailEndpointRules::RulesBlobSize)
     {}
 
     ~PinpointEmailEndpointProvider()

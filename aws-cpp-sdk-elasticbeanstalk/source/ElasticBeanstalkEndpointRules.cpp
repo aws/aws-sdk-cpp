@@ -4,18 +4,17 @@
  */
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ElasticBeanstalk
 {
+const size_t ElasticBeanstalkEndpointRules::RulesBlobStrLen = 3494;
+const size_t ElasticBeanstalkEndpointRules::RulesBlobSize = 3495;
 
-Aws::String ElasticBeanstalkEndpointRules::GetRulesAsString()
-{
-    return Aws::String(ElasticBeanstalkEndpointRules::Rules.begin(), ElasticBeanstalkEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ElasticBeanstalkEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ElasticBeanstalkEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> ElasticBeanstalkEndpointRules::Rules = {
 'a','l','k','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e',
 's','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t',
 'i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y',
-'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* ElasticBeanstalkEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ElasticBeanstalk
 } // namespace Aws

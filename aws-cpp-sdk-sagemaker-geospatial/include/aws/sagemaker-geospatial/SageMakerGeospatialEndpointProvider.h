@@ -49,7 +49,7 @@ public:
     using SageMakerGeospatialResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SageMakerGeospatialEndpointProvider()
-      : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::Rules)
+      : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::GetRulesBlob(), Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::RulesBlobSize)
     {}
 
     ~SageMakerGeospatialEndpointProvider()

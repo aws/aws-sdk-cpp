@@ -49,7 +49,7 @@ public:
     using SsmSapResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SsmSapEndpointProvider()
-      : SsmSapDefaultEpProviderBase(Aws::SsmSap::SsmSapEndpointRules::Rules)
+      : SsmSapDefaultEpProviderBase(Aws::SsmSap::SsmSapEndpointRules::GetRulesBlob(), Aws::SsmSap::SsmSapEndpointRules::RulesBlobSize)
     {}
 
     ~SsmSapEndpointProvider()

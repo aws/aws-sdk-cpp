@@ -49,7 +49,7 @@ public:
     using IoTDeviceAdvisorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTDeviceAdvisorEndpointProvider()
-      : IoTDeviceAdvisorDefaultEpProviderBase(Aws::IoTDeviceAdvisor::IoTDeviceAdvisorEndpointRules::Rules)
+      : IoTDeviceAdvisorDefaultEpProviderBase(Aws::IoTDeviceAdvisor::IoTDeviceAdvisorEndpointRules::GetRulesBlob(), Aws::IoTDeviceAdvisor::IoTDeviceAdvisorEndpointRules::RulesBlobSize)
     {}
 
     ~IoTDeviceAdvisorEndpointProvider()

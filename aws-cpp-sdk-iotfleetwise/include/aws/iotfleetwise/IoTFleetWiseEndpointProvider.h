@@ -49,7 +49,7 @@ public:
     using IoTFleetWiseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTFleetWiseEndpointProvider()
-      : IoTFleetWiseDefaultEpProviderBase(Aws::IoTFleetWise::IoTFleetWiseEndpointRules::Rules)
+      : IoTFleetWiseDefaultEpProviderBase(Aws::IoTFleetWise::IoTFleetWiseEndpointRules::GetRulesBlob(), Aws::IoTFleetWise::IoTFleetWiseEndpointRules::RulesBlobSize)
     {}
 
     ~IoTFleetWiseEndpointProvider()

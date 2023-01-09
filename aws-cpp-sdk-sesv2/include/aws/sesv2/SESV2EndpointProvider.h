@@ -49,7 +49,7 @@ public:
     using SESV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SESV2EndpointProvider()
-      : SESV2DefaultEpProviderBase(Aws::SESV2::SESV2EndpointRules::Rules)
+      : SESV2DefaultEpProviderBase(Aws::SESV2::SESV2EndpointRules::GetRulesBlob(), Aws::SESV2::SESV2EndpointRules::RulesBlobSize)
     {}
 
     ~SESV2EndpointProvider()

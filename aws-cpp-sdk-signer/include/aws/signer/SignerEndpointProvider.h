@@ -49,7 +49,7 @@ public:
     using SignerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SignerEndpointProvider()
-      : SignerDefaultEpProviderBase(Aws::signer::SignerEndpointRules::Rules)
+      : SignerDefaultEpProviderBase(Aws::signer::SignerEndpointRules::GetRulesBlob(), Aws::signer::SignerEndpointRules::RulesBlobSize)
     {}
 
     ~SignerEndpointProvider()

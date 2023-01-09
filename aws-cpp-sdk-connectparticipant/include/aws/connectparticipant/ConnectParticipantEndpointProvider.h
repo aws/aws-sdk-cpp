@@ -49,7 +49,7 @@ public:
     using ConnectParticipantResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConnectParticipantEndpointProvider()
-      : ConnectParticipantDefaultEpProviderBase(Aws::ConnectParticipant::ConnectParticipantEndpointRules::Rules)
+      : ConnectParticipantDefaultEpProviderBase(Aws::ConnectParticipant::ConnectParticipantEndpointRules::GetRulesBlob(), Aws::ConnectParticipant::ConnectParticipantEndpointRules::RulesBlobSize)
     {}
 
     ~ConnectParticipantEndpointProvider()

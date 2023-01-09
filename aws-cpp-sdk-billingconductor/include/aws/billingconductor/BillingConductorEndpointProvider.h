@@ -49,7 +49,7 @@ public:
     using BillingConductorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BillingConductorEndpointProvider()
-      : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::Rules)
+      : BillingConductorDefaultEpProviderBase(Aws::BillingConductor::BillingConductorEndpointRules::GetRulesBlob(), Aws::BillingConductor::BillingConductorEndpointRules::RulesBlobSize)
     {}
 
     ~BillingConductorEndpointProvider()

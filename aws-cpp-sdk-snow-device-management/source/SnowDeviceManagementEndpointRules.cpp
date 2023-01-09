@@ -4,18 +4,17 @@
  */
 
 #include <aws/snow-device-management/SnowDeviceManagementEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace SnowDeviceManagement
 {
+const size_t SnowDeviceManagementEndpointRules::RulesBlobStrLen = 3476;
+const size_t SnowDeviceManagementEndpointRules::RulesBlobSize = 3477;
 
-Aws::String SnowDeviceManagementEndpointRules::GetRulesAsString()
-{
-    return Aws::String(SnowDeviceManagementEndpointRules::Rules.begin(), SnowDeviceManagementEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> SnowDeviceManagementEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, SnowDeviceManagementEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> SnowDeviceManagementEndpointRules::Rules = {
 'i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"',
 'p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':',
 '{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']',
-'}'};
+'}','\0'
+}};
+
+const char* SnowDeviceManagementEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace SnowDeviceManagement
 } // namespace Aws

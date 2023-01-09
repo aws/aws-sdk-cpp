@@ -49,7 +49,7 @@ public:
     using SchedulerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SchedulerEndpointProvider()
-      : SchedulerDefaultEpProviderBase(Aws::Scheduler::SchedulerEndpointRules::Rules)
+      : SchedulerDefaultEpProviderBase(Aws::Scheduler::SchedulerEndpointRules::GetRulesBlob(), Aws::Scheduler::SchedulerEndpointRules::RulesBlobSize)
     {}
 
     ~SchedulerEndpointProvider()

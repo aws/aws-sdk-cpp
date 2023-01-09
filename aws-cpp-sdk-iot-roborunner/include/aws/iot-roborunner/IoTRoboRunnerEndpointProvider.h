@@ -49,7 +49,7 @@ public:
     using IoTRoboRunnerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTRoboRunnerEndpointProvider()
-      : IoTRoboRunnerDefaultEpProviderBase(Aws::IoTRoboRunner::IoTRoboRunnerEndpointRules::Rules)
+      : IoTRoboRunnerDefaultEpProviderBase(Aws::IoTRoboRunner::IoTRoboRunnerEndpointRules::GetRulesBlob(), Aws::IoTRoboRunner::IoTRoboRunnerEndpointRules::RulesBlobSize)
     {}
 
     ~IoTRoboRunnerEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using CloudControlApiResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudControlApiEndpointProvider()
-      : CloudControlApiDefaultEpProviderBase(Aws::CloudControlApi::CloudControlApiEndpointRules::Rules)
+      : CloudControlApiDefaultEpProviderBase(Aws::CloudControlApi::CloudControlApiEndpointRules::GetRulesBlob(), Aws::CloudControlApi::CloudControlApiEndpointRules::RulesBlobSize)
     {}
 
     ~CloudControlApiEndpointProvider()

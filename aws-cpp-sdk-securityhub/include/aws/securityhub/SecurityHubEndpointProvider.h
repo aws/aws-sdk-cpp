@@ -49,7 +49,7 @@ public:
     using SecurityHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SecurityHubEndpointProvider()
-      : SecurityHubDefaultEpProviderBase(Aws::SecurityHub::SecurityHubEndpointRules::Rules)
+      : SecurityHubDefaultEpProviderBase(Aws::SecurityHub::SecurityHubEndpointRules::GetRulesBlob(), Aws::SecurityHub::SecurityHubEndpointRules::RulesBlobSize)
     {}
 
     ~SecurityHubEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using FirehoseResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FirehoseEndpointProvider()
-      : FirehoseDefaultEpProviderBase(Aws::Firehose::FirehoseEndpointRules::Rules)
+      : FirehoseDefaultEpProviderBase(Aws::Firehose::FirehoseEndpointRules::GetRulesBlob(), Aws::Firehose::FirehoseEndpointRules::RulesBlobSize)
     {}
 
     ~FirehoseEndpointProvider()

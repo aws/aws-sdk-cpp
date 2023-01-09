@@ -49,7 +49,7 @@ public:
     using MobileResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MobileEndpointProvider()
-      : MobileDefaultEpProviderBase(Aws::Mobile::MobileEndpointRules::Rules)
+      : MobileDefaultEpProviderBase(Aws::Mobile::MobileEndpointRules::GetRulesBlob(), Aws::Mobile::MobileEndpointRules::RulesBlobSize)
     {}
 
     ~MobileEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using CloudWatchRUMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudWatchRUMEndpointProvider()
-      : CloudWatchRUMDefaultEpProviderBase(Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::Rules)
+      : CloudWatchRUMDefaultEpProviderBase(Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::GetRulesBlob(), Aws::CloudWatchRUM::CloudWatchRUMEndpointRules::RulesBlobSize)
     {}
 
     ~CloudWatchRUMEndpointProvider()

@@ -4,18 +4,17 @@
  */
 
 #include <aws/managedblockchain/ManagedBlockchainEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ManagedBlockchain
 {
+const size_t ManagedBlockchainEndpointRules::RulesBlobStrLen = 3498;
+const size_t ManagedBlockchainEndpointRules::RulesBlobSize = 3499;
 
-Aws::String ManagedBlockchainEndpointRules::GetRulesAsString()
-{
-    return Aws::String(ManagedBlockchainEndpointRules::Rules.begin(), ManagedBlockchainEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ManagedBlockchainEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ManagedBlockchainEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> ManagedBlockchainEndpointRules::Rules = {
 'c','k','c','h','a','i','n','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i',
 'o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o',
 'p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',
-',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* ManagedBlockchainEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ManagedBlockchain
 } // namespace Aws

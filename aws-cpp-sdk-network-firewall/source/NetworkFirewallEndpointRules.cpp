@@ -4,18 +4,17 @@
  */
 
 #include <aws/network-firewall/NetworkFirewallEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace NetworkFirewall
 {
+const size_t NetworkFirewallEndpointRules::RulesBlobStrLen = 3432;
+const size_t NetworkFirewallEndpointRules::RulesBlobSize = 3433;
 
-Aws::String NetworkFirewallEndpointRules::GetRulesAsString()
-{
-    return Aws::String(NetworkFirewallEndpointRules::Rules.begin(), NetworkFirewallEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> NetworkFirewallEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, NetworkFirewallEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -153,7 +152,13 @@ const Aws::Vector<char> NetworkFirewallEndpointRules::Rules = {
 '.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f',
 'i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a',
 'd','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n',
-'t','"','}',']','}',']','}'};
+'t','"','}',']','}',']','}','\0'
+}};
+
+const char* NetworkFirewallEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace NetworkFirewall
 } // namespace Aws

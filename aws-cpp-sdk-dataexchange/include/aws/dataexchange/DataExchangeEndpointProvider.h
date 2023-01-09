@@ -49,7 +49,7 @@ public:
     using DataExchangeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DataExchangeEndpointProvider()
-      : DataExchangeDefaultEpProviderBase(Aws::DataExchange::DataExchangeEndpointRules::Rules)
+      : DataExchangeDefaultEpProviderBase(Aws::DataExchange::DataExchangeEndpointRules::GetRulesBlob(), Aws::DataExchange::DataExchangeEndpointRules::RulesBlobSize)
     {}
 
     ~DataExchangeEndpointProvider()

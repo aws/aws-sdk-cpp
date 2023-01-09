@@ -49,7 +49,7 @@ public:
     using SimpleDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SimpleDBEndpointProvider()
-      : SimpleDBDefaultEpProviderBase(Aws::SimpleDB::SimpleDBEndpointRules::Rules)
+      : SimpleDBDefaultEpProviderBase(Aws::SimpleDB::SimpleDBEndpointRules::GetRulesBlob(), Aws::SimpleDB::SimpleDBEndpointRules::RulesBlobSize)
     {}
 
     ~SimpleDBEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using GlueDataBrewResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GlueDataBrewEndpointProvider()
-      : GlueDataBrewDefaultEpProviderBase(Aws::GlueDataBrew::GlueDataBrewEndpointRules::Rules)
+      : GlueDataBrewDefaultEpProviderBase(Aws::GlueDataBrew::GlueDataBrewEndpointRules::GetRulesBlob(), Aws::GlueDataBrew::GlueDataBrewEndpointRules::RulesBlobSize)
     {}
 
     ~GlueDataBrewEndpointProvider()

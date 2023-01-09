@@ -49,7 +49,7 @@ public:
     using AppIntegrationsServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppIntegrationsServiceEndpointProvider()
-      : AppIntegrationsServiceDefaultEpProviderBase(Aws::AppIntegrationsService::AppIntegrationsServiceEndpointRules::Rules)
+      : AppIntegrationsServiceDefaultEpProviderBase(Aws::AppIntegrationsService::AppIntegrationsServiceEndpointRules::GetRulesBlob(), Aws::AppIntegrationsService::AppIntegrationsServiceEndpointRules::RulesBlobSize)
     {}
 
     ~AppIntegrationsServiceEndpointProvider()

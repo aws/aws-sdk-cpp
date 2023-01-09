@@ -49,7 +49,7 @@ public:
     using SchemasResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SchemasEndpointProvider()
-      : SchemasDefaultEpProviderBase(Aws::Schemas::SchemasEndpointRules::Rules)
+      : SchemasDefaultEpProviderBase(Aws::Schemas::SchemasEndpointRules::GetRulesBlob(), Aws::Schemas::SchemasEndpointRules::RulesBlobSize)
     {}
 
     ~SchemasEndpointProvider()

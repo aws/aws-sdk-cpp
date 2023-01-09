@@ -49,7 +49,7 @@ public:
     using CloudHSMV2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudHSMV2EndpointProvider()
-      : CloudHSMV2DefaultEpProviderBase(Aws::CloudHSMV2::CloudHSMV2EndpointRules::Rules)
+      : CloudHSMV2DefaultEpProviderBase(Aws::CloudHSMV2::CloudHSMV2EndpointRules::GetRulesBlob(), Aws::CloudHSMV2::CloudHSMV2EndpointRules::RulesBlobSize)
     {}
 
     ~CloudHSMV2EndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ComprehendResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ComprehendEndpointProvider()
-      : ComprehendDefaultEpProviderBase(Aws::Comprehend::ComprehendEndpointRules::Rules)
+      : ComprehendDefaultEpProviderBase(Aws::Comprehend::ComprehendEndpointRules::GetRulesBlob(), Aws::Comprehend::ComprehendEndpointRules::RulesBlobSize)
     {}
 
     ~ComprehendEndpointProvider()

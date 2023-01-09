@@ -49,7 +49,7 @@ public:
     using SSOResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSOEndpointProvider()
-      : SSODefaultEpProviderBase(Aws::SSO::SSOEndpointRules::Rules)
+      : SSODefaultEpProviderBase(Aws::SSO::SSOEndpointRules::GetRulesBlob(), Aws::SSO::SSOEndpointRules::RulesBlobSize)
     {}
 
     ~SSOEndpointProvider()
