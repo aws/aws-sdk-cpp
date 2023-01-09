@@ -63,19 +63,19 @@ using namespace Aws::Utils;
 
 namespace
 {
-    static std::string BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
-    static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
-    static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
-    static std::string BASE_OBJECTS_BUCKET_NAME = "objecttest";
-    static std::string BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME = "ctortest";
-    static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
-    static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
-    static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
-    static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
-    static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
-    static std::string BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
-    static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
-    static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
+    static Aws::String BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
+    static Aws::String BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
+    static Aws::String BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
+    static Aws::String BASE_OBJECTS_BUCKET_NAME = "objecttest";
+    static Aws::String BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME = "ctortest";
+    static Aws::String BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
+    static Aws::String BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
+    static Aws::String BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
+    static Aws::String BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
+    static Aws::String BASE_ERRORS_TESTING_BUCKET = "errorstest";
+    static Aws::String BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
+    static Aws::String BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
+    static Aws::String BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
@@ -89,7 +89,7 @@ namespace
 
     static const int TIMEOUT_MAX = 20;
 
-    void AppendUUID(std::string& bucketName)
+    void AppendUUID(Aws::String& bucketName)
     {
         using Aws::Utils::UUID;
         Aws::StringStream s;
@@ -757,8 +757,8 @@ namespace
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT, collections);
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        ASSERT_NE(presignedUrlPut.find("testkey1"), std::string::npos);
-        ASSERT_NE(presignedUrlPut.find("testkey2"), std::string::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey1"), Aws::String::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
         DoPresignedUrlTest(fullBucketName, putRequest);
@@ -787,8 +787,8 @@ namespace
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         putRequest->SetHeaderValue(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION,
                 Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
-        ASSERT_NE(presignedUrlPut.find("testkey1"), std::string::npos);
-        ASSERT_NE(presignedUrlPut.find("testkey2"), std::string::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey1"), Aws::String::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
         DoPresignedUrlTest(fullBucketName, putRequest);
@@ -818,8 +818,8 @@ namespace
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         putRequest->SetHeaderValue(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION,
                 Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::aws_kms));
-        ASSERT_NE(presignedUrlPut.find("testkey1"), std::string::npos);
-        ASSERT_NE(presignedUrlPut.find("testkey2"), std::string::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey1"), Aws::String::npos);
+        ASSERT_NE(presignedUrlPut.find("testkey2"), Aws::String::npos);
         putRequest->SetHeaderValue("TestKey1", "TestVal1");
         putRequest->SetHeaderValue("TestKey2", "TestVal2");
         DoPresignedUrlTest(fullBucketName, putRequest);
