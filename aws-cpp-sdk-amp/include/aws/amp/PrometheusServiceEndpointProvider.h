@@ -49,7 +49,7 @@ public:
     using PrometheusServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PrometheusServiceEndpointProvider()
-      : PrometheusServiceDefaultEpProviderBase(Aws::PrometheusService::PrometheusServiceEndpointRules::Rules)
+      : PrometheusServiceDefaultEpProviderBase(Aws::PrometheusService::PrometheusServiceEndpointRules::GetRulesBlob(), Aws::PrometheusService::PrometheusServiceEndpointRules::RulesBlobSize)
     {}
 
     ~PrometheusServiceEndpointProvider()

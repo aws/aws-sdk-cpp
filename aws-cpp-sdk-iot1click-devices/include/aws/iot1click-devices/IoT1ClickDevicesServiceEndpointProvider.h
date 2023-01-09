@@ -49,7 +49,7 @@ public:
     using IoT1ClickDevicesServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoT1ClickDevicesServiceEndpointProvider()
-      : IoT1ClickDevicesServiceDefaultEpProviderBase(Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceEndpointRules::Rules)
+      : IoT1ClickDevicesServiceDefaultEpProviderBase(Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceEndpointRules::GetRulesBlob(), Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceEndpointRules::RulesBlobSize)
     {}
 
     ~IoT1ClickDevicesServiceEndpointProvider()

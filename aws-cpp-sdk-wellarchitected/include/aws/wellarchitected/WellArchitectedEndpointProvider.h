@@ -49,7 +49,7 @@ public:
     using WellArchitectedResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WellArchitectedEndpointProvider()
-      : WellArchitectedDefaultEpProviderBase(Aws::WellArchitected::WellArchitectedEndpointRules::Rules)
+      : WellArchitectedDefaultEpProviderBase(Aws::WellArchitected::WellArchitectedEndpointRules::GetRulesBlob(), Aws::WellArchitected::WellArchitectedEndpointRules::RulesBlobSize)
     {}
 
     ~WellArchitectedEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using VoiceIDResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     VoiceIDEndpointProvider()
-      : VoiceIDDefaultEpProviderBase(Aws::VoiceID::VoiceIDEndpointRules::Rules)
+      : VoiceIDDefaultEpProviderBase(Aws::VoiceID::VoiceIDEndpointRules::GetRulesBlob(), Aws::VoiceID::VoiceIDEndpointRules::RulesBlobSize)
     {}
 
     ~VoiceIDEndpointProvider()

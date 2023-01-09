@@ -49,7 +49,7 @@ public:
     using OutpostsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OutpostsEndpointProvider()
-      : OutpostsDefaultEpProviderBase(Aws::Outposts::OutpostsEndpointRules::Rules)
+      : OutpostsDefaultEpProviderBase(Aws::Outposts::OutpostsEndpointRules::GetRulesBlob(), Aws::Outposts::OutpostsEndpointRules::RulesBlobSize)
     {}
 
     ~OutpostsEndpointProvider()

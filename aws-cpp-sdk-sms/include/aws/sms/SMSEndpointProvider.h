@@ -49,7 +49,7 @@ public:
     using SMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SMSEndpointProvider()
-      : SMSDefaultEpProviderBase(Aws::SMS::SMSEndpointRules::Rules)
+      : SMSDefaultEpProviderBase(Aws::SMS::SMSEndpointRules::GetRulesBlob(), Aws::SMS::SMSEndpointRules::RulesBlobSize)
     {}
 
     ~SMSEndpointProvider()

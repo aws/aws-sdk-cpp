@@ -49,7 +49,7 @@ public:
     using XRayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     XRayEndpointProvider()
-      : XRayDefaultEpProviderBase(Aws::XRay::XRayEndpointRules::Rules)
+      : XRayDefaultEpProviderBase(Aws::XRay::XRayEndpointRules::GetRulesBlob(), Aws::XRay::XRayEndpointRules::RulesBlobSize)
     {}
 
     ~XRayEndpointProvider()

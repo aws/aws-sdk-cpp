@@ -49,7 +49,7 @@ public:
     using ManagedGrafanaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ManagedGrafanaEndpointProvider()
-      : ManagedGrafanaDefaultEpProviderBase(Aws::ManagedGrafana::ManagedGrafanaEndpointRules::Rules)
+      : ManagedGrafanaDefaultEpProviderBase(Aws::ManagedGrafana::ManagedGrafanaEndpointRules::GetRulesBlob(), Aws::ManagedGrafana::ManagedGrafanaEndpointRules::RulesBlobSize)
     {}
 
     ~ManagedGrafanaEndpointProvider()

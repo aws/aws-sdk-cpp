@@ -49,7 +49,7 @@ public:
     using ImagebuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ImagebuilderEndpointProvider()
-      : ImagebuilderDefaultEpProviderBase(Aws::imagebuilder::ImagebuilderEndpointRules::Rules)
+      : ImagebuilderDefaultEpProviderBase(Aws::imagebuilder::ImagebuilderEndpointRules::GetRulesBlob(), Aws::imagebuilder::ImagebuilderEndpointRules::RulesBlobSize)
     {}
 
     ~ImagebuilderEndpointProvider()

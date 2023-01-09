@@ -49,7 +49,7 @@ public:
     using WorkDocsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WorkDocsEndpointProvider()
-      : WorkDocsDefaultEpProviderBase(Aws::WorkDocs::WorkDocsEndpointRules::Rules)
+      : WorkDocsDefaultEpProviderBase(Aws::WorkDocs::WorkDocsEndpointRules::GetRulesBlob(), Aws::WorkDocs::WorkDocsEndpointRules::RulesBlobSize)
     {}
 
     ~WorkDocsEndpointProvider()

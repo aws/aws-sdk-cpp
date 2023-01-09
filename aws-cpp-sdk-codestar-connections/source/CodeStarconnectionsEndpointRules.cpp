@@ -4,18 +4,17 @@
  */
 
 #include <aws/codestar-connections/CodeStarconnectionsEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CodeStarconnections
 {
+const size_t CodeStarconnectionsEndpointRules::RulesBlobStrLen = 3510;
+const size_t CodeStarconnectionsEndpointRules::RulesBlobSize = 3511;
 
-Aws::String CodeStarconnectionsEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CodeStarconnectionsEndpointRules::Rules.begin(), CodeStarconnectionsEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CodeStarconnectionsEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CodeStarconnectionsEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -156,7 +155,13 @@ const Aws::Vector<char> CodeStarconnectionsEndpointRules::Rules = {
 'o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S',
 'u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"',
 'h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p',
-'o','i','n','t','"','}',']','}',']','}'};
+'o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* CodeStarconnectionsEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CodeStarconnections
 } // namespace Aws

@@ -49,7 +49,7 @@ public:
     using DynamoDBStreamsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DynamoDBStreamsEndpointProvider()
-      : DynamoDBStreamsDefaultEpProviderBase(Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::Rules)
+      : DynamoDBStreamsDefaultEpProviderBase(Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::GetRulesBlob(), Aws::DynamoDBStreams::DynamoDBStreamsEndpointRules::RulesBlobSize)
     {}
 
     ~DynamoDBStreamsEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ARCZonalShiftResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ARCZonalShiftEndpointProvider()
-      : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::Rules)
+      : ARCZonalShiftDefaultEpProviderBase(Aws::ARCZonalShift::ARCZonalShiftEndpointRules::GetRulesBlob(), Aws::ARCZonalShift::ARCZonalShiftEndpointRules::RulesBlobSize)
     {}
 
     ~ARCZonalShiftEndpointProvider()

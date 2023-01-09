@@ -49,7 +49,7 @@ public:
     using DetectiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DetectiveEndpointProvider()
-      : DetectiveDefaultEpProviderBase(Aws::Detective::DetectiveEndpointRules::Rules)
+      : DetectiveDefaultEpProviderBase(Aws::Detective::DetectiveEndpointRules::GetRulesBlob(), Aws::Detective::DetectiveEndpointRules::RulesBlobSize)
     {}
 
     ~DetectiveEndpointProvider()

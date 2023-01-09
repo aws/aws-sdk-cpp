@@ -4,18 +4,17 @@
  */
 
 #include <aws/cloudfront/CloudFrontEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CloudFront
 {
+const size_t CloudFrontEndpointRules::RulesBlobStrLen = 8536;
+const size_t CloudFrontEndpointRules::RulesBlobSize = 8537;
 
-Aws::String CloudFrontEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CloudFrontEndpointRules::Rules.begin(), CloudFrontEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CloudFrontEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CloudFrontEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -357,7 +356,13 @@ const Aws::Vector<char> CloudFrontEndpointRules::Rules = {
 'n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u',
 'f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h',
 'e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o',
-'i','n','t','"','}',']','}',']','}',']','}'};
+'i','n','t','"','}',']','}',']','}',']','}','\0'
+}};
+
+const char* CloudFrontEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CloudFront
 } // namespace Aws

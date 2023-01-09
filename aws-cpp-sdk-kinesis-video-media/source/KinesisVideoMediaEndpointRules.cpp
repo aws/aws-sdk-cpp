@@ -4,18 +4,17 @@
  */
 
 #include <aws/kinesis-video-media/KinesisVideoMediaEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace KinesisVideoMedia
 {
+const size_t KinesisVideoMediaEndpointRules::RulesBlobStrLen = 3478;
+const size_t KinesisVideoMediaEndpointRules::RulesBlobSize = 3479;
 
-Aws::String KinesisVideoMediaEndpointRules::GetRulesAsString()
-{
-    return Aws::String(KinesisVideoMediaEndpointRules::Rules.begin(), KinesisVideoMediaEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> KinesisVideoMediaEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, KinesisVideoMediaEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> KinesisVideoMediaEndpointRules::Rules = {
 'r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',
 ',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s',
 '"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']',
-'}',']','}'};
+'}',']','}','\0'
+}};
+
+const char* KinesisVideoMediaEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace KinesisVideoMedia
 } // namespace Aws

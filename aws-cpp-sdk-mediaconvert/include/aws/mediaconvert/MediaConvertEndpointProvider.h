@@ -49,7 +49,7 @@ public:
     using MediaConvertResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaConvertEndpointProvider()
-      : MediaConvertDefaultEpProviderBase(Aws::MediaConvert::MediaConvertEndpointRules::Rules)
+      : MediaConvertDefaultEpProviderBase(Aws::MediaConvert::MediaConvertEndpointRules::GetRulesBlob(), Aws::MediaConvert::MediaConvertEndpointRules::RulesBlobSize)
     {}
 
     ~MediaConvertEndpointProvider()

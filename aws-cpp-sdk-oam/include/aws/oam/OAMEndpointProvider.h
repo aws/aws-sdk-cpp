@@ -49,7 +49,7 @@ public:
     using OAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OAMEndpointProvider()
-      : OAMDefaultEpProviderBase(Aws::OAM::OAMEndpointRules::Rules)
+      : OAMDefaultEpProviderBase(Aws::OAM::OAMEndpointRules::GetRulesBlob(), Aws::OAM::OAMEndpointRules::RulesBlobSize)
     {}
 
     ~OAMEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using MQResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MQEndpointProvider()
-      : MQDefaultEpProviderBase(Aws::MQ::MQEndpointRules::Rules)
+      : MQDefaultEpProviderBase(Aws::MQ::MQEndpointRules::GetRulesBlob(), Aws::MQ::MQEndpointRules::RulesBlobSize)
     {}
 
     ~MQEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using MediaStoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaStoreEndpointProvider()
-      : MediaStoreDefaultEpProviderBase(Aws::MediaStore::MediaStoreEndpointRules::Rules)
+      : MediaStoreDefaultEpProviderBase(Aws::MediaStore::MediaStoreEndpointRules::GetRulesBlob(), Aws::MediaStore::MediaStoreEndpointRules::RulesBlobSize)
     {}
 
     ~MediaStoreEndpointProvider()

@@ -4,18 +4,17 @@
  */
 
 #include <aws/quicksight/QuickSightEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace QuickSight
 {
+const size_t QuickSightEndpointRules::RulesBlobStrLen = 3469;
+const size_t QuickSightEndpointRules::RulesBlobSize = 3470;
 
-Aws::String QuickSightEndpointRules::GetRulesAsString()
-{
-    return Aws::String(QuickSightEndpointRules::Rules.begin(), QuickSightEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> QuickSightEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, QuickSightEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> QuickSightEndpointRules::Rules = {
 'g','h','t','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e',
 's','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t',
 'i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y',
-'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* QuickSightEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace QuickSight
 } // namespace Aws

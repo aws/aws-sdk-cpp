@@ -49,7 +49,7 @@ public:
     using CodeStarNotificationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeStarNotificationsEndpointProvider()
-      : CodeStarNotificationsDefaultEpProviderBase(Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::Rules)
+      : CodeStarNotificationsDefaultEpProviderBase(Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::GetRulesBlob(), Aws::CodeStarNotifications::CodeStarNotificationsEndpointRules::RulesBlobSize)
     {}
 
     ~CodeStarNotificationsEndpointProvider()

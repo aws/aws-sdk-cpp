@@ -49,7 +49,7 @@ public:
     using CodeDeployResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeDeployEndpointProvider()
-      : CodeDeployDefaultEpProviderBase(Aws::CodeDeploy::CodeDeployEndpointRules::Rules)
+      : CodeDeployDefaultEpProviderBase(Aws::CodeDeploy::CodeDeployEndpointRules::GetRulesBlob(), Aws::CodeDeploy::CodeDeployEndpointRules::RulesBlobSize)
     {}
 
     ~CodeDeployEndpointProvider()

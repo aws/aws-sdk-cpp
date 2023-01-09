@@ -968,7 +968,7 @@ void OpsWorksClient::DescribeLoadBasedAutoScalingAsync(const DescribeLoadBasedAu
 DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMyUserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMyUserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeMyUserProfileOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeMyUserProfile"));
@@ -993,7 +993,7 @@ void OpsWorksClient::DescribeMyUserProfileAsync(const DescribeMyUserProfileRespo
 DescribeOperatingSystemsOutcome OpsWorksClient::DescribeOperatingSystems() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOperatingSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOperatingSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeOperatingSystemsOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeOperatingSystems"));

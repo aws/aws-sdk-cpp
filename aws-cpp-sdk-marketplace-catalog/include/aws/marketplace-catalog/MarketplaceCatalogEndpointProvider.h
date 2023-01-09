@@ -49,7 +49,7 @@ public:
     using MarketplaceCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MarketplaceCatalogEndpointProvider()
-      : MarketplaceCatalogDefaultEpProviderBase(Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::Rules)
+      : MarketplaceCatalogDefaultEpProviderBase(Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::GetRulesBlob(), Aws::MarketplaceCatalog::MarketplaceCatalogEndpointRules::RulesBlobSize)
     {}
 
     ~MarketplaceCatalogEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using MarketplaceMeteringResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MarketplaceMeteringEndpointProvider()
-      : MarketplaceMeteringDefaultEpProviderBase(Aws::MarketplaceMetering::MarketplaceMeteringEndpointRules::Rules)
+      : MarketplaceMeteringDefaultEpProviderBase(Aws::MarketplaceMetering::MarketplaceMeteringEndpointRules::GetRulesBlob(), Aws::MarketplaceMetering::MarketplaceMeteringEndpointRules::RulesBlobSize)
     {}
 
     ~MarketplaceMeteringEndpointProvider()

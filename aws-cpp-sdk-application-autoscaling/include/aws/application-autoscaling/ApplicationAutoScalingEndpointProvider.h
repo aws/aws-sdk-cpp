@@ -49,7 +49,7 @@ public:
     using ApplicationAutoScalingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ApplicationAutoScalingEndpointProvider()
-      : ApplicationAutoScalingDefaultEpProviderBase(Aws::ApplicationAutoScaling::ApplicationAutoScalingEndpointRules::Rules)
+      : ApplicationAutoScalingDefaultEpProviderBase(Aws::ApplicationAutoScaling::ApplicationAutoScalingEndpointRules::GetRulesBlob(), Aws::ApplicationAutoScaling::ApplicationAutoScalingEndpointRules::RulesBlobSize)
     {}
 
     ~ApplicationAutoScalingEndpointProvider()

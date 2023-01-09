@@ -49,7 +49,7 @@ public:
     using FraudDetectorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FraudDetectorEndpointProvider()
-      : FraudDetectorDefaultEpProviderBase(Aws::FraudDetector::FraudDetectorEndpointRules::Rules)
+      : FraudDetectorDefaultEpProviderBase(Aws::FraudDetector::FraudDetectorEndpointRules::GetRulesBlob(), Aws::FraudDetector::FraudDetectorEndpointRules::RulesBlobSize)
     {}
 
     ~FraudDetectorEndpointProvider()

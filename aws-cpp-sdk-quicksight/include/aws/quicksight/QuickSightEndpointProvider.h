@@ -49,7 +49,7 @@ public:
     using QuickSightResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     QuickSightEndpointProvider()
-      : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::Rules)
+      : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::GetRulesBlob(), Aws::QuickSight::QuickSightEndpointRules::RulesBlobSize)
     {}
 
     ~QuickSightEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using AmplifyUIBuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AmplifyUIBuilderEndpointProvider()
-      : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::Rules)
+      : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::GetRulesBlob(), Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::RulesBlobSize)
     {}
 
     ~AmplifyUIBuilderEndpointProvider()

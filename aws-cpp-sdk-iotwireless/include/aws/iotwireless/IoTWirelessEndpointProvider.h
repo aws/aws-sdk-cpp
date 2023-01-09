@@ -49,7 +49,7 @@ public:
     using IoTWirelessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTWirelessEndpointProvider()
-      : IoTWirelessDefaultEpProviderBase(Aws::IoTWireless::IoTWirelessEndpointRules::Rules)
+      : IoTWirelessDefaultEpProviderBase(Aws::IoTWireless::IoTWirelessEndpointRules::GetRulesBlob(), Aws::IoTWireless::IoTWirelessEndpointRules::RulesBlobSize)
     {}
 
     ~IoTWirelessEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using APIGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     APIGatewayEndpointProvider()
-      : APIGatewayDefaultEpProviderBase(Aws::APIGateway::APIGatewayEndpointRules::Rules)
+      : APIGatewayDefaultEpProviderBase(Aws::APIGateway::APIGatewayEndpointRules::GetRulesBlob(), Aws::APIGateway::APIGatewayEndpointRules::RulesBlobSize)
     {}
 
     ~APIGatewayEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using KinesisVideoWebRTCStorageResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KinesisVideoWebRTCStorageEndpointProvider()
-      : KinesisVideoWebRTCStorageDefaultEpProviderBase(Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageEndpointRules::Rules)
+      : KinesisVideoWebRTCStorageDefaultEpProviderBase(Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageEndpointRules::GetRulesBlob(), Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageEndpointRules::RulesBlobSize)
     {}
 
     ~KinesisVideoWebRTCStorageEndpointProvider()

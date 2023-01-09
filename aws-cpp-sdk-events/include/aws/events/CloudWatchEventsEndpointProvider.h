@@ -49,7 +49,7 @@ public:
     using CloudWatchEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudWatchEventsEndpointProvider()
-      : CloudWatchEventsDefaultEpProviderBase(Aws::CloudWatchEvents::CloudWatchEventsEndpointRules::Rules)
+      : CloudWatchEventsDefaultEpProviderBase(Aws::CloudWatchEvents::CloudWatchEventsEndpointRules::GetRulesBlob(), Aws::CloudWatchEvents::CloudWatchEventsEndpointRules::RulesBlobSize)
     {}
 
     ~CloudWatchEventsEndpointProvider()

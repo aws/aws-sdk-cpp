@@ -4,9 +4,8 @@
  */
 
 #pragma once
+#include <cstddef>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -15,8 +14,10 @@ namespace ChimeSDKMeetings
 class ChimeSDKMeetingsEndpointRules
 {
 public:
-    static Aws::String GetRulesAsString();
-    static const Aws::Vector<char> Rules; 
+    static const size_t RulesBlobStrLen;
+    static const size_t RulesBlobSize;
+
+    static const char* GetRulesBlob();
 };
 } // namespace ChimeSDKMeetings
 } // namespace Aws

@@ -47,7 +47,7 @@ struct MediaStoreDataEndpointProviderEndpointTestCase
         OperationParamsFromTest clientParams;
     };
 
-    std::string documentation;
+    Aws::String documentation;
     // Specification tells us it is Client Initialization parameters
     // At the same time, specification tells us to test EndpointProvider not the client itself
     // Hence params here will be set as a client params (just like a dedicated field above).

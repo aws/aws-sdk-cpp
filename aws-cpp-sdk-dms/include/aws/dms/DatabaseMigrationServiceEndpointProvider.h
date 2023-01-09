@@ -49,7 +49,7 @@ public:
     using DatabaseMigrationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DatabaseMigrationServiceEndpointProvider()
-      : DatabaseMigrationServiceDefaultEpProviderBase(Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::Rules)
+      : DatabaseMigrationServiceDefaultEpProviderBase(Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::GetRulesBlob(), Aws::DatabaseMigrationService::DatabaseMigrationServiceEndpointRules::RulesBlobSize)
     {}
 
     ~DatabaseMigrationServiceEndpointProvider()

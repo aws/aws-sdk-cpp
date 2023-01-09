@@ -49,7 +49,7 @@ public:
     using ACMPCAResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ACMPCAEndpointProvider()
-      : ACMPCADefaultEpProviderBase(Aws::ACMPCA::ACMPCAEndpointRules::Rules)
+      : ACMPCADefaultEpProviderBase(Aws::ACMPCA::ACMPCAEndpointRules::GetRulesBlob(), Aws::ACMPCA::ACMPCAEndpointRules::RulesBlobSize)
     {}
 
     ~ACMPCAEndpointProvider()

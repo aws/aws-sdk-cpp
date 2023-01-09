@@ -49,7 +49,7 @@ public:
     using AlexaForBusinessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AlexaForBusinessEndpointProvider()
-      : AlexaForBusinessDefaultEpProviderBase(Aws::AlexaForBusiness::AlexaForBusinessEndpointRules::Rules)
+      : AlexaForBusinessDefaultEpProviderBase(Aws::AlexaForBusiness::AlexaForBusinessEndpointRules::GetRulesBlob(), Aws::AlexaForBusiness::AlexaForBusinessEndpointRules::RulesBlobSize)
     {}
 
     ~AlexaForBusinessEndpointProvider()

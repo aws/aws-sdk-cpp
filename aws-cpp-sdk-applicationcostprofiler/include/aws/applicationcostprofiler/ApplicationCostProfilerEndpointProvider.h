@@ -49,7 +49,7 @@ public:
     using ApplicationCostProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ApplicationCostProfilerEndpointProvider()
-      : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::Rules)
+      : ApplicationCostProfilerDefaultEpProviderBase(Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::GetRulesBlob(), Aws::ApplicationCostProfiler::ApplicationCostProfilerEndpointRules::RulesBlobSize)
     {}
 
     ~ApplicationCostProfilerEndpointProvider()

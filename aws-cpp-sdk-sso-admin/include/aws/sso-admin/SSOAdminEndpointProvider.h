@@ -49,7 +49,7 @@ public:
     using SSOAdminResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSOAdminEndpointProvider()
-      : SSOAdminDefaultEpProviderBase(Aws::SSOAdmin::SSOAdminEndpointRules::Rules)
+      : SSOAdminDefaultEpProviderBase(Aws::SSOAdmin::SSOAdminEndpointRules::GetRulesBlob(), Aws::SSOAdmin::SSOAdminEndpointRules::RulesBlobSize)
     {}
 
     ~SSOAdminEndpointProvider()

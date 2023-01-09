@@ -49,7 +49,7 @@ public:
     using MWAAResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MWAAEndpointProvider()
-      : MWAADefaultEpProviderBase(Aws::MWAA::MWAAEndpointRules::Rules)
+      : MWAADefaultEpProviderBase(Aws::MWAA::MWAAEndpointRules::GetRulesBlob(), Aws::MWAA::MWAAEndpointRules::RulesBlobSize)
     {}
 
     ~MWAAEndpointProvider()

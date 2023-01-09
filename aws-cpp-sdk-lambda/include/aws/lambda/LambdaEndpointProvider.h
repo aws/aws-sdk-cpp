@@ -49,7 +49,7 @@ public:
     using LambdaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LambdaEndpointProvider()
-      : LambdaDefaultEpProviderBase(Aws::Lambda::LambdaEndpointRules::Rules)
+      : LambdaDefaultEpProviderBase(Aws::Lambda::LambdaEndpointRules::GetRulesBlob(), Aws::Lambda::LambdaEndpointRules::RulesBlobSize)
     {}
 
     ~LambdaEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ApplicationDiscoveryServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ApplicationDiscoveryServiceEndpointProvider()
-      : ApplicationDiscoveryServiceDefaultEpProviderBase(Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::Rules)
+      : ApplicationDiscoveryServiceDefaultEpProviderBase(Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::GetRulesBlob(), Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceEndpointRules::RulesBlobSize)
     {}
 
     ~ApplicationDiscoveryServiceEndpointProvider()

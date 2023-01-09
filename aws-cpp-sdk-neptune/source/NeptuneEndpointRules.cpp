@@ -4,18 +4,17 @@
  */
 
 #include <aws/neptune/NeptuneEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Neptune
 {
+const size_t NeptuneEndpointRules::RulesBlobStrLen = 4635;
+const size_t NeptuneEndpointRules::RulesBlobSize = 4636;
 
-Aws::String NeptuneEndpointRules::GetRulesAsString()
-{
-    return Aws::String(NeptuneEndpointRules::Rules.begin(), NeptuneEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> NeptuneEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, NeptuneEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -201,7 +200,13 @@ const Aws::Vector<char> NeptuneEndpointRules::Rules = {
 'o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S',
 'u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"',
 'h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p',
-'o','i','n','t','"','}',']','}',']','}'};
+'o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* NeptuneEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Neptune
 } // namespace Aws

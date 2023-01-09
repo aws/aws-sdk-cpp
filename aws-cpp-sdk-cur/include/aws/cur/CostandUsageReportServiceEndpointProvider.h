@@ -49,7 +49,7 @@ public:
     using CostandUsageReportServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CostandUsageReportServiceEndpointProvider()
-      : CostandUsageReportServiceDefaultEpProviderBase(Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::Rules)
+      : CostandUsageReportServiceDefaultEpProviderBase(Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::GetRulesBlob(), Aws::CostandUsageReportService::CostandUsageReportServiceEndpointRules::RulesBlobSize)
     {}
 
     ~CostandUsageReportServiceEndpointProvider()

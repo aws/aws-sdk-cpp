@@ -4,18 +4,17 @@
  */
 
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Route53RecoveryReadiness
 {
+const size_t Route53RecoveryReadinessEndpointRules::RulesBlobStrLen = 3492;
+const size_t Route53RecoveryReadinessEndpointRules::RulesBlobSize = 3493;
 
-Aws::String Route53RecoveryReadinessEndpointRules::GetRulesAsString()
-{
-    return Aws::String(Route53RecoveryReadinessEndpointRules::Rules.begin(), Route53RecoveryReadinessEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> Route53RecoveryReadinessEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, Route53RecoveryReadinessEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> Route53RecoveryReadinessEndpointRules::Rules = {
 's','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u',
 'l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e',
 's','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e',
-'"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* Route53RecoveryReadinessEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Route53RecoveryReadiness
 } // namespace Aws

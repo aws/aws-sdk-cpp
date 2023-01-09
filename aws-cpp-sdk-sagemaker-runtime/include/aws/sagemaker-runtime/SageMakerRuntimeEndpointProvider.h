@@ -49,7 +49,7 @@ public:
     using SageMakerRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SageMakerRuntimeEndpointProvider()
-      : SageMakerRuntimeDefaultEpProviderBase(Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::Rules)
+      : SageMakerRuntimeDefaultEpProviderBase(Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::GetRulesBlob(), Aws::SageMakerRuntime::SageMakerRuntimeEndpointRules::RulesBlobSize)
     {}
 
     ~SageMakerRuntimeEndpointProvider()

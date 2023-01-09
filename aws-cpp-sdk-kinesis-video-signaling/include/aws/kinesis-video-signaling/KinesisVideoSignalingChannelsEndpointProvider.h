@@ -49,7 +49,7 @@ public:
     using KinesisVideoSignalingChannelsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KinesisVideoSignalingChannelsEndpointProvider()
-      : KinesisVideoSignalingChannelsDefaultEpProviderBase(Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsEndpointRules::Rules)
+      : KinesisVideoSignalingChannelsDefaultEpProviderBase(Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsEndpointRules::GetRulesBlob(), Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsEndpointRules::RulesBlobSize)
     {}
 
     ~KinesisVideoSignalingChannelsEndpointProvider()

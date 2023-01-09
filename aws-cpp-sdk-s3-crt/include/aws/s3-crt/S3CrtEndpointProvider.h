@@ -102,7 +102,7 @@ public:
     using S3CrtResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     S3CrtEndpointProvider()
-      : S3CrtDefaultEpProviderBase(Aws::S3Crt::S3CrtEndpointRules::Rules)
+      : S3CrtDefaultEpProviderBase(Aws::S3Crt::S3CrtEndpointRules::GetRulesBlob(), Aws::S3Crt::S3CrtEndpointRules::RulesBlobSize)
     {}
 
     ~S3CrtEndpointProvider()

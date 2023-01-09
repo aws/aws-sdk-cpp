@@ -49,7 +49,7 @@ public:
     using WAFRegionalResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WAFRegionalEndpointProvider()
-      : WAFRegionalDefaultEpProviderBase(Aws::WAFRegional::WAFRegionalEndpointRules::Rules)
+      : WAFRegionalDefaultEpProviderBase(Aws::WAFRegional::WAFRegionalEndpointRules::GetRulesBlob(), Aws::WAFRegional::WAFRegionalEndpointRules::RulesBlobSize)
     {}
 
     ~WAFRegionalEndpointProvider()

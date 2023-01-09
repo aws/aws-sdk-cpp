@@ -49,7 +49,7 @@ public:
     using NimbleStudioResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     NimbleStudioEndpointProvider()
-      : NimbleStudioDefaultEpProviderBase(Aws::NimbleStudio::NimbleStudioEndpointRules::Rules)
+      : NimbleStudioDefaultEpProviderBase(Aws::NimbleStudio::NimbleStudioEndpointRules::GetRulesBlob(), Aws::NimbleStudio::NimbleStudioEndpointRules::RulesBlobSize)
     {}
 
     ~NimbleStudioEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using CodeStarconnectionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeStarconnectionsEndpointProvider()
-      : CodeStarconnectionsDefaultEpProviderBase(Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::Rules)
+      : CodeStarconnectionsDefaultEpProviderBase(Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::GetRulesBlob(), Aws::CodeStarconnections::CodeStarconnectionsEndpointRules::RulesBlobSize)
     {}
 
     ~CodeStarconnectionsEndpointProvider()

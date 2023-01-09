@@ -49,7 +49,7 @@ public:
     using STSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     STSEndpointProvider()
-      : STSDefaultEpProviderBase(Aws::STS::STSEndpointRules::Rules)
+      : STSDefaultEpProviderBase(Aws::STS::STSEndpointRules::GetRulesBlob(), Aws::STS::STSEndpointRules::RulesBlobSize)
     {}
 
     ~STSEndpointProvider()

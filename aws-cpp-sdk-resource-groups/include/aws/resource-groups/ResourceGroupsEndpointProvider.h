@@ -49,7 +49,7 @@ public:
     using ResourceGroupsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ResourceGroupsEndpointProvider()
-      : ResourceGroupsDefaultEpProviderBase(Aws::ResourceGroups::ResourceGroupsEndpointRules::Rules)
+      : ResourceGroupsDefaultEpProviderBase(Aws::ResourceGroups::ResourceGroupsEndpointRules::GetRulesBlob(), Aws::ResourceGroups::ResourceGroupsEndpointRules::RulesBlobSize)
     {}
 
     ~ResourceGroupsEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using SFNResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SFNEndpointProvider()
-      : SFNDefaultEpProviderBase(Aws::SFN::SFNEndpointRules::Rules)
+      : SFNDefaultEpProviderBase(Aws::SFN::SFNEndpointRules::GetRulesBlob(), Aws::SFN::SFNEndpointRules::RulesBlobSize)
     {}
 
     ~SFNEndpointProvider()

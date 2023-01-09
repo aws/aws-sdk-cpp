@@ -1000,7 +1000,7 @@ void DirectConnectClient::DescribeConnectionsAsync(const DescribeConnectionsRequ
 DescribeCustomerMetadataOutcome DirectConnectClient::DescribeCustomerMetadata() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCustomerMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCustomerMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeCustomerMetadataOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeCustomerMetadata"));
@@ -1217,7 +1217,7 @@ void DirectConnectClient::DescribeLoaAsync(const DescribeLoaRequest& request, co
 DescribeLocationsOutcome DirectConnectClient::DescribeLocations() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeLocationsOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeLocations"));
@@ -1290,7 +1290,7 @@ void DirectConnectClient::DescribeTagsAsync(const DescribeTagsRequest& request, 
 DescribeVirtualGatewaysOutcome DirectConnectClient::DescribeVirtualGateways() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVirtualGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeVirtualGatewaysOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeVirtualGateways"));

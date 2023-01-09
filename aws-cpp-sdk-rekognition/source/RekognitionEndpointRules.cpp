@@ -4,18 +4,17 @@
  */
 
 #include <aws/rekognition/RekognitionEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Rekognition
 {
+const size_t RekognitionEndpointRules::RulesBlobStrLen = 4662;
+const size_t RekognitionEndpointRules::RulesBlobSize = 4663;
 
-Aws::String RekognitionEndpointRules::GetRulesAsString()
-{
-    return Aws::String(RekognitionEndpointRules::Rules.begin(), RekognitionEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> RekognitionEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, RekognitionEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -202,7 +201,13 @@ const Aws::Vector<char> RekognitionEndpointRules::Rules = {
 'g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n',
 's','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',
 ',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n',
-'d','p','o','i','n','t','"','}',']','}',']','}'};
+'d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* RekognitionEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Rekognition
 } // namespace Aws

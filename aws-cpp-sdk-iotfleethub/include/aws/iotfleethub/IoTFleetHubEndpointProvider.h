@@ -49,7 +49,7 @@ public:
     using IoTFleetHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTFleetHubEndpointProvider()
-      : IoTFleetHubDefaultEpProviderBase(Aws::IoTFleetHub::IoTFleetHubEndpointRules::Rules)
+      : IoTFleetHubDefaultEpProviderBase(Aws::IoTFleetHub::IoTFleetHubEndpointRules::GetRulesBlob(), Aws::IoTFleetHub::IoTFleetHubEndpointRules::RulesBlobSize)
     {}
 
     ~IoTFleetHubEndpointProvider()

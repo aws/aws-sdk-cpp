@@ -49,7 +49,7 @@ public:
     using BackupResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BackupEndpointProvider()
-      : BackupDefaultEpProviderBase(Aws::Backup::BackupEndpointRules::Rules)
+      : BackupDefaultEpProviderBase(Aws::Backup::BackupEndpointRules::GetRulesBlob(), Aws::Backup::BackupEndpointRules::RulesBlobSize)
     {}
 
     ~BackupEndpointProvider()

@@ -4,9 +4,8 @@
  */
 
 #pragma once
+#include <cstddef>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -15,8 +14,10 @@ namespace PinpointSMSVoiceV2
 class PinpointSMSVoiceV2EndpointRules
 {
 public:
-    static Aws::String GetRulesAsString();
-    static const Aws::Vector<char> Rules; 
+    static const size_t RulesBlobStrLen;
+    static const size_t RulesBlobSize;
+
+    static const char* GetRulesBlob();
 };
 } // namespace PinpointSMSVoiceV2
 } // namespace Aws

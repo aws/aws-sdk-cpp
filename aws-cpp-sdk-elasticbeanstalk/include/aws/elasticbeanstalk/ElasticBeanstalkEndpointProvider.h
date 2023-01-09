@@ -49,7 +49,7 @@ public:
     using ElasticBeanstalkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElasticBeanstalkEndpointProvider()
-      : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::Rules)
+      : ElasticBeanstalkDefaultEpProviderBase(Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::GetRulesBlob(), Aws::ElasticBeanstalk::ElasticBeanstalkEndpointRules::RulesBlobSize)
     {}
 
     ~ElasticBeanstalkEndpointProvider()

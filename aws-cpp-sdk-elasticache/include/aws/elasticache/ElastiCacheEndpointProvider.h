@@ -49,7 +49,7 @@ public:
     using ElastiCacheResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElastiCacheEndpointProvider()
-      : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::Rules)
+      : ElastiCacheDefaultEpProviderBase(Aws::ElastiCache::ElastiCacheEndpointRules::GetRulesBlob(), Aws::ElastiCache::ElastiCacheEndpointRules::RulesBlobSize)
     {}
 
     ~ElastiCacheEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using AuditManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AuditManagerEndpointProvider()
-      : AuditManagerDefaultEpProviderBase(Aws::AuditManager::AuditManagerEndpointRules::Rules)
+      : AuditManagerDefaultEpProviderBase(Aws::AuditManager::AuditManagerEndpointRules::GetRulesBlob(), Aws::AuditManager::AuditManagerEndpointRules::RulesBlobSize)
     {}
 
     ~AuditManagerEndpointProvider()

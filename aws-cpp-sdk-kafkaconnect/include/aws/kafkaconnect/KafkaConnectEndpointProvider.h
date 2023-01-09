@@ -49,7 +49,7 @@ public:
     using KafkaConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KafkaConnectEndpointProvider()
-      : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::Rules)
+      : KafkaConnectDefaultEpProviderBase(Aws::KafkaConnect::KafkaConnectEndpointRules::GetRulesBlob(), Aws::KafkaConnect::KafkaConnectEndpointRules::RulesBlobSize)
     {}
 
     ~KafkaConnectEndpointProvider()

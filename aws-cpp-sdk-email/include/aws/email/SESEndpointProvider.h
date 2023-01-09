@@ -49,7 +49,7 @@ public:
     using SESResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SESEndpointProvider()
-      : SESDefaultEpProviderBase(Aws::SES::SESEndpointRules::Rules)
+      : SESDefaultEpProviderBase(Aws::SES::SESEndpointRules::GetRulesBlob(), Aws::SES::SESEndpointRules::RulesBlobSize)
     {}
 
     ~SESEndpointProvider()

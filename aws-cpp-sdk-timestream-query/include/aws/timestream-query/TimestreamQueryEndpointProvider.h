@@ -49,7 +49,7 @@ public:
     using TimestreamQueryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TimestreamQueryEndpointProvider()
-      : TimestreamQueryDefaultEpProviderBase(Aws::TimestreamQuery::TimestreamQueryEndpointRules::Rules)
+      : TimestreamQueryDefaultEpProviderBase(Aws::TimestreamQuery::TimestreamQueryEndpointRules::GetRulesBlob(), Aws::TimestreamQuery::TimestreamQueryEndpointRules::RulesBlobSize)
     {}
 
     ~TimestreamQueryEndpointProvider()

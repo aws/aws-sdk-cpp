@@ -49,7 +49,7 @@ public:
     using MediaTailorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaTailorEndpointProvider()
-      : MediaTailorDefaultEpProviderBase(Aws::MediaTailor::MediaTailorEndpointRules::Rules)
+      : MediaTailorDefaultEpProviderBase(Aws::MediaTailor::MediaTailorEndpointRules::GetRulesBlob(), Aws::MediaTailor::MediaTailorEndpointRules::RulesBlobSize)
     {}
 
     ~MediaTailorEndpointProvider()

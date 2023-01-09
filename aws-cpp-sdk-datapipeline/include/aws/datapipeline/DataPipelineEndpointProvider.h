@@ -49,7 +49,7 @@ public:
     using DataPipelineResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DataPipelineEndpointProvider()
-      : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::Rules)
+      : DataPipelineDefaultEpProviderBase(Aws::DataPipeline::DataPipelineEndpointRules::GetRulesBlob(), Aws::DataPipeline::DataPipelineEndpointRules::RulesBlobSize)
     {}
 
     ~DataPipelineEndpointProvider()

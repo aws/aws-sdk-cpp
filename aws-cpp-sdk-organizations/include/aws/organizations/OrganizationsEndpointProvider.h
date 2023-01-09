@@ -49,7 +49,7 @@ public:
     using OrganizationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OrganizationsEndpointProvider()
-      : OrganizationsDefaultEpProviderBase(Aws::Organizations::OrganizationsEndpointRules::Rules)
+      : OrganizationsDefaultEpProviderBase(Aws::Organizations::OrganizationsEndpointRules::GetRulesBlob(), Aws::Organizations::OrganizationsEndpointRules::RulesBlobSize)
     {}
 
     ~OrganizationsEndpointProvider()

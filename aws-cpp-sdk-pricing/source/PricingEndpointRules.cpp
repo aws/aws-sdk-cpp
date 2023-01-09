@@ -4,18 +4,17 @@
  */
 
 #include <aws/pricing/PricingEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Pricing
 {
+const size_t PricingEndpointRules::RulesBlobStrLen = 3474;
+const size_t PricingEndpointRules::RulesBlobSize = 3475;
 
-Aws::String PricingEndpointRules::GetRulesAsString()
-{
-    return Aws::String(PricingEndpointRules::Rules.begin(), PricingEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> PricingEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, PricingEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> PricingEndpointRules::Rules = {
 '.','p','r','i','c','i','n','g','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t',
 'i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r',
 'o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}',
-'}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* PricingEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Pricing
 } // namespace Aws

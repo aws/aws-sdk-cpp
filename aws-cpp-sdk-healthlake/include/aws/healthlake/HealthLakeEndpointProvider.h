@@ -49,7 +49,7 @@ public:
     using HealthLakeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     HealthLakeEndpointProvider()
-      : HealthLakeDefaultEpProviderBase(Aws::HealthLake::HealthLakeEndpointRules::Rules)
+      : HealthLakeDefaultEpProviderBase(Aws::HealthLake::HealthLakeEndpointRules::GetRulesBlob(), Aws::HealthLake::HealthLakeEndpointRules::RulesBlobSize)
     {}
 
     ~HealthLakeEndpointProvider()

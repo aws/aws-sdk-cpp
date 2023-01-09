@@ -49,7 +49,7 @@ public:
     using IoTSecureTunnelingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTSecureTunnelingEndpointProvider()
-      : IoTSecureTunnelingDefaultEpProviderBase(Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::Rules)
+      : IoTSecureTunnelingDefaultEpProviderBase(Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::GetRulesBlob(), Aws::IoTSecureTunneling::IoTSecureTunnelingEndpointRules::RulesBlobSize)
     {}
 
     ~IoTSecureTunnelingEndpointProvider()

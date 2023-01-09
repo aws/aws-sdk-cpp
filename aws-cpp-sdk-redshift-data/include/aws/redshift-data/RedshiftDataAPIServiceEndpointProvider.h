@@ -49,7 +49,7 @@ public:
     using RedshiftDataAPIServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RedshiftDataAPIServiceEndpointProvider()
-      : RedshiftDataAPIServiceDefaultEpProviderBase(Aws::RedshiftDataAPIService::RedshiftDataAPIServiceEndpointRules::Rules)
+      : RedshiftDataAPIServiceDefaultEpProviderBase(Aws::RedshiftDataAPIService::RedshiftDataAPIServiceEndpointRules::GetRulesBlob(), Aws::RedshiftDataAPIService::RedshiftDataAPIServiceEndpointRules::RulesBlobSize)
     {}
 
     ~RedshiftDataAPIServiceEndpointProvider()

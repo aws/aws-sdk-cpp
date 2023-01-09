@@ -49,7 +49,7 @@ public:
     using NetworkManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     NetworkManagerEndpointProvider()
-      : NetworkManagerDefaultEpProviderBase(Aws::NetworkManager::NetworkManagerEndpointRules::Rules)
+      : NetworkManagerDefaultEpProviderBase(Aws::NetworkManager::NetworkManagerEndpointRules::GetRulesBlob(), Aws::NetworkManager::NetworkManagerEndpointRules::RulesBlobSize)
     {}
 
     ~NetworkManagerEndpointProvider()

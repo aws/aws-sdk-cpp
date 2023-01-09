@@ -49,7 +49,7 @@ public:
     using AppConfigResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppConfigEndpointProvider()
-      : AppConfigDefaultEpProviderBase(Aws::AppConfig::AppConfigEndpointRules::Rules)
+      : AppConfigDefaultEpProviderBase(Aws::AppConfig::AppConfigEndpointRules::GetRulesBlob(), Aws::AppConfig::AppConfigEndpointRules::RulesBlobSize)
     {}
 
     ~AppConfigEndpointProvider()

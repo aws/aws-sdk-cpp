@@ -49,7 +49,7 @@ public:
     using CodeGuruProfilerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeGuruProfilerEndpointProvider()
-      : CodeGuruProfilerDefaultEpProviderBase(Aws::CodeGuruProfiler::CodeGuruProfilerEndpointRules::Rules)
+      : CodeGuruProfilerDefaultEpProviderBase(Aws::CodeGuruProfiler::CodeGuruProfilerEndpointRules::GetRulesBlob(), Aws::CodeGuruProfiler::CodeGuruProfilerEndpointRules::RulesBlobSize)
     {}
 
     ~CodeGuruProfilerEndpointProvider()

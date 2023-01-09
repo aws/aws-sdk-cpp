@@ -49,7 +49,7 @@ public:
     using TranscribeStreamingServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TranscribeStreamingServiceEndpointProvider()
-      : TranscribeStreamingServiceDefaultEpProviderBase(Aws::TranscribeStreamingService::TranscribeStreamingServiceEndpointRules::Rules)
+      : TranscribeStreamingServiceDefaultEpProviderBase(Aws::TranscribeStreamingService::TranscribeStreamingServiceEndpointRules::GetRulesBlob(), Aws::TranscribeStreamingService::TranscribeStreamingServiceEndpointRules::RulesBlobSize)
     {}
 
     ~TranscribeStreamingServiceEndpointProvider()

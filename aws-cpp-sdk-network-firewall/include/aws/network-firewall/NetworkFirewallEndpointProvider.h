@@ -49,7 +49,7 @@ public:
     using NetworkFirewallResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     NetworkFirewallEndpointProvider()
-      : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::Rules)
+      : NetworkFirewallDefaultEpProviderBase(Aws::NetworkFirewall::NetworkFirewallEndpointRules::GetRulesBlob(), Aws::NetworkFirewall::NetworkFirewallEndpointRules::RulesBlobSize)
     {}
 
     ~NetworkFirewallEndpointProvider()

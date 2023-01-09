@@ -49,7 +49,7 @@ public:
     using ConnectWisdomServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConnectWisdomServiceEndpointProvider()
-      : ConnectWisdomServiceDefaultEpProviderBase(Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::Rules)
+      : ConnectWisdomServiceDefaultEpProviderBase(Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::GetRulesBlob(), Aws::ConnectWisdomService::ConnectWisdomServiceEndpointRules::RulesBlobSize)
     {}
 
     ~ConnectWisdomServiceEndpointProvider()

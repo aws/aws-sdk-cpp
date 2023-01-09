@@ -49,7 +49,7 @@ public:
     using ProtonResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ProtonEndpointProvider()
-      : ProtonDefaultEpProviderBase(Aws::Proton::ProtonEndpointRules::Rules)
+      : ProtonDefaultEpProviderBase(Aws::Proton::ProtonEndpointRules::GetRulesBlob(), Aws::Proton::ProtonEndpointRules::RulesBlobSize)
     {}
 
     ~ProtonEndpointProvider()

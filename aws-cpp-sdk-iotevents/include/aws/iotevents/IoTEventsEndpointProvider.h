@@ -49,7 +49,7 @@ public:
     using IoTEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTEventsEndpointProvider()
-      : IoTEventsDefaultEpProviderBase(Aws::IoTEvents::IoTEventsEndpointRules::Rules)
+      : IoTEventsDefaultEpProviderBase(Aws::IoTEvents::IoTEventsEndpointRules::GetRulesBlob(), Aws::IoTEvents::IoTEventsEndpointRules::RulesBlobSize)
     {}
 
     ~IoTEventsEndpointProvider()

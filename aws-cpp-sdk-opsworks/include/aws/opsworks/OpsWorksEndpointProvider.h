@@ -49,7 +49,7 @@ public:
     using OpsWorksResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OpsWorksEndpointProvider()
-      : OpsWorksDefaultEpProviderBase(Aws::OpsWorks::OpsWorksEndpointRules::Rules)
+      : OpsWorksDefaultEpProviderBase(Aws::OpsWorks::OpsWorksEndpointRules::GetRulesBlob(), Aws::OpsWorks::OpsWorksEndpointRules::RulesBlobSize)
     {}
 
     ~OpsWorksEndpointProvider()

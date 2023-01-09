@@ -49,7 +49,7 @@ public:
     using EMRContainersResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EMRContainersEndpointProvider()
-      : EMRContainersDefaultEpProviderBase(Aws::EMRContainers::EMRContainersEndpointRules::Rules)
+      : EMRContainersDefaultEpProviderBase(Aws::EMRContainers::EMRContainersEndpointRules::GetRulesBlob(), Aws::EMRContainers::EMRContainersEndpointRules::RulesBlobSize)
     {}
 
     ~EMRContainersEndpointProvider()

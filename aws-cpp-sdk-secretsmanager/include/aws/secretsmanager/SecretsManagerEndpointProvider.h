@@ -49,7 +49,7 @@ public:
     using SecretsManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SecretsManagerEndpointProvider()
-      : SecretsManagerDefaultEpProviderBase(Aws::SecretsManager::SecretsManagerEndpointRules::Rules)
+      : SecretsManagerDefaultEpProviderBase(Aws::SecretsManager::SecretsManagerEndpointRules::GetRulesBlob(), Aws::SecretsManager::SecretsManagerEndpointRules::RulesBlobSize)
     {}
 
     ~SecretsManagerEndpointProvider()

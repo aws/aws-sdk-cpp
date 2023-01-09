@@ -49,7 +49,7 @@ public:
     using PricingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PricingEndpointProvider()
-      : PricingDefaultEpProviderBase(Aws::Pricing::PricingEndpointRules::Rules)
+      : PricingDefaultEpProviderBase(Aws::Pricing::PricingEndpointRules::GetRulesBlob(), Aws::Pricing::PricingEndpointRules::RulesBlobSize)
     {}
 
     ~PricingEndpointProvider()

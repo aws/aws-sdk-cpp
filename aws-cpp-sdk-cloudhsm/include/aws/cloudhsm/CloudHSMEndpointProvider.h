@@ -49,7 +49,7 @@ public:
     using CloudHSMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudHSMEndpointProvider()
-      : CloudHSMDefaultEpProviderBase(Aws::CloudHSM::CloudHSMEndpointRules::Rules)
+      : CloudHSMDefaultEpProviderBase(Aws::CloudHSM::CloudHSMEndpointRules::GetRulesBlob(), Aws::CloudHSM::CloudHSMEndpointRules::RulesBlobSize)
     {}
 
     ~CloudHSMEndpointProvider()

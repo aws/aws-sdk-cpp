@@ -557,7 +557,7 @@ void AppRegistryClient::GetAttributeGroupAsync(const GetAttributeGroupRequest& r
 GetConfigurationOutcome AppRegistryClient::GetConfiguration() const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");

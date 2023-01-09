@@ -49,7 +49,7 @@ public:
     using IdentityStoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IdentityStoreEndpointProvider()
-      : IdentityStoreDefaultEpProviderBase(Aws::IdentityStore::IdentityStoreEndpointRules::Rules)
+      : IdentityStoreDefaultEpProviderBase(Aws::IdentityStore::IdentityStoreEndpointRules::GetRulesBlob(), Aws::IdentityStore::IdentityStoreEndpointRules::RulesBlobSize)
     {}
 
     ~IdentityStoreEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using PrivateNetworksResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PrivateNetworksEndpointProvider()
-      : PrivateNetworksDefaultEpProviderBase(Aws::PrivateNetworks::PrivateNetworksEndpointRules::Rules)
+      : PrivateNetworksDefaultEpProviderBase(Aws::PrivateNetworks::PrivateNetworksEndpointRules::GetRulesBlob(), Aws::PrivateNetworks::PrivateNetworksEndpointRules::RulesBlobSize)
     {}
 
     ~PrivateNetworksEndpointProvider()
