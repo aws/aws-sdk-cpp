@@ -36,58 +36,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline DescribeRepositoriesRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline DescribeRepositoriesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repositories to be described. If you do not specify a registry, the default
-     * public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry that
+     * contains the repositories to be described. If you do not specify a registry, the
+     * default public registry is assumed.</p>
      */
     inline DescribeRepositoriesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -148,163 +148,163 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline DescribeRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline DescribeRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <p>The <code>nextToken</code> value that's returned from a previous paginated
      * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is <code>null</code> when there are no more results to return. This
-     * option cannot be used when you specify repositories with
-     * <code>repositoryNames</code>.</p>  <p>This token should be treated as an
-     * opaque identifier that is only used to retrieve the next items in a list and not
-     * for other programmatic purposes.</p> 
+     * If there are no more results to return, this value is <code>null</code>. If you
+     * specify repositories with <code>repositoryNames</code>, you can't use this
+     * option.</p>  <p>This token should be treated as an opaque identifier that
+     * is only used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline DescribeRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of repository results returned by
+     * <p>The maximum number of repository results that's returned by
      * <code>DescribeRepositories</code> in paginated output. When this parameter is
      * used, <code>DescribeRepositories</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
+     * You can see the remaining results of the initial request by sending another
      * <code>DescribeRepositories</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 1000. If this
-     * parameter is not used, then <code>DescribeRepositories</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be
-     * used when you specify repositories with <code>repositoryNames</code>.</p>
+     * parameter isn't used, then <code>DescribeRepositories</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify
+     * repositories with <code>repositoryNames</code>, you can't use this option.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of repository results returned by
+     * <p>The maximum number of repository results that's returned by
      * <code>DescribeRepositories</code> in paginated output. When this parameter is
      * used, <code>DescribeRepositories</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
+     * You can see the remaining results of the initial request by sending another
      * <code>DescribeRepositories</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 1000. If this
-     * parameter is not used, then <code>DescribeRepositories</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be
-     * used when you specify repositories with <code>repositoryNames</code>.</p>
+     * parameter isn't used, then <code>DescribeRepositories</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify
+     * repositories with <code>repositoryNames</code>, you can't use this option.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of repository results returned by
+     * <p>The maximum number of repository results that's returned by
      * <code>DescribeRepositories</code> in paginated output. When this parameter is
      * used, <code>DescribeRepositories</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
+     * You can see the remaining results of the initial request by sending another
      * <code>DescribeRepositories</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 1000. If this
-     * parameter is not used, then <code>DescribeRepositories</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be
-     * used when you specify repositories with <code>repositoryNames</code>.</p>
+     * parameter isn't used, then <code>DescribeRepositories</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify
+     * repositories with <code>repositoryNames</code>, you can't use this option.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of repository results returned by
+     * <p>The maximum number of repository results that's returned by
      * <code>DescribeRepositories</code> in paginated output. When this parameter is
      * used, <code>DescribeRepositories</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
+     * You can see the remaining results of the initial request by sending another
      * <code>DescribeRepositories</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 1000. If this
-     * parameter is not used, then <code>DescribeRepositories</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable. This option cannot be
-     * used when you specify repositories with <code>repositoryNames</code>.</p>
+     * parameter isn't used, then <code>DescribeRepositories</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. If you specify
+     * repositories with <code>repositoryNames</code>, you can't use this option.</p>
      */
     inline DescribeRepositoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -31,6 +31,7 @@ static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("Im
 static const int REFERENCED_IMAGES_NOT_FOUND_HASH = HashingUtils::HashString("ReferencedImagesNotFoundException");
 static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
+static const int REPOSITORY_CATALOG_DATA_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryCatalogDataNotFoundException");
 static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
@@ -74,6 +75,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPOSITORY_NOT_EMPTY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::REPOSITORY_NOT_EMPTY), false);
+  }
+  else if (hashCode == REPOSITORY_CATALOG_DATA_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRPublicErrors::REPOSITORY_CATALOG_DATA_NOT_FOUND), false);
   }
   else if (hashCode == LAYERS_NOT_FOUND_HASH)
   {

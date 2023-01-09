@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 CreatePortalRequest::CreatePortalRequest() : 
     m_additionalEncryptionContextHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customerManagedKeyHasBeenSet(false),
@@ -35,6 +37,11 @@ Aws::String CreatePortalRequest::SerializePayload() const
    }
    payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
   if(m_clientTokenHasBeenSet)

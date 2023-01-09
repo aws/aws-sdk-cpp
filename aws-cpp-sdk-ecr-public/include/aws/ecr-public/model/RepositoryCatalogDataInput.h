@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing the catalog data for a repository. This data is publicly
-   * visible in the Amazon ECR Public Gallery.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains the catalog data for a repository. This data is
+   * publicly visible in the Amazon ECR Public Gallery.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/RepositoryCatalogDataInput">AWS
    * API Reference</a></p>
    */
@@ -100,208 +100,208 @@ namespace Model
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetArchitectures() const{ return m_architectures; }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline void SetArchitectures(const Aws::Vector<Aws::String>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline void SetArchitectures(Aws::Vector<Aws::String>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& WithArchitectures(const Aws::Vector<Aws::String>& value) { SetArchitectures(value); return *this;}
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& WithArchitectures(Aws::Vector<Aws::String>&& value) { SetArchitectures(std::move(value)); return *this;}
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddArchitectures(const Aws::String& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddArchitectures(Aws::String&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The system architecture that the images in the repository are compatible
      * with. On the Amazon ECR Public Gallery, the following supported architectures
-     * will appear as badges on the repository and are used as search filters.</p> <ul>
-     * <li> <p> <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li>
-     * </ul>  <p>If an unsupported tag is added to your repository catalog data,
-     * it will be associated with the repository and can be retrieved using the API but
-     * will not be discoverable in the Amazon ECR Public Gallery.</p> 
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
+     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddArchitectures(const char* value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
 
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetOperatingSystems() const{ return m_operatingSystems; }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline bool OperatingSystemsHasBeenSet() const { return m_operatingSystemsHasBeenSet; }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline void SetOperatingSystems(const Aws::Vector<Aws::String>& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = value; }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline void SetOperatingSystems(Aws::Vector<Aws::String>&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = std::move(value); }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& WithOperatingSystems(const Aws::Vector<Aws::String>& value) { SetOperatingSystems(value); return *this;}
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& WithOperatingSystems(Aws::Vector<Aws::String>&& value) { SetOperatingSystems(std::move(value)); return *this;}
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddOperatingSystems(const Aws::String& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(value); return *this; }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddOperatingSystems(Aws::String&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The operating systems that the images in the repository are compatible with.
-     * On the Amazon ECR Public Gallery, the following supported operating systems will
-     * appear as badges on the repository and are used as search filters.</p> <ul> <li>
-     * <p> <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
-     * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul> 
-     * <p>If an unsupported tag is added to your repository catalog data, it will be
-     * associated with the repository and can be retrieved using the API but will not
-     * be discoverable in the Amazon ECR Public Gallery.</p> 
+     * On the Amazon ECR Public Gallery, the following supported operating systems
+     * appear as badges on the repository and are used as search filters.</p> 
+     * <p>If an unsupported tag is added to your repository catalog data, it's
+     * associated with the repository and can be retrieved using the API but isn't
+     * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
+     * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
     inline RepositoryCatalogDataInput& AddOperatingSystems(const char* value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(value); return *this; }
 
@@ -350,56 +350,56 @@ namespace Model
 
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline const Aws::String& GetAboutText() const{ return m_aboutText; }
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline bool AboutTextHasBeenSet() const { return m_aboutTextHasBeenSet; }
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline void SetAboutText(const Aws::String& value) { m_aboutTextHasBeenSet = true; m_aboutText = value; }
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline void SetAboutText(Aws::String&& value) { m_aboutTextHasBeenSet = true; m_aboutText = std::move(value); }
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline void SetAboutText(const char* value) { m_aboutTextHasBeenSet = true; m_aboutText.assign(value); }
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline RepositoryCatalogDataInput& WithAboutText(const Aws::String& value) { SetAboutText(value); return *this;}
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
     inline RepositoryCatalogDataInput& WithAboutText(Aws::String&& value) { SetAboutText(std::move(value)); return *this;}
 
     /**
-     * <p>A detailed description of the contents of the repository. It is publicly
+     * <p>A detailed description of the contents of the repository. It's publicly
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
@@ -407,7 +407,7 @@ namespace Model
 
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -415,7 +415,7 @@ namespace Model
     inline const Aws::String& GetUsageText() const{ return m_usageText; }
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -423,7 +423,7 @@ namespace Model
     inline bool UsageTextHasBeenSet() const { return m_usageTextHasBeenSet; }
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -431,7 +431,7 @@ namespace Model
     inline void SetUsageText(const Aws::String& value) { m_usageTextHasBeenSet = true; m_usageText = value; }
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -439,7 +439,7 @@ namespace Model
     inline void SetUsageText(Aws::String&& value) { m_usageTextHasBeenSet = true; m_usageText = std::move(value); }
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -447,7 +447,7 @@ namespace Model
     inline void SetUsageText(const char* value) { m_usageTextHasBeenSet = true; m_usageText.assign(value); }
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -455,7 +455,7 @@ namespace Model
     inline RepositoryCatalogDataInput& WithUsageText(const Aws::String& value) { SetUsageText(value); return *this;}
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
@@ -463,7 +463,7 @@ namespace Model
     inline RepositoryCatalogDataInput& WithUsageText(Aws::String&& value) { SetUsageText(std::move(value)); return *this;}
 
     /**
-     * <p>Detailed information on how to use the contents of the repository. It is
+     * <p>Detailed information about how to use the contents of the repository. It's
      * publicly visible in the Amazon ECR Public Gallery. The usage text provides
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image layer.</p><p><h3>See Also:</h3>  
+   * <p>An object that represents an Amazon ECR image layer.</p><p><h3>See Also:</h3>
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Layer">AWS
    * API Reference</a></p>
    */

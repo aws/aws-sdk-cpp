@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the image tag details for an image.</p><p><h3>See
+   * <p>An object that represents the image tag details for an image.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageTagDetail">AWS
    * API Reference</a></p>
@@ -41,73 +41,73 @@ namespace Model
 
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline ImageTagDetail& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline ImageTagDetail& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
 
     /**
-     * <p>The tag associated with the image.</p>
+     * <p>The tag that's associated with the image.</p>
      */
     inline ImageTagDetail& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline ImageTagDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time stamp indicating when the image tag was created.</p>
+     * <p>The time stamp that indicates when the image tag was created.</p>
      */
     inline ImageTagDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

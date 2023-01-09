@@ -17,13 +17,13 @@ namespace ECRPublic
 {
   /**
    * <fullname>Amazon Elastic Container Registry Public</fullname> <p>Amazon Elastic
-   * Container Registry (Amazon ECR) is a managed container image registry service.
-   * Amazon ECR provides both public and private registries to host your container
-   * images. You can use the familiar Docker CLI, or their preferred client, to push,
-   * pull, and manage images. Amazon ECR provides a secure, scalable, and reliable
-   * registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR
-   * supports public repositories with this API. For information about the Amazon ECR
-   * API for private repositories, see <a
+   * Container Registry Public (Amazon ECR Public) is a managed container image
+   * registry service. Amazon ECR provides both public and private registries to host
+   * your container images. You can use the Docker CLI or your preferred client to
+   * push, pull, and manage images. Amazon ECR provides a secure, scalable, and
+   * reliable registry for your Docker or Open Container Initiative (OCI) images.
+   * Amazon ECR supports public repositories with this API. For information about the
+   * Amazon ECR API for private repositories, see <a
    * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html">Amazon
    * Elastic Container Registry API Reference</a>.</p>
    */
@@ -83,13 +83,13 @@ namespace ECRPublic
         virtual ~ECRPublicClient();
 
         /**
-         * <p>Checks the availability of one or more image layers within a repository in a
-         * public registry. When an image is pushed to a repository, each image layer is
-         * checked to verify if it has been uploaded before. If it has been uploaded, then
-         * the image layer is skipped.</p>  <p>This operation is used by the Amazon
-         * ECR proxy and is not generally used by customers for pulling and pushing images.
-         * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> <p><h3>See Also:</h3>   <a
+         * <p>Checks the availability of one or more image layers that are within a
+         * repository in a public registry. When an image is pushed to a repository, each
+         * image layer is checked to verify if it has been uploaded before. If it has been
+         * uploaded, then the image layer is skipped.</p>  <p>This operation is used
+         * by the Amazon ECR proxy and is not generally used by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          */
@@ -106,13 +106,13 @@ namespace ECRPublic
         virtual void BatchCheckLayerAvailabilityAsync(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a list of specified images within a repository in a public registry.
-         * Images are specified with either an <code>imageTag</code> or
+         * <p>Deletes a list of specified images that are within a repository in a public
+         * registry. Images are specified with either an <code>imageTag</code> or
          * <code>imageDigest</code>.</p> <p>You can remove a tag from an image by
          * specifying the image's tag in your request. When you remove the last tag from an
          * image, the image is deleted from your repository.</p> <p>You can completely
-         * delete an image (and all of its tags) by specifying the image's digest in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * delete an image (and all of its tags) by specifying the digest of the image in
+         * your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/BatchDeleteImage">AWS
          * API Reference</a></p>
          */
@@ -129,11 +129,11 @@ namespace ECRPublic
         virtual void BatchDeleteImageAsync(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Informs Amazon ECR that the image layer upload has completed for a specified
+         * <p>Informs Amazon ECR that the image layer upload is complete for a specified
          * public registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
-         * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p>  <p>This
+         * <p>When an image is pushed, the CompleteLayerUpload API is called once for each
+         * new image layer to verify that the upload is complete.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
          * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
@@ -175,8 +175,8 @@ namespace ECRPublic
 
         /**
          * <p>Deletes a repository in a public registry. If the repository contains images,
-         * you must either delete all images in the repository or use the
-         * <code>force</code> option which deletes all images on your behalf before
+         * you must either manually delete all images in the repository or use the
+         * <code>force</code> option. This option deletes all images on your behalf before
          * deleting the repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepository">AWS
          * API Reference</a></p>
@@ -194,7 +194,7 @@ namespace ECRPublic
         virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the repository policy associated with the specified
+         * <p>Deletes the repository policy that's associated with the specified
          * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DeleteRepositoryPolicy">AWS
          * API Reference</a></p>
@@ -230,12 +230,12 @@ namespace ECRPublic
         virtual void DescribeImageTagsAsync(const Model::DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata about the images in a repository in a public registry.</p>
-         *  <p>Beginning with Docker version 1.9, the Docker client compresses image
-         * layers before pushing them to a V2 Docker registry. The output of the
-         * <code>docker images</code> command shows the uncompressed image size, so it may
-         * return a larger image size than the image sizes returned by
-         * <a>DescribeImages</a>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns metadata that's related to the images in a repository in a public
+         * registry.</p>  <p>Beginning with Docker version 1.9, the Docker client
+         * compresses image layers before pushing them to a V2 Docker registry. The output
+         * of the <code>docker images</code> command shows the uncompressed image size.
+         * Therefore, it might return a larger image size than the image sizes that are
+         * returned by <a>DescribeImages</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeImages">AWS
          * API Reference</a></p>
          */
@@ -269,7 +269,8 @@ namespace ECRPublic
         virtual void DescribeRegistriesAsync(const Model::DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes repositories in a public registry.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes repositories that are in a public registry.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/DescribeRepositories">AWS
          * API Reference</a></p>
          */
@@ -287,7 +288,7 @@ namespace ECRPublic
 
         /**
          * <p>Retrieves an authorization token. An authorization token represents your IAM
-         * authentication credentials and can be used to access any Amazon ECR registry
+         * authentication credentials. You can use it to access any Amazon ECR registry
          * that your IAM principal has access to. The authorization token is valid for 12
          * hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and
          * <code>sts:GetServiceBearerToken</code> permissions.</p><p><h3>See Also:</h3>  
@@ -364,13 +365,12 @@ namespace ECRPublic
 
         /**
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
-         * image is pushed, the InitiateLayerUpload API is called once per image layer that
-         * has not already been uploaded. Whether or not an image layer has been uploaded
-         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
-         * operation is used by the Amazon ECR proxy and is not generally used by customers
-         * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
-         * Also:</h3>   <a
+         * image is pushed, the InitiateLayerUpload API is called once for each image layer
+         * that hasn't already been uploaded. Whether an image layer uploads is determined
+         * by the BatchCheckLayerAvailability API action.</p>  <p>This operation is
+         * used by the Amazon ECR proxy and is not generally used by customers for pulling
+         * and pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InitiateLayerUpload">AWS
          * API Reference</a></p>
          */
@@ -405,13 +405,13 @@ namespace ECRPublic
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates the image manifest and tags associated with an image.</p>
-         * <p>When an image is pushed and all new image layers have been uploaded, the
-         * PutImage API is called once to create or update the image manifest and the tags
-         * associated with the image.</p>  <p>This operation is used by the Amazon
-         * ECR proxy and is not generally used by customers for pulling and pushing images.
-         * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the image manifest and tags that are associated with an
+         * image.</p> <p>When an image is pushed and all new image layers have been
+         * uploaded, the PutImage API is called once to create or update the image manifest
+         * and the tags that are associated with the image.</p>  <p>This operation is
+         * used by the Amazon ECR proxy and is not generally used by customers for pulling
+         * and pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutImage">AWS
          * API Reference</a></p>
          */
@@ -428,7 +428,7 @@ namespace ECRPublic
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create or updates the catalog data for a public registry.</p><p><h3>See
+         * <p>Create or update the catalog data for a public registry.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/PutRegistryCatalogData">AWS
          * API Reference</a></p>
@@ -486,10 +486,9 @@ namespace ECRPublic
 
         /**
          * <p>Associates the specified tags to a resource with the specified
-         * <code>resourceArn</code>. If existing tags on a resource are not specified in
-         * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
-         * <a
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
+         * request parameters, they aren't changed. When a resource is deleted, the tags
+         * associated with that resource are also deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">AWS
          * API Reference</a></p>
          */
@@ -525,8 +524,8 @@ namespace ECRPublic
         /**
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
-         * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p>  <p>This operation is used by the
+         * part can be 20971520 bytes (about 20MB). The UploadLayerPart API is called once
+         * for each new image layer part.</p>  <p>This operation is used by the
          * Amazon ECR proxy and is not generally used by customers for pulling and pushing
          * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
          * and push images.</p> <p><h3>See Also:</h3>   <a

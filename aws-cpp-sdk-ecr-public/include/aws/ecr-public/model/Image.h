@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an Amazon ECR image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Image">AWS
    * API Reference</a></p>
    */
@@ -39,161 +39,169 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline Image& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline Image& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry containing the image.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry
+     * containing the image.</p>
      */
     inline Image& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline Image& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline Image& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository associated with the image.</p>
+     * <p>The name of the repository that's associated with the image.</p>
      */
     inline Image& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline const ImageIdentifier& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline void SetImageId(const ImageIdentifier& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline void SetImageId(ImageIdentifier&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline Image& WithImageId(const ImageIdentifier& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>An object containing the image tag and image digest associated with an
+     * <p>An object that contains the image tag and image digest associated with an
      * image.</p>
      */
     inline Image& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline const Aws::String& GetImageManifest() const{ return m_imageManifest; }
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline bool ImageManifestHasBeenSet() const { return m_imageManifestHasBeenSet; }
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline void SetImageManifest(const Aws::String& value) { m_imageManifestHasBeenSet = true; m_imageManifest = value; }
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline void SetImageManifest(Aws::String&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = std::move(value); }
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline void SetImageManifest(const char* value) { m_imageManifestHasBeenSet = true; m_imageManifest.assign(value); }
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline Image& WithImageManifest(const Aws::String& value) { SetImageManifest(value); return *this;}
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline Image& WithImageManifest(Aws::String&& value) { SetImageManifest(std::move(value)); return *this;}
 
     /**
-     * <p>The image manifest associated with the image.</p>
+     * <p>The image manifest that's associated with the image.</p>
      */
     inline Image& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
 

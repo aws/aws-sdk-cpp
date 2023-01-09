@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     PASS,
     DROP,
-    ALERT
+    ALERT,
+    REJECT
   };
 
 namespace StatefulActionMapper

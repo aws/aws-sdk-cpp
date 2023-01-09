@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image failure.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>An object that represents an Amazon ECR image failure.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageFailure">AWS
    * API Reference</a></p>
    */
@@ -41,63 +41,63 @@ namespace Model
 
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline const ImageIdentifier& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline void SetImageId(const ImageIdentifier& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline void SetImageId(ImageIdentifier&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline ImageFailure& WithImageId(const ImageIdentifier& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The image ID associated with the failure.</p>
+     * <p>The image ID that's associated with the failure.</p>
      */
     inline ImageFailure& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline const ImageFailureCode& GetFailureCode() const{ return m_failureCode; }
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline void SetFailureCode(const ImageFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline void SetFailureCode(ImageFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline ImageFailure& WithFailureCode(const ImageFailureCode& value) { SetFailureCode(value); return *this;}
 
     /**
-     * <p>The code associated with the failure.</p>
+     * <p>The code that's associated with the failure.</p>
      */
     inline ImageFailure& WithFailureCode(ImageFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
 

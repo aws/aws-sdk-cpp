@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/AuthenticationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/BrowserType.h>
 #include <aws/core/utils/DateTime.h>
@@ -39,6 +40,97 @@ namespace Model
     AWS_WORKSPACESWEB_API PortalSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API PortalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline PortalSummary& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>The type of authentication integration points used when signing into the web
+     * portal. Defaults to <code>Standard</code>.</p> <p> <code>Standard</code> web
+     * portals are authenticated directly through your identity provider. You need to
+     * call <code>CreateIdentityProvider</code> to integrate your identity provider
+     * with your web portal. User and group access to your web portal is controlled
+     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
+     * portals are authenticated through AWS IAM Identity Center (successor to AWS
+     * Single Sign-On). They provide additional features, such as IdP-initiated
+     * authentication. Identity sources (including external identity provider
+     * integration), plus user and group access to your web portal, can be configured
+     * in the IAM Identity Center.</p>
+     */
+    inline PortalSummary& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
 
     /**
@@ -509,6 +601,9 @@ namespace Model
     inline PortalSummary& WithUserSettingsArn(const char* value) { SetUserSettingsArn(value); return *this;}
 
   private:
+
+    AuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet = false;
 
     Aws::String m_browserSettingsArn;
     bool m_browserSettingsArnHasBeenSet = false;

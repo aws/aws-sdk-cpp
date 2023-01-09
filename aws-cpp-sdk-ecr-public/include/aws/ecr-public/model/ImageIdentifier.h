@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline ImageIdentifier& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline ImageIdentifier& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
 
     /**
-     * <p>The tag used for the image.</p>
+     * <p>The tag that's used for the image.</p>
      */
     inline ImageIdentifier& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 

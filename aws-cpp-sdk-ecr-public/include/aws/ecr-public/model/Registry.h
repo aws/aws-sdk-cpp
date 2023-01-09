@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline Registry& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline Registry& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry. If you do not specify a
-     * registry, the default public registry is assumed.</p>
+     * <p>The Amazon Web Services account ID that's associated with the registry. If
+     * you do not specify a registry, the default public registry is assumed.</p>
      */
     inline Registry& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -179,71 +179,71 @@ namespace Model
 
 
     /**
-     * <p>Whether the account is verified. This indicates whether the account is an AWS
-     * Marketplace vendor. If an account is verified, each public repository will
-     * received a verified account badge on the Amazon ECR Public Gallery.</p>
+     * <p>Indicates whether the account is a verified Amazon Web Services Marketplace
+     * vendor. If an account is verified, each public repository receives a verified
+     * account badge on the Amazon ECR Public Gallery.</p>
      */
     inline bool GetVerified() const{ return m_verified; }
 
     /**
-     * <p>Whether the account is verified. This indicates whether the account is an AWS
-     * Marketplace vendor. If an account is verified, each public repository will
-     * received a verified account badge on the Amazon ECR Public Gallery.</p>
+     * <p>Indicates whether the account is a verified Amazon Web Services Marketplace
+     * vendor. If an account is verified, each public repository receives a verified
+     * account badge on the Amazon ECR Public Gallery.</p>
      */
     inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }
 
     /**
-     * <p>Whether the account is verified. This indicates whether the account is an AWS
-     * Marketplace vendor. If an account is verified, each public repository will
-     * received a verified account badge on the Amazon ECR Public Gallery.</p>
+     * <p>Indicates whether the account is a verified Amazon Web Services Marketplace
+     * vendor. If an account is verified, each public repository receives a verified
+     * account badge on the Amazon ECR Public Gallery.</p>
      */
     inline void SetVerified(bool value) { m_verifiedHasBeenSet = true; m_verified = value; }
 
     /**
-     * <p>Whether the account is verified. This indicates whether the account is an AWS
-     * Marketplace vendor. If an account is verified, each public repository will
-     * received a verified account badge on the Amazon ECR Public Gallery.</p>
+     * <p>Indicates whether the account is a verified Amazon Web Services Marketplace
+     * vendor. If an account is verified, each public repository receives a verified
+     * account badge on the Amazon ECR Public Gallery.</p>
      */
     inline Registry& WithVerified(bool value) { SetVerified(value); return *this;}
 
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline const Aws::Vector<RegistryAlias>& GetAliases() const{ return m_aliases; }
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline void SetAliases(const Aws::Vector<RegistryAlias>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline void SetAliases(Aws::Vector<RegistryAlias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline Registry& WithAliases(const Aws::Vector<RegistryAlias>& value) { SetAliases(value); return *this;}
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline Registry& WithAliases(Aws::Vector<RegistryAlias>&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline Registry& AddAliases(const RegistryAlias& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects representing the aliases for a public registry.</p>
+     * <p>An array of objects that represents the aliases for a public registry.</p>
      */
     inline Registry& AddAliases(RegistryAlias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
