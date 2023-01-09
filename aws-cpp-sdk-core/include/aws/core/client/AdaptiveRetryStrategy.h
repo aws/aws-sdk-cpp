@@ -87,23 +87,23 @@ protected:
     double CUBICThrottle(const double rateToUse) const;
 
     // The rate at which token are replenished.
-    double m_fillRate;
+    double m_fillRate = 0.0;
     // The maximum capacity allowed in the token bucket.
-    double m_maxCapacity;
+    double m_maxCapacity = 0.0;
     // The current capacity of the token bucket.
-    double m_currentCapacity;
+    double m_currentCapacity = 0.0;
     // The last time the token bucket was refilled.
     Aws::Utils::DateTime m_lastTimestamp;
     // The smoothed rate which tokens are being retrieved.
-    double m_measuredTxRate;
+    double m_measuredTxRate = 0.0;
     // The last half second time bucket used.
-    double m_lastTxRateBucket;
+    double m_lastTxRateBucket = 0.0;
     // The number of requests seen within the current time bucket.
-    size_t m_requestCount;
+    size_t m_requestCount = 0;
     // Boolean indicating if the token bucket is enabled.
-    bool m_enabled;
+    bool m_enabled = false;
     // The maximum rate when the client was last throttled.
-    double m_lastMaxRate;
+    double m_lastMaxRate = 0.0;
     // The last time when the client was throttled.
     Aws::Utils::DateTime m_lastThrottleTime;
 
