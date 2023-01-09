@@ -19,6 +19,8 @@ namespace Model
 {
 
 Portal::Portal() : 
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
     m_browserSettingsArnHasBeenSet(false),
     m_browserType(BrowserType::NOT_SET),
     m_browserTypeHasBeenSet(false),
@@ -39,6 +41,8 @@ Portal::Portal() :
 }
 
 Portal::Portal(JsonView jsonValue) : 
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
     m_browserSettingsArnHasBeenSet(false),
     m_browserType(BrowserType::NOT_SET),
     m_browserTypeHasBeenSet(false),
@@ -61,6 +65,13 @@ Portal::Portal(JsonView jsonValue) :
 
 Portal& Portal::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("authenticationType"))
+  {
+    m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("browserSettingsArn"))
   {
     m_browserSettingsArn = jsonValue.GetString("browserSettingsArn");
@@ -158,6 +169,11 @@ Portal& Portal::operator =(JsonView jsonValue)
 JsonValue Portal::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
 
   if(m_browserSettingsArnHasBeenSet)
   {

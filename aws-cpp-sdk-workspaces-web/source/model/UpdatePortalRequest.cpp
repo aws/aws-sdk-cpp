@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdatePortalRequest::UpdatePortalRequest() : 
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_portalArnHasBeenSet(false)
 {
@@ -21,6 +23,11 @@ UpdatePortalRequest::UpdatePortalRequest() :
 Aws::String UpdatePortalRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
 
   if(m_displayNameHasBeenSet)
   {

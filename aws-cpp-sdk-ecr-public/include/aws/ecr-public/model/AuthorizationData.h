@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>A base64-encoded string that contains authorization data for a public Amazon
-     * ECR registry. When the string is decoded, it is presented in the format
+     * ECR registry. When the string is decoded, it's presented in the format
      * <code>user:password</code> for public registry authentication using <code>docker
      * login</code>.</p>
      */

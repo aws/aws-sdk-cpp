@@ -227,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline const Aws::String& GetLogoUrl() const{ return m_logoUrl; }
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline bool LogoUrlHasBeenSet() const { return m_logoUrlHasBeenSet; }
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline void SetLogoUrl(const Aws::String& value) { m_logoUrlHasBeenSet = true; m_logoUrl = value; }
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline void SetLogoUrl(Aws::String&& value) { m_logoUrlHasBeenSet = true; m_logoUrl = std::move(value); }
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline void SetLogoUrl(const char* value) { m_logoUrlHasBeenSet = true; m_logoUrl.assign(value); }
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline RepositoryCatalogData& WithLogoUrl(const Aws::String& value) { SetLogoUrl(value); return *this;}
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline RepositoryCatalogData& WithLogoUrl(Aws::String&& value) { SetLogoUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL containing the logo associated with the repository.</p>
+     * <p>The URL that contains the logo that's associated with the repository.</p>
      */
     inline RepositoryCatalogData& WithLogoUrl(const char* value) { SetLogoUrl(value); return *this;}
 
@@ -366,22 +366,26 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the repository is certified by AWS Marketplace.</p>
+     * <p>Indicates whether the repository is certified by Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool GetMarketplaceCertified() const{ return m_marketplaceCertified; }
 
     /**
-     * <p>Whether or not the repository is certified by AWS Marketplace.</p>
+     * <p>Indicates whether the repository is certified by Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool MarketplaceCertifiedHasBeenSet() const { return m_marketplaceCertifiedHasBeenSet; }
 
     /**
-     * <p>Whether or not the repository is certified by AWS Marketplace.</p>
+     * <p>Indicates whether the repository is certified by Amazon Web Services
+     * Marketplace.</p>
      */
     inline void SetMarketplaceCertified(bool value) { m_marketplaceCertifiedHasBeenSet = true; m_marketplaceCertified = value; }
 
     /**
-     * <p>Whether or not the repository is certified by AWS Marketplace.</p>
+     * <p>Indicates whether the repository is certified by Amazon Web Services
+     * Marketplace.</p>
      */
     inline RepositoryCatalogData& WithMarketplaceCertified(bool value) { SetMarketplaceCertified(value); return *this;}
 

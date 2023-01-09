@@ -39,65 +39,73 @@ namespace Model
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name to use for the repository. This appears publicly in the Amazon ECR
-     * Public Gallery. The repository name may be specified on its own (such as
-     * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the
-     * repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+     * Public Gallery. The repository name can be specified on its own (for example
+     * <code>nginx-web-app</code>) or prepended with a namespace to group the
+     * repository into a category (for example
+     * <code>project-a/nginx-web-app</code>).</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
@@ -140,66 +148,66 @@ namespace Model
 
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline CreateRepositoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline CreateRepositoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline CreateRepositoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The metadata that you apply to the repository to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. Tag keys can have a maximum character length of 128 characters, and
-     * tag values can have a maximum length of 256 characters.</p>
+     * <p>The metadata that you apply to each repository to help categorize and
+     * organize your repositories. Each tag consists of a key and an optional value.
+     * You define both of them. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline CreateRepositoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

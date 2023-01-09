@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline BatchCheckLayerAvailabilityResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline BatchCheckLayerAvailabilityResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline BatchCheckLayerAvailabilityResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
 
     /**
-     * <p>A list of image layer objects corresponding to the image layer references in
-     * the request.</p>
+     * <p>A list of image layer objects that correspond to the image layer references
+     * in the request.</p>
      */
     inline BatchCheckLayerAvailabilityResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 

@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The registry ID associated with the request.</p>
+     * <p>The registry ID that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The repository name associated with the request.</p>
+     * <p>The repository name that's associated with the request.</p>
      */
     inline DeleteRepositoryPolicyResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

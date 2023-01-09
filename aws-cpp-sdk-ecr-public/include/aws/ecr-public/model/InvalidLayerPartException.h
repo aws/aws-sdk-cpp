@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The layer part size is not valid, or the first byte specified is not
+   * <p>The layer part size isn't valid, or the first byte specified isn't
    * consecutive to the last byte of a previous layer part upload.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InvalidLayerPartException">AWS
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the layer part.</p>
+     * <p>The Amazon Web Services account ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -122,42 +122,42 @@ namespace Model
 
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
-     * <p>The upload ID associated with the layer part.</p>
+     * <p>The upload ID that's associated with the layer part.</p>
      */
     inline InvalidLayerPartException& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 

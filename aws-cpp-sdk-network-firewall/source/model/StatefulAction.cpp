@@ -23,6 +23,7 @@ namespace Aws
         static const int PASS_HASH = HashingUtils::HashString("PASS");
         static const int DROP_HASH = HashingUtils::HashString("DROP");
         static const int ALERT_HASH = HashingUtils::HashString("ALERT");
+        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
 
 
         StatefulAction GetStatefulActionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ALERT_HASH)
           {
             return StatefulAction::ALERT;
+          }
+          else if (hashCode == REJECT_HASH)
+          {
+            return StatefulAction::REJECT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "DROP";
           case StatefulAction::ALERT:
             return "ALERT";
+          case StatefulAction::REJECT:
+            return "REJECT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
