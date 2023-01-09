@@ -49,7 +49,7 @@ public:
     using FSxResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FSxEndpointProvider()
-      : FSxDefaultEpProviderBase(Aws::FSx::FSxEndpointRules::Rules)
+      : FSxDefaultEpProviderBase(Aws::FSx::FSxEndpointRules::GetRulesBlob(), Aws::FSx::FSxEndpointRules::RulesBlobSize)
     {}
 
     ~FSxEndpointProvider()

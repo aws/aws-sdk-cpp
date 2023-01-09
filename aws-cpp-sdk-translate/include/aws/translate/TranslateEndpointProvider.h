@@ -49,7 +49,7 @@ public:
     using TranslateResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TranslateEndpointProvider()
-      : TranslateDefaultEpProviderBase(Aws::Translate::TranslateEndpointRules::Rules)
+      : TranslateDefaultEpProviderBase(Aws::Translate::TranslateEndpointRules::GetRulesBlob(), Aws::Translate::TranslateEndpointRules::RulesBlobSize)
     {}
 
     ~TranslateEndpointProvider()

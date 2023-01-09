@@ -4,18 +4,17 @@
  */
 
 #include <aws/ce/CostExplorerEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CostExplorer
 {
+const size_t CostExplorerEndpointRules::RulesBlobStrLen = 8430;
+const size_t CostExplorerEndpointRules::RulesBlobSize = 8431;
 
-Aws::String CostExplorerEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CostExplorerEndpointRules::Rules.begin(), CostExplorerEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CostExplorerEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CostExplorerEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -353,7 +352,13 @@ const Aws::Vector<char> CostExplorerEndpointRules::Rules = {
 'r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',
 ',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s',
 '"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']',
-'}',']','}',']','}'};
+'}',']','}',']','}','\0'
+}};
+
+const char* CostExplorerEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CostExplorer
 } // namespace Aws

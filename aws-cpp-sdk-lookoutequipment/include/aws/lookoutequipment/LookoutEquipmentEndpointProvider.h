@@ -49,7 +49,7 @@ public:
     using LookoutEquipmentResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LookoutEquipmentEndpointProvider()
-      : LookoutEquipmentDefaultEpProviderBase(Aws::LookoutEquipment::LookoutEquipmentEndpointRules::Rules)
+      : LookoutEquipmentDefaultEpProviderBase(Aws::LookoutEquipment::LookoutEquipmentEndpointRules::GetRulesBlob(), Aws::LookoutEquipment::LookoutEquipmentEndpointRules::RulesBlobSize)
     {}
 
     ~LookoutEquipmentEndpointProvider()

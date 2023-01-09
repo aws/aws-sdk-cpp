@@ -4,18 +4,17 @@
  */
 
 #include <aws/resource-explorer-2/ResourceExplorer2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ResourceExplorer2
 {
+const size_t ResourceExplorer2EndpointRules::RulesBlobStrLen = 2613;
+const size_t ResourceExplorer2EndpointRules::RulesBlobSize = 2614;
 
-Aws::String ResourceExplorer2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(ResourceExplorer2EndpointRules::Rules.begin(), ResourceExplorer2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ResourceExplorer2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ResourceExplorer2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -120,7 +119,13 @@ const Aws::Vector<char> ResourceExplorer2EndpointRules::Rules = {
 'n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u',
 'f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h',
 'e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o',
-'i','n','t','"','}',']','}',']','}',']','}',']','}'};
+'i','n','t','"','}',']','}',']','}',']','}',']','}','\0'
+}};
+
+const char* ResourceExplorer2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ResourceExplorer2
 } // namespace Aws

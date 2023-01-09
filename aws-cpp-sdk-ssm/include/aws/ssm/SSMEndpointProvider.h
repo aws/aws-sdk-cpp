@@ -49,7 +49,7 @@ public:
     using SSMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSMEndpointProvider()
-      : SSMDefaultEpProviderBase(Aws::SSM::SSMEndpointRules::Rules)
+      : SSMDefaultEpProviderBase(Aws::SSM::SSMEndpointRules::GetRulesBlob(), Aws::SSM::SSMEndpointRules::RulesBlobSize)
     {}
 
     ~SSMEndpointProvider()

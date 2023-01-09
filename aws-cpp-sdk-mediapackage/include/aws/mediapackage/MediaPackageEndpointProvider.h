@@ -49,7 +49,7 @@ public:
     using MediaPackageResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaPackageEndpointProvider()
-      : MediaPackageDefaultEpProviderBase(Aws::MediaPackage::MediaPackageEndpointRules::Rules)
+      : MediaPackageDefaultEpProviderBase(Aws::MediaPackage::MediaPackageEndpointRules::GetRulesBlob(), Aws::MediaPackage::MediaPackageEndpointRules::RulesBlobSize)
     {}
 
     ~MediaPackageEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using CodeCatalystResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeCatalystEndpointProvider()
-      : CodeCatalystDefaultEpProviderBase(Aws::CodeCatalyst::CodeCatalystEndpointRules::Rules)
+      : CodeCatalystDefaultEpProviderBase(Aws::CodeCatalyst::CodeCatalystEndpointRules::GetRulesBlob(), Aws::CodeCatalyst::CodeCatalystEndpointRules::RulesBlobSize)
     {}
 
     ~CodeCatalystEndpointProvider()

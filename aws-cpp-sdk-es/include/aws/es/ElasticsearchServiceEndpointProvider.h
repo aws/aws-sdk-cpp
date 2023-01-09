@@ -49,7 +49,7 @@ public:
     using ElasticsearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElasticsearchServiceEndpointProvider()
-      : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::Rules)
+      : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::GetRulesBlob(), Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::RulesBlobSize)
     {}
 
     ~ElasticsearchServiceEndpointProvider()

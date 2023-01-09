@@ -49,7 +49,7 @@ public:
     using RekognitionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RekognitionEndpointProvider()
-      : RekognitionDefaultEpProviderBase(Aws::Rekognition::RekognitionEndpointRules::Rules)
+      : RekognitionDefaultEpProviderBase(Aws::Rekognition::RekognitionEndpointRules::GetRulesBlob(), Aws::Rekognition::RekognitionEndpointRules::RulesBlobSize)
     {}
 
     ~RekognitionEndpointProvider()

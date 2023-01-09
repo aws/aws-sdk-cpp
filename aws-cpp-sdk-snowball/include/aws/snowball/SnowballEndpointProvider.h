@@ -49,7 +49,7 @@ public:
     using SnowballResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SnowballEndpointProvider()
-      : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::Rules)
+      : SnowballDefaultEpProviderBase(Aws::Snowball::SnowballEndpointRules::GetRulesBlob(), Aws::Snowball::SnowballEndpointRules::RulesBlobSize)
     {}
 
     ~SnowballEndpointProvider()

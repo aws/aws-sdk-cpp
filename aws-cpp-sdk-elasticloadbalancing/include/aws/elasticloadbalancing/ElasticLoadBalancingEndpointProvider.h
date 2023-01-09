@@ -49,7 +49,7 @@ public:
     using ElasticLoadBalancingResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElasticLoadBalancingEndpointProvider()
-      : ElasticLoadBalancingDefaultEpProviderBase(Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::Rules)
+      : ElasticLoadBalancingDefaultEpProviderBase(Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::GetRulesBlob(), Aws::ElasticLoadBalancing::ElasticLoadBalancingEndpointRules::RulesBlobSize)
     {}
 
     ~ElasticLoadBalancingEndpointProvider()

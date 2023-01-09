@@ -49,7 +49,7 @@ public:
     using DocDBElasticResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DocDBElasticEndpointProvider()
-      : DocDBElasticDefaultEpProviderBase(Aws::DocDBElastic::DocDBElasticEndpointRules::Rules)
+      : DocDBElasticDefaultEpProviderBase(Aws::DocDBElastic::DocDBElasticEndpointRules::GetRulesBlob(), Aws::DocDBElastic::DocDBElasticEndpointRules::RulesBlobSize)
     {}
 
     ~DocDBElasticEndpointProvider()

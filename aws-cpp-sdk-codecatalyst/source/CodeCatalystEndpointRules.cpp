@@ -4,18 +4,17 @@
  */
 
 #include <aws/codecatalyst/CodeCatalystEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CodeCatalyst
 {
+const size_t CodeCatalystEndpointRules::RulesBlobStrLen = 2285;
+const size_t CodeCatalystEndpointRules::RulesBlobSize = 2286;
 
-Aws::String CodeCatalystEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CodeCatalystEndpointRules::Rules.begin(), CodeCatalystEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CodeCatalystEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CodeCatalystEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','3','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','U','s','e','F','I','P','S','"',':','{','"','b','u','i','l','t','I','n',
 '"',':','"','A','W','S',':',':','U','s','e','F','I','P','S','"',',','"','r','e','q','u','i','r','e',
@@ -107,7 +106,13 @@ const Aws::Vector<char> CodeCatalystEndpointRules::Rules = {
 'i','o','n','R','e','s','u','l','t','#','d','u','a','l','S','t','a','c','k','D','n','s','S','u','f',
 'f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e',
 'a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i',
-'n','t','"','}',']','}',']','}',']','}'};
+'n','t','"','}',']','}',']','}',']','}','\0'
+}};
+
+const char* CodeCatalystEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CodeCatalyst
 } // namespace Aws

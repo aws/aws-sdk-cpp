@@ -49,7 +49,7 @@ public:
     using ECRResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ECREndpointProvider()
-      : ECRDefaultEpProviderBase(Aws::ECR::ECREndpointRules::Rules)
+      : ECRDefaultEpProviderBase(Aws::ECR::ECREndpointRules::GetRulesBlob(), Aws::ECR::ECREndpointRules::RulesBlobSize)
     {}
 
     ~ECREndpointProvider()

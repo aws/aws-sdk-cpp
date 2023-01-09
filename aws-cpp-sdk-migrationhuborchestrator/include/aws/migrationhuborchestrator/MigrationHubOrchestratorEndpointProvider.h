@@ -49,7 +49,7 @@ public:
     using MigrationHubOrchestratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MigrationHubOrchestratorEndpointProvider()
-      : MigrationHubOrchestratorDefaultEpProviderBase(Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::Rules)
+      : MigrationHubOrchestratorDefaultEpProviderBase(Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::GetRulesBlob(), Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::RulesBlobSize)
     {}
 
     ~MigrationHubOrchestratorEndpointProvider()

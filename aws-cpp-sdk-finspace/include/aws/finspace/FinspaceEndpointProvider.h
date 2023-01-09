@@ -49,7 +49,7 @@ public:
     using FinspaceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FinspaceEndpointProvider()
-      : FinspaceDefaultEpProviderBase(Aws::finspace::FinspaceEndpointRules::Rules)
+      : FinspaceDefaultEpProviderBase(Aws::finspace::FinspaceEndpointRules::GetRulesBlob(), Aws::finspace::FinspaceEndpointRules::RulesBlobSize)
     {}
 
     ~FinspaceEndpointProvider()

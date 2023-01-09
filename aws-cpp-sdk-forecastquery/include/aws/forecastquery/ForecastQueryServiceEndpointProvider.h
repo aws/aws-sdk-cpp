@@ -49,7 +49,7 @@ public:
     using ForecastQueryServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ForecastQueryServiceEndpointProvider()
-      : ForecastQueryServiceDefaultEpProviderBase(Aws::ForecastQueryService::ForecastQueryServiceEndpointRules::Rules)
+      : ForecastQueryServiceDefaultEpProviderBase(Aws::ForecastQueryService::ForecastQueryServiceEndpointRules::GetRulesBlob(), Aws::ForecastQueryService::ForecastQueryServiceEndpointRules::RulesBlobSize)
     {}
 
     ~ForecastQueryServiceEndpointProvider()

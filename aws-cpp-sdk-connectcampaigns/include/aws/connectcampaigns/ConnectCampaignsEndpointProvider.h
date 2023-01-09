@@ -49,7 +49,7 @@ public:
     using ConnectCampaignsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConnectCampaignsEndpointProvider()
-      : ConnectCampaignsDefaultEpProviderBase(Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::Rules)
+      : ConnectCampaignsDefaultEpProviderBase(Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::GetRulesBlob(), Aws::ConnectCampaigns::ConnectCampaignsEndpointRules::RulesBlobSize)
     {}
 
     ~ConnectCampaignsEndpointProvider()

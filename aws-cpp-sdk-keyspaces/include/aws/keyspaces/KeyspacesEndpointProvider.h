@@ -49,7 +49,7 @@ public:
     using KeyspacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KeyspacesEndpointProvider()
-      : KeyspacesDefaultEpProviderBase(Aws::Keyspaces::KeyspacesEndpointRules::Rules)
+      : KeyspacesDefaultEpProviderBase(Aws::Keyspaces::KeyspacesEndpointRules::GetRulesBlob(), Aws::Keyspaces::KeyspacesEndpointRules::RulesBlobSize)
     {}
 
     ~KeyspacesEndpointProvider()

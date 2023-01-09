@@ -49,7 +49,7 @@ public:
     using RoboMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RoboMakerEndpointProvider()
-      : RoboMakerDefaultEpProviderBase(Aws::RoboMaker::RoboMakerEndpointRules::Rules)
+      : RoboMakerDefaultEpProviderBase(Aws::RoboMaker::RoboMakerEndpointRules::GetRulesBlob(), Aws::RoboMaker::RoboMakerEndpointRules::RulesBlobSize)
     {}
 
     ~RoboMakerEndpointProvider()

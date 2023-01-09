@@ -49,7 +49,7 @@ public:
     using SyntheticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SyntheticsEndpointProvider()
-      : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::Rules)
+      : SyntheticsDefaultEpProviderBase(Aws::Synthetics::SyntheticsEndpointRules::GetRulesBlob(), Aws::Synthetics::SyntheticsEndpointRules::RulesBlobSize)
     {}
 
     ~SyntheticsEndpointProvider()

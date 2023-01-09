@@ -49,7 +49,7 @@ public:
     using WorkMailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WorkMailEndpointProvider()
-      : WorkMailDefaultEpProviderBase(Aws::WorkMail::WorkMailEndpointRules::Rules)
+      : WorkMailDefaultEpProviderBase(Aws::WorkMail::WorkMailEndpointRules::GetRulesBlob(), Aws::WorkMail::WorkMailEndpointRules::RulesBlobSize)
     {}
 
     ~WorkMailEndpointProvider()

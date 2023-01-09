@@ -49,7 +49,7 @@ public:
     using GlobalAcceleratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GlobalAcceleratorEndpointProvider()
-      : GlobalAcceleratorDefaultEpProviderBase(Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::Rules)
+      : GlobalAcceleratorDefaultEpProviderBase(Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::GetRulesBlob(), Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::RulesBlobSize)
     {}
 
     ~GlobalAcceleratorEndpointProvider()

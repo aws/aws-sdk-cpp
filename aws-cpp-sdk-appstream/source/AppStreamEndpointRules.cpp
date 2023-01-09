@@ -4,18 +4,17 @@
  */
 
 #include <aws/appstream/AppStreamEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace AppStream
 {
+const size_t AppStreamEndpointRules::RulesBlobStrLen = 3470;
+const size_t AppStreamEndpointRules::RulesBlobSize = 3471;
 
-Aws::String AppStreamEndpointRules::GetRulesAsString()
-{
-    return Aws::String(AppStreamEndpointRules::Rules.begin(), AppStreamEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> AppStreamEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, AppStreamEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> AppStreamEndpointRules::Rules = {
 'e','a','m','2','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R',
 'e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r',
 't','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t',
-'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* AppStreamEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace AppStream
 } // namespace Aws

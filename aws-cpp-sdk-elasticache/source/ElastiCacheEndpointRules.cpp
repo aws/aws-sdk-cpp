@@ -4,18 +4,17 @@
  */
 
 #include <aws/elasticache/ElastiCacheEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ElastiCache
 {
+const size_t ElastiCacheEndpointRules::RulesBlobStrLen = 3657;
+const size_t ElastiCacheEndpointRules::RulesBlobSize = 3658;
 
-Aws::String ElastiCacheEndpointRules::GetRulesAsString()
-{
-    return Aws::String(ElastiCacheEndpointRules::Rules.begin(), ElastiCacheEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ElastiCacheEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ElastiCacheEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -162,7 +161,13 @@ const Aws::Vector<char> ElastiCacheEndpointRules::Rules = {
 '.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f',
 'i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a',
 'd','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n',
-'t','"','}',']','}',']','}'};
+'t','"','}',']','}',']','}','\0'
+}};
+
+const char* ElastiCacheEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ElastiCache
 } // namespace Aws

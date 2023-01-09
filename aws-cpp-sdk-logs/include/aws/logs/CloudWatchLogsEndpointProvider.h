@@ -49,7 +49,7 @@ public:
     using CloudWatchLogsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudWatchLogsEndpointProvider()
-      : CloudWatchLogsDefaultEpProviderBase(Aws::CloudWatchLogs::CloudWatchLogsEndpointRules::Rules)
+      : CloudWatchLogsDefaultEpProviderBase(Aws::CloudWatchLogs::CloudWatchLogsEndpointRules::GetRulesBlob(), Aws::CloudWatchLogs::CloudWatchLogsEndpointRules::RulesBlobSize)
     {}
 
     ~CloudWatchLogsEndpointProvider()

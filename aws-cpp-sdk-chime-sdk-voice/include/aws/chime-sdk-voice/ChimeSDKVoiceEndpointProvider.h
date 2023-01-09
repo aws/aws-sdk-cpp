@@ -49,7 +49,7 @@ public:
     using ChimeSDKVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeSDKVoiceEndpointProvider()
-      : ChimeSDKVoiceDefaultEpProviderBase(Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::Rules)
+      : ChimeSDKVoiceDefaultEpProviderBase(Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::GetRulesBlob(), Aws::ChimeSDKVoice::ChimeSDKVoiceEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeSDKVoiceEndpointProvider()

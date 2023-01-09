@@ -49,7 +49,7 @@ public:
     using SageMakerFeatureStoreRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SageMakerFeatureStoreRuntimeEndpointProvider()
-      : SageMakerFeatureStoreRuntimeDefaultEpProviderBase(Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::Rules)
+      : SageMakerFeatureStoreRuntimeDefaultEpProviderBase(Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::GetRulesBlob(), Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeEndpointRules::RulesBlobSize)
     {}
 
     ~SageMakerFeatureStoreRuntimeEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using EFSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EFSEndpointProvider()
-      : EFSDefaultEpProviderBase(Aws::EFS::EFSEndpointRules::Rules)
+      : EFSDefaultEpProviderBase(Aws::EFS::EFSEndpointRules::GetRulesBlob(), Aws::EFS::EFSEndpointRules::RulesBlobSize)
     {}
 
     ~EFSEndpointProvider()

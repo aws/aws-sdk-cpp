@@ -49,7 +49,7 @@ public:
     using LookoutMetricsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LookoutMetricsEndpointProvider()
-      : LookoutMetricsDefaultEpProviderBase(Aws::LookoutMetrics::LookoutMetricsEndpointRules::Rules)
+      : LookoutMetricsDefaultEpProviderBase(Aws::LookoutMetrics::LookoutMetricsEndpointRules::GetRulesBlob(), Aws::LookoutMetrics::LookoutMetricsEndpointRules::RulesBlobSize)
     {}
 
     ~LookoutMetricsEndpointProvider()

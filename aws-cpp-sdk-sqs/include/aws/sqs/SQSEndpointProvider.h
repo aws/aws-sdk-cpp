@@ -49,7 +49,7 @@ public:
     using SQSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SQSEndpointProvider()
-      : SQSDefaultEpProviderBase(Aws::SQS::SQSEndpointRules::Rules)
+      : SQSDefaultEpProviderBase(Aws::SQS::SQSEndpointRules::GetRulesBlob(), Aws::SQS::SQSEndpointRules::RulesBlobSize)
     {}
 
     ~SQSEndpointProvider()

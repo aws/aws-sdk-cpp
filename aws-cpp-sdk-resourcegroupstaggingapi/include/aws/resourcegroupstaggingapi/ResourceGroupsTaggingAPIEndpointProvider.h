@@ -49,7 +49,7 @@ public:
     using ResourceGroupsTaggingAPIResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ResourceGroupsTaggingAPIEndpointProvider()
-      : ResourceGroupsTaggingAPIDefaultEpProviderBase(Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIEndpointRules::Rules)
+      : ResourceGroupsTaggingAPIDefaultEpProviderBase(Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIEndpointRules::GetRulesBlob(), Aws::ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIEndpointRules::RulesBlobSize)
     {}
 
     ~ResourceGroupsTaggingAPIEndpointProvider()

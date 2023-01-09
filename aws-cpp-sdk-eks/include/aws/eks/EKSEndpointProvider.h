@@ -49,7 +49,7 @@ public:
     using EKSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EKSEndpointProvider()
-      : EKSDefaultEpProviderBase(Aws::EKS::EKSEndpointRules::Rules)
+      : EKSDefaultEpProviderBase(Aws::EKS::EKSEndpointRules::GetRulesBlob(), Aws::EKS::EKSEndpointRules::RulesBlobSize)
     {}
 
     ~EKSEndpointProvider()

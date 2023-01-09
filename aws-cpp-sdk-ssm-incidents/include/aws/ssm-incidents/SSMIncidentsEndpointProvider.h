@@ -49,7 +49,7 @@ public:
     using SSMIncidentsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSMIncidentsEndpointProvider()
-      : SSMIncidentsDefaultEpProviderBase(Aws::SSMIncidents::SSMIncidentsEndpointRules::Rules)
+      : SSMIncidentsDefaultEpProviderBase(Aws::SSMIncidents::SSMIncidentsEndpointRules::GetRulesBlob(), Aws::SSMIncidents::SSMIncidentsEndpointRules::RulesBlobSize)
     {}
 
     ~SSMIncidentsEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ACMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ACMEndpointProvider()
-      : ACMDefaultEpProviderBase(Aws::ACM::ACMEndpointRules::Rules)
+      : ACMDefaultEpProviderBase(Aws::ACM::ACMEndpointRules::GetRulesBlob(), Aws::ACM::ACMEndpointRules::RulesBlobSize)
     {}
 
     ~ACMEndpointProvider()

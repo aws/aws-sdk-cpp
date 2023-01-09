@@ -49,7 +49,7 @@ public:
     using WorkLinkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WorkLinkEndpointProvider()
-      : WorkLinkDefaultEpProviderBase(Aws::WorkLink::WorkLinkEndpointRules::Rules)
+      : WorkLinkDefaultEpProviderBase(Aws::WorkLink::WorkLinkEndpointRules::GetRulesBlob(), Aws::WorkLink::WorkLinkEndpointRules::RulesBlobSize)
     {}
 
     ~WorkLinkEndpointProvider()

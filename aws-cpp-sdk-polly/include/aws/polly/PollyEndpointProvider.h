@@ -49,7 +49,7 @@ public:
     using PollyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PollyEndpointProvider()
-      : PollyDefaultEpProviderBase(Aws::Polly::PollyEndpointRules::Rules)
+      : PollyDefaultEpProviderBase(Aws::Polly::PollyEndpointRules::GetRulesBlob(), Aws::Polly::PollyEndpointRules::RulesBlobSize)
     {}
 
     ~PollyEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using GroundStationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GroundStationEndpointProvider()
-      : GroundStationDefaultEpProviderBase(Aws::GroundStation::GroundStationEndpointRules::Rules)
+      : GroundStationDefaultEpProviderBase(Aws::GroundStation::GroundStationEndpointRules::GetRulesBlob(), Aws::GroundStation::GroundStationEndpointRules::RulesBlobSize)
     {}
 
     ~GroundStationEndpointProvider()

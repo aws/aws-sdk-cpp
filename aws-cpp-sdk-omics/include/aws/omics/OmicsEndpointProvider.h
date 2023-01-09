@@ -49,7 +49,7 @@ public:
     using OmicsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OmicsEndpointProvider()
-      : OmicsDefaultEpProviderBase(Aws::Omics::OmicsEndpointRules::Rules)
+      : OmicsDefaultEpProviderBase(Aws::Omics::OmicsEndpointRules::GetRulesBlob(), Aws::Omics::OmicsEndpointRules::RulesBlobSize)
     {}
 
     ~OmicsEndpointProvider()

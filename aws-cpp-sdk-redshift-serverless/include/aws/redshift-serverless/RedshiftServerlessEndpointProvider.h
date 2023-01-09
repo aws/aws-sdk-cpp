@@ -49,7 +49,7 @@ public:
     using RedshiftServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RedshiftServerlessEndpointProvider()
-      : RedshiftServerlessDefaultEpProviderBase(Aws::RedshiftServerless::RedshiftServerlessEndpointRules::Rules)
+      : RedshiftServerlessDefaultEpProviderBase(Aws::RedshiftServerless::RedshiftServerlessEndpointRules::GetRulesBlob(), Aws::RedshiftServerless::RedshiftServerlessEndpointRules::RulesBlobSize)
     {}
 
     ~RedshiftServerlessEndpointProvider()

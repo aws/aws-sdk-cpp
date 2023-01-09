@@ -49,7 +49,7 @@ public:
     using DataSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DataSyncEndpointProvider()
-      : DataSyncDefaultEpProviderBase(Aws::DataSync::DataSyncEndpointRules::Rules)
+      : DataSyncDefaultEpProviderBase(Aws::DataSync::DataSyncEndpointRules::GetRulesBlob(), Aws::DataSync::DataSyncEndpointRules::RulesBlobSize)
     {}
 
     ~DataSyncEndpointProvider()

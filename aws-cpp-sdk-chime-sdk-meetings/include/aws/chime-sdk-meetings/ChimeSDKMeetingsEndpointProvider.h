@@ -49,7 +49,7 @@ public:
     using ChimeSDKMeetingsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeSDKMeetingsEndpointProvider()
-      : ChimeSDKMeetingsDefaultEpProviderBase(Aws::ChimeSDKMeetings::ChimeSDKMeetingsEndpointRules::Rules)
+      : ChimeSDKMeetingsDefaultEpProviderBase(Aws::ChimeSDKMeetings::ChimeSDKMeetingsEndpointRules::GetRulesBlob(), Aws::ChimeSDKMeetings::ChimeSDKMeetingsEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeSDKMeetingsEndpointProvider()

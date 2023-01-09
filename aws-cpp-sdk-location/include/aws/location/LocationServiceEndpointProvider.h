@@ -49,7 +49,7 @@ public:
     using LocationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LocationServiceEndpointProvider()
-      : LocationServiceDefaultEpProviderBase(Aws::LocationService::LocationServiceEndpointRules::Rules)
+      : LocationServiceDefaultEpProviderBase(Aws::LocationService::LocationServiceEndpointRules::GetRulesBlob(), Aws::LocationService::LocationServiceEndpointRules::RulesBlobSize)
     {}
 
     ~LocationServiceEndpointProvider()

@@ -4,18 +4,17 @@
  */
 
 #include <aws/panorama/PanoramaEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Panorama
 {
+const size_t PanoramaEndpointRules::RulesBlobStrLen = 3420;
+const size_t PanoramaEndpointRules::RulesBlobSize = 3421;
 
-Aws::String PanoramaEndpointRules::GetRulesAsString()
-{
-    return Aws::String(PanoramaEndpointRules::Rules.begin(), PanoramaEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> PanoramaEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, PanoramaEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -152,7 +151,13 @@ const Aws::Vector<char> PanoramaEndpointRules::Rules = {
 'r','a','m','a','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R',
 'e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r',
 't','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t',
-'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* PanoramaEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Panorama
 } // namespace Aws

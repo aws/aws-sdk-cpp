@@ -49,7 +49,7 @@ public:
     using IoTAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTAnalyticsEndpointProvider()
-      : IoTAnalyticsDefaultEpProviderBase(Aws::IoTAnalytics::IoTAnalyticsEndpointRules::Rules)
+      : IoTAnalyticsDefaultEpProviderBase(Aws::IoTAnalytics::IoTAnalyticsEndpointRules::GetRulesBlob(), Aws::IoTAnalytics::IoTAnalyticsEndpointRules::RulesBlobSize)
     {}
 
     ~IoTAnalyticsEndpointProvider()

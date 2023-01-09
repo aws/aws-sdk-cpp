@@ -49,7 +49,7 @@ public:
     using ShieldResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ShieldEndpointProvider()
-      : ShieldDefaultEpProviderBase(Aws::Shield::ShieldEndpointRules::Rules)
+      : ShieldDefaultEpProviderBase(Aws::Shield::ShieldEndpointRules::GetRulesBlob(), Aws::Shield::ShieldEndpointRules::RulesBlobSize)
     {}
 
     ~ShieldEndpointProvider()

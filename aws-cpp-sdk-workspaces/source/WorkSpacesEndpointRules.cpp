@@ -4,18 +4,17 @@
  */
 
 #include <aws/workspaces/WorkSpacesEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace WorkSpaces
 {
+const size_t WorkSpacesEndpointRules::RulesBlobStrLen = 3470;
+const size_t WorkSpacesEndpointRules::RulesBlobSize = 3471;
 
-Aws::String WorkSpacesEndpointRules::GetRulesAsString()
-{
-    return Aws::String(WorkSpacesEndpointRules::Rules.begin(), WorkSpacesEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> WorkSpacesEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, WorkSpacesEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> WorkSpacesEndpointRules::Rules = {
 'a','c','e','s','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R',
 'e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r',
 't','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t',
-'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* WorkSpacesEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace WorkSpaces
 } // namespace Aws

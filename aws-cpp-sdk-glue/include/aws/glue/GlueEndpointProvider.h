@@ -49,7 +49,7 @@ public:
     using GlueResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GlueEndpointProvider()
-      : GlueDefaultEpProviderBase(Aws::Glue::GlueEndpointRules::Rules)
+      : GlueDefaultEpProviderBase(Aws::Glue::GlueEndpointRules::GetRulesBlob(), Aws::Glue::GlueEndpointRules::RulesBlobSize)
     {}
 
     ~GlueEndpointProvider()

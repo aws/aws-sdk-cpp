@@ -49,7 +49,7 @@ public:
     using IoT1ClickProjectsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoT1ClickProjectsEndpointProvider()
-      : IoT1ClickProjectsDefaultEpProviderBase(Aws::IoT1ClickProjects::IoT1ClickProjectsEndpointRules::Rules)
+      : IoT1ClickProjectsDefaultEpProviderBase(Aws::IoT1ClickProjects::IoT1ClickProjectsEndpointRules::GetRulesBlob(), Aws::IoT1ClickProjects::IoT1ClickProjectsEndpointRules::RulesBlobSize)
     {}
 
     ~IoT1ClickProjectsEndpointProvider()

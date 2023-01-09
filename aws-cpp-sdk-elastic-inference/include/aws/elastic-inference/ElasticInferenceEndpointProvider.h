@@ -49,7 +49,7 @@ public:
     using ElasticInferenceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElasticInferenceEndpointProvider()
-      : ElasticInferenceDefaultEpProviderBase(Aws::ElasticInference::ElasticInferenceEndpointRules::Rules)
+      : ElasticInferenceDefaultEpProviderBase(Aws::ElasticInference::ElasticInferenceEndpointRules::GetRulesBlob(), Aws::ElasticInference::ElasticInferenceEndpointRules::RulesBlobSize)
     {}
 
     ~ElasticInferenceEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using TransferResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TransferEndpointProvider()
-      : TransferDefaultEpProviderBase(Aws::Transfer::TransferEndpointRules::Rules)
+      : TransferDefaultEpProviderBase(Aws::Transfer::TransferEndpointRules::GetRulesBlob(), Aws::Transfer::TransferEndpointRules::RulesBlobSize)
     {}
 
     ~TransferEndpointProvider()

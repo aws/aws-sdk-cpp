@@ -49,7 +49,7 @@ public:
     using MemoryDBResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MemoryDBEndpointProvider()
-      : MemoryDBDefaultEpProviderBase(Aws::MemoryDB::MemoryDBEndpointRules::Rules)
+      : MemoryDBDefaultEpProviderBase(Aws::MemoryDB::MemoryDBEndpointRules::GetRulesBlob(), Aws::MemoryDB::MemoryDBEndpointRules::RulesBlobSize)
     {}
 
     ~MemoryDBEndpointProvider()

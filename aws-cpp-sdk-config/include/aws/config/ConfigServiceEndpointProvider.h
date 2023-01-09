@@ -49,7 +49,7 @@ public:
     using ConfigServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConfigServiceEndpointProvider()
-      : ConfigServiceDefaultEpProviderBase(Aws::ConfigService::ConfigServiceEndpointRules::Rules)
+      : ConfigServiceDefaultEpProviderBase(Aws::ConfigService::ConfigServiceEndpointRules::GetRulesBlob(), Aws::ConfigService::ConfigServiceEndpointRules::RulesBlobSize)
     {}
 
     ~ConfigServiceEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using DLMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DLMEndpointProvider()
-      : DLMDefaultEpProviderBase(Aws::DLM::DLMEndpointRules::Rules)
+      : DLMDefaultEpProviderBase(Aws::DLM::DLMEndpointRules::GetRulesBlob(), Aws::DLM::DLMEndpointRules::RulesBlobSize)
     {}
 
     ~DLMEndpointProvider()

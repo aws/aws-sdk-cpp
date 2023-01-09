@@ -49,7 +49,7 @@ public:
     using KinesisAnalyticsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KinesisAnalyticsEndpointProvider()
-      : KinesisAnalyticsDefaultEpProviderBase(Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::Rules)
+      : KinesisAnalyticsDefaultEpProviderBase(Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::GetRulesBlob(), Aws::KinesisAnalytics::KinesisAnalyticsEndpointRules::RulesBlobSize)
     {}
 
     ~KinesisAnalyticsEndpointProvider()

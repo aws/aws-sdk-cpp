@@ -49,7 +49,7 @@ public:
     using MachineLearningResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MachineLearningEndpointProvider()
-      : MachineLearningDefaultEpProviderBase(Aws::MachineLearning::MachineLearningEndpointRules::Rules)
+      : MachineLearningDefaultEpProviderBase(Aws::MachineLearning::MachineLearningEndpointRules::GetRulesBlob(), Aws::MachineLearning::MachineLearningEndpointRules::RulesBlobSize)
     {}
 
     ~MachineLearningEndpointProvider()

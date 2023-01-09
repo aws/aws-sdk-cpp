@@ -49,7 +49,7 @@ public:
     using CloudFrontResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudFrontEndpointProvider()
-      : CloudFrontDefaultEpProviderBase(Aws::CloudFront::CloudFrontEndpointRules::Rules)
+      : CloudFrontDefaultEpProviderBase(Aws::CloudFront::CloudFrontEndpointRules::GetRulesBlob(), Aws::CloudFront::CloudFrontEndpointRules::RulesBlobSize)
     {}
 
     ~CloudFrontEndpointProvider()

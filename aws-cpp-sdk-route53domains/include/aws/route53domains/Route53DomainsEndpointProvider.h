@@ -49,7 +49,7 @@ public:
     using Route53DomainsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     Route53DomainsEndpointProvider()
-      : Route53DomainsDefaultEpProviderBase(Aws::Route53Domains::Route53DomainsEndpointRules::Rules)
+      : Route53DomainsDefaultEpProviderBase(Aws::Route53Domains::Route53DomainsEndpointRules::GetRulesBlob(), Aws::Route53Domains::Route53DomainsEndpointRules::RulesBlobSize)
     {}
 
     ~Route53DomainsEndpointProvider()

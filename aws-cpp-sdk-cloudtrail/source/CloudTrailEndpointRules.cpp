@@ -4,18 +4,17 @@
  */
 
 #include <aws/cloudtrail/CloudTrailEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace CloudTrail
 {
+const size_t CloudTrailEndpointRules::RulesBlobStrLen = 3800;
+const size_t CloudTrailEndpointRules::RulesBlobSize = 3801;
 
-Aws::String CloudTrailEndpointRules::GetRulesAsString()
-{
-    return Aws::String(CloudTrailEndpointRules::Rules.begin(), CloudTrailEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> CloudTrailEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, CloudTrailEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -167,7 +166,14 @@ const Aws::Vector<char> CloudTrailEndpointRules::Rules = {
 'l','o','u','d','t','r','a','i','l','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i',
 't','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p',
 'r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{',
-'}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}',
+'\0'
+}};
+
+const char* CloudTrailEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace CloudTrail
 } // namespace Aws

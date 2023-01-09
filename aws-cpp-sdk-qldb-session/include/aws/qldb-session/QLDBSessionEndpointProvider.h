@@ -49,7 +49,7 @@ public:
     using QLDBSessionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     QLDBSessionEndpointProvider()
-      : QLDBSessionDefaultEpProviderBase(Aws::QLDBSession::QLDBSessionEndpointRules::Rules)
+      : QLDBSessionDefaultEpProviderBase(Aws::QLDBSession::QLDBSessionEndpointRules::GetRulesBlob(), Aws::QLDBSession::QLDBSessionEndpointRules::RulesBlobSize)
     {}
 
     ~QLDBSessionEndpointProvider()

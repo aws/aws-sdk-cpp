@@ -49,7 +49,7 @@ public:
     using AppSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppSyncEndpointProvider()
-      : AppSyncDefaultEpProviderBase(Aws::AppSync::AppSyncEndpointRules::Rules)
+      : AppSyncDefaultEpProviderBase(Aws::AppSync::AppSyncEndpointRules::GetRulesBlob(), Aws::AppSync::AppSyncEndpointRules::RulesBlobSize)
     {}
 
     ~AppSyncEndpointProvider()

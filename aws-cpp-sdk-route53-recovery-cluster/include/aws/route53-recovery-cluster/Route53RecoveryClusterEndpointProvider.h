@@ -49,7 +49,7 @@ public:
     using Route53RecoveryClusterResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     Route53RecoveryClusterEndpointProvider()
-      : Route53RecoveryClusterDefaultEpProviderBase(Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::Rules)
+      : Route53RecoveryClusterDefaultEpProviderBase(Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::GetRulesBlob(), Aws::Route53RecoveryCluster::Route53RecoveryClusterEndpointRules::RulesBlobSize)
     {}
 
     ~Route53RecoveryClusterEndpointProvider()

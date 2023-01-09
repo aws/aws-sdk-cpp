@@ -4,18 +4,17 @@
  */
 
 #include <aws/workdocs/WorkDocsEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace WorkDocs
 {
+const size_t WorkDocsEndpointRules::RulesBlobStrLen = 3462;
+const size_t WorkDocsEndpointRules::RulesBlobSize = 3463;
 
-Aws::String WorkDocsEndpointRules::GetRulesAsString()
-{
-    return Aws::String(WorkDocsEndpointRules::Rules.begin(), WorkDocsEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> WorkDocsEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, WorkDocsEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> WorkDocsEndpointRules::Rules = {
 'g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n',
 's','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',
 ',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n',
-'d','p','o','i','n','t','"','}',']','}',']','}'};
+'d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* WorkDocsEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace WorkDocs
 } // namespace Aws

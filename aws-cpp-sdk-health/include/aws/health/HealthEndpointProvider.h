@@ -49,7 +49,7 @@ public:
     using HealthResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     HealthEndpointProvider()
-      : HealthDefaultEpProviderBase(Aws::Health::HealthEndpointRules::Rules)
+      : HealthDefaultEpProviderBase(Aws::Health::HealthEndpointRules::GetRulesBlob(), Aws::Health::HealthEndpointRules::RulesBlobSize)
     {}
 
     ~HealthEndpointProvider()

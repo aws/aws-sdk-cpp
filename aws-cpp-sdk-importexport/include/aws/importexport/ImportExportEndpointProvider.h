@@ -49,7 +49,7 @@ public:
     using ImportExportResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ImportExportEndpointProvider()
-      : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::Rules)
+      : ImportExportDefaultEpProviderBase(Aws::ImportExport::ImportExportEndpointRules::GetRulesBlob(), Aws::ImportExport::ImportExportEndpointRules::RulesBlobSize)
     {}
 
     ~ImportExportEndpointProvider()

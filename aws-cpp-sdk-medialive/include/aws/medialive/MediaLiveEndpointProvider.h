@@ -49,7 +49,7 @@ public:
     using MediaLiveResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaLiveEndpointProvider()
-      : MediaLiveDefaultEpProviderBase(Aws::MediaLive::MediaLiveEndpointRules::Rules)
+      : MediaLiveDefaultEpProviderBase(Aws::MediaLive::MediaLiveEndpointRules::GetRulesBlob(), Aws::MediaLive::MediaLiveEndpointRules::RulesBlobSize)
     {}
 
     ~MediaLiveEndpointProvider()

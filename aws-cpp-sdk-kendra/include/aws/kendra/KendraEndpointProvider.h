@@ -49,7 +49,7 @@ public:
     using KendraResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KendraEndpointProvider()
-      : KendraDefaultEpProviderBase(Aws::kendra::KendraEndpointRules::Rules)
+      : KendraDefaultEpProviderBase(Aws::kendra::KendraEndpointRules::GetRulesBlob(), Aws::kendra::KendraEndpointRules::RulesBlobSize)
     {}
 
     ~KendraEndpointProvider()

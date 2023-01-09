@@ -49,7 +49,7 @@ public:
     using LightsailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LightsailEndpointProvider()
-      : LightsailDefaultEpProviderBase(Aws::Lightsail::LightsailEndpointRules::Rules)
+      : LightsailDefaultEpProviderBase(Aws::Lightsail::LightsailEndpointRules::GetRulesBlob(), Aws::Lightsail::LightsailEndpointRules::RulesBlobSize)
     {}
 
     ~LightsailEndpointProvider()

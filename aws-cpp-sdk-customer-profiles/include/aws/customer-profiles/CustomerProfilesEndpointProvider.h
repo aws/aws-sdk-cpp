@@ -49,7 +49,7 @@ public:
     using CustomerProfilesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CustomerProfilesEndpointProvider()
-      : CustomerProfilesDefaultEpProviderBase(Aws::CustomerProfiles::CustomerProfilesEndpointRules::Rules)
+      : CustomerProfilesDefaultEpProviderBase(Aws::CustomerProfiles::CustomerProfilesEndpointRules::GetRulesBlob(), Aws::CustomerProfiles::CustomerProfilesEndpointRules::RulesBlobSize)
     {}
 
     ~CustomerProfilesEndpointProvider()

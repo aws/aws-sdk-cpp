@@ -49,7 +49,7 @@ public:
     using ManagedBlockchainResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ManagedBlockchainEndpointProvider()
-      : ManagedBlockchainDefaultEpProviderBase(Aws::ManagedBlockchain::ManagedBlockchainEndpointRules::Rules)
+      : ManagedBlockchainDefaultEpProviderBase(Aws::ManagedBlockchain::ManagedBlockchainEndpointRules::GetRulesBlob(), Aws::ManagedBlockchain::ManagedBlockchainEndpointRules::RulesBlobSize)
     {}
 
     ~ManagedBlockchainEndpointProvider()

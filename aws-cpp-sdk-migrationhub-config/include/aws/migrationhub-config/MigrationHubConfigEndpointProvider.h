@@ -49,7 +49,7 @@ public:
     using MigrationHubConfigResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MigrationHubConfigEndpointProvider()
-      : MigrationHubConfigDefaultEpProviderBase(Aws::MigrationHubConfig::MigrationHubConfigEndpointRules::Rules)
+      : MigrationHubConfigDefaultEpProviderBase(Aws::MigrationHubConfig::MigrationHubConfigEndpointRules::GetRulesBlob(), Aws::MigrationHubConfig::MigrationHubConfigEndpointRules::RulesBlobSize)
     {}
 
     ~MigrationHubConfigEndpointProvider()

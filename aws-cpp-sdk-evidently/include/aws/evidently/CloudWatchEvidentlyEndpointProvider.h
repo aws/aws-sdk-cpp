@@ -49,7 +49,7 @@ public:
     using CloudWatchEvidentlyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudWatchEvidentlyEndpointProvider()
-      : CloudWatchEvidentlyDefaultEpProviderBase(Aws::CloudWatchEvidently::CloudWatchEvidentlyEndpointRules::Rules)
+      : CloudWatchEvidentlyDefaultEpProviderBase(Aws::CloudWatchEvidently::CloudWatchEvidentlyEndpointRules::GetRulesBlob(), Aws::CloudWatchEvidently::CloudWatchEvidentlyEndpointRules::RulesBlobSize)
     {}
 
     ~CloudWatchEvidentlyEndpointProvider()

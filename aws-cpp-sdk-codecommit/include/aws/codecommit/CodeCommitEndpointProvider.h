@@ -49,7 +49,7 @@ public:
     using CodeCommitResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeCommitEndpointProvider()
-      : CodeCommitDefaultEpProviderBase(Aws::CodeCommit::CodeCommitEndpointRules::Rules)
+      : CodeCommitDefaultEpProviderBase(Aws::CodeCommit::CodeCommitEndpointRules::GetRulesBlob(), Aws::CodeCommit::CodeCommitEndpointRules::RulesBlobSize)
     {}
 
     ~CodeCommitEndpointProvider()

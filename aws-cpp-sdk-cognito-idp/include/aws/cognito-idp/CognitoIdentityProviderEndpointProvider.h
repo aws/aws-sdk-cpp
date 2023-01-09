@@ -49,7 +49,7 @@ public:
     using CognitoIdentityProviderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CognitoIdentityProviderEndpointProvider()
-      : CognitoIdentityProviderDefaultEpProviderBase(Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::Rules)
+      : CognitoIdentityProviderDefaultEpProviderBase(Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::GetRulesBlob(), Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::RulesBlobSize)
     {}
 
     ~CognitoIdentityProviderEndpointProvider()

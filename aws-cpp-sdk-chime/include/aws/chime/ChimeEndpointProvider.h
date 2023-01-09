@@ -49,7 +49,7 @@ public:
     using ChimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ChimeEndpointProvider()
-      : ChimeDefaultEpProviderBase(Aws::Chime::ChimeEndpointRules::Rules)
+      : ChimeDefaultEpProviderBase(Aws::Chime::ChimeEndpointRules::GetRulesBlob(), Aws::Chime::ChimeEndpointRules::RulesBlobSize)
     {}
 
     ~ChimeEndpointProvider()

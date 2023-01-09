@@ -49,7 +49,7 @@ public:
     using OpsWorksCMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OpsWorksCMEndpointProvider()
-      : OpsWorksCMDefaultEpProviderBase(Aws::OpsWorksCM::OpsWorksCMEndpointRules::Rules)
+      : OpsWorksCMDefaultEpProviderBase(Aws::OpsWorksCM::OpsWorksCMEndpointRules::GetRulesBlob(), Aws::OpsWorksCM::OpsWorksCMEndpointRules::RulesBlobSize)
     {}
 
     ~OpsWorksCMEndpointProvider()

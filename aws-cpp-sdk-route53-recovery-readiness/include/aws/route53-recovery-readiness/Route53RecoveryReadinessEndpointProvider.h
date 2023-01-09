@@ -49,7 +49,7 @@ public:
     using Route53RecoveryReadinessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     Route53RecoveryReadinessEndpointProvider()
-      : Route53RecoveryReadinessDefaultEpProviderBase(Aws::Route53RecoveryReadiness::Route53RecoveryReadinessEndpointRules::Rules)
+      : Route53RecoveryReadinessDefaultEpProviderBase(Aws::Route53RecoveryReadiness::Route53RecoveryReadinessEndpointRules::GetRulesBlob(), Aws::Route53RecoveryReadiness::Route53RecoveryReadinessEndpointRules::RulesBlobSize)
     {}
 
     ~Route53RecoveryReadinessEndpointProvider()

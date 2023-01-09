@@ -49,7 +49,7 @@ public:
     using MgnResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MgnEndpointProvider()
-      : MgnDefaultEpProviderBase(Aws::mgn::MgnEndpointRules::Rules)
+      : MgnDefaultEpProviderBase(Aws::mgn::MgnEndpointRules::GetRulesBlob(), Aws::mgn::MgnEndpointRules::RulesBlobSize)
     {}
 
     ~MgnEndpointProvider()

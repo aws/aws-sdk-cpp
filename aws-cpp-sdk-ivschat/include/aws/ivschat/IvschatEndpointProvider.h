@@ -49,7 +49,7 @@ public:
     using IvschatResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IvschatEndpointProvider()
-      : IvschatDefaultEpProviderBase(Aws::ivschat::IvschatEndpointRules::Rules)
+      : IvschatDefaultEpProviderBase(Aws::ivschat::IvschatEndpointRules::GetRulesBlob(), Aws::ivschat::IvschatEndpointRules::RulesBlobSize)
     {}
 
     ~IvschatEndpointProvider()

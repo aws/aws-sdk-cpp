@@ -23,7 +23,7 @@ namespace Endpoint
   {
     SetFromClientConfiguration(static_cast<const S3ControlClientConfiguration::BaseClientConfigClass&>(config));
 
-    static const Aws::String AWS_S3_USE_ARN_REGION = "UseArnRegion";
+    static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
     SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
   }
 } // namespace Endpoint

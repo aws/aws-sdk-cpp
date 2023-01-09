@@ -49,7 +49,7 @@ public:
     using LexModelBuildingServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LexModelBuildingServiceEndpointProvider()
-      : LexModelBuildingServiceDefaultEpProviderBase(Aws::LexModelBuildingService::LexModelBuildingServiceEndpointRules::Rules)
+      : LexModelBuildingServiceDefaultEpProviderBase(Aws::LexModelBuildingService::LexModelBuildingServiceEndpointRules::GetRulesBlob(), Aws::LexModelBuildingService::LexModelBuildingServiceEndpointRules::RulesBlobSize)
     {}
 
     ~LexModelBuildingServiceEndpointProvider()

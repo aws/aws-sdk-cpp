@@ -49,7 +49,7 @@ public:
     using SimSpaceWeaverResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SimSpaceWeaverEndpointProvider()
-      : SimSpaceWeaverDefaultEpProviderBase(Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::Rules)
+      : SimSpaceWeaverDefaultEpProviderBase(Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::GetRulesBlob(), Aws::SimSpaceWeaver::SimSpaceWeaverEndpointRules::RulesBlobSize)
     {}
 
     ~SimSpaceWeaverEndpointProvider()

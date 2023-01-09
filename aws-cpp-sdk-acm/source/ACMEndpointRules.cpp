@@ -4,18 +4,17 @@
  */
 
 #include <aws/acm/ACMEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace ACM
 {
+const size_t ACMEndpointRules::RulesBlobStrLen = 3679;
+const size_t ACMEndpointRules::RulesBlobSize = 3680;
 
-Aws::String ACMEndpointRules::GetRulesAsString()
-{
-    return Aws::String(ACMEndpointRules::Rules.begin(), ACMEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ACMEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ACMEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -163,7 +162,13 @@ const Aws::Vector<char> ACMEndpointRules::Rules = {
 'a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}',
 '"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r',
 's','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',
-']','}',']','}'};
+']','}',']','}','\0'
+}};
+
+const char* ACMEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace ACM
 } // namespace Aws

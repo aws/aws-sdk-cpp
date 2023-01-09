@@ -49,7 +49,7 @@ public:
     using ServiceDiscoveryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ServiceDiscoveryEndpointProvider()
-      : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::Rules)
+      : ServiceDiscoveryDefaultEpProviderBase(Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::GetRulesBlob(), Aws::ServiceDiscovery::ServiceDiscoveryEndpointRules::RulesBlobSize)
     {}
 
     ~ServiceDiscoveryEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using FISResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FISEndpointProvider()
-      : FISDefaultEpProviderBase(Aws::FIS::FISEndpointRules::Rules)
+      : FISDefaultEpProviderBase(Aws::FIS::FISEndpointRules::GetRulesBlob(), Aws::FIS::FISEndpointRules::RulesBlobSize)
     {}
 
     ~FISEndpointProvider()

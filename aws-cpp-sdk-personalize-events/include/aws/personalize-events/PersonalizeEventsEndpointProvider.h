@@ -49,7 +49,7 @@ public:
     using PersonalizeEventsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PersonalizeEventsEndpointProvider()
-      : PersonalizeEventsDefaultEpProviderBase(Aws::PersonalizeEvents::PersonalizeEventsEndpointRules::Rules)
+      : PersonalizeEventsDefaultEpProviderBase(Aws::PersonalizeEvents::PersonalizeEventsEndpointRules::GetRulesBlob(), Aws::PersonalizeEvents::PersonalizeEventsEndpointRules::RulesBlobSize)
     {}
 
     ~PersonalizeEventsEndpointProvider()

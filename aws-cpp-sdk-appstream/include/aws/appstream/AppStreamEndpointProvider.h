@@ -49,7 +49,7 @@ public:
     using AppStreamResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppStreamEndpointProvider()
-      : AppStreamDefaultEpProviderBase(Aws::AppStream::AppStreamEndpointRules::Rules)
+      : AppStreamDefaultEpProviderBase(Aws::AppStream::AppStreamEndpointRules::GetRulesBlob(), Aws::AppStream::AppStreamEndpointRules::RulesBlobSize)
     {}
 
     ~AppStreamEndpointProvider()

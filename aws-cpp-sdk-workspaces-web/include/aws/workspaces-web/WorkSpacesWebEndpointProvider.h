@@ -49,7 +49,7 @@ public:
     using WorkSpacesWebResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WorkSpacesWebEndpointProvider()
-      : WorkSpacesWebDefaultEpProviderBase(Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::Rules)
+      : WorkSpacesWebDefaultEpProviderBase(Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::GetRulesBlob(), Aws::WorkSpacesWeb::WorkSpacesWebEndpointRules::RulesBlobSize)
     {}
 
     ~WorkSpacesWebEndpointProvider()

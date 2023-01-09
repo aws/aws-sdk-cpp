@@ -49,7 +49,7 @@ public:
     using RecycleBinResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RecycleBinEndpointProvider()
-      : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::Rules)
+      : RecycleBinDefaultEpProviderBase(Aws::RecycleBin::RecycleBinEndpointRules::GetRulesBlob(), Aws::RecycleBin::RecycleBinEndpointRules::RulesBlobSize)
     {}
 
     ~RecycleBinEndpointProvider()

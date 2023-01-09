@@ -49,7 +49,7 @@ public:
     using PinpointSMSVoiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PinpointSMSVoiceEndpointProvider()
-      : PinpointSMSVoiceDefaultEpProviderBase(Aws::PinpointSMSVoice::PinpointSMSVoiceEndpointRules::Rules)
+      : PinpointSMSVoiceDefaultEpProviderBase(Aws::PinpointSMSVoice::PinpointSMSVoiceEndpointRules::GetRulesBlob(), Aws::PinpointSMSVoice::PinpointSMSVoiceEndpointRules::RulesBlobSize)
     {}
 
     ~PinpointSMSVoiceEndpointProvider()

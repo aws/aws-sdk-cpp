@@ -49,7 +49,7 @@ public:
     using CodeGuruReviewerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CodeGuruReviewerEndpointProvider()
-      : CodeGuruReviewerDefaultEpProviderBase(Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::Rules)
+      : CodeGuruReviewerDefaultEpProviderBase(Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::GetRulesBlob(), Aws::CodeGuruReviewer::CodeGuruReviewerEndpointRules::RulesBlobSize)
     {}
 
     ~CodeGuruReviewerEndpointProvider()

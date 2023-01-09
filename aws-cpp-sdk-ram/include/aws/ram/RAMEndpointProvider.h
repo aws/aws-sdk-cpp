@@ -49,7 +49,7 @@ public:
     using RAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RAMEndpointProvider()
-      : RAMDefaultEpProviderBase(Aws::RAM::RAMEndpointRules::Rules)
+      : RAMDefaultEpProviderBase(Aws::RAM::RAMEndpointRules::GetRulesBlob(), Aws::RAM::RAMEndpointRules::RulesBlobSize)
     {}
 
     ~RAMEndpointProvider()

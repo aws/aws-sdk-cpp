@@ -49,7 +49,7 @@ public:
     using CloudDirectoryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudDirectoryEndpointProvider()
-      : CloudDirectoryDefaultEpProviderBase(Aws::CloudDirectory::CloudDirectoryEndpointRules::Rules)
+      : CloudDirectoryDefaultEpProviderBase(Aws::CloudDirectory::CloudDirectoryEndpointRules::GetRulesBlob(), Aws::CloudDirectory::CloudDirectoryEndpointRules::RulesBlobSize)
     {}
 
     ~CloudDirectoryEndpointProvider()

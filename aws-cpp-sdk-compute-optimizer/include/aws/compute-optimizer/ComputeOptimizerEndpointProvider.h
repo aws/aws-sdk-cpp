@@ -49,7 +49,7 @@ public:
     using ComputeOptimizerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ComputeOptimizerEndpointProvider()
-      : ComputeOptimizerDefaultEpProviderBase(Aws::ComputeOptimizer::ComputeOptimizerEndpointRules::Rules)
+      : ComputeOptimizerDefaultEpProviderBase(Aws::ComputeOptimizer::ComputeOptimizerEndpointRules::GetRulesBlob(), Aws::ComputeOptimizer::ComputeOptimizerEndpointRules::RulesBlobSize)
     {}
 
     ~ComputeOptimizerEndpointProvider()

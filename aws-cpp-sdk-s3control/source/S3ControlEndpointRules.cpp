@@ -4,18 +4,17 @@
  */
 
 #include <aws/s3control/S3ControlEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace S3Control
 {
+const size_t S3ControlEndpointRules::RulesBlobStrLen = 22954;
+const size_t S3ControlEndpointRules::RulesBlobSize = 22955;
 
-Aws::String S3ControlEndpointRules::GetRulesAsString()
-{
-    return Aws::String(S3ControlEndpointRules::Rules.begin(), S3ControlEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> S3ControlEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, S3ControlEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -934,7 +933,13 @@ const Aws::Vector<char> S3ControlEndpointRules::Rules = {
 'e','r','r','o','r','"','}',']','}',']','}',']','}',',','{','"','c','o','n','d','i','t','i','o','n',
 's','"',':','[',']',',','"','e','r','r','o','r','"',':','"','R','e','g','i','o','n',' ','m','u','s',
 't',' ','b','e',' ','s','e','t','"',',','"','t','y','p','e','"',':','"','e','r','r','o','r','"','}',
-']','}',']','}'};
+']','}',']','}','\0'
+}};
+
+const char* S3ControlEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace S3Control
 } // namespace Aws

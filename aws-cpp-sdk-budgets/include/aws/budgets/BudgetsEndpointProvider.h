@@ -49,7 +49,7 @@ public:
     using BudgetsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BudgetsEndpointProvider()
-      : BudgetsDefaultEpProviderBase(Aws::Budgets::BudgetsEndpointRules::Rules)
+      : BudgetsDefaultEpProviderBase(Aws::Budgets::BudgetsEndpointRules::GetRulesBlob(), Aws::Budgets::BudgetsEndpointRules::RulesBlobSize)
     {}
 
     ~BudgetsEndpointProvider()

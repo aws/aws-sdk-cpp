@@ -49,7 +49,7 @@ public:
     using MigrationHubStrategyRecommendationsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MigrationHubStrategyRecommendationsEndpointProvider()
-      : MigrationHubStrategyRecommendationsDefaultEpProviderBase(Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsEndpointRules::Rules)
+      : MigrationHubStrategyRecommendationsDefaultEpProviderBase(Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsEndpointRules::GetRulesBlob(), Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsEndpointRules::RulesBlobSize)
     {}
 
     ~MigrationHubStrategyRecommendationsEndpointProvider()

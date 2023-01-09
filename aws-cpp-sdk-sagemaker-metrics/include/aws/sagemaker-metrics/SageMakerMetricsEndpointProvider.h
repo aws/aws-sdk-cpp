@@ -49,7 +49,7 @@ public:
     using SageMakerMetricsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SageMakerMetricsEndpointProvider()
-      : SageMakerMetricsDefaultEpProviderBase(Aws::SageMakerMetrics::SageMakerMetricsEndpointRules::Rules)
+      : SageMakerMetricsDefaultEpProviderBase(Aws::SageMakerMetrics::SageMakerMetricsEndpointRules::GetRulesBlob(), Aws::SageMakerMetrics::SageMakerMetricsEndpointRules::RulesBlobSize)
     {}
 
     ~SageMakerMetricsEndpointProvider()

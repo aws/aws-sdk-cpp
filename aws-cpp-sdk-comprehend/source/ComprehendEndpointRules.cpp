@@ -4,18 +4,17 @@
  */
 
 #include <aws/comprehend/ComprehendEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Comprehend
 {
+const size_t ComprehendEndpointRules::RulesBlobStrLen = 3469;
+const size_t ComprehendEndpointRules::RulesBlobSize = 3470;
 
-Aws::String ComprehendEndpointRules::GetRulesAsString()
-{
-    return Aws::String(ComprehendEndpointRules::Rules.begin(), ComprehendEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> ComprehendEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, ComprehendEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -154,7 +153,13 @@ const Aws::Vector<char> ComprehendEndpointRules::Rules = {
 'e','n','d','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e',
 's','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t',
 'i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y',
-'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* ComprehendEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Comprehend
 } // namespace Aws

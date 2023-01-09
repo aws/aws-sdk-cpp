@@ -49,7 +49,7 @@ public:
     using MarketplaceEntitlementServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MarketplaceEntitlementServiceEndpointProvider()
-      : MarketplaceEntitlementServiceDefaultEpProviderBase(Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::Rules)
+      : MarketplaceEntitlementServiceDefaultEpProviderBase(Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::GetRulesBlob(), Aws::MarketplaceEntitlementService::MarketplaceEntitlementServiceEndpointRules::RulesBlobSize)
     {}
 
     ~MarketplaceEntitlementServiceEndpointProvider()

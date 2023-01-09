@@ -49,7 +49,7 @@ public:
     using ServiceCatalogResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ServiceCatalogEndpointProvider()
-      : ServiceCatalogDefaultEpProviderBase(Aws::ServiceCatalog::ServiceCatalogEndpointRules::Rules)
+      : ServiceCatalogDefaultEpProviderBase(Aws::ServiceCatalog::ServiceCatalogEndpointRules::GetRulesBlob(), Aws::ServiceCatalog::ServiceCatalogEndpointRules::RulesBlobSize)
     {}
 
     ~ServiceCatalogEndpointProvider()

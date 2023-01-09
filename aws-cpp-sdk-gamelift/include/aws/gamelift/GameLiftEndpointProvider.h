@@ -49,7 +49,7 @@ public:
     using GameLiftResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GameLiftEndpointProvider()
-      : GameLiftDefaultEpProviderBase(Aws::GameLift::GameLiftEndpointRules::Rules)
+      : GameLiftDefaultEpProviderBase(Aws::GameLift::GameLiftEndpointRules::GetRulesBlob(), Aws::GameLift::GameLiftEndpointRules::RulesBlobSize)
     {}
 
     ~GameLiftEndpointProvider()

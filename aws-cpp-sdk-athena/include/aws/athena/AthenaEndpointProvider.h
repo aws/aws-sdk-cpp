@@ -49,7 +49,7 @@ public:
     using AthenaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AthenaEndpointProvider()
-      : AthenaDefaultEpProviderBase(Aws::Athena::AthenaEndpointRules::Rules)
+      : AthenaDefaultEpProviderBase(Aws::Athena::AthenaEndpointRules::GetRulesBlob(), Aws::Athena::AthenaEndpointRules::RulesBlobSize)
     {}
 
     ~AthenaEndpointProvider()

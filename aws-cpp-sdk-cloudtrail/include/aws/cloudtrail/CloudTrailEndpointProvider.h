@@ -49,7 +49,7 @@ public:
     using CloudTrailResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudTrailEndpointProvider()
-      : CloudTrailDefaultEpProviderBase(Aws::CloudTrail::CloudTrailEndpointRules::Rules)
+      : CloudTrailDefaultEpProviderBase(Aws::CloudTrail::CloudTrailEndpointRules::GetRulesBlob(), Aws::CloudTrail::CloudTrailEndpointRules::RulesBlobSize)
     {}
 
     ~CloudTrailEndpointProvider()

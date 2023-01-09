@@ -49,7 +49,7 @@ public:
     using BackupGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BackupGatewayEndpointProvider()
-      : BackupGatewayDefaultEpProviderBase(Aws::BackupGateway::BackupGatewayEndpointRules::Rules)
+      : BackupGatewayDefaultEpProviderBase(Aws::BackupGateway::BackupGatewayEndpointRules::GetRulesBlob(), Aws::BackupGateway::BackupGatewayEndpointRules::RulesBlobSize)
     {}
 
     ~BackupGatewayEndpointProvider()

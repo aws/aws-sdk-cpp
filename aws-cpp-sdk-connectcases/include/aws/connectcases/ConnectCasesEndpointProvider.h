@@ -49,7 +49,7 @@ public:
     using ConnectCasesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ConnectCasesEndpointProvider()
-      : ConnectCasesDefaultEpProviderBase(Aws::ConnectCases::ConnectCasesEndpointRules::Rules)
+      : ConnectCasesDefaultEpProviderBase(Aws::ConnectCases::ConnectCasesEndpointRules::GetRulesBlob(), Aws::ConnectCases::ConnectCasesEndpointRules::RulesBlobSize)
     {}
 
     ~ConnectCasesEndpointProvider()

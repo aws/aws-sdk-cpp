@@ -49,7 +49,7 @@ public:
     using AppflowResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppflowEndpointProvider()
-      : AppflowDefaultEpProviderBase(Aws::Appflow::AppflowEndpointRules::Rules)
+      : AppflowDefaultEpProviderBase(Aws::Appflow::AppflowEndpointRules::GetRulesBlob(), Aws::Appflow::AppflowEndpointRules::RulesBlobSize)
     {}
 
     ~AppflowEndpointProvider()

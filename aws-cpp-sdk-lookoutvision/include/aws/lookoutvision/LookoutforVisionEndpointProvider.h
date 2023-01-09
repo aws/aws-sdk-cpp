@@ -49,7 +49,7 @@ public:
     using LookoutforVisionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LookoutforVisionEndpointProvider()
-      : LookoutforVisionDefaultEpProviderBase(Aws::LookoutforVision::LookoutforVisionEndpointRules::Rules)
+      : LookoutforVisionDefaultEpProviderBase(Aws::LookoutforVision::LookoutforVisionEndpointRules::GetRulesBlob(), Aws::LookoutforVision::LookoutforVisionEndpointRules::RulesBlobSize)
     {}
 
     ~LookoutforVisionEndpointProvider()

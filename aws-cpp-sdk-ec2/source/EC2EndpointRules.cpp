@@ -4,18 +4,17 @@
  */
 
 #include <aws/ec2/EC2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace EC2
 {
+const size_t EC2EndpointRules::RulesBlobStrLen = 3617;
+const size_t EC2EndpointRules::RulesBlobSize = 3618;
 
-Aws::String EC2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(EC2EndpointRules::Rules.begin(), EC2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> EC2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, EC2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -160,7 +159,13 @@ const Aws::Vector<char> EC2EndpointRules::Rules = {
 '2','.','{','R','e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u',
 'l','t','#','d','n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e',
 's','"',':','{','}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e',
-'"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}'};
+'"',':','"','e','n','d','p','o','i','n','t','"','}',']','}',']','}','\0'
+}};
+
+const char* EC2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace EC2
 } // namespace Aws

@@ -49,7 +49,7 @@ public:
     using GlacierResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GlacierEndpointProvider()
-      : GlacierDefaultEpProviderBase(Aws::Glacier::GlacierEndpointRules::Rules)
+      : GlacierDefaultEpProviderBase(Aws::Glacier::GlacierEndpointRules::GetRulesBlob(), Aws::Glacier::GlacierEndpointRules::RulesBlobSize)
     {}
 
     ~GlacierEndpointProvider()

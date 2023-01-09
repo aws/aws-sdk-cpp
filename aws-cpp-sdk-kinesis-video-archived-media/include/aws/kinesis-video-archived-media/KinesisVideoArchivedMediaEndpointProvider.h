@@ -49,7 +49,7 @@ public:
     using KinesisVideoArchivedMediaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KinesisVideoArchivedMediaEndpointProvider()
-      : KinesisVideoArchivedMediaDefaultEpProviderBase(Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::Rules)
+      : KinesisVideoArchivedMediaDefaultEpProviderBase(Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::GetRulesBlob(), Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaEndpointRules::RulesBlobSize)
     {}
 
     ~KinesisVideoArchivedMediaEndpointProvider()

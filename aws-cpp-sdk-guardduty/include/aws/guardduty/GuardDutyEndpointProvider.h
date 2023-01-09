@@ -49,7 +49,7 @@ public:
     using GuardDutyResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     GuardDutyEndpointProvider()
-      : GuardDutyDefaultEpProviderBase(Aws::GuardDuty::GuardDutyEndpointRules::Rules)
+      : GuardDutyDefaultEpProviderBase(Aws::GuardDuty::GuardDutyEndpointRules::GetRulesBlob(), Aws::GuardDuty::GuardDutyEndpointRules::RulesBlobSize)
     {}
 
     ~GuardDutyEndpointProvider()

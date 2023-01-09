@@ -49,7 +49,7 @@ public:
     using TextractResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TextractEndpointProvider()
-      : TextractDefaultEpProviderBase(Aws::Textract::TextractEndpointRules::Rules)
+      : TextractDefaultEpProviderBase(Aws::Textract::TextractEndpointRules::GetRulesBlob(), Aws::Textract::TextractEndpointRules::RulesBlobSize)
     {}
 
     ~TextractEndpointProvider()

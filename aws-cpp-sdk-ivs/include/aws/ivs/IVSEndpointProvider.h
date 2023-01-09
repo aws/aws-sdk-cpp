@@ -49,7 +49,7 @@ public:
     using IVSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IVSEndpointProvider()
-      : IVSDefaultEpProviderBase(Aws::IVS::IVSEndpointRules::Rules)
+      : IVSDefaultEpProviderBase(Aws::IVS::IVSEndpointRules::GetRulesBlob(), Aws::IVS::IVSEndpointRules::RulesBlobSize)
     {}
 
     ~IVSEndpointProvider()

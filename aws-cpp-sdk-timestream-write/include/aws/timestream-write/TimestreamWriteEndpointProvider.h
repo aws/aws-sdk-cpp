@@ -49,7 +49,7 @@ public:
     using TimestreamWriteResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TimestreamWriteEndpointProvider()
-      : TimestreamWriteDefaultEpProviderBase(Aws::TimestreamWrite::TimestreamWriteEndpointRules::Rules)
+      : TimestreamWriteDefaultEpProviderBase(Aws::TimestreamWrite::TimestreamWriteEndpointRules::GetRulesBlob(), Aws::TimestreamWrite::TimestreamWriteEndpointRules::RulesBlobSize)
     {}
 
     ~TimestreamWriteEndpointProvider()

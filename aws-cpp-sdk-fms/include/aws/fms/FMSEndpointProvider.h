@@ -49,7 +49,7 @@ public:
     using FMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     FMSEndpointProvider()
-      : FMSDefaultEpProviderBase(Aws::FMS::FMSEndpointRules::Rules)
+      : FMSDefaultEpProviderBase(Aws::FMS::FMSEndpointRules::GetRulesBlob(), Aws::FMS::FMSEndpointRules::RulesBlobSize)
     {}
 
     ~FMSEndpointProvider()

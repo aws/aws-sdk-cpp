@@ -49,7 +49,7 @@ public:
     using SSOOIDCResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SSOOIDCEndpointProvider()
-      : SSOOIDCDefaultEpProviderBase(Aws::SSOOIDC::SSOOIDCEndpointRules::Rules)
+      : SSOOIDCDefaultEpProviderBase(Aws::SSOOIDC::SSOOIDCEndpointRules::GetRulesBlob(), Aws::SSOOIDC::SSOOIDCEndpointRules::RulesBlobSize)
     {}
 
     ~SSOOIDCEndpointProvider()

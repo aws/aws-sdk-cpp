@@ -49,7 +49,7 @@ public:
     using DAXResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DAXEndpointProvider()
-      : DAXDefaultEpProviderBase(Aws::DAX::DAXEndpointRules::Rules)
+      : DAXDefaultEpProviderBase(Aws::DAX::DAXEndpointRules::GetRulesBlob(), Aws::DAX::DAXEndpointRules::RulesBlobSize)
     {}
 
     ~DAXEndpointProvider()

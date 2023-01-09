@@ -49,7 +49,7 @@ public:
     using AccessAnalyzerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AccessAnalyzerEndpointProvider()
-      : AccessAnalyzerDefaultEpProviderBase(Aws::AccessAnalyzer::AccessAnalyzerEndpointRules::Rules)
+      : AccessAnalyzerDefaultEpProviderBase(Aws::AccessAnalyzer::AccessAnalyzerEndpointRules::GetRulesBlob(), Aws::AccessAnalyzer::AccessAnalyzerEndpointRules::RulesBlobSize)
     {}
 
     ~AccessAnalyzerEndpointProvider()

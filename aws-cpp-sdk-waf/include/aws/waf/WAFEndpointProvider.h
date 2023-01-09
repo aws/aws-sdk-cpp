@@ -49,7 +49,7 @@ public:
     using WAFResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     WAFEndpointProvider()
-      : WAFDefaultEpProviderBase(Aws::WAF::WAFEndpointRules::Rules)
+      : WAFDefaultEpProviderBase(Aws::WAF::WAFEndpointRules::GetRulesBlob(), Aws::WAF::WAFEndpointRules::RulesBlobSize)
     {}
 
     ~WAFEndpointProvider()

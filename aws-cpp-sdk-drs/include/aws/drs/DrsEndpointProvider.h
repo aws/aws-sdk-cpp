@@ -49,7 +49,7 @@ public:
     using DrsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DrsEndpointProvider()
-      : DrsDefaultEpProviderBase(Aws::drs::DrsEndpointRules::Rules)
+      : DrsDefaultEpProviderBase(Aws::drs::DrsEndpointRules::GetRulesBlob(), Aws::drs::DrsEndpointRules::RulesBlobSize)
     {}
 
     ~DrsEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using PipesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PipesEndpointProvider()
-      : PipesDefaultEpProviderBase(Aws::Pipes::PipesEndpointRules::Rules)
+      : PipesDefaultEpProviderBase(Aws::Pipes::PipesEndpointRules::GetRulesBlob(), Aws::Pipes::PipesEndpointRules::RulesBlobSize)
     {}
 
     ~PipesEndpointProvider()

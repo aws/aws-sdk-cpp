@@ -49,7 +49,7 @@ public:
     using LakeFormationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     LakeFormationEndpointProvider()
-      : LakeFormationDefaultEpProviderBase(Aws::LakeFormation::LakeFormationEndpointRules::Rules)
+      : LakeFormationDefaultEpProviderBase(Aws::LakeFormation::LakeFormationEndpointRules::GetRulesBlob(), Aws::LakeFormation::LakeFormationEndpointRules::RulesBlobSize)
     {}
 
     ~LakeFormationEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using PersonalizeRuntimeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PersonalizeRuntimeEndpointProvider()
-      : PersonalizeRuntimeDefaultEpProviderBase(Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::Rules)
+      : PersonalizeRuntimeDefaultEpProviderBase(Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::GetRulesBlob(), Aws::PersonalizeRuntime::PersonalizeRuntimeEndpointRules::RulesBlobSize)
     {}
 
     ~PersonalizeRuntimeEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using DirectoryServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DirectoryServiceEndpointProvider()
-      : DirectoryServiceDefaultEpProviderBase(Aws::DirectoryService::DirectoryServiceEndpointRules::Rules)
+      : DirectoryServiceDefaultEpProviderBase(Aws::DirectoryService::DirectoryServiceEndpointRules::GetRulesBlob(), Aws::DirectoryService::DirectoryServiceEndpointRules::RulesBlobSize)
     {}
 
     ~DirectoryServiceEndpointProvider()

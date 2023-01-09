@@ -49,7 +49,7 @@ public:
     using AppMeshResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppMeshEndpointProvider()
-      : AppMeshDefaultEpProviderBase(Aws::AppMesh::AppMeshEndpointRules::Rules)
+      : AppMeshDefaultEpProviderBase(Aws::AppMesh::AppMeshEndpointRules::GetRulesBlob(), Aws::AppMesh::AppMeshEndpointRules::RulesBlobSize)
     {}
 
     ~AppMeshEndpointProvider()

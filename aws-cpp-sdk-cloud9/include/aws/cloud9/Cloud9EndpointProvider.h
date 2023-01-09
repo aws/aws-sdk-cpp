@@ -49,7 +49,7 @@ public:
     using Cloud9ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     Cloud9EndpointProvider()
-      : Cloud9DefaultEpProviderBase(Aws::Cloud9::Cloud9EndpointRules::Rules)
+      : Cloud9DefaultEpProviderBase(Aws::Cloud9::Cloud9EndpointRules::GetRulesBlob(), Aws::Cloud9::Cloud9EndpointRules::RulesBlobSize)
     {}
 
     ~Cloud9EndpointProvider()

@@ -49,7 +49,7 @@ public:
     using DirectConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     DirectConnectEndpointProvider()
-      : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::Rules)
+      : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::GetRulesBlob(), Aws::DirectConnect::DirectConnectEndpointRules::RulesBlobSize)
     {}
 
     ~DirectConnectEndpointProvider()

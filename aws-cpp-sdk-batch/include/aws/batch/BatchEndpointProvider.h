@@ -49,7 +49,7 @@ public:
     using BatchResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BatchEndpointProvider()
-      : BatchDefaultEpProviderBase(Aws::Batch::BatchEndpointRules::Rules)
+      : BatchDefaultEpProviderBase(Aws::Batch::BatchEndpointRules::GetRulesBlob(), Aws::Batch::BatchEndpointRules::RulesBlobSize)
     {}
 
     ~BatchEndpointProvider()

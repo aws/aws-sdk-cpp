@@ -49,7 +49,7 @@ public:
     using PIResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     PIEndpointProvider()
-      : PIDefaultEpProviderBase(Aws::PI::PIEndpointRules::Rules)
+      : PIDefaultEpProviderBase(Aws::PI::PIEndpointRules::GetRulesBlob(), Aws::PI::PIEndpointRules::RulesBlobSize)
     {}
 
     ~PIEndpointProvider()

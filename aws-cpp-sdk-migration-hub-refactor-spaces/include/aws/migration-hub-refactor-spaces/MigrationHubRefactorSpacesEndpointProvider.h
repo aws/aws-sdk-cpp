@@ -49,7 +49,7 @@ public:
     using MigrationHubRefactorSpacesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MigrationHubRefactorSpacesEndpointProvider()
-      : MigrationHubRefactorSpacesDefaultEpProviderBase(Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::Rules)
+      : MigrationHubRefactorSpacesDefaultEpProviderBase(Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::GetRulesBlob(), Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesEndpointRules::RulesBlobSize)
     {}
 
     ~MigrationHubRefactorSpacesEndpointProvider()

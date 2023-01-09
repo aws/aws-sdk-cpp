@@ -49,7 +49,7 @@ public:
     using MacieResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MacieEndpointProvider()
-      : MacieDefaultEpProviderBase(Aws::Macie::MacieEndpointRules::Rules)
+      : MacieDefaultEpProviderBase(Aws::Macie::MacieEndpointRules::GetRulesBlob(), Aws::Macie::MacieEndpointRules::RulesBlobSize)
     {}
 
     ~MacieEndpointProvider()

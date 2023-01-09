@@ -4,18 +4,17 @@
  */
 
 #include <aws/greengrassv2/GreengrassV2EndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace GreengrassV2
 {
+const size_t GreengrassV2EndpointRules::RulesBlobStrLen = 3940;
+const size_t GreengrassV2EndpointRules::RulesBlobSize = 3941;
 
-Aws::String GreengrassV2EndpointRules::GetRulesAsString()
-{
-    return Aws::String(GreengrassV2EndpointRules::Rules.begin(), GreengrassV2EndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> GreengrassV2EndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, GreengrassV2EndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -173,7 +172,13 @@ const Aws::Vector<char> GreengrassV2EndpointRules::Rules = {
 'e','g','i','o','n','}','.','{','P','a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d',
 'n','s','S','u','f','f','i','x','}','"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{',
 '}',',','"','h','e','a','d','e','r','s','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e',
-'n','d','p','o','i','n','t','"','}',']','}',']','}',']','}'};
+'n','d','p','o','i','n','t','"','}',']','}',']','}',']','}','\0'
+}};
+
+const char* GreengrassV2EndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace GreengrassV2
 } // namespace Aws

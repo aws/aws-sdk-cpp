@@ -49,7 +49,7 @@ public:
     using KMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     KMSEndpointProvider()
-      : KMSDefaultEpProviderBase(Aws::KMS::KMSEndpointRules::Rules)
+      : KMSDefaultEpProviderBase(Aws::KMS::KMSEndpointRules::GetRulesBlob(), Aws::KMS::KMSEndpointRules::RulesBlobSize)
     {}
 
     ~KMSEndpointProvider()

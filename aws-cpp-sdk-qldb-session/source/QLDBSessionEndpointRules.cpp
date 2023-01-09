@@ -4,18 +4,17 @@
  */
 
 #include <aws/qldb-session/QLDBSessionEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace QLDBSession
 {
+const size_t QLDBSessionEndpointRules::RulesBlobStrLen = 3478;
+const size_t QLDBSessionEndpointRules::RulesBlobSize = 3479;
 
-Aws::String QLDBSessionEndpointRules::GetRulesAsString()
-{
-    return Aws::String(QLDBSessionEndpointRules::Rules.begin(), QLDBSessionEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> QLDBSessionEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, QLDBSessionEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -155,7 +154,13 @@ const Aws::Vector<char> QLDBSessionEndpointRules::Rules = {
 'r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}','"',
 ',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r','s',
 '"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',']',
-'}',']','}'};
+'}',']','}','\0'
+}};
+
+const char* QLDBSessionEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace QLDBSession
 } // namespace Aws

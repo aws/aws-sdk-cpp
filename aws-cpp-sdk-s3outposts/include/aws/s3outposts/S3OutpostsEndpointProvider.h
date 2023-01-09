@@ -49,7 +49,7 @@ public:
     using S3OutpostsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     S3OutpostsEndpointProvider()
-      : S3OutpostsDefaultEpProviderBase(Aws::S3Outposts::S3OutpostsEndpointRules::Rules)
+      : S3OutpostsDefaultEpProviderBase(Aws::S3Outposts::S3OutpostsEndpointRules::GetRulesBlob(), Aws::S3Outposts::S3OutpostsEndpointRules::RulesBlobSize)
     {}
 
     ~S3OutpostsEndpointProvider()

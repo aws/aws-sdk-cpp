@@ -49,7 +49,7 @@ public:
     using ServiceQuotasResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ServiceQuotasEndpointProvider()
-      : ServiceQuotasDefaultEpProviderBase(Aws::ServiceQuotas::ServiceQuotasEndpointRules::Rules)
+      : ServiceQuotasDefaultEpProviderBase(Aws::ServiceQuotas::ServiceQuotasEndpointRules::GetRulesBlob(), Aws::ServiceQuotas::ServiceQuotasEndpointRules::RulesBlobSize)
     {}
 
     ~ServiceQuotasEndpointProvider()

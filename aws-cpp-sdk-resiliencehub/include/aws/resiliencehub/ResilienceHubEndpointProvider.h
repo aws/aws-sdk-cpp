@@ -49,7 +49,7 @@ public:
     using ResilienceHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ResilienceHubEndpointProvider()
-      : ResilienceHubDefaultEpProviderBase(Aws::ResilienceHub::ResilienceHubEndpointRules::Rules)
+      : ResilienceHubDefaultEpProviderBase(Aws::ResilienceHub::ResilienceHubEndpointRules::GetRulesBlob(), Aws::ResilienceHub::ResilienceHubEndpointRules::RulesBlobSize)
     {}
 
     ~ResilienceHubEndpointProvider()

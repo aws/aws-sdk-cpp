@@ -49,7 +49,7 @@ public:
     using MTurkResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MTurkEndpointProvider()
-      : MTurkDefaultEpProviderBase(Aws::MTurk::MTurkEndpointRules::Rules)
+      : MTurkDefaultEpProviderBase(Aws::MTurk::MTurkEndpointRules::GetRulesBlob(), Aws::MTurk::MTurkEndpointRules::RulesBlobSize)
     {}
 
     ~MTurkEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using RolesAnywhereResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     RolesAnywhereEndpointProvider()
-      : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::Rules)
+      : RolesAnywhereDefaultEpProviderBase(Aws::RolesAnywhere::RolesAnywhereEndpointRules::GetRulesBlob(), Aws::RolesAnywhere::RolesAnywhereEndpointRules::RulesBlobSize)
     {}
 
     ~RolesAnywhereEndpointProvider()

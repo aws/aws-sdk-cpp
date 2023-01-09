@@ -49,7 +49,7 @@ public:
     using ControlTowerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ControlTowerEndpointProvider()
-      : ControlTowerDefaultEpProviderBase(Aws::ControlTower::ControlTowerEndpointRules::Rules)
+      : ControlTowerDefaultEpProviderBase(Aws::ControlTower::ControlTowerEndpointRules::GetRulesBlob(), Aws::ControlTower::ControlTowerEndpointRules::RulesBlobSize)
     {}
 
     ~ControlTowerEndpointProvider()

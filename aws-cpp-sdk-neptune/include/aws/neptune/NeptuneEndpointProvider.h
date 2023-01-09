@@ -49,7 +49,7 @@ public:
     using NeptuneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     NeptuneEndpointProvider()
-      : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::Rules)
+      : NeptuneDefaultEpProviderBase(Aws::Neptune::NeptuneEndpointRules::GetRulesBlob(), Aws::Neptune::NeptuneEndpointRules::RulesBlobSize)
     {}
 
     ~NeptuneEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using AppRegistryResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     AppRegistryEndpointProvider()
-      : AppRegistryDefaultEpProviderBase(Aws::AppRegistry::AppRegistryEndpointRules::Rules)
+      : AppRegistryDefaultEpProviderBase(Aws::AppRegistry::AppRegistryEndpointRules::GetRulesBlob(), Aws::AppRegistry::AppRegistryEndpointRules::RulesBlobSize)
     {}
 
     ~AppRegistryEndpointProvider()

@@ -49,7 +49,7 @@ public:
     using ResourceExplorer2ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ResourceExplorer2EndpointProvider()
-      : ResourceExplorer2DefaultEpProviderBase(Aws::ResourceExplorer2::ResourceExplorer2EndpointRules::Rules)
+      : ResourceExplorer2DefaultEpProviderBase(Aws::ResourceExplorer2::ResourceExplorer2EndpointRules::GetRulesBlob(), Aws::ResourceExplorer2::ResourceExplorer2EndpointRules::RulesBlobSize)
     {}
 
     ~ResourceExplorer2EndpointProvider()

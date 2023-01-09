@@ -49,7 +49,7 @@ public:
     using MediaPackageVodResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     MediaPackageVodEndpointProvider()
-      : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::Rules)
+      : MediaPackageVodDefaultEpProviderBase(Aws::MediaPackageVod::MediaPackageVodEndpointRules::GetRulesBlob(), Aws::MediaPackageVod::MediaPackageVodEndpointRules::RulesBlobSize)
     {}
 
     ~MediaPackageVodEndpointProvider()

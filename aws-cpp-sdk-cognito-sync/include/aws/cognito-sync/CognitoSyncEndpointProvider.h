@@ -49,7 +49,7 @@ public:
     using CognitoSyncResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CognitoSyncEndpointProvider()
-      : CognitoSyncDefaultEpProviderBase(Aws::CognitoSync::CognitoSyncEndpointRules::Rules)
+      : CognitoSyncDefaultEpProviderBase(Aws::CognitoSync::CognitoSyncEndpointRules::GetRulesBlob(), Aws::CognitoSync::CognitoSyncEndpointRules::RulesBlobSize)
     {}
 
     ~CognitoSyncEndpointProvider()

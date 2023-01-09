@@ -49,7 +49,7 @@ public:
     using CloudFormationResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     CloudFormationEndpointProvider()
-      : CloudFormationDefaultEpProviderBase(Aws::CloudFormation::CloudFormationEndpointRules::Rules)
+      : CloudFormationDefaultEpProviderBase(Aws::CloudFormation::CloudFormationEndpointRules::GetRulesBlob(), Aws::CloudFormation::CloudFormationEndpointRules::RulesBlobSize)
     {}
 
     ~CloudFormationEndpointProvider()

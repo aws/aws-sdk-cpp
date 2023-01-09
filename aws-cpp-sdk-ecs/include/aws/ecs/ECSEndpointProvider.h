@@ -49,7 +49,7 @@ public:
     using ECSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ECSEndpointProvider()
-      : ECSDefaultEpProviderBase(Aws::ECS::ECSEndpointRules::Rules)
+      : ECSDefaultEpProviderBase(Aws::ECS::ECSEndpointRules::GetRulesBlob(), Aws::ECS::ECSEndpointRules::RulesBlobSize)
     {}
 
     ~ECSEndpointProvider()

@@ -4,18 +4,17 @@
  */
 
 #include <aws/translate/TranslateEndpointRules.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 
 namespace Aws
 {
 namespace Translate
 {
+const size_t TranslateEndpointRules::RulesBlobStrLen = 3404;
+const size_t TranslateEndpointRules::RulesBlobSize = 3405;
 
-Aws::String TranslateEndpointRules::GetRulesAsString()
-{
-    return Aws::String(TranslateEndpointRules::Rules.begin(), TranslateEndpointRules::Rules.end());
-}
-
-const Aws::Vector<char> TranslateEndpointRules::Rules = {
+using RulesBlobT = Aws::Array<const char, TranslateEndpointRules::RulesBlobSize>;
+static constexpr RulesBlobT RulesBlob = {{
 '{','"','v','e','r','s','i','o','n','"',':','"','1','.','0','"',',','"','p','a','r','a','m','e','t',
 'e','r','s','"',':','{','"','R','e','g','i','o','n','"',':','{','"','b','u','i','l','t','I','n','"',
 ':','"','A','W','S',':',':','R','e','g','i','o','n','"',',','"','r','e','q','u','i','r','e','d','"',
@@ -152,7 +151,13 @@ const Aws::Vector<char> TranslateEndpointRules::Rules = {
 'a','r','t','i','t','i','o','n','R','e','s','u','l','t','#','d','n','s','S','u','f','f','i','x','}',
 '"',',','"','p','r','o','p','e','r','t','i','e','s','"',':','{','}',',','"','h','e','a','d','e','r',
 's','"',':','{','}','}',',','"','t','y','p','e','"',':','"','e','n','d','p','o','i','n','t','"','}',
-']','}',']','}'};
+']','}',']','}','\0'
+}};
+
+const char* TranslateEndpointRules::GetRulesBlob()
+{
+    return RulesBlob.data();
+}
 
 } // namespace Translate
 } // namespace Aws

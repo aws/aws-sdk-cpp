@@ -49,7 +49,7 @@ public:
     using EventBridgeResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     EventBridgeEndpointProvider()
-      : EventBridgeDefaultEpProviderBase(Aws::EventBridge::EventBridgeEndpointRules::Rules)
+      : EventBridgeDefaultEpProviderBase(Aws::EventBridge::EventBridgeEndpointRules::GetRulesBlob(), Aws::EventBridge::EventBridgeEndpointRules::RulesBlobSize)
     {}
 
     ~EventBridgeEndpointProvider()

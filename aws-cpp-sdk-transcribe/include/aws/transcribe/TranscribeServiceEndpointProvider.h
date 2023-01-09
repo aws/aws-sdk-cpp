@@ -49,7 +49,7 @@ public:
     using TranscribeServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TranscribeServiceEndpointProvider()
-      : TranscribeServiceDefaultEpProviderBase(Aws::TranscribeService::TranscribeServiceEndpointRules::Rules)
+      : TranscribeServiceDefaultEpProviderBase(Aws::TranscribeService::TranscribeServiceEndpointRules::GetRulesBlob(), Aws::TranscribeService::TranscribeServiceEndpointRules::RulesBlobSize)
     {}
 
     ~TranscribeServiceEndpointProvider()

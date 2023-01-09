@@ -49,7 +49,7 @@ public:
     using OpenSearchServerlessResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     OpenSearchServerlessEndpointProvider()
-      : OpenSearchServerlessDefaultEpProviderBase(Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::Rules)
+      : OpenSearchServerlessDefaultEpProviderBase(Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::GetRulesBlob(), Aws::OpenSearchServerless::OpenSearchServerlessEndpointRules::RulesBlobSize)
     {}
 
     ~OpenSearchServerlessEndpointProvider()

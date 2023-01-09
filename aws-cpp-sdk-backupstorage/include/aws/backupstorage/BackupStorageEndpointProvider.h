@@ -49,7 +49,7 @@ public:
     using BackupStorageResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     BackupStorageEndpointProvider()
-      : BackupStorageDefaultEpProviderBase(Aws::BackupStorage::BackupStorageEndpointRules::Rules)
+      : BackupStorageDefaultEpProviderBase(Aws::BackupStorage::BackupStorageEndpointRules::GetRulesBlob(), Aws::BackupStorage::BackupStorageEndpointRules::RulesBlobSize)
     {}
 
     ~BackupStorageEndpointProvider()

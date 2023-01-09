@@ -49,7 +49,7 @@ public:
     using ElasticTranscoderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     ElasticTranscoderEndpointProvider()
-      : ElasticTranscoderDefaultEpProviderBase(Aws::ElasticTranscoder::ElasticTranscoderEndpointRules::Rules)
+      : ElasticTranscoderDefaultEpProviderBase(Aws::ElasticTranscoder::ElasticTranscoderEndpointRules::GetRulesBlob(), Aws::ElasticTranscoder::ElasticTranscoderEndpointRules::RulesBlobSize)
     {}
 
     ~ElasticTranscoderEndpointProvider()

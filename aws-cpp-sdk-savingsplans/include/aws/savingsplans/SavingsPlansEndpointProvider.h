@@ -49,7 +49,7 @@ public:
     using SavingsPlansResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     SavingsPlansEndpointProvider()
-      : SavingsPlansDefaultEpProviderBase(Aws::SavingsPlans::SavingsPlansEndpointRules::Rules)
+      : SavingsPlansDefaultEpProviderBase(Aws::SavingsPlans::SavingsPlansEndpointRules::GetRulesBlob(), Aws::SavingsPlans::SavingsPlansEndpointRules::RulesBlobSize)
     {}
 
     ~SavingsPlansEndpointProvider()

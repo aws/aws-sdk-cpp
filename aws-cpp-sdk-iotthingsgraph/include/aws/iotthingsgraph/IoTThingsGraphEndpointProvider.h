@@ -49,7 +49,7 @@ public:
     using IoTThingsGraphResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     IoTThingsGraphEndpointProvider()
-      : IoTThingsGraphDefaultEpProviderBase(Aws::IoTThingsGraph::IoTThingsGraphEndpointRules::Rules)
+      : IoTThingsGraphDefaultEpProviderBase(Aws::IoTThingsGraph::IoTThingsGraphEndpointRules::GetRulesBlob(), Aws::IoTThingsGraph::IoTThingsGraphEndpointRules::RulesBlobSize)
     {}
 
     ~IoTThingsGraphEndpointProvider()
