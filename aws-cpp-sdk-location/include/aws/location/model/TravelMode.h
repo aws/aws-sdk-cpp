@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     Car,
     Truck,
-    Walking
+    Walking,
+    Bicycle,
+    Motorcycle
   };
 
 namespace TravelModeMapper

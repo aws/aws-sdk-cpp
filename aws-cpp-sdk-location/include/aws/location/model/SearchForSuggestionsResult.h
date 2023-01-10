@@ -42,7 +42,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline const Aws::String& GetPlaceId() const{ return m_placeId; }
@@ -51,7 +51,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
@@ -69,7 +69,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
@@ -78,7 +78,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline SearchForSuggestionsResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline SearchForSuggestionsResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
@@ -105,7 +105,7 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
-     * is returned by place indexes that use HERE or Esri as data providers.</p>
+     * is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
      * 
      */
     inline SearchForSuggestionsResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}

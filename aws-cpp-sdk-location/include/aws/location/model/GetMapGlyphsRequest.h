@@ -56,6 +56,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -93,6 +97,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -130,6 +138,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -167,6 +179,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -204,6 +220,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -241,6 +261,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -278,6 +302,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember
@@ -315,6 +343,10 @@ namespace Model
      * | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK
      * JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP
      * Regular</code> </p> </li> </ul> <p>Valid font stacks for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark –
+     * <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans
+     * Bold</code> </p> </li> </ul> <p>Valid font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
      * Data (Preview)</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight –
      * <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember

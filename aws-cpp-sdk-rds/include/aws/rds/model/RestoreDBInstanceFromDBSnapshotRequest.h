@@ -2288,6 +2288,43 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in CreateDBInstance.</p> 
+     * <p>Be sure to allocate enough memory for your new DB instance so that the
+     * restore operation can succeed. You can also allocate additional memory for
+     * future growth.</p> 
+     */
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in CreateDBInstance.</p> 
+     * <p>Be sure to allocate enough memory for your new DB instance so that the
+     * restore operation can succeed. You can also allocate additional memory for
+     * future growth.</p> 
+     */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in CreateDBInstance.</p> 
+     * <p>Be sure to allocate enough memory for your new DB instance so that the
+     * restore operation can succeed. You can also allocate additional memory for
+     * future growth.</p> 
+     */
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in CreateDBInstance.</p> 
+     * <p>Be sure to allocate enough memory for your new DB instance so that the
+     * restore operation can succeed. You can also allocate additional memory for
+     * future growth.</p> 
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2391,6 +2428,9 @@ namespace Model
 
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+
+    int m_allocatedStorage;
+    bool m_allocatedStorageHasBeenSet = false;
   };
 
 } // namespace Model

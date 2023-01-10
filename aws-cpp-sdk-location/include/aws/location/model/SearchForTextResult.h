@@ -111,7 +111,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline const Aws::String& GetPlaceId() const{ return m_placeId; }
 
@@ -119,7 +120,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
 
@@ -127,7 +129,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
 
@@ -135,7 +138,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
 
@@ -143,7 +147,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
 
@@ -151,7 +156,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline SearchForTextResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
 
@@ -159,7 +165,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline SearchForTextResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
 
@@ -167,7 +174,8 @@ namespace Model
      * <p>The unique identifier of the place. You can use this with the
      * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
      * <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is
-     * returned only by place indexes that use HERE as a data provider.</p> 
+     * returned only by place indexes that use HERE or Grab as a data provider.</p>
+     * 
      */
     inline SearchForTextResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
 
@@ -176,7 +184,7 @@ namespace Model
      * <p>The relative confidence in the match for a result among the results returned.
      * For example, if more fields for an address match (including house number,
      * street, city, country/region, and postal code), the relevance score is closer to
-     * 1.</p> <p>Returned only when the partner selected is Esri.</p>
+     * 1.</p> <p>Returned only when the partner selected is Esri or Grab.</p>
      */
     inline double GetRelevance() const{ return m_relevance; }
 
@@ -184,7 +192,7 @@ namespace Model
      * <p>The relative confidence in the match for a result among the results returned.
      * For example, if more fields for an address match (including house number,
      * street, city, country/region, and postal code), the relevance score is closer to
-     * 1.</p> <p>Returned only when the partner selected is Esri.</p>
+     * 1.</p> <p>Returned only when the partner selected is Esri or Grab.</p>
      */
     inline bool RelevanceHasBeenSet() const { return m_relevanceHasBeenSet; }
 
@@ -192,7 +200,7 @@ namespace Model
      * <p>The relative confidence in the match for a result among the results returned.
      * For example, if more fields for an address match (including house number,
      * street, city, country/region, and postal code), the relevance score is closer to
-     * 1.</p> <p>Returned only when the partner selected is Esri.</p>
+     * 1.</p> <p>Returned only when the partner selected is Esri or Grab.</p>
      */
     inline void SetRelevance(double value) { m_relevanceHasBeenSet = true; m_relevance = value; }
 
@@ -200,7 +208,7 @@ namespace Model
      * <p>The relative confidence in the match for a result among the results returned.
      * For example, if more fields for an address match (including house number,
      * street, city, country/region, and postal code), the relevance score is closer to
-     * 1.</p> <p>Returned only when the partner selected is Esri.</p>
+     * 1.</p> <p>Returned only when the partner selected is Esri or Grab.</p>
      */
     inline SearchForTextResult& WithRelevance(double value) { SetRelevance(value); return *this;}
 

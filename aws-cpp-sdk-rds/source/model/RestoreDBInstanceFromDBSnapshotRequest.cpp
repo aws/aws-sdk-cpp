@@ -55,7 +55,9 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_networkTypeHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_dBClusterSnapshotIdentifierHasBeenSet(false)
+    m_dBClusterSnapshotIdentifierHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false)
 {
 }
 
@@ -253,6 +255,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_dBClusterSnapshotIdentifierHasBeenSet)
   {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
   ss << "Version=2014-10-31";

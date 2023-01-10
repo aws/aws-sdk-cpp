@@ -23,6 +23,8 @@ namespace Aws
         static const int Car_HASH = HashingUtils::HashString("Car");
         static const int Truck_HASH = HashingUtils::HashString("Truck");
         static const int Walking_HASH = HashingUtils::HashString("Walking");
+        static const int Bicycle_HASH = HashingUtils::HashString("Bicycle");
+        static const int Motorcycle_HASH = HashingUtils::HashString("Motorcycle");
 
 
         TravelMode GetTravelModeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == Walking_HASH)
           {
             return TravelMode::Walking;
+          }
+          else if (hashCode == Bicycle_HASH)
+          {
+            return TravelMode::Bicycle;
+          }
+          else if (hashCode == Motorcycle_HASH)
+          {
+            return TravelMode::Motorcycle;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "Truck";
           case TravelMode::Walking:
             return "Walking";
+          case TravelMode::Bicycle:
+            return "Bicycle";
+          case TravelMode::Motorcycle:
+            return "Motorcycle";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

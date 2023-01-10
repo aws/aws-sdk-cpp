@@ -615,8 +615,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline const TravelMode& GetTravelMode() const{ return m_travelMode; }
 
@@ -626,8 +632,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
 
@@ -637,8 +649,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline void SetTravelMode(const TravelMode& value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
 
@@ -648,8 +666,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline void SetTravelMode(TravelMode&& value) { m_travelModeHasBeenSet = true; m_travelMode = std::move(value); }
 
@@ -659,8 +683,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline CalculateRouteMatrixRequest& WithTravelMode(const TravelMode& value) { SetTravelMode(value); return *this;}
 
@@ -670,8 +700,14 @@ namespace Model
      * you specify also determines how you specify route preferences: </p> <ul> <li>
      * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
      * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
-     * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
-     * <code>Car</code> </p>
+     * <code>TruckModeOptions</code> parameter.</p> </li> </ul>  <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using
+     * <code>Grab</code> as a data provider, and only within Southeast Asia.</p> <p>
+     * <code>Truck</code> is not available for Grab.</p> <p>For more information about
+     * using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
+     * Value: <code>Car</code> </p>
      */
     inline CalculateRouteMatrixRequest& WithTravelMode(TravelMode&& value) { SetTravelMode(std::move(value)); return *this;}
 

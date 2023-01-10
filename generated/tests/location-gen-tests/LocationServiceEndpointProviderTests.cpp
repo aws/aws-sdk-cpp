@@ -59,230 +59,54 @@ struct LocationServiceEndpointProviderEndpointTestCase
 
 static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_CASES = {
   /*TEST CASE 0*/
-  {"For region eu-central-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", true)}, // params
+  {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-central-1.api.aws",
+    {{/*epUrl*/"https://geo-fips.cn-north-1.api.amazonwebservices.com.cn",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
-  {"For region eu-central-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
+  {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-central-1.amazonaws.com",
+    {{/*epUrl*/"https://geo-fips.cn-north-1.amazonaws.com.cn",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 2*/
-  {"For region eu-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", true)}, // params
+  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo.eu-central-1.api.aws",
+    {{/*epUrl*/"https://geo.cn-north-1.api.amazonwebservices.com.cn",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 3*/
-  {"For region eu-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
+  {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo.eu-central-1.amazonaws.com",
+    {{/*epUrl*/"https://geo.cn-north-1.amazonaws.com.cn",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 4*/
-  {"For region us-west-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.us-west-2.api.aws",
+    {{/*epUrl*/"https://geo-fips.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 5*/
-  {"For region us-west-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
+  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.us-west-2.amazonaws.com",
+    {{/*epUrl*/"https://geo.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 6*/
-  {"For region us-west-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.us-west-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 7*/
-  {"For region us-west-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.us-west-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 8*/
-  {"For region eu-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-north-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For region eu-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
-  {"For region eu-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.eu-north-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
-  {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region eu-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region eu-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.eu-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region eu-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.eu-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 15*/
-  {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.eu-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
-  {"For region ap-northeast-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-northeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 17*/
-  {"For region ap-northeast-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-northeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 18*/
-  {"For region ap-northeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-northeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 19*/
-  {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-northeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 20*/
-  {"For region ap-southeast-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-southeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 21*/
-  {"For region ap-southeast-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-southeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 22*/
-  {"For region ap-southeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-southeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
-  {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-southeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 24*/
-  {"For region ap-southeast-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-southeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 25*/
-  {"For region ap-southeast-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo-fips.ap-southeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 26*/
-  {"For region ap-southeast-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-southeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 27*/
-  {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://geo.ap-southeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 28*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -290,7 +114,7 @@ static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_C
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 29*/
+  /*TEST CASE 7*/
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -298,7 +122,7 @@ static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_C
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 30*/
+  /*TEST CASE 8*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -306,7 +130,7 @@ static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_C
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 31*/
+  /*TEST CASE 9*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -314,39 +138,55 @@ static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_C
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 32*/
-  {"For region us-east-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 10*/
+  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.us-east-2.api.aws",
+    {{/*epUrl*/"https://geo-fips.us-gov-east-1.api.aws",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 33*/
-  {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 11*/
+  {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo-fips.us-east-2.amazonaws.com",
+    {{/*epUrl*/"https://geo-fips.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 34*/
-  {"For region us-east-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 12*/
+  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo.us-east-2.api.aws",
+    {{/*epUrl*/"https://geo.us-gov-east-1.api.aws",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 35*/
-  {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 13*/
+  {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://geo.us-east-2.amazonaws.com",
+    {{/*epUrl*/"https://geo.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 36*/
+  /*TEST CASE 14*/
+  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://geo-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 15*/
+  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://geo.us-isob-east-1.sc2s.sgov.gov",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 16*/
   {"For custom endpoint with fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
@@ -355,14 +195,14 @@ static const Aws::Vector<LocationServiceEndpointProviderEndpointTestCase> TEST_C
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 37*/
+  /*TEST CASE 17*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 38*/
+  /*TEST CASE 18*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", true)}, // params

@@ -113,8 +113,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -133,8 +133,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -143,8 +143,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -153,8 +153,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -163,8 +163,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -173,8 +173,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -183,8 +183,8 @@ namespace Model
     /**
      * <p>The geospatial data provider attached to the place index resource specified
      * in the request. Values can be one of the following:</p> <ul> <li> <p>Esri</p>
-     * </li> <li> <p>Here</p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * </li> <li> <p>Grab</p> </li> <li> <p>Here</p> </li> </ul> <p>For more
+     * information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */

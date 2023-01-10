@@ -490,50 +490,50 @@ namespace Model
 
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline const Aws::String& GetSubRegion() const{ return m_subRegion; }
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline bool SubRegionHasBeenSet() const { return m_subRegionHasBeenSet; }
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline void SetSubRegion(const Aws::String& value) { m_subRegionHasBeenSet = true; m_subRegion = value; }
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline void SetSubRegion(Aws::String&& value) { m_subRegionHasBeenSet = true; m_subRegion = std::move(value); }
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline void SetSubRegion(const char* value) { m_subRegionHasBeenSet = true; m_subRegion.assign(value); }
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(const Aws::String& value) { SetSubRegion(value); return *this;}
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(Aws::String&& value) { SetSubRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A country, or an area that's part of a larger region. For example,
-     * <code>Metro Vancouver</code>.</p>
+     * <p>A county, or an area that's part of a larger region. For example, <code>Metro
+     * Vancouver</code>.</p>
      */
     inline Place& WithSubRegion(const char* value) { SetSubRegion(value); return *this;}
 
