@@ -43,7 +43,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -69,7 +75,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -95,7 +107,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -121,7 +139,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -147,7 +171,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -173,7 +203,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -199,7 +235,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
@@ -225,7 +267,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
-     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Grab</code> – Grab
+     * provides place index functionality for Southeast Asia. For additional
+     * information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
      * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a

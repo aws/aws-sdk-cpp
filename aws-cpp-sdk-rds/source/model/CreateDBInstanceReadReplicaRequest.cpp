@@ -63,6 +63,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_storageThroughputHasBeenSet(false),
     m_enableCustomerOwnedIp(false),
     m_enableCustomerOwnedIpHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -271,6 +273,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_enableCustomerOwnedIpHasBeenSet)
   {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
   ss << "Version=2014-10-31";

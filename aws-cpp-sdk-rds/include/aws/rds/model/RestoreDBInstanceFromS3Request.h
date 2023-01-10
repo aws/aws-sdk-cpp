@@ -162,7 +162,7 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage (in gigabytes) to allocate initially for the DB
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
      * instance. Follow the allocation rules specified in
      * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
      * for your new DB instance so that the restore operation can succeed. You can also
@@ -171,7 +171,7 @@ namespace Model
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to allocate initially for the DB
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
      * instance. Follow the allocation rules specified in
      * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
      * for your new DB instance so that the restore operation can succeed. You can also
@@ -180,7 +180,7 @@ namespace Model
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to allocate initially for the DB
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
      * instance. Follow the allocation rules specified in
      * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
      * for your new DB instance so that the restore operation can succeed. You can also
@@ -189,7 +189,7 @@ namespace Model
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The amount of storage (in gigabytes) to allocate initially for the DB
+     * <p>The amount of storage (in gibibytes) to allocate initially for the DB
      * instance. Follow the allocation rules specified in
      * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
      * for your new DB instance so that the restore operation can succeed. You can also

@@ -350,7 +350,7 @@ namespace LocationService
          * <p>Creates a map resource in your AWS account, which provides map tiles of
          * different styles sourced from global location data providers.</p>  <p>If
          * your application is tracking or routing assets you use in your business, such as
-         * delivery vehicles or employees, you may only use HERE as your geolocation
+         * delivery vehicles or employees, you must not use Esri as your geolocation
          * provider. See section 82 of the <a
          * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
          * details.</p> <p><h3>See Also:</h3>   <a
@@ -376,8 +376,8 @@ namespace LocationService
          * by using the <code>SearchPlaceIndexForPosition</code> operation, and enable
          * autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
          * operation.</p>  <p>If your application is tracking or routing assets you
-         * use in your business, such as delivery vehicles or employees, you may only use
-         * HERE as your geolocation provider. See section 82 of the <a
+         * use in your business, such as delivery vehicles or employees, you must not use
+         * Esri as your geolocation provider. See section 82 of the <a
          * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
          * details.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
@@ -401,7 +401,7 @@ namespace LocationService
          * get directions. A route calculator sources traffic and road network data from
          * your chosen data provider.</p>  <p>If your application is tracking or
          * routing assets you use in your business, such as delivery vehicles or employees,
-         * you may only use HERE as your geolocation provider. See section 82 of the <a
+         * you must not use Esri as your geolocation provider. See section 82 of the <a
          * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
          * details.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">AWS
@@ -1048,16 +1048,15 @@ namespace LocationService
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Location
-         * Service resource.</p> <pre><code> &lt;p&gt;Tags can help you organize and
-         * categorize your resources. You can also use them to scope user permissions, by
-         * granting a user permission to access or change only resources with certain tag
-         * values.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt;
-         * operation with an Amazon Location Service resource that already has tags. If you
-         * specify a new tag key for the resource, this tag is appended to the tags already
-         * associated with the resource. If you specify a tag key that's already associated
-         * with the resource, the new tag value that you specify replaces the previous
-         * value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags with a
-         * resource.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * Service resource.</p> <p>Tags can help you organize and categorize your
+         * resources. You can also use them to scope user permissions, by granting a user
+         * permission to access or change only resources with certain tag values.</p>
+         * <p>You can use the <code>TagResource</code> operation with an Amazon Location
+         * Service resource that already has tags. If you specify a new tag key for the
+         * resource, this tag is appended to the tags already associated with the resource.
+         * If you specify a tag key that's already associated with the resource, the new
+         * tag value that you specify replaces the previous value for that tag. </p> <p>You
+         * can associate up to 50 tags with a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">AWS
          * API Reference</a></p>
          */

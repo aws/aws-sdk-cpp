@@ -61,7 +61,9 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_backupTargetHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_allocatedStorage(0),
+    m_allocatedStorageHasBeenSet(false)
 {
 }
 
@@ -279,6 +281,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_storageThroughputHasBeenSet)
   {
     ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
+  if(m_allocatedStorageHasBeenSet)
+  {
+    ss << "AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
   ss << "Version=2014-10-31";

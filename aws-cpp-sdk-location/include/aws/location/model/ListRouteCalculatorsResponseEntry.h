@@ -132,8 +132,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -142,8 +142,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -152,8 +152,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -162,8 +162,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -172,8 +172,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -182,8 +182,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -192,8 +192,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
@@ -202,8 +202,8 @@ namespace Model
     /**
      * <p>The data provider of traffic and road network data. Indicates one of the
      * available providers:</p> <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p>
-     * <code>Here</code> </p> </li> </ul> <p>For more information about data providers,
-     * see <a
+     * <code>Grab</code> </p> </li> <li> <p> <code>Here</code> </p> </li> </ul> <p>For
+     * more information about data providers, see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */

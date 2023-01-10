@@ -2946,6 +2946,43 @@ namespace Model
 
 
     /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the read
+     * replica. Follow the allocation rules specified in
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * for your read replica so that the create operation can succeed. You can also
+     * allocate additional memory for future growth.</p> 
+     */
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the read
+     * replica. Follow the allocation rules specified in
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * for your read replica so that the create operation can succeed. You can also
+     * allocate additional memory for future growth.</p> 
+     */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the read
+     * replica. Follow the allocation rules specified in
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * for your read replica so that the create operation can succeed. You can also
+     * allocate additional memory for future growth.</p> 
+     */
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate initially for the read
+     * replica. Follow the allocation rules specified in
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * for your read replica so that the create operation can succeed. You can also
+     * allocate additional memory for future growth.</p> 
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -3094,6 +3131,9 @@ namespace Model
 
     bool m_enableCustomerOwnedIp;
     bool m_enableCustomerOwnedIpHasBeenSet = false;
+
+    int m_allocatedStorage;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

@@ -109,15 +109,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -133,15 +139,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -157,15 +169,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -181,15 +199,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -205,15 +229,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -229,15 +259,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -253,15 +289,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
@@ -277,15 +319,21 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error. Route calculators that use Esri as
-     * a data source only calculate routes that are shorter than 400 km.</p> 
-     * <p>Valid values include:</p> <ul> <li> <p> <code>Esri</code> – For additional
-     * information about <a
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
-     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
-     * <code>Here</code> – For additional information about <a
+     * details on street networks and traffic coverage</a>.</p> <p>Route calculators
+     * that use Esri as a data source only calculate routes that are shorter than 400
+     * km.</p> </li> <li> <p> <code>Grab</code> – Grab provides routing functionality
+     * for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     * coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     * countries and areas covered</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE

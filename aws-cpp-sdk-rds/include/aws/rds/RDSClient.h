@@ -3204,9 +3204,12 @@ namespace Aws
         /**
          * <p>Starts a database activity stream to monitor activity on the database. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-         * Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+         * Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon
+         * Aurora User Guide</i> or <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+         * Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">AWS
          * API Reference</a></p>
          */
@@ -3314,9 +3317,12 @@ namespace Aws
          * <p>Stops a database activity stream that was started using the Amazon Web
          * Services console, the <code>start-activity-stream</code> CLI command, or the
          * <code>StartActivityStream</code> action.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database
-         * Activity Streams</a> in the <i>Amazon Aurora User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
+         * Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon
+         * Aurora User Guide</i> or <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html">
+         * Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">AWS
          * API Reference</a></p>
          */
