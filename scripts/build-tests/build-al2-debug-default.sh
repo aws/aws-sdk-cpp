@@ -10,16 +10,16 @@
 set -e
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: ${0} PREFIX_DIR"
-    exit 1
+  echo "Usage: ${0} PREFIX_DIR"
+  exit 1
 fi
 PREFIX_DIR="$1"
 
-mkdir ${PREFIX_DIR}/al2-build
-mkdir ${PREFIX_DIR}/al2-install
-cd ${PREFIX_DIR}/aws-sdk-cpp
+mkdir "${PREFIX_DIR}/al2-build"
+mkdir "${PREFIX_DIR}/al2-install"
+cd "${PREFIX_DIR}/aws-sdk-cpp"
 python ./scripts/endpoints_checker.py
-cd ${PREFIX_DIR}/al2-build
-cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DMINIMIZE_SIZE=ON -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}/al2-install
-ninja-build -j `grep -c ^processor /proc/cpuinfo`
+cd "${PREFIX_DIR}/al2-build"
+cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DMINIMIZE_SIZE=ON -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install"
+ninja-build -j $(grep -c ^processor /proc/cpuinfo)
 ninja-build install
