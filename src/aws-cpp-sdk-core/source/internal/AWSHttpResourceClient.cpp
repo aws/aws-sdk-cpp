@@ -140,12 +140,12 @@ namespace Aws
                 }
 
                 const Aws::Client::AWSError<Aws::Client::CoreErrors> error = [this, &response]() {
-                    if (response->HasClientError() || response->GetResponseBody().tellp() < 1)
+                    if (response->HasClientError() || response->GetResponseCode() == HttpResponseCode::REQUEST_NOT_MADE)
                     {
                         AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
                         return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true); // Retryable
                     }
-                    else if (m_errorMarshaller)
+                    else if (m_errorMarshaller && response->GetResponseBody().tellp() > 0)
                     {
                         return m_errorMarshaller->Marshall(*response);
                     }

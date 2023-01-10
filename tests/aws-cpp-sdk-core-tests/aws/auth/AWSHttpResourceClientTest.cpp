@@ -663,7 +663,7 @@ namespace
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::UNAUTHORIZED);
-        profileResponse->GetResponseBody() << "token required";
+        // Do not send a body as IMDS also doesn't send one. Just the HTTP error code.
         mockHttpClient->AddResponseToReturn(profileResponse);
 
         auto cred = ec2MetadataClient->GetDefaultCredentialsSecurely();
