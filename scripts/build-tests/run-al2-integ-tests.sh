@@ -6,7 +6,7 @@
 # Directories created and files are prefixed with PREFIX_DIR argument
 # SDK build to tests is expected to be in ${PREFIX_DIR}/al2-build, the source project in ${PREFIX_DIR}/aws-sdk-cpp,
 # and an installed build to test in ${PREFIX_DIR}/al2-install
-# A AWS_ACCOUNT with proper role setup is required to run the built app is expected
+# A AWS_ACCOUNT with proper role setup is required to run the tests
 # Platform: Amazon Linux 2
 
 set -e
