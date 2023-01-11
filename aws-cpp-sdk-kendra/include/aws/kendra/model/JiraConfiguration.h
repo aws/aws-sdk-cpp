@@ -43,58 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline const Aws::String& GetJiraAccountUrl() const{ return m_jiraAccountUrl; }
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline bool JiraAccountUrlHasBeenSet() const { return m_jiraAccountUrlHasBeenSet; }
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline void SetJiraAccountUrl(const Aws::String& value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl = value; }
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline void SetJiraAccountUrl(Aws::String&& value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl = std::move(value); }
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline void SetJiraAccountUrl(const char* value) { m_jiraAccountUrlHasBeenSet = true; m_jiraAccountUrl.assign(value); }
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(const Aws::String& value) { SetJiraAccountUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(Aws::String&& value) { SetJiraAccountUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or
-     * <i>https://jira.company.com</i>. You can find your Jira account URL in the URL
-     * of your profile page for Jira desktop.</p>
+     * <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
      */
     inline JiraConfiguration& WithJiraAccountUrl(const char* value) { SetJiraAccountUrl(value); return *this;}
 
@@ -103,9 +87,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
@@ -114,9 +98,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
@@ -125,9 +109,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
@@ -136,9 +120,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
@@ -147,9 +131,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
@@ -158,9 +142,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
@@ -169,9 +153,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
@@ -180,9 +164,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jiraId—The
-     * Jira username.</p> </li> <li> <p>jiraCredentials—The Jira API token. For more
-     * information on creating an API token in Jira, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html"> Using
+     * Jira user name or email.</p> </li> <li> <p>jiraCredentials—The Jira API token.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using
      * a Jira data source</a>.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
@@ -436,10 +420,10 @@ namespace Model
 
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -447,10 +431,10 @@ namespace Model
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetAttachmentFieldMappings() const{ return m_attachmentFieldMappings; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -458,10 +442,10 @@ namespace Model
     inline bool AttachmentFieldMappingsHasBeenSet() const { return m_attachmentFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -469,10 +453,10 @@ namespace Model
     inline void SetAttachmentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = value; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -480,10 +464,10 @@ namespace Model
     inline void SetAttachmentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -491,10 +475,10 @@ namespace Model
     inline JiraConfiguration& WithAttachmentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetAttachmentFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -502,10 +486,10 @@ namespace Model
     inline JiraConfiguration& WithAttachmentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetAttachmentFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -513,10 +497,10 @@ namespace Model
     inline JiraConfiguration& AddAttachmentFieldMappings(const DataSourceToIndexFieldMapping& value) { m_attachmentFieldMappingsHasBeenSet = true; m_attachmentFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira attachments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira attachments to Amazon Kendra index field
+     * names. To create custom fields, use the <code>UpdateIndex</code> API before you
+     * map to Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -525,10 +509,10 @@ namespace Model
 
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -536,10 +520,10 @@ namespace Model
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetCommentFieldMappings() const{ return m_commentFieldMappings; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -547,10 +531,10 @@ namespace Model
     inline bool CommentFieldMappingsHasBeenSet() const { return m_commentFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -558,10 +542,10 @@ namespace Model
     inline void SetCommentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_commentFieldMappingsHasBeenSet = true; m_commentFieldMappings = value; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -569,10 +553,10 @@ namespace Model
     inline void SetCommentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_commentFieldMappingsHasBeenSet = true; m_commentFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -580,10 +564,10 @@ namespace Model
     inline JiraConfiguration& WithCommentFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetCommentFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -591,10 +575,10 @@ namespace Model
     inline JiraConfiguration& WithCommentFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetCommentFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -602,10 +586,10 @@ namespace Model
     inline JiraConfiguration& AddCommentFieldMappings(const DataSourceToIndexFieldMapping& value) { m_commentFieldMappingsHasBeenSet = true; m_commentFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira comments to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira comments to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -614,10 +598,10 @@ namespace Model
 
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -625,10 +609,10 @@ namespace Model
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetIssueFieldMappings() const{ return m_issueFieldMappings; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -636,10 +620,10 @@ namespace Model
     inline bool IssueFieldMappingsHasBeenSet() const { return m_issueFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -647,10 +631,10 @@ namespace Model
     inline void SetIssueFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_issueFieldMappingsHasBeenSet = true; m_issueFieldMappings = value; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -658,10 +642,10 @@ namespace Model
     inline void SetIssueFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_issueFieldMappingsHasBeenSet = true; m_issueFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -669,10 +653,10 @@ namespace Model
     inline JiraConfiguration& WithIssueFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetIssueFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -680,10 +664,10 @@ namespace Model
     inline JiraConfiguration& WithIssueFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetIssueFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -691,10 +675,10 @@ namespace Model
     inline JiraConfiguration& AddIssueFieldMappings(const DataSourceToIndexFieldMapping& value) { m_issueFieldMappingsHasBeenSet = true; m_issueFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira issues to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira issues to Amazon Kendra index field names. To
+     * create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -703,10 +687,10 @@ namespace Model
 
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -714,10 +698,10 @@ namespace Model
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetProjectFieldMappings() const{ return m_projectFieldMappings; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -725,10 +709,10 @@ namespace Model
     inline bool ProjectFieldMappingsHasBeenSet() const { return m_projectFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -736,10 +720,10 @@ namespace Model
     inline void SetProjectFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_projectFieldMappingsHasBeenSet = true; m_projectFieldMappings = value; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -747,10 +731,10 @@ namespace Model
     inline void SetProjectFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_projectFieldMappingsHasBeenSet = true; m_projectFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -758,10 +742,10 @@ namespace Model
     inline JiraConfiguration& WithProjectFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetProjectFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -769,10 +753,10 @@ namespace Model
     inline JiraConfiguration& WithProjectFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetProjectFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -780,10 +764,10 @@ namespace Model
     inline JiraConfiguration& AddProjectFieldMappings(const DataSourceToIndexFieldMapping& value) { m_projectFieldMappingsHasBeenSet = true; m_projectFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira projects to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira projects to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -792,10 +776,10 @@ namespace Model
 
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -803,10 +787,10 @@ namespace Model
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetWorkLogFieldMappings() const{ return m_workLogFieldMappings; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -814,10 +798,10 @@ namespace Model
     inline bool WorkLogFieldMappingsHasBeenSet() const { return m_workLogFieldMappingsHasBeenSet; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -825,10 +809,10 @@ namespace Model
     inline void SetWorkLogFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_workLogFieldMappingsHasBeenSet = true; m_workLogFieldMappings = value; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -836,10 +820,10 @@ namespace Model
     inline void SetWorkLogFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_workLogFieldMappingsHasBeenSet = true; m_workLogFieldMappings = std::move(value); }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -847,10 +831,10 @@ namespace Model
     inline JiraConfiguration& WithWorkLogFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetWorkLogFieldMappings(value); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -858,10 +842,10 @@ namespace Model
     inline JiraConfiguration& WithWorkLogFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetWorkLogFieldMappings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -869,10 +853,10 @@ namespace Model
     inline JiraConfiguration& AddWorkLogFieldMappings(const DataSourceToIndexFieldMapping& value) { m_workLogFieldMappingsHasBeenSet = true; m_workLogFieldMappings.push_back(value); return *this; }
 
     /**
-     * <p>A list of DataSourceToIndexFieldMapping objects that map attributes or field
-     * names of Jira work logs to Amazon Kendra index field names. To create custom
-     * fields, use the UpdateIndex API before you map to Jira fields. For more
-     * information, see <a
+     * <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+     * attributes or field names of Jira work logs to Amazon Kendra index field names.
+     * To create custom fields, use the <code>UpdateIndex</code> API before you map to
+     * Jira fields. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
      * data source fields</a>. The Jira data source field names must exist in your Jira
      * custom metadata.</p>
@@ -1064,37 +1048,49 @@ namespace Model
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline JiraConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
      * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
-     * your Jira. Your Jira account must reside inside your VPC.</p>
+     * your Jira. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
      */
     inline JiraConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 

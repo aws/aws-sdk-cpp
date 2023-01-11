@@ -20,7 +20,14 @@ namespace Model
     HTML,
     MS_WORD,
     PLAIN_TEXT,
-    PPT
+    PPT,
+    RTF,
+    XML,
+    XSLT,
+    MS_EXCEL,
+    CSV,
+    JSON,
+    MD
   };
 
 namespace ContentTypeMapper

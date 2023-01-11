@@ -25,6 +25,13 @@ namespace Aws
         static const int MS_WORD_HASH = HashingUtils::HashString("MS_WORD");
         static const int PLAIN_TEXT_HASH = HashingUtils::HashString("PLAIN_TEXT");
         static const int PPT_HASH = HashingUtils::HashString("PPT");
+        static const int RTF_HASH = HashingUtils::HashString("RTF");
+        static const int XML_HASH = HashingUtils::HashString("XML");
+        static const int XSLT_HASH = HashingUtils::HashString("XSLT");
+        static const int MS_EXCEL_HASH = HashingUtils::HashString("MS_EXCEL");
+        static const int CSV_HASH = HashingUtils::HashString("CSV");
+        static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static const int MD_HASH = HashingUtils::HashString("MD");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
@@ -50,6 +57,34 @@ namespace Aws
           {
             return ContentType::PPT;
           }
+          else if (hashCode == RTF_HASH)
+          {
+            return ContentType::RTF;
+          }
+          else if (hashCode == XML_HASH)
+          {
+            return ContentType::XML;
+          }
+          else if (hashCode == XSLT_HASH)
+          {
+            return ContentType::XSLT;
+          }
+          else if (hashCode == MS_EXCEL_HASH)
+          {
+            return ContentType::MS_EXCEL;
+          }
+          else if (hashCode == CSV_HASH)
+          {
+            return ContentType::CSV;
+          }
+          else if (hashCode == JSON_HASH)
+          {
+            return ContentType::JSON;
+          }
+          else if (hashCode == MD_HASH)
+          {
+            return ContentType::MD;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +109,20 @@ namespace Aws
             return "PLAIN_TEXT";
           case ContentType::PPT:
             return "PPT";
+          case ContentType::RTF:
+            return "RTF";
+          case ContentType::XML:
+            return "XML";
+          case ContentType::XSLT:
+            return "XSLT";
+          case ContentType::MS_EXCEL:
+            return "MS_EXCEL";
+          case ContentType::CSV:
+            return "CSV";
+          case ContentType::JSON:
+            return "JSON";
+          case ContentType::MD:
+            return "MD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
