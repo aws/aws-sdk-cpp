@@ -40,7 +40,7 @@ mkdir -p "${OUTPUT_DIR}/LATEST"
 rsync -av "${PREFIX_DIR}"/aws-sdk-cpp/doxygen/output/* "${OUTPUT_DIR}/${VERSION_NUM}"
 rsync -av "${PREFIX_DIR}"/aws-sdk-cpp/doxygen/output/* "${OUTPUT_DIR}/LATEST"
 echo "Creating Cross Links"
-python3 doc_crosslinks_new/generate_cross_link_data.py --apiDefinitionsPath ./code-generation/api-descriptions/ --templatePath ./doc_crosslinks/crosslink_redirect.html --outputPath ./crosslink_redirect.html
+python3 doc_crosslinks_new/generate_cross_link_data.py --apiDefinitionsPath ./code-generation/api-descriptions/ --templatePath ./doc_crosslinks_new/crosslink_redirect.html --outputPath ./crosslink_redirect.html
 cp "${PREFIX_DIR}/aws-sdk-cpp/doxygen/modules/static/index.html" -p "${OUTPUT_DIR}/"
 cp "${PREFIX_DIR}/aws-sdk-cpp/doxygen/modules/static/local-index.html" "${OUTPUT_DIR}/LATEST/index.html"
 cp "${PREFIX_DIR}/aws-sdk-cpp/doxygen/modules/static/local-index.html" "${OUTPUT_DIR}/${VERSION_NUM}/index.html"

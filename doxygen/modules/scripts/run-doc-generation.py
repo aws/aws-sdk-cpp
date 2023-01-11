@@ -24,7 +24,7 @@ def run_doc_gen():
     for line in fileinput.input("doxygen/DoxygenLayout.xml", inplace=True):
         if "<!--SDK_CUSTOM_TABS-->" in line:
             for module in sorted(dependency_map.keys()):
-                print(f'\t\t\t<tab type="user" url="../../{module}/html/index.html" title="{module}"/>')
+                print(f'\t\t\t<tab type="user" url="../../{module}/html/annotated.html" title="{module}"/>')
         else:
             print('{}'.format(line), end='')
 
@@ -48,7 +48,7 @@ def run_doc_gen():
 def create_dependency_map():
     # Format dot file
     subprocess.run([("cat build/aws-cpp-sdk.dot | "
-                     "grep \"\-> aws-cpp\" | "
+                     "grep \"\-> aws-cpp\|\-> aws-crt-cpp\" | "
                      "grep -v \"test\" | "
                      "grep -v \"sample\" | "
                      "sed -e\"s/.*\/\///g\" > build/aws-cpp-sdk-formatted.dot")], shell=True)
@@ -57,7 +57,9 @@ def create_dependency_map():
     for line in fileinput.input("build/aws-cpp-sdk-formatted.dot", inplace=True):
         line = line.replace(" ", "")
         dependency_tuple = line.split('->')
-        if dependency_tuple[0] in dependency_map:
+        if "crt" in dependency_tuple[1]:
+            dependency_map[dependency_tuple[0]] = []
+        elif dependency_tuple[0] in dependency_map:
             dependency_map[dependency_tuple[0]].append(dependency_tuple[1].strip())
         else:
             dependency_map[dependency_tuple[0]] = [dependency_tuple[1].strip()]
@@ -76,9 +78,12 @@ def process_one_client(dependency_map, client_name, thread_pool, client_futures)
     for dependency in dependency_map.get(client_name, []):
         client_futures[dependency].result()
 
-    # Create a readme file with only the module name to make it look nice
-    with open(f'{client_name}/README.md', 'w') as f:
-        f.write(f'{client_name} Documentation Root.')
+    # Copy main readme to service dir.
+    shutil.copy("README.md", f'{client_name}/README.md')
+    shutil.copy("CHANGELOG.md", f'{client_name}/CHANGELOG.md')
+    shutil.copy("CODE_OF_CONDUCT.md", f'{client_name}/CODE_OF_CONDUCT.md')
+    shutil.copy("CONTRIBUTING.md", f'{client_name}/CONTRIBUTING.md')
+    shutil.copytree("Docs", f'{client_name}/Docs')
 
     # Create client tag files
     shutil.copy("doxygen/modules/template/module-template.config", f'doxygen/modules/{client_name}.config')
