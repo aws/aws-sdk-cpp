@@ -143,18 +143,12 @@ public:
     }
 
     // Override this function to do verification.
-    void ListObjectsV2Async(const Model::ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const override
+    Model::ListObjectsV2Outcome ListObjectsV2(const Model::ListObjectsV2Request& request) const override
     {
         EXPECT_STREQ("", request.GetDelimiter().c_str());
         EXPECT_STREQ("nestedTest", request.GetPrefix().c_str());
-        executor->Submit( [this, request, handler, context](){ this->ListObjectsV2AsyncHelper( request, handler, context ); } );
-    }
-
-    // This function is private in base class (S3Client), but will be called by ListObjectsV2Async.
-    void ListObjectsV2AsyncHelper(const ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-    {
         listObjectsV2RequestCount++;
-        handler(this, request, ListObjectsV2(request), context);
+        return S3Client::ListObjectsV2(request);
     }
 
     // m_executor in Base class is private, we need our own one.
@@ -1992,8 +1986,9 @@ public:
 
     struct TestCaseEntry
     {
-        Aws::String parentDir;
-        Aws::String filePath;
+        // can't use Aws::String (or any Aws:: over std with Allocators) in static objects with Custom memory management enabled
+        const char* parentDir;
+        const char* filePath;
 
         bool expectedIsWithinParentDirectory;
     };
@@ -2001,7 +1996,6 @@ public:
 
 TEST_F(TransferTests, TransferManager_TestRelativePrefix)
 {
-
     static const std::vector<TestHelperTransferManager::TestCaseEntry> TEST_CASES =
             {
                 {R"(C:/temp/)", R"(C:/temp/filename.bmp)", true},
@@ -2048,9 +2042,9 @@ TEST_F(TransferTests, TransferManager_TestRelativePrefix)
     for(const TestHelperTransferManager::TestCaseEntry& TC_ENTRY : TEST_CASES)
     {
         char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
-        Aws::String osNormalizedParentDir = TC_ENTRY.parentDir;
+        Aws::String osNormalizedParentDir(TC_ENTRY.parentDir);
         Aws::Utils::StringUtils::Replace(osNormalizedParentDir, "/", delimiter);
-        Aws::String osNormalizedFilePath = TC_ENTRY.filePath;
+        Aws::String osNormalizedFilePath(TC_ENTRY.filePath);
         Aws::Utils::StringUtils::Replace(osNormalizedFilePath, "/", delimiter);
 
         bool actualResult = TestHelperTransferManager::MakePublicIsWithinParentDirectory(osNormalizedParentDir, osNormalizedFilePath);
