@@ -69,7 +69,7 @@
                 }
                 
                 dirtyName += ".html";
-                return baseUri + serviceName + "/html/" + escapeCharacters(dirtyName);
+                return baseUri + "aws-cpp-sdk-" + serviceName.toLowerCase() + "/html/" + escapeCharacters(dirtyName);
             }
             
             function checkResourceExists(url) {  
