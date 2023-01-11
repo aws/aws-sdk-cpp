@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -132,7 +132,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
-     * user name and password to connect to OneDrive. The user namd should be the
+     * user name and password to connect to OneDrive. The user name should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
