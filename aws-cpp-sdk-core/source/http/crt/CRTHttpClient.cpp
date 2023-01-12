@@ -32,13 +32,14 @@ namespace Aws
 
             tlsContextOptions.SetVerifyPeer(m_configuration.verifySSL);
             
-            if (tlsContextOptions.IsAlpnSupported())
+            if (Crt::Io::TlsContextOptions::IsAlpnSupported())
             {
                 // this may need to be pulled from the client configuration....
                 tlsContextOptions.SetAlpnList("h2;http/1.1");
             }
 
-            m_context = Crt::Io::TlsContext::TlsContext(tlsContextOptions, Crt::Io::TlsMode::CLIENT);
+            Crt::Io::TlsContext newContext(tlsContextOptions, Crt::Io::TlsMode::CLIENT);
+            m_context = std::move(newContext);
         }
 
         CRTHttpClient::~CRTHttpClient()
@@ -71,11 +72,8 @@ namespace Aws
             {
                 Crt::Http::HttpHeader crtHeader;
                 
-                auto nameCursor = Crt::ByteCursorFromCString(header.first.c_str());
-                auto valueCursor = Crt::ByteCursorFromCString(header.second.c_str());
-                crtHeader.name = nameCursor;
-                crtHeader.value = valueCursor;
-
+                crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());;
+                crtHeader.value = Crt::ByteCursorFromArray((const uint8_t *)header.second.data(), header.second.length());
                 crtRequest->AddHeader(crtHeader);
             }
 
@@ -107,12 +105,12 @@ namespace Aws
             requestOptions.onIncomingHeaders =
                 [response](Crt::Http::HttpStream&, enum aws_http_header_block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
             {
-                for (auto i = 0; i < headersCount; ++i)
+                for (size_t i = 0; i < headersCount; ++i)
                 {
                     const Crt::Http::HttpHeader* header = &headersArray[i];
                     Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
                     Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
-                    response->AddHeader(std::move(headerNameStr), std::move(headerValueStr));
+                    response->AddHeader(headerNameStr, std::move(headerValueStr));
                 }
             };
 
@@ -146,7 +144,9 @@ namespace Aws
                 waiterCVar.notify_all();
             };
 
-            connectionManager->AcquireConnection([requestOptions, response](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode) {
+            connectionManager->AcquireConnection(
+                    [requestOptions, response, &waitCompletedIntentionally, &waiterCVar, &waiterLock]
+                    (std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode) {
                 if (connection)
                 {
                     auto clientStream = connection->NewClientStream(requestOptions);
@@ -156,6 +156,11 @@ namespace Aws
                 {
                     response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
                     response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+                    {
+                        std::lock_guard<std::mutex> locker(waiterLock);
+                        waitCompletedIntentionally = true;
+                    }
+                    waiterCVar.notify_all();
                 }
             });
 
@@ -173,7 +178,7 @@ namespace Aws
             return ss.str();
         }
 
-        const std::shared_ptr<Crt::Http::HttpClientConnectionManager> CRTHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
+        std::shared_ptr<Crt::Http::HttpClientConnectionManager> CRTHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
         {
             const auto connManagerRequestHash = ResolveConnectionPoolHash(request->GetUri());
 
@@ -221,7 +226,12 @@ namespace Aws
 
             connectionOptions.SocketOptions.SetConnectTimeoutMs(m_configuration.connectTimeoutMs);
             connectionOptions.SocketOptions.SetKeepAlive(m_configuration.enableTcpKeepAlive);
-            connectionOptions.SocketOptions.SetKeepAliveIntervalSec((uint16_t)(m_configuration.tcpKeepAliveIntervalMs / 1000));
+
+            if (m_configuration.enableTcpKeepAlive)
+            {
+                connectionOptions.SocketOptions.SetKeepAliveIntervalSec(
+                        (uint16_t) (m_configuration.tcpKeepAliveIntervalMs / 1000));
+            }
             connectionOptions.SocketOptions.SetSocketType(Crt::Io::SocketType::Stream);
 
             return connectionOptions;
@@ -253,21 +263,15 @@ namespace Aws
 
                 if (clientConfig.proxyScheme == Scheme::HTTPS)
                 {
+                    Crt::Io::TlsContextOptions contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
 
-                    Crt::Io::TlsContextOptions contextOptions;
-                    contextOptions.SetVerifyPeer(clientConfig.verifySSL);
-
-                    if (clientConfig.proxySSLKeyPath.empty())
-                    {
-                        contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
-                    }
-                    else if (clientConfig.proxySSLKeyPassword.empty())
+                    if (clientConfig.proxySSLKeyPassword.empty() && !clientConfig.proxySSLCertPath.empty())
                     {
                         const char* certPath = clientConfig.proxySSLCertPath.empty() ? nullptr : clientConfig.proxySSLCertPath.c_str();
                         const char* certFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
                         contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
                     }
-                    else
+                    else if (!clientConfig.proxySSLKeyPassword.empty())
                     {
                         const char* pkcs12CertFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
                         const char* pkcs12Pwd = clientConfig.proxySSLKeyPassword.c_str();
@@ -281,6 +285,7 @@ namespace Aws
                         contextOptions.OverrideDefaultTrustStore(caPath, caFile);
                     }
 
+                    contextOptions.SetVerifyPeer(clientConfig.verifySSL);
                     Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
                     proxyOptions.TlsOptions = context.NewConnectionOptions();                    
                 }

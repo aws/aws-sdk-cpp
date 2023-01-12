@@ -8,7 +8,8 @@
 #if AWS_SDK_USE_CRT_HTTP
 #include <aws/core/http/crt/CRTHttpClient.h>
 #include <aws/core/Globals.h>
-#elif ENABLE_CURL_CLIENT
+#endif
+#if ENABLE_CURL_CLIENT
 #include <aws/core/http/curl/CurlHttpClient.h>
 #include <signal.h>
 

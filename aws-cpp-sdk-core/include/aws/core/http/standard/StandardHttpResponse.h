@@ -37,28 +37,33 @@ namespace Aws
                 /**
                  * Get the headers from this response
                  */
-                HeaderValueCollection GetHeaders() const;
+                HeaderValueCollection GetHeaders() const override;
                 /**
                  * Returns true if the response contains a header by headerName
                  */
-                bool HasHeader(const char* headerName) const;
+                bool HasHeader(const char* headerName) const override;
                 /**
                  * Returns the value for a header at headerName if it exists.
                  */
-                const Aws::String& GetHeader(const Aws::String&) const;
+                const Aws::String& GetHeader(const Aws::String&) const override;
                 /**
                  * Gets the response body of the response.
                  */
-                inline Aws::IOStream& GetResponseBody() const { return bodyStream.GetUnderlyingStream(); }
+                inline Aws::IOStream& GetResponseBody() const override { return bodyStream.GetUnderlyingStream(); }
                 /**
                  * Gives full control of the memory of the ResponseBody over to the caller. At this point, it is the caller's
                  * responsibility to clean up this object.
                  */
-                inline Utils::Stream::ResponseStream&& SwapResponseStreamOwnership() { return std::move(bodyStream); }
+                inline Utils::Stream::ResponseStream&& SwapResponseStreamOwnership() override { return std::move(bodyStream); }
                 /**
                  * Adds a header to the http response object.
                  */
-                void AddHeader(const Aws::String&, const Aws::String&);
+                void AddHeader(const Aws::String&, const Aws::String&) override;
+                /**
+                 * Add a header to the http response object, and move the value.
+                 * The name can't be moved as it is converted to lower-case.
+                 */
+                void AddHeader(const Aws::String& headerName, Aws::String&& headerValue) override;
 
             private:
                 StandardHttpResponse(const StandardHttpResponse&);

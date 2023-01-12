@@ -51,4 +51,9 @@ void StandardHttpResponse::AddHeader(const Aws::String& headerName, const Aws::S
     headerMap[StringUtils::ToLower(headerName.c_str())] = headerValue;
 }
 
+void StandardHttpResponse::AddHeader(const Aws::String& headerName, Aws::String&& headerValue)
+{
+    headerMap.emplace(StringUtils::ToLower(headerName.c_str()), std::move(headerValue));
+}
+
 
