@@ -196,6 +196,14 @@ namespace Aws
              */
             virtual void AddHeader(const Aws::String&, const Aws::String&) = 0;
             /**
+              * Add a header to the http response object, and move the value.
+              * The name can't be moved as it is converted to lower-case.
+              *
+              * It isn't pure virtual for backwards compatiblity reasons, but the StandardHttpResponse used by default in the SDK
+              * implements the move.
+              */
+            virtual void AddHeader(const Aws::String& headerName, Aws::String&& headerValue) { AddHeader(headerName, headerValue); };
+            /**
              * Sets the content type header on the http response object.
              */
             virtual void SetContentType(const Aws::String& contentType) { AddHeader("content-type", contentType); }

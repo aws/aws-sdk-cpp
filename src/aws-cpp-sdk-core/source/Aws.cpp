@@ -16,6 +16,8 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 
+#include <aws/crt/Api.h>
+
 namespace Aws
 {
     static const char* ALLOCATION_TAG = "Aws_Init_Cleanup";
