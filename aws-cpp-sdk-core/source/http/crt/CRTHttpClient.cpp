@@ -2,6 +2,9 @@
 #include <aws/core/http/crt/CRTHttpClient.h>
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/http/standard/StandardHttpRequest.h>
+
 
 namespace Aws
 {
@@ -9,7 +12,7 @@ namespace Aws
     {
 
         CRTHttpClient::CRTHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap) : 
-            HttpClient(), m_bootstrap(bootstrap), m_configuration(clientConfig)
+            HttpClient(), m_context(), m_proxyOptions(), m_bootstrap(bootstrap), m_configuration(clientConfig)
         {
             //first need to figure TLS out...
             Crt::Io::TlsContextOptions tlsContextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
@@ -92,11 +95,11 @@ namespace Aws
                 crtRequest->SetBody(request->GetContentBody());
             }
             
-            auto response = Aws::MakeShared<StandardHttpResponse>("CRTHttpClient", request);
+            auto response = Aws::MakeShared<Standard::StandardHttpResponse>("CRTHttpClient", request);
             
             Crt::Http::HttpRequestOptions requestOptions;
             requestOptions.onIncomingBody =
-                [response](Crt::Http::HttpStream& stream, const Crt::ByteCursor& body)
+                [response](Crt::Http::HttpStream&, const Crt::ByteCursor& body)
             {
                 response->GetResponseBody().write((const char*)body.ptr, body.len);
             };
@@ -128,7 +131,7 @@ namespace Aws
             bool waitCompletedIntentionally = false;
            
             requestOptions.onStreamComplete =
-                [&waiterCVar, &waiterLock, &waitCompletedIntentionally, &response](Crt::Http::HttpStream& stream, int errorCode)
+                [&waiterCVar, &waiterLock, &waitCompletedIntentionally, &response](Crt::Http::HttpStream&, int errorCode)
             {
                 if (errorCode)
                 {
@@ -158,6 +161,8 @@ namespace Aws
 
             std::unique_lock<std::mutex> cvarUniqueLock(waiterLock);
             waiterCVar.wait(cvarUniqueLock, [&waitCompletedIntentionally]() { return waitCompletedIntentionally; });
+
+            return response;
         }
 
         Aws::String CRTHttpClient::ResolveConnectionPoolHash(const URI& uri) 
@@ -186,7 +191,7 @@ namespace Aws
             connectionManagerOptions.EnableBlockingShutdown = true;
 
             auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
-            m_connectionPools.emplace(std::move(connManagerRequestHash), connectionManager);
+            m_connectionPools.emplace(connManagerRequestHash, connectionManager);
 
             return connectionManager;
         }
@@ -216,7 +221,7 @@ namespace Aws
 
             connectionOptions.SocketOptions.SetConnectTimeoutMs(m_configuration.connectTimeoutMs);
             connectionOptions.SocketOptions.SetKeepAlive(m_configuration.enableTcpKeepAlive);
-            connectionOptions.SocketOptions.SetKeepAliveIntervalSec(m_configuration.tcpKeepAliveIntervalMs * 1000);
+            connectionOptions.SocketOptions.SetKeepAliveIntervalSec((uint16_t)(m_configuration.tcpKeepAliveIntervalMs / 1000));
             connectionOptions.SocketOptions.SetSocketType(Crt::Io::SocketType::Stream);
 
             return connectionOptions;
@@ -224,55 +229,55 @@ namespace Aws
 
         void CRTHttpClient::CheckAndInitializeProxySettings(const Aws::Client::ClientConfiguration& clientConfig)
         {
-            if (!m_configuration.proxyHost.empty())
+            if (!clientConfig.proxyHost.empty())
             {
                 Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
 
-                if (!m_configuration.proxyUserName.empty())
+                if (!clientConfig.proxyUserName.empty())
                 {
                     proxyOptions.AuthType = Crt::Http::AwsHttpProxyAuthenticationType::Basic;
-                    proxyOptions.BasicAuthUsername = m_configuration.proxyUserName.c_str();
-                    proxyOptions.BasicAuthPassword = m_configuration.proxyPassword.c_str();
+                    proxyOptions.BasicAuthUsername = clientConfig.proxyUserName.c_str();
+                    proxyOptions.BasicAuthPassword = clientConfig.proxyPassword.c_str();
                 }
 
                 proxyOptions.HostName = m_configuration.proxyHost.c_str();
 
-                if (m_configuration.proxyPort != 0)
+                if (clientConfig.proxyPort != 0)
                 {
-                    proxyOptions.Port = m_configuration.proxyPort;
+                    proxyOptions.Port = static_cast<uint16_t>(clientConfig.proxyPort);
                 }
                 else
                 {
-                    proxyOptions.Port = m_configuration.proxyScheme == Scheme::HTTPS ? 443 : 80;
+                    proxyOptions.Port = clientConfig.proxyScheme == Scheme::HTTPS ? 443 : 80;
                 }
 
-                if (m_configuration.proxyScheme == Scheme::HTTPS)
+                if (clientConfig.proxyScheme == Scheme::HTTPS)
                 {
 
                     Crt::Io::TlsContextOptions contextOptions;
-                    contextOptions.SetVerifyPeer(m_configuration.verifySSL);
+                    contextOptions.SetVerifyPeer(clientConfig.verifySSL);
 
-                    if (m_configuration.proxySSLKeyPath.empty())
+                    if (clientConfig.proxySSLKeyPath.empty())
                     {
                         contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
                     }
-                    else if (m_configuration.proxySSLKeyPassword.empty())
+                    else if (clientConfig.proxySSLKeyPassword.empty())
                     {
-                        const char* certPath = m_configuration.proxySSLCertPath.empty() ? nullptr : m_configuration.proxySSLCertPath.c_str();
-                        const char* certFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
+                        const char* certPath = clientConfig.proxySSLCertPath.empty() ? nullptr : clientConfig.proxySSLCertPath.c_str();
+                        const char* certFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
                         contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
                     }
                     else
                     {
-                        const char* pkcs12CertFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
-                        const char* pkcs12Pwd = m_configuration.proxySSLKeyPassword.c_str();
+                        const char* pkcs12CertFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
+                        const char* pkcs12Pwd = clientConfig.proxySSLKeyPassword.c_str();
                         contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
                     }
 
                     if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
                     {
-                        const char* caPath = m_configuration.caPath.empty() ? nullptr : m_configuration.caPath.c_str();
-                        const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
+                        const char* caPath = clientConfig.caPath.empty() ? nullptr : clientConfig.caPath.c_str();
+                        const char* caFile = clientConfig.caFile.empty() ? nullptr : clientConfig.caFile.c_str();
                         contextOptions.OverrideDefaultTrustStore(caPath, caFile);
                     }
 

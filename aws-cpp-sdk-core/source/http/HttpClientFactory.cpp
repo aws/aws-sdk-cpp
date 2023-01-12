@@ -5,7 +5,10 @@
 
 #include <aws/core/http/HttpClientFactory.h>
 
-#if ENABLE_CURL_CLIENT
+#if AWS_SDK_USE_CRT_HTTP
+#include <aws/core/http/crt/CRTHttpClient.h>
+#include <aws/core/Globals.h>
+#elif ENABLE_CURL_CLIENT
 #include <aws/core/http/curl/CurlHttpClient.h>
 #include <signal.h>
 
@@ -62,10 +65,12 @@ namespace Aws
         {
             std::shared_ptr<HttpClient> CreateHttpClient(const ClientConfiguration& clientConfiguration) const override
             {
+#if AWS_SDK_USE_CRT_HTTP
+                return Aws::MakeShared<CRTHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration, *GetDefaultClientBootstrap());
                 // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
                 // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
                 // Other clients: Curl is your default
-#if ENABLE_WINDOWS_CLIENT
+#elif ENABLE_WINDOWS_CLIENT
 #if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
 #if BYPASS_DEFAULT_PROXY
                 switch (clientConfiguration.httpLibOverride)

@@ -1,7 +1,9 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/http/HttpClient.h>
+#include <aws/crt/http/HttpConnection.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/client/ClientConfiguration.h>
 
 #include <aws/crt/io/TlsOptions.h>
 
@@ -14,6 +16,11 @@ namespace Aws
             class HttpClientConnectionManager;
             class HttpClientConnectionOptions;
         }
+
+        namespace Io
+        {
+            class ClientBootstrap;
+        };
     }
 
     namespace Client
@@ -23,7 +30,7 @@ namespace Aws
 
     namespace Http
     {
-        class CRTHttpClient : public HttpClient {
+        class AWS_CORE_API CRTHttpClient : public HttpClient {
         public:
             using Base = HttpClient;
 
@@ -42,7 +49,7 @@ namespace Aws
             mutable std::mutex m_connectionPoolLock;
 
             Crt::Optional<Crt::Io::TlsContext> m_context;
-            Crt::Optional< Crt::Http::HttpClientConnectionProxyOptions> m_proxyOptions;
+            Crt::Optional<Crt::Http::HttpClientConnectionProxyOptions> m_proxyOptions;
 
             Crt::Io::ClientBootstrap& m_bootstrap;
 

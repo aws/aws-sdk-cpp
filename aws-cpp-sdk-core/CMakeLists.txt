@@ -476,6 +476,8 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSD
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MINOR=${AWSSDK_VERSION_MINOR}")
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_PATCH=${AWSSDK_VERSION_PATCH}")
 
+target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_SDK_USE_CRT_HTTP")
+
 if (WININET_HAS_H2)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "WININET_HAS_H2")
 endif()
