@@ -1,0 +1,288 @@
+
+#include <aws/core/http/crt/CRTHttpClient.h>
+#include <aws/crt/http/HttpConnectionManager.h>
+#include <aws/crt/http/HttpRequestResponse.h>
+
+namespace Aws
+{
+    namespace Http
+    {
+
+        CRTHttpClient::CRTHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap) : 
+            HttpClient(), m_bootstrap(bootstrap), m_configuration(clientConfig)
+        {
+            //first need to figure TLS out...
+            Crt::Io::TlsContextOptions tlsContextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
+
+            CheckAndInitializeProxySettings(clientConfig);
+
+            // if ca is overridden and a proxy is configured, it's intended for the proxy, not this context.
+            if (!m_proxyOptions.has_value())
+            {
+                if (!m_configuration.caPath.empty() || !m_configuration.caFile.empty())
+                {
+                    const char* caPath = m_configuration.caPath.empty() ? nullptr : m_configuration.caPath.c_str();
+                    const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
+                    tlsContextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                }
+            }
+
+            tlsContextOptions.SetVerifyPeer(m_configuration.verifySSL);
+            
+            if (tlsContextOptions.IsAlpnSupported())
+            {
+                // this may need to be pulled from the client configuration....
+                tlsContextOptions.SetAlpnList("h2;http/1.1");
+            }
+
+            m_context = Crt::Io::TlsContext::TlsContext(tlsContextOptions, Crt::Io::TlsMode::CLIENT);
+        }
+
+        CRTHttpClient::~CRTHttpClient()
+        {
+            Aws::Vector<std::future<void>> shutdownFutures;
+
+            for (auto& managerPair : m_connectionPools) 
+            {
+                shutdownFutures.push_back(managerPair.second->InitiateShutdown());
+            }
+
+            for (auto& shutdownFuture : shutdownFutures)
+            {
+                shutdownFuture.get();
+            }
+
+            shutdownFutures.clear();
+            m_connectionPools.clear();
+        }
+
+        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+            Aws::Utils::RateLimits::RateLimiterInterface*,
+            Aws::Utils::RateLimits::RateLimiterInterface*) const
+        {
+            auto requestConnOptions = CreateConnectionOptionsForRequest(request);
+            auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
+
+            auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
+            for (const auto& header : request->GetHeaders())
+            {
+                Crt::Http::HttpHeader crtHeader;
+                
+                auto nameCursor = Crt::ByteCursorFromCString(header.first.c_str());
+                auto valueCursor = Crt::ByteCursorFromCString(header.second.c_str());
+                crtHeader.name = nameCursor;
+                crtHeader.value = valueCursor;
+
+                crtRequest->AddHeader(crtHeader);
+            }
+
+            auto methodCursor = Crt::ByteCursorFromCString(Aws::Http::HttpMethodMapper::GetNameForHttpMethod(request->GetMethod()));
+            crtRequest->SetMethod(methodCursor);
+
+            auto pathStrCpy = request->GetUri().GetURLEncodedPathRFC3986();
+            auto queryStrCpy = request->GetUri().GetQueryString();
+            Aws::StringStream ss;
+            ss << pathStrCpy << queryStrCpy;
+            auto fullPathAndQueryCpy = ss.str();
+            auto pathCursor = Crt::ByteCursorFromCString(fullPathAndQueryCpy.c_str());
+            crtRequest->SetPath(pathCursor);
+
+            if (request->GetContentBody())
+            {
+                crtRequest->SetBody(request->GetContentBody());
+            }
+            
+            auto response = Aws::MakeShared<StandardHttpResponse>("CRTHttpClient", request);
+            
+            Crt::Http::HttpRequestOptions requestOptions;
+            requestOptions.onIncomingBody =
+                [response](Crt::Http::HttpStream& stream, const Crt::ByteCursor& body)
+            {
+                response->GetResponseBody().write((const char*)body.ptr, body.len);
+            };
+
+            requestOptions.onIncomingHeaders =
+                [response](Crt::Http::HttpStream&, enum aws_http_header_block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
+            {
+                for (auto i = 0; i < headersCount; ++i)
+                {
+                    const Crt::Http::HttpHeader* header = &headersArray[i];
+                    Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
+                    Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
+                    response->AddHeader(std::move(headerNameStr), std::move(headerValueStr));
+                }
+            };
+
+            requestOptions.onIncomingHeadersBlockDone =
+                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block block)
+            {
+                if (block == AWS_HTTP_HEADER_BLOCK_MAIN)
+                {
+                    // gotta set it somewhere, and this seems to get called at a good enough time to do it, and it only gets called once.
+                    response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
+                }
+            };
+
+            std::mutex waiterLock;
+            std::condition_variable waiterCVar;
+            bool waitCompletedIntentionally = false;
+           
+            requestOptions.onStreamComplete =
+                [&waiterCVar, &waiterLock, &waitCompletedIntentionally, &response](Crt::Http::HttpStream& stream, int errorCode)
+            {
+                if (errorCode)
+                {
+                    /* come back to this one and get the right error parsed out. */
+                    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+                }
+                {
+                    std::lock_guard<std::mutex> locker(waiterLock);
+                    waitCompletedIntentionally = true;
+                }
+                waiterCVar.notify_all();
+            };
+
+            connectionManager->AcquireConnection([requestOptions, response](std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode) {
+                if (connection)
+                {
+                    auto clientStream = connection->NewClientStream(requestOptions);
+                    clientStream->Activate();
+                }
+                else
+                {
+                    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+                }
+            });
+
+            std::unique_lock<std::mutex> cvarUniqueLock(waiterLock);
+            waiterCVar.wait(cvarUniqueLock, [&waitCompletedIntentionally]() { return waitCompletedIntentionally; });
+        }
+
+        Aws::String CRTHttpClient::ResolveConnectionPoolHash(const URI& uri) 
+        {
+            Aws::StringStream ss;
+            ss << SchemeMapper::ToString(uri.GetScheme()) << "://" << uri.GetAuthority() << uri.GetPort();
+
+            return ss.str();
+        }
+
+        const std::shared_ptr<Crt::Http::HttpClientConnectionManager> CRTHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
+        {
+            const auto connManagerRequestHash = ResolveConnectionPoolHash(request->GetUri());
+
+            std::lock_guard<std::mutex> locker(m_connectionPoolLock);
+
+            const auto& foundManager = m_connectionPools.find(connManagerRequestHash);
+
+            if (foundManager != m_connectionPools.cend()) {
+                return foundManager->second;
+            }
+
+            Crt::Http::HttpClientConnectionManagerOptions connectionManagerOptions;
+            connectionManagerOptions.ConnectionOptions = options;
+            connectionManagerOptions.MaxConnections = m_configuration.maxConnections;
+            connectionManagerOptions.EnableBlockingShutdown = true;
+
+            auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
+            m_connectionPools.emplace(std::move(connManagerRequestHash), connectionManager);
+
+            return connectionManager;
+        }
+
+        Crt::Http::HttpClientConnectionOptions CRTHttpClient::CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const
+        {
+            Crt::Http::HttpClientConnectionOptions connectionOptions;
+            connectionOptions.HostName = request->GetUri().GetAuthority().c_str();
+            // probably want to come back and update this when we hook up the rate limiters.
+            connectionOptions.ManualWindowManagement = false;
+            connectionOptions.Port = request->GetUri().GetPort();
+            
+            if (m_context.has_value() && request->GetUri().GetScheme() == Scheme::HTTPS) 
+            {
+                connectionOptions.TlsOptions = m_context.value().NewConnectionOptions();
+                auto serverName = request->GetUri().GetAuthority();
+                auto serverNameCursor = Crt::ByteCursorFromCString(serverName.c_str());
+                connectionOptions.TlsOptions->SetServerName(serverNameCursor);
+            }
+
+            connectionOptions.Bootstrap = &m_bootstrap;
+            
+            if (m_proxyOptions.has_value())
+            {
+                connectionOptions.ProxyOptions = m_proxyOptions.value();
+            }
+
+            connectionOptions.SocketOptions.SetConnectTimeoutMs(m_configuration.connectTimeoutMs);
+            connectionOptions.SocketOptions.SetKeepAlive(m_configuration.enableTcpKeepAlive);
+            connectionOptions.SocketOptions.SetKeepAliveIntervalSec(m_configuration.tcpKeepAliveIntervalMs * 1000);
+            connectionOptions.SocketOptions.SetSocketType(Crt::Io::SocketType::Stream);
+
+            return connectionOptions;
+        }
+
+        void CRTHttpClient::CheckAndInitializeProxySettings(const Aws::Client::ClientConfiguration& clientConfig)
+        {
+            if (!m_configuration.proxyHost.empty())
+            {
+                Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
+
+                if (!m_configuration.proxyUserName.empty())
+                {
+                    proxyOptions.AuthType = Crt::Http::AwsHttpProxyAuthenticationType::Basic;
+                    proxyOptions.BasicAuthUsername = m_configuration.proxyUserName.c_str();
+                    proxyOptions.BasicAuthPassword = m_configuration.proxyPassword.c_str();
+                }
+
+                proxyOptions.HostName = m_configuration.proxyHost.c_str();
+
+                if (m_configuration.proxyPort != 0)
+                {
+                    proxyOptions.Port = m_configuration.proxyPort;
+                }
+                else
+                {
+                    proxyOptions.Port = m_configuration.proxyScheme == Scheme::HTTPS ? 443 : 80;
+                }
+
+                if (m_configuration.proxyScheme == Scheme::HTTPS)
+                {
+
+                    Crt::Io::TlsContextOptions contextOptions;
+                    contextOptions.SetVerifyPeer(m_configuration.verifySSL);
+
+                    if (m_configuration.proxySSLKeyPath.empty())
+                    {
+                        contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
+                    }
+                    else if (m_configuration.proxySSLKeyPassword.empty())
+                    {
+                        const char* certPath = m_configuration.proxySSLCertPath.empty() ? nullptr : m_configuration.proxySSLCertPath.c_str();
+                        const char* certFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
+                        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
+                    }
+                    else
+                    {
+                        const char* pkcs12CertFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
+                        const char* pkcs12Pwd = m_configuration.proxySSLKeyPassword.c_str();
+                        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
+                    }
+
+                    if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
+                    {
+                        const char* caPath = m_configuration.caPath.empty() ? nullptr : m_configuration.caPath.c_str();
+                        const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
+                        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                    }
+
+                    Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
+                    proxyOptions.TlsOptions = context.NewConnectionOptions();                    
+                }
+
+                m_proxyOptions = std::move(proxyOptions);
+            }
+        }
+
+    }
+}

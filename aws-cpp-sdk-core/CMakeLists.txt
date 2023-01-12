@@ -198,6 +198,8 @@ elseif(ENABLE_WINDOWS_CLIENT)
 
     endif()
 endif()
+file(GLOB CRT_HTTP_HEADERS "include/aws/core/http/crt/*.h")
+file(GLOB CRT_HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/crt/*.cpp")
 
 if (PLATFORM_WINDOWS)
     file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows/*.cpp")
@@ -229,6 +231,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_CLIENT_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
+    ${CRT_HTTP_SOURCE}
     ${CONFIG_SOURCE}
     ${CONFIG_DEFAULTS_SOURCE}
     ${ENDPOINT_SOURCE}
@@ -401,6 +404,8 @@ if(MSVC)
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
     endif()
+        source_group("Header Files\\aws\\core\\http\\crt" FILES ${CRT_HTTP_HEADERS})
+
 
     # encryption conditional headers
     if(ENABLE_BCRYPT_ENCRYPTION)
@@ -449,6 +454,8 @@ if(MSVC)
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
     endif()
+    source_group("Source Files\\http\\crt" FILES ${CRT_HTTP_SOURCE})
+
 
     # encryption conditional source
     if(ENABLE_BCRYPT_ENCRYPTION)
@@ -628,6 +635,8 @@ if(ENABLE_CURL_CLIENT)
 elseif(ENABLE_WINDOWS_CLIENT)
     install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/windows)
 endif()
+    install (FILES ${CRT_HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/crt)
+
 
 # encryption headers
 if(ENABLE_BCRYPT_ENCRYPTION)
