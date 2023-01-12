@@ -21,6 +21,7 @@ namespace Model
 ColorCorrector::ColorCorrector() : 
     m_brightness(0),
     m_brightnessHasBeenSet(false),
+    m_clipLimitsHasBeenSet(false),
     m_colorSpaceConversion(ColorSpaceConversion::NOT_SET),
     m_colorSpaceConversionHasBeenSet(false),
     m_contrast(0),
@@ -40,6 +41,7 @@ ColorCorrector::ColorCorrector() :
 ColorCorrector::ColorCorrector(JsonView jsonValue) : 
     m_brightness(0),
     m_brightnessHasBeenSet(false),
+    m_clipLimitsHasBeenSet(false),
     m_colorSpaceConversion(ColorSpaceConversion::NOT_SET),
     m_colorSpaceConversionHasBeenSet(false),
     m_contrast(0),
@@ -64,6 +66,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_brightness = jsonValue.GetInteger("brightness");
 
     m_brightnessHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clipLimits"))
+  {
+    m_clipLimits = jsonValue.GetObject("clipLimits");
+
+    m_clipLimitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("colorSpaceConversion"))
@@ -125,6 +134,12 @@ JsonValue ColorCorrector::Jsonize() const
   if(m_brightnessHasBeenSet)
   {
    payload.WithInteger("brightness", m_brightness);
+
+  }
+
+  if(m_clipLimitsHasBeenSet)
+  {
+   payload.WithObject("clipLimits", m_clipLimits.Jsonize());
 
   }
 

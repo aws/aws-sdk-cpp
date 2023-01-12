@@ -15,6 +15,7 @@
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -44,88 +45,88 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
-     * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p>
+     * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+     * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
      * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
@@ -133,12 +134,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -147,12 +148,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -161,12 +162,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -175,12 +176,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -189,12 +190,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -203,12 +204,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -217,12 +218,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -231,12 +232,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -273,13 +274,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
@@ -288,13 +289,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
@@ -303,13 +304,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
@@ -318,13 +319,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
@@ -988,6 +989,55 @@ namespace Model
      */
     inline CreateEventSourceMappingRequest& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline const ScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(const ScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(ScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithScalingConfig(const ScalingConfig& value) { SetScalingConfig(value); return *this;}
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_eventSourceArn;
@@ -1052,6 +1102,9 @@ namespace Model
 
     SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
     bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
+
+    ScalingConfig m_scalingConfig;
+    bool m_scalingConfigHasBeenSet = false;
   };
 
 } // namespace Model

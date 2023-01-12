@@ -206,6 +206,12 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("ScalingConfig"))
+  {
+    m_scalingConfig = jsonValue.GetObject("ScalingConfig");
+
+  }
+
 
 
   return *this;

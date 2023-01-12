@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     LIMITED_RANGE_SQUEEZE,
-    NONE
+    NONE,
+    LIMITED_RANGE_CLIP
   };
 
 namespace SampleRangeConversionMapper

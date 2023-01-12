@@ -146,42 +146,82 @@ namespace Model
 
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline CreateJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline CreateJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
     inline CreateJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

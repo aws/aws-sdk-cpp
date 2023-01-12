@@ -14,6 +14,7 @@
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -1083,6 +1084,55 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline const ScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(const ScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(ScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline EventSourceMappingConfiguration& WithScalingConfig(const ScalingConfig& value) { SetScalingConfig(value); return *this;}
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline EventSourceMappingConfiguration& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
@@ -1159,6 +1209,9 @@ namespace Model
 
     SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
     bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
+
+    ScalingConfig m_scalingConfig;
+    bool m_scalingConfigHasBeenSet = false;
   };
 
 } // namespace Model

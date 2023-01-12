@@ -340,7 +340,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline const MpdManifestMetadataSignaling& GetManifestMetadataSignaling() const{ return m_manifestMetadataSignaling; }
 
@@ -351,7 +353,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline bool ManifestMetadataSignalingHasBeenSet() const { return m_manifestMetadataSignalingHasBeenSet; }
 
@@ -362,7 +366,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline void SetManifestMetadataSignaling(const MpdManifestMetadataSignaling& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
 
@@ -373,7 +379,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline void SetManifestMetadataSignaling(MpdManifestMetadataSignaling&& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = std::move(value); }
 
@@ -384,7 +392,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline MpdSettings& WithManifestMetadataSignaling(const MpdManifestMetadataSignaling& value) { SetManifestMetadataSignaling(value); return *this;}
 
@@ -395,7 +405,9 @@ namespace Model
      * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
      * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
      * leave these elements out of your output MPD manifest, set Manifest metadata
-     * signaling to Disabled.
+     * signaling to Disabled. To enable Manifest metadata signaling, you must also set
+     * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata
+     * (TimedMetadata) to Passthrough.
      */
     inline MpdSettings& WithManifestMetadataSignaling(MpdManifestMetadataSignaling&& value) { SetManifestMetadataSignaling(std::move(value)); return *this;}
 

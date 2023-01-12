@@ -23,6 +23,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
     m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
+    m_dashManifestStyle(DashManifestStyle::NOT_SET),
+    m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -61,6 +63,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
     m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
+    m_dashManifestStyle(DashManifestStyle::NOT_SET),
+    m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -119,6 +123,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_baseUrl = jsonValue.GetString("baseUrl");
 
     m_baseUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dashManifestStyle"))
+  {
+    m_dashManifestStyle = DashManifestStyleMapper::GetDashManifestStyleForName(jsonValue.GetString("dashManifestStyle"));
+
+    m_dashManifestStyleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("destination"))
@@ -267,6 +278,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   {
    payload.WithString("baseUrl", m_baseUrl);
 
+  }
+
+  if(m_dashManifestStyleHasBeenSet)
+  {
+   payload.WithString("dashManifestStyle", DashManifestStyleMapper::GetNameForDashManifestStyle(m_dashManifestStyle));
   }
 
   if(m_destinationHasBeenSet)

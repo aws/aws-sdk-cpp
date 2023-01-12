@@ -51,7 +51,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_tumblingWindowInSecondsHasBeenSet(false),
     m_functionResponseTypesHasBeenSet(false),
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_scalingConfigHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_tumblingWindowInSecondsHasBeenSet(false),
     m_functionResponseTypesHasBeenSet(false),
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_scalingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -282,6 +284,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_selfManagedKafkaEventSourceConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScalingConfig"))
+  {
+    m_scalingConfig = jsonValue.GetObject("ScalingConfig");
+
+    m_scalingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -453,6 +462,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
   {
    payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_scalingConfigHasBeenSet)
+  {
+   payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
 
   }
 
