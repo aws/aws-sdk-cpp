@@ -101,6 +101,7 @@ protected:
         config.proxyHost = PROXY_HOST;
         config.proxyPort = PROXY_PORT;
 #endif
+        config.requestTimeoutMs = 20000;
         return config;
     }
 
