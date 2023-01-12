@@ -21,9 +21,9 @@ HeaderValueCollection StandardHttpResponse::GetHeaders() const
 {
     HeaderValueCollection headerValueCollection;
 
-    for (Aws::Map<Aws::String, Aws::String>::const_iterator iter = headerMap.begin(); iter != headerMap.end(); ++iter)
+    for (const auto & iter : headerMap)
     {
-        headerValueCollection.emplace(HeaderValuePair(iter->first, iter->second));
+        headerValueCollection.emplace(HeaderValuePair(iter.first, iter.second));
     }
 
     return headerValueCollection;
@@ -36,11 +36,11 @@ bool StandardHttpResponse::HasHeader(const char* headerName) const
 
 const Aws::String& StandardHttpResponse::GetHeader(const Aws::String& headerName) const
 {
-    Aws::Map<Aws::String, Aws::String>::const_iterator foundValue = headerMap.find(StringUtils::ToLower(headerName.c_str()));
+    auto foundValue = headerMap.find(StringUtils::ToLower(headerName.c_str()));
     assert(foundValue != headerMap.end());
     if (foundValue == headerMap.end()) {
         AWS_LOGSTREAM_ERROR(STANDARD_HTTP_RESPONSE_LOG_TAG, "Requested a header value for a missing header key: " << headerName);
-        static const Aws::String EMPTY_STRING = "";
+        static const Aws::String EMPTY_STRING;
         return EMPTY_STRING;
     }
     return foundValue->second;
@@ -49,6 +49,11 @@ const Aws::String& StandardHttpResponse::GetHeader(const Aws::String& headerName
 void StandardHttpResponse::AddHeader(const Aws::String& headerName, const Aws::String& headerValue)
 {
     headerMap[StringUtils::ToLower(headerName.c_str())] = headerValue;
+}
+
+void StandardHttpResponse::AddHeader(const Aws::String& headerName, Aws::String&& headerValue)
+{
+    headerMap.emplace(StringUtils::ToLower(headerName.c_str()), std::move(headerValue));
 }
 
 
