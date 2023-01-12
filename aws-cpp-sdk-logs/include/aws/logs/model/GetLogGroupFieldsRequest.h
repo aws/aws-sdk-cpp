@@ -35,58 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log group to search.</p> <p>If you specify values for both
-     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
-     * returns an <code>InvalidParameterException</code> error.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
@@ -131,72 +131,72 @@ namespace Model
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specify either the name or ARN of the log group to view. If the log group is
      * in a source account and you are using a monitoring account, you must specify the
-     * ARN.</p> <p>If you specify values for both <code>logGroupName</code> and
+     * ARN.</p>  <p> If you specify values for both <code>logGroupName</code> and
      * <code>logGroupIdentifier</code>, the action returns an
-     * <code>InvalidParameterException</code> error.</p>
+     * <code>InvalidParameterException</code> error. </p> 
      */
     inline GetLogGroupFieldsRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
 

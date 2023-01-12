@@ -22,6 +22,7 @@ namespace Aws
 
         static const int LIMITED_RANGE_SQUEEZE_HASH = HashingUtils::HashString("LIMITED_RANGE_SQUEEZE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int LIMITED_RANGE_CLIP_HASH = HashingUtils::HashString("LIMITED_RANGE_CLIP");
 
 
         SampleRangeConversion GetSampleRangeConversionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NONE_HASH)
           {
             return SampleRangeConversion::NONE;
+          }
+          else if (hashCode == LIMITED_RANGE_CLIP_HASH)
+          {
+            return SampleRangeConversion::LIMITED_RANGE_CLIP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "LIMITED_RANGE_SQUEEZE";
           case SampleRangeConversion::NONE:
             return "NONE";
+          case SampleRangeConversion::LIMITED_RANGE_CLIP:
+            return "LIMITED_RANGE_CLIP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

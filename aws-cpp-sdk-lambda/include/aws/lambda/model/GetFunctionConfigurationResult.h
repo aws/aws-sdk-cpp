@@ -1160,8 +1160,8 @@ namespace Model
      * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
      * snapshot of the initialized execution environment when you publish a function
      * version. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-     * startup time with Lambda SnapStart</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+     * startup performance with Lambda SnapStart</a>.</p>
      */
     inline const SnapStartResponse& GetSnapStart() const{ return m_snapStart; }
 
@@ -1169,8 +1169,8 @@ namespace Model
      * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
      * snapshot of the initialized execution environment when you publish a function
      * version. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-     * startup time with Lambda SnapStart</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+     * startup performance with Lambda SnapStart</a>.</p>
      */
     inline void SetSnapStart(const SnapStartResponse& value) { m_snapStart = value; }
 
@@ -1178,8 +1178,8 @@ namespace Model
      * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
      * snapshot of the initialized execution environment when you publish a function
      * version. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-     * startup time with Lambda SnapStart</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+     * startup performance with Lambda SnapStart</a>.</p>
      */
     inline void SetSnapStart(SnapStartResponse&& value) { m_snapStart = std::move(value); }
 
@@ -1187,8 +1187,8 @@ namespace Model
      * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
      * snapshot of the initialized execution environment when you publish a function
      * version. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-     * startup time with Lambda SnapStart</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+     * startup performance with Lambda SnapStart</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithSnapStart(const SnapStartResponse& value) { SetSnapStart(value); return *this;}
 
@@ -1196,8 +1196,8 @@ namespace Model
      * <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a
      * snapshot of the initialized execution environment when you publish a function
      * version. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing
-     * startup time with Lambda SnapStart</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
+     * startup performance with Lambda SnapStart</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithSnapStart(SnapStartResponse&& value) { SetSnapStart(std::move(value)); return *this;}
 

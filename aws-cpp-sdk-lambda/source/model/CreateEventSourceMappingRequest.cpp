@@ -42,7 +42,8 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_selfManagedEventSourceHasBeenSet(false),
     m_functionResponseTypesHasBeenSet(false),
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_selfManagedKafkaEventSourceConfigHasBeenSet(false)
+    m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
+    m_scalingConfigHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_selfManagedKafkaEventSourceConfigHasBeenSet)
   {
    payload.WithObject("SelfManagedKafkaEventSourceConfig", m_selfManagedKafkaEventSourceConfig.Jsonize());
+
+  }
+
+  if(m_scalingConfigHasBeenSet)
+  {
+   payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
 
   }
 

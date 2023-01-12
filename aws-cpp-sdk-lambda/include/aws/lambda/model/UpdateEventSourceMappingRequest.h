@@ -10,6 +10,7 @@
 #include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -80,12 +81,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -94,12 +95,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -108,12 +109,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -122,12 +123,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -136,12 +137,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -150,12 +151,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -164,12 +165,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -178,12 +179,12 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -220,13 +221,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
@@ -235,13 +236,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
@@ -250,13 +251,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
@@ -265,13 +266,13 @@ namespace Model
      * <p>The maximum number of records in each batch that Lambda pulls from your
      * stream or queue and sends to your function. Lambda passes all of the records in
      * the batch to the function in a single call, up to the payload limit for
-     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - Default
-     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
+     * synchronous invocation (6 MB).</p> <ul> <li> <p> <b>Amazon Kinesis</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – Default
+     * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
      * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
@@ -658,6 +659,55 @@ namespace Model
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline const ScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(const ScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(ScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithScalingConfig(const ScalingConfig& value) { SetScalingConfig(value); return *this;}
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
@@ -701,6 +751,9 @@ namespace Model
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
     bool m_functionResponseTypesHasBeenSet = false;
+
+    ScalingConfig m_scalingConfig;
+    bool m_scalingConfigHasBeenSet = false;
   };
 
 } // namespace Model

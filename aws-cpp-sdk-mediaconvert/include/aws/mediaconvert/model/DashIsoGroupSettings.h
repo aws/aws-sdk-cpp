@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/DashIsoGroupAudioChannelConfigSchemeIdUri.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/DashManifestStyle.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
@@ -255,6 +256,73 @@ namespace Model
      * than the manifest file.
      */
     inline DashIsoGroupSettings& WithBaseUrl(const char* value) { SetBaseUrl(value); return *this;}
+
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline const DashManifestStyle& GetDashManifestStyle() const{ return m_dashManifestStyle; }
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline bool DashManifestStyleHasBeenSet() const { return m_dashManifestStyleHasBeenSet; }
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline void SetDashManifestStyle(const DashManifestStyle& value) { m_dashManifestStyleHasBeenSet = true; m_dashManifestStyle = value; }
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline void SetDashManifestStyle(DashManifestStyle&& value) { m_dashManifestStyleHasBeenSet = true; m_dashManifestStyle = std::move(value); }
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline DashIsoGroupSettings& WithDashManifestStyle(const DashManifestStyle& value) { SetDashManifestStyle(value); return *this;}
+
+    /**
+     * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
+     * write a SegmentTimeline in each video Representation: Keep the default value,
+     * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
+     * Compact. Note that MediaConvert will still write a SegmentTimeline in any
+     * Representation that does not share a common timeline. To write a video
+     * AdaptationSet for each different output framerate, and a common SegmentTimeline
+     * in each AdaptationSet: Choose Distinct.
+     */
+    inline DashIsoGroupSettings& WithDashManifestStyle(DashManifestStyle&& value) { SetDashManifestStyle(std::move(value)); return *this;}
 
 
     /**
@@ -1149,6 +1217,9 @@ namespace Model
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet = false;
+
+    DashManifestStyle m_dashManifestStyle;
+    bool m_dashManifestStyleHasBeenSet = false;
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;

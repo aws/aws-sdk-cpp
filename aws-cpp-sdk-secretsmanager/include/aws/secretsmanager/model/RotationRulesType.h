@@ -39,54 +39,66 @@ namespace Model
 
 
     /**
-     * <p>The number of days between automatic scheduled rotations of the secret. You
-     * can use this value to check that your secret meets your compliance guidelines
-     * for how often secrets must be rotated.</p> <p>In <code>DescribeSecret</code> and
-     * <code>ListSecrets</code>, this value is calculated from the rotation schedule
-     * after every successful rotation. In <code>RotateSecret</code>, you can set the
-     * rotation schedule in <code>RotationRules</code> with
-     * <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not
-     * both. To set a rotation schedule in hours, use
-     * <code>ScheduleExpression</code>.</p>
+     * <p>The number of days between rotations of the secret. You can use this value to
+     * check that your secret meets your compliance guidelines for how often secrets
+     * must be rotated. If you use this field to set the rotation schedule, Secrets
+     * Manager calculates the next rotation date based on the previous rotation.
+     * Manually updating the secret value by calling <code>PutSecretValue</code> or
+     * <code>UpdateSecret</code> is considered a valid rotation.</p> <p>In
+     * <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is
+     * calculated from the rotation schedule after every successful rotation. In
+     * <code>RotateSecret</code>, you can set the rotation schedule in
+     * <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or
+     * <code>ScheduleExpression</code>, but not both. To set a rotation schedule in
+     * hours, use <code>ScheduleExpression</code>.</p>
      */
     inline long long GetAutomaticallyAfterDays() const{ return m_automaticallyAfterDays; }
 
     /**
-     * <p>The number of days between automatic scheduled rotations of the secret. You
-     * can use this value to check that your secret meets your compliance guidelines
-     * for how often secrets must be rotated.</p> <p>In <code>DescribeSecret</code> and
-     * <code>ListSecrets</code>, this value is calculated from the rotation schedule
-     * after every successful rotation. In <code>RotateSecret</code>, you can set the
-     * rotation schedule in <code>RotationRules</code> with
-     * <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not
-     * both. To set a rotation schedule in hours, use
-     * <code>ScheduleExpression</code>.</p>
+     * <p>The number of days between rotations of the secret. You can use this value to
+     * check that your secret meets your compliance guidelines for how often secrets
+     * must be rotated. If you use this field to set the rotation schedule, Secrets
+     * Manager calculates the next rotation date based on the previous rotation.
+     * Manually updating the secret value by calling <code>PutSecretValue</code> or
+     * <code>UpdateSecret</code> is considered a valid rotation.</p> <p>In
+     * <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is
+     * calculated from the rotation schedule after every successful rotation. In
+     * <code>RotateSecret</code>, you can set the rotation schedule in
+     * <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or
+     * <code>ScheduleExpression</code>, but not both. To set a rotation schedule in
+     * hours, use <code>ScheduleExpression</code>.</p>
      */
     inline bool AutomaticallyAfterDaysHasBeenSet() const { return m_automaticallyAfterDaysHasBeenSet; }
 
     /**
-     * <p>The number of days between automatic scheduled rotations of the secret. You
-     * can use this value to check that your secret meets your compliance guidelines
-     * for how often secrets must be rotated.</p> <p>In <code>DescribeSecret</code> and
-     * <code>ListSecrets</code>, this value is calculated from the rotation schedule
-     * after every successful rotation. In <code>RotateSecret</code>, you can set the
-     * rotation schedule in <code>RotationRules</code> with
-     * <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not
-     * both. To set a rotation schedule in hours, use
-     * <code>ScheduleExpression</code>.</p>
+     * <p>The number of days between rotations of the secret. You can use this value to
+     * check that your secret meets your compliance guidelines for how often secrets
+     * must be rotated. If you use this field to set the rotation schedule, Secrets
+     * Manager calculates the next rotation date based on the previous rotation.
+     * Manually updating the secret value by calling <code>PutSecretValue</code> or
+     * <code>UpdateSecret</code> is considered a valid rotation.</p> <p>In
+     * <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is
+     * calculated from the rotation schedule after every successful rotation. In
+     * <code>RotateSecret</code>, you can set the rotation schedule in
+     * <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or
+     * <code>ScheduleExpression</code>, but not both. To set a rotation schedule in
+     * hours, use <code>ScheduleExpression</code>.</p>
      */
     inline void SetAutomaticallyAfterDays(long long value) { m_automaticallyAfterDaysHasBeenSet = true; m_automaticallyAfterDays = value; }
 
     /**
-     * <p>The number of days between automatic scheduled rotations of the secret. You
-     * can use this value to check that your secret meets your compliance guidelines
-     * for how often secrets must be rotated.</p> <p>In <code>DescribeSecret</code> and
-     * <code>ListSecrets</code>, this value is calculated from the rotation schedule
-     * after every successful rotation. In <code>RotateSecret</code>, you can set the
-     * rotation schedule in <code>RotationRules</code> with
-     * <code>AutomaticallyAfterDays</code> or <code>ScheduleExpression</code>, but not
-     * both. To set a rotation schedule in hours, use
-     * <code>ScheduleExpression</code>.</p>
+     * <p>The number of days between rotations of the secret. You can use this value to
+     * check that your secret meets your compliance guidelines for how often secrets
+     * must be rotated. If you use this field to set the rotation schedule, Secrets
+     * Manager calculates the next rotation date based on the previous rotation.
+     * Manually updating the secret value by calling <code>PutSecretValue</code> or
+     * <code>UpdateSecret</code> is considered a valid rotation.</p> <p>In
+     * <code>DescribeSecret</code> and <code>ListSecrets</code>, this value is
+     * calculated from the rotation schedule after every successful rotation. In
+     * <code>RotateSecret</code>, you can set the rotation schedule in
+     * <code>RotationRules</code> with <code>AutomaticallyAfterDays</code> or
+     * <code>ScheduleExpression</code>, but not both. To set a rotation schedule in
+     * hours, use <code>ScheduleExpression</code>.</p>
      */
     inline RotationRulesType& WithAutomaticallyAfterDays(long long value) { SetAutomaticallyAfterDays(value); return *this;}
 

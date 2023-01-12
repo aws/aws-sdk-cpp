@@ -48,6 +48,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>
@@ -60,6 +61,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>
@@ -72,6 +74,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>
@@ -84,6 +87,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>
@@ -96,6 +100,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>
@@ -108,6 +113,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p> <b>tag-key</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>tag-value</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>primary-region</b>: Prefix match,
+     * case-sensitive.</p> </li> <li> <p> <b>owning-service</b>: Prefix match,
      * case-sensitive.</p> </li> <li> <p> <b>all</b>: Breaks the filter value string
      * into words and then searches all attributes for matches. Not case-sensitive.</p>
      * </li> </ul>

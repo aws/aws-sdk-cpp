@@ -37,16 +37,24 @@ namespace Model
     AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     */
     inline bool GetIncludePlannedDeletion() const{ return m_includePlannedDeletion; }
 
-    
+    /**
+     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     */
     inline bool IncludePlannedDeletionHasBeenSet() const { return m_includePlannedDeletionHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     */
     inline void SetIncludePlannedDeletion(bool value) { m_includePlannedDeletionHasBeenSet = true; m_includePlannedDeletion = value; }
 
-    
+    /**
+     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     */
     inline ListSecretsRequest& WithIncludePlannedDeletion(bool value) { SetIncludePlannedDeletion(value); return *this;}
 
 

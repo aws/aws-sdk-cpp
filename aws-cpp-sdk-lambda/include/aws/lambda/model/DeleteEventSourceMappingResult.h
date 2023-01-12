@@ -14,6 +14,7 @@
 #include <aws/lambda/model/SelfManagedEventSource.h>
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/ScalingConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -915,6 +916,47 @@ namespace Model
      */
     inline DeleteEventSourceMappingResult& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline const ScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(const ScalingConfig& value) { m_scalingConfig = value; }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline void SetScalingConfig(ScalingConfig&& value) { m_scalingConfig = std::move(value); }
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithScalingConfig(const ScalingConfig& value) { SetScalingConfig(value); return *this;}
+
+    /**
+     * <p>(Amazon SQS only) The scaling configuration for the event source. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     * maximum concurrency for Amazon SQS event sources</a>.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
@@ -966,6 +1008,8 @@ namespace Model
     AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
 
     SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
+
+    ScalingConfig m_scalingConfig;
   };
 
 } // namespace Model

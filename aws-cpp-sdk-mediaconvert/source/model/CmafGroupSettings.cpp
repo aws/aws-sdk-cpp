@@ -25,6 +25,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(CmafCodecSpecification::NOT_SET),
     m_codecSpecificationHasBeenSet(false),
+    m_dashManifestStyle(DashManifestStyle::NOT_SET),
+    m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -75,6 +77,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(CmafCodecSpecification::NOT_SET),
     m_codecSpecificationHasBeenSet(false),
+    m_dashManifestStyle(DashManifestStyle::NOT_SET),
+    m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -150,6 +154,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_codecSpecification = CmafCodecSpecificationMapper::GetCmafCodecSpecificationForName(jsonValue.GetString("codecSpecification"));
 
     m_codecSpecificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dashManifestStyle"))
+  {
+    m_dashManifestStyle = DashManifestStyleMapper::GetDashManifestStyleForName(jsonValue.GetString("dashManifestStyle"));
+
+    m_dashManifestStyleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("destination"))
@@ -338,6 +349,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_codecSpecificationHasBeenSet)
   {
    payload.WithString("codecSpecification", CmafCodecSpecificationMapper::GetNameForCmafCodecSpecification(m_codecSpecification));
+  }
+
+  if(m_dashManifestStyleHasBeenSet)
+  {
+   payload.WithString("dashManifestStyle", DashManifestStyleMapper::GetNameForDashManifestStyle(m_dashManifestStyle));
   }
 
   if(m_destinationHasBeenSet)

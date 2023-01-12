@@ -34,7 +34,8 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_sourceAccessConfigurationsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false)
+    m_functionResponseTypesHasBeenSet(false),
+    m_scalingConfigHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,12 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
      functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
    }
    payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
+
+  }
+
+  if(m_scalingConfigHasBeenSet)
+  {
+   payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
 
   }
 

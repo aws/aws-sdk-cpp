@@ -551,22 +551,46 @@ namespace Model
     inline SecretListEntry& WithDeletedDate(Aws::Utils::DateTime&& value) { SetDeletedDate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline bool NextRotationDateHasBeenSet() const { return m_nextRotationDateHasBeenSet; }
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = value; }
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = std::move(value); }
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline SecretListEntry& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
 
-    
+    /**
+     * <p>The next date and time that Secrets Manager will attempt to rotate the
+     * secret, rounded to the nearest hour. This value is null if the secret is not set
+     * up for rotation.</p>
+     */
     inline SecretListEntry& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
 
 
