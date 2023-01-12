@@ -71,7 +71,7 @@ namespace Aws
             for (const auto& header : request->GetHeaders())
             {
                 Crt::Http::HttpHeader crtHeader;
-                
+
                 crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());;
                 crtHeader.value = Crt::ByteCursorFromArray((const uint8_t *)header.second.data(), header.second.length());
                 crtRequest->AddHeader(crtHeader);
@@ -92,10 +92,11 @@ namespace Aws
             {
                 crtRequest->SetBody(request->GetContentBody());
             }
-            
+
             auto response = Aws::MakeShared<Standard::StandardHttpResponse>("CRTHttpClient", request);
-            
+
             Crt::Http::HttpRequestOptions requestOptions;
+            requestOptions.request = crtRequest.get();
             requestOptions.onIncomingBody =
                 [response](Crt::Http::HttpStream&, const Crt::ByteCursor& body)
             {
@@ -127,7 +128,7 @@ namespace Aws
             std::mutex waiterLock;
             std::condition_variable waiterCVar;
             bool waitCompletedIntentionally = false;
-           
+
             requestOptions.onStreamComplete =
                 [&waiterCVar, &waiterLock, &waitCompletedIntentionally, &response](Crt::Http::HttpStream&, int errorCode)
             {
