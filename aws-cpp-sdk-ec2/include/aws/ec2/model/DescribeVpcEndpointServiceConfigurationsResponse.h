@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline const Aws::Vector<ServiceConfiguration>& GetServiceConfigurations() const{ return m_serviceConfigurations; }
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline void SetServiceConfigurations(const Aws::Vector<ServiceConfiguration>& value) { m_serviceConfigurations = value; }
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline void SetServiceConfigurations(Aws::Vector<ServiceConfiguration>&& value) { m_serviceConfigurations = std::move(value); }
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsResponse& WithServiceConfigurations(const Aws::Vector<ServiceConfiguration>& value) { SetServiceConfigurations(value); return *this;}
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsResponse& WithServiceConfigurations(Aws::Vector<ServiceConfiguration>&& value) { SetServiceConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsResponse& AddServiceConfigurations(const ServiceConfiguration& value) { m_serviceConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more services.</p>
+     * <p>Information about the services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsResponse& AddServiceConfigurations(ServiceConfiguration&& value) { m_serviceConfigurations.push_back(std::move(value)); return *this; }
 

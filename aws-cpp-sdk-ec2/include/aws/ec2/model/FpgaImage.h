@@ -596,31 +596,49 @@ namespace Model
     inline FpgaImage& WithDataRetentionSupport(bool value) { SetDataRetentionSupport(value); return *this;}
 
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline FpgaImage& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline FpgaImage& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline FpgaImage& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline FpgaImage& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The instance types supported by the AFI.</p>
+     */
     inline FpgaImage& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
   private:

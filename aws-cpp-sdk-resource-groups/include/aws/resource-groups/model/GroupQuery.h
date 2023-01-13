@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A mapping of a query attached to a resource group that determines the AWS
-   * resources that are members of the group.</p><p><h3>See Also:</h3>   <a
+   * <p>A mapping of a query attached to a resource group that determines the Amazon
+   * Web Services resources that are members of the group.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupQuery">AWS
    * API Reference</a></p>
    */
@@ -89,38 +90,38 @@ namespace Model
 
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline GroupQuery& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
 
     /**
-     * <p>The resource query that determines which AWS resources are members of the
-     * associated resource group.</p>
+     * <p>The resource query that determines which Amazon Web Services resources are
+     * members of the associated resource group.</p>
      */
     inline GroupQuery& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
 

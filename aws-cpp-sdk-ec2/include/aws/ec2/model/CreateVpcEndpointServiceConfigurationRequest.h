@@ -146,102 +146,93 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkLoadBalancerArns() const{ return m_networkLoadBalancerArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline bool NetworkLoadBalancerArnsHasBeenSet() const { return m_networkLoadBalancerArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline void SetNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline void SetNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetNetworkLoadBalancerArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetNetworkLoadBalancerArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddNetworkLoadBalancerArns(const Aws::String& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddNetworkLoadBalancerArns(Aws::String&& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Network Load Balancers for
-     * your service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddNetworkLoadBalancerArns(const char* value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGatewayLoadBalancerArns() const{ return m_gatewayLoadBalancerArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline bool GatewayLoadBalancerArnsHasBeenSet() const { return m_gatewayLoadBalancerArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline void SetGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline void SetGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetGatewayLoadBalancerArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& WithGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetGatewayLoadBalancerArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(const Aws::String& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(Aws::String&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.</p>
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
      */
     inline CreateVpcEndpointServiceConfigurationRequest& AddGatewayLoadBalancerArns(const char* value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
 

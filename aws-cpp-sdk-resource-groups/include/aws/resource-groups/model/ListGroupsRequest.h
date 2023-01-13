@@ -50,8 +50,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<GroupFilter>& GetFilters() const{ return m_filters; }
 
@@ -65,8 +65,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -80,8 +80,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<GroupFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -95,8 +95,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<GroupFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -110,8 +110,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& WithFilters(const Aws::Vector<GroupFilter>& value) { SetFilters(value); return *this;}
 
@@ -125,8 +125,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& WithFilters(Aws::Vector<GroupFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -140,8 +140,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& AddFilters(const GroupFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -155,8 +155,8 @@ namespace Model
      * <p> <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
-     * <code>AWS:EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS:EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& AddFilters(GroupFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

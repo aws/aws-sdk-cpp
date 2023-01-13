@@ -20,9 +20,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyVpcEndpoint.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointRequest">AWS
-   * API Reference</a></p>
    */
   class ModifyVpcEndpointRequest : public EC2Request
   {
@@ -191,173 +188,173 @@ namespace Model
 
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline bool AddRouteTableIdsHasBeenSet() const { return m_addRouteTableIdsHasBeenSet; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables IDs to associate with the
+     * <p>(Gateway endpoint) The IDs of the route tables to associate with the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline bool RemoveRouteTableIdsHasBeenSet() const { return m_removeRouteTableIdsHasBeenSet; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline void SetRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = value; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline void SetRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::move(value); }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRemoveRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRemoveRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveRouteTableIds(const Aws::String& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs to disassociate from the
+     * <p>(Gateway endpoint) The IDs of the route tables to disassociate from the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSubnetIds() const{ return m_addSubnetIds; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline bool AddSubnetIdsHasBeenSet() const { return m_addSubnetIdsHasBeenSet; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline void SetAddSubnetIds(const Aws::Vector<Aws::String>& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds = value; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline void SetAddSubnetIds(Aws::Vector<Aws::String>&& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds = std::move(value); }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSubnetIds(const Aws::Vector<Aws::String>& value) { SetAddSubnetIds(value); return *this;}
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSubnetIds(Aws::Vector<Aws::String>&& value) { SetAddSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSubnetIds(const Aws::String& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSubnetIds(Aws::String&& value) { m_addSubnetIdsHasBeenSet = true; m_addSubnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) One or more subnet IDs in
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
      * which to serve the endpoint. For a Gateway Load Balancer endpoint, you can
      * specify only one subnet.</p>
      */
@@ -365,165 +362,165 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveSubnetIds() const{ return m_removeSubnetIds; }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline bool RemoveSubnetIdsHasBeenSet() const { return m_removeSubnetIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline void SetRemoveSubnetIds(const Aws::Vector<Aws::String>& value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds = value; }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline void SetRemoveSubnetIds(Aws::Vector<Aws::String>&& value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSubnetIds(const Aws::Vector<Aws::String>& value) { SetRemoveSubnetIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSubnetIds(Aws::Vector<Aws::String>&& value) { SetRemoveSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSubnetIds(const Aws::String& value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSubnetIds(Aws::String&& value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more subnets IDs in which to remove the
+     * <p>(Interface endpoint) The IDs of the subnets from which to remove the
      * endpoint.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSubnetIds(const char* value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSecurityGroupIds() const{ return m_addSecurityGroupIds; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline bool AddSecurityGroupIdsHasBeenSet() const { return m_addSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline void SetAddSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds = value; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline void SetAddSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetAddSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetAddSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(const Aws::String& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(Aws::String&& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to associate with the
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(const char* value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveSecurityGroupIds() const{ return m_removeSecurityGroupIds; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline bool RemoveSecurityGroupIdsHasBeenSet() const { return m_removeSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline void SetRemoveSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds = value; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline void SetRemoveSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetRemoveSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetRemoveSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(const Aws::String& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(Aws::String&& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more security group IDs to disassociate from the
+     * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
      * network interface.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(const char* value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(value); return *this; }

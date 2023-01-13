@@ -113,12 +113,11 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -127,12 +126,11 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -141,12 +139,11 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -155,12 +152,11 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -169,12 +165,11 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -183,12 +178,11 @@ namespace Model
     inline DescribeVpcEndpointConnectionNotificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -197,12 +191,11 @@ namespace Model
     inline DescribeVpcEndpointConnectionNotificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of
@@ -211,12 +204,11 @@ namespace Model
     inline DescribeVpcEndpointConnectionNotificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
-     * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
-     * ID of the notification.</p> </li> <li> <p>
-     * <code>connection-notification-state</code> - The state of the notification
-     * (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>connection-notification-arn</code> - The
+     * ARN of the SNS topic for the notification.</p> </li> <li> <p>
+     * <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+     * <li> <p> <code>connection-notification-state</code> - The state of the
+     * notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> <li> <p>
      * <code>connection-notification-type</code> - The type of notification
      * (<code>Topic</code>).</p> </li> <li> <p> <code>service-id</code> - The ID of the
      * endpoint service.</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID of

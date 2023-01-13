@@ -72,56 +72,56 @@ namespace Model
 
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceIds() const{ return m_serviceIds; }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline void SetServiceIds(const Aws::Vector<Aws::String>& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline void SetServiceIds(Aws::Vector<Aws::String>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& WithServiceIds(const Aws::Vector<Aws::String>& value) { SetServiceIds(value); return *this;}
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& WithServiceIds(Aws::Vector<Aws::String>&& value) { SetServiceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& AddServiceIds(const Aws::String& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& AddServiceIds(Aws::String&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more services.</p>
+     * <p>The IDs of the endpoint services.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& AddServiceIds(const char* value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -137,10 +137,10 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -156,10 +156,10 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -175,10 +175,10 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -194,10 +194,10 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -213,10 +213,10 @@ namespace Model
     inline DescribeVpcEndpointServiceConfigurationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -232,10 +232,10 @@ namespace Model
     inline DescribeVpcEndpointServiceConfigurationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
@@ -251,10 +251,10 @@ namespace Model
     inline DescribeVpcEndpointServiceConfigurationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-id</code> - The ID of the
-     * service.</p> </li> <li> <p> <code>service-state</code> - The state of the
-     * service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>service-name</code> - The name of the
+     * service.</p> </li> <li> <p> <code>service-id</code> - The ID of the service.</p>
+     * </li> <li> <p> <code>service-state</code> - The state of the service
+     * (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> |
      * <code>Deleted</code> | <code>Failed</code>). </p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The

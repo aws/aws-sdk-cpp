@@ -206,99 +206,87 @@ namespace Model
 
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline const MetricType& GetMetric() const{ return m_metric; }
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline void SetMetric(const MetricType& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline void SetMetric(MetricType&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline DataQuery& WithMetric(const MetricType& value) { SetMetric(value); return *this;}
 
     /**
-     * <p>The aggregation metric used for the data query. Currently only
-     * <code>aggregation-latency</code> is supported, indicating network latency.</p>
+     * <p>The metric, <code>aggregation-latency</code>, indicating that network latency
+     * is aggregated for the query. This is the only supported metric.</p>
      */
     inline DataQuery& WithMetric(MetricType&& value) { SetMetric(std::move(value)); return *this;}
 
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline const StatisticType& GetStatistic() const{ return m_statistic; }
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline void SetStatistic(const StatisticType& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline void SetStatistic(StatisticType&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline DataQuery& WithStatistic(const StatisticType& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>Metric data aggregations over specified periods of time. The following are
-     * the supported Infrastructure Performance statistics:</p> <ul> <li> <p>
-     * <code>p50</code> - The median value of the metric aggregated over a specified
-     * start and end time. For example, a metric of <code>five_minutes</code> is the
-     * median of all the data points gathered within those five minutes.</p> </li>
-     * </ul>
+     * <p>The metric data aggregation period, <code>p50</code>, between the specified
+     * <code>startDate</code> and <code>endDate</code>. For example, a metric of
+     * <code>five_minutes</code> is the median of all the data points gathered within
+     * those five minutes. <code>p50</code> is the only supported metric.</p>
      */
     inline DataQuery& WithStatistic(StatisticType&& value) { SetStatistic(std::move(value)); return *this;}
 

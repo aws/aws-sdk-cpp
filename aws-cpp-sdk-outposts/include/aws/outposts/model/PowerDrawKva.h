@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     POWER_5_KVA,
     POWER_10_KVA,
-    POWER_15_KVA
+    POWER_15_KVA,
+    POWER_30_KVA
   };
 
 namespace PowerDrawKvaMapper

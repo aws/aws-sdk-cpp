@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Indicates whether the network was healthy or unhealthy at a particular point.
+   * <p>Indicates whether the network was healthy or degraded at a particular point.
    * The value is aggregated from the <code>startDate</code> to the
    * <code>endDate</code>. Currently only <code>five_minutes</code> is
    * supported.</p><p><h3>See Also:</h3>   <a

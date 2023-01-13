@@ -43,25 +43,25 @@ namespace Model
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * number. A value of -1 indicates all ICMP types. </p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * number. A value of -1 indicates all ICMP types. </p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * number. A value of -1 indicates all ICMP types. </p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * number. A value of -1 indicates all ICMP types. </p>
      */
     inline StaleIpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 

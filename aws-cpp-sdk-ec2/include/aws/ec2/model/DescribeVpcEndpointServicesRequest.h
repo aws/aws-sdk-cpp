@@ -19,10 +19,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeVpcEndpointServices.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicesRequest">AWS
-   * API Reference</a></p>
    */
   class DescribeVpcEndpointServicesRequest : public EC2Request
   {
@@ -76,54 +72,54 @@ namespace Model
 
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline bool ServiceNamesHasBeenSet() const { return m_serviceNamesHasBeenSet; }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = value; }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::move(value); }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline DescribeVpcEndpointServicesRequest& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline DescribeVpcEndpointServicesRequest& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline DescribeVpcEndpointServicesRequest& AddServiceNames(const Aws::String& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline DescribeVpcEndpointServicesRequest& AddServiceNames(Aws::String&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more service names.</p>
+     * <p>The service names.</p>
      */
     inline DescribeVpcEndpointServicesRequest& AddServiceNames(const char* value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -141,8 +137,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -160,8 +156,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -179,8 +175,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -198,8 +194,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -217,8 +213,8 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -236,8 +232,8 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
@@ -255,8 +251,8 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
-     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias of the
+     * Amazon Web Services account that owns the service.</p> </li> <li> <p>
      * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
      * <code>service-type</code> - The type of service (<code>Interface</code> |
      * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>

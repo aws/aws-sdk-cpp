@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline const Aws::Vector<AllowedPrincipal>& GetAllowedPrincipals() const{ return m_allowedPrincipals; }
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline void SetAllowedPrincipals(const Aws::Vector<AllowedPrincipal>& value) { m_allowedPrincipals = value; }
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline void SetAllowedPrincipals(Aws::Vector<AllowedPrincipal>&& value) { m_allowedPrincipals = std::move(value); }
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline DescribeVpcEndpointServicePermissionsResponse& WithAllowedPrincipals(const Aws::Vector<AllowedPrincipal>& value) { SetAllowedPrincipals(value); return *this;}
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline DescribeVpcEndpointServicePermissionsResponse& WithAllowedPrincipals(Aws::Vector<AllowedPrincipal>&& value) { SetAllowedPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline DescribeVpcEndpointServicePermissionsResponse& AddAllowedPrincipals(const AllowedPrincipal& value) { m_allowedPrincipals.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more allowed principals.</p>
+     * <p>Information about the allowed principals.</p>
      */
     inline DescribeVpcEndpointServicePermissionsResponse& AddAllowedPrincipals(AllowedPrincipal&& value) { m_allowedPrincipals.push_back(std::move(value)); return *this; }
 

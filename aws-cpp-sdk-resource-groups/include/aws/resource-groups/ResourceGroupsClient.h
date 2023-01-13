@@ -16,29 +16,30 @@ namespace Aws
 namespace ResourceGroups
 {
   /**
-   * <fullname>AWS Resource Groups</fullname> <p>AWS Resource Groups lets you
-   * organize AWS resources such as Amazon EC2 instances, Amazon Relational Database
-   * Service databases, and Amazon S3 buckets into groups using criteria that you
-   * define as tags. A resource group is a collection of resources that match the
-   * resource types specified in a query, and share one or more tags or portions of
-   * tags. You can create a group of resources based on their roles in your cloud
-   * infrastructure, lifecycle stages, regions, application layers, or virtually any
-   * criteria. Resource Groups enable you to automate management tasks, such as those
-   * in AWS Systems Manager Automation documents, on tag-related resources in AWS
-   * Systems Manager. Groups of tagged resources also let you quickly view a custom
-   * console in AWS Systems Manager that shows AWS Config compliance and other
-   * monitoring data about member resources.</p> <p>To create a resource group, build
-   * a resource query, and specify tags that identify the criteria that members of
-   * the group have in common. Tags are key-value pairs.</p> <p>For more information
-   * about Resource Groups, see the <a
-   * href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">AWS
-   * Resource Groups User Guide</a>.</p> <p>AWS Resource Groups uses a REST-compliant
-   * API that you can use to perform the following types of operations.</p> <ul> <li>
-   * <p>Create, Read, Update, and Delete (CRUD) operations on resource groups and
-   * resource query entities</p> </li> <li> <p>Applying, editing, and removing tags
-   * from resource groups</p> </li> <li> <p>Resolving resource group member ARNs so
-   * they can be returned as search results</p> </li> <li> <p>Getting data about
-   * resources that are members of a group</p> </li> <li> <p>Searching AWS resources
+   * <p>Resource Groups lets you organize Amazon Web Services resources such as
+   * Amazon Elastic Compute Cloud instances, Amazon Relational Database Service
+   * databases, and Amazon Simple Storage Service buckets into groups using criteria
+   * that you define as tags. A resource group is a collection of resources that
+   * match the resource types specified in a query, and share one or more tags or
+   * portions of tags. You can create a group of resources based on their roles in
+   * your cloud infrastructure, lifecycle stages, regions, application layers, or
+   * virtually any criteria. Resource Groups enable you to automate management tasks,
+   * such as those in Amazon Web Services Systems Manager Automation documents, on
+   * tag-related resources in Amazon Web Services Systems Manager. Groups of tagged
+   * resources also let you quickly view a custom console in Amazon Web Services
+   * Systems Manager that shows Config compliance and other monitoring data about
+   * member resources.</p> <p>To create a resource group, build a resource query, and
+   * specify tags that identify the criteria that members of the group have in
+   * common. Tags are key-value pairs.</p> <p>For more information about Resource
+   * Groups, see the <a
+   * href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">Resource
+   * Groups User Guide</a>.</p> <p>Resource Groups uses a REST-compliant API that you
+   * can use to perform the following types of operations.</p> <ul> <li> <p>Create,
+   * Read, Update, and Delete (CRUD) operations on resource groups and resource query
+   * entities</p> </li> <li> <p>Applying, editing, and removing tags from resource
+   * groups</p> </li> <li> <p>Resolving resource group member ARNs so they can be
+   * returned as search results</p> </li> <li> <p>Getting data about resources that
+   * are members of a group</p> </li> <li> <p>Searching Amazon Web Services resources
    * based on a resource query</p> </li> </ul>
    */
   class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>
@@ -98,13 +99,14 @@ namespace ResourceGroups
 
         /**
          * <p>Creates a resource group with the specified name and description. You can
-         * optionally include a resource query, or a service configuration. For more
+         * optionally include either a resource query or a service configuration. For more
          * information about constructing a resource query, see <a
-         * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-         * a tag-based group in Resource Groups</a>. For more information about service
+         * href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build
+         * queries and groups in Resource Groups</a> in the <i>Resource Groups User
+         * Guide</i>. For more information about service-linked groups and service
          * configurations, see <a
          * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-         * configurations for resource groups</a>.</p> <p> <b>Minimum permissions</b> </p>
+         * configurations for Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p>
          * <p>To run this command, you must have the following permissions:</p> <ul> <li>
          * <p> <code>resource-groups:CreateGroup</code> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -146,6 +148,23 @@ namespace ResourceGroups
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the current status of optional features in Resource
+         * Groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings() const;
+
+        /**
+         * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable() const;
+
+        /**
+         * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Returns information about a specified resource group.</p> <p> <b>Minimum
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p> <code>resource-groups:GetGroup</code> </p> </li>
@@ -166,10 +185,10 @@ namespace ResourceGroups
         virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the service configuration associated with the specified resource
+         * <p>Retrieves the service configuration associated with the specified resource
          * group. For details about the service configuration syntax, see <a
          * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-         * configurations for resource groups</a>.</p> <p> <b>Minimum permissions</b> </p>
+         * configurations for Resource Groups</a>.</p> <p> <b>Minimum permissions</b> </p>
          * <p>To run this command, you must have the following permissions:</p> <ul> <li>
          * <p> <code>resource-groups:GetGroupConfiguration</code> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
@@ -232,10 +251,15 @@ namespace ResourceGroups
         virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified resources to the specified group.</p> <p> <b>Minimum
-         * permissions</b> </p> <p>To run this command, you must have the following
-         * permissions:</p> <ul> <li> <p> <code>resource-groups:GroupResources</code> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified resources to the specified group.</p>  <p>You
+         * can use this operation with only resource groups that are configured with the
+         * following types:</p> <ul> <li> <p> <code>AWS::EC2::HostManagement</code> </p>
+         * </li> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> </p> </li> </ul>
+         * <p>Other resource group type and resource types aren't currently supported by
+         * this operation.</p>  <p> <b>Minimum permissions</b> </p> <p>To run
+         * this command, you must have the following permissions:</p> <ul> <li> <p>
+         * <code>resource-groups:GroupResources</code> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">AWS
          * API Reference</a></p>
          */
@@ -275,7 +299,7 @@ namespace ResourceGroups
         virtual void ListGroupResourcesAsync(const Model::ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of existing resource groups in your account.</p> <p>
+         * <p>Returns a list of existing Resource Groups in your account.</p> <p>
          * <b>Minimum permissions</b> </p> <p>To run this command, you must have the
          * following permissions:</p> <ul> <li> <p> <code>resource-groups:ListGroups</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -318,12 +342,12 @@ namespace ResourceGroups
         virtual void PutGroupConfigurationAsync(const Model::PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS resource identifiers that matches the specified query.
-         * The query uses the same format as a resource query in a CreateGroup or
-         * UpdateGroupQuery operation.</p> <p> <b>Minimum permissions</b> </p> <p>To run
-         * this command, you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:SearchResources</code> </p> </li> <li> <p>
-         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <p>Returns a list of Amazon Web Services resource identifiers that matches the
+         * specified query. The query uses the same format as a resource query in a
+         * <a>CreateGroup</a> or <a>UpdateGroupQuery</a> operation.</p> <p> <b>Minimum
+         * permissions</b> </p> <p>To run this command, you must have the following
+         * permissions:</p> <ul> <li> <p> <code>resource-groups:SearchResources</code> </p>
+         * </li> <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
          * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
          * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
@@ -367,7 +391,10 @@ namespace ResourceGroups
         virtual void TagAsync(const Model::TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified resources from the specified group.</p> <p> <b>Minimum
+         * <p>Removes the specified resources from the specified group. This operation
+         * works only with static groups that you populated using the <a>GroupResources</a>
+         * operation. It doesn't work with any resource groups that are automatically
+         * populated by tag-based or CloudFormation stack-based queries.</p> <p> <b>Minimum
          * permissions</b> </p> <p>To run this command, you must have the following
          * permissions:</p> <ul> <li> <p> <code>resource-groups:UngroupResources</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -405,6 +432,27 @@ namespace ResourceGroups
          * An Async wrapper for Untag that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagAsync(const Model::UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Turns on or turns off optional features in Resource Groups.</p> <p>The
+         * preceding example shows that the request to turn on group lifecycle events is
+         * <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation
+         * to check for completion by looking for <code>GroupLifecycleEventsStatus</code>
+         * to change to <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const Model::UpdateAccountSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description for an existing group. You cannot update the name of

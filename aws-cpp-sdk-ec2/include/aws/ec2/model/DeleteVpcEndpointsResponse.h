@@ -26,11 +26,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DeleteVpcEndpoints.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointsResult">AWS
-   * API Reference</a></p>
-   */
   class DeleteVpcEndpointsResponse
   {
   public:

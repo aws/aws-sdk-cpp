@@ -35,6 +35,7 @@
 #include <aws/resource-groups/model/TagRequest.h>
 #include <aws/resource-groups/model/UngroupResourcesRequest.h>
 #include <aws/resource-groups/model/UntagRequest.h>
+#include <aws/resource-groups/model/UpdateAccountSettingsRequest.h>
 #include <aws/resource-groups/model/UpdateGroupRequest.h>
 #include <aws/resource-groups/model/UpdateGroupQueryRequest.h>
 
@@ -212,6 +213,32 @@ void ResourceGroupsClient::DeleteGroupAsync(const DeleteGroupRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteGroup(request), context);
+    } );
+}
+
+GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings() const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/get-account-settings");
+  return GetAccountSettingsOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetAccountSettings"));
+}
+
+GetAccountSettingsOutcomeCallable ResourceGroupsClient::GetAccountSettingsCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccountSettingsOutcome() > >(ALLOCATION_TAG, [this](){ return this->GetAccountSettings(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, GetAccountSettings(), context);
     } );
 }
 
@@ -533,6 +560,31 @@ void ResourceGroupsClient::UntagAsync(const UntagRequest& request, const UntagRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, Untag(request), context);
+    } );
+}
+
+UpdateAccountSettingsOutcome ResourceGroupsClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/update-account-settings");
+  return UpdateAccountSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccountSettingsOutcomeCallable ResourceGroupsClient::UpdateAccountSettingsCallable(const UpdateAccountSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccountSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccountSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAccountSettings(request), context);
     } );
 }
 

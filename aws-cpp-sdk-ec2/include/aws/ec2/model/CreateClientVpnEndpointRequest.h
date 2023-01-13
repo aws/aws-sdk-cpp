@@ -50,7 +50,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline const Aws::String& GetClientCidrBlock() const{ return m_clientCidrBlock; }
 
@@ -59,7 +60,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline bool ClientCidrBlockHasBeenSet() const { return m_clientCidrBlockHasBeenSet; }
 
@@ -68,7 +70,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline void SetClientCidrBlock(const Aws::String& value) { m_clientCidrBlockHasBeenSet = true; m_clientCidrBlock = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline void SetClientCidrBlock(Aws::String&& value) { m_clientCidrBlockHasBeenSet = true; m_clientCidrBlock = std::move(value); }
 
@@ -86,7 +90,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline void SetClientCidrBlock(const char* value) { m_clientCidrBlockHasBeenSet = true; m_clientCidrBlock.assign(value); }
 
@@ -95,7 +100,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientCidrBlock(const Aws::String& value) { SetClientCidrBlock(value); return *this;}
 
@@ -104,7 +110,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientCidrBlock(Aws::String&& value) { SetClientCidrBlock(std::move(value)); return *this;}
 
@@ -113,7 +120,8 @@ namespace Model
      * addresses. The address range cannot overlap with the local CIDR of the VPC in
      * which the associated subnet is located, or the routes that you add manually. The
      * address range cannot be changed after the Client VPN endpoint has been created.
-     * The CIDR block should be /22 or greater.</p>
+     * Client CIDR range must have a size of at least /22 and must not be greater than
+     * /12.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientCidrBlock(const char* value) { SetClientCidrBlock(value); return *this;}
 

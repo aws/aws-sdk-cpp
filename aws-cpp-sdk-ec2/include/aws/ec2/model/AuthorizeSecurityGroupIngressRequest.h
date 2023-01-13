@@ -105,38 +105,38 @@ namespace Model
 
 
     /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all types. If
-     * you specify all ICMP types, you must specify all codes.</p> <p>Alternatively,
-     * use a set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
+     * types. If you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all types. If
-     * you specify all ICMP types, you must specify all codes.</p> <p>Alternatively,
-     * use a set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
+     * types. If you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all types. If
-     * you specify all ICMP types, you must specify all codes.</p> <p>Alternatively,
-     * use a set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
+     * types. If you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
-     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all types. If
-     * you specify all ICMP types, you must specify all codes.</p> <p>Alternatively,
-     * use a set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
+     * types. If you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -572,38 +572,38 @@ namespace Model
 
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all codes. If you
-     * specify all ICMP types, you must specify all codes.</p> <p>Alternatively, use a
-     * set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If
+     * you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all codes. If you
-     * specify all ICMP types, you must specify all codes.</p> <p>Alternatively, use a
-     * set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If
+     * you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all codes. If you
-     * specify all ICMP types, you must specify all codes.</p> <p>Alternatively, use a
-     * set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If
+     * you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all codes. If you
-     * specify all ICMP types, you must specify all codes.</p> <p>Alternatively, use a
-     * set of IP permissions to specify multiple rules and a description for the
-     * rule.</p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If
+     * you specify all ICMP types, you must specify all ICMP codes.</p>
+     * <p>Alternatively, use a set of IP permissions to specify multiple rules and a
+     * description for the rule.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
 
