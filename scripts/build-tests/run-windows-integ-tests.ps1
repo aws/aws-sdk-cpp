@@ -10,7 +10,7 @@
 
 echo "Setting the run environment"
 $TEST_ASSUME_ROLE_ARN = "arn:aws:iam::${env:AWS_ACCOUNT}:role/IntegrationTest"
-$TEST_LAMBDA_CODE_PATH = "${env:PREFIX_DIR}/aws-sdk-cpp/aws-cpp-sdk-lambda-integration-tests/resources"
+${env:TEST_LAMBDA_CODE_PATH} = "${env:PREFIX_DIR}/aws-sdk-cpp/aws-cpp-sdk-lambda-integration-tests/resources"
 $sts = aws sts assume-role --role-arn "${TEST_ASSUME_ROLE_ARN}" --role-session-name "${env:AWS_ROLE_SESSION_NAME}" --query "Credentials.[AccessKeyId, SecretAccessKey, SessionToken]"
 $sts
 aws configure set aws_access_key_id (${sts}[1] -replace " " -replace "`"" -replace ",")
