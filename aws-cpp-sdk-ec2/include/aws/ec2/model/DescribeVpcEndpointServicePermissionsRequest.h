@@ -113,65 +113,65 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline DescribeVpcEndpointServicePermissionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline DescribeVpcEndpointServicePermissionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline DescribeVpcEndpointServicePermissionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of
-     * the principal.</p> </li> <li> <p> <code>principal-type</code> - The principal
-     * type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>principal</code> - The ARN of the
+     * principal.</p> </li> <li> <p> <code>principal-type</code> - The principal type
+     * (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> |
      * <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> </ul>
      */
     inline DescribeVpcEndpointServicePermissionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }

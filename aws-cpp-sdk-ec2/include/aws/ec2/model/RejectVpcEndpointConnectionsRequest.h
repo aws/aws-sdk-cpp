@@ -112,47 +112,47 @@ namespace Model
 
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline RejectVpcEndpointConnectionsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline RejectVpcEndpointConnectionsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline RejectVpcEndpointConnectionsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline RejectVpcEndpointConnectionsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more VPC endpoints.</p>
+     * <p>The IDs of the VPC endpoints.</p>
      */
     inline RejectVpcEndpointConnectionsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
 

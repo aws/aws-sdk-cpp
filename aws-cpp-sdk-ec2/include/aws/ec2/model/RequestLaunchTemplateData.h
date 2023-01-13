@@ -1656,7 +1656,7 @@ namespace Model
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.</p>
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
 
@@ -1664,7 +1664,7 @@ namespace Model
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.</p>
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
 
@@ -1672,7 +1672,7 @@ namespace Model
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.</p>
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
 
@@ -1680,7 +1680,7 @@ namespace Model
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.</p>
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
 

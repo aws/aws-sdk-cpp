@@ -39,6 +39,7 @@
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
 #include <aws/connect/model/CreateVocabularyResult.h>
+#include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
@@ -124,8 +125,11 @@
 #include <aws/connect/model/TransferContactResult.h>
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
+#include <aws/connect/model/UpdateContactFlowContentResult.h>
+#include <aws/connect/model/UpdateContactFlowMetadataResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
+#include <aws/connect/model/UpdateContactFlowNameResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
@@ -372,7 +376,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
       typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactFlowOutcome;
+      typedef Aws::Utils::Outcome<DeleteContactFlowResult, ConnectError> DeleteContactFlowOutcome;
       typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
@@ -480,11 +484,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
       typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowContentOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowMetadataOutcome;
+      typedef Aws::Utils::Outcome<UpdateContactFlowContentResult, ConnectError> UpdateContactFlowContentOutcome;
+      typedef Aws::Utils::Outcome<UpdateContactFlowMetadataResult, ConnectError> UpdateContactFlowMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateContactFlowModuleContentResult, ConnectError> UpdateContactFlowModuleContentOutcome;
       typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError> UpdateContactFlowModuleMetadataOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowNameOutcome;
+      typedef Aws::Utils::Outcome<UpdateContactFlowNameResult, ConnectError> UpdateContactFlowNameOutcome;
       typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;

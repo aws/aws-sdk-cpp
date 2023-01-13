@@ -99,13 +99,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -284,13 +288,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -469,13 +477,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -654,13 +666,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -839,13 +855,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -1024,13 +1044,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -1209,13 +1233,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -1394,13 +1422,17 @@ namespace Model
      * for example, <code>2021-09-29T*</code>, which matches an entire day.</p> </li>
      * <li> <p> <code>metadata-options.http-tokens</code> - The metadata request
      * authorization state (<code>optional</code> | <code>required</code>)</p> </li>
-     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The http
+     * <li> <p> <code>metadata-options.http-put-response-hop-limit</code> - The HTTP
      * metadata request put response hop limit (integer, possible values <code>1</code>
      * to <code>64</code>)</p> </li> <li> <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access
-     * on http endpoint (<code>enabled</code> | <code>disabled</code>)</p> </li> <li>
-     * <p> <code>monitoring-state</code> - Indicates whether detailed monitoring is
-     * enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP
+     * metadata endpoint on your instance (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p>
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to
+     * instance tags from the instance metadata (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4

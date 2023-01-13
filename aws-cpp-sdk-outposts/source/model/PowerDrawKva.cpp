@@ -23,6 +23,7 @@ namespace Aws
         static const int POWER_5_KVA_HASH = HashingUtils::HashString("POWER_5_KVA");
         static const int POWER_10_KVA_HASH = HashingUtils::HashString("POWER_10_KVA");
         static const int POWER_15_KVA_HASH = HashingUtils::HashString("POWER_15_KVA");
+        static const int POWER_30_KVA_HASH = HashingUtils::HashString("POWER_30_KVA");
 
 
         PowerDrawKva GetPowerDrawKvaForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == POWER_15_KVA_HASH)
           {
             return PowerDrawKva::POWER_15_KVA;
+          }
+          else if (hashCode == POWER_30_KVA_HASH)
+          {
+            return PowerDrawKva::POWER_30_KVA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "POWER_10_KVA";
           case PowerDrawKva::POWER_15_KVA:
             return "POWER_15_KVA";
+          case PowerDrawKva::POWER_30_KVA:
+            return "POWER_30_KVA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

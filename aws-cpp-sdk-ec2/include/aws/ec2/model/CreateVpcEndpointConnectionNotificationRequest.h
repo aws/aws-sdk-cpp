@@ -194,64 +194,64 @@ namespace Model
 
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionEvents() const{ return m_connectionEvents; }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline bool ConnectionEventsHasBeenSet() const { return m_connectionEventsHasBeenSet; }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline void SetConnectionEvents(const Aws::Vector<Aws::String>& value) { m_connectionEventsHasBeenSet = true; m_connectionEvents = value; }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline void SetConnectionEvents(Aws::Vector<Aws::String>&& value) { m_connectionEventsHasBeenSet = true; m_connectionEvents = std::move(value); }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithConnectionEvents(const Aws::Vector<Aws::String>& value) { SetConnectionEvents(value); return *this;}
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithConnectionEvents(Aws::Vector<Aws::String>&& value) { SetConnectionEvents(std::move(value)); return *this;}
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& AddConnectionEvents(const Aws::String& value) { m_connectionEventsHasBeenSet = true; m_connectionEvents.push_back(value); return *this; }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& AddConnectionEvents(Aws::String&& value) { m_connectionEventsHasBeenSet = true; m_connectionEvents.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more endpoint events for which to receive notifications. Valid values
-     * are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
+     * <p>The endpoint events for which to receive notifications. Valid values are
+     * <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and
      * <code>Reject</code>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& AddConnectionEvents(const char* value) { m_connectionEventsHasBeenSet = true; m_connectionEvents.push_back(value); return *this; }

@@ -826,74 +826,74 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
-     * interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * <p>[EC2-Classic, default VPC] The names of the security groups.</p> <p>If you
+     * specify a network interface, you must specify any security groups as part of the
+     * network interface.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

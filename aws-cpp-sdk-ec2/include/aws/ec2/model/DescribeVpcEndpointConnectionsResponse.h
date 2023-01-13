@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline const Aws::Vector<VpcEndpointConnection>& GetVpcEndpointConnections() const{ return m_vpcEndpointConnections; }
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline void SetVpcEndpointConnections(const Aws::Vector<VpcEndpointConnection>& value) { m_vpcEndpointConnections = value; }
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline void SetVpcEndpointConnections(Aws::Vector<VpcEndpointConnection>&& value) { m_vpcEndpointConnections = std::move(value); }
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline DescribeVpcEndpointConnectionsResponse& WithVpcEndpointConnections(const Aws::Vector<VpcEndpointConnection>& value) { SetVpcEndpointConnections(value); return *this;}
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline DescribeVpcEndpointConnectionsResponse& WithVpcEndpointConnections(Aws::Vector<VpcEndpointConnection>&& value) { SetVpcEndpointConnections(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline DescribeVpcEndpointConnectionsResponse& AddVpcEndpointConnections(const VpcEndpointConnection& value) { m_vpcEndpointConnections.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more VPC endpoint connections.</p>
+     * <p>Information about the VPC endpoint connections.</p>
      */
     inline DescribeVpcEndpointConnectionsResponse& AddVpcEndpointConnections(VpcEndpointConnection&& value) { m_vpcEndpointConnections.push_back(std::move(value)); return *this; }
 

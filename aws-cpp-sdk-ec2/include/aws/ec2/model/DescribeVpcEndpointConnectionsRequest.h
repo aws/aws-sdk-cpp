@@ -72,8 +72,8 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -85,8 +85,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -98,8 +98,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -111,8 +111,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -124,8 +124,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -137,8 +137,8 @@ namespace Model
     inline DescribeVpcEndpointConnectionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -150,8 +150,8 @@ namespace Model
     inline DescribeVpcEndpointConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The
@@ -163,8 +163,8 @@ namespace Model
     inline DescribeVpcEndpointConnectionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP
-     * address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
+     * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
      * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
      * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
      * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The

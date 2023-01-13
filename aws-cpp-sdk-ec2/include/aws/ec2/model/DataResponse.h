@@ -184,44 +184,44 @@ namespace Model
 
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline const MetricType& GetMetric() const{ return m_metric; }
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline void SetMetric(const MetricType& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline void SetMetric(MetricType&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline DataResponse& WithMetric(const MetricType& value) { SetMetric(value); return *this;}
 
     /**
-     * <p>The metric used for the network performance request. Currently only
-     * <code>aggregate-latency</code> is supported, showing network latency during a
-     * specified period. </p>
+     * <p>The metric used for the network performance request. Only
+     * <code>aggregate-latency</code> is supported, which shows network latency during
+     * a specified period. </p>
      */
     inline DataResponse& WithMetric(MetricType&& value) { SetMetric(std::move(value)); return *this;}
 

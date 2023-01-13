@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CLOUDFORMATION_STACK_INACTIVE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_INACTIVE");
         static const int CLOUDFORMATION_STACK_NOT_EXISTING_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_NOT_EXISTING");
+        static const int CLOUDFORMATION_STACK_UNASSUMABLE_ROLE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_UNASSUMABLE_ROLE");
 
 
         QueryErrorCode GetQueryErrorCodeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CLOUDFORMATION_STACK_NOT_EXISTING_HASH)
           {
             return QueryErrorCode::CLOUDFORMATION_STACK_NOT_EXISTING;
+          }
+          else if (hashCode == CLOUDFORMATION_STACK_UNASSUMABLE_ROLE_HASH)
+          {
+            return QueryErrorCode::CLOUDFORMATION_STACK_UNASSUMABLE_ROLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CLOUDFORMATION_STACK_INACTIVE";
           case QueryErrorCode::CLOUDFORMATION_STACK_NOT_EXISTING:
             return "CLOUDFORMATION_STACK_NOT_EXISTING";
+          case QueryErrorCode::CLOUDFORMATION_STACK_UNASSUMABLE_ROLE:
+            return "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

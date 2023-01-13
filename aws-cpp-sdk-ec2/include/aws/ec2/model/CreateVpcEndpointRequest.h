@@ -22,9 +22,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateVpcEndpoint.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointRequest">AWS
-   * API Reference</a></p>
    */
   class CreateVpcEndpointRequest : public EC2Request
   {
@@ -109,99 +106,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC in which the endpoint will be used.</p>
+     * <p>The ID of the VPC for the endpoint.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service name. To get a list of available services, use the
-     * <a>DescribeVpcEndpointServices</a> request, or get the name from the service
-     * provider.</p>
+     * <p>The service name.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -272,166 +253,175 @@ namespace Model
 
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route table IDs.</p>
+     * <p>(Gateway endpoint) The route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline CreateVpcEndpointRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline CreateVpcEndpointRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface and Gateway Load Balancer endpoints) The ID of one or more subnets
-     * in which to create an endpoint network interface. For a Gateway Load Balancer
-     * endpoint, you can specify one subnet only.</p>
+     * <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in
+     * which to create an endpoint network interface. For a Gateway Load Balancer
+     * endpoint, you can specify only one subnet.</p>
      */
     inline CreateVpcEndpointRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline CreateVpcEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline CreateVpcEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) The ID of one or more security groups to associate with
-     * the endpoint network interface.</p>
+     * <p>(Interface endpoint) The IDs of the security groups to associate with the
+     * endpoint network interface. If this parameter is not specified, we use the
+     * default security group for the VPC.</p>
      */
     inline CreateVpcEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

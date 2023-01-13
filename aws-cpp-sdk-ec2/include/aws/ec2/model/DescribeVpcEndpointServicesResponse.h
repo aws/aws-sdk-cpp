@@ -27,12 +27,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeVpcEndpointServices.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicesResult">AWS
-   * API Reference</a></p>
-   */
   class DescribeVpcEndpointServicesResponse
   {
   public:
@@ -42,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNames = value; }
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNames = std::move(value); }
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline DescribeVpcEndpointServicesResponse& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline DescribeVpcEndpointServicesResponse& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline DescribeVpcEndpointServicesResponse& AddServiceNames(const Aws::String& value) { m_serviceNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline DescribeVpcEndpointServicesResponse& AddServiceNames(Aws::String&& value) { m_serviceNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of supported services.</p>
+     * <p>The supported services.</p>
      */
     inline DescribeVpcEndpointServicesResponse& AddServiceNames(const char* value) { m_serviceNames.push_back(value); return *this; }
 

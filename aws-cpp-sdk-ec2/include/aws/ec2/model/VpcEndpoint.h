@@ -276,47 +276,56 @@ namespace Model
 
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline VpcEndpoint& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline VpcEndpoint& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline VpcEndpoint& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline VpcEndpoint& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     * <p>(Gateway endpoint) The IDs of the route tables associated with the
+     * endpoint.</p>
      */
     inline VpcEndpoint& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
@@ -525,47 +534,47 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline void SetNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = value; }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline void SetNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline VpcEndpoint& WithNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetNetworkInterfaceIds(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline VpcEndpoint& WithNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetNetworkInterfaceIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline VpcEndpoint& AddNetworkInterfaceIds(const Aws::String& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline VpcEndpoint& AddNetworkInterfaceIds(Aws::String&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     * <p>(Interface endpoint) The network interfaces for the endpoint.</p>
      */
     inline VpcEndpoint& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
 
@@ -643,42 +652,42 @@ namespace Model
 
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline VpcEndpoint& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline VpcEndpoint& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline VpcEndpoint& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Any tags assigned to the endpoint.</p>
+     * <p>The tags assigned to the endpoint.</p>
      */
     inline VpcEndpoint& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

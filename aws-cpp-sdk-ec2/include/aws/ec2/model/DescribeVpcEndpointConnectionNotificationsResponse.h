@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline const Aws::Vector<ConnectionNotification>& GetConnectionNotificationSet() const{ return m_connectionNotificationSet; }
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline void SetConnectionNotificationSet(const Aws::Vector<ConnectionNotification>& value) { m_connectionNotificationSet = value; }
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline void SetConnectionNotificationSet(Aws::Vector<ConnectionNotification>&& value) { m_connectionNotificationSet = std::move(value); }
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithConnectionNotificationSet(const Aws::Vector<ConnectionNotification>& value) { SetConnectionNotificationSet(value); return *this;}
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithConnectionNotificationSet(Aws::Vector<ConnectionNotification>&& value) { SetConnectionNotificationSet(std::move(value)); return *this;}
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline DescribeVpcEndpointConnectionNotificationsResponse& AddConnectionNotificationSet(const ConnectionNotification& value) { m_connectionNotificationSet.push_back(value); return *this; }
 
     /**
-     * <p>One or more notifications.</p>
+     * <p>The notifications.</p>
      */
     inline DescribeVpcEndpointConnectionNotificationsResponse& AddConnectionNotificationSet(ConnectionNotification&& value) { m_connectionNotificationSet.push_back(std::move(value)); return *this; }
 

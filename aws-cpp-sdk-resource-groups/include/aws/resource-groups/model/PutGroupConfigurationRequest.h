@@ -85,12 +85,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -98,12 +98,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -111,12 +111,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -124,12 +124,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -137,12 +137,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -150,12 +150,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -163,12 +163,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
@@ -176,12 +176,12 @@ namespace Model
 
     /**
      * <p>The new configuration to associate with the specified group. A configuration
-     * associates the resource group with an AWS service and specifies how the service
-     * can interact with the resources in the group. A configuration is an array of
-     * <a>GroupConfigurationItem</a> elements.</p> <p>For information about the syntax
-     * of a service configuration, see <a
+     * associates the resource group with an Amazon Web Services service and specifies
+     * how the service can interact with the resources in the group. A configuration is
+     * an array of <a>GroupConfigurationItem</a> elements.</p> <p>For information about
+     * the syntax of a service configuration, see <a
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.</p>  <p>A resource group can
+     * configurations for Resource Groups</a>.</p>  <p>A resource group can
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */

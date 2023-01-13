@@ -161,38 +161,44 @@ namespace Model
 
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
+     * only be specified when <code>InstanceRequirements</code> is specified.</p>
+     * <p>Default: <code>units</code> (translates to number of instances)</p>
      */
     inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
 

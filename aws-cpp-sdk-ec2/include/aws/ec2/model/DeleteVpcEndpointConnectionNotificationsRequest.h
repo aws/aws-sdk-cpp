@@ -71,47 +71,47 @@ namespace Model
 
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionNotificationIds() const{ return m_connectionNotificationIds; }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline bool ConnectionNotificationIdsHasBeenSet() const { return m_connectionNotificationIdsHasBeenSet; }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline void SetConnectionNotificationIds(const Aws::Vector<Aws::String>& value) { m_connectionNotificationIdsHasBeenSet = true; m_connectionNotificationIds = value; }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline void SetConnectionNotificationIds(Aws::Vector<Aws::String>&& value) { m_connectionNotificationIdsHasBeenSet = true; m_connectionNotificationIds = std::move(value); }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline DeleteVpcEndpointConnectionNotificationsRequest& WithConnectionNotificationIds(const Aws::Vector<Aws::String>& value) { SetConnectionNotificationIds(value); return *this;}
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline DeleteVpcEndpointConnectionNotificationsRequest& WithConnectionNotificationIds(Aws::Vector<Aws::String>&& value) { SetConnectionNotificationIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline DeleteVpcEndpointConnectionNotificationsRequest& AddConnectionNotificationIds(const Aws::String& value) { m_connectionNotificationIdsHasBeenSet = true; m_connectionNotificationIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline DeleteVpcEndpointConnectionNotificationsRequest& AddConnectionNotificationIds(Aws::String&& value) { m_connectionNotificationIdsHasBeenSet = true; m_connectionNotificationIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more notification IDs.</p>
+     * <p>The IDs of the notifications.</p>
      */
     inline DeleteVpcEndpointConnectionNotificationsRequest& AddConnectionNotificationIds(const char* value) { m_connectionNotificationIdsHasBeenSet = true; m_connectionNotificationIds.push_back(value); return *this; }
 
