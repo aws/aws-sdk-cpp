@@ -264,7 +264,6 @@ namespace Aws
                     waiterCVar.wait_until(cvarUniqueLock, requestExpiryTime,
                                           [&connectionRef, &waitCompletedIntentionally, requestExpiryTime, response]()
                                           {
-                                              std::cerr << "boo" << std::endl;
                                               // If the request is done, we don't care about the timeout.
                                               if (waitCompletedIntentionally) return true;
 
