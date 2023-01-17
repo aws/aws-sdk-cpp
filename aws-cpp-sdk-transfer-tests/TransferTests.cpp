@@ -51,6 +51,7 @@ static const char* CONTENT_TEST_FILE_NAME = "ContentTransferTestFile.txt";
 static const char* CONTENT_FILE_KEY = "ContentFileKey";
 
 static const char* BIG_FILE_KEY = "BigFileKey";
+static const char* LARGE_FILE_KEY = "LargeFileKey";
 
 #ifdef _MSC_VER
 static const wchar_t* UNICODE_TEST_FILE_NAME = L"测试文件.txt";
@@ -68,7 +69,8 @@ static const unsigned CANCEL_TEST_SIZE = MB5 * 30;
 static const unsigned PARTS_IN_MEDIUM_TEST = 2;
 
 static const unsigned PARTS_IN_BIG_TEST = 15;
-static const unsigned BIG_TEST_SIZE = MB5 * PARTS_IN_BIG_TEST;
+static const unsigned BIG_TEST_SIZE = MB5 * PARTS_IN_BIG_TEST; // 75mb
+static const unsigned LARGE_TEST_SIZE = BIG_TEST_SIZE * 5;
 static const char* testString = "S3 MultiPart upload Test File ";
 static const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
 static const std::chrono::seconds TEST_WAIT_TIMEOUT = std::chrono::seconds(10);
@@ -89,7 +91,7 @@ class ScopedTestFile
     public:
 
         ScopedTestFile(const Aws::String& fileName, const Aws::String& putString) :
-            m_fileName(fileName)
+            m_fileName(fileName.c_str())
         {
             Aws::OFStream testFile;
 #ifdef _MSC_VER
@@ -103,7 +105,7 @@ class ScopedTestFile
         }
 
         ScopedTestFile(const Aws::String& fileName, unsigned fileSize, const Aws::String& putString) :
-            m_fileName(fileName)
+            m_fileName(fileName.c_str())
         {
             Aws::OFStream testFile;
 #ifdef _MSC_VER
@@ -127,7 +129,7 @@ class ScopedTestFile
         }
 
     private:
-        Aws::String m_fileName;
+        std::string m_fileName;
 };
 
 class MockS3Client : public S3Client
@@ -313,7 +315,7 @@ protected:
                 downloadPtr->WaitUntilFinished();
             }
 
-            ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+            ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus()) << downloadPtr->GetLastError().GetMessage();
             ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
             ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
 
@@ -410,7 +412,7 @@ protected:
                     downloadPtr->WaitUntilFinished();
                 }
 
-                ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+                ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus()) << downloadPtr->GetLastError().GetMessage();
                 ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
                 ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
 
@@ -1170,6 +1172,26 @@ TEST_F(TransferTests, TransferManager_BigTest)
                                       BIG_FILE_KEY,
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
+}
+
+TEST_F(TransferTests, TransferManager_LargeTestDontCare)
+{
+    // Upload a large file, do not check for anything except memory issues.
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String largeTestFileName = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(largeTestFileName, LARGE_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+    transferManager->UploadFile(largeTestFileName, GetTestBucketName(), LARGE_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    Aws::Transfer::TransferStatus res = transferManager->WaitUntilAllFinished(1);
+    ASSERT_EQ(Aws::Transfer::TransferStatus::IN_PROGRESS, res);
+
+    res = transferManager->WaitUntilAllFinished();
+    ASSERT_EQ(Aws::Transfer::TransferStatus::COMPLETED, res);
 }
 
 TEST_F(TransferTests, TransferManager_MultipartTestWithStreamOffset)
