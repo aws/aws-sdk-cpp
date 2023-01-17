@@ -68,7 +68,7 @@ namespace Aws
             Crt::Http::HttpClientConnectionOptions CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const;
             void CheckAndInitializeProxySettings(const Aws::Client::ClientConfiguration& clientConfig);
 
-            static Aws::String ResolveConnectionPoolHash(const URI& uri);
+            static Aws::String ResolveConnectionPoolKey(const URI& uri);
         };
     }
 }

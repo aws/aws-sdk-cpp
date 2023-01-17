@@ -36,6 +36,7 @@ option(BUILD_SHARED_LIBS "If enabled, all aws sdk libraries will be build as sha
 option(FORCE_SHARED_CRT "If enabled, will unconditionally link the standard libraries in dynamically, otherwise the standard library will be linked in based on the BUILD_SHARED_LIBS setting" ON)
 option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
 option(NO_HTTP_CLIENT "If enabled, no platform-default http client will be included in the library.  For the library to be used you will need to provide your own platform-specific implementation" OFF)
+option(USE_CRT_HTTP_CLIENT "If enabled, The common runtime HTTP client will be used, and the legacy systems such as WinHttp and libcurl will not be built or included" OFF)
 option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
 option(USE_IXML_HTTP_REQUEST_2 "If enabled on windows, the com object IXmlHttpRequest2 will be used for the http stack" OFF)
 option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)

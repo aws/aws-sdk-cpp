@@ -197,9 +197,11 @@ elseif(ENABLE_WINDOWS_CLIENT)
         unset(CMAKE_REQUIRED_LIBRARIES)
 
     endif()
+elseif(USE_CRT_HTTP_CLIENT)
+    file(GLOB CRT_HTTP_HEADERS "include/aws/core/http/crt/*.h")
+    file(GLOB CRT_HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/crt/*.cpp")
 endif()
-file(GLOB CRT_HTTP_HEADERS "include/aws/core/http/crt/*.h")
-file(GLOB CRT_HTTP_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/crt/*.cpp")
+
 
 if (PLATFORM_WINDOWS)
     file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows/*.cpp")
@@ -453,8 +455,9 @@ if(MSVC)
         source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_CLIENT_SOURCE})
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
+    elseif(USE_CRT_HTTP_CLIENT)
+        source_group("Source Files\\http\\crt" FILES ${CRT_HTTP_SOURCE})
     endif()
-    source_group("Source Files\\http\\crt" FILES ${CRT_HTTP_SOURCE})
 
 
     # encryption conditional source
@@ -475,8 +478,6 @@ add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSDK_VERSION_MAJOR}")
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MINOR=${AWSSDK_VERSION_MINOR}")
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_PATCH=${AWSSDK_VERSION_PATCH}")
-
-target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_SDK_USE_CRT_HTTP")
 
 if (WININET_HAS_H2)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "WININET_HAS_H2")
@@ -636,8 +637,9 @@ if(ENABLE_CURL_CLIENT)
     install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/curl)
 elseif(ENABLE_WINDOWS_CLIENT)
     install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/windows)
-endif()
+elseif(USE_CRT_HTTP_CLIENT)
     install (FILES ${CRT_HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/crt)
+endif()
 
 
 # encryption headers
