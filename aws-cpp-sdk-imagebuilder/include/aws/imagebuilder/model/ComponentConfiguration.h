@@ -81,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline const Aws::Vector<ComponentParameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline void SetParameters(const Aws::Vector<ComponentParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline void SetParameters(Aws::Vector<ComponentParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline ComponentConfiguration& WithParameters(const Aws::Vector<ComponentParameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline ComponentConfiguration& WithParameters(Aws::Vector<ComponentParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline ComponentConfiguration& AddParameters(const ComponentParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>A group of parameter settings that are used to configure the component for a
-     * specific recipe.</p>
+     * <p>A group of parameter settings that Image Builder uses to configure the
+     * component for a specific recipe.</p>
      */
     inline ComponentConfiguration& AddParameters(ComponentParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

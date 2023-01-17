@@ -13,21 +13,21 @@ namespace imagebuilder
 {
 namespace Model
 {
-  enum class Ownership
+  enum class ImageSource
   {
     NOT_SET,
-    Self,
-    Shared,
-    Amazon,
-    ThirdParty
+    AMAZON_MANAGED,
+    AWS_MARKETPLACE,
+    IMPORTED,
+    CUSTOM
   };
 
-namespace OwnershipMapper
+namespace ImageSourceMapper
 {
-AWS_IMAGEBUILDER_API Ownership GetOwnershipForName(const Aws::String& name);
+AWS_IMAGEBUILDER_API ImageSource GetImageSourceForName(const Aws::String& name);
 
-AWS_IMAGEBUILDER_API Aws::String GetNameForOwnership(Ownership value);
-} // namespace OwnershipMapper
+AWS_IMAGEBUILDER_API Aws::String GetNameForImageSource(ImageSource value);
+} // namespace ImageSourceMapper
 } // namespace Model
 } // namespace imagebuilder
 } // namespace Aws

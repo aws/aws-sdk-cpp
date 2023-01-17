@@ -104,6 +104,18 @@ UpdatePricingRuleResult& UpdatePricingRuleResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("UsageType"))
+  {
+    m_usageType = jsonValue.GetString("UsageType");
+
+  }
+
+  if(jsonValue.ValueExists("Operation"))
+  {
+    m_operation = jsonValue.GetString("Operation");
+
+  }
+
 
 
   return *this;

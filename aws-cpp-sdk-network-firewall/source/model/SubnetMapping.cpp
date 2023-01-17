@@ -19,12 +19,16 @@ namespace Model
 {
 
 SubnetMapping::SubnetMapping() : 
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false)
 {
 }
 
 SubnetMapping::SubnetMapping(JsonView jsonValue) : 
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ SubnetMapping& SubnetMapping::operator =(JsonView jsonValue)
     m_subnetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IPAddressType"))
+  {
+    m_iPAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("IPAddressType"));
+
+    m_iPAddressTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue SubnetMapping::Jsonize() const
   {
    payload.WithString("SubnetId", m_subnetId);
 
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithString("IPAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_iPAddressType));
   }
 
   return payload;

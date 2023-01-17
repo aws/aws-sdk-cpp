@@ -318,42 +318,58 @@ namespace Model
 
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline ImageRecipe& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline ImageRecipe& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline ImageRecipe& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components that are included in the image recipe. Recipes require a
+     * minimum of one build component, and can have a maximum of 20 build and test
+     * components in any combination.</p>
      */
     inline ImageRecipe& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 

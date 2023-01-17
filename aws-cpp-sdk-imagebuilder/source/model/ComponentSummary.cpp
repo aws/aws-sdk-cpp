@@ -32,7 +32,10 @@ ComponentSummary::ComponentSummary() :
     m_descriptionHasBeenSet(false),
     m_changeDescriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publisherHasBeenSet(false),
+    m_obfuscate(false),
+    m_obfuscateHasBeenSet(false)
 {
 }
 
@@ -50,7 +53,10 @@ ComponentSummary::ComponentSummary(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_changeDescriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_publisherHasBeenSet(false),
+    m_obfuscate(false),
+    m_obfuscateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +153,20 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("publisher"))
+  {
+    m_publisher = jsonValue.GetString("publisher");
+
+    m_publisherHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("obfuscate"))
+  {
+    m_obfuscate = jsonValue.GetBool("obfuscate");
+
+    m_obfuscateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -231,6 +251,18 @@ JsonValue ComponentSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_publisherHasBeenSet)
+  {
+   payload.WithString("publisher", m_publisher);
+
+  }
+
+  if(m_obfuscateHasBeenSet)
+  {
+   payload.WithBool("obfuscate", m_obfuscate);
 
   }
 

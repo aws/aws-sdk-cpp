@@ -260,58 +260,58 @@ namespace Model
 
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline CreatePricingRuleRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline CreatePricingRuleRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the
-     * attribute indicates which service the <code>PricingRule</code> is applicable
-     * for. </p>
+     * <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or
+     * <code>SKU</code>, the attribute indicates which service the
+     * <code>PricingRule</code> is applicable for. </p>
      */
     inline CreatePricingRuleRequest& WithService(const char* value) { SetService(value); return *this;}
 
@@ -474,6 +474,176 @@ namespace Model
      */
     inline CreatePricingRuleRequest& WithTiering(CreateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline CreatePricingRuleRequest& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline CreatePricingRuleRequest& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
+
+    /**
+     * <p> Usage type is the unit that each service uses to measure the usage of a
+     * specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to
+     * <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example,
+     * <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double
+     * Extra Large</code> instance in the US West (Oregon) Region.
+     * <pre><code>&lt;/p&gt; </code></pre>
+     */
+    inline CreatePricingRuleRequest& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline const Aws::String& GetOperation() const{ return m_operation; }
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline CreatePricingRuleRequest& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline CreatePricingRuleRequest& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
+
+    /**
+     * <p> Operation is the specific Amazon Web Services action covered by this line
+     * item. This describes the specific usage of the line item.</p> <p> If the
+     * <code>Scope</code> attribute is set to <code>SKU</code>, this attribute
+     * indicates which operation the <code>PricingRule</code> is modifying. For
+     * example, a value of <code>RunInstances:0202</code> indicates the operation of
+     * running an Amazon EC2 instance.</p>
+     */
+    inline CreatePricingRuleRequest& WithOperation(const char* value) { SetOperation(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -505,6 +675,12 @@ namespace Model
 
     CreateTieringInput m_tiering;
     bool m_tieringHasBeenSet = false;
+
+    Aws::String m_usageType;
+    bool m_usageTypeHasBeenSet = false;
+
+    Aws::String m_operation;
+    bool m_operationHasBeenSet = false;
   };
 
 } // namespace Model

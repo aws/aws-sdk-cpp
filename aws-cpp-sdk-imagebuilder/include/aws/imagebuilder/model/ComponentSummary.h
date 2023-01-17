@@ -166,96 +166,96 @@ namespace Model
 
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline ComponentSummary& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the component.</p>
+     * <p>The operating system platform of the component.</p>
      */
     inline ComponentSummary& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline ComponentSummary& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline ComponentSummary& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the base image OS
-     * version during image recipe creation.</p>
+     * <p>The operating system (OS) version that the component supports. If the OS
+     * information is available, Image Builder performs a prefix match against the base
+     * image OS version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
@@ -292,38 +292,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline const ComponentType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline void SetType(const ComponentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline void SetType(ComponentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline ComponentSummary& WithType(const ComponentType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * <p>The component type specifies whether Image Builder uses the component to
+     * build the image or only to test it.</p>
      */
     inline ComponentSummary& WithType(ComponentType&& value) { SetType(std::move(value)); return *this;}
 
@@ -411,151 +411,225 @@ namespace Model
 
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline ComponentSummary& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline ComponentSummary& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The change description of the component.</p>
+     * <p>The change description for the current version of the component.</p>
      */
     inline ComponentSummary& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
 
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline ComponentSummary& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline ComponentSummary& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
 
     /**
-     * <p>The date that the component was created.</p>
+     * <p>The original creation date of the component.</p>
      */
     inline ComponentSummary& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
 
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags associated with the component.</p>
+     * <p>The tags that apply to the component.</p>
      */
     inline ComponentSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline const Aws::String& GetPublisher() const{ return m_publisher; }
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline bool PublisherHasBeenSet() const { return m_publisherHasBeenSet; }
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline void SetPublisher(const Aws::String& value) { m_publisherHasBeenSet = true; m_publisher = value; }
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline void SetPublisher(Aws::String&& value) { m_publisherHasBeenSet = true; m_publisher = std::move(value); }
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline void SetPublisher(const char* value) { m_publisherHasBeenSet = true; m_publisher.assign(value); }
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline ComponentSummary& WithPublisher(const Aws::String& value) { SetPublisher(value); return *this;}
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline ComponentSummary& WithPublisher(Aws::String&& value) { SetPublisher(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the name of the publisher if this is a third-party component.
+     * Otherwise, this property is empty.</p>
+     */
+    inline ComponentSummary& WithPublisher(const char* value) { SetPublisher(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether component source is hidden from view in the console, and
+     * from component detail results for API, CLI, or SDK operations.</p>
+     */
+    inline bool GetObfuscate() const{ return m_obfuscate; }
+
+    /**
+     * <p>Indicates whether component source is hidden from view in the console, and
+     * from component detail results for API, CLI, or SDK operations.</p>
+     */
+    inline bool ObfuscateHasBeenSet() const { return m_obfuscateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether component source is hidden from view in the console, and
+     * from component detail results for API, CLI, or SDK operations.</p>
+     */
+    inline void SetObfuscate(bool value) { m_obfuscateHasBeenSet = true; m_obfuscate = value; }
+
+    /**
+     * <p>Indicates whether component source is hidden from view in the console, and
+     * from component detail results for API, CLI, or SDK operations.</p>
+     */
+    inline ComponentSummary& WithObfuscate(bool value) { SetObfuscate(value); return *this;}
 
   private:
 
@@ -594,6 +668,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_publisher;
+    bool m_publisherHasBeenSet = false;
+
+    bool m_obfuscate;
+    bool m_obfuscateHasBeenSet = false;
   };
 
 } // namespace Model

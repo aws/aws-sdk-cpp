@@ -144,25 +144,29 @@ namespace Model
 
     /**
      * <p>Limit the number of hops that an instance metadata request can traverse to
-     * reach its destination.</p>
+     * reach its destination. The default is one hop. However, if HTTP tokens are
+     * required, container image builds need a minimum of two hops.</p>
      */
     inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
 
     /**
      * <p>Limit the number of hops that an instance metadata request can traverse to
-     * reach its destination.</p>
+     * reach its destination. The default is one hop. However, if HTTP tokens are
+     * required, container image builds need a minimum of two hops.</p>
      */
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
 
     /**
      * <p>Limit the number of hops that an instance metadata request can traverse to
-     * reach its destination.</p>
+     * reach its destination. The default is one hop. However, if HTTP tokens are
+     * required, container image builds need a minimum of two hops.</p>
      */
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
 
     /**
      * <p>Limit the number of hops that an instance metadata request can traverse to
-     * reach its destination.</p>
+     * reach its destination. The default is one hop. However, if HTTP tokens are
+     * required, container image builds need a minimum of two hops.</p>
      */
     inline InstanceMetadataOptions& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
 

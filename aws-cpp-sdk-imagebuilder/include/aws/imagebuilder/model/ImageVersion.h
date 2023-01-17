@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/imagebuilder/model/BuildType.h>
+#include <aws/imagebuilder/model/ImageSource.h>
 #include <utility>
 
 namespace Aws
@@ -188,32 +189,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline const ImageType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline ImageVersion& WithType(const ImageType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies whether this image is an AMI or a container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline ImageVersion& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
@@ -372,32 +373,38 @@ namespace Model
 
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline ImageVersion& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the image version, for example "Windows" or "Linux".</p>
+     * <p>The operating system platform of the image version, for example "Windows" or
+     * "Linux".</p>
      */
     inline ImageVersion& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
@@ -601,6 +608,37 @@ namespace Model
      */
     inline ImageVersion& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline const ImageSource& GetImageSource() const{ return m_imageSource; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline bool ImageSourceHasBeenSet() const { return m_imageSourceHasBeenSet; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline void SetImageSource(const ImageSource& value) { m_imageSourceHasBeenSet = true; m_imageSource = value; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline void SetImageSource(ImageSource&& value) { m_imageSourceHasBeenSet = true; m_imageSource = std::move(value); }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline ImageVersion& WithImageSource(const ImageSource& value) { SetImageSource(value); return *this;}
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline ImageVersion& WithImageSource(ImageSource&& value) { SetImageSource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -629,6 +667,9 @@ namespace Model
 
     BuildType m_buildType;
     bool m_buildTypeHasBeenSet = false;
+
+    ImageSource m_imageSource;
+    bool m_imageSourceHasBeenSet = false;
   };
 
 } // namespace Model

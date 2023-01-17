@@ -242,42 +242,42 @@ namespace Model
 
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p>The components of the image recipe.</p>
+     * <p>The components included in the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 

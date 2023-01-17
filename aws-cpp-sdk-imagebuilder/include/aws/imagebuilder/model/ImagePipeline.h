@@ -601,83 +601,83 @@ namespace Model
 
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline const Aws::String& GetDateLastRun() const{ return m_dateLastRun; }
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline bool DateLastRunHasBeenSet() const { return m_dateLastRunHasBeenSet; }
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateLastRun(const Aws::String& value) { m_dateLastRunHasBeenSet = true; m_dateLastRun = value; }
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateLastRun(Aws::String&& value) { m_dateLastRunHasBeenSet = true; m_dateLastRun = std::move(value); }
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateLastRun(const char* value) { m_dateLastRunHasBeenSet = true; m_dateLastRun.assign(value); }
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateLastRun(const Aws::String& value) { SetDateLastRun(value); return *this;}
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateLastRun(Aws::String&& value) { SetDateLastRun(std::move(value)); return *this;}
 
     /**
-     * <p>The date on which this image pipeline was last run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateLastRun(const char* value) { SetDateLastRun(value); return *this;}
 
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline const Aws::String& GetDateNextRun() const{ return m_dateNextRun; }
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline bool DateNextRunHasBeenSet() const { return m_dateNextRunHasBeenSet; }
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateNextRun(const Aws::String& value) { m_dateNextRunHasBeenSet = true; m_dateNextRun = value; }
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateNextRun(Aws::String&& value) { m_dateNextRunHasBeenSet = true; m_dateNextRun = std::move(value); }
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline void SetDateNextRun(const char* value) { m_dateNextRunHasBeenSet = true; m_dateNextRun.assign(value); }
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateNextRun(const Aws::String& value) { SetDateNextRun(value); return *this;}
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateNextRun(Aws::String&& value) { SetDateNextRun(std::move(value)); return *this;}
 
     /**
-     * <p>The date on which this image pipeline will next be run.</p>
+     * <p>This is no longer supported, and does not return a value.</p>
      */
     inline ImagePipeline& WithDateNextRun(const char* value) { SetDateNextRun(value); return *this;}
 
