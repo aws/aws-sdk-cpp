@@ -24,7 +24,7 @@ namespace Aws
         namespace Io
         {
             class ClientBootstrap;
-        };
+        }
     }
 
     namespace Client
