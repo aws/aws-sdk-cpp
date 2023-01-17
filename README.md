@@ -25,6 +25,14 @@ All CRT libraries are git submodules of SDK for C++. It requires changes in git 
 
 See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
 
+## API Reference Docs
+
+The AWS SDK C++ recently re-formatted their API docs to be more modularized for easier navigation. Please update any old bookmarks that you may have.
+
+The root index of the documents can be found at https://sdk.amazonaws.com/cpp/api/LATEST/index.html
+
+from here each service specific documentation can be found under the `modules` tab. Upon opening one of these, you will see the associated class list of the client, including a links to the `core` module.
+
 ## Upgrade Your SDK to Get Latest Security Patches
 The AWS SDK for C++ has a dependency on cJSON. This dependency was updated to version 1.7.14 in the recent SDK updates. We would recommend to upgrade your SDK to version 1.9.67 for 1.9.x or 1.8.187 for 1.8.x. Thank @dkalinowski for reporting this issue: https://github.com/aws/aws-sdk-cpp/issues/1594
 
