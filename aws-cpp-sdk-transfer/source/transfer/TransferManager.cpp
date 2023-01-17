@@ -65,6 +65,53 @@ namespace Aws
             }
         }
 
+        Transfer::TransferStatus TransferManager::WaitUntilAllFinished(int64_t timeoutMs)
+        {
+            Transfer::TransferStatus status = Transfer::TransferStatus::IN_PROGRESS;
+            do
+            {
+                std::unique_lock<std::mutex> lock(m_tasksMutex);
+                if (m_tasks.empty())
+                {
+                    status = Transfer::TransferStatus::COMPLETED;
+                    break;
+                }
+                const auto waitStarted = std::chrono::steady_clock::now();
+                m_tasksSignal.wait_for(lock, std::chrono::milliseconds(timeoutMs));
+                timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+            }
+            while(status != Transfer::TransferStatus::COMPLETED && timeoutMs > 0);
+
+            return status;
+        }
+
+        void TransferManager::CancelAll()
+        {
+            Aws::UnorderedSet<std::shared_ptr<TransferHandle>> tasksCopy;
+            {
+                std::unique_lock<std::mutex> lock(m_tasksMutex);
+                tasksCopy = m_tasks;
+            }
+            for(auto& it : tasksCopy)
+            {
+                assert(it.get());
+                it->Cancel();
+            }
+        }
+
+        void TransferManager::AddTask(std::shared_ptr<TransferHandle> handle)
+        {
+            std::unique_lock<std::mutex> lock(m_tasksMutex);
+            m_tasks.emplace(std::move(handle));
+        }
+
+        void TransferManager::RemoveTask(const std::shared_ptr<TransferHandle>& handle)
+        {
+            std::unique_lock<std::mutex> lock(m_tasksMutex);
+            m_tasks.erase(handle);
+            m_tasksSignal.notify_all();
+        }
+
         TransferManager::~TransferManager()
         {
             for (auto buffer : m_bufferManager.ShutdownAndWait(static_cast<size_t>(m_transferConfig.transferBufferMaxHeapSize / m_transferConfig.bufferSize)))
@@ -104,7 +151,13 @@ namespace Aws
             handle->SetContext(context);
 
             auto self = shared_from_this();
-            m_transferConfig.transferExecutor->Submit([self, handle] { self->DoDownload(handle); });
+            AddTask(handle);
+            m_transferConfig.transferExecutor->Submit(
+                    [self, handle]
+                    {
+                        self->DoDownload(handle);
+                        self->RemoveTask(handle);
+                    });
             return handle;
         }
 
@@ -122,7 +175,13 @@ namespace Aws
             handle->SetContext(context);
 
             auto self = shared_from_this();
-            m_transferConfig.transferExecutor->Submit([self, handle] { self->DoDownload(handle); });
+            AddTask(handle);
+            m_transferConfig.transferExecutor->Submit(
+                    [self, handle]
+                    {
+                        self->DoDownload(handle);
+                        self->RemoveTask(handle);
+                    });
             return handle;
         }
 
@@ -205,7 +264,13 @@ namespace Aws
 
             inProgressHandle->Cancel();
             auto self = shared_from_this();
-            m_transferConfig.transferExecutor->Submit([self, inProgressHandle] { self->WaitForCancellationAndAbortUpload(inProgressHandle); });
+            AddTask(inProgressHandle);
+            m_transferConfig.transferExecutor->Submit(
+                    [self, inProgressHandle]
+                    {
+                        self->WaitForCancellationAndAbortUpload(inProgressHandle);
+                        self->RemoveTask(inProgressHandle);
+                    });
         }
 
         void TransferManager::UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata)
@@ -233,7 +298,15 @@ namespace Aws
                 return true;
             };
 
-            m_transferConfig.transferExecutor->Submit([directory, visitor]() { Aws::FileSystem::DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, prefix); // fake handle
+            AddTask(handle);
+            m_transferConfig.transferExecutor->Submit(
+                    [directory, visitor, self, handle]()
+                    {
+                        Aws::FileSystem::DirectoryTree dir(directory);
+                        dir.TraverseDepthFirst(visitor);
+                        self->RemoveTask(handle);
+                    });
         }
 
         void TransferManager::DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix)
@@ -242,9 +315,17 @@ namespace Aws
             Aws::FileSystem::CreateDirectoryIfNotExists(directory.c_str());
 
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
-            auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request,
-                const Aws::S3::Model::ListObjectsV2Outcome& outcome,
-                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, prefix); // fake handle
+            AddTask(handle);
+            auto handler =
+                    [self, handle](const Aws::S3::S3Client* client,
+                                   const Aws::S3::Model::ListObjectsV2Request& request,
+                                   const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+                        {
+                            self->HandleListObjectsResponse(client, request, outcome, context);
+                            self->RemoveTask(handle);
+                        };
 
             Aws::S3::Model::ListObjectsV2Request request;
             request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
@@ -380,10 +461,13 @@ namespace Aws
                     asyncContext->handle = handle;
                     asyncContext->partState = partsIter->second;
 
-                    auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
+                    auto uploadTask = Aws::MakeShared<TransferHandle>(CLASS_TAG, handle->GetBucketName(), handle->GetKey()); // fake handle
+                    AddTask(uploadTask);
+                    auto callback = [self, uploadTask](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
                         const Aws::S3::Model::UploadPartOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
                     {
                         self->HandleUploadPartResponse(client, request, outcome, context);
+                        self->RemoveTask(uploadTask);
                     };
 
                     m_transferConfig.s3Client->UploadPartAsync(uploadPartRequest, callback, asyncContext);
@@ -473,10 +557,13 @@ namespace Aws
             asyncContext->handle = handle;
             asyncContext->partState = partState;
 
-            auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
+            auto putObjectTask = Aws::MakeShared<TransferHandle>(CLASS_TAG, handle->GetBucketName(), handle->GetKey()); // fake handle
+            AddTask(putObjectTask);
+            auto callback = [self, putObjectTask](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
                 const Aws::S3::Model::PutObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
             {
                 self->HandlePutObjectResponse(client, request, outcome, context);
+                self->RemoveTask(putObjectTask);
             };
 
             m_transferConfig.s3Client->PutObjectAsync(putObjectRequest, callback, asyncContext);
@@ -644,8 +731,13 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(retryHandle);
 
             auto self = shared_from_this();
-            m_transferConfig.transferExecutor->Submit([self, retryHandle]
-                                                      { self->DoDownload(retryHandle); });
+            AddTask(retryHandle);
+            m_transferConfig.transferExecutor->Submit(
+                    [self, retryHandle]
+                    {
+                        self->DoDownload(retryHandle);
+                        self->RemoveTask(retryHandle);
+                    });
 
             return retryHandle;
         }
@@ -863,10 +955,13 @@ namespace Aws
                     asyncContext->handle = handle;
                     asyncContext->partState = partState;
 
-                    auto callback = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
+                    auto getObjectTask = Aws::MakeShared<TransferHandle>(CLASS_TAG, handle->GetBucketName(), handle->GetKey()); // fake handle
+                    AddTask(getObjectTask);
+                    auto callback = [self, getObjectTask](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
                         const Aws::S3::Model::GetObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
                     {
                         self->HandleGetObjectResponse(client, request, outcome, context);
+                        self->RemoveTask(getObjectTask);
                     };
 
                     handle->AddPendingPart(partState);
@@ -1016,14 +1111,6 @@ namespace Aws
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
-            auto handler = [self](const Aws::S3::S3Client* client,
-                                  const Aws::S3::Model::ListObjectsV2Request& lambdaRequest,
-                                  const Aws::S3::Model::ListObjectsV2Outcome& lambdaOutcome,
-                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
-                                {
-                                    self->HandleListObjectsResponse(client, lambdaRequest, lambdaOutcome, lambdaContext);
-                                };
-
             auto downloadContext = std::static_pointer_cast<const DownloadDirectoryContext>(context);
             const auto& directory = downloadContext->rootDirectory;
             const auto& prefix = downloadContext->prefix;
@@ -1043,6 +1130,18 @@ namespace Aws
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Listing objects response has a continuation token for bucket: "
                             << directory << " with prefix: " << prefix << ". Getting the next set of results.");
                     requestCpy.SetContinuationToken(result.GetNextContinuationToken());
+
+                    auto listObjectTask = Aws::MakeShared<TransferHandle>(CLASS_TAG, directory, prefix); // fake handle
+                    AddTask(listObjectTask);
+                    auto handler = [self, listObjectTask](const Aws::S3::S3Client* client,
+                                          const Aws::S3::Model::ListObjectsV2Request& lambdaRequest,
+                                          const Aws::S3::Model::ListObjectsV2Outcome& lambdaOutcome,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
+                    {
+                        self->HandleListObjectsResponse(client, lambdaRequest, lambdaOutcome, lambdaContext);
+                        self->RemoveTask(listObjectTask);
+                    };
+
                     m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
                 }
 
@@ -1253,17 +1352,21 @@ namespace Aws
             if (MultipartUploadSupported(handle->GetBytesTotalSize()))
             {
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Scheduling a multi-part upload.");
-                m_transferConfig.transferExecutor->Submit([self, handle, fileStream]
+                AddTask(handle);
+                m_transferConfig.transferExecutor->Submit(
+                    [self, handle, fileStream]
                     {
                         if (fileStream != nullptr)
                             self->DoMultiPartUpload(fileStream, handle);
                         else
                             self->DoMultiPartUpload(handle);
+                        self->RemoveTask(handle);
                     });
             }
             else
             {
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Scheduling a single-part upload.");
+                AddTask(handle);
                 m_transferConfig.transferExecutor->Submit([self, handle, fileStream]
                     {
                         if (fileStream != nullptr)
@@ -1274,6 +1377,7 @@ namespace Aws
                         {
                             self->DoSinglePartUpload(handle);
                         }
+                        self->RemoveTask(handle);
                     });
             }
             return handle;

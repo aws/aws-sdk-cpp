@@ -132,6 +132,22 @@ namespace Aws
              */
             static std::shared_ptr<TransferManager> Create(const TransferManagerConfiguration& config);
 
+            /**
+             * Blocks the calling thread until all this instance TransferManager operations have finished.
+             *
+             * TransferManager API may outlive InitAPI{...}ShutdownAPI scope if TransferHandle status were not completed.
+             * Use this method before ShutdownAPI call if individual TransferHandles are not verified for completion.
+             * @param timeoutMs, how many milliseconds to block wait
+             * @return COMPLETED if all tasks are finished, IN_PROGRESS if timeoutMs was reached.
+             */
+            TransferStatus WaitUntilAllFinished(int64_t timeoutMs = std::numeric_limits<int64_t>::max());
+
+            /**
+             * Cancels all TransferManager operations in the current context of the TransferManager.
+             * Non-blocking, please call `WaitUntilAllFinished` method if ShutdownAPI() is going to follow.
+             */
+            void CancelAll();
+
             ~TransferManager();
 
             /**
@@ -305,10 +321,21 @@ namespace Aws
             void TriggerTransferStatusUpdatedCallback(const std::shared_ptr<const TransferHandle>&) const;
             void TriggerErrorCallback(const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
 
+            /**
+             * Internal methods for tracking currently running TransferHandles
+             * @param handle
+             */
+            void AddTask(std::shared_ptr<TransferHandle> handle);
+            void RemoveTask(const std::shared_ptr<TransferHandle>& handle);
+
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
             Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
+
+            mutable Aws::UnorderedSet<std::shared_ptr<TransferHandle>> m_tasks;
+            mutable std::condition_variable m_tasksSignal;
+            mutable std::mutex m_tasksMutex;
 
         protected:
             static bool IsWithinParentDirectory(Aws::String parentDirectory, Aws::String filePath);
