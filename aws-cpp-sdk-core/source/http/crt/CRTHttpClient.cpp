@@ -339,7 +339,7 @@ namespace Aws
             // connection options are unique per request, this is mostly just connection-level configuration mapping.
 
             Crt::Http::HttpClientConnectionOptions connectionOptions;
-            connectionOptions.HostName = request->GetUri().GetAuthority();
+            connectionOptions.HostName = request->GetUri().GetAuthority().c_str();
             // probably want to come back and update this when we hook up the rate limiters.
             connectionOptions.ManualWindowManagement = false;
             connectionOptions.Port = request->GetUri().GetPort();
@@ -384,11 +384,11 @@ namespace Aws
                 if (!clientConfig.proxyUserName.empty())
                 {
                     proxyOptions.AuthType = Crt::Http::AwsHttpProxyAuthenticationType::Basic;
-                    proxyOptions.BasicAuthUsername = clientConfig.proxyUserName;
-                    proxyOptions.BasicAuthPassword = clientConfig.proxyPassword;
+                    proxyOptions.BasicAuthUsername = clientConfig.proxyUserName.c_str();
+                    proxyOptions.BasicAuthPassword = clientConfig.proxyPassword.c_str();
                 }
 
-                proxyOptions.HostName = m_configuration.proxyHost;
+                proxyOptions.HostName = m_configuration.proxyHost.c_str();
 
                 if (clientConfig.proxyPort != 0)
                 {
