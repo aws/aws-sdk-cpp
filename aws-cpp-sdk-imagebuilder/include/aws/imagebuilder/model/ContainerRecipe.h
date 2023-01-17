@@ -480,42 +480,58 @@ namespace Model
 
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline ContainerRecipe& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline ContainerRecipe& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline ContainerRecipe& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p>Components for build and test that are included in the container recipe.</p>
+     * <p>Build and test components that are included in the container recipe. Recipes
+     * require a minimum of one build component, and can have a maximum of 20 build and
+     * test components in any combination.</p>
      */
     inline ContainerRecipe& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 

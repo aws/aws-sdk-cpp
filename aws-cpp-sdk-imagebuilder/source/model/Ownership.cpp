@@ -23,6 +23,7 @@ namespace Aws
         static const int Self_HASH = HashingUtils::HashString("Self");
         static const int Shared_HASH = HashingUtils::HashString("Shared");
         static const int Amazon_HASH = HashingUtils::HashString("Amazon");
+        static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
 
 
         Ownership GetOwnershipForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Amazon_HASH)
           {
             return Ownership::Amazon;
+          }
+          else if (hashCode == ThirdParty_HASH)
+          {
+            return Ownership::ThirdParty;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "Shared";
           case Ownership::Amazon:
             return "Amazon";
+          case Ownership::ThirdParty:
+            return "ThirdParty";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

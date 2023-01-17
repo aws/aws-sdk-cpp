@@ -33,7 +33,9 @@ ImageSummary::ImageSummary() :
     m_outputResourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_buildType(BuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false)
+    m_buildTypeHasBeenSet(false),
+    m_imageSource(ImageSource::NOT_SET),
+    m_imageSourceHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ImageSummary::ImageSummary(JsonView jsonValue) :
     m_outputResourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_buildType(BuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false)
+    m_buildTypeHasBeenSet(false),
+    m_imageSource(ImageSource::NOT_SET),
+    m_imageSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,13 @@ ImageSummary& ImageSummary::operator =(JsonView jsonValue)
     m_buildTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageSource"))
+  {
+    m_imageSource = ImageSourceMapper::GetImageSourceForName(jsonValue.GetString("imageSource"));
+
+    m_imageSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +236,11 @@ JsonValue ImageSummary::Jsonize() const
   if(m_buildTypeHasBeenSet)
   {
    payload.WithString("buildType", BuildTypeMapper::GetNameForBuildType(m_buildType));
+  }
+
+  if(m_imageSourceHasBeenSet)
+  {
+   payload.WithString("imageSource", ImageSourceMapper::GetNameForImageSource(m_imageSource));
   }
 
   return payload;

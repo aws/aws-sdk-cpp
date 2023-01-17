@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/IPAddressType.h>
 #include <utility>
 
 namespace Aws
@@ -81,10 +82,50 @@ namespace Model
      */
     inline SubnetMapping& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline SubnetMapping& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The subnet's IP address type. You can't change the IP address type after you
+     * create the subnet.</p>
+     */
+    inline SubnetMapping& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
   };
 
 } // namespace Model

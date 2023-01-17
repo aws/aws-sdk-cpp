@@ -617,8 +617,10 @@ namespace imagebuilder
         virtual void ListComponentBuildVersionsAsync(const Model::ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the list of component build versions for the specified semantic
-         * version.</p>  <p>The semantic version has four nodes:
+         * <p>Returns the list of components that can be filtered by name, or by using the
+         * listed <code>filters</code> to streamline results. Newly created components can
+         * take up to two minutes to appear in the ListComponents API Results.</p> 
+         * <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
          * With semantic versioning, you have the flexibility to use wildcards (x) to
@@ -712,7 +714,7 @@ namespace imagebuilder
         virtual void ListImagePackagesAsync(const Model::ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of images created by the specified pipeline.</p><p><h3>See
+         * <p>Returns a list of images created by the specified pipeline.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">AWS
          * API Reference</a></p>
@@ -764,8 +766,9 @@ namespace imagebuilder
         virtual void ListImageRecipesAsync(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of images that you have access to.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Returns the list of images that you have access to. Newly created images can
+         * take up to two minutes to appear in the ListImages API Results.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          */

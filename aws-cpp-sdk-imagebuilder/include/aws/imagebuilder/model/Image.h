@@ -17,6 +17,7 @@
 #include <aws/imagebuilder/model/OutputResources.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/BuildType.h>
+#include <aws/imagebuilder/model/ImageSource.h>
 #include <utility>
 
 namespace Aws
@@ -157,32 +158,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline const ImageType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline Image& WithType(const ImageType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies whether this is an AMI or container image.</p>
+     * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
     inline Image& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
@@ -374,114 +375,106 @@ namespace Model
 
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline Image& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the image.</p>
+     * <p>The image operating system platform, such as Linux or Windows.</p>
      */
     inline Image& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
 
     /**
-     * <p> Collects additional information about the image being created, including the
-     * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.</p>
+     * <p>Indicates whether Image Builder collects additional information about the
+     * image, such as the operating system (OS) version and package list.</p>
      */
     inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
-     * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.</p>
+     * <p>Indicates whether Image Builder collects additional information about the
+     * image, such as the operating system (OS) version and package list.</p>
      */
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
-     * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.</p>
+     * <p>Indicates whether Image Builder collects additional information about the
+     * image, such as the operating system (OS) version and package list.</p>
      */
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
-     * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.</p>
+     * <p>Indicates whether Image Builder collects additional information about the
+     * image, such as the operating system (OS) version and package list.</p>
      */
     inline Image& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
 
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     * <p>The operating system version for instances that launch from this image. For
+     * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
 
@@ -518,63 +511,75 @@ namespace Model
 
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline const ImageRecipe& GetImageRecipe() const{ return m_imageRecipe; }
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline bool ImageRecipeHasBeenSet() const { return m_imageRecipeHasBeenSet; }
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline void SetImageRecipe(const ImageRecipe& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = value; }
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline void SetImageRecipe(ImageRecipe&& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = std::move(value); }
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline Image& WithImageRecipe(const ImageRecipe& value) { SetImageRecipe(value); return *this;}
 
     /**
-     * <p>The image recipe used when creating the image.</p>
+     * <p>For images that distribute an AMI, this is the image recipe that Image
+     * Builder used to create the image. For container images, this is empty.</p>
      */
     inline Image& WithImageRecipe(ImageRecipe&& value) { SetImageRecipe(std::move(value)); return *this;}
 
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline const ContainerRecipe& GetContainerRecipe() const{ return m_containerRecipe; }
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline bool ContainerRecipeHasBeenSet() const { return m_containerRecipeHasBeenSet; }
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline void SetContainerRecipe(const ContainerRecipe& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = value; }
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline void SetContainerRecipe(ContainerRecipe&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::move(value); }
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline Image& WithContainerRecipe(const ContainerRecipe& value) { SetContainerRecipe(value); return *this;}
 
     /**
-     * <p>The recipe that is used to create an Image Builder container image.</p>
+     * <p>For container images, this is the container recipe that Image Builder used to
+     * create the image. For images that distribute an AMI, this is empty.</p>
      */
     inline Image& WithContainerRecipe(ContainerRecipe&& value) { SetContainerRecipe(std::move(value)); return *this;}
 
@@ -670,232 +675,238 @@ namespace Model
 
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline const InfrastructureConfiguration& GetInfrastructureConfiguration() const{ return m_infrastructureConfiguration; }
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline bool InfrastructureConfigurationHasBeenSet() const { return m_infrastructureConfigurationHasBeenSet; }
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline void SetInfrastructureConfiguration(const InfrastructureConfiguration& value) { m_infrastructureConfigurationHasBeenSet = true; m_infrastructureConfiguration = value; }
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline void SetInfrastructureConfiguration(InfrastructureConfiguration&& value) { m_infrastructureConfigurationHasBeenSet = true; m_infrastructureConfiguration = std::move(value); }
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline Image& WithInfrastructureConfiguration(const InfrastructureConfiguration& value) { SetInfrastructureConfiguration(value); return *this;}
 
     /**
-     * <p>The infrastructure used when creating this image.</p>
+     * <p>The infrastructure that Image Builder used to create this image.</p>
      */
     inline Image& WithInfrastructureConfiguration(InfrastructureConfiguration&& value) { SetInfrastructureConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline const DistributionConfiguration& GetDistributionConfiguration() const{ return m_distributionConfiguration; }
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline bool DistributionConfigurationHasBeenSet() const { return m_distributionConfigurationHasBeenSet; }
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline void SetDistributionConfiguration(const DistributionConfiguration& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = value; }
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline void SetDistributionConfiguration(DistributionConfiguration&& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = std::move(value); }
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline Image& WithDistributionConfiguration(const DistributionConfiguration& value) { SetDistributionConfiguration(value); return *this;}
 
     /**
-     * <p>The distribution configuration used when creating this image.</p>
+     * <p>The distribution configuration that Image Builder used to create this
+     * image.</p>
      */
     inline Image& WithDistributionConfiguration(DistributionConfiguration&& value) { SetDistributionConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline const ImageTestsConfiguration& GetImageTestsConfiguration() const{ return m_imageTestsConfiguration; }
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline bool ImageTestsConfigurationHasBeenSet() const { return m_imageTestsConfigurationHasBeenSet; }
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline void SetImageTestsConfiguration(const ImageTestsConfiguration& value) { m_imageTestsConfigurationHasBeenSet = true; m_imageTestsConfiguration = value; }
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline void SetImageTestsConfiguration(ImageTestsConfiguration&& value) { m_imageTestsConfigurationHasBeenSet = true; m_imageTestsConfiguration = std::move(value); }
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline Image& WithImageTestsConfiguration(const ImageTestsConfiguration& value) { SetImageTestsConfiguration(value); return *this;}
 
     /**
-     * <p>The image tests configuration used when creating this image.</p>
+     * <p>The image tests that ran when that Image Builder created this image.</p>
      */
     inline Image& WithImageTestsConfiguration(ImageTestsConfiguration&& value) { SetImageTestsConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline Image& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline Image& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
 
     /**
-     * <p>The date on which this image was created.</p>
+     * <p>The date on which Image Builder created this image.</p>
      */
     inline Image& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
 
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline const OutputResources& GetOutputResources() const{ return m_outputResources; }
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline bool OutputResourcesHasBeenSet() const { return m_outputResourcesHasBeenSet; }
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline void SetOutputResources(const OutputResources& value) { m_outputResourcesHasBeenSet = true; m_outputResources = value; }
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline void SetOutputResources(OutputResources&& value) { m_outputResourcesHasBeenSet = true; m_outputResources = std::move(value); }
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline Image& WithOutputResources(const OutputResources& value) { SetOutputResources(value); return *this;}
 
     /**
-     * <p>The output resources produced when creating this image.</p>
+     * <p>The output resources that Image Builder produces for this image.</p>
      */
     inline Image& WithOutputResources(OutputResources&& value) { SetOutputResources(std::move(value)); return *this;}
 
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of the image.</p>
+     * <p>The tags that apply to this image.</p>
      */
     inline Image& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -960,6 +971,37 @@ namespace Model
      */
     inline Image& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline const ImageSource& GetImageSource() const{ return m_imageSource; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline bool ImageSourceHasBeenSet() const { return m_imageSourceHasBeenSet; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline void SetImageSource(const ImageSource& value) { m_imageSourceHasBeenSet = true; m_imageSource = value; }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline void SetImageSource(ImageSource&& value) { m_imageSourceHasBeenSet = true; m_imageSource = std::move(value); }
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline Image& WithImageSource(const ImageSource& value) { SetImageSource(value); return *this;}
+
+    /**
+     * <p>The origin of the base image that Image Builder used to build this image.</p>
+     */
+    inline Image& WithImageSource(ImageSource&& value) { SetImageSource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1018,6 +1060,9 @@ namespace Model
 
     BuildType m_buildType;
     bool m_buildTypeHasBeenSet = false;
+
+    ImageSource m_imageSource;
+    bool m_imageSourceHasBeenSet = false;
   };
 
 } // namespace Model
