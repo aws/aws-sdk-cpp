@@ -150,38 +150,41 @@ namespace Aws
             Crt::Http::HttpRequestOptions requestOptions;
             requestOptions.request = crtRequest.get();
 
+            // CRT client is async only so we'll need to do the synchronous part ourselves.
+            // We'll use a condition variable and wait on it until the request completes or errors out.
+            std::mutex waiterLock;
+            std::condition_variable waiterCVar;
+            bool waitCompletedIntentionally = false;
+
             // When data is received from the content body of the incoming response, just copy it to the output stream.
             requestOptions.onIncomingBody =
-                [response](Crt::Http::HttpStream&, const Crt::ByteCursor& body)
+                [response, &waiterLock](Crt::Http::HttpStream&, const Crt::ByteCursor& body)
             {
+                std::lock_guard<std::mutex> locker(waiterLock);
                 response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
             };
 
             // on response headers arriving, write them to the response.
             requestOptions.onIncomingHeaders =
-                [response](Crt::Http::HttpStream&, enum aws_http_header_block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
+                [response, &waiterLock](Crt::Http::HttpStream&, enum aws_http_header_block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
             {
                 for (size_t i = 0; i < headersCount; ++i)
                 {
                     const Crt::Http::HttpHeader* header = &headersArray[i];
                     Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
                     Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
+                    std::lock_guard<std::mutex> locker(waiterLock);
                     response->AddHeader(headerNameStr, std::move(headerValueStr));
                 }
             };
 
             // This will arrive at or around the same time as the headers. Use it to set the response code on the response
             requestOptions.onIncomingHeadersBlockDone =
-                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block)
+                [response, &waiterLock](Crt::Http::HttpStream& stream, enum aws_http_header_block)
             {
-                    response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
+                std::lock_guard<std::mutex> locker(waiterLock);
+                response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
             };
-
-            // CRT client is async only so we'll need to do the synchronous part ourselves.
-            // We'll use a condition variable and wait on it until the request completes or errors out.
-            std::mutex waiterLock;
-            std::condition_variable waiterCVar;
-            bool waitCompletedIntentionally = false;
 
             // Request is done. If there was an error set it, otherwise just wake up the cvar.
             requestOptions.onStreamComplete =
@@ -189,18 +192,16 @@ namespace Aws
             {
                 if (errorCode)
                 {
+                    std::lock_guard<std::mutex> locker(waiterLock);
                     /* come back to this one and get the right error parsed out. */
                     response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
                     response->SetClientErrorMessage(aws_error_debug_str(errorCode));
-                }
-                {
-                    std::lock_guard<std::mutex> locker(waiterLock);
                     waitCompletedIntentionally = true;
                 }
                 waiterCVar.notify_all();
             };
 
-            std::shared_ptr<Crt::Http::HttpClientConnection> connectionRef = nullptr;
+            std::shared_ptr<Crt::Http::HttpClientConnection> connectionRef(nullptr);
 
             // now we finally have the request, get a connection and make the request.
             // if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
@@ -209,12 +210,12 @@ namespace Aws
                     (std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode) {
                     if (connection)
                     {
+                        auto clientStream = connection->NewClientStream(requestOptions);
+
                         {
                             std::lock_guard<std::mutex> locker(waiterLock);
                             connectionRef = connection;
                         }
-
-                        auto clientStream = connection->NewClientStream(requestOptions);
 
                         // if client stream is nullptr, something went wrong. This SHOULDNT happen
                         // because it's usually something not using the API correctly, but
@@ -226,60 +227,68 @@ namespace Aws
                             return;
                         }
 
-                        response->SetClientErrorType(Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
-                        response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
+                        {
+                            std::lock_guard<std::mutex> locker(waiterLock);
+                            response->SetClientErrorType(Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
+                            response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
+                            waitCompletedIntentionally = true;
+                        }
                     }
                     else
                     {
 
+                        std::lock_guard<std::mutex> locker(waiterLock);
                         response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
                         response->SetClientErrorMessage(aws_error_debug_str(errorCode));
-                    }
-
-                    {
-                        std::lock_guard<std::mutex> locker(waiterLock);
                         waitCompletedIntentionally = true;
                     }
+
                     waiterCVar.notify_all();
                 });
 
-            std::unique_lock<std::mutex> cvarUniqueLock(waiterLock);
-
-            // Naive http request timeout implementation. This doesn't factor in how long it took to get the connection from the pool, and
-            // I'm undecided on the queueing theory implications of this decision so if this turns out to be the wrong granularity
-            // this is the section of code you should be changing. You can probably get "close" by having an additional
-            // atomic (not necessarily full on atomics implementation, but it needs to be the size of a WORD if it's not)
-            // counter that gets incremented in the acquireConnection callback as long as your connection timeout
-            // is shorter than your request timeout. Even if it's not, that would handle like.... 4-5 nines of getting this right.
-            // since in the worst case scenario, your connect timeout got preempted by the request timeout, and is it really worth
-            // all that effort if that's the worst thing that can happen?
-            if (m_configuration.requestTimeoutMs > 0)
             {
-                auto  requestExpiryTime = std::chrono::high_resolution_clock::now() + std::chrono::milliseconds(m_configuration.requestTimeoutMs);
-                waiterCVar.wait_until(cvarUniqueLock, requestExpiryTime, [&connectionRef, &waitCompletedIntentionally, requestExpiryTime, response] ()
+                std::unique_lock<std::mutex> cvarUniqueLock(waiterLock);
+
+                // Naive http request timeout implementation. This doesn't factor in how long it took to get the connection from the pool, and
+                // I'm undecided on the queueing theory implications of this decision so if this turns out to be the wrong granularity
+                // this is the section of code you should be changing. You can probably get "close" by having an additional
+                // atomic (not necessarily full on atomics implementation, but it needs to be the size of a WORD if it's not)
+                // counter that gets incremented in the acquireConnection callback as long as your connection timeout
+                // is shorter than your request timeout. Even if it's not, that would handle like.... 4-5 nines of getting this right.
+                // since in the worst case scenario, your connect timeout got preempted by the request timeout, and is it really worth
+                // all that effort if that's the worst thing that can happen?
+                if (m_configuration.requestTimeoutMs > 0)
                 {
-                    // If the request is done, we don't care about the timeout.
-                    if (waitCompletedIntentionally) return true;
+                    auto requestExpiryTime = std::chrono::high_resolution_clock::now() +
+                                             std::chrono::milliseconds(m_configuration.requestTimeoutMs);
+                    waiterCVar.wait_until(cvarUniqueLock, requestExpiryTime,
+                                          [&connectionRef, &waitCompletedIntentionally, requestExpiryTime, response]()
+                                          {
+                                              std::cerr << "boo" << std::endl;
+                                              // If the request is done, we don't care about the timeout.
+                                              if (waitCompletedIntentionally) return true;
 
-                    // if this predicate was triggered because the cvar timed out, this branch will be taken.
-                    // if it was triggered spuriously, this branch will be missed.
-                    if (std::chrono::high_resolution_clock::now() >= requestExpiryTime)
-                    {
-                        response->SetClientErrorType(Aws::Client::CoreErrors::REQUEST_TIMEOUT);
-                        response->SetClientErrorMessage("Request Timeout Has Expired");
+                                              // if this predicate was triggered because the cvar timed out, this branch will be taken.
+                                              // if it was triggered spuriously, this branch will be missed.
+                                              if (std::chrono::high_resolution_clock::now() >= requestExpiryTime)
+                                              {
+                                                  response->SetClientErrorType(
+                                                          Aws::Client::CoreErrors::REQUEST_TIMEOUT);
+                                                  response->SetClientErrorMessage("Request Timeout Has Expired");
 
-                        if (connectionRef)
-                        {
-                            connectionRef->Close();
-                        }
-                    }
+                                                  if (connectionRef)
+                                                  {
+                                                      connectionRef->Close();
+                                                  }
+                                              }
 
-                    // go back to sleep to try again later.
-                    return false;
-                });
-            } else
-            {
-                waiterCVar.wait(cvarUniqueLock, [&waitCompletedIntentionally] () { return &waitCompletedIntentionally; });
+                                              // go back to sleep to try again later.
+                                              return false;
+                                          });
+                } else {
+                    waiterCVar.wait(cvarUniqueLock,
+                                    [&waitCompletedIntentionally]() { return waitCompletedIntentionally; });
+                }
             }
 
             return response;
