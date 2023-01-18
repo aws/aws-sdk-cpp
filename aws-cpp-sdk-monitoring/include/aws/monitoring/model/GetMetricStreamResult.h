@@ -494,6 +494,28 @@ namespace Model
     inline GetMetricStreamResult& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurations.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>If this is <code>true</code> and this metric stream is in a monitoring
+     * account, then the stream includes metrics from source accounts that the
+     * monitoring account is linked to.</p>
+     */
+    inline bool GetIncludeLinkedAccountsMetrics() const{ return m_includeLinkedAccountsMetrics; }
+
+    /**
+     * <p>If this is <code>true</code> and this metric stream is in a monitoring
+     * account, then the stream includes metrics from source accounts that the
+     * monitoring account is linked to.</p>
+     */
+    inline void SetIncludeLinkedAccountsMetrics(bool value) { m_includeLinkedAccountsMetrics = value; }
+
+    /**
+     * <p>If this is <code>true</code> and this metric stream is in a monitoring
+     * account, then the stream includes metrics from source accounts that the
+     * monitoring account is linked to.</p>
+     */
+    inline GetMetricStreamResult& WithIncludeLinkedAccountsMetrics(bool value) { SetIncludeLinkedAccountsMetrics(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -532,6 +554,8 @@ namespace Model
     MetricStreamOutputFormat m_outputFormat;
 
     Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
+
+    bool m_includeLinkedAccountsMetrics;
 
     ResponseMetadata m_responseMetadata;
   };

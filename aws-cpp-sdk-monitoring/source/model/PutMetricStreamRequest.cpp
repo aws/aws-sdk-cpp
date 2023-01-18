@@ -19,7 +19,9 @@ PutMetricStreamRequest::PutMetricStreamRequest() :
     m_outputFormat(MetricStreamOutputFormat::NOT_SET),
     m_outputFormatHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_statisticsConfigurationsHasBeenSet(false)
+    m_statisticsConfigurationsHasBeenSet(false),
+    m_includeLinkedAccountsMetrics(false),
+    m_includeLinkedAccountsMetricsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,11 @@ Aws::String PutMetricStreamRequest::SerializePayload() const
       item.OutputToStream(ss, "StatisticsConfigurations.member.", statisticsConfigurationsCount, "");
       statisticsConfigurationsCount++;
     }
+  }
+
+  if(m_includeLinkedAccountsMetricsHasBeenSet)
+  {
+    ss << "IncludeLinkedAccountsMetrics=" << std::boolalpha << m_includeLinkedAccountsMetrics << "&";
   }
 
   ss << "Version=2010-08-01";

@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetMetricStreamResult::GetMetricStreamResult() : 
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET)
+    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
+    m_includeLinkedAccountsMetrics(false)
 {
 }
 
 GetMetricStreamResult::GetMetricStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET)
+    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
+    m_includeLinkedAccountsMetrics(false)
 {
   *this = result;
 }
@@ -112,6 +114,11 @@ GetMetricStreamResult& GetMetricStreamResult::operator =(const Aws::AmazonWebSer
         statisticsConfigurationsMember = statisticsConfigurationsMember.NextNode("member");
       }
 
+    }
+    XmlNode includeLinkedAccountsMetricsNode = resultNode.FirstChild("IncludeLinkedAccountsMetrics");
+    if(!includeLinkedAccountsMetricsNode.IsNull())
+    {
+      m_includeLinkedAccountsMetrics = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeLinkedAccountsMetricsNode.GetText()).c_str()).c_str());
     }
   }
 

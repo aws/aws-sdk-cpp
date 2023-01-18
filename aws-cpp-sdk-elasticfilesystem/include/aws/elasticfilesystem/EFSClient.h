@@ -93,7 +93,7 @@ namespace EFS
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
          * a file system using EFS access points</a>.</p>  <p>If multiple requests to
          * create access points on the same file system are sent in quick succession, and
-         * the file system is near the limit of 120 access points, you may experience a
+         * the file system is near the limit of 1000 access points, you may experience a
          * throttling response for these requests. This is to ensure that the file system
          * does not exceed the stated access point limit.</p>  <p>This operation
          * requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
@@ -555,20 +555,19 @@ namespace EFS
          * caller's Amazon Web Services account in the Amazon Web Services Region of the
          * endpoint that you're calling.</p> <p>When retrieving all file system
          * descriptions, you can optionally specify the <code>MaxItems</code> parameter to
-         * limit the number of descriptions in a response. Currently, this number is
-         * automatically set to 10. If more file system descriptions remain, Amazon EFS
-         * returns a <code>NextMarker</code>, an opaque token, in the response. In this
-         * case, you should send a subsequent request with the <code>Marker</code> request
-         * parameter set to the value of <code>NextMarker</code>. </p> <p>To retrieve a
-         * list of your file system descriptions, this operation is used in an iterative
-         * process, where <code>DescribeFileSystems</code> is called first without the
-         * <code>Marker</code> and then the operation continues to call it with the
-         * <code>Marker</code> parameter set to the value of the <code>NextMarker</code>
-         * from the previous response until the response has no <code>NextMarker</code>.
-         * </p> <p> The order of file systems returned in the response of one
-         * <code>DescribeFileSystems</code> call and the order of file systems returned
-         * across the responses of a multi-call iteration is unspecified. </p> <p> This
-         * operation requires permissions for the
+         * limit the number of descriptions in a response. This number is automatically set
+         * to 100. If more file system descriptions remain, Amazon EFS returns a
+         * <code>NextMarker</code>, an opaque token, in the response. In this case, you
+         * should send a subsequent request with the <code>Marker</code> request parameter
+         * set to the value of <code>NextMarker</code>. </p> <p>To retrieve a list of your
+         * file system descriptions, this operation is used in an iterative process, where
+         * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
+         * and then the operation continues to call it with the <code>Marker</code>
+         * parameter set to the value of the <code>NextMarker</code> from the previous
+         * response until the response has no <code>NextMarker</code>. </p> <p> The order
+         * of file systems returned in the response of one <code>DescribeFileSystems</code>
+         * call and the order of file systems returned across the responses of a multi-call
+         * iteration is unspecified. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS

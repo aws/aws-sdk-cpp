@@ -87,49 +87,49 @@ namespace Model
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline const Aws::String& GetRuleMetricName() const{ return m_ruleMetricName; }
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline bool RuleMetricNameHasBeenSet() const { return m_ruleMetricNameHasBeenSet; }
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline void SetRuleMetricName(const Aws::String& value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName = value; }
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline void SetRuleMetricName(Aws::String&& value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName = std::move(value); }
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline void SetRuleMetricName(const char* value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName.assign(value); }
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline GetSampledRequestsRequest& WithRuleMetricName(const Aws::String& value) { SetRuleMetricName(value); return *this;}
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline GetSampledRequestsRequest& WithRuleMetricName(Aws::String&& value) { SetRuleMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
-     * for which you want a sample of requests.</p>
+     * dimension for which you want a sample of requests.</p>
      */
     inline GetSampledRequestsRequest& WithRuleMetricName(const char* value) { SetRuleMetricName(value); return *this;}
 
