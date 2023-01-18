@@ -686,6 +686,35 @@ namespace Model
      */
     inline PutMetricStreamRequest& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If you are creating a metric stream in a monitoring account, specify
+     * <code>true</code> to include metrics from source accounts in the metric
+     * stream.</p>
+     */
+    inline bool GetIncludeLinkedAccountsMetrics() const{ return m_includeLinkedAccountsMetrics; }
+
+    /**
+     * <p>If you are creating a metric stream in a monitoring account, specify
+     * <code>true</code> to include metrics from source accounts in the metric
+     * stream.</p>
+     */
+    inline bool IncludeLinkedAccountsMetricsHasBeenSet() const { return m_includeLinkedAccountsMetricsHasBeenSet; }
+
+    /**
+     * <p>If you are creating a metric stream in a monitoring account, specify
+     * <code>true</code> to include metrics from source accounts in the metric
+     * stream.</p>
+     */
+    inline void SetIncludeLinkedAccountsMetrics(bool value) { m_includeLinkedAccountsMetricsHasBeenSet = true; m_includeLinkedAccountsMetrics = value; }
+
+    /**
+     * <p>If you are creating a metric stream in a monitoring account, specify
+     * <code>true</code> to include metrics from source accounts in the metric
+     * stream.</p>
+     */
+    inline PutMetricStreamRequest& WithIncludeLinkedAccountsMetrics(bool value) { SetIncludeLinkedAccountsMetrics(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -711,6 +740,9 @@ namespace Model
 
     Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
     bool m_statisticsConfigurationsHasBeenSet = false;
+
+    bool m_includeLinkedAccountsMetrics;
+    bool m_includeLinkedAccountsMetricsHasBeenSet = false;
   };
 
 } // namespace Model

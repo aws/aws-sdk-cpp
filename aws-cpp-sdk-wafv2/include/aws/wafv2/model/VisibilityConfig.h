@@ -101,66 +101,74 @@ namespace Model
 
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline VisibilityConfig& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline VisibilityConfig& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>A name of the Amazon CloudWatch metric. The name can contain only the
-     * characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from
-     * one to 128 characters long. It can't contain whitespace or metric names reserved
-     * for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
+     * <p>A name of the Amazon CloudWatch metric dimension. The name can contain only
+     * the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be
+     * from one to 128 characters long. It can't contain whitespace or metric names
+     * that are reserved for WAF, for example <code>All</code> and
+     * <code>Default_Action</code>. </p>
      */
     inline VisibilityConfig& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
