@@ -20,6 +20,6 @@ mkdir "${PREFIX_DIR}/mac-install"
 cd "${PREFIX_DIR}/aws-sdk-cpp"
 python ./scripts/endpoints_checker.py
 cd "${PREFIX_DIR}/mac-build"
-cmake ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/mac-install"
+cmake ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/mac-install" -DAWS_TEST_REGION=US_WEST_2
 cmake --build . --parallel $(sysctl -n hw.ncpu)
 cmake --install .
