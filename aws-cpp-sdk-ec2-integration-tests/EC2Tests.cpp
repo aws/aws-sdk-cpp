@@ -30,6 +30,7 @@
 using namespace Aws::Auth;
 using namespace Aws::Http;
 using namespace Aws::Client;
+using namespace Aws::Region;
 
 namespace
 {
@@ -64,7 +65,7 @@ protected:
     {
         ClientConfiguration config;
         config.scheme = Scheme::HTTPS;
-        config.region = Aws::Region::US_EAST_1;
+        config.region = AWS_TEST_REGION;
 
         m_EC2Client = Aws::MakeShared<Aws::EC2::EC2Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
 

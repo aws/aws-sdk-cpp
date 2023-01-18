@@ -50,6 +50,7 @@ using namespace Aws::SQS;
 using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
+using namespace Aws::Region;
 
 namespace
 {
@@ -93,7 +94,7 @@ protected:
     static ClientConfiguration GetConfig()
     {
         ClientConfiguration config("default");
-        config.region = Aws::Region::US_EAST_1;
+        config.region = AWS_TEST_REGION;
 
 #if USE_PROXY_FOR_TESTS
         config.scheme = Scheme::HTTP;
