@@ -43,6 +43,7 @@ using namespace Aws::S3Encryption::Materials;
 using namespace Aws::Utils;
 using namespace Aws::Client;
 using namespace Aws::Utils::Crypto;
+using namespace Aws::Region;
 
 static const char* ENCRYPTED_BUCKET_TEST_NAME = "awsnativesdks3encotest";
 static const char* ALLOCATION_TAG = "LiveClientTest";
@@ -68,7 +69,7 @@ public:
         TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz").c_str();
 
         ClientConfiguration config;
-        config.region = Aws::Region::US_EAST_1;
+        config.region = AWS_TEST_REGION;
         StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, config);
         BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME).c_str();
         Model::CreateBucketRequest createBucketRequest;
@@ -123,7 +124,7 @@ TEST_F(LiveClientTest, TestEOMode)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -204,7 +205,7 @@ TEST_F(LiveClientTest, TestAEMode)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -291,7 +292,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -375,7 +376,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
 TEST_F(LiveClientTest, TestS3EncryptionError)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");
     Aws::S3Encryption::CryptoConfiguration cryptoConfiguration(Aws::S3Encryption::StorageMethod::METADATA, Aws::S3Encryption::CryptoMode::ENCRYPTION_ONLY);
@@ -409,7 +410,7 @@ TEST_F(LiveClientTest, TestS3EncryptionError)
 TEST_F(LiveClientTest, TestV2AEMode)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -493,7 +494,7 @@ TEST_F(LiveClientTest, TestV2AEMode)
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -578,7 +579,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
 TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -616,7 +617,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
@@ -701,7 +702,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
 TEST_F(LiveClientTest, TestV2S3EncryptionError)
 {
     ClientConfiguration s3ClientConfig;
-    s3ClientConfig.region = Aws::Region::US_EAST_1;
+    s3ClientConfig.region = AWS_TEST_REGION;
 
     auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");
     Aws::S3Encryption::CryptoConfigurationV2 cryptoConfiguration(kmsMaterials);
