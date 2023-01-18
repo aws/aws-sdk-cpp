@@ -20,6 +20,6 @@ mkdir "${PREFIX_DIR}/al2-install"
 cd "${PREFIX_DIR}/aws-sdk-cpp"
 python ./scripts/endpoints_checker.py
 cd "${PREFIX_DIR}/al2-build"
-cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=../aws-sdk-cpp/toolchains/gcc10-c++20.cmake -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install"
+cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=../aws-sdk-cpp/toolchains/gcc10-c++20.cmake -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DAWS_TEST_REGION=US_WEST_2
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
 ninja-build install
