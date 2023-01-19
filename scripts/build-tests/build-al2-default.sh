@@ -20,6 +20,6 @@ mkdir "${PREFIX_DIR}/al2-install"
 cd "${PREFIX_DIR}/aws-sdk-cpp"
 python ./scripts/endpoints_checker.py
 cd "${PREFIX_DIR}/al2-build"
-cmake -GNinja ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DAWS_TEST_REGION=US_WEST_2
+cmake -GNinja ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install"
 cmake --build . --parallel $(grep -c ^processor /proc/cpuinfo)
 cmake --build . --target install
