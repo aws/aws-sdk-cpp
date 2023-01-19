@@ -42,7 +42,6 @@ using namespace Aws::Transfer;
 using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils;
-using namespace Aws::Region;
 
 static const char* MULTI_PART_CONTENT_KEY = "MultiContentKey";
 static const char* MULTI_PART_CONTENT_TEXT = "This is a test..##";
@@ -609,7 +608,6 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;
-        config.region = AWS_TEST_REGION;
         // executor used for s3Client
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 5);
         m_s3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config);
@@ -618,7 +616,7 @@ protected:
         createBucket.WithBucket(GetTestBucketName())
             .WithACL(BucketCannedACL::private_);
 
-        if (config.region != AWS_TEST_REGION)
+        if (config.region != Aws::Region::US_EAST_1)
         {
             CreateBucketConfiguration createBucketConfiguration;
             createBucketConfiguration.WithLocationConstraint(BucketLocationConstraintMapper::GetBucketLocationConstraintForName(config.region));

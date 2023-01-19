@@ -29,7 +29,6 @@
 using namespace Aws;
 using namespace Aws::Kinesis;
 using namespace Aws::Kinesis::Model;
-using namespace Aws::Region;
 
 namespace {
 const char ALLOC_TAG[]   = "KinesisIntegrationTest";
@@ -45,7 +44,7 @@ protected:
         m_UUID = Aws::Utils::UUID::RandomUUID();
         streamName = BuildResourceName("stream");
         Client::ClientConfiguration config;
-        config.region = AWS_TEST_REGION;
+        config.region = Aws::Region::US_EAST_1;
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 
         // Create stream
