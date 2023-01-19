@@ -4,6 +4,9 @@
  */
 
 #include <aws/core/endpoint/BuiltInParameters.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
+static const char ENDPOINT_BUILTIN_LOG_TAG[] = "EndpointBuiltInParameters";
 
 namespace Aws
 {
@@ -59,6 +62,14 @@ namespace Endpoint
 
         if (!config.endpointOverride.empty()) {
             OverrideEndpoint(config.endpointOverride, config.scheme);
+
+            if (config.region.empty()) {
+                AWS_LOGSTREAM_WARN(ENDPOINT_BUILTIN_LOG_TAG,
+                                   "Endpoint is overridden but region is not set. "
+                                   "Region is required my many endpoint rule sets to resolve the endpoint. "
+                                   "And it is required to compute an aws signature.");
+                SetStringParameter(AWS_REGION, "region-not-set"); // dummy endpoint resolution parameter
+            }
         }
     }
 

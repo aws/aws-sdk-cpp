@@ -257,10 +257,11 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
       else
       {
         AWS_LOGSTREAM_ERROR("BatchGetItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -313,10 +314,11 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
       else
       {
         AWS_LOGSTREAM_ERROR("BatchWriteItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchWriteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -369,10 +371,11 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
       else
       {
         AWS_LOGSTREAM_ERROR("CreateBackup", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,10 +428,11 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
       else
       {
         AWS_LOGSTREAM_ERROR("CreateGlobalTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -481,10 +485,11 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
       else
       {
         AWS_LOGSTREAM_ERROR("CreateTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -537,10 +542,11 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
       else
       {
         AWS_LOGSTREAM_ERROR("DeleteBackup", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -593,10 +599,11 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
       else
       {
         AWS_LOGSTREAM_ERROR("DeleteItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -649,10 +656,11 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
       else
       {
         AWS_LOGSTREAM_ERROR("DeleteTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -705,10 +713,11 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeBackup", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -761,10 +770,11 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeContinuousBackups", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -889,10 +899,11 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeGlobalTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -945,10 +956,11 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeGlobalTableSettings", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1025,10 +1037,11 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1081,10 +1094,11 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeLimits", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1137,10 +1151,11 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1217,10 +1232,11 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
       else
       {
         AWS_LOGSTREAM_ERROR("DescribeTimeToLive", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1273,10 +1289,11 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
       else
       {
         AWS_LOGSTREAM_ERROR("DisableKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1329,10 +1346,11 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
       else
       {
         AWS_LOGSTREAM_ERROR("EnableKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1457,10 +1475,11 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
       else
       {
         AWS_LOGSTREAM_ERROR("GetItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1537,10 +1556,11 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
       else
       {
         AWS_LOGSTREAM_ERROR("ListBackups", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1641,10 +1661,11 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
       else
       {
         AWS_LOGSTREAM_ERROR("ListGlobalTables", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGlobalTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1721,10 +1742,11 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
       else
       {
         AWS_LOGSTREAM_ERROR("ListTables", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1777,10 +1799,11 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
       else
       {
         AWS_LOGSTREAM_ERROR("ListTagsOfResource", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsOfResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1833,10 +1856,11 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
       else
       {
         AWS_LOGSTREAM_ERROR("PutItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1889,10 +1913,11 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
       else
       {
         AWS_LOGSTREAM_ERROR("Query", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1945,10 +1970,11 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
       else
       {
         AWS_LOGSTREAM_ERROR("RestoreTableFromBackup", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableFromBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2001,10 +2027,11 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
       else
       {
         AWS_LOGSTREAM_ERROR("RestoreTableToPointInTime", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableToPointInTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2057,10 +2084,11 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
       else
       {
         AWS_LOGSTREAM_ERROR("Scan", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Scan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2113,10 +2141,11 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
       else
       {
         AWS_LOGSTREAM_ERROR("TagResource", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2169,10 +2198,11 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
       else
       {
         AWS_LOGSTREAM_ERROR("TransactGetItems", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TransactGetItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2225,10 +2255,11 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
       else
       {
         AWS_LOGSTREAM_ERROR("TransactWriteItems", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TransactWriteItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2281,10 +2312,11 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
       else
       {
         AWS_LOGSTREAM_ERROR("UntagResource", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2337,10 +2369,11 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateContinuousBackups", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2417,10 +2450,11 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateGlobalTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2473,10 +2507,11 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateGlobalTableSettings", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2529,10 +2564,11 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateItem", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2585,10 +2621,11 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateTable", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2665,10 +2702,11 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
       else
       {
         AWS_LOGSTREAM_ERROR("UpdateTimeToLive", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
       }
     }
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
