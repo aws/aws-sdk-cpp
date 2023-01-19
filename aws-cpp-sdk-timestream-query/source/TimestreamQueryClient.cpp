@@ -205,7 +205,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -270,7 +270,7 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CreateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -335,7 +335,7 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DeleteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -424,7 +424,7 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DescribeScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -489,7 +489,7 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ExecuteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -554,7 +554,7 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListScheduledQueriesOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScheduledQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -619,7 +619,7 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -684,7 +684,7 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return PrepareQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PrepareQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -749,7 +749,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -814,7 +814,7 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return TagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -879,7 +879,7 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UntagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -944,7 +944,7 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UpdateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

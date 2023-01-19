@@ -67,6 +67,7 @@
 #end
 #else
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+        endpointResolutionOutcome = endpointOutcome.GetError();
 #end
       }
     }
