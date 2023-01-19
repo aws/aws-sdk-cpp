@@ -36,6 +36,7 @@
 #include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
 #include <aws/opensearch/model/DescribeDomainConfigResult.h>
 #include <aws/opensearch/model/DescribeDomainsResult.h>
+#include <aws/opensearch/model/DescribeDryRunProgressResult.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsResult.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsResult.h>
@@ -125,6 +126,7 @@ namespace Aws
       class DescribeDomainChangeProgressRequest;
       class DescribeDomainConfigRequest;
       class DescribeDomainsRequest;
+      class DescribeDryRunProgressRequest;
       class DescribeInboundConnectionsRequest;
       class DescribeInstanceTypeLimitsRequest;
       class DescribeOutboundConnectionsRequest;
@@ -177,6 +179,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainConfigResult, OpenSearchServiceError> DescribeDomainConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
+      typedef Aws::Utils::Outcome<DescribeDryRunProgressResult, OpenSearchServiceError> DescribeDryRunProgressOutcome;
       typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceTypeLimitsResult, OpenSearchServiceError> DescribeInstanceTypeLimitsOutcome;
       typedef Aws::Utils::Outcome<DescribeOutboundConnectionsResult, OpenSearchServiceError> DescribeOutboundConnectionsOutcome;
@@ -229,6 +232,7 @@ namespace Aws
       typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
       typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
       typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
+      typedef std::future<DescribeDryRunProgressOutcome> DescribeDryRunProgressOutcomeCallable;
       typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
       typedef std::future<DescribeInstanceTypeLimitsOutcome> DescribeInstanceTypeLimitsOutcomeCallable;
       typedef std::future<DescribeOutboundConnectionsOutcome> DescribeOutboundConnectionsOutcomeCallable;
@@ -284,6 +288,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainChangeProgressRequest&, const Model::DescribeDomainChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainChangeProgressResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainConfigRequest&, const Model::DescribeDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDryRunProgressRequest&, const Model::DescribeDryRunProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDryRunProgressResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&, const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundConnectionsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInstanceTypeLimitsRequest&, const Model::DescribeInstanceTypeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeLimitsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeOutboundConnectionsRequest&, const Model::DescribeOutboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOutboundConnectionsResponseReceivedHandler;

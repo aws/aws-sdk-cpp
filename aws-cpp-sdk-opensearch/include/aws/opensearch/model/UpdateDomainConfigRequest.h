@@ -18,6 +18,7 @@
 #include <aws/opensearch/model/NodeToNodeEncryptionOptions.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptions.h>
+#include <aws/opensearch/model/DryRunMode.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <utility>
@@ -870,31 +871,96 @@ namespace Model
 
     /**
      * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
-     * request should return the results of validation check without actually applying
-     * the change.</p>
+     * request should return the results of a dry run analysis without actually
+     * applying the change. A dry run determines what type of deployment the update
+     * will cause.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
      * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
-     * request should return the results of validation check without actually applying
-     * the change.</p>
+     * request should return the results of a dry run analysis without actually
+     * applying the change. A dry run determines what type of deployment the update
+     * will cause.</p>
      */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
-     * request should return the results of validation check without actually applying
-     * the change.</p>
+     * request should return the results of a dry run analysis without actually
+     * applying the change. A dry run determines what type of deployment the update
+     * will cause.</p>
      */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
      * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
-     * request should return the results of validation check without actually applying
-     * the change.</p>
+     * request should return the results of a dry run analysis without actually
+     * applying the change. A dry run determines what type of deployment the update
+     * will cause.</p>
      */
     inline UpdateDomainConfigRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline const DryRunMode& GetDryRunMode() const{ return m_dryRunMode; }
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline bool DryRunModeHasBeenSet() const { return m_dryRunModeHasBeenSet; }
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline void SetDryRunMode(const DryRunMode& value) { m_dryRunModeHasBeenSet = true; m_dryRunMode = value; }
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline void SetDryRunMode(DryRunMode&& value) { m_dryRunModeHasBeenSet = true; m_dryRunMode = std::move(value); }
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline UpdateDomainConfigRequest& WithDryRunMode(const DryRunMode& value) { SetDryRunMode(value); return *this;}
+
+    /**
+     * <p>The type of dry run to perform.</p> <ul> <li> <p> <code>Basic</code> only
+     * returns the type of deployment (blue/green or dynamic) that the update will
+     * cause.</p> </li> <li> <p> <code>Verbose</code> runs an additional check to
+     * validate the changes you're making. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+     * a domain update</a>.</p> </li> </ul>
+     */
+    inline UpdateDomainConfigRequest& WithDryRunMode(DryRunMode&& value) { SetDryRunMode(std::move(value)); return *this;}
 
   private:
 
@@ -942,6 +1008,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    DryRunMode m_dryRunMode;
+    bool m_dryRunModeHasBeenSet = false;
   };
 
 } // namespace Model

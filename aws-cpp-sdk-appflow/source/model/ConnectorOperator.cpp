@@ -50,7 +50,9 @@ ConnectorOperator::ConnectorOperator() :
     m_sAPOData(SAPODataConnectorOperator::NOT_SET),
     m_sAPODataHasBeenSet(false),
     m_customConnector(Operator::NOT_SET),
-    m_customConnectorHasBeenSet(false)
+    m_customConnectorHasBeenSet(false),
+    m_pardot(PardotConnectorOperator::NOT_SET),
+    m_pardotHasBeenSet(false)
 {
 }
 
@@ -86,7 +88,9 @@ ConnectorOperator::ConnectorOperator(JsonView jsonValue) :
     m_sAPOData(SAPODataConnectorOperator::NOT_SET),
     m_sAPODataHasBeenSet(false),
     m_customConnector(Operator::NOT_SET),
-    m_customConnectorHasBeenSet(false)
+    m_customConnectorHasBeenSet(false),
+    m_pardot(PardotConnectorOperator::NOT_SET),
+    m_pardotHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,6 +209,13 @@ ConnectorOperator& ConnectorOperator::operator =(JsonView jsonValue)
     m_customConnectorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Pardot"))
+  {
+    m_pardot = PardotConnectorOperatorMapper::GetPardotConnectorOperatorForName(jsonValue.GetString("Pardot"));
+
+    m_pardotHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +301,11 @@ JsonValue ConnectorOperator::Jsonize() const
   if(m_customConnectorHasBeenSet)
   {
    payload.WithString("CustomConnector", OperatorMapper::GetNameForOperator(m_customConnector));
+  }
+
+  if(m_pardotHasBeenSet)
+  {
+   payload.WithString("Pardot", PardotConnectorOperatorMapper::GetNameForPardotConnectorOperator(m_pardot));
   }
 
   return payload;

@@ -36,7 +36,8 @@ ConnectorProfileCredentials::ConnectorProfileCredentials() :
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
     m_sAPODataHasBeenSet(false),
-    m_customConnectorHasBeenSet(false)
+    m_customConnectorHasBeenSet(false),
+    m_pardotHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ConnectorProfileCredentials::ConnectorProfileCredentials(JsonView jsonValue) :
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
     m_sAPODataHasBeenSet(false),
-    m_customConnectorHasBeenSet(false)
+    m_customConnectorHasBeenSet(false),
+    m_pardotHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +193,13 @@ ConnectorProfileCredentials& ConnectorProfileCredentials::operator =(JsonView js
     m_customConnectorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Pardot"))
+  {
+    m_pardot = jsonValue.GetObject("Pardot");
+
+    m_pardotHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -303,6 +312,12 @@ JsonValue ConnectorProfileCredentials::Jsonize() const
   if(m_customConnectorHasBeenSet)
   {
    payload.WithObject("CustomConnector", m_customConnector.Jsonize());
+
+  }
+
+  if(m_pardotHasBeenSet)
+  {
+   payload.WithObject("Pardot", m_pardot.Jsonize());
 
   }
 

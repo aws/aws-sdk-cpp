@@ -38,6 +38,27 @@ namespace Model
 
 
     /**
+     * <p>Whether to apply the update if it is a major version change.</p>
+     */
+    inline bool GetAllowMajorVersionUpdate() const{ return m_allowMajorVersionUpdate; }
+
+    /**
+     * <p>Whether to apply the update if it is a major version change.</p>
+     */
+    inline bool AllowMajorVersionUpdateHasBeenSet() const { return m_allowMajorVersionUpdateHasBeenSet; }
+
+    /**
+     * <p>Whether to apply the update if it is a major version change.</p>
+     */
+    inline void SetAllowMajorVersionUpdate(bool value) { m_allowMajorVersionUpdateHasBeenSet = true; m_allowMajorVersionUpdate = value; }
+
+    /**
+     * <p>Whether to apply the update if it is a major version change.</p>
+     */
+    inline OTAJobConfig& WithAllowMajorVersionUpdate(bool value) { SetAllowMajorVersionUpdate(value); return *this;}
+
+
+    /**
      * <p>The target version of the device software.</p>
      */
     inline const Aws::String& GetImageVersion() const{ return m_imageVersion; }
@@ -78,6 +99,9 @@ namespace Model
     inline OTAJobConfig& WithImageVersion(const char* value) { SetImageVersion(value); return *this;}
 
   private:
+
+    bool m_allowMajorVersionUpdate;
+    bool m_allowMajorVersionUpdateHasBeenSet = false;
 
     Aws::String m_imageVersion;
     bool m_imageVersionHasBeenSet = false;

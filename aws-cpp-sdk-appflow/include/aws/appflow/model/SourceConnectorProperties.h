@@ -21,6 +21,7 @@
 #include <aws/appflow/model/ZendeskSourceProperties.h>
 #include <aws/appflow/model/SAPODataSourceProperties.h>
 #include <aws/appflow/model/CustomConnectorSourceProperties.h>
+#include <aws/appflow/model/PardotSourceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -530,6 +531,43 @@ namespace Model
     
     inline SourceConnectorProperties& WithCustomConnector(CustomConnectorSourceProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline const PardotSourceProperties& GetPardot() const{ return m_pardot; }
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline bool PardotHasBeenSet() const { return m_pardotHasBeenSet; }
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline void SetPardot(const PardotSourceProperties& value) { m_pardotHasBeenSet = true; m_pardot = value; }
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline void SetPardot(PardotSourceProperties&& value) { m_pardotHasBeenSet = true; m_pardot = std::move(value); }
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline SourceConnectorProperties& WithPardot(const PardotSourceProperties& value) { SetPardot(value); return *this;}
+
+    /**
+     * <p>Specifies the information that is required for querying Salesforce
+     * Pardot.</p>
+     */
+    inline SourceConnectorProperties& WithPardot(PardotSourceProperties&& value) { SetPardot(std::move(value)); return *this;}
+
   private:
 
     AmplitudeSourceProperties m_amplitude;
@@ -579,6 +617,9 @@ namespace Model
 
     CustomConnectorSourceProperties m_customConnector;
     bool m_customConnectorHasBeenSet = false;
+
+    PardotSourceProperties m_pardot;
+    bool m_pardotHasBeenSet = false;
   };
 
 } // namespace Model

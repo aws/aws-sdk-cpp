@@ -38,7 +38,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
-    m_hyperParameterTuningResourceConfigHasBeenSet(false)
+    m_hyperParameterTuningResourceConfigHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
-    m_hyperParameterTuningResourceConfigHasBeenSet(false)
+    m_hyperParameterTuningResourceConfigHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,6 +196,16 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_hyperParameterTuningResourceConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+    m_environmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -310,6 +322,17 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_hyperParameterTuningResourceConfigHasBeenSet)
   {
    payload.WithObject("HyperParameterTuningResourceConfig", m_hyperParameterTuningResourceConfig.Jsonize());
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
 
   }
 

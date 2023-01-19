@@ -237,42 +237,138 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI that was used to launch the instance.</p>
+     * <p>The ID of the AMI or a Systems Manager parameter. The Systems Manager
+     * parameter will resolve to the ID of the AMI at instance launch.</p> <p>The value
+     * depends on what you specified in the request. The possible values are:</p> <ul>
+     * <li> <p>If an AMI ID was specified in the request, then this is the AMI ID.</p>
+     * </li> <li> <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>true</code>, then this is the
+     * AMI ID that the parameter is mapped to in the Parameter Store.</p> </li> <li>
+     * <p>If a Systems Manager parameter was specified in the request, and
+     * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
+     * parameter value.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline ResponseLaunchTemplateData& WithImageId(const char* value) { SetImageId(value); return *this;}
 

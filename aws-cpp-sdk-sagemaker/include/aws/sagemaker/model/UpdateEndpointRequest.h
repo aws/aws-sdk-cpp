@@ -174,8 +174,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline const Aws::Vector<VariantProperty>& GetExcludeRetainedVariantProperties() const{ return m_excludeRetainedVariantProperties; }
 
@@ -185,8 +185,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline bool ExcludeRetainedVariantPropertiesHasBeenSet() const { return m_excludeRetainedVariantPropertiesHasBeenSet; }
 
@@ -196,8 +196,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline void SetExcludeRetainedVariantProperties(const Aws::Vector<VariantProperty>& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties = value; }
 
@@ -207,8 +207,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline void SetExcludeRetainedVariantProperties(Aws::Vector<VariantProperty>&& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties = std::move(value); }
 
@@ -218,8 +218,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline UpdateEndpointRequest& WithExcludeRetainedVariantProperties(const Aws::Vector<VariantProperty>& value) { SetExcludeRetainedVariantProperties(value); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline UpdateEndpointRequest& WithExcludeRetainedVariantProperties(Aws::Vector<VariantProperty>&& value) { SetExcludeRetainedVariantProperties(std::move(value)); return *this;}
 
@@ -240,8 +240,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline UpdateEndpointRequest& AddExcludeRetainedVariantProperties(const VariantProperty& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties.push_back(value); return *this; }
 
@@ -251,8 +251,8 @@ namespace Model
      * <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the
      * list of type <a>VariantProperty</a> to override with the values provided by
      * <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-     * </p>
+     * <code>ExcludeRetainedVariantProperties</code>, no variant properties are
+     * overridden. </p>
      */
     inline UpdateEndpointRequest& AddExcludeRetainedVariantProperties(VariantProperty&& value) { m_excludeRetainedVariantPropertiesHasBeenSet = true; m_excludeRetainedVariantProperties.push_back(std::move(value)); return *this; }
 

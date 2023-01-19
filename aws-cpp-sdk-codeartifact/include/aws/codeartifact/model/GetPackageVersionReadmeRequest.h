@@ -188,37 +188,49 @@ namespace Model
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline GetPackageVersionReadmeRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. </p>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline GetPackageVersionReadmeRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

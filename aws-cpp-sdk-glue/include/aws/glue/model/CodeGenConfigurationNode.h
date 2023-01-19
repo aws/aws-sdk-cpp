@@ -57,6 +57,11 @@
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
 #include <aws/glue/model/DynamicTransform.h>
 #include <aws/glue/model/EvaluateDataQuality.h>
+#include <aws/glue/model/S3CatalogHudiSource.h>
+#include <aws/glue/model/CatalogHudiSource.h>
+#include <aws/glue/model/S3HudiSource.h>
+#include <aws/glue/model/S3HudiCatalogTarget.h>
+#include <aws/glue/model/S3HudiDirectTarget.h>
 #include <utility>
 
 namespace Aws
@@ -1857,6 +1862,173 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithEvaluateDataQuality(EvaluateDataQuality&& value) { SetEvaluateDataQuality(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline const S3CatalogHudiSource& GetS3CatalogHudiSource() const{ return m_s3CatalogHudiSource; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline bool S3CatalogHudiSourceHasBeenSet() const { return m_s3CatalogHudiSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline void SetS3CatalogHudiSource(const S3CatalogHudiSource& value) { m_s3CatalogHudiSourceHasBeenSet = true; m_s3CatalogHudiSource = value; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline void SetS3CatalogHudiSource(S3CatalogHudiSource&& value) { m_s3CatalogHudiSourceHasBeenSet = true; m_s3CatalogHudiSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3CatalogHudiSource(const S3CatalogHudiSource& value) { SetS3CatalogHudiSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
+     * Hudi data source must be stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3CatalogHudiSource(S3CatalogHudiSource&& value) { SetS3CatalogHudiSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline const CatalogHudiSource& GetCatalogHudiSource() const{ return m_catalogHudiSource; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline bool CatalogHudiSourceHasBeenSet() const { return m_catalogHudiSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline void SetCatalogHudiSource(const CatalogHudiSource& value) { m_catalogHudiSourceHasBeenSet = true; m_catalogHudiSource = value; }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline void SetCatalogHudiSource(CatalogHudiSource&& value) { m_catalogHudiSourceHasBeenSet = true; m_catalogHudiSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithCatalogHudiSource(const CatalogHudiSource& value) { SetCatalogHudiSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithCatalogHudiSource(CatalogHudiSource&& value) { SetCatalogHudiSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline const S3HudiSource& GetS3HudiSource() const{ return m_s3HudiSource; }
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline bool S3HudiSourceHasBeenSet() const { return m_s3HudiSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline void SetS3HudiSource(const S3HudiSource& value) { m_s3HudiSourceHasBeenSet = true; m_s3HudiSource = value; }
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline void SetS3HudiSource(S3HudiSource&& value) { m_s3HudiSourceHasBeenSet = true; m_s3HudiSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiSource(const S3HudiSource& value) { SetS3HudiSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Hudi data source stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiSource(S3HudiSource&& value) { SetS3HudiSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline const S3HudiCatalogTarget& GetS3HudiCatalogTarget() const{ return m_s3HudiCatalogTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline bool S3HudiCatalogTargetHasBeenSet() const { return m_s3HudiCatalogTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetS3HudiCatalogTarget(const S3HudiCatalogTarget& value) { m_s3HudiCatalogTargetHasBeenSet = true; m_s3HudiCatalogTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetS3HudiCatalogTarget(S3HudiCatalogTarget&& value) { m_s3HudiCatalogTargetHasBeenSet = true; m_s3HudiCatalogTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiCatalogTarget(const S3HudiCatalogTarget& value) { SetS3HudiCatalogTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiCatalogTarget(S3HudiCatalogTarget&& value) { SetS3HudiCatalogTarget(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline const S3HudiDirectTarget& GetS3HudiDirectTarget() const{ return m_s3HudiDirectTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline bool S3HudiDirectTargetHasBeenSet() const { return m_s3HudiDirectTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline void SetS3HudiDirectTarget(const S3HudiDirectTarget& value) { m_s3HudiDirectTargetHasBeenSet = true; m_s3HudiDirectTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline void SetS3HudiDirectTarget(S3HudiDirectTarget&& value) { m_s3HudiDirectTargetHasBeenSet = true; m_s3HudiDirectTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiDirectTarget(const S3HudiDirectTarget& value) { SetS3HudiDirectTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3HudiDirectTarget(S3HudiDirectTarget&& value) { SetS3HudiDirectTarget(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2014,6 +2186,21 @@ namespace Model
 
     EvaluateDataQuality m_evaluateDataQuality;
     bool m_evaluateDataQualityHasBeenSet = false;
+
+    S3CatalogHudiSource m_s3CatalogHudiSource;
+    bool m_s3CatalogHudiSourceHasBeenSet = false;
+
+    CatalogHudiSource m_catalogHudiSource;
+    bool m_catalogHudiSourceHasBeenSet = false;
+
+    S3HudiSource m_s3HudiSource;
+    bool m_s3HudiSourceHasBeenSet = false;
+
+    S3HudiCatalogTarget m_s3HudiCatalogTarget;
+    bool m_s3HudiCatalogTargetHasBeenSet = false;
+
+    S3HudiDirectTarget m_s3HudiDirectTarget;
+    bool m_s3HudiDirectTargetHasBeenSet = false;
   };
 
 } // namespace Model

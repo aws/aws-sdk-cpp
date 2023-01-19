@@ -23,6 +23,7 @@
 #include <aws/appflow/model/ZendeskConnectorProfileCredentials.h>
 #include <aws/appflow/model/SAPODataConnectorProfileCredentials.h>
 #include <aws/appflow/model/CustomConnectorProfileCredentials.h>
+#include <aws/appflow/model/PardotConnectorProfileCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -600,6 +601,37 @@ namespace Model
     
     inline ConnectorProfileCredentials& WithCustomConnector(CustomConnectorProfileCredentials&& value) { SetCustomConnector(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline const PardotConnectorProfileCredentials& GetPardot() const{ return m_pardot; }
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline bool PardotHasBeenSet() const { return m_pardotHasBeenSet; }
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline void SetPardot(const PardotConnectorProfileCredentials& value) { m_pardotHasBeenSet = true; m_pardot = value; }
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline void SetPardot(PardotConnectorProfileCredentials&& value) { m_pardotHasBeenSet = true; m_pardot = std::move(value); }
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline ConnectorProfileCredentials& WithPardot(const PardotConnectorProfileCredentials& value) { SetPardot(value); return *this;}
+
+    /**
+     * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+     */
+    inline ConnectorProfileCredentials& WithPardot(PardotConnectorProfileCredentials&& value) { SetPardot(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileCredentials m_amplitude;
@@ -655,6 +687,9 @@ namespace Model
 
     CustomConnectorProfileCredentials m_customConnector;
     bool m_customConnectorHasBeenSet = false;
+
+    PardotConnectorProfileCredentials m_pardot;
+    bool m_pardotHasBeenSet = false;
   };
 
 } // namespace Model

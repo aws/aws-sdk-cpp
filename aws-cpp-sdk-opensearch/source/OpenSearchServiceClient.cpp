@@ -40,6 +40,7 @@
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/opensearch/model/DescribeDomainConfigRequest.h>
 #include <aws/opensearch/model/DescribeDomainsRequest.h>
+#include <aws/opensearch/model/DescribeDryRunProgressRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
 #include <aws/opensearch/model/DescribeInstanceTypeLimitsRequest.h>
 #include <aws/opensearch/model/DescribeOutboundConnectionsRequest.h>
@@ -753,6 +754,38 @@ void OpenSearchServiceClient::DescribeDomainsAsync(const DescribeDomainsRequest&
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeDomains(request), context);
+    } );
+}
+
+DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(const DescribeDryRunProgressRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDryRunProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDryRunProgress", "Required field: DomainName, is not set");
+    return DescribeDryRunProgressOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDryRunProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/dryRun");
+  return DescribeDryRunProgressOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDryRunProgressOutcomeCallable OpenSearchServiceClient::DescribeDryRunProgressCallable(const DescribeDryRunProgressRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDryRunProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDryRunProgress(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::DescribeDryRunProgressAsync(const DescribeDryRunProgressRequest& request, const DescribeDryRunProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDryRunProgress(request), context);
     } );
 }
 

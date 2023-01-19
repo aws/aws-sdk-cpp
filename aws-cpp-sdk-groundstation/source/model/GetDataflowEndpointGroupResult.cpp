@@ -16,11 +16,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult()
+GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult() : 
+    m_contactPostPassDurationSeconds(0),
+    m_contactPrePassDurationSeconds(0)
 {
 }
 
-GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_contactPostPassDurationSeconds(0),
+    m_contactPrePassDurationSeconds(0)
 {
   *this = result;
 }
@@ -28,6 +32,18 @@ GetDataflowEndpointGroupResult::GetDataflowEndpointGroupResult(const Aws::Amazon
 GetDataflowEndpointGroupResult& GetDataflowEndpointGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("contactPostPassDurationSeconds"))
+  {
+    m_contactPostPassDurationSeconds = jsonValue.GetInteger("contactPostPassDurationSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("contactPrePassDurationSeconds"))
+  {
+    m_contactPrePassDurationSeconds = jsonValue.GetInteger("contactPrePassDurationSeconds");
+
+  }
+
   if(jsonValue.ValueExists("dataflowEndpointGroupArn"))
   {
     m_dataflowEndpointGroupArn = jsonValue.GetString("dataflowEndpointGroupArn");

@@ -19,11 +19,15 @@ namespace Model
 {
 
 OTAJobConfig::OTAJobConfig() : 
+    m_allowMajorVersionUpdate(false),
+    m_allowMajorVersionUpdateHasBeenSet(false),
     m_imageVersionHasBeenSet(false)
 {
 }
 
 OTAJobConfig::OTAJobConfig(JsonView jsonValue) : 
+    m_allowMajorVersionUpdate(false),
+    m_allowMajorVersionUpdateHasBeenSet(false),
     m_imageVersionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +35,13 @@ OTAJobConfig::OTAJobConfig(JsonView jsonValue) :
 
 OTAJobConfig& OTAJobConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AllowMajorVersionUpdate"))
+  {
+    m_allowMajorVersionUpdate = jsonValue.GetBool("AllowMajorVersionUpdate");
+
+    m_allowMajorVersionUpdateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ImageVersion"))
   {
     m_imageVersion = jsonValue.GetString("ImageVersion");
@@ -44,6 +55,12 @@ OTAJobConfig& OTAJobConfig::operator =(JsonView jsonValue)
 JsonValue OTAJobConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_allowMajorVersionUpdateHasBeenSet)
+  {
+   payload.WithBool("AllowMajorVersionUpdate", m_allowMajorVersionUpdate);
+
+  }
 
   if(m_imageVersionHasBeenSet)
   {

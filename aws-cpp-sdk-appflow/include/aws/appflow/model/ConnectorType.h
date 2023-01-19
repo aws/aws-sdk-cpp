@@ -38,7 +38,8 @@ namespace Model
     Honeycode,
     CustomerProfiles,
     SAPOData,
-    CustomConnector
+    CustomConnector,
+    Pardot
   };
 
 namespace ConnectorTypeMapper

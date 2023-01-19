@@ -30,7 +30,9 @@ Item::Item() :
     m_participantRole(ParticipantRole::NOT_SET),
     m_participantRoleHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_messageMetadataHasBeenSet(false)
+    m_messageMetadataHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false),
+    m_contactIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Item::Item(JsonView jsonValue) :
     m_participantRole(ParticipantRole::NOT_SET),
     m_participantRoleHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_messageMetadataHasBeenSet(false)
+    m_messageMetadataHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false),
+    m_contactIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +130,20 @@ Item& Item::operator =(JsonView jsonValue)
     m_messageMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RelatedContactId"))
+  {
+    m_relatedContactId = jsonValue.GetString("RelatedContactId");
+
+    m_relatedContactIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ContactId"))
+  {
+    m_contactId = jsonValue.GetString("ContactId");
+
+    m_contactIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +211,18 @@ JsonValue Item::Jsonize() const
   if(m_messageMetadataHasBeenSet)
   {
    payload.WithObject("MessageMetadata", m_messageMetadata.Jsonize());
+
+  }
+
+  if(m_relatedContactIdHasBeenSet)
+  {
+   payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
+
+  if(m_contactIdHasBeenSet)
+  {
+   payload.WithString("ContactId", m_contactId);
 
   }
 

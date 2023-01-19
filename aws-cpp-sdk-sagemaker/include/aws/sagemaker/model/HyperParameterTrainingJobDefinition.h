@@ -795,6 +795,215 @@ namespace Model
      */
     inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { SetHyperParameterTuningResourceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An environment variable that you can pass into the SageMaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+     * API. You can use an existing <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment
+     * variable from the training container</a> or use your own. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Define
+     * metrics and variables</a> for more information.</p>  <p>The maximum number
+     * of items specified for <code>Map Entries</code> refers to the maximum number of
+     * environment variables for each <code>TrainingJobDefinition</code> and also the
+     * maximum for the hyperparameter tuning job itself. That is, the sum of the number
+     * of environment variables for all the training job definitions can't exceed the
+     * maximum number specified.</p> 
+     */
+    inline HyperParameterTrainingJobDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_definitionName;
@@ -847,6 +1056,9 @@ namespace Model
 
     HyperParameterTuningResourceConfig m_hyperParameterTuningResourceConfig;
     bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

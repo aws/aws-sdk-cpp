@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline CreateVpcEndpointRequest& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline CreateVpcEndpointRequest& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+     * <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
      */
     inline CreateVpcEndpointRequest& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
 

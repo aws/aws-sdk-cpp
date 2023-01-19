@@ -160,6 +160,49 @@ namespace Model
      */
     inline StartChatContactResult& WithParticipantToken(const char* value) { SetParticipantToken(value); return *this;}
 
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline const Aws::String& GetContinuedFromContactId() const{ return m_continuedFromContactId; }
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline void SetContinuedFromContactId(const Aws::String& value) { m_continuedFromContactId = value; }
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline void SetContinuedFromContactId(Aws::String&& value) { m_continuedFromContactId = std::move(value); }
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline void SetContinuedFromContactId(const char* value) { m_continuedFromContactId.assign(value); }
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline StartChatContactResult& WithContinuedFromContactId(const Aws::String& value) { SetContinuedFromContactId(value); return *this;}
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline StartChatContactResult& WithContinuedFromContactId(Aws::String&& value) { SetContinuedFromContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The contactId from which a persistent chat session is started. This field is
+     * populated only for persistent chats.</p>
+     */
+    inline StartChatContactResult& WithContinuedFromContactId(const char* value) { SetContinuedFromContactId(value); return *this;}
+
   private:
 
     Aws::String m_contactId;
@@ -167,6 +210,8 @@ namespace Model
     Aws::String m_participantId;
 
     Aws::String m_participantToken;
+
+    Aws::String m_continuedFromContactId;
   };
 
 } // namespace Model

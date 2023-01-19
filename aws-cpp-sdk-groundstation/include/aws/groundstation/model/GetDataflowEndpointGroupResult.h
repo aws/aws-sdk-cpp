@@ -41,6 +41,50 @@ namespace Model
 
 
     /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
+
+    /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSeconds = value; }
+
+    /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline GetDataflowEndpointGroupResult& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
+
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline int GetContactPrePassDurationSeconds() const{ return m_contactPrePassDurationSeconds; }
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline void SetContactPrePassDurationSeconds(int value) { m_contactPrePassDurationSeconds = value; }
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline GetDataflowEndpointGroupResult& WithContactPrePassDurationSeconds(int value) { SetContactPrePassDurationSeconds(value); return *this;}
+
+
+    /**
      * <p>ARN of a dataflow endpoint group.</p>
      */
     inline const Aws::String& GetDataflowEndpointGroupArn() const{ return m_dataflowEndpointGroupArn; }
@@ -209,6 +253,10 @@ namespace Model
     inline GetDataflowEndpointGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
+    int m_contactPostPassDurationSeconds;
+
+    int m_contactPrePassDurationSeconds;
 
     Aws::String m_dataflowEndpointGroupArn;
 

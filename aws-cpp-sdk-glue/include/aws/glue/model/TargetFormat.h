@@ -20,7 +20,8 @@ namespace Model
     csv,
     avro,
     orc,
-    parquet
+    parquet,
+    hudi
   };
 
 namespace TargetFormatMapper

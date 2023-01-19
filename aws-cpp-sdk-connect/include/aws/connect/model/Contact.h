@@ -593,6 +593,63 @@ namespace Model
      */
     inline Contact& WithScheduledTimestamp(Aws::Utils::DateTime&& value) { SetScheduledTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline Contact& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline Contact& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.</p>
+     */
+    inline Contact& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -636,6 +693,9 @@ namespace Model
 
     Aws::Utils::DateTime m_scheduledTimestamp;
     bool m_scheduledTimestampHasBeenSet = false;
+
+    Aws::String m_relatedContactId;
+    bool m_relatedContactIdHasBeenSet = false;
   };
 
 } // namespace Model
