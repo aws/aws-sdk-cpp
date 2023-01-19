@@ -207,7 +207,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CreateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -272,7 +272,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return CreateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -337,7 +337,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DeleteDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -402,7 +402,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DeleteTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -467,7 +467,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DescribeDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -556,7 +556,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return DescribeTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -621,7 +621,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListDatabasesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -686,7 +686,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListTablesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -751,7 +751,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -816,7 +816,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return TagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -881,7 +881,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UntagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -946,7 +946,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UpdateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1011,7 +1011,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return UpdateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1076,7 +1076,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
       R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
     return WriteRecordsOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
-  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+  if (!endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, WriteRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -5,7 +5,7 @@
 
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-
+#include <aws/crt/Api.h>
 
 namespace Aws
 {
@@ -167,6 +167,7 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
             Aws::Endpoint::AWSEndpoint endpoint;
             const auto crtUrl = resolved->GetUrl();
             Aws::String sdkCrtUrl = Aws::String(crtUrl->begin(), crtUrl->end());
+            AWS_LOGSTREAM_INFO(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint rules engine evaluated the endpoint: " << sdkCrtUrl);
             endpoint.SetURL(PercentDecode(std::move(sdkCrtUrl)));
 
             // Transform attributes
@@ -215,6 +216,10 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
                             false/*retryable*/));
         }
     }
+
+    auto errCode = Aws::Crt::LastError();
+    AWS_LOGSTREAM_DEBUG(DEFAULT_ENDPOINT_PROVIDER_TAG, "ERROR: Rule engine has failed to evaluate the endpoint: " << errCode << " " << Aws::Crt::ErrorDebugString(errCode));
+
     return ResolveEndpointOutcome(
             Aws::Client::AWSError<Aws::Client::CoreErrors>(
                     Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
