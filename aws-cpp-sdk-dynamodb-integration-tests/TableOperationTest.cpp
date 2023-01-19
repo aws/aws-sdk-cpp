@@ -1458,6 +1458,46 @@ TEST_F(TableOperationTest, TestAttributeValues)
         auto returnedItemCollection = result.GetItem();
         EXPECT_TRUE(returnedItemCollection["Null"].GetNull());
     }
+} // TEST_F(TableOperationTest, TestAttributeValues)
+
+TEST_F(TableOperationTest, TestEndpointOverride)
+{
+    // using endpoint provider outside client to get a valid service endpoint
+    Aws::DynamoDB::DynamoDBClientConfiguration config;
+    config.region = "us-west-2";
+    std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>("TestEndpointOverride");
+    endpointProvider->InitBuiltInParameters(config);
+    Aws::Endpoint::ResolveEndpointOutcome resolvedEndpoint = endpointProvider->ResolveEndpoint({});
+    AWS_ASSERT_SUCCESS(resolvedEndpoint);
+    config.endpointOverride = resolvedEndpoint.GetResult().GetURL();
+    config.region.erase();
+
+    // Region is required to compute a signature, and a valid signature is required by an aws service.
+    {
+        DynamoDBClient client(config);
+        Aws::DynamoDB::Model::ListTablesRequest request;
+        Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
+        EXPECT_FALSE(outcome.IsSuccess());
+    }
+
+    // setting region back
+    config.region = "us-west-2";
+    {
+        DynamoDBClient client(config);
+        Aws::DynamoDB::Model::ListTablesRequest request;
+        Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
+        AWS_ASSERT_SUCCESS(outcome);
+    }
+
+    // manually specified port works too
+    config.endpointOverride = resolvedEndpoint.GetResult().GetURL() + ":443";
+    {
+        DynamoDBClient client(config);
+        Aws::DynamoDB::Model::ListTablesRequest request;
+        Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
+        AWS_ASSERT_SUCCESS(outcome);
+    }
 }
+
 } // anonymous namespace
 
