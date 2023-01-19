@@ -57,7 +57,7 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::IAM;
 using namespace Aws::IAM::Model;
 using namespace Aws::CognitoIdentity;
-using namespace Aws::Region;
+
 namespace {
 
 static const char BASE_KINESIS_STREAM_NAME[] = "AWSNativeSDKIntegrationTest";
@@ -114,7 +114,7 @@ protected:
 
         // Create a client
         ClientConfiguration config;
-        config.region = AWS_TEST_REGION;
+        config.region = Aws::Region::US_EAST_1;
         config.scheme = Scheme::HTTPS;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
@@ -128,7 +128,7 @@ protected:
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
         ClientConfiguration clientConfig;
-        clientConfig.region = AWS_TEST_REGION;
+        clientConfig.region = Aws::Region::US_EAST_1;
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);

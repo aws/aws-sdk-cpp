@@ -23,7 +23,6 @@ using namespace Aws::Http;
 using namespace Aws::Client;
 using namespace Aws::EFS;
 using namespace Aws::EFS::Model;
-using namespace Aws::Region;
 
 namespace
 {
@@ -39,7 +38,7 @@ namespace
         {
             // Create a client
             ClientConfiguration config;
-            config.region = AWS_TEST_REGION;
+            config.region = Aws::Region::US_WEST_2;
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
