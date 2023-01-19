@@ -921,6 +921,27 @@ TEST_F(AWSRegionTest, TestResolveRegionFromEC2InstanceMetadata)
 
     Aws::Config::ReloadCachedConfigFile();
 
+    std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
+        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
+    tokenResponse->SetResponseCode(HttpResponseCode::OK);
+    tokenResponse->GetResponseBody() << "tokenstring";
+    mockHttpClient->Reset();
+
+    std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
+        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+    profileResponse->SetResponseCode(HttpResponseCode::OK);
+    profileResponse->GetResponseBody() << "profilestring";
+    mockHttpClient->Reset();
+
+    std::shared_ptr<HttpRequest> credsRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
+        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> credsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credsRequest);
+    credsResponse->SetResponseCode(HttpResponseCode::OK);
+    credsResponse->GetResponseBody() << "credsstring";
+    mockHttpClient->Reset();
+
     // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
     std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
             HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -928,6 +949,10 @@ TEST_F(AWSRegionTest, TestResolveRegionFromEC2InstanceMetadata)
     regionResponse->SetResponseCode(HttpResponseCode::OK);
     regionResponse->GetResponseBody() << "us-west-123";
     mockHttpClient->Reset();
+
+    mockHttpClient->AddResponseToReturn(tokenResponse);
+    mockHttpClient->AddResponseToReturn(profileResponse);
+    mockHttpClient->AddResponseToReturn(credsResponse);
     mockHttpClient->AddResponseToReturn(regionResponse);
 
     Aws::Client::ClientConfiguration config;

@@ -62,6 +62,34 @@ namespace
             CleanupHttp();
             InitHttp();
         }
+
+        void addGetCredentialsSecurelyMock()
+        {
+            std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
+            tokenResponse->SetResponseCode(HttpResponseCode::OK);
+            tokenResponse->GetResponseBody() << "tokenstring";
+            mockHttpClient->Reset();
+
+            std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+            profileResponse->SetResponseCode(HttpResponseCode::OK);
+            profileResponse->GetResponseBody() << "profilestring";
+            mockHttpClient->Reset();
+
+            std::shared_ptr<HttpRequest> credsRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            std::shared_ptr<StandardHttpResponse> credsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credsRequest);
+            credsResponse->SetResponseCode(HttpResponseCode::OK);
+            credsResponse->GetResponseBody() << "credsstring";
+            mockHttpClient->Reset();
+
+            mockHttpClient->AddResponseToReturn(tokenResponse);
+            mockHttpClient->AddResponseToReturn(profileResponse);
+            mockHttpClient->AddResponseToReturn(credsResponse);
+        }
     };
 
     static const char EC2_IMDS_TOKEN_TTL_HEADER[] = "x-aws-ec2-metadata-token-ttl-seconds";
@@ -843,6 +871,7 @@ namespace
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
+        addGetCredentialsSecurelyMock();
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -866,6 +895,7 @@ namespace
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
+        addGetCredentialsSecurelyMock();
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -889,6 +919,7 @@ namespace
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
+        addGetCredentialsSecurelyMock();
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -912,6 +943,7 @@ namespace
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
+        addGetCredentialsSecurelyMock();
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -935,6 +967,7 @@ namespace
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
+        addGetCredentialsSecurelyMock();
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
