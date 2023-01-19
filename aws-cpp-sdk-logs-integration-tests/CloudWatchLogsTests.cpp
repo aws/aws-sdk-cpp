@@ -26,7 +26,6 @@ using namespace Aws::Http;
 using namespace Aws::Client;
 using namespace Aws::CloudWatchLogs;
 using namespace Aws::CloudWatchLogs::Model;
-using namespace Aws::Region;
 
 namespace
 {
@@ -50,7 +49,7 @@ namespace
             m_UUID = Aws::Utils::UUID::RandomUUID();
             ClientConfiguration config;
             config.scheme = Scheme::HTTPS;
-            config.region = AWS_TEST_REGION;
+            config.region = Aws::Region::US_WEST_2;
             m_client = Aws::MakeUnique<Aws::CloudWatchLogs::CloudWatchLogsClient>(ALLOCATION_TAG, config);
             CreateLogsGroup(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP));
         }

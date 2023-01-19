@@ -36,7 +36,6 @@
 using namespace Aws::CognitoIdentity;
 using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Client;
-using namespace Aws::Region;
 
 #define TEST_POOL_PREFIX  "IntegrationTest_"
 
@@ -62,8 +61,7 @@ protected:
     void SetUp()
     {
         Aws::Client::ClientConfiguration config;
-        config.region = AWS_TEST_REGION;
-
+        config.region = Aws::Region::US_EAST_1;
         //TODO: move this over to profile config file.
         client = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG, config);
         CleanupPreviousFailedTests();
@@ -255,7 +253,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     getIdRequest.WithIdentityPoolId(identityPoolId);
 
     ClientConfiguration clientConfig;
-    clientConfig.region = AWS_TEST_REGION;
+    clientConfig.region = Aws::Region::US_EAST_1;
 
     auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
     if (accountId.empty()) {
