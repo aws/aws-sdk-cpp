@@ -311,6 +311,7 @@ namespace Aws
                 std::lock_guard<std::recursive_mutex> locker(m_tokenMutex);
                 if (m_tokenRequired)
                 {
+                    GetDefaultCredentialsSecurely();
                     regionRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, m_token);
                 }
             }
