@@ -28,7 +28,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_advancedSecurityOptionsHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_dryRunMode(DryRunMode::NOT_SET),
+    m_dryRunModeHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,11 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const
   {
    payload.WithBool("DryRun", m_dryRun);
 
+  }
+
+  if(m_dryRunModeHasBeenSet)
+  {
+   payload.WithString("DryRunMode", DryRunModeMapper::GetNameForDryRunMode(m_dryRunMode));
   }
 
   return payload.View().WriteReadable();

@@ -43,6 +43,7 @@ namespace Aws
         static const int CustomerProfiles_HASH = HashingUtils::HashString("CustomerProfiles");
         static const int SAPOData_HASH = HashingUtils::HashString("SAPOData");
         static const int CustomConnector_HASH = HashingUtils::HashString("CustomConnector");
+        static const int Pardot_HASH = HashingUtils::HashString("Pardot");
 
 
         ConnectorType GetConnectorTypeForName(const Aws::String& name)
@@ -140,6 +141,10 @@ namespace Aws
           {
             return ConnectorType::CustomConnector;
           }
+          else if (hashCode == Pardot_HASH)
+          {
+            return ConnectorType::Pardot;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -200,6 +205,8 @@ namespace Aws
             return "SAPOData";
           case ConnectorType::CustomConnector:
             return "CustomConnector";
+          case ConnectorType::Pardot:
+            return "Pardot";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

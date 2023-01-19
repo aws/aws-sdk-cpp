@@ -21,7 +21,9 @@ DescribeLaunchTemplateVersionsRequest::DescribeLaunchTemplateVersionsRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_resolveAlias(false),
+    m_resolveAliasHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,11 @@ Aws::String DescribeLaunchTemplateVersionsRequest::SerializePayload() const
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
+  }
+
+  if(m_resolveAliasHasBeenSet)
+  {
+    ss << "ResolveAlias=" << std::boolalpha << m_resolveAlias << "&";
   }
 
   ss << "Version=2016-11-15";

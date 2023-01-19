@@ -11,6 +11,7 @@
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/ChatMessage.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connect/model/PersistentChat.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -547,6 +548,55 @@ namespace Model
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline const PersistentChat& GetPersistentChat() const{ return m_persistentChat; }
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline bool PersistentChatHasBeenSet() const { return m_persistentChatHasBeenSet; }
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline void SetPersistentChat(const PersistentChat& value) { m_persistentChatHasBeenSet = true; m_persistentChat = value; }
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline void SetPersistentChat(PersistentChat&& value) { m_persistentChatHasBeenSet = true; m_persistentChat = std::move(value); }
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline StartChatContactRequest& WithPersistentChat(const PersistentChat& value) { SetPersistentChat(value); return *this;}
+
+    /**
+     * <p>Enable persistent chats. For more information about enabling persistent chat,
+     * and for example use cases and how to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline StartChatContactRequest& WithPersistentChat(PersistentChat&& value) { SetPersistentChat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -572,6 +622,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
     bool m_supportedMessagingContentTypesHasBeenSet = false;
+
+    PersistentChat m_persistentChat;
+    bool m_persistentChatHasBeenSet = false;
   };
 
 } // namespace Model

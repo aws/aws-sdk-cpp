@@ -95,7 +95,9 @@ M2tsSettings::M2tsSettings() :
     m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
-    m_videoPidHasBeenSet(false)
+    m_videoPidHasBeenSet(false),
+    m_scte35PrerollPullupMilliseconds(0.0),
+    m_scte35PrerollPullupMillisecondsHasBeenSet(false)
 {
 }
 
@@ -176,7 +178,9 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
-    m_videoPidHasBeenSet(false)
+    m_videoPidHasBeenSet(false),
+    m_scte35PrerollPullupMilliseconds(0.0),
+    m_scte35PrerollPullupMillisecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -512,6 +516,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_videoPidHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scte35PrerollPullupMilliseconds"))
+  {
+    m_scte35PrerollPullupMilliseconds = jsonValue.GetDouble("scte35PrerollPullupMilliseconds");
+
+    m_scte35PrerollPullupMillisecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -779,6 +790,12 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_videoPidHasBeenSet)
   {
    payload.WithString("videoPid", m_videoPid);
+
+  }
+
+  if(m_scte35PrerollPullupMillisecondsHasBeenSet)
+  {
+   payload.WithDouble("scte35PrerollPullupMilliseconds", m_scte35PrerollPullupMilliseconds);
 
   }
 

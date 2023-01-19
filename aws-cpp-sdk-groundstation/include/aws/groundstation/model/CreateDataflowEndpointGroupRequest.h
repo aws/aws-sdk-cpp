@@ -39,6 +39,64 @@ namespace Model
 
 
     /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
+
+    /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
+
+    /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
+
+    /**
+     * <p>Amount of time, in seconds, after a contact ends for the contact to remain in
+     * a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>POSTPASS</code> state.</p>
+     */
+    inline CreateDataflowEndpointGroupRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
+
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline int GetContactPrePassDurationSeconds() const{ return m_contactPrePassDurationSeconds; }
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline void SetContactPrePassDurationSeconds(int value) { m_contactPrePassDurationSecondsHasBeenSet = true; m_contactPrePassDurationSeconds = value; }
+
+    /**
+     * <p>Amount of time, in seconds, prior to contact start for the contact to remain
+     * in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact
+     * enters and exits the <code>PREPASS</code> state.</p>
+     */
+    inline CreateDataflowEndpointGroupRequest& WithContactPrePassDurationSeconds(int value) { SetContactPrePassDurationSeconds(value); return *this;}
+
+
+    /**
      * <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
      */
     inline const Aws::Vector<EndpointDetails>& GetEndpointDetails() const{ return m_endpointDetails; }
@@ -145,6 +203,12 @@ namespace Model
     inline CreateDataflowEndpointGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    int m_contactPostPassDurationSeconds;
+    bool m_contactPostPassDurationSecondsHasBeenSet = false;
+
+    int m_contactPrePassDurationSeconds;
+    bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
     Aws::Vector<EndpointDetails> m_endpointDetails;
     bool m_endpointDetailsHasBeenSet = false;

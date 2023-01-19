@@ -18,7 +18,9 @@ CreateLaunchTemplateVersionRequest::CreateLaunchTemplateVersionRequest() :
     m_launchTemplateNameHasBeenSet(false),
     m_sourceVersionHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false)
+    m_launchTemplateDataHasBeenSet(false),
+    m_resolveAlias(false),
+    m_resolveAliasHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,11 @@ Aws::String CreateLaunchTemplateVersionRequest::SerializePayload() const
   if(m_launchTemplateDataHasBeenSet)
   {
     m_launchTemplateData.OutputToStream(ss, "LaunchTemplateData");
+  }
+
+  if(m_resolveAliasHasBeenSet)
+  {
+    ss << "ResolveAlias=" << std::boolalpha << m_resolveAlias << "&";
   }
 
   ss << "Version=2016-11-15";

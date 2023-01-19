@@ -444,6 +444,128 @@ namespace Model
      */
     inline Item& WithMessageMetadata(MessageMetadata&& value) { SetMessageMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline Item& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline Item& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * only populated for persistent chats when the transcript item is from the past
+     * chat session. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+     * persistent chat</a>.</p>
+     */
+    inline Item& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline const Aws::String& GetContactId() const{ return m_contactId; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline Item& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline Item& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The contactId on which the transcript item was originally sent. This field is
+     * populated only when the transcript item is from the current chat session.</p>
+     */
+    inline Item& WithContactId(const char* value) { SetContactId(value); return *this;}
+
   private:
 
     Aws::String m_absoluteTime;
@@ -475,6 +597,12 @@ namespace Model
 
     MessageMetadata m_messageMetadata;
     bool m_messageMetadataHasBeenSet = false;
+
+    Aws::String m_relatedContactId;
+    bool m_relatedContactIdHasBeenSet = false;
+
+    Aws::String m_contactId;
+    bool m_contactIdHasBeenSet = false;
   };
 
 } // namespace Model

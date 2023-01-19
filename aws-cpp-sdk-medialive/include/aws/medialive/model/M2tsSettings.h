@@ -2131,6 +2131,47 @@ When
      */
     inline M2tsSettings& WithVideoPid(const char* value) { SetVideoPid(value); return *this;}
 
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the
+     * output. Preroll is the amount of time between the presence of a SCTE-35
+     * indication in a transport stream and the PTS of the video frame it references.
+     * Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     * pullup is not supported, which means that you can't make the preroll shorter. Be
+     * aware that latency in the output will increase by the pullup amount.
+     */
+    inline double GetScte35PrerollPullupMilliseconds() const{ return m_scte35PrerollPullupMilliseconds; }
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the
+     * output. Preroll is the amount of time between the presence of a SCTE-35
+     * indication in a transport stream and the PTS of the video frame it references.
+     * Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     * pullup is not supported, which means that you can't make the preroll shorter. Be
+     * aware that latency in the output will increase by the pullup amount.
+     */
+    inline bool Scte35PrerollPullupMillisecondsHasBeenSet() const { return m_scte35PrerollPullupMillisecondsHasBeenSet; }
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the
+     * output. Preroll is the amount of time between the presence of a SCTE-35
+     * indication in a transport stream and the PTS of the video frame it references.
+     * Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     * pullup is not supported, which means that you can't make the preroll shorter. Be
+     * aware that latency in the output will increase by the pullup amount.
+     */
+    inline void SetScte35PrerollPullupMilliseconds(double value) { m_scte35PrerollPullupMillisecondsHasBeenSet = true; m_scte35PrerollPullupMilliseconds = value; }
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the
+     * output. Preroll is the amount of time between the presence of a SCTE-35
+     * indication in a transport stream and the PTS of the video frame it references.
+     * Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     * pullup is not supported, which means that you can't make the preroll shorter. Be
+     * aware that latency in the output will increase by the pullup amount.
+     */
+    inline M2tsSettings& WithScte35PrerollPullupMilliseconds(double value) { SetScte35PrerollPullupMilliseconds(value); return *this;}
+
   private:
 
     M2tsAbsentInputAudioBehavior m_absentInputAudioBehavior;
@@ -2273,6 +2314,9 @@ When
 
     Aws::String m_videoPid;
     bool m_videoPidHasBeenSet = false;
+
+    double m_scte35PrerollPullupMilliseconds;
+    bool m_scte35PrerollPullupMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

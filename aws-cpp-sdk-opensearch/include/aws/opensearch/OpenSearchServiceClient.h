@@ -107,10 +107,10 @@ namespace OpenSearchService
 
         /**
          * <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set
-         * of case-sensitive key-value pairs. An domain can have up to 10 tags. For more
+         * of case-sensitive key-value pairs. A domain can have up to 10 tags. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
-         * Tagging Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+         * Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -454,6 +454,27 @@ namespace OpenSearchService
          * An Async wrapper for DescribeDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the progress of a pre-update dry run analysis on an Amazon
+         * OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining
+         * whether a change will cause a blue/green deployment</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDryRunProgressOutcome DescribeDryRunProgress(const Model::DescribeDryRunProgressRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDryRunProgress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDryRunProgressOutcomeCallable DescribeDryRunProgressCallable(const Model::DescribeDryRunProgressRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeDryRunProgress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDryRunProgressAsync(const Model::DescribeDryRunProgressRequest& request, const DescribeDryRunProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the inbound cross-cluster search connections for a destination

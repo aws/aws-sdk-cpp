@@ -39,7 +39,8 @@ ConnectorMetadata::ConnectorMetadata() :
     m_upsolverHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_pardotHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ ConnectorMetadata::ConnectorMetadata(JsonView jsonValue) :
     m_upsolverHasBeenSet(false),
     m_customerProfilesHasBeenSet(false),
     m_honeycodeHasBeenSet(false),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_pardotHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -218,6 +220,13 @@ ConnectorMetadata& ConnectorMetadata::operator =(JsonView jsonValue)
     m_sAPODataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Pardot"))
+  {
+    m_pardot = jsonValue.GetObject("Pardot");
+
+    m_pardotHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -348,6 +357,12 @@ JsonValue ConnectorMetadata::Jsonize() const
   if(m_sAPODataHasBeenSet)
   {
    payload.WithObject("SAPOData", m_sAPOData.Jsonize());
+
+  }
+
+  if(m_pardotHasBeenSet)
+  {
+   payload.WithObject("Pardot", m_pardot.Jsonize());
 
   }
 

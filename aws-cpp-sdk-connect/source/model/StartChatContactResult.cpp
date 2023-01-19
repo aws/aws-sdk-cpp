@@ -46,6 +46,12 @@ StartChatContactResult& StartChatContactResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ContinuedFromContactId"))
+  {
+    m_continuedFromContactId = jsonValue.GetString("ContinuedFromContactId");
+
+  }
+
 
 
   return *this;

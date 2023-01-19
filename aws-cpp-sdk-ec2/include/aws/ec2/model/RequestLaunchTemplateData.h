@@ -295,42 +295,114 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI.</p>
+     * <p>The ID of the AMI. Alternatively, you can specify a Systems Manager
+     * parameter, which will resolve to an AMI ID on launch.</p> <p>Valid formats:</p>
+     * <ul> <li> <p> <code>ami-17characters00000</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:version-number</code> </p> </li> <li> <p>
+     * <code>resolve:ssm:parameter-name:label</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const char* value) { SetImageId(value); return *this;}
 

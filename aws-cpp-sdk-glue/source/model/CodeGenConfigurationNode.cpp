@@ -70,7 +70,12 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_oracleSQLCatalogTargetHasBeenSet(false),
     m_postgreSQLCatalogTargetHasBeenSet(false),
     m_dynamicTransformHasBeenSet(false),
-    m_evaluateDataQualityHasBeenSet(false)
+    m_evaluateDataQualityHasBeenSet(false),
+    m_s3CatalogHudiSourceHasBeenSet(false),
+    m_catalogHudiSourceHasBeenSet(false),
+    m_s3HudiSourceHasBeenSet(false),
+    m_s3HudiCatalogTargetHasBeenSet(false),
+    m_s3HudiDirectTargetHasBeenSet(false)
 {
 }
 
@@ -126,7 +131,12 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_oracleSQLCatalogTargetHasBeenSet(false),
     m_postgreSQLCatalogTargetHasBeenSet(false),
     m_dynamicTransformHasBeenSet(false),
-    m_evaluateDataQualityHasBeenSet(false)
+    m_evaluateDataQualityHasBeenSet(false),
+    m_s3CatalogHudiSourceHasBeenSet(false),
+    m_catalogHudiSourceHasBeenSet(false),
+    m_s3HudiSourceHasBeenSet(false),
+    m_s3HudiCatalogTargetHasBeenSet(false),
+    m_s3HudiDirectTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -497,6 +507,41 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_evaluateDataQualityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3CatalogHudiSource"))
+  {
+    m_s3CatalogHudiSource = jsonValue.GetObject("S3CatalogHudiSource");
+
+    m_s3CatalogHudiSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CatalogHudiSource"))
+  {
+    m_catalogHudiSource = jsonValue.GetObject("CatalogHudiSource");
+
+    m_catalogHudiSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3HudiSource"))
+  {
+    m_s3HudiSource = jsonValue.GetObject("S3HudiSource");
+
+    m_s3HudiSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3HudiCatalogTarget"))
+  {
+    m_s3HudiCatalogTarget = jsonValue.GetObject("S3HudiCatalogTarget");
+
+    m_s3HudiCatalogTargetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3HudiDirectTarget"))
+  {
+    m_s3HudiDirectTarget = jsonValue.GetObject("S3HudiDirectTarget");
+
+    m_s3HudiDirectTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -813,6 +858,36 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_evaluateDataQualityHasBeenSet)
   {
    payload.WithObject("EvaluateDataQuality", m_evaluateDataQuality.Jsonize());
+
+  }
+
+  if(m_s3CatalogHudiSourceHasBeenSet)
+  {
+   payload.WithObject("S3CatalogHudiSource", m_s3CatalogHudiSource.Jsonize());
+
+  }
+
+  if(m_catalogHudiSourceHasBeenSet)
+  {
+   payload.WithObject("CatalogHudiSource", m_catalogHudiSource.Jsonize());
+
+  }
+
+  if(m_s3HudiSourceHasBeenSet)
+  {
+   payload.WithObject("S3HudiSource", m_s3HudiSource.Jsonize());
+
+  }
+
+  if(m_s3HudiCatalogTargetHasBeenSet)
+  {
+   payload.WithObject("S3HudiCatalogTarget", m_s3HudiCatalogTarget.Jsonize());
+
+  }
+
+  if(m_s3HudiDirectTargetHasBeenSet)
+  {
+   payload.WithObject("S3HudiDirectTarget", m_s3HudiDirectTarget.Jsonize());
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DomainConfig.h>
 #include <aws/opensearch/model/DryRunResults.h>
+#include <aws/opensearch/model/DryRunProgressStatus.h>
 #include <utility>
 
 namespace Aws
@@ -66,35 +67,63 @@ namespace Model
 
 
     /**
-     * <p>Results of a dry run performed in an update domain request.</p>
+     * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline const DryRunResults& GetDryRunResults() const{ return m_dryRunResults; }
 
     /**
-     * <p>Results of a dry run performed in an update domain request.</p>
+     * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline void SetDryRunResults(const DryRunResults& value) { m_dryRunResults = value; }
 
     /**
-     * <p>Results of a dry run performed in an update domain request.</p>
+     * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline void SetDryRunResults(DryRunResults&& value) { m_dryRunResults = std::move(value); }
 
     /**
-     * <p>Results of a dry run performed in an update domain request.</p>
+     * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline UpdateDomainConfigResult& WithDryRunResults(const DryRunResults& value) { SetDryRunResults(value); return *this;}
 
     /**
-     * <p>Results of a dry run performed in an update domain request.</p>
+     * <p>Results of the dry run performed in the update domain request.</p>
      */
     inline UpdateDomainConfigResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of the dry run being performed on the domain, if any.</p>
+     */
+    inline const DryRunProgressStatus& GetDryRunProgressStatus() const{ return m_dryRunProgressStatus; }
+
+    /**
+     * <p>The status of the dry run being performed on the domain, if any.</p>
+     */
+    inline void SetDryRunProgressStatus(const DryRunProgressStatus& value) { m_dryRunProgressStatus = value; }
+
+    /**
+     * <p>The status of the dry run being performed on the domain, if any.</p>
+     */
+    inline void SetDryRunProgressStatus(DryRunProgressStatus&& value) { m_dryRunProgressStatus = std::move(value); }
+
+    /**
+     * <p>The status of the dry run being performed on the domain, if any.</p>
+     */
+    inline UpdateDomainConfigResult& WithDryRunProgressStatus(const DryRunProgressStatus& value) { SetDryRunProgressStatus(value); return *this;}
+
+    /**
+     * <p>The status of the dry run being performed on the domain, if any.</p>
+     */
+    inline UpdateDomainConfigResult& WithDryRunProgressStatus(DryRunProgressStatus&& value) { SetDryRunProgressStatus(std::move(value)); return *this;}
 
   private:
 
     DomainConfig m_domainConfig;
 
     DryRunResults m_dryRunResults;
+
+    DryRunProgressStatus m_dryRunProgressStatus;
   };
 
 } // namespace Model

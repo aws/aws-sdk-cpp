@@ -21,6 +21,7 @@
 #include <aws/appflow/model/ZendeskConnectorOperator.h>
 #include <aws/appflow/model/SAPODataConnectorOperator.h>
 #include <aws/appflow/model/Operator.h>
+#include <aws/appflow/model/PardotConnectorOperator.h>
 #include <utility>
 
 namespace Aws
@@ -566,6 +567,43 @@ namespace Model
      */
     inline ConnectorOperator& WithCustomConnector(Operator&& value) { SetCustomConnector(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline const PardotConnectorOperator& GetPardot() const{ return m_pardot; }
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline bool PardotHasBeenSet() const { return m_pardotHasBeenSet; }
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline void SetPardot(const PardotConnectorOperator& value) { m_pardotHasBeenSet = true; m_pardot = value; }
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline void SetPardot(PardotConnectorOperator&& value) { m_pardotHasBeenSet = true; m_pardot = std::move(value); }
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline ConnectorOperator& WithPardot(const PardotConnectorOperator& value) { SetPardot(value); return *this;}
+
+    /**
+     * <p>The operation to be performed on the provided Salesforce Pardot source
+     * fields.</p>
+     */
+    inline ConnectorOperator& WithPardot(PardotConnectorOperator&& value) { SetPardot(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorOperator m_amplitude;
@@ -615,6 +653,9 @@ namespace Model
 
     Operator m_customConnector;
     bool m_customConnectorHasBeenSet = false;
+
+    PardotConnectorOperator m_pardot;
+    bool m_pardotHasBeenSet = false;
   };
 
 } // namespace Model

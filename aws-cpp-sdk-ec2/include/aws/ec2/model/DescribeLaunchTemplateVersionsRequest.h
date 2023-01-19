@@ -704,6 +704,55 @@ namespace Model
      */
     inline DescribeLaunchTemplateVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager
+     * parameter is specified for <code>ImageId</code>, the parameter is displayed in
+     * the response for <code>imageId</code>.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetResolveAlias() const{ return m_resolveAlias; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager
+     * parameter is specified for <code>ImageId</code>, the parameter is displayed in
+     * the response for <code>imageId</code>.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool ResolveAliasHasBeenSet() const { return m_resolveAliasHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager
+     * parameter is specified for <code>ImageId</code>, the parameter is displayed in
+     * the response for <code>imageId</code>.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetResolveAlias(bool value) { m_resolveAliasHasBeenSet = true; m_resolveAlias = value; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager
+     * parameter is specified for <code>ImageId</code>, the parameter is displayed in
+     * the response for <code>imageId</code>.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline DescribeLaunchTemplateVersionsRequest& WithResolveAlias(bool value) { SetResolveAlias(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -732,6 +781,9 @@ namespace Model
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
+
+    bool m_resolveAlias;
+    bool m_resolveAliasHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,8 @@ StartChatContactRequest::StartChatContactRequest() :
     m_clientTokenHasBeenSet(true),
     m_chatDurationInMinutes(0),
     m_chatDurationInMinutesHasBeenSet(false),
-    m_supportedMessagingContentTypesHasBeenSet(false)
+    m_supportedMessagingContentTypesHasBeenSet(false),
+    m_persistentChatHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,12 @@ Aws::String StartChatContactRequest::SerializePayload() const
      supportedMessagingContentTypesJsonList[supportedMessagingContentTypesIndex].AsString(m_supportedMessagingContentTypes[supportedMessagingContentTypesIndex]);
    }
    payload.WithArray("SupportedMessagingContentTypes", std::move(supportedMessagingContentTypesJsonList));
+
+  }
+
+  if(m_persistentChatHasBeenSet)
+  {
+   payload.WithObject("PersistentChat", m_persistentChat.Jsonize());
 
   }
 

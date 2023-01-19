@@ -36,47 +36,47 @@ namespace Model
 
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeviceIds() const{ return m_deviceIds; }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline bool DeviceIdsHasBeenSet() const { return m_deviceIdsHasBeenSet; }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline void SetDeviceIds(const Aws::Vector<Aws::String>& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = value; }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline void SetDeviceIds(Aws::Vector<Aws::String>&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = std::move(value); }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline CreateJobForDevicesRequest& WithDeviceIds(const Aws::Vector<Aws::String>& value) { SetDeviceIds(value); return *this;}
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline CreateJobForDevicesRequest& WithDeviceIds(Aws::Vector<Aws::String>&& value) { SetDeviceIds(std::move(value)); return *this;}
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline CreateJobForDevicesRequest& AddDeviceIds(const Aws::String& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline CreateJobForDevicesRequest& AddDeviceIds(Aws::String&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>IDs of target devices.</p>
+     * <p>ID of target device.</p>
      */
     inline CreateJobForDevicesRequest& AddDeviceIds(const char* value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
 

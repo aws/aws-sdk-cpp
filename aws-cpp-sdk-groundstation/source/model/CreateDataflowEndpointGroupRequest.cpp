@@ -13,6 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDataflowEndpointGroupRequest::CreateDataflowEndpointGroupRequest() : 
+    m_contactPostPassDurationSeconds(0),
+    m_contactPostPassDurationSecondsHasBeenSet(false),
+    m_contactPrePassDurationSeconds(0),
+    m_contactPrePassDurationSecondsHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -21,6 +25,18 @@ CreateDataflowEndpointGroupRequest::CreateDataflowEndpointGroupRequest() :
 Aws::String CreateDataflowEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_contactPostPassDurationSecondsHasBeenSet)
+  {
+   payload.WithInteger("contactPostPassDurationSeconds", m_contactPostPassDurationSeconds);
+
+  }
+
+  if(m_contactPrePassDurationSecondsHasBeenSet)
+  {
+   payload.WithInteger("contactPrePassDurationSeconds", m_contactPrePassDurationSeconds);
+
+  }
 
   if(m_endpointDetailsHasBeenSet)
   {

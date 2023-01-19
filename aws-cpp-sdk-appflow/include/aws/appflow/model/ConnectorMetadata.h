@@ -26,6 +26,7 @@
 #include <aws/appflow/model/CustomerProfilesMetadata.h>
 #include <aws/appflow/model/HoneycodeMetadata.h>
 #include <aws/appflow/model/SAPODataMetadata.h>
+#include <aws/appflow/model/PardotMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -697,6 +698,37 @@ namespace Model
     
     inline ConnectorMetadata& WithSAPOData(SAPODataMetadata&& value) { SetSAPOData(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline const PardotMetadata& GetPardot() const{ return m_pardot; }
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline bool PardotHasBeenSet() const { return m_pardotHasBeenSet; }
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline void SetPardot(const PardotMetadata& value) { m_pardotHasBeenSet = true; m_pardot = value; }
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline void SetPardot(PardotMetadata&& value) { m_pardotHasBeenSet = true; m_pardot = std::move(value); }
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline ConnectorMetadata& WithPardot(const PardotMetadata& value) { SetPardot(value); return *this;}
+
+    /**
+     * <p>The connector metadata specific to Salesforce Pardot.</p>
+     */
+    inline ConnectorMetadata& WithPardot(PardotMetadata&& value) { SetPardot(std::move(value)); return *this;}
+
   private:
 
     AmplitudeMetadata m_amplitude;
@@ -761,6 +793,9 @@ namespace Model
 
     SAPODataMetadata m_sAPOData;
     bool m_sAPODataHasBeenSet = false;
+
+    PardotMetadata m_pardot;
+    bool m_pardotHasBeenSet = false;
   };
 
 } // namespace Model

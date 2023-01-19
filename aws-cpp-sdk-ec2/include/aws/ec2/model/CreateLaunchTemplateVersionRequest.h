@@ -393,6 +393,47 @@ namespace Model
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateData(RequestLaunchTemplateData&& value) { SetLaunchTemplateData(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageID</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetResolveAlias() const{ return m_resolveAlias; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageID</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool ResolveAliasHasBeenSet() const { return m_resolveAliasHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageID</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline void SetResolveAlias(bool value) { m_resolveAliasHasBeenSet = true; m_resolveAlias = value; }
+
+    /**
+     * <p>If <code>true</code>, and if a Systems Manager parameter is specified for
+     * <code>ImageId</code>, the AMI ID is displayed in the response for
+     * <code>imageID</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline CreateLaunchTemplateVersionRequest& WithResolveAlias(bool value) { SetResolveAlias(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -415,6 +456,9 @@ namespace Model
 
     RequestLaunchTemplateData m_launchTemplateData;
     bool m_launchTemplateDataHasBeenSet = false;
+
+    bool m_resolveAlias;
+    bool m_resolveAliasHasBeenSet = false;
   };
 
 } // namespace Model
