@@ -163,8 +163,8 @@ namespace Model
 
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -173,8 +173,8 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -183,8 +183,8 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -193,8 +193,8 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -203,8 +203,8 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -213,8 +213,8 @@ namespace Model
     inline PlaybackKeyPair& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -223,8 +223,8 @@ namespace Model
     inline PlaybackKeyPair& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -233,8 +233,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -243,8 +243,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -253,8 +253,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -263,8 +263,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -273,8 +273,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -283,8 +283,8 @@ namespace Model
     inline PlaybackKeyPair& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
-     * See <a
+     * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
