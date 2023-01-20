@@ -24,7 +24,8 @@ TableConfiguration::TableConfiguration() :
     m_tableOptionsHasBeenSet(false),
     m_totalOptionsHasBeenSet(false),
     m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false)
+    m_paginatedReportOptionsHasBeenSet(false),
+    m_tableInlineVisualizationsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ TableConfiguration::TableConfiguration(JsonView jsonValue) :
     m_tableOptionsHasBeenSet(false),
     m_totalOptionsHasBeenSet(false),
     m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false)
+    m_paginatedReportOptionsHasBeenSet(false),
+    m_tableInlineVisualizationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,16 @@ TableConfiguration& TableConfiguration::operator =(JsonView jsonValue)
     m_paginatedReportOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableInlineVisualizations"))
+  {
+    Aws::Utils::Array<JsonView> tableInlineVisualizationsJsonList = jsonValue.GetArray("TableInlineVisualizations");
+    for(unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength(); ++tableInlineVisualizationsIndex)
+    {
+      m_tableInlineVisualizations.push_back(tableInlineVisualizationsJsonList[tableInlineVisualizationsIndex].AsObject());
+    }
+    m_tableInlineVisualizationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +135,17 @@ JsonValue TableConfiguration::Jsonize() const
   if(m_paginatedReportOptionsHasBeenSet)
   {
    payload.WithObject("PaginatedReportOptions", m_paginatedReportOptions.Jsonize());
+
+  }
+
+  if(m_tableInlineVisualizationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tableInlineVisualizationsJsonList(m_tableInlineVisualizations.size());
+   for(unsigned tableInlineVisualizationsIndex = 0; tableInlineVisualizationsIndex < tableInlineVisualizationsJsonList.GetLength(); ++tableInlineVisualizationsIndex)
+   {
+     tableInlineVisualizationsJsonList[tableInlineVisualizationsIndex].AsObject(m_tableInlineVisualizations[tableInlineVisualizationsIndex].Jsonize());
+   }
+   payload.WithArray("TableInlineVisualizations", std::move(tableInlineVisualizationsJsonList));
 
   }
 

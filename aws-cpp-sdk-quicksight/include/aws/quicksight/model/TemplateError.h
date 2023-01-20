@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline TemplateError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline TemplateError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline TemplateError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>An error path that shows which entities caused the template error.</p>
      */
     inline TemplateError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
 

@@ -86,42 +86,50 @@ namespace Model
 
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline const Aws::Vector<TransformOperation>& GetDataTransforms() const{ return m_dataTransforms; }
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline bool DataTransformsHasBeenSet() const { return m_dataTransformsHasBeenSet; }
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline void SetDataTransforms(const Aws::Vector<TransformOperation>& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms = value; }
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline void SetDataTransforms(Aws::Vector<TransformOperation>&& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms = std::move(value); }
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline LogicalTable& WithDataTransforms(const Aws::Vector<TransformOperation>& value) { SetDataTransforms(value); return *this;}
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline LogicalTable& WithDataTransforms(Aws::Vector<TransformOperation>&& value) { SetDataTransforms(std::move(value)); return *this;}
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline LogicalTable& AddDataTransforms(const TransformOperation& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms.push_back(value); return *this; }
 
     /**
-     * <p>Transform operations that act on this logical table.</p>
+     * <p>Transform operations that act on this logical table. For this structure to be
+     * valid, only one of the attributes can be non-null. </p>
      */
     inline LogicalTable& AddDataTransforms(TransformOperation&& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms.push_back(std::move(value)); return *this; }
 

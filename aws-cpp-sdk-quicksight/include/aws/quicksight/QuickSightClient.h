@@ -1952,9 +1952,17 @@ namespace QuickSight
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon QuickSight user, whose identity is associated with the
+         * <p>Creates an Amazon QuickSight user whose identity is associated with the
          * Identity and Access Management (IAM) identity or role specified in the request.
-         * </p><p><h3>See Also:</h3>   <a
+         * When you register a new user from the Amazon QuickSight API, Amazon QuickSight
+         * generates a registration URL. The user accesses this registration URL to create
+         * their account. Amazon QuickSight doesn't send a registration email to users who
+         * are registered from the Amazon QuickSight API. If you want new users to receive
+         * a registration email, then add those users in the Amazon QuickSight console. For
+         * more information on registering a new user in the Amazon QuickSight console, see
+         * <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users">
+         * Inviting users to access Amazon QuickSight</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">AWS
          * API Reference</a></p>
          */

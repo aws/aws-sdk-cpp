@@ -11,6 +11,8 @@
 #include <aws/quicksight/model/TotalOptions.h>
 #include <aws/quicksight/model/TableFieldOptions.h>
 #include <aws/quicksight/model/TablePaginatedReportOptions.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/TableInlineVisualization.h>
 #include <utility>
 
 namespace Aws
@@ -228,6 +230,47 @@ namespace Model
      */
     inline TableConfiguration& WithPaginatedReportOptions(TablePaginatedReportOptions&& value) { SetPaginatedReportOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline const Aws::Vector<TableInlineVisualization>& GetTableInlineVisualizations() const{ return m_tableInlineVisualizations; }
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline bool TableInlineVisualizationsHasBeenSet() const { return m_tableInlineVisualizationsHasBeenSet; }
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline void SetTableInlineVisualizations(const Aws::Vector<TableInlineVisualization>& value) { m_tableInlineVisualizationsHasBeenSet = true; m_tableInlineVisualizations = value; }
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline void SetTableInlineVisualizations(Aws::Vector<TableInlineVisualization>&& value) { m_tableInlineVisualizationsHasBeenSet = true; m_tableInlineVisualizations = std::move(value); }
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline TableConfiguration& WithTableInlineVisualizations(const Aws::Vector<TableInlineVisualization>& value) { SetTableInlineVisualizations(value); return *this;}
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline TableConfiguration& WithTableInlineVisualizations(Aws::Vector<TableInlineVisualization>&& value) { SetTableInlineVisualizations(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline TableConfiguration& AddTableInlineVisualizations(const TableInlineVisualization& value) { m_tableInlineVisualizationsHasBeenSet = true; m_tableInlineVisualizations.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of inline visualizations to display within a chart.</p>
+     */
+    inline TableConfiguration& AddTableInlineVisualizations(TableInlineVisualization&& value) { m_tableInlineVisualizationsHasBeenSet = true; m_tableInlineVisualizations.push_back(std::move(value)); return *this; }
+
   private:
 
     TableFieldWells m_fieldWells;
@@ -247,6 +290,9 @@ namespace Model
 
     TablePaginatedReportOptions m_paginatedReportOptions;
     bool m_paginatedReportOptionsHasBeenSet = false;
+
+    Aws::Vector<TableInlineVisualization> m_tableInlineVisualizations;
+    bool m_tableInlineVisualizationsHasBeenSet = false;
   };
 
 } // namespace Model

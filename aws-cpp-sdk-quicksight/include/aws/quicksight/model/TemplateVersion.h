@@ -137,32 +137,68 @@ namespace Model
 
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline const ResourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline TemplateVersion& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The HTTP status of the request.</p>
+     * <p>The status that is associated with the template.</p> <ul> <li> <p>
+     * <code>CREATION_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>CREATION_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code>
+     * </p> </li> <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> </p> </li> <li> <p> <code>DELETED</code> </p> </li>
+     * </ul>
      */
     inline TemplateVersion& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
