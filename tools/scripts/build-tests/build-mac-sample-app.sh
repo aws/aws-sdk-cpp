@@ -24,10 +24,10 @@ PREFIX_DIR="$1"
 
 echo "Building the Sample App"
 
-cd aws-sdk-cpp/CI/install-test
+cd aws-sdk-cpp/tools/CI/install-test
 mkdir "${PREFIX_DIR}/sample-build"
 cd "${PREFIX_DIR}/sample-build"
-cmake ../aws-sdk-cpp/CI/install-test -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/mac-install"
+cmake ../aws-sdk-cpp/tools/CI/install-test -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/mac-install"
 cmake --build .
 
 if [ "${AUTORUN}" -eq 0 ]; then
@@ -37,7 +37,7 @@ fi
 
 echo "Setting the run environment"
 export TEST_ASSUME_ROLE_ARN=arn:aws:iam::${AWS_ACCOUNT}:role/IntegrationTest
-export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/aws-cpp-sdk-lambda-integration-tests/resources
+export TEST_LAMBDA_CODE_PATH=${PREFIX_DIR}/aws-sdk-cpp/tests/aws-cpp-sdk-lambda-integration-tests/resources
 export sts=$(aws sts assume-role --role-arn "$TEST_ASSUME_ROLE_ARN" --role-session-name "${AWS_ROLE_SESSION_NAME}" --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]')
 export profile=sdk-integ-test
 aws configure set aws_access_key_id $(echo "$sts" | jq -r '.[0]') --profile "$profile"
