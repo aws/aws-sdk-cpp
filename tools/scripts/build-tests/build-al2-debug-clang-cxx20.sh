@@ -17,8 +17,6 @@ PREFIX_DIR="$1"
 
 mkdir "${PREFIX_DIR}/al2-build"
 mkdir "${PREFIX_DIR}/al2-install"
-cd "${PREFIX_DIR}/aws-sdk-cpp"
-python ./scripts/endpoints_checker.py
 cd "${PREFIX_DIR}/al2-build"
 cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=../aws-sdk-cpp/toolchains/clang-c++20.cmake -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install"
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
