@@ -17,8 +17,6 @@ PREFIX_DIR="$1"
 
 mkdir "${PREFIX_DIR}/mac-build"
 mkdir "${PREFIX_DIR}/mac-install"
-cd "${PREFIX_DIR}/aws-sdk-cpp"
-python ./scripts/endpoints_checker.py
 cd "${PREFIX_DIR}/mac-build"
 cmake ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/mac-install"
 cmake --build . --parallel $(sysctl -n hw.ncpu)
