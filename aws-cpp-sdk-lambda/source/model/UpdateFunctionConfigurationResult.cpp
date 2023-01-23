@@ -259,6 +259,12 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("RuntimeVersionConfig"))
+  {
+    m_runtimeVersionConfig = jsonValue.GetObject("RuntimeVersionConfig");
+
+  }
+
 
 
   return *this;

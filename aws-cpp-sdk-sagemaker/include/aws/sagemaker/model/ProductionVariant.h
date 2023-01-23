@@ -354,28 +354,28 @@ namespace Model
 
     /**
      * <p>The size, in GB, of the ML storage volume attached to individual inference
-     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * instance associated with the production variant. Currently only Amazon EBS gp2
      * storage volumes are supported.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
     /**
      * <p>The size, in GB, of the ML storage volume attached to individual inference
-     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * instance associated with the production variant. Currently only Amazon EBS gp2
      * storage volumes are supported.</p>
      */
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
      * <p>The size, in GB, of the ML storage volume attached to individual inference
-     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * instance associated with the production variant. Currently only Amazon EBS gp2
      * storage volumes are supported.</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
     /**
      * <p>The size, in GB, of the ML storage volume attached to individual inference
-     * instance associated with the production variant. Currenly only Amazon EBS gp2
+     * instance associated with the production variant. Currently only Amazon EBS gp2
      * storage volumes are supported.</p>
      */
     inline ProductionVariant& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}

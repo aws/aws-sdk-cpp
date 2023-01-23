@@ -259,6 +259,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("RuntimeVersionConfig"))
+  {
+    m_runtimeVersionConfig = jsonValue.GetObject("RuntimeVersionConfig");
+
+  }
+
 
 
   return *this;

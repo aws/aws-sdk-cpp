@@ -53,6 +53,7 @@
 #include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/GetRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
+#include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
@@ -1250,6 +1252,38 @@ void LambdaClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConc
     } );
 }
 
+GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const GetRuntimeManagementConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRuntimeManagementConfig", "Required field: FunctionName, is not set");
+    return GetRuntimeManagementConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-07-20/functions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-management-config");
+  return GetRuntimeManagementConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRuntimeManagementConfigOutcomeCallable LambdaClient::GetRuntimeManagementConfigCallable(const GetRuntimeManagementConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRuntimeManagementConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRuntimeManagementConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetRuntimeManagementConfigAsync(const GetRuntimeManagementConfigRequest& request, const GetRuntimeManagementConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRuntimeManagementConfig(request), context);
+    } );
+}
+
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Invoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1834,6 +1868,38 @@ void LambdaClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConc
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutProvisionedConcurrencyConfig(request), context);
+    } );
+}
+
+PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const PutRuntimeManagementConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRuntimeManagementConfig", "Required field: FunctionName, is not set");
+    return PutRuntimeManagementConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-07-20/functions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-management-config");
+  return PutRuntimeManagementConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRuntimeManagementConfigOutcomeCallable LambdaClient::PutRuntimeManagementConfigCallable(const PutRuntimeManagementConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRuntimeManagementConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRuntimeManagementConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PutRuntimeManagementConfigAsync(const PutRuntimeManagementConfigRequest& request, const PutRuntimeManagementConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRuntimeManagementConfig(request), context);
     } );
 }
 

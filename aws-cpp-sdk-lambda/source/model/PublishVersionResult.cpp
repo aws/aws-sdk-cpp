@@ -259,6 +259,12 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("RuntimeVersionConfig"))
+  {
+    m_runtimeVersionConfig = jsonValue.GetObject("RuntimeVersionConfig");
+
+  }
+
 
 
   return *this;
