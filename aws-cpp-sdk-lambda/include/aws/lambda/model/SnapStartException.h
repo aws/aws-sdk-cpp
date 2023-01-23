@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The runtime restore hook encountered an error. For more information, check
-   * the Amazon CloudWatch logs.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>afterRestore()</code> <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+   * hook</a> encountered an error. For more information, check the Amazon CloudWatch
+   * logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStartException">AWS
    * API Reference</a></p>
    */

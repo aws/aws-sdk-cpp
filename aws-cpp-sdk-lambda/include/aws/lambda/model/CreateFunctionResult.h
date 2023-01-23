@@ -20,6 +20,7 @@
 #include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStartResponse.h>
+#include <aws/lambda/model/RuntimeVersionConfig.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1201,6 +1202,32 @@ namespace Model
      */
     inline CreateFunctionResult& WithSnapStart(SnapStartResponse&& value) { SetSnapStart(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the runtime and any errors that occured.</p>
+     */
+    inline const RuntimeVersionConfig& GetRuntimeVersionConfig() const{ return m_runtimeVersionConfig; }
+
+    /**
+     * <p>The ARN of the runtime and any errors that occured.</p>
+     */
+    inline void SetRuntimeVersionConfig(const RuntimeVersionConfig& value) { m_runtimeVersionConfig = value; }
+
+    /**
+     * <p>The ARN of the runtime and any errors that occured.</p>
+     */
+    inline void SetRuntimeVersionConfig(RuntimeVersionConfig&& value) { m_runtimeVersionConfig = std::move(value); }
+
+    /**
+     * <p>The ARN of the runtime and any errors that occured.</p>
+     */
+    inline CreateFunctionResult& WithRuntimeVersionConfig(const RuntimeVersionConfig& value) { SetRuntimeVersionConfig(value); return *this;}
+
+    /**
+     * <p>The ARN of the runtime and any errors that occured.</p>
+     */
+    inline CreateFunctionResult& WithRuntimeVersionConfig(RuntimeVersionConfig&& value) { SetRuntimeVersionConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1270,6 +1297,8 @@ namespace Model
     EphemeralStorage m_ephemeralStorage;
 
     SnapStartResponse m_snapStart;
+
+    RuntimeVersionConfig m_runtimeVersionConfig;
   };
 
 } // namespace Model

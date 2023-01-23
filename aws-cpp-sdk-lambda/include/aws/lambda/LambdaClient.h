@@ -184,7 +184,7 @@ namespace Lambda
 
         /**
          * <p>Creates an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
          * for a Lambda function version. Use aliases to provide clients with a function
          * identifier that you can update to invoke a different version.</p> <p>You can
          * also map an alias to split invocation requests between two versions. Use the
@@ -376,7 +376,7 @@ namespace Lambda
 
         /**
          * <p>Deletes a Lambda function <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">AWS
          * API Reference</a></p>
@@ -589,7 +589,7 @@ namespace Lambda
 
         /**
          * <p>Returns details about a Lambda function <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">AWS API
          * Reference</a></p>
@@ -855,6 +855,29 @@ namespace Lambda
         virtual void GetProvisionedConcurrencyConfigAsync(const Model::GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the runtime management configuration for a function's version. If
+         * the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime
+         * version and the runtime update mode. If the runtime update mode is <b>Auto</b>
+         * or <b>Function update</b>, this includes the runtime update mode and
+         * <code>null</code> is returned for the ARN. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+         * updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRuntimeManagementConfigOutcome GetRuntimeManagementConfig(const Model::GetRuntimeManagementConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRuntimeManagementConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRuntimeManagementConfigOutcomeCallable GetRuntimeManagementConfigCallable(const Model::GetRuntimeManagementConfigRequest& request) const;
+
+        /**
+         * An Async wrapper for GetRuntimeManagementConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRuntimeManagementConfigAsync(const Model::GetRuntimeManagementConfigRequest& request, const GetRuntimeManagementConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
          * for the response), or asynchronously. To invoke a function asynchronously, set
          * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
@@ -913,7 +936,7 @@ namespace Lambda
 
         /**
          * <p>Returns a list of <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
          * for a Lambda function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">AWS
          * API Reference</a></p>
@@ -1015,7 +1038,7 @@ namespace Lambda
          * <p>The <code>ListFunctions</code> operation returns a subset of the
          * <a>FunctionConfiguration</a> fields. To get the additional fields (State,
          * StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
-         * LastUpdateStatusReasonCode) for a function or version, use
+         * LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function or version, use
          * <a>GetFunction</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
@@ -1304,6 +1327,26 @@ namespace Lambda
         virtual void PutProvisionedConcurrencyConfigAsync(const Model::PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the runtime management configuration for a function's version. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+         * updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRuntimeManagementConfigOutcome PutRuntimeManagementConfig(const Model::PutRuntimeManagementConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutRuntimeManagementConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRuntimeManagementConfigOutcomeCallable PutRuntimeManagementConfigCallable(const Model::PutRuntimeManagementConfigRequest& request) const;
+
+        /**
+         * An Async wrapper for PutRuntimeManagementConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRuntimeManagementConfigAsync(const Model::PutRuntimeManagementConfigRequest& request, const PutRuntimeManagementConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes a statement from the permissions policy for a version of an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
          * layer</a>. For more information, see
@@ -1382,7 +1425,7 @@ namespace Lambda
 
         /**
          * <p>Updates the configuration of a Lambda function <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">AWS
          * API Reference</a></p>

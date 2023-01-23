@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The runtime restore hook failed to complete within the timeout limit (2
-   * seconds).</p><p><h3>See Also:</h3>   <a
+   * <p>Lambda couldn't restore the snapshot within the timeout limit.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStartTimeoutException">AWS
    * API Reference</a></p>
    */

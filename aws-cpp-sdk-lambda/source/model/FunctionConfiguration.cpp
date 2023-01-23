@@ -61,7 +61,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false)
+    m_snapStartHasBeenSet(false),
+    m_runtimeVersionConfigHasBeenSet(false)
 {
 }
 
@@ -108,7 +109,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false)
+    m_snapStartHasBeenSet(false),
+    m_runtimeVersionConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -362,6 +364,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_snapStartHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuntimeVersionConfig"))
+  {
+    m_runtimeVersionConfig = jsonValue.GetObject("RuntimeVersionConfig");
+
+    m_runtimeVersionConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -579,6 +588,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_snapStartHasBeenSet)
   {
    payload.WithObject("SnapStart", m_snapStart.Jsonize());
+
+  }
+
+  if(m_runtimeVersionConfigHasBeenSet)
+  {
+   payload.WithObject("RuntimeVersionConfig", m_runtimeVersionConfig.Jsonize());
 
   }
 
