@@ -1,0 +1,52 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/cloudfront/model/TagResource2020_05_31Request.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudFront::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+TagResource2020_05_31Request::TagResource2020_05_31Request() : 
+    m_resourceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
+{
+}
+
+Aws::String TagResource2020_05_31Request::SerializePayload() const
+{
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("Tags");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+
+  m_tags.AddToNode(parentNode);
+  if(parentNode.HasChildren())
+  {
+    return payloadDoc.ConvertToString();
+  }
+
+  return {};
+}
+
+void TagResource2020_05_31Request::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_resourceHasBeenSet)
+    {
+      ss << m_resource;
+      uri.AddQueryStringParameter("Resource", ss.str());
+      ss.str("");
+    }
+
+}
+
