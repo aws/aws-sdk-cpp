@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+
 import concurrent.futures
 import fileinput
 import multiprocessing
@@ -8,19 +13,18 @@ import subprocess
 
 def run_doc_gen():
     # Create output directory
-    if not os.path.exists("doxygen/output"):
-        os.mkdir("doxygen/output")
+    shutil.copytree("tools/doxygen", "doxygen")
+    os.makedirs("doxygen/output", exist_ok=True)
 
     # Create dependency tree
-    if not os.path.exists("build"):
-        os.mkdir("build")
+    os.makedirs("build", exist_ok=True)
     subprocess.run(["cmake", "-GNinja", "-Bbuild", "--graphviz=build/aws-cpp-sdk.dot", "."])
     dependency_map = create_dependency_map()
     subprocess.run(["rm -rf build"], shell=True)
 
     # Update layout file with correct modules
     print('Creating layout file')
-    shutil.copy("doxygen/modules/template/layout-template.xml", "doxygen/DoxygenLayout.xml")
+    shutil.copy("tools/doxygen/modules/template/layout-template.xml", "doxygen/DoxygenLayout.xml")
     for line in fileinput.input("doxygen/DoxygenLayout.xml", inplace=True):
         if "<!--SDK_CUSTOM_TABS-->" in line:
             for module in sorted(dependency_map.keys()):
@@ -38,7 +42,7 @@ def run_doc_gen():
     # Generate root last
     print(f'Running doc generation for root of documentation site')
     client_futures["root"] = doc_gen_thread_pool.submit(subprocess.run,
-                                                        ["doxygen", "./doxygen/modules/static/root.config"])
+                                                        ["doxygen", "./tools/doxygen/modules/static/root.config"])
 
     # Wait for all generation to complete
     for client, future in client_futures.items():
@@ -78,17 +82,25 @@ def process_one_client(dependency_map, client_name, thread_pool, client_futures)
     for dependency in dependency_map.get(client_name, []):
         client_futures[dependency].result()
 
+    if client_name in ["aws-cpp-sdk-core", "aws-cpp-sdk-access-management",
+                       "aws-cpp-sdk-s3-encryption", "aws-cpp-sdk-text-to-speech",
+                       "aws-cpp-sdk-identity-management", "aws-cpp-sdk-transfer",
+                       "aws-cpp-sdk-queues"]:
+        client_src = f"src/{client_name}"
+    else:
+        client_src = f"generated/src/{client_name}"
     # Copy main readme to service dir.
-    shutil.copy("README.md", f'{client_name}/README.md')
-    shutil.copy("CHANGELOG.md", f'{client_name}/CHANGELOG.md')
-    shutil.copy("CODE_OF_CONDUCT.md", f'{client_name}/CODE_OF_CONDUCT.md')
-    shutil.copy("CONTRIBUTING.md", f'{client_name}/CONTRIBUTING.md')
-    shutil.copytree("Docs", f'{client_name}/Docs')
+    shutil.copy("README.md", f'{client_src}/README.md')
+    shutil.copy("CHANGELOG.md", f'{client_src}/CHANGELOG.md')
+    shutil.copy("CODE_OF_CONDUCT.md", f'{client_src}/CODE_OF_CONDUCT.md')
+    shutil.copy("CONTRIBUTING.md", f'{client_src}/CONTRIBUTING.md')
+    shutil.copytree("docs", f'{client_src}/Docs')
 
     # Create client tag files
-    shutil.copy("doxygen/modules/template/module-template.config", f'doxygen/modules/{client_name}.config')
+    shutil.copy("tools/doxygen/modules/template/module-template.config", f'doxygen/modules/{client_name}.config')
     for line in fileinput.input(f'doxygen/modules/{client_name}.config', inplace=True):
         line = line.replace("#CLIENT_NAME", f'{client_name}')
+        line = line.replace("#CLIENT_DIR", f'{client_src}')
         line = line.replace("#DEPENDENCIES", "\\\n".join(list(map(tag_file, dependency_map.get(client_name, [])))))
         print('{}'.format(line), end='')
 
