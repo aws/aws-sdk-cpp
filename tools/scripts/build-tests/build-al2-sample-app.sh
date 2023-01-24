@@ -24,7 +24,6 @@ PREFIX_DIR="$1"
 
 echo "Building the Sample App"
 
-cd aws-sdk-cpp/tools/CI/install-test
 mkdir "${PREFIX_DIR}/sample-build"
 cd "${PREFIX_DIR}/sample-build"
 cmake ../aws-sdk-cpp/tools/CI/install-test -G Ninja -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/al2-install"
