@@ -4,9 +4,13 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.10 is now Available!
+## Version 1.11 is now Available!
 
-This release introduces a new endpoint resolution based on client configuration and request input parameters.
+This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
+* Asynchronous API refactoring is a partially breaking, backward incompatible change: all client methods such as OperationAsync and OperationCallable are no longer virtual methods but instead are conditionally compiled template methods. Having these methods as templates reduces the total binary size of the SDK by 40%. Individual client binary size may vary. In addition, it reduces build time of the SDK by up to 50% (release, unity build, SDK clients only).
+  A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
+  Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
+* Scripts and IDE project files not using the provided cmake build infrastructure must be reviewed and updated to reflect source tree changes.
 
 All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
 * New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
