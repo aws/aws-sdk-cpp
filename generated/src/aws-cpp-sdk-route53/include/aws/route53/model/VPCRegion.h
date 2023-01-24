@@ -47,7 +47,8 @@ namespace Model
     cn_north_1,
     af_south_1,
     eu_south_1,
-    eu_south_2
+    eu_south_2,
+    ap_southeast_4
   };
 
 namespace VPCRegionMapper

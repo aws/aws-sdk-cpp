@@ -35,73 +35,80 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline const Aws::Vector<DatabaseSummary>& GetDatabases() const{ return m_databases; }
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline void SetDatabases(const Aws::Vector<DatabaseSummary>& value) { m_databases = value; }
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline void SetDatabases(Aws::Vector<DatabaseSummary>&& value) { m_databases = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline ListDatabasesResult& WithDatabases(const Aws::Vector<DatabaseSummary>& value) { SetDatabases(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline ListDatabasesResult& WithDatabases(Aws::Vector<DatabaseSummary>&& value) { SetDatabases(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline ListDatabasesResult& AddDatabases(const DatabaseSummary& value) { m_databases.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The SAP HANA databases of an application.</p>
      */
     inline ListDatabasesResult& AddDatabases(DatabaseSummary&& value) { m_databases.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListDatabasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListDatabasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListDatabasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

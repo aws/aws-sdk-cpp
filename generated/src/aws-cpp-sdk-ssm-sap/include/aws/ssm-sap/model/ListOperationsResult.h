@@ -7,7 +7,7 @@
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ssm-sap/model/ComponentSummary.h>
+#include <aws/ssm-sap/model/Operation.h>
 #include <utility>
 
 namespace Aws
@@ -26,48 +26,48 @@ namespace SsmSap
 {
 namespace Model
 {
-  class ListComponentsResult
+  class ListOperationsResult
   {
   public:
-    AWS_SSMSAP_API ListComponentsResult();
-    AWS_SSMSAP_API ListComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SSMSAP_API ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API ListOperationsResult();
+    AWS_SSMSAP_API ListOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API ListOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline const Aws::Vector<ComponentSummary>& GetComponents() const{ return m_components; }
+    inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline void SetComponents(const Aws::Vector<ComponentSummary>& value) { m_components = value; }
+    inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline void SetComponents(Aws::Vector<ComponentSummary>&& value) { m_components = std::move(value); }
+    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline ListComponentsResult& WithComponents(const Aws::Vector<ComponentSummary>& value) { SetComponents(value); return *this;}
+    inline ListOperationsResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline ListComponentsResult& WithComponents(Aws::Vector<ComponentSummary>&& value) { SetComponents(std::move(value)); return *this;}
+    inline ListOperationsResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline ListComponentsResult& AddComponents(const ComponentSummary& value) { m_components.push_back(value); return *this; }
+    inline ListOperationsResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
 
     /**
-     * <p>List of components registered with AWS System Manager for SAP.</p>
+     * <p>List of operations performed by AWS Systems Manager for SAP.</p>
      */
-    inline ListComponentsResult& AddComponents(ComponentSummary&& value) { m_components.push_back(std::move(value)); return *this; }
+    inline ListOperationsResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -98,23 +98,23 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline ListComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline ListComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline ListComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::Vector<ComponentSummary> m_components;
+    Aws::Vector<Operation> m_operations;
 
     Aws::String m_nextToken;
   };

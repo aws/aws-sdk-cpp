@@ -35,88 +35,93 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The SAP HANA database of an application registered with AWS Systems Manager
+     * for SAP.</p>
      */
     inline const Database& GetDatabase() const{ return m_database; }
 
     /**
-     * <p/>
+     * <p>The SAP HANA database of an application registered with AWS Systems Manager
+     * for SAP.</p>
      */
     inline void SetDatabase(const Database& value) { m_database = value; }
 
     /**
-     * <p/>
+     * <p>The SAP HANA database of an application registered with AWS Systems Manager
+     * for SAP.</p>
      */
     inline void SetDatabase(Database&& value) { m_database = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The SAP HANA database of an application registered with AWS Systems Manager
+     * for SAP.</p>
      */
     inline GetDatabaseResult& WithDatabase(const Database& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The SAP HANA database of an application registered with AWS Systems Manager
+     * for SAP.</p>
      */
     inline GetDatabaseResult& WithDatabase(Database&& value) { SetDatabase(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a database.</p>
      */
     inline GetDatabaseResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

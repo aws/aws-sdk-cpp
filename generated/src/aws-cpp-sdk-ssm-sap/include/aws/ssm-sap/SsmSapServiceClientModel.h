@@ -28,6 +28,7 @@
 #include <aws/ssm-sap/model/ListApplicationsResult.h>
 #include <aws/ssm-sap/model/ListComponentsResult.h>
 #include <aws/ssm-sap/model/ListDatabasesResult.h>
+#include <aws/ssm-sap/model/ListOperationsResult.h>
 #include <aws/ssm-sap/model/ListTagsForResourceResult.h>
 #include <aws/ssm-sap/model/PutResourcePermissionResult.h>
 #include <aws/ssm-sap/model/RegisterApplicationResult.h>
@@ -84,6 +85,7 @@ namespace Aws
       class ListApplicationsRequest;
       class ListComponentsRequest;
       class ListDatabasesRequest;
+      class ListOperationsRequest;
       class ListTagsForResourceRequest;
       class PutResourcePermissionRequest;
       class RegisterApplicationRequest;
@@ -103,6 +105,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListApplicationsResult, SsmSapError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListComponentsResult, SsmSapError> ListComponentsOutcome;
       typedef Aws::Utils::Outcome<ListDatabasesResult, SsmSapError> ListDatabasesOutcome;
+      typedef Aws::Utils::Outcome<ListOperationsResult, SsmSapError> ListOperationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SsmSapError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutResourcePermissionResult, SsmSapError> PutResourcePermissionOutcome;
       typedef Aws::Utils::Outcome<RegisterApplicationResult, SsmSapError> RegisterApplicationOutcome;
@@ -122,6 +125,7 @@ namespace Aws
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
       typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
+      typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutResourcePermissionOutcome> PutResourcePermissionOutcomeCallable;
       typedef std::future<RegisterApplicationOutcome> RegisterApplicationOutcomeCallable;
@@ -144,6 +148,7 @@ namespace Aws
     typedef std::function<void(const SsmSapClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
+    typedef std::function<void(const SsmSapClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::PutResourcePermissionRequest&, const Model::PutResourcePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePermissionResponseReceivedHandler;
     typedef std::function<void(const SsmSapClient*, const Model::RegisterApplicationRequest&, const Model::RegisterApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterApplicationResponseReceivedHandler;

@@ -34,63 +34,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The application registered with AWS Systems Manager for SAP.</p>
      */
     inline const Application& GetApplication() const{ return m_application; }
 
     /**
-     * <p/>
+     * <p>The application registered with AWS Systems Manager for SAP.</p>
      */
     inline void SetApplication(const Application& value) { m_application = value; }
 
     /**
-     * <p/>
+     * <p>The application registered with AWS Systems Manager for SAP.</p>
      */
     inline void SetApplication(Application&& value) { m_application = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The application registered with AWS Systems Manager for SAP.</p>
      */
     inline RegisterApplicationResult& WithApplication(const Application& value) { SetApplication(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The application registered with AWS Systems Manager for SAP.</p>
      */
     inline RegisterApplicationResult& WithApplication(Application&& value) { SetApplication(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline RegisterApplicationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline RegisterApplicationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the operation.</p>
      */
     inline RegisterApplicationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 

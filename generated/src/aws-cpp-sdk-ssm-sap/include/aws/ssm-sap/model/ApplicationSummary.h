@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The summary of the SAP application registered with AWS Systems Manager for
+   * SAP. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ApplicationSummary">AWS
    * API Reference</a></p>
    */
@@ -40,180 +41,180 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ApplicationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ApplicationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ApplicationSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline const ApplicationType& GetType() const{ return m_type; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline void SetType(const ApplicationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline void SetType(ApplicationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline ApplicationSummary& WithType(const ApplicationType& value) { SetType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline ApplicationSummary& WithType(ApplicationType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline ApplicationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline ApplicationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline ApplicationSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags on the application.</p>
      */
     inline ApplicationSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

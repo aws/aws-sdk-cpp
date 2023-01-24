@@ -31,6 +31,7 @@
 #include <aws/ssm-sap/model/ListApplicationsRequest.h>
 #include <aws/ssm-sap/model/ListComponentsRequest.h>
 #include <aws/ssm-sap/model/ListDatabasesRequest.h>
+#include <aws/ssm-sap/model/ListOperationsRequest.h>
 #include <aws/ssm-sap/model/ListTagsForResourceRequest.h>
 #include <aws/ssm-sap/model/PutResourcePermissionRequest.h>
 #include <aws/ssm-sap/model/RegisterApplicationRequest.h>
@@ -253,6 +254,15 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/list-databases");
   return ListDatabasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOperationsOutcome SsmSapClient::ListOperations(const ListOperationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/list-operations");
+  return ListOperationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

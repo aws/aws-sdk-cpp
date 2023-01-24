@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 GetApplicationRequest::GetApplicationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
+    m_applicationArnHasBeenSet(false),
+    m_appRegistryArnHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String GetApplicationRequest::SerializePayload() const
   if(m_applicationArnHasBeenSet)
   {
    payload.WithString("ApplicationArn", m_applicationArn);
+
+  }
+
+  if(m_appRegistryArnHasBeenSet)
+  {
+   payload.WithString("AppRegistryArn", m_appRegistryArn);
 
   }
 
