@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>An SAP application registered with AWS Systems Manager for SAP.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Application">AWS
    * API Reference</a></p>
    */
@@ -42,304 +43,304 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Application& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Application& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Application& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline const ApplicationType& GetType() const{ return m_type; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline void SetType(const ApplicationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline void SetType(ApplicationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline Application& WithType(const ApplicationType& value) { SetType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of the application.</p>
      */
     inline Application& WithType(ApplicationType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline Application& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline Application& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline Application& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline const Aws::String& GetAppRegistryArn() const{ return m_appRegistryArn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline bool AppRegistryArnHasBeenSet() const { return m_appRegistryArnHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline void SetAppRegistryArn(const Aws::String& value) { m_appRegistryArnHasBeenSet = true; m_appRegistryArn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline void SetAppRegistryArn(Aws::String&& value) { m_appRegistryArnHasBeenSet = true; m_appRegistryArn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline void SetAppRegistryArn(const char* value) { m_appRegistryArnHasBeenSet = true; m_appRegistryArn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline Application& WithAppRegistryArn(const Aws::String& value) { SetAppRegistryArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline Application& WithAppRegistryArn(Aws::String&& value) { SetAppRegistryArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
      */
     inline Application& WithAppRegistryArn(const char* value) { SetAppRegistryArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline const ApplicationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline void SetStatus(const ApplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline void SetStatus(ApplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline Application& WithStatus(const ApplicationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of the application.</p>
      */
     inline Application& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComponents() const{ return m_components; }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline void SetComponents(const Aws::Vector<Aws::String>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline void SetComponents(Aws::Vector<Aws::String>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline Application& WithComponents(const Aws::Vector<Aws::String>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline Application& WithComponents(Aws::Vector<Aws::String>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline Application& AddComponents(const Aws::String& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline Application& AddComponents(Aws::String&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The components of the application.</p>
      */
     inline Application& AddComponents(const char* value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline Application& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The time at which the application was last updated.</p>
      */
     inline Application& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline Application& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline Application& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The status message.</p>
      */
     inline Application& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

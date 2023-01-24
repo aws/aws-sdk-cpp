@@ -35,88 +35,93 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Returns all of the metadata of an application registered with AWS Systems
+     * Manager for SAP.</p>
      */
     inline const Application& GetApplication() const{ return m_application; }
 
     /**
-     * <p/>
+     * <p>Returns all of the metadata of an application registered with AWS Systems
+     * Manager for SAP.</p>
      */
     inline void SetApplication(const Application& value) { m_application = value; }
 
     /**
-     * <p/>
+     * <p>Returns all of the metadata of an application registered with AWS Systems
+     * Manager for SAP.</p>
      */
     inline void SetApplication(Application&& value) { m_application = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Returns all of the metadata of an application registered with AWS Systems
+     * Manager for SAP.</p>
      */
     inline GetApplicationResult& WithApplication(const Application& value) { SetApplication(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Returns all of the metadata of an application registered with AWS Systems
+     * Manager for SAP.</p>
      */
     inline GetApplicationResult& WithApplication(Application&& value) { SetApplication(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of a registered application.</p>
      */
     inline GetApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

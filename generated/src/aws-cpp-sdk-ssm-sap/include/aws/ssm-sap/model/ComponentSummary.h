@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The summary of the component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ComponentSummary">AWS
    * API Reference</a></p>
    */
@@ -40,180 +40,180 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ComponentSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ComponentSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline ComponentSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline ComponentSummary& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline ComponentSummary& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline ComponentSummary& WithComponentId(const char* value) { SetComponentId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline const ComponentType& GetComponentType() const{ return m_componentType; }
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline void SetComponentType(const ComponentType& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline void SetComponentType(ComponentType&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline ComponentSummary& WithComponentType(const ComponentType& value) { SetComponentType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of the component.</p>
      */
     inline ComponentSummary& WithComponentType(ComponentType&& value) { SetComponentType(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The tags of the component.</p>
      */
     inline ComponentSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

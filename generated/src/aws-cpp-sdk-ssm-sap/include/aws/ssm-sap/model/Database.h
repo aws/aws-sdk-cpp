@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The SAP HANA database of the application registered with AWS Systems Manager
+   * for SAP.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Database">AWS
    * API Reference</a></p>
    */
@@ -43,402 +44,402 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Database& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Database& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the application.</p>
      */
     inline Database& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline Database& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline Database& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the component.</p>
      */
     inline Database& WithComponentId(const char* value) { SetComponentId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline const Aws::Vector<ApplicationCredential>& GetCredentials() const{ return m_credentials; }
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline void SetCredentials(const Aws::Vector<ApplicationCredential>& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline void SetCredentials(Aws::Vector<ApplicationCredential>&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline Database& WithCredentials(const Aws::Vector<ApplicationCredential>& value) { SetCredentials(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline Database& WithCredentials(Aws::Vector<ApplicationCredential>&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline Database& AddCredentials(const ApplicationCredential& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The credentials of the database.</p>
      */
     inline Database& AddCredentials(ApplicationCredential&& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline Database& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline Database& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the SAP HANA database.</p>
      */
     inline Database& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline Database& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline Database& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database.</p>
      */
     inline Database& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline const DatabaseType& GetDatabaseType() const{ return m_databaseType; }
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline bool DatabaseTypeHasBeenSet() const { return m_databaseTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline void SetDatabaseType(const DatabaseType& value) { m_databaseTypeHasBeenSet = true; m_databaseType = value; }
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline void SetDatabaseType(DatabaseType&& value) { m_databaseTypeHasBeenSet = true; m_databaseType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline Database& WithDatabaseType(const DatabaseType& value) { SetDatabaseType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of the database.</p>
      */
     inline Database& WithDatabaseType(DatabaseType&& value) { SetDatabaseType(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline Database& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline Database& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline Database& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline const DatabaseStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline void SetStatus(const DatabaseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline void SetStatus(DatabaseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline Database& WithStatus(const DatabaseStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of the database.</p>
      */
     inline Database& WithStatus(DatabaseStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline const Aws::String& GetPrimaryHost() const{ return m_primaryHost; }
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline bool PrimaryHostHasBeenSet() const { return m_primaryHostHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline void SetPrimaryHost(const Aws::String& value) { m_primaryHostHasBeenSet = true; m_primaryHost = value; }
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline void SetPrimaryHost(Aws::String&& value) { m_primaryHostHasBeenSet = true; m_primaryHost = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline void SetPrimaryHost(const char* value) { m_primaryHostHasBeenSet = true; m_primaryHost.assign(value); }
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline Database& WithPrimaryHost(const Aws::String& value) { SetPrimaryHost(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline Database& WithPrimaryHost(Aws::String&& value) { SetPrimaryHost(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The primary host of the database.</p>
      */
     inline Database& WithPrimaryHost(const char* value) { SetPrimaryHost(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The SQL port of the database.</p>
      */
     inline int GetSQLPort() const{ return m_sQLPort; }
 
     /**
-     * <p/>
+     * <p>The SQL port of the database.</p>
      */
     inline bool SQLPortHasBeenSet() const { return m_sQLPortHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The SQL port of the database.</p>
      */
     inline void SetSQLPort(int value) { m_sQLPortHasBeenSet = true; m_sQLPort = value; }
 
     /**
-     * <p/>
+     * <p>The SQL port of the database.</p>
      */
     inline Database& WithSQLPort(int value) { SetSQLPort(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline Database& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The time at which the database was last updated.</p>
      */
     inline Database& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 

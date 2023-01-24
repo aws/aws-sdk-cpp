@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The component of an application registered with AWS Systems Manager for
+     * SAP.</p>
      */
     inline const Component& GetComponent() const{ return m_component; }
 
     /**
-     * <p/>
+     * <p>The component of an application registered with AWS Systems Manager for
+     * SAP.</p>
      */
     inline void SetComponent(const Component& value) { m_component = value; }
 
     /**
-     * <p/>
+     * <p>The component of an application registered with AWS Systems Manager for
+     * SAP.</p>
      */
     inline void SetComponent(Component&& value) { m_component = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The component of an application registered with AWS Systems Manager for
+     * SAP.</p>
      */
     inline GetComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The component of an application registered with AWS Systems Manager for
+     * SAP.</p>
      */
     inline GetComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
 

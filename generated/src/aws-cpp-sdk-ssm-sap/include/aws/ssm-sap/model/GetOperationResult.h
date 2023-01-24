@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Returns the details of an operation.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
 
     /**
-     * <p/>
+     * <p>Returns the details of an operation.</p>
      */
     inline void SetOperation(const Operation& value) { m_operation = value; }
 
     /**
-     * <p/>
+     * <p>Returns the details of an operation.</p>
      */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Returns the details of an operation.</p>
      */
     inline GetOperationResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Returns the details of an operation.</p>
      */
     inline GetOperationResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 

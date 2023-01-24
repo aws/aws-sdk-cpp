@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline DeleteResourcePermissionResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline DeleteResourcePermissionResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The policy that removes permissions on the target database.</p>
      */
     inline DeleteResourcePermissionResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

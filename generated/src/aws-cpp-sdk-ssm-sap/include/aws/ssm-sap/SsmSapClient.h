@@ -337,6 +337,32 @@ namespace SsmSap
         }
 
         /**
+         * <p>Lists the operations performed by AWS Systems Manager for SAP.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOperationsRequestT = Model::ListOperationsRequest>
+        Model::ListOperationsOutcomeCallable ListOperationsCallable(const ListOperationsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListOperations, request);
+        }
+
+        /**
+         * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOperationsRequestT = Model::ListOperationsRequest>
+        void ListOperationsAsync(const ListOperationsRequestT& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListOperations, request, handler, context);
+        }
+
+        /**
          * <p>Lists all tags on an SAP HANA application and/or database registered with AWS
          * Systems Manager for SAP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListTagsForResource">AWS
@@ -470,7 +496,8 @@ namespace SsmSap
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of an application registered with AWS Systems Manager
+         * for SAP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UpdateApplicationSettings">AWS
          * API Reference</a></p>
          */

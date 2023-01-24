@@ -35,73 +35,80 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline void SetApplications(const Aws::Vector<ApplicationSummary>& value) { m_applications = value; }
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline void SetApplications(Aws::Vector<ApplicationSummary>&& value) { m_applications = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline ListApplicationsResult& WithApplications(const Aws::Vector<ApplicationSummary>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline ListApplicationsResult& WithApplications(Aws::Vector<ApplicationSummary>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline ListApplicationsResult& AddApplications(const ApplicationSummary& value) { m_applications.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The applications registered with AWS Systems Manager for SAP.</p>
      */
     inline ListApplicationsResult& AddApplications(ApplicationSummary&& value) { m_applications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The token to use to retrieve the next page of results. This value is null
+     * when there are no more results to return.</p>
      */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -48,7 +48,8 @@ namespace Model
     us_gov_east_1,
     us_iso_east_1,
     us_iso_west_1,
-    us_isob_east_1
+    us_isob_east_1,
+    ap_southeast_4
   };
 
 namespace CloudWatchRegionMapper
