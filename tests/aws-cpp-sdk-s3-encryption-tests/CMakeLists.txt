@@ -14,11 +14,11 @@ file(GLOB S3ENCRYPTION_TEST_SRC
 )
 
 set(S3ECRYPTION_TEST_APPLICATION_INCLUDES
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-encryption/include/"
-  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kms/include"
+  "${AWS_NATIVE_SDK_ROOT}/src/aws-cpp-sdk-core/include/"
+  "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-s3/include/"
+  "${AWS_NATIVE_SDK_ROOT}/src/aws-cpp-sdk-s3-encryption/include/"
+  "${AWS_NATIVE_SDK_ROOT}/tests/testing-resources/include/"
+  "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-kms/include"
 )
 
 include_directories(${S3ECRYPTION_TEST_APPLICATION_INCLUDES})

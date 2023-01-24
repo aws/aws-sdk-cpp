@@ -59,7 +59,7 @@ install(
 
 # copy all cmake files to destination, these files include useful macros, functions and variables for users.
 # useful macros and variables will be included in this cmake file for user to use
-install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake_legacy/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
 
 # following two files are vital for cmake to find correct package, but since we copied all files from above
 # we left the code here to give you bettern understanding

@@ -16,9 +16,9 @@ file(GLOB AWS_CLOUDFRONT_INTEGRATION_TESTS_SRC
 )
 
 set(AWS_CLOUDFRONT_INTEGRATION_TEST_APPLICATION_INCLUDES
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cloudfront/include/"
-    "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
+    "${AWS_NATIVE_SDK_ROOT}/src/aws-cpp-sdk-core/include/"
+    "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-cloudfront/include/"
+    "${AWS_NATIVE_SDK_ROOT}/tests/testing-resources/include/"
 )
 
 include_directories(${AWS_CLOUDFRONT_INTEGRATION_TEST_APPLICATION_INCLUDES})

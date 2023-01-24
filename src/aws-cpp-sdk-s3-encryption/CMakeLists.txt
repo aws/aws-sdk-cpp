@@ -48,8 +48,8 @@ file(GLOB ALL_S3ENCRYPTION
 
 set(S3ENCRYPTION_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kms/include/"
+    "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-s3/include/"
+    "${AWS_NATIVE_SDK_ROOT}/generated/src/aws-cpp-sdk-kms/include/"
     "${CORE_DIR}/include/"
   )
 
