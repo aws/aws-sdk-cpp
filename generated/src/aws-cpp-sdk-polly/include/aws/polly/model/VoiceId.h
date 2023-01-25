@@ -94,7 +94,12 @@ namespace Model
     Ida,
     Suvi,
     Ola,
-    Hala
+    Hala,
+    Andres,
+    Sergio,
+    Remi,
+    Adriano,
+    Thiago
   };
 
 namespace VoiceIdMapper

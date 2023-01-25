@@ -10,6 +10,7 @@
 #include <aws/ec2/model/AddressFamily.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamPoolAwsService.h>
+#include <aws/ec2/model/IpamPoolPublicIpSource.h>
 #include <aws/ec2/model/RequestIpamResourceTag.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -778,6 +779,91 @@ namespace Model
      */
     inline CreateIpamPoolRequest& WithAwsService(IpamPoolAwsService&& value) { SetAwsService(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline const IpamPoolPublicIpSource& GetPublicIpSource() const{ return m_publicIpSource; }
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline bool PublicIpSourceHasBeenSet() const { return m_publicIpSourceHasBeenSet; }
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetPublicIpSource(const IpamPoolPublicIpSource& value) { m_publicIpSourceHasBeenSet = true; m_publicIpSource = value; }
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetPublicIpSource(IpamPoolPublicIpSource&& value) { m_publicIpSourceHasBeenSet = true; m_publicIpSource = std::move(value); }
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateIpamPoolRequest& WithPublicIpSource(const IpamPoolPublicIpSource& value) { SetPublicIpSource(value); return *this;}
+
+    /**
+     * <p>The IP address source for pools in the public scope. Only used for
+     * provisioning IP address CIDRs to pools in the public scope. Default is
+     * <code>byoip</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+     * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
+     * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if
+     * PublicIpSource is <code>amazon</code>. For information on increasing the default
+     * limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateIpamPoolRequest& WithPublicIpSource(IpamPoolPublicIpSource&& value) { SetPublicIpSource(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -824,6 +910,9 @@ namespace Model
 
     IpamPoolAwsService m_awsService;
     bool m_awsServiceHasBeenSet = false;
+
+    IpamPoolPublicIpSource m_publicIpSource;
+    bool m_publicIpSourceHasBeenSet = false;
   };
 
 } // namespace Model

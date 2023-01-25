@@ -33,7 +33,11 @@ Ipam::Ipam() :
     m_operatingRegionsHasBeenSet(false),
     m_state(IpamState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_defaultResourceDiscoveryIdHasBeenSet(false),
+    m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
+    m_resourceDiscoveryAssociationCount(0),
+    m_resourceDiscoveryAssociationCountHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ Ipam::Ipam(const XmlNode& xmlNode) :
     m_operatingRegionsHasBeenSet(false),
     m_state(IpamState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_defaultResourceDiscoveryIdHasBeenSet(false),
+    m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
+    m_resourceDiscoveryAssociationCount(0),
+    m_resourceDiscoveryAssociationCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -139,6 +147,24 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode defaultResourceDiscoveryIdNode = resultNode.FirstChild("defaultResourceDiscoveryId");
+    if(!defaultResourceDiscoveryIdNode.IsNull())
+    {
+      m_defaultResourceDiscoveryId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultResourceDiscoveryIdNode.GetText());
+      m_defaultResourceDiscoveryIdHasBeenSet = true;
+    }
+    XmlNode defaultResourceDiscoveryAssociationIdNode = resultNode.FirstChild("defaultResourceDiscoveryAssociationId");
+    if(!defaultResourceDiscoveryAssociationIdNode.IsNull())
+    {
+      m_defaultResourceDiscoveryAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultResourceDiscoveryAssociationIdNode.GetText());
+      m_defaultResourceDiscoveryAssociationIdHasBeenSet = true;
+    }
+    XmlNode resourceDiscoveryAssociationCountNode = resultNode.FirstChild("resourceDiscoveryAssociationCount");
+    if(!resourceDiscoveryAssociationCountNode.IsNull())
+    {
+      m_resourceDiscoveryAssociationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryAssociationCountNode.GetText()).c_str()).c_str());
+      m_resourceDiscoveryAssociationCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -213,6 +239,21 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       }
   }
 
+  if(m_defaultResourceDiscoveryIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultResourceDiscoveryId=" << StringUtils::URLEncode(m_defaultResourceDiscoveryId.c_str()) << "&";
+  }
+
+  if(m_defaultResourceDiscoveryAssociationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultResourceDiscoveryAssociationId=" << StringUtils::URLEncode(m_defaultResourceDiscoveryAssociationId.c_str()) << "&";
+  }
+
+  if(m_resourceDiscoveryAssociationCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceDiscoveryAssociationCount=" << m_resourceDiscoveryAssociationCount << "&";
+  }
+
 }
 
 void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -272,6 +313,18 @@ void Ipam::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_defaultResourceDiscoveryIdHasBeenSet)
+  {
+      oStream << location << ".DefaultResourceDiscoveryId=" << StringUtils::URLEncode(m_defaultResourceDiscoveryId.c_str()) << "&";
+  }
+  if(m_defaultResourceDiscoveryAssociationIdHasBeenSet)
+  {
+      oStream << location << ".DefaultResourceDiscoveryAssociationId=" << StringUtils::URLEncode(m_defaultResourceDiscoveryAssociationId.c_str()) << "&";
+  }
+  if(m_resourceDiscoveryAssociationCountHasBeenSet)
+  {
+      oStream << location << ".ResourceDiscoveryAssociationCount=" << m_resourceDiscoveryAssociationCount << "&";
   }
 }
 

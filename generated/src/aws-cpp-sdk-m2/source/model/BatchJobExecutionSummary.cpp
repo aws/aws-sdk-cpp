@@ -20,12 +20,14 @@ namespace Model
 
 BatchJobExecutionSummary::BatchJobExecutionSummary() : 
     m_applicationIdHasBeenSet(false),
+    m_batchJobIdentifierHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_executionIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobType(BatchJobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_returnCodeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_status(BatchJobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -34,12 +36,14 @@ BatchJobExecutionSummary::BatchJobExecutionSummary() :
 
 BatchJobExecutionSummary::BatchJobExecutionSummary(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_batchJobIdentifierHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_executionIdHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobType(BatchJobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_returnCodeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_status(BatchJobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -54,6 +58,13 @@ BatchJobExecutionSummary& BatchJobExecutionSummary::operator =(JsonView jsonValu
     m_applicationId = jsonValue.GetString("applicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("batchJobIdentifier"))
+  {
+    m_batchJobIdentifier = jsonValue.GetObject("batchJobIdentifier");
+
+    m_batchJobIdentifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("endTime"))
@@ -91,6 +102,13 @@ BatchJobExecutionSummary& BatchJobExecutionSummary::operator =(JsonView jsonValu
     m_jobTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("returnCode"))
+  {
+    m_returnCode = jsonValue.GetString("returnCode");
+
+    m_returnCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
@@ -115,6 +133,12 @@ JsonValue BatchJobExecutionSummary::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("applicationId", m_applicationId);
+
+  }
+
+  if(m_batchJobIdentifierHasBeenSet)
+  {
+   payload.WithObject("batchJobIdentifier", m_batchJobIdentifier.Jsonize());
 
   }
 
@@ -144,6 +168,12 @@ JsonValue BatchJobExecutionSummary::Jsonize() const
   if(m_jobTypeHasBeenSet)
   {
    payload.WithString("jobType", BatchJobTypeMapper::GetNameForBatchJobType(m_jobType));
+  }
+
+  if(m_returnCodeHasBeenSet)
+  {
+   payload.WithString("returnCode", m_returnCode);
+
   }
 
   if(m_startTimeHasBeenSet)

@@ -99,6 +99,11 @@ namespace Aws
         static const int Suvi_HASH = HashingUtils::HashString("Suvi");
         static const int Ola_HASH = HashingUtils::HashString("Ola");
         static const int Hala_HASH = HashingUtils::HashString("Hala");
+        static const int Andres_HASH = HashingUtils::HashString("Andres");
+        static const int Sergio_HASH = HashingUtils::HashString("Sergio");
+        static const int Remi_HASH = HashingUtils::HashString("Remi");
+        static const int Adriano_HASH = HashingUtils::HashString("Adriano");
+        static const int Thiago_HASH = HashingUtils::HashString("Thiago");
 
 
         VoiceId GetVoiceIdForName(const Aws::String& name)
@@ -420,6 +425,26 @@ namespace Aws
           {
             return VoiceId::Hala;
           }
+          else if (hashCode == Andres_HASH)
+          {
+            return VoiceId::Andres;
+          }
+          else if (hashCode == Sergio_HASH)
+          {
+            return VoiceId::Sergio;
+          }
+          else if (hashCode == Remi_HASH)
+          {
+            return VoiceId::Remi;
+          }
+          else if (hashCode == Adriano_HASH)
+          {
+            return VoiceId::Adriano;
+          }
+          else if (hashCode == Thiago_HASH)
+          {
+            return VoiceId::Thiago;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -592,6 +617,16 @@ namespace Aws
             return "Ola";
           case VoiceId::Hala:
             return "Hala";
+          case VoiceId::Andres:
+            return "Andres";
+          case VoiceId::Sergio:
+            return "Sergio";
+          case VoiceId::Remi:
+            return "Remi";
+          case VoiceId::Adriano:
+            return "Adriano";
+          case VoiceId::Thiago:
+            return "Thiago";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

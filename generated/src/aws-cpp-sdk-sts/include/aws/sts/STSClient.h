@@ -89,11 +89,11 @@ namespace STS
 
         /**
          * <p>Returns a set of temporary security credentials that you can use to access
-         * Amazon Web Services resources that you might not normally have access to. These
-         * temporary credentials consist of an access key ID, a secret access key, and a
-         * security token. Typically, you use <code>AssumeRole</code> within your account
-         * or for cross-account access. For a comparison of <code>AssumeRole</code> with
-         * other API operations that produce temporary credentials, see <a
+         * Amazon Web Services resources. These temporary credentials consist of an access
+         * key ID, a secret access key, and a security token. Typically, you use
+         * <code>AssumeRole</code> within your account or for cross-account access. For a
+         * comparison of <code>AssumeRole</code> with other API operations that produce
+         * temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
@@ -655,11 +655,13 @@ namespace STS
          * credentials obtained by using the Amazon Web Services account root user
          * credentials have a maximum duration of 3,600 seconds (1 hour).</p> <p>
          * <b>Permissions</b> </p> <p>You can use the temporary credentials created by
-         * <code>GetFederationToken</code> in any Amazon Web Services service except the
-         * following:</p> <ul> <li> <p>You cannot call any IAM operations using the CLI or
-         * the Amazon Web Services API. </p> </li> <li> <p>You cannot call any STS
-         * operations except <code>GetCallerIdentity</code>.</p> </li> </ul> <p>You must
-         * pass an inline or managed <a
+         * <code>GetFederationToken</code> in any Amazon Web Services service with the
+         * following exceptions:</p> <ul> <li> <p>You cannot call any IAM operations using
+         * the CLI or the Amazon Web Services API. This limitation does not apply to
+         * console sessions.</p> </li> <li> <p>You cannot call any STS operations except
+         * <code>GetCallerIdentity</code>.</p> </li> </ul> <p>You can use temporary
+         * credentials for single sign-on (SSO) to the console.</p> <p>You must pass an
+         * inline or managed <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
          * policy</a> to this operation. You can pass a single JSON policy document to use
          * as an inline session policy. You can also specify up to 10 managed policy Amazon

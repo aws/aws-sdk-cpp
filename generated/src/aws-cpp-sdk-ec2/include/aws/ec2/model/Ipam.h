@@ -131,42 +131,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline const Aws::String& GetIpamArn() const{ return m_ipamArn; }
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline bool IpamArnHasBeenSet() const { return m_ipamArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline void SetIpamArn(const Aws::String& value) { m_ipamArnHasBeenSet = true; m_ipamArn = value; }
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline void SetIpamArn(Aws::String&& value) { m_ipamArnHasBeenSet = true; m_ipamArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline void SetIpamArn(const char* value) { m_ipamArnHasBeenSet = true; m_ipamArn.assign(value); }
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline Ipam& WithIpamArn(const Aws::String& value) { SetIpamArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline Ipam& WithIpamArn(Aws::String&& value) { SetIpamArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IPAM.</p>
+     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline Ipam& WithIpamArn(const char* value) { SetIpamArn(value); return *this;}
 
@@ -552,6 +552,109 @@ namespace Model
      */
     inline Ipam& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline const Aws::String& GetDefaultResourceDiscoveryId() const{ return m_defaultResourceDiscoveryId; }
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline bool DefaultResourceDiscoveryIdHasBeenSet() const { return m_defaultResourceDiscoveryIdHasBeenSet; }
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryId(const Aws::String& value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId = value; }
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryId(Aws::String&& value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId = std::move(value); }
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryId(const char* value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId.assign(value); }
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryId(const Aws::String& value) { SetDefaultResourceDiscoveryId(value); return *this;}
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryId(Aws::String&& value) { SetDefaultResourceDiscoveryId(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPAM's default resource discovery ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryId(const char* value) { SetDefaultResourceDiscoveryId(value); return *this;}
+
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline const Aws::String& GetDefaultResourceDiscoveryAssociationId() const{ return m_defaultResourceDiscoveryAssociationId; }
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline bool DefaultResourceDiscoveryAssociationIdHasBeenSet() const { return m_defaultResourceDiscoveryAssociationIdHasBeenSet; }
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryAssociationId(const Aws::String& value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId = value; }
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryAssociationId(Aws::String&& value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId = std::move(value); }
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline void SetDefaultResourceDiscoveryAssociationId(const char* value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId.assign(value); }
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryAssociationId(const Aws::String& value) { SetDefaultResourceDiscoveryAssociationId(value); return *this;}
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryAssociationId(Aws::String&& value) { SetDefaultResourceDiscoveryAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPAM's default resource discovery association ID.</p>
+     */
+    inline Ipam& WithDefaultResourceDiscoveryAssociationId(const char* value) { SetDefaultResourceDiscoveryAssociationId(value); return *this;}
+
+
+    /**
+     * <p>The IPAM's resource discovery association count.</p>
+     */
+    inline int GetResourceDiscoveryAssociationCount() const{ return m_resourceDiscoveryAssociationCount; }
+
+    /**
+     * <p>The IPAM's resource discovery association count.</p>
+     */
+    inline bool ResourceDiscoveryAssociationCountHasBeenSet() const { return m_resourceDiscoveryAssociationCountHasBeenSet; }
+
+    /**
+     * <p>The IPAM's resource discovery association count.</p>
+     */
+    inline void SetResourceDiscoveryAssociationCount(int value) { m_resourceDiscoveryAssociationCountHasBeenSet = true; m_resourceDiscoveryAssociationCount = value; }
+
+    /**
+     * <p>The IPAM's resource discovery association count.</p>
+     */
+    inline Ipam& WithResourceDiscoveryAssociationCount(int value) { SetResourceDiscoveryAssociationCount(value); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -586,6 +689,15 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_defaultResourceDiscoveryId;
+    bool m_defaultResourceDiscoveryIdHasBeenSet = false;
+
+    Aws::String m_defaultResourceDiscoveryAssociationId;
+    bool m_defaultResourceDiscoveryAssociationIdHasBeenSet = false;
+
+    int m_resourceDiscoveryAssociationCount;
+    bool m_resourceDiscoveryAssociationCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,7 +16,8 @@ namespace Model
   enum class IpamPoolCidrFailureCode
   {
     NOT_SET,
-    cidr_not_available
+    cidr_not_available,
+    limit_exceeded
   };
 
 namespace IpamPoolCidrFailureCodeMapper

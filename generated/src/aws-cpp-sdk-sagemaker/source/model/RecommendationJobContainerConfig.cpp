@@ -25,7 +25,8 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig() :
     m_frameworkVersionHasBeenSet(false),
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
-    m_supportedInstanceTypesHasBeenSet(false)
+    m_supportedInstanceTypesHasBeenSet(false),
+    m_dataInputConfigHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView json
     m_frameworkVersionHasBeenSet(false),
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
-    m_supportedInstanceTypesHasBeenSet(false)
+    m_supportedInstanceTypesHasBeenSet(false),
+    m_dataInputConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ RecommendationJobContainerConfig& RecommendationJobContainerConfig::operator =(J
     m_supportedInstanceTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataInputConfig"))
+  {
+    m_dataInputConfig = jsonValue.GetString("DataInputConfig");
+
+    m_dataInputConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue RecommendationJobContainerConfig::Jsonize() const
      supportedInstanceTypesJsonList[supportedInstanceTypesIndex].AsString(m_supportedInstanceTypes[supportedInstanceTypesIndex]);
    }
    payload.WithArray("SupportedInstanceTypes", std::move(supportedInstanceTypesJsonList));
+
+  }
+
+  if(m_dataInputConfigHasBeenSet)
+  {
+   payload.WithString("DataInputConfig", m_dataInputConfig);
 
   }
 

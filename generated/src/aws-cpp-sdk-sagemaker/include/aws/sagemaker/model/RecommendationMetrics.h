@@ -122,6 +122,64 @@ namespace Model
      */
     inline RecommendationMetrics& WithModelLatency(int value) { SetModelLatency(value); return *this;}
 
+
+    /**
+     * <p>The expected CPU utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline double GetCpuUtilization() const{ return m_cpuUtilization; }
+
+    /**
+     * <p>The expected CPU utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline bool CpuUtilizationHasBeenSet() const { return m_cpuUtilizationHasBeenSet; }
+
+    /**
+     * <p>The expected CPU utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline void SetCpuUtilization(double value) { m_cpuUtilizationHasBeenSet = true; m_cpuUtilization = value; }
+
+    /**
+     * <p>The expected CPU utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline RecommendationMetrics& WithCpuUtilization(double value) { SetCpuUtilization(value); return *this;}
+
+
+    /**
+     * <p>The expected memory utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline double GetMemoryUtilization() const{ return m_memoryUtilization; }
+
+    /**
+     * <p>The expected memory utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline bool MemoryUtilizationHasBeenSet() const { return m_memoryUtilizationHasBeenSet; }
+
+    /**
+     * <p>The expected memory utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline void SetMemoryUtilization(double value) { m_memoryUtilizationHasBeenSet = true; m_memoryUtilization = value; }
+
+    /**
+     * <p>The expected memory utilization at maximum invocations per minute for the
+     * instance.</p> <p> <code>NaN</code> indicates that the value is not
+     * available.</p>
+     */
+    inline RecommendationMetrics& WithMemoryUtilization(double value) { SetMemoryUtilization(value); return *this;}
+
   private:
 
     double m_costPerHour;
@@ -135,6 +193,12 @@ namespace Model
 
     int m_modelLatency;
     bool m_modelLatencyHasBeenSet = false;
+
+    double m_cpuUtilization;
+    bool m_cpuUtilizationHasBeenSet = false;
+
+    double m_memoryUtilization;
+    bool m_memoryUtilizationHasBeenSet = false;
   };
 
 } // namespace Model

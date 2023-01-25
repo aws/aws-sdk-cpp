@@ -28,7 +28,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_containerConfigHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_containerConfigHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +120,13 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelName"))
+  {
+    m_modelName = jsonValue.GetString("ModelName");
+
+    m_modelNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +195,12 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_modelNameHasBeenSet)
+  {
+   payload.WithString("ModelName", m_modelName);
 
   }
 

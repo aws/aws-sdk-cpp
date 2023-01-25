@@ -24,7 +24,10 @@ IpamPoolCidr::IpamPoolCidr() :
     m_cidrHasBeenSet(false),
     m_state(IpamPoolCidrState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_ipamPoolCidrIdHasBeenSet(false),
+    m_netmaskLength(0),
+    m_netmaskLengthHasBeenSet(false)
 {
 }
 
@@ -32,7 +35,10 @@ IpamPoolCidr::IpamPoolCidr(const XmlNode& xmlNode) :
     m_cidrHasBeenSet(false),
     m_state(IpamPoolCidrState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_ipamPoolCidrIdHasBeenSet(false),
+    m_netmaskLength(0),
+    m_netmaskLengthHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +67,18 @@ IpamPoolCidr& IpamPoolCidr::operator =(const XmlNode& xmlNode)
       m_failureReason = failureReasonNode;
       m_failureReasonHasBeenSet = true;
     }
+    XmlNode ipamPoolCidrIdNode = resultNode.FirstChild("ipamPoolCidrId");
+    if(!ipamPoolCidrIdNode.IsNull())
+    {
+      m_ipamPoolCidrId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamPoolCidrIdNode.GetText());
+      m_ipamPoolCidrIdHasBeenSet = true;
+    }
+    XmlNode netmaskLengthNode = resultNode.FirstChild("netmaskLength");
+    if(!netmaskLengthNode.IsNull())
+    {
+      m_netmaskLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(netmaskLengthNode.GetText()).c_str()).c_str());
+      m_netmaskLengthHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -85,6 +103,16 @@ void IpamPoolCidr::OutputToStream(Aws::OStream& oStream, const char* location, u
       m_failureReason.OutputToStream(oStream, failureReasonLocationAndMemberSs.str().c_str());
   }
 
+  if(m_ipamPoolCidrIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpamPoolCidrId=" << StringUtils::URLEncode(m_ipamPoolCidrId.c_str()) << "&";
+  }
+
+  if(m_netmaskLengthHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetmaskLength=" << m_netmaskLength << "&";
+  }
+
 }
 
 void IpamPoolCidr::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -102,6 +130,14 @@ void IpamPoolCidr::OutputToStream(Aws::OStream& oStream, const char* location) c
       Aws::String failureReasonLocationAndMember(location);
       failureReasonLocationAndMember += ".FailureReason";
       m_failureReason.OutputToStream(oStream, failureReasonLocationAndMember.c_str());
+  }
+  if(m_ipamPoolCidrIdHasBeenSet)
+  {
+      oStream << location << ".IpamPoolCidrId=" << StringUtils::URLEncode(m_ipamPoolCidrId.c_str()) << "&";
+  }
+  if(m_netmaskLengthHasBeenSet)
+  {
+      oStream << location << ".NetmaskLength=" << m_netmaskLength << "&";
   }
 }
 

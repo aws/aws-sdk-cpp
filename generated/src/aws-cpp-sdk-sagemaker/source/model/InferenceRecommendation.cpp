@@ -21,14 +21,16 @@ namespace Model
 InferenceRecommendation::InferenceRecommendation() : 
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false)
+    m_modelConfigurationHasBeenSet(false),
+    m_recommendationIdHasBeenSet(false)
 {
 }
 
 InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) : 
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false)
+    m_modelConfigurationHasBeenSet(false),
+    m_recommendationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
     m_modelConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("RecommendationId");
+
+    m_recommendationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue InferenceRecommendation::Jsonize() const
   if(m_modelConfigurationHasBeenSet)
   {
    payload.WithObject("ModelConfiguration", m_modelConfiguration.Jsonize());
+
+  }
+
+  if(m_recommendationIdHasBeenSet)
+  {
+   payload.WithString("RecommendationId", m_recommendationId);
 
   }
 

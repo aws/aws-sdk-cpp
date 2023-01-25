@@ -129,6 +129,55 @@ namespace Model
      */
     inline ModelConfiguration& AddEnvironmentParameters(EnvironmentParameter&& value) { m_environmentParametersHasBeenSet = true; m_environmentParameters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline const Aws::String& GetCompilationJobName() const{ return m_compilationJobName; }
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline void SetCompilationJobName(Aws::String&& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = std::move(value); }
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline void SetCompilationJobName(const char* value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName.assign(value); }
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline ModelConfiguration& WithCompilationJobName(const Aws::String& value) { SetCompilationJobName(value); return *this;}
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline ModelConfiguration& WithCompilationJobName(Aws::String&& value) { SetCompilationJobName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the compilation job used to create the recommended model
+     * artifacts.</p>
+     */
+    inline ModelConfiguration& WithCompilationJobName(const char* value) { SetCompilationJobName(value); return *this;}
+
   private:
 
     Aws::String m_inferenceSpecificationName;
@@ -136,6 +185,9 @@ namespace Model
 
     Aws::Vector<EnvironmentParameter> m_environmentParameters;
     bool m_environmentParametersHasBeenSet = false;
+
+    Aws::String m_compilationJobName;
+    bool m_compilationJobNameHasBeenSet = false;
   };
 
 } // namespace Model

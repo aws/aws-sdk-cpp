@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/m2/model/BatchJobIdentifier.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/m2/model/BatchJobType.h>
 #include <aws/m2/model/BatchJobExecutionStatus.h>
@@ -80,6 +81,25 @@ namespace Model
      * <p>The unique identifier of the application that hosts this batch job.</p>
      */
     inline BatchJobExecutionSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    
+    inline const BatchJobIdentifier& GetBatchJobIdentifier() const{ return m_batchJobIdentifier; }
+
+    
+    inline bool BatchJobIdentifierHasBeenSet() const { return m_batchJobIdentifierHasBeenSet; }
+
+    
+    inline void SetBatchJobIdentifier(const BatchJobIdentifier& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = value; }
+
+    
+    inline void SetBatchJobIdentifier(BatchJobIdentifier&& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = std::move(value); }
+
+    
+    inline BatchJobExecutionSummary& WithBatchJobIdentifier(const BatchJobIdentifier& value) { SetBatchJobIdentifier(value); return *this;}
+
+    
+    inline BatchJobExecutionSummary& WithBatchJobIdentifier(BatchJobIdentifier&& value) { SetBatchJobIdentifier(std::move(value)); return *this;}
 
 
     /**
@@ -268,6 +288,47 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetReturnCode() const{ return m_returnCode; }
+
+    /**
+     * <p/>
+     */
+    inline bool ReturnCodeHasBeenSet() const { return m_returnCodeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(const Aws::String& value) { m_returnCodeHasBeenSet = true; m_returnCode = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(Aws::String&& value) { m_returnCodeHasBeenSet = true; m_returnCode = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(const char* value) { m_returnCodeHasBeenSet = true; m_returnCode.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline BatchJobExecutionSummary& WithReturnCode(const Aws::String& value) { SetReturnCode(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline BatchJobExecutionSummary& WithReturnCode(Aws::String&& value) { SetReturnCode(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline BatchJobExecutionSummary& WithReturnCode(const char* value) { SetReturnCode(value); return *this;}
+
+
+    /**
      * <p>The timestamp when a particular batch job execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -333,6 +394,9 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
+    BatchJobIdentifier m_batchJobIdentifier;
+    bool m_batchJobIdentifierHasBeenSet = false;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet = false;
 
@@ -347,6 +411,9 @@ namespace Model
 
     BatchJobType m_jobType;
     bool m_jobTypeHasBeenSet = false;
+
+    Aws::String m_returnCode;
+    bool m_returnCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;

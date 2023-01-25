@@ -920,8 +920,10 @@ namespace RedshiftServerless
         }
 
         /**
-         * <p>Restores a table from a snapshot to your Amazon Redshift Serverless
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+         * You can't use this operation to restore tables with <a
+         * href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+         * sort keys</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1022,8 +1024,11 @@ namespace RedshiftServerless
         }
 
         /**
-         * <p>Updates a namespace with the specified settings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a namespace with the specified settings. Unless required, you can't
+         * update multiple parameters in one request. For example, you must specify both
+         * <code>adminUsername</code> and <code>adminUserPassword</code> to update either
+         * field, but you can't update both <code>kmsKeyId</code> and
+         * <code>logExports</code> in a single request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">AWS
          * API Reference</a></p>
          */
@@ -1099,8 +1104,10 @@ namespace RedshiftServerless
         }
 
         /**
-         * <p>Updates a workgroup with the specified configuration settings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a workgroup with the specified configuration settings. You can't
+         * update multiple parameters in one request. For example, you can update
+         * <code>baseCapacity</code> or <code>port</code> in a single request, but you
+         * can't update both in the same request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">AWS
          * API Reference</a></p>
          */

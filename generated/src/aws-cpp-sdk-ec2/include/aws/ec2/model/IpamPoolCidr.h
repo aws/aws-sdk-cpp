@@ -167,6 +167,80 @@ namespace Model
      */
     inline IpamPoolCidr& WithFailureReason(IpamPoolCidrFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline const Aws::String& GetIpamPoolCidrId() const{ return m_ipamPoolCidrId; }
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline bool IpamPoolCidrIdHasBeenSet() const { return m_ipamPoolCidrIdHasBeenSet; }
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline void SetIpamPoolCidrId(const Aws::String& value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId = value; }
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline void SetIpamPoolCidrId(Aws::String&& value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId = std::move(value); }
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline void SetIpamPoolCidrId(const char* value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId.assign(value); }
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline IpamPoolCidr& WithIpamPoolCidrId(const Aws::String& value) { SetIpamPoolCidrId(value); return *this;}
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline IpamPoolCidr& WithIpamPoolCidrId(Aws::String&& value) { SetIpamPoolCidrId(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPAM pool CIDR ID.</p>
+     */
+    inline IpamPoolCidr& WithIpamPoolCidrId(const char* value) { SetIpamPoolCidrId(value); return *this;}
+
+
+    /**
+     * <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used
+     * for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for
+     * provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP
+     * CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
+     */
+    inline int GetNetmaskLength() const{ return m_netmaskLength; }
+
+    /**
+     * <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used
+     * for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for
+     * provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP
+     * CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
+     */
+    inline bool NetmaskLengthHasBeenSet() const { return m_netmaskLengthHasBeenSet; }
+
+    /**
+     * <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used
+     * for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for
+     * provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP
+     * CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
+     */
+    inline void SetNetmaskLength(int value) { m_netmaskLengthHasBeenSet = true; m_netmaskLength = value; }
+
+    /**
+     * <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used
+     * for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for
+     * provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP
+     * CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
+     */
+    inline IpamPoolCidr& WithNetmaskLength(int value) { SetNetmaskLength(value); return *this;}
+
   private:
 
     Aws::String m_cidr;
@@ -177,6 +251,12 @@ namespace Model
 
     IpamPoolCidrFailureReason m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    Aws::String m_ipamPoolCidrId;
+    bool m_ipamPoolCidrIdHasBeenSet = false;
+
+    int m_netmaskLength;
+    bool m_netmaskLengthHasBeenSet = false;
   };
 
 } // namespace Model

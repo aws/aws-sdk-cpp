@@ -34,7 +34,9 @@ CreateIpamPoolRequest::CreateIpamPoolRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false)
+    m_awsServiceHasBeenSet(false),
+    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
+    m_publicIpSourceHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,11 @@ Aws::String CreateIpamPoolRequest::SerializePayload() const
   if(m_awsServiceHasBeenSet)
   {
     ss << "AwsService=" << IpamPoolAwsServiceMapper::GetNameForIpamPoolAwsService(m_awsService) << "&";
+  }
+
+  if(m_publicIpSourceHasBeenSet)
+  {
+    ss << "PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
   }
 
   ss << "Version=2016-11-15";

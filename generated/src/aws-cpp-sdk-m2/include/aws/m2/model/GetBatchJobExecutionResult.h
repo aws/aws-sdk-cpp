@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/m2/model/BatchJobIdentifier.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/m2/model/BatchJobType.h>
 #include <aws/m2/model/BatchJobExecutionStatus.h>
@@ -69,6 +70,22 @@ namespace Model
      * <p>The identifier of the application.</p>
      */
     inline GetBatchJobExecutionResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    
+    inline const BatchJobIdentifier& GetBatchJobIdentifier() const{ return m_batchJobIdentifier; }
+
+    
+    inline void SetBatchJobIdentifier(const BatchJobIdentifier& value) { m_batchJobIdentifier = value; }
+
+    
+    inline void SetBatchJobIdentifier(BatchJobIdentifier&& value) { m_batchJobIdentifier = std::move(value); }
+
+    
+    inline GetBatchJobExecutionResult& WithBatchJobIdentifier(const BatchJobIdentifier& value) { SetBatchJobIdentifier(value); return *this;}
+
+    
+    inline GetBatchJobExecutionResult& WithBatchJobIdentifier(BatchJobIdentifier&& value) { SetBatchJobIdentifier(std::move(value)); return *this;}
 
 
     /**
@@ -268,6 +285,42 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetReturnCode() const{ return m_returnCode; }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(const Aws::String& value) { m_returnCode = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(Aws::String&& value) { m_returnCode = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetReturnCode(const char* value) { m_returnCode.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline GetBatchJobExecutionResult& WithReturnCode(const Aws::String& value) { SetReturnCode(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetBatchJobExecutionResult& WithReturnCode(Aws::String&& value) { SetReturnCode(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetBatchJobExecutionResult& WithReturnCode(const char* value) { SetReturnCode(value); return *this;}
+
+
+    /**
      * <p>The timestamp when the batch job execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -358,6 +411,8 @@ namespace Model
 
     Aws::String m_applicationId;
 
+    BatchJobIdentifier m_batchJobIdentifier;
+
     Aws::Utils::DateTime m_endTime;
 
     Aws::String m_executionId;
@@ -369,6 +424,8 @@ namespace Model
     BatchJobType m_jobType;
 
     Aws::String m_jobUser;
+
+    Aws::String m_returnCode;
 
     Aws::Utils::DateTime m_startTime;
 

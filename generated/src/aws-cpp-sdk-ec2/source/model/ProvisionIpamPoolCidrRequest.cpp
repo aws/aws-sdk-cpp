@@ -15,7 +15,11 @@ ProvisionIpamPoolCidrRequest::ProvisionIpamPoolCidrRequest() :
     m_dryRunHasBeenSet(false),
     m_ipamPoolIdHasBeenSet(false),
     m_cidrHasBeenSet(false),
-    m_cidrAuthorizationContextHasBeenSet(false)
+    m_cidrAuthorizationContextHasBeenSet(false),
+    m_netmaskLength(0),
+    m_netmaskLengthHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -41,6 +45,16 @@ Aws::String ProvisionIpamPoolCidrRequest::SerializePayload() const
   if(m_cidrAuthorizationContextHasBeenSet)
   {
     m_cidrAuthorizationContext.OutputToStream(ss, "CidrAuthorizationContext");
+  }
+
+  if(m_netmaskLengthHasBeenSet)
+  {
+    ss << "NetmaskLength=" << m_netmaskLength << "&";
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";
