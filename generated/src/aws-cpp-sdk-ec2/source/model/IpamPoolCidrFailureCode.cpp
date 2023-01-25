@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int cidr_not_available_HASH = HashingUtils::HashString("cidr-not-available");
+        static const int limit_exceeded_HASH = HashingUtils::HashString("limit-exceeded");
 
 
         IpamPoolCidrFailureCode GetIpamPoolCidrFailureCodeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == cidr_not_available_HASH)
           {
             return IpamPoolCidrFailureCode::cidr_not_available;
+          }
+          else if (hashCode == limit_exceeded_HASH)
+          {
+            return IpamPoolCidrFailureCode::limit_exceeded;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case IpamPoolCidrFailureCode::cidr_not_available:
             return "cidr-not-available";
+          case IpamPoolCidrFailureCode::limit_exceeded:
+            return "limit-exceeded";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

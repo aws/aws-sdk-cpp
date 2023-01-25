@@ -38,6 +38,12 @@ GetBatchJobExecutionResult& GetBatchJobExecutionResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("batchJobIdentifier"))
+  {
+    m_batchJobIdentifier = jsonValue.GetObject("batchJobIdentifier");
+
+  }
+
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
@@ -71,6 +77,12 @@ GetBatchJobExecutionResult& GetBatchJobExecutionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("jobUser"))
   {
     m_jobUser = jsonValue.GetString("jobUser");
+
+  }
+
+  if(jsonValue.ValueExists("returnCode"))
+  {
+    m_returnCode = jsonValue.GetString("returnCode");
 
   }
 

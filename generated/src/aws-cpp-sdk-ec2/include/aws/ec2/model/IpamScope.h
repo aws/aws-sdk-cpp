@@ -134,42 +134,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline const Aws::String& GetIpamScopeArn() const{ return m_ipamScopeArn; }
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline bool IpamScopeArnHasBeenSet() const { return m_ipamScopeArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline void SetIpamScopeArn(const Aws::String& value) { m_ipamScopeArnHasBeenSet = true; m_ipamScopeArn = value; }
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline void SetIpamScopeArn(Aws::String&& value) { m_ipamScopeArnHasBeenSet = true; m_ipamScopeArn = std::move(value); }
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline void SetIpamScopeArn(const char* value) { m_ipamScopeArnHasBeenSet = true; m_ipamScopeArn.assign(value); }
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline IpamScope& WithIpamScopeArn(const Aws::String& value) { SetIpamScopeArn(value); return *this;}
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline IpamScope& WithIpamScopeArn(Aws::String&& value) { SetIpamScopeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the scope.</p>
+     * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
     inline IpamScope& WithIpamScopeArn(const char* value) { SetIpamScopeArn(value); return *this;}
 

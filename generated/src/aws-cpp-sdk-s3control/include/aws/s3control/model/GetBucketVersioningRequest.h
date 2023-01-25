@@ -33,6 +33,10 @@ namespace Model
 
     AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>

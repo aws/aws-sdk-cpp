@@ -52,7 +52,9 @@ IpamPool::IpamPool() :
     m_allocationResourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false)
+    m_awsServiceHasBeenSet(false),
+    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
+    m_publicIpSourceHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ IpamPool::IpamPool(const XmlNode& xmlNode) :
     m_allocationResourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false)
+    m_awsServiceHasBeenSet(false),
+    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
+    m_publicIpSourceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -243,6 +247,12 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
       m_awsService = IpamPoolAwsServiceMapper::GetIpamPoolAwsServiceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(awsServiceNode.GetText()).c_str()).c_str());
       m_awsServiceHasBeenSet = true;
     }
+    XmlNode publicIpSourceNode = resultNode.FirstChild("publicIpSource");
+    if(!publicIpSourceNode.IsNull())
+    {
+      m_publicIpSource = IpamPoolPublicIpSourceMapper::GetIpamPoolPublicIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicIpSourceNode.GetText()).c_str()).c_str());
+      m_publicIpSourceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -372,6 +382,11 @@ void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".AwsService=" << IpamPoolAwsServiceMapper::GetNameForIpamPoolAwsService(m_awsService) << "&";
   }
 
+  if(m_publicIpSourceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
+  }
+
 }
 
 void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -475,6 +490,10 @@ void IpamPool::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_awsServiceHasBeenSet)
   {
       oStream << location << ".AwsService=" << IpamPoolAwsServiceMapper::GetNameForIpamPoolAwsService(m_awsService) << "&";
+  }
+  if(m_publicIpSourceHasBeenSet)
+  {
+      oStream << location << ".PublicIpSource=" << IpamPoolPublicIpSourceMapper::GetNameForIpamPoolPublicIpSource(m_publicIpSource) << "&";
   }
 }
 

@@ -98,7 +98,9 @@ namespace Model
     verified_access_policy,
     verified_access_trust_provider,
     vpn_connection_device_type,
-    vpc_block_public_access_exclusion
+    vpc_block_public_access_exclusion,
+    ipam_resource_discovery,
+    ipam_resource_discovery_association
   };
 
 namespace ResourceTypeMapper

@@ -26,7 +26,11 @@ RecommendationMetrics::RecommendationMetrics() :
     m_maxInvocations(0),
     m_maxInvocationsHasBeenSet(false),
     m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
+    m_modelLatencyHasBeenSet(false),
+    m_cpuUtilization(0.0),
+    m_cpuUtilizationHasBeenSet(false),
+    m_memoryUtilization(0.0),
+    m_memoryUtilizationHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ RecommendationMetrics::RecommendationMetrics(JsonView jsonValue) :
     m_maxInvocations(0),
     m_maxInvocationsHasBeenSet(false),
     m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
+    m_modelLatencyHasBeenSet(false),
+    m_cpuUtilization(0.0),
+    m_cpuUtilizationHasBeenSet(false),
+    m_memoryUtilization(0.0),
+    m_memoryUtilizationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +81,20 @@ RecommendationMetrics& RecommendationMetrics::operator =(JsonView jsonValue)
     m_modelLatencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CpuUtilization"))
+  {
+    m_cpuUtilization = jsonValue.GetDouble("CpuUtilization");
+
+    m_cpuUtilizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MemoryUtilization"))
+  {
+    m_memoryUtilization = jsonValue.GetDouble("MemoryUtilization");
+
+    m_memoryUtilizationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +123,18 @@ JsonValue RecommendationMetrics::Jsonize() const
   if(m_modelLatencyHasBeenSet)
   {
    payload.WithInteger("ModelLatency", m_modelLatency);
+
+  }
+
+  if(m_cpuUtilizationHasBeenSet)
+  {
+   payload.WithDouble("CpuUtilization", m_cpuUtilization);
+
+  }
+
+  if(m_memoryUtilizationHasBeenSet)
+  {
+   payload.WithDouble("MemoryUtilization", m_memoryUtilization);
 
   }
 

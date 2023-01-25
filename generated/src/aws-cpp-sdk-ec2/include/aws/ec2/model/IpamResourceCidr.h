@@ -448,7 +448,7 @@ namespace Model
     /**
      * <p>The percentage of IP address space in use. To convert the decimal to a
      * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
-     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * <p>For resources that are VPCs, this is the percentage of IP address space in
      * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
      * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
      * percentage of IPv4 address space in the subnet that's in use. If the subnet has
@@ -463,7 +463,7 @@ namespace Model
     /**
      * <p>The percentage of IP address space in use. To convert the decimal to a
      * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
-     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * <p>For resources that are VPCs, this is the percentage of IP address space in
      * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
      * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
      * percentage of IPv4 address space in the subnet that's in use. If the subnet has
@@ -478,7 +478,7 @@ namespace Model
     /**
      * <p>The percentage of IP address space in use. To convert the decimal to a
      * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
-     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * <p>For resources that are VPCs, this is the percentage of IP address space in
      * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
      * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
      * percentage of IPv4 address space in the subnet that's in use. If the subnet has
@@ -493,7 +493,7 @@ namespace Model
     /**
      * <p>The percentage of IP address space in use. To convert the decimal to a
      * percentage, multiply the decimal by 100. Note the following:</p> <ul> <li>
-     * <p>For a resources that are VPCs, this is the percentage of IP address space in
+     * <p>For resources that are VPCs, this is the percentage of IP address space in
      * the VPC that's taken up by subnet CIDRs. </p> </li> <li> <p>For resources that
      * are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the
      * percentage of IPv4 address space in the subnet that's in use. If the subnet has

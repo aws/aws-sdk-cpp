@@ -20,13 +20,15 @@ namespace Model
 
 ModelConfiguration::ModelConfiguration() : 
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParametersHasBeenSet(false)
+    m_environmentParametersHasBeenSet(false),
+    m_compilationJobNameHasBeenSet(false)
 {
 }
 
 ModelConfiguration::ModelConfiguration(JsonView jsonValue) : 
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParametersHasBeenSet(false)
+    m_environmentParametersHasBeenSet(false),
+    m_compilationJobNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ ModelConfiguration& ModelConfiguration::operator =(JsonView jsonValue)
     m_environmentParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CompilationJobName"))
+  {
+    m_compilationJobName = jsonValue.GetString("CompilationJobName");
+
+    m_compilationJobNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue ModelConfiguration::Jsonize() const
      environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());
    }
    payload.WithArray("EnvironmentParameters", std::move(environmentParametersJsonList));
+
+  }
+
+  if(m_compilationJobNameHasBeenSet)
+  {
+   payload.WithString("CompilationJobName", m_compilationJobName);
 
   }
 

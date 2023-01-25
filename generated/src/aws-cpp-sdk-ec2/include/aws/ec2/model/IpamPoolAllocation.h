@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>In IPAM, an allocation is a CIDR assignment from an IPAM pool to another
-   * resource or IPAM pool.</p><p><h3>See Also:</h3>   <a
+   * <p>In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM
+   * pool or to a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamPoolAllocation">AWS
    * API Reference</a></p>
    */

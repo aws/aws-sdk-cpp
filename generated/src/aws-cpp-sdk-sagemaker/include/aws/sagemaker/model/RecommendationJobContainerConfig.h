@@ -421,6 +421,71 @@ namespace Model
      */
     inline RecommendationJobContainerConfig& AddSupportedInstanceTypes(const char* value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline const Aws::String& GetDataInputConfig() const{ return m_dataInputConfig; }
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline bool DataInputConfigHasBeenSet() const { return m_dataInputConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline void SetDataInputConfig(const Aws::String& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = value; }
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline void SetDataInputConfig(Aws::String&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline void SetDataInputConfig(const char* value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig.assign(value); }
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline RecommendationJobContainerConfig& WithDataInputConfig(const Aws::String& value) { SetDataInputConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline RecommendationJobContainerConfig& WithDataInputConfig(Aws::String&& value) { SetDataInputConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name and shape of the expected data inputs for your trained
+     * model with a JSON dictionary form. This field is used for optimizing your model
+     * using SageMaker Neo. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
+     */
+    inline RecommendationJobContainerConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
+
   private:
 
     Aws::String m_domain;
@@ -443,6 +508,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedInstanceTypes;
     bool m_supportedInstanceTypesHasBeenSet = false;
+
+    Aws::String m_dataInputConfig;
+    bool m_dataInputConfigHasBeenSet = false;
   };
 
 } // namespace Model
