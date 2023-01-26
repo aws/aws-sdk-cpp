@@ -140,14 +140,14 @@ Please make sure to check out our resources too before opening an issue:
 
 
 # Using the SDK and Other Topics
-* [Using the SDK](./Docs/SDK_usage_guide.md)
-* [CMake Parameters](./Docs/CMake_Parameters.md)
-* [Credentials Providers](./Docs/Credentials_Providers.md)
-* [Client Configuration Parameters](./Docs/ClientConfiguration_Parameters.md)
-* [Service Client](./Docs/Service_Client.md)
-* [Memory Management](./Docs/Memory_Management.md)
-* [Advanced Topics](./Docs/Advanced_topics.md)
-* [Add as CMake external project](./Docs/CMake_External_Project.md)
-* [Coding Standards](./Docs/CODING_STANDARDS.md)
+* [Using the SDK](./docs/SDK_usage_guide.md)
+* [CMake Parameters](./docs/CMake_Parameters.md)
+* [Credentials Providers](./docs/Credentials_Providers.md)
+* [Client Configuration Parameters](./docs/ClientConfiguration_Parameters.md)
+* [Service Client](./docs/Service_Client.md)
+* [Memory Management](./docs/Memory_Management.md)
+* [Advanced Topics](./docs/Advanced_topics.md)
+* [Add as CMake external project](./docs/CMake_External_Project.md)
+* [Coding Standards](./docs/CODING_STANDARDS.md)
 * [License](./LICENSE)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)
