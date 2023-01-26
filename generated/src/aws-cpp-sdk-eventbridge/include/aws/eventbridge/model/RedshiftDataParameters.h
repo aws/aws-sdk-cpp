@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>These are custom parameters to be used when the target is a Amazon Redshift
-   * cluster to invoke the Amazon Redshift Data API ExecuteStatement based on
-   * EventBridge events.</p><p><h3>See Also:</h3>   <a
+   * cluster or Redshift Serverless workgroup to invoke the Amazon Redshift Data API
+   * ExecuteStatement based on EventBridge events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RedshiftDataParameters">AWS
    * API Reference</a></p>
    */
@@ -139,49 +139,57 @@ namespace Model
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline RedshiftDataParameters& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline RedshiftDataParameters& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
      * <p>The database user name. Required when authenticating using temporary
-     * credentials.</p>
+     * credentials.</p> <p>Do not provide this parameter when connecting to a Redshift
+     * Serverless workgroup.</p>
      */
     inline RedshiftDataParameters& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 

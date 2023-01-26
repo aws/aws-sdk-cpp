@@ -122,37 +122,37 @@ namespace Model
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline const RoutingConfig& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline bool RoutingConfigHasBeenSet() const { return m_routingConfigHasBeenSet; }
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline void SetRoutingConfig(const RoutingConfig& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline void SetRoutingConfig(RoutingConfig&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline UpdateEndpointRequest& WithRoutingConfig(const RoutingConfig& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>Configure the routing policy, including the health check and secondary
-     * Region..</p>
+     * Region.</p>
      */
     inline UpdateEndpointRequest& WithRoutingConfig(RoutingConfig&& value) { SetRoutingConfig(std::move(value)); return *this;}
 

@@ -177,50 +177,50 @@ namespace Model
 
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
-     * <p>A free-form string used to decide what fields to expect in the event
-     * detail.</p>
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
 

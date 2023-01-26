@@ -30,11 +30,11 @@ namespace Model
 {
 
   /**
-   * <p>An global endpoint used to improve your application's availability by making
+   * <p>A global endpoint used to improve your application's availability by making
    * it regional-fault tolerant. For more information about global endpoints, see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
    * applications Regional-fault tolerant with global endpoints and event
-   * replication</a> in the Amazon EventBridge User Guide..</p><p><h3>See Also:</h3> 
+   * replication</a> in the Amazon EventBridge User Guide.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Endpoint">AWS
    * API Reference</a></p>
@@ -203,32 +203,50 @@ namespace Model
 
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline const ReplicationConfig& GetReplicationConfig() const{ return m_replicationConfig; }
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline bool ReplicationConfigHasBeenSet() const { return m_replicationConfigHasBeenSet; }
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline void SetReplicationConfig(const ReplicationConfig& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = value; }
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline void SetReplicationConfig(ReplicationConfig&& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = std::move(value); }
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline Endpoint& WithReplicationConfig(const ReplicationConfig& value) { SetReplicationConfig(value); return *this;}
 
     /**
-     * <p>Whether event replication was enabled or disabled for this endpoint.</p>
+     * <p>Whether event replication was enabled or disabled for this endpoint. The
+     * default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want
+     * event replication enabled, set the state to <code>DISABLED</code>.</p>
      */
     inline Endpoint& WithReplicationConfig(ReplicationConfig&& value) { SetReplicationConfig(std::move(value)); return *this;}
 
@@ -317,56 +335,56 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline Endpoint& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline Endpoint& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
     inline Endpoint& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}

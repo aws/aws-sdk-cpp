@@ -119,32 +119,38 @@ namespace Model
 
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline const ConnectionAuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline void SetAuthorizationType(const ConnectionAuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline void SetAuthorizationType(ConnectionAuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline CreateConnectionRequest& WithAuthorizationType(const ConnectionAuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The type of authorization to use for the connection.</p>
+     * <p>The type of authorization to use for the connection.</p>  <p>OAUTH
+     * tokens are refreshed when a 401 or 407 response is returned.</p> 
      */
     inline CreateConnectionRequest& WithAuthorizationType(ConnectionAuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 

@@ -683,7 +683,10 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "aws-global"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with FIPS"} // expect
+    {{/*epUrl*/"https://s3-fips.us-east-1.amazonaws.com/bucket-name",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
+                                      EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 69*/
   {"ForcePathStyle, aws-global region with dualstack uses regional dualstack endpoint", // documentation
@@ -962,11 +965,14 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 98*/
-  {"path style + fips@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+  {"fips@us-gov-west-2, bucket is not S3-dns-compatible (subdomains)", // documentation
+    {EpParam("UseFIPS", true), EpParam("Bucket", "bucket.with.dots"), EpParam("Region", "us-gov-west-1"), EpParam("Accelerate", false),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with FIPS"} // expect
+    {{/*epUrl*/"https://s3-fips.us-gov-west-1.amazonaws.com/bucket.with.dots",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-west-1"), EpProp("name", "sigv4"),
+                                      EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 99*/
   {"path style + accelerate = error@us-west-2", // documentation
@@ -1025,10 +1031,13 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 105*/
   {"path style + fips@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with FIPS"} // expect
+    {{/*epUrl*/"https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
+                                      EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 106*/
   {"path style + accelerate = error@cn-north-1", // documentation
@@ -1087,10 +1096,13 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 112*/
   {"path style + fips@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with FIPS"} // expect
+    {{/*epUrl*/"https://s3-fips.af-south-1.amazonaws.com/bucket-name",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
+                                      EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 113*/
   {"path style + accelerate = error@af-south-1", // documentation
