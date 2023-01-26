@@ -166,32 +166,50 @@ namespace Model
 
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline const ReplicationConfig& GetReplicationConfig() const{ return m_replicationConfig; }
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline bool ReplicationConfigHasBeenSet() const { return m_replicationConfigHasBeenSet; }
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline void SetReplicationConfig(const ReplicationConfig& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = value; }
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline void SetReplicationConfig(ReplicationConfig&& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = std::move(value); }
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline CreateEndpointRequest& WithReplicationConfig(const ReplicationConfig& value) { SetReplicationConfig(value); return *this;}
 
     /**
-     * <p>Enable or disable event replication.</p>
+     * <p>Enable or disable event replication. The default state is
+     * <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
+     * don't have a <code>RoleArn</code> or you don't want event replication enabled,
+     * set the state to <code>DISABLED</code>.</p>
      */
     inline CreateEndpointRequest& WithReplicationConfig(ReplicationConfig&& value) { SetReplicationConfig(std::move(value)); return *this;}
 

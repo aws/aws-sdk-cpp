@@ -52,49 +52,63 @@ namespace Model
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline const Aws::Vector<PutEventsResultEntry>& GetEntries() const{ return m_entries; }
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline void SetEntries(const Aws::Vector<PutEventsResultEntry>& value) { m_entries = value; }
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline void SetEntries(Aws::Vector<PutEventsResultEntry>&& value) { m_entries = std::move(value); }
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline PutEventsResult& WithEntries(const Aws::Vector<PutEventsResultEntry>& value) { SetEntries(value); return *this;}
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline PutEventsResult& WithEntries(Aws::Vector<PutEventsResultEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline PutEventsResult& AddEntries(const PutEventsResultEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
      * <p>The successfully and unsuccessfully ingested events results. If the ingestion
      * was successful, the entry has the event ID in it. Otherwise, you can use the
-     * error code and error message to identify the problem with the entry.</p>
+     * error code and error message to identify the problem with the entry.</p> <p>For
+     * each record, the index of the response element is the same as the index in the
+     * request array.</p>
      */
     inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

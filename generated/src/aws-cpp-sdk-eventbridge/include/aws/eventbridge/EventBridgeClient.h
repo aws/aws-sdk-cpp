@@ -1442,25 +1442,26 @@ namespace EventBridge
          * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
          * Manager response plan</a> </p> </li> <li> <p>Inspector assessment template</p>
          * </li> <li> <p>Kinesis stream</p> </li> <li> <p>Lambda function</p> </li> <li>
-         * <p>Redshift cluster</p> </li> <li> <p>SageMaker Pipeline</p> </li> <li> <p>SNS
-         * topic</p> </li> <li> <p>SQS queue</p> </li> <li> <p>Step Functions state
-         * machine</p> </li> <li> <p>Systems Manager Automation</p> </li> <li> <p>Systems
-         * Manager OpsItem</p> </li> <li> <p>Systems Manager Run Command</p> </li> </ul>
-         * <p>Creating rules with built-in targets is supported only in the Amazon Web
-         * Services Management Console. The built-in targets are <code>EC2 CreateSnapshot
-         * API call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2
-         * StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
-         * </p> <p>For some target types, <code>PutTargets</code> provides target-specific
-         * parameters. If the target is a Kinesis data stream, you can optionally specify
-         * which shard the event goes to by using the <code>KinesisParameters</code>
-         * argument. To invoke a command on multiple EC2 instances with one rule, you can
-         * use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API
-         * calls against the resources that you own, Amazon EventBridge needs the
-         * appropriate permissions. For Lambda and Amazon SNS resources, EventBridge relies
-         * on resource-based policies. For EC2 instances, Kinesis Data Streams, Step
-         * Functions state machines and API Gateway REST APIs, EventBridge relies on IAM
-         * roles that you specify in the <code>RoleARN</code> argument in
-         * <code>PutTargets</code>. For more information, see <a
+         * <p>Redshift cluster</p> </li> <li> <p>Redshift Serverless workgroup</p> </li>
+         * <li> <p>SageMaker Pipeline</p> </li> <li> <p>SNS topic</p> </li> <li> <p>SQS
+         * queue</p> </li> <li> <p>Step Functions state machine</p> </li> <li> <p>Systems
+         * Manager Automation</p> </li> <li> <p>Systems Manager OpsItem</p> </li> <li>
+         * <p>Systems Manager Run Command</p> </li> </ul> <p>Creating rules with built-in
+         * targets is supported only in the Amazon Web Services Management Console. The
+         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
+         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
+         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
+         * <code>PutTargets</code> provides target-specific parameters. If the target is a
+         * Kinesis data stream, you can optionally specify which shard the event goes to by
+         * using the <code>KinesisParameters</code> argument. To invoke a command on
+         * multiple EC2 instances with one rule, you can use the
+         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
+         * against the resources that you own, Amazon EventBridge needs the appropriate
+         * permissions. For Lambda and Amazon SNS resources, EventBridge relies on
+         * resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
+         * state machines and API Gateway APIs, EventBridge relies on IAM roles that you
+         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another Amazon Web Services account is in the same region and has granted you

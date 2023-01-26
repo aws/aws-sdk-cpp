@@ -99,7 +99,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
-     * abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
+     * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>  <p>When using Java, you must include
      * <code>auth-crt</code> on the class path.</p> 
      */

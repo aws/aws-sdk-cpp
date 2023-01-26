@@ -175,28 +175,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
 
@@ -204,28 +203,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
 
@@ -233,28 +231,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
 
@@ -262,28 +259,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
 
@@ -291,28 +287,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
 
@@ -320,28 +315,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline InputTransformer& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
 
@@ -349,28 +343,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline InputTransformer& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
 
@@ -378,28 +371,27 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
-     * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> </ul> <p>The following example shows the syntax for
-     * using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state &lt;status&gt;"</code> </p> <p> <code>}</code> </p> <p>To have the
-     * <code>InputTemplate</code> include quote marks within a JSON string, escape each
-     * quote marks with a slash, as in the following example:</p> <p> <code>
-     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
-     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": "&lt;instance&gt; is
-     * in state \"&lt;status&gt;\""</code> </p> <p> <code>}</code> </p> <p>The
-     * <code>InputTemplate</code> can also be valid JSON with varibles in quotes or
-     * out, as in the following example:</p> <p> <code> "InputTransformer":</code> </p>
-     * <p> <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * &lt;<i>value</i>&gt; </p> <p>If <code>InputTemplate</code> is a JSON object
+     * (surrounded by curly braces), the following restrictions apply:</p> <ul> <li>
+     * <p>The placeholder cannot be used as an object key.</p> </li> </ul> <p>The
+     * following example shows the syntax for using <code>InputPathsMap</code> and
+     * <code>InputTemplate</code>.</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
      * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
-     * <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus":
-     * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
-     * <code>}</code> </p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> </p>
+     * <p> <code>}</code> </p> <p>To have the <code>InputTemplate</code> include quote
+     * marks within a JSON string, escape each quote marks with a slash, as in the
+     * following example:</p> <p> <code> "InputTransformer":</code> </p> <p>
+     * <code>{</code> </p> <p> <code>"InputPathsMap": {"instance":
+     * "$.detail.instance","status": "$.detail.status"},</code> </p> <p>
+     * <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code>
+     * </p> <p> <code>}</code> </p> <p>The <code>InputTemplate</code> can also be valid
+     * JSON with varibles in quotes or out, as in the following example:</p> <p> <code>
+     * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
+     * <code>"InputPathsMap": {"instance": "$.detail.instance","status":
+     * "$.detail.status"},</code> </p> <p> <code>"InputTemplate": '{"myInstance":
+     * &lt;instance&gt;,"myStatus": "&lt;instance&gt; is in state
+     * \"&lt;status&gt;\""}'</code> </p> <p> <code>}</code> </p>
      */
     inline InputTransformer& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
 
