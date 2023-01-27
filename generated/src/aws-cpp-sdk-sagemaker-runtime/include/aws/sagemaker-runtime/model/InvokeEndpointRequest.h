@@ -540,7 +540,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline const Aws::String& GetEnableExplanations() const{ return m_enableExplanations; }
@@ -549,7 +549,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline bool EnableExplanationsHasBeenSet() const { return m_enableExplanationsHasBeenSet; }
@@ -558,7 +558,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline void SetEnableExplanations(const Aws::String& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = value; }
@@ -567,7 +567,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline void SetEnableExplanations(Aws::String&& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = std::move(value); }
@@ -576,7 +576,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline void SetEnableExplanations(const char* value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations.assign(value); }
@@ -585,7 +585,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline InvokeEndpointRequest& WithEnableExplanations(const Aws::String& value) { SetEnableExplanations(value); return *this;}
@@ -594,7 +594,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline InvokeEndpointRequest& WithEnableExplanations(Aws::String&& value) { SetEnableExplanations(std::move(value)); return *this;}
@@ -603,7 +603,7 @@ namespace Model
      * <p>An optional JMESPath expression used to override the
      * <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a
-     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
     inline InvokeEndpointRequest& WithEnableExplanations(const char* value) { SetEnableExplanations(value); return *this;}

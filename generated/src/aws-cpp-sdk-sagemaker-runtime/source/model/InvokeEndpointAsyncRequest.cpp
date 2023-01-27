@@ -21,7 +21,9 @@ InvokeEndpointAsyncRequest::InvokeEndpointAsyncRequest() :
     m_inferenceIdHasBeenSet(false),
     m_inputLocationHasBeenSet(false),
     m_requestTTLSeconds(0),
-    m_requestTTLSecondsHasBeenSet(false)
+    m_requestTTLSecondsHasBeenSet(false),
+    m_invocationTimeoutSeconds(0),
+    m_invocationTimeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointAsyncRequest::GetRequestSpecificH
   {
     ss << m_requestTTLSeconds;
     headers.emplace("x-amzn-sagemaker-requestttlseconds",  ss.str());
+    ss.str("");
+  }
+
+  if(m_invocationTimeoutSecondsHasBeenSet)
+  {
+    ss << m_invocationTimeoutSeconds;
+    headers.emplace("x-amzn-sagemaker-invocationtimeoutseconds",  ss.str());
     ss.str("");
   }
 

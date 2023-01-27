@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TrainingInputMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/TrainingImageConfig.h>
 #include <aws/sagemaker/model/MetricDefinition.h>
 #include <utility>
 
@@ -598,6 +599,43 @@ namespace Model
      */
     inline AlgorithmSpecification& AddContainerArguments(const char* value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
 
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline const TrainingImageConfig& GetTrainingImageConfig() const{ return m_trainingImageConfig; }
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline bool TrainingImageConfigHasBeenSet() const { return m_trainingImageConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline void SetTrainingImageConfig(const TrainingImageConfig& value) { m_trainingImageConfigHasBeenSet = true; m_trainingImageConfig = value; }
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline void SetTrainingImageConfig(TrainingImageConfig&& value) { m_trainingImageConfigHasBeenSet = true; m_trainingImageConfig = std::move(value); }
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline AlgorithmSpecification& WithTrainingImageConfig(const TrainingImageConfig& value) { SetTrainingImageConfig(value); return *this;}
+
+    /**
+     * <p>The configuration to use an image from a private Docker registry for a
+     * training job.</p>
+     */
+    inline AlgorithmSpecification& WithTrainingImageConfig(TrainingImageConfig&& value) { SetTrainingImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingImage;
@@ -620,6 +658,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_containerArguments;
     bool m_containerArgumentsHasBeenSet = false;
+
+    TrainingImageConfig m_trainingImageConfig;
+    bool m_trainingImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

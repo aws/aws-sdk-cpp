@@ -21,6 +21,7 @@
 #include <aws/mediatailor/MediaTailorClient.h>
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>
 #include <aws/mediatailor/MediaTailorEndpointProvider.h>
+#include <aws/mediatailor/model/ConfigureLogsForChannelRequest.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>
 #include <aws/mediatailor/model/CreateChannelRequest.h>
 #include <aws/mediatailor/model/CreateLiveSourceRequest.h>
@@ -189,6 +190,15 @@ void MediaTailorClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+ConfigureLogsForChannelOutcome MediaTailorClient::ConfigureLogsForChannel(const ConfigureLogsForChannelRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureLogsForChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ConfigureLogsForChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configureLogs/channel");
+  return ConfigureLogsForChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsForPlaybackConfiguration(const ConfigureLogsForPlaybackConfigurationRequest& request) const

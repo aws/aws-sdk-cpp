@@ -25,6 +25,7 @@ Channel::Channel() :
     m_creationTimeHasBeenSet(false),
     m_fillerSlateHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -39,6 +40,7 @@ Channel::Channel(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_fillerSlateHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_playbackModeHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -89,6 +91,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
 
     m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Outputs"))
@@ -164,6 +173,12 @@ JsonValue Channel::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
   }
 
   if(m_outputsHasBeenSet)

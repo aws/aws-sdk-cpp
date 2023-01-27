@@ -448,6 +448,31 @@ namespace Model
      */
     inline InvokeEndpointAsyncRequest& WithRequestTTLSeconds(int value) { SetRequestTTLSeconds(value); return *this;}
 
+
+    /**
+     * <p>Maximum amount of time in seconds a request can be processed before it is
+     * marked as expired.</p>
+     */
+    inline int GetInvocationTimeoutSeconds() const{ return m_invocationTimeoutSeconds; }
+
+    /**
+     * <p>Maximum amount of time in seconds a request can be processed before it is
+     * marked as expired.</p>
+     */
+    inline bool InvocationTimeoutSecondsHasBeenSet() const { return m_invocationTimeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>Maximum amount of time in seconds a request can be processed before it is
+     * marked as expired.</p>
+     */
+    inline void SetInvocationTimeoutSeconds(int value) { m_invocationTimeoutSecondsHasBeenSet = true; m_invocationTimeoutSeconds = value; }
+
+    /**
+     * <p>Maximum amount of time in seconds a request can be processed before it is
+     * marked as expired.</p>
+     */
+    inline InvokeEndpointAsyncRequest& WithInvocationTimeoutSeconds(int value) { SetInvocationTimeoutSeconds(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -470,6 +495,9 @@ namespace Model
 
     int m_requestTTLSeconds;
     bool m_requestTTLSecondsHasBeenSet = false;
+
+    int m_invocationTimeoutSeconds;
+    bool m_invocationTimeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

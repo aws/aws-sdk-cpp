@@ -9,6 +9,7 @@
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/SlateSource.h>
+#include <aws/mediatailor/model/LogConfigurationForChannel.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
@@ -217,6 +218,32 @@ namespace Model
      * <p>The timestamp of when the channel was last modified.</p>
      */
     inline DescribeChannelResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfiguration = value; }
+
+    /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline DescribeChannelResult& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The log configuration for the channel.</p>
+     */
+    inline DescribeChannelResult& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -448,6 +475,8 @@ namespace Model
     SlateSource m_fillerSlate;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    LogConfigurationForChannel m_logConfiguration;
 
     Aws::Vector<ResponseOutputItem> m_outputs;
 

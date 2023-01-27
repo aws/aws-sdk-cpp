@@ -84,6 +84,32 @@ namespace MediaTailor
         virtual ~MediaTailorClient();
 
         /**
+         * <p>Configures Amazon CloudWatch log settings for a channel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConfigureLogsForChannelOutcome ConfigureLogsForChannel(const Model::ConfigureLogsForChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for ConfigureLogsForChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ConfigureLogsForChannelRequestT = Model::ConfigureLogsForChannelRequest>
+        Model::ConfigureLogsForChannelOutcomeCallable ConfigureLogsForChannelCallable(const ConfigureLogsForChannelRequestT& request) const
+        {
+            return SubmitCallable(&MediaTailorClient::ConfigureLogsForChannel, request);
+        }
+
+        /**
+         * An Async wrapper for ConfigureLogsForChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ConfigureLogsForChannelRequestT = Model::ConfigureLogsForChannelRequest>
+        void ConfigureLogsForChannelAsync(const ConfigureLogsForChannelRequestT& request, const ConfigureLogsForChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaTailorClient::ConfigureLogsForChannel, request, handler, context);
+        }
+
+        /**
          * <p>Amazon CloudWatch log settings for a playback configuration.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">AWS
