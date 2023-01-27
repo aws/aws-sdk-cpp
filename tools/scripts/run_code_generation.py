@@ -58,21 +58,6 @@ class ServiceModel(object):
             setattr(self, key, value)
 
 
-def is_endpoints_enabled(sdk_root: str) -> bool:
-    """Return if support for a new endpoints API should be enabled
-
-    :param sdk_root (str): filepath (absolute or relative) to the dir aws-cpp-sdk-core
-    """
-    with open(sdk_root + "../src" + "/aws-cpp-sdk-core/include/aws/core/VersionConfig.h") as version_config_file:
-        version_config = version_config_file.read()
-        m_major = re.search("#define AWS_SDK_VERSION_MAJOR (?P<version_major>\d+)", version_config)
-        m_minor = re.search("#define AWS_SDK_VERSION_MINOR (?P<version_minor>\d+)", version_config)
-        if int(m_major.group("version_major")) >= 2 or int(m_minor.group("version_minor")) >= 10:
-            return True
-
-    return False
-
-
 def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str, c2j_model_filename) -> ServiceModel:
     """Return a ServiceModel containing paths to the Service models: C2J model and endpoints (rules and tests).
 
@@ -96,11 +81,10 @@ def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str
                             endpoint_tests=endpoint_tests_filename)
 
 
-def collect_available_models(models_dir: str, endpoints_enabled: bool, endpoint_rules_dir: str) -> dict:
+def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
     """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
 
     :param models_dir: path to the directory with c2j models
-    :param endpoints_enabled: if new endpoints API should be enabled
     :param endpoint_rules_dir: path to the directory with endpoints dir models
     :return: dict<service_name, model_file_name> in models dir
     """
@@ -134,15 +118,9 @@ def collect_available_models(models_dir: str, endpoints_enabled: bool, endpoint_
 
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
-            if endpoints_enabled:
-                service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
-                                                                                          endpoint_rules_dir,
-                                                                                          model_file_date[0])
-            else:
-                service_name_to_model_filename[key] = ServiceModel(service_id=key,
-                                                                   c2j_model=model_file_date[0],
-                                                                   endpoint_rule_set=None,
-                                                                   endpoint_tests=None)
+            service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
+                                                                                      endpoint_rules_dir,
+                                                                                      model_file_date[0])
 
             if key == "s3":
                 service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
@@ -417,7 +395,8 @@ def parse_arguments() -> dict:
     if not output_location:
         output_location = os.getcwd()
         if output_location.endswith("scripts"):
-            output_location = output_location[:-len("scripts")]
+            output_location = output_location[:-len("tools/scripts")]
+        output_location += "/generated"
     arg_map["output_location"] = output_location
 
     for cli_argument, default_value in [("path_to_api_definitions", CLIENT_MODEL_FILE_LOCATION),
@@ -474,7 +453,6 @@ def main():
             return 0
 
         available_models = collect_available_models(args["path_to_api_definitions"],
-                                                    is_endpoints_enabled(args["output_location"]),
                                                     args["path_to_endpoint_rules"])
         if args.get("list_all"):
             model_list = available_models.keys()

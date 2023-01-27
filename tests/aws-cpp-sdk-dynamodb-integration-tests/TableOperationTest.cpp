@@ -1497,6 +1497,14 @@ TEST_F(TableOperationTest, TestEndpointOverride)
         Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
         AWS_ASSERT_SUCCESS(outcome);
     }
+
+    config.enableEndpointDiscovery = false;
+    {
+        DynamoDBClient client(config);
+        Aws::DynamoDB::Model::ListTablesRequest request;
+        Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
+        AWS_ASSERT_SUCCESS(outcome);
+    }
 }
 
 } // anonymous namespace

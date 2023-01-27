@@ -1,7 +1,8 @@
 #if($serviceModel.endpointRules)
 #if($operation.hasEndpointDiscoveryTrait)
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
+  const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+  if (enableEndpointDiscovery)
   {
 #set($hasId=false)
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
