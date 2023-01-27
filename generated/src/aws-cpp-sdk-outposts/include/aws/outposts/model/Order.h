@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/outposts/model/PaymentOption.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/outposts/model/PaymentTerm.h>
 #include <aws/outposts/model/LineItem.h>
 #include <utility>
 
@@ -336,6 +337,37 @@ namespace Model
      */
     inline Order& WithOrderFulfilledDate(Aws::Utils::DateTime&& value) { SetOrderFulfilledDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline const PaymentTerm& GetPaymentTerm() const{ return m_paymentTerm; }
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline bool PaymentTermHasBeenSet() const { return m_paymentTermHasBeenSet; }
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline void SetPaymentTerm(const PaymentTerm& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = value; }
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline void SetPaymentTerm(PaymentTerm&& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = std::move(value); }
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline Order& WithPaymentTerm(const PaymentTerm& value) { SetPaymentTerm(value); return *this;}
+
+    /**
+     * <p>The payment term.</p>
+     */
+    inline Order& WithPaymentTerm(PaymentTerm&& value) { SetPaymentTerm(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outpostId;
@@ -358,6 +390,9 @@ namespace Model
 
     Aws::Utils::DateTime m_orderFulfilledDate;
     bool m_orderFulfilledDateHasBeenSet = false;
+
+    PaymentTerm m_paymentTerm;
+    bool m_paymentTermHasBeenSet = false;
   };
 
 } // namespace Model

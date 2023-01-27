@@ -66,6 +66,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");

@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in MediaTailorClient header */
+#include <aws/mediatailor/model/ConfigureLogsForChannelResult.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationResult.h>
 #include <aws/mediatailor/model/CreateChannelResult.h>
 #include <aws/mediatailor/model/CreateLiveSourceResult.h>
@@ -99,6 +100,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in MediaTailorClient header */
+      class ConfigureLogsForChannelRequest;
       class ConfigureLogsForPlaybackConfigurationRequest;
       class CreateChannelRequest;
       class CreateLiveSourceRequest;
@@ -144,6 +146,7 @@ namespace Aws
       /* End of service model forward declarations required in MediaTailorClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<ConfigureLogsForChannelResult, MediaTailorError> ConfigureLogsForChannelOutcome;
       typedef Aws::Utils::Outcome<ConfigureLogsForPlaybackConfigurationResult, MediaTailorError> ConfigureLogsForPlaybackConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateChannelResult, MediaTailorError> CreateChannelOutcome;
       typedef Aws::Utils::Outcome<CreateLiveSourceResult, MediaTailorError> CreateLiveSourceOutcome;
@@ -189,6 +192,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<ConfigureLogsForChannelOutcome> ConfigureLogsForChannelOutcomeCallable;
       typedef std::future<ConfigureLogsForPlaybackConfigurationOutcome> ConfigureLogsForPlaybackConfigurationOutcomeCallable;
       typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
       typedef std::future<CreateLiveSourceOutcome> CreateLiveSourceOutcomeCallable;
@@ -237,6 +241,7 @@ namespace Aws
     class MediaTailorClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const MediaTailorClient*, const Model::ConfigureLogsForChannelRequest&, const Model::ConfigureLogsForChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsForChannelResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ConfigureLogsForPlaybackConfigurationRequest&, const Model::ConfigureLogsForPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsForPlaybackConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::CreateLiveSourceRequest&, const Model::CreateLiveSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLiveSourceResponseReceivedHandler;

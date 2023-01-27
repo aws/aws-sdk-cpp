@@ -27,7 +27,9 @@ Order::Order() :
     m_paymentOption(PaymentOption::NOT_SET),
     m_paymentOptionHasBeenSet(false),
     m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false)
+    m_orderFulfilledDateHasBeenSet(false),
+    m_paymentTerm(PaymentTerm::NOT_SET),
+    m_paymentTermHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Order::Order(JsonView jsonValue) :
     m_paymentOption(PaymentOption::NOT_SET),
     m_paymentOptionHasBeenSet(false),
     m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false)
+    m_orderFulfilledDateHasBeenSet(false),
+    m_paymentTerm(PaymentTerm::NOT_SET),
+    m_paymentTermHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,13 @@ Order& Order::operator =(JsonView jsonValue)
     m_orderFulfilledDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PaymentTerm"))
+  {
+    m_paymentTerm = PaymentTermMapper::GetPaymentTermForName(jsonValue.GetString("PaymentTerm"));
+
+    m_paymentTermHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,11 @@ JsonValue Order::Jsonize() const
   if(m_orderFulfilledDateHasBeenSet)
   {
    payload.WithDouble("OrderFulfilledDate", m_orderFulfilledDate.SecondsWithMSPrecision());
+  }
+
+  if(m_paymentTermHasBeenSet)
+  {
+   payload.WithString("PaymentTerm", PaymentTermMapper::GetNameForPaymentTerm(m_paymentTerm));
   }
 
   return payload;

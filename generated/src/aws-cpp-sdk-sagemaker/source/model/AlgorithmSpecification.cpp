@@ -27,7 +27,8 @@ AlgorithmSpecification::AlgorithmSpecification() :
     m_enableSageMakerMetricsTimeSeries(false),
     m_enableSageMakerMetricsTimeSeriesHasBeenSet(false),
     m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false)
+    m_containerArgumentsHasBeenSet(false),
+    m_trainingImageConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) :
     m_enableSageMakerMetricsTimeSeries(false),
     m_enableSageMakerMetricsTimeSeriesHasBeenSet(false),
     m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false)
+    m_containerArgumentsHasBeenSet(false),
+    m_trainingImageConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,13 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     m_containerArgumentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrainingImageConfig"))
+  {
+    m_trainingImageConfig = jsonValue.GetObject("TrainingImageConfig");
+
+    m_trainingImageConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +174,12 @@ JsonValue AlgorithmSpecification::Jsonize() const
      containerArgumentsJsonList[containerArgumentsIndex].AsString(m_containerArguments[containerArgumentsIndex]);
    }
    payload.WithArray("ContainerArguments", std::move(containerArgumentsJsonList));
+
+  }
+
+  if(m_trainingImageConfigHasBeenSet)
+  {
+   payload.WithObject("TrainingImageConfig", m_trainingImageConfig.Jsonize());
 
   }
 

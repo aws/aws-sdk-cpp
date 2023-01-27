@@ -59,62 +59,118 @@ struct ElasticBeanstalkEndpointProviderEndpointTestCase
 
 static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_CASES = {
   /*TEST CASE 0*/
-  {"For region ap-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", true)}, // params
+  {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
-  {"For region ap-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
+  {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-south-1.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk.us-iso-east-1.c2s.ic.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 2*/
-  {"For region ap-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", true)}, // params
+  {"For region ap-northeast-3 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-3.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 3*/
-  {"For region ap-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
+  {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-south-1.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk.us-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 4*/
-  {"For region eu-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", true)}, // params
+  {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 5*/
-  {"For region eu-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
+  {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-south-1.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk.eu-west-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 6*/
-  {"For region eu-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", true)}, // params
+  {"For region eu-west-2 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.eu-west-2.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 7*/
+  {"For region eu-west-3 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.eu-west-3.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 8*/
+  {"For region me-south-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.me-south-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 9*/
+  {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.eu-north-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 10*/
+  {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.us-east-2.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 11*/
+  {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-east-2.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 12*/
+  {"For region sa-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.sa-east-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 13*/
+  {"For region ap-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.ap-east-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 14*/
   {"For region eu-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -122,95 +178,7 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 8*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-gov-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-gov-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 10*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-gov-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 11*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-gov-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 12*/
-  {"For region ca-central-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ca-central-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 13*/
-  {"For region ca-central-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ca-central-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 14*/
-  {"For region ca-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ca-central-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
   /*TEST CASE 15*/
-  {"For region ca-central-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ca-central-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 16*/
-  {"For region eu-central-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-central-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 17*/
-  {"For region eu-central-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-central-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 18*/
-  {"For region eu-central-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-central-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 19*/
   {"For region eu-central-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -218,11 +186,43 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 20*/
-  {"For region us-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 16*/
+  {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-west-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 17*/
+  {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-2.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 18*/
+  {"For region ap-southeast-3 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-3.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 19*/
+  {"For region ca-central-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.ca-central-1.amazonaws.com",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 20*/
+  {"For region us-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.us-west-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -235,46 +235,6 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 22*/
-  {"For region us-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 23*/
-  {"For region us-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 24*/
-  {"For region us-west-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-west-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 25*/
-  {"For region us-west-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-west-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 26*/
-  {"For region us-west-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-west-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 27*/
   {"For region us-west-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -282,31 +242,15 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 28*/
-  {"For region af-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "af-south-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 23*/
+  {"For region us-west-2 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.af-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-west-2.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 29*/
-  {"For region af-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.af-south-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 30*/
-  {"For region af-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.af-south-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 31*/
+  /*TEST CASE 24*/
   {"For region af-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -314,223 +258,15 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 32*/
-  {"For region eu-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 25*/
+  {"For region ap-south-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-north-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.ap-south-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 33*/
-  {"For region eu-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 34*/
-  {"For region eu-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-north-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 35*/
-  {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 36*/
-  {"For region eu-west-3 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 37*/
-  {"For region eu-west-3 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 38*/
-  {"For region eu-west-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 39*/
-  {"For region eu-west-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 40*/
-  {"For region eu-west-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 41*/
-  {"For region eu-west-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 42*/
-  {"For region eu-west-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 43*/
-  {"For region eu-west-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 44*/
-  {"For region eu-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 45*/
-  {"For region eu-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.eu-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 46*/
-  {"For region eu-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 47*/
-  {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.eu-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 48*/
-  {"For region ap-northeast-3 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 49*/
-  {"For region ap-northeast-3 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 50*/
-  {"For region ap-northeast-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 51*/
-  {"For region ap-northeast-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 52*/
-  {"For region ap-northeast-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 53*/
-  {"For region ap-northeast-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 54*/
-  {"For region ap-northeast-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 55*/
-  {"For region ap-northeast-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 56*/
-  {"For region ap-northeast-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 57*/
-  {"For region ap-northeast-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-northeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 58*/
-  {"For region ap-northeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 59*/
+  /*TEST CASE 26*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -538,263 +274,15 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 60*/
-  {"For region me-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "me-south-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 27*/
+  {"For region ap-northeast-2 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.me-south-1.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.ap-northeast-2.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 61*/
-  {"For region me-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.me-south-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 62*/
-  {"For region me-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.me-south-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 63*/
-  {"For region me-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.me-south-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 64*/
-  {"For region sa-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.sa-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 65*/
-  {"For region sa-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.sa-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 66*/
-  {"For region sa-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.sa-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 67*/
-  {"For region sa-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.sa-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 68*/
-  {"For region ap-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 69*/
-  {"For region ap-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 70*/
-  {"For region ap-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-east-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 71*/
-  {"For region ap-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 72*/
-  {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-north-1.api.amazonwebservices.com.cn",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 73*/
-  {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-north-1.amazonaws.com.cn",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 74*/
-  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.cn-north-1.api.amazonwebservices.com.cn",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 75*/
-  {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.cn-north-1.amazonaws.com.cn",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 76*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-gov-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 77*/
-  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-gov-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 78*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-gov-west-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 79*/
-  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-gov-west-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 80*/
-  {"For region ap-southeast-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 81*/
-  {"For region ap-southeast-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 82*/
-  {"For region ap-southeast-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 83*/
-  {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 84*/
-  {"For region ap-southeast-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 85*/
-  {"For region ap-southeast-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 86*/
-  {"For region ap-southeast-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-2.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 87*/
-  {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-2.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 88*/
-  {"For region ap-southeast-3 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 89*/
-  {"For region ap-southeast-3 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.ap-southeast-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 90*/
-  {"For region ap-southeast-3 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-3.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 91*/
-  {"For region ap-southeast-3 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.ap-southeast-3.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 92*/
+  /*TEST CASE 28*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -802,15 +290,7 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 93*/
-  {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-east-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 94*/
+  /*TEST CASE 29*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -818,71 +298,71 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 95*/
-  {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 30*/
+  {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-east-1.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk.us-gov-west-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 96*/
-  {"For region us-east-2 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 31*/
+  {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-east-2.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.us-gov-west-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 97*/
-  {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 32*/
+  {"For region us-gov-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.us-east-2.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 98*/
-  {"For region us-east-2 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 33*/
+  {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-east-2.api.aws",
+    {{/*epUrl*/"https://elasticbeanstalk.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 99*/
-  {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 34*/
+  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.us-east-2.amazonaws.com",
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-gov-east-1.api.aws",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 100*/
-  {"For region cn-northwest-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 35*/
+  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://elasticbeanstalk.us-gov-east-1.api.aws",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 101*/
-  {"For region cn-northwest-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
+  /*TEST CASE 36*/
+  {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-northwest-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://elasticbeanstalk-fips.us-isob-east-1.sc2s.sgov.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 102*/
-  {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", true)}, // params
+  /*TEST CASE 37*/
+  {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://elasticbeanstalk.cn-northwest-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://elasticbeanstalk.us-isob-east-1.sc2s.sgov.gov",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 103*/
+  /*TEST CASE 38*/
   {"For region cn-northwest-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -890,7 +370,39 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 104*/
+  /*TEST CASE 39*/
+  {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.cn-north-1.amazonaws.com.cn",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 40*/
+  {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 41*/
+  {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk-fips.cn-north-1.amazonaws.com.cn",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 42*/
+  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://elasticbeanstalk.cn-north-1.api.amazonwebservices.com.cn",
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 43*/
   {"For custom endpoint with fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
@@ -899,14 +411,14 @@ static const Aws::Vector<ElasticBeanstalkEndpointProviderEndpointTestCase> TEST_
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 105*/
+  /*TEST CASE 44*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 106*/
+  /*TEST CASE 45*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", true)}, // params
