@@ -21,6 +21,7 @@ public:
 
     }
 protected:
+    // this whole thing needs to be redone to handle various stream use-cases.
     bool ReadImpl(Crt::ByteBuf &buffer) noexcept override
     {
         // initial check to see if we should avoid reading for the moment.
@@ -45,6 +46,42 @@ private:
     Utils::RateLimits::RateLimiterInterface& m_rateLimiter;
 };
 
+// Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
+// from spurious wakeups.
+class AsyncWaiter
+{
+public:
+    AsyncWaiter() = default;
+    AsyncWaiter(const AsyncWaiter&) = delete;
+    AsyncWaiter& operator=(const AsyncWaiter&) = delete;
+
+    void Wakeup()
+    {
+        {
+            std::lock_guard<std::mutex> locker(m_lock);
+            m_wakeupIntentional = true;
+        }
+        m_cvar.notify_one();
+    }
+
+    void WaitOnCompletion()
+    {
+        std::unique_lock<std::mutex> uniqueLocker(m_lock);
+        m_cvar.wait(uniqueLocker, [this](){return m_wakeupIntentional;});
+    }
+
+    bool WaitOnCompletionUntil(std::chrono::time_point<std::chrono::high_resolution_clock> until)
+    {
+        std::unique_lock<std::mutex> uniqueLocker(m_lock);
+        return m_cvar.wait_until(uniqueLocker, until, [this](){return m_wakeupIntentional;});
+    }
+
+private:
+    std::mutex m_lock;
+    std::condition_variable m_cvar;
+    bool m_wakeupIntentional{false};
+};
+
 namespace Aws
 {
     namespace Http
@@ -57,7 +94,8 @@ namespace Aws
 
             CheckAndInitializeProxySettings(clientConfig);
 
-            // if ca is overridden and a proxy is configured, it's intended for the proxy, not this context.
+            // Given current SDK configuration assumptions, if the ca is overridden and a proxy is configured,
+            // it's intended for the proxy, not this context.
             if (!m_proxyOptions.has_value())
             {
                 if (!m_configuration.caPath.empty() || !m_configuration.caFile.empty())
@@ -100,21 +138,14 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface*,
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface*) const
+        static void AddRequestMetadataToCrtRequest(const std::shared_ptr<HttpRequest>& request, const std::shared_ptr<Crt::Http::HttpRequest>& crtRequest)
         {
-            auto requestConnOptions = CreateConnectionOptionsForRequest(request);
-            auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
-
-            auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
-
             //Add http headers to the request.
             for (const auto& header : request->GetHeaders())
             {
                 Crt::Http::HttpHeader crtHeader;
 
-                crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());;
+                crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());
                 crtHeader.value = Crt::ByteCursorFromArray((const uint8_t *)header.second.data(), header.second.length());
                 crtRequest->AddHeader(crtHeader);
             }
@@ -134,6 +165,84 @@ namespace Aws
             auto pathCursor = Crt::ByteCursorFromArray((uint8_t *)fullPathAndQueryCpy.c_str(), fullPathAndQueryCpy.length());
             crtRequest->SetPath(pathCursor);
 
+
+        }
+
+        static void OnResponseBodyReceived(Crt::Http::HttpStream&, const Crt::ByteCursor& body, const std::shared_ptr<HttpResponse>& response)
+        {
+            // When data is received from the content body of the incoming response, just copy it to the output stream.
+            response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
+        }
+
+        // on response headers arriving, write them to the response.
+        static void OnIncomingHeaders(Crt::Http::HttpStream&, enum aws_http_header_block block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount, const std::shared_ptr<HttpResponse>& response)
+        {
+            if (block == AWS_HTTP_HEADER_BLOCK_INFORMATIONAL) return;
+
+            for (size_t i = 0; i < headersCount; ++i)
+            {
+                const Crt::Http::HttpHeader* header = &headersArray[i];
+                Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
+                Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
+                response->AddHeader(headerNameStr, std::move(headerValueStr));
+            }
+        }
+
+        static void OnIncomingHeadersBlockDone(Crt::Http::HttpStream& stream, enum aws_http_header_block, const std::shared_ptr<HttpResponse>& response)
+        {
+            response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
+        }
+
+        // Request is done. If there was an error set it, otherwise just wake up the cvar.
+        static void OnStreamComplete(Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter, const std::shared_ptr<HttpResponse>& response)
+        {
+            if (errorCode)
+            {
+                //TODO: get the right error parsed out.
+                response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+            }
+
+            waiter.Wakeup();
+        }
+
+        // if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
+        // If it succeeded go ahead and make the request.
+        static void OnClientConnectionAvailable(std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode, std::shared_ptr<Crt::Http::HttpClientConnection>& connectionReference,
+                                         Crt::Http::HttpRequestOptions& requestOptions, AsyncWaiter& waiter, const std::shared_ptr<HttpResponse>& response)
+        {
+            int finalErrorCode = errorCode;
+            if (connection)
+            {
+                auto clientStream = connection->NewClientStream(requestOptions);
+                connectionReference = connection;
+
+                if (clientStream && clientStream->Activate()) {
+                    return;
+                }
+
+                finalErrorCode = aws_last_error();
+            }
+
+            const char *error_msg = aws_error_debug_str(finalErrorCode);
+            response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+            response->SetClientErrorMessage(error_msg);
+
+            waiter.Wakeup();
+        }
+
+        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+                                                                 Aws::Utils::RateLimits::RateLimiterInterface*,
+                                                                 Aws::Utils::RateLimits::RateLimiterInterface*) const
+        {
+            auto requestConnOptions = CreateConnectionOptionsForRequest(request);
+            auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
+
+            auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
+            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
+
+            AddRequestMetadataToCrtRequest(request, crtRequest);
+
             // Set the request body stream on the crt request. Setup the write rate limiter if present
             if (request->GetContentBody())
             {
@@ -148,152 +257,86 @@ namespace Aws
                 }
             }
 
-            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
-
             Crt::Http::HttpRequestOptions requestOptions;
             requestOptions.request = crtRequest.get();
 
-            // CRT client is async only so we'll need to do the synchronous part ourselves.
-            // We'll use a condition variable and wait on it until the request completes or errors out.
-            std::mutex waiterLock;
-            std::condition_variable waiterCVar;
-            bool waitCompletedIntentionally = false;
-
-            // When data is received from the content body of the incoming response, just copy it to the output stream.
             requestOptions.onIncomingBody =
-                [response](Crt::Http::HttpStream&, const Crt::ByteCursor& body)
+                [response](Crt::Http::HttpStream& stream, const Crt::ByteCursor& body)
             {
-                response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
+                OnResponseBodyReceived(stream, body, response);
             };
 
-            // on response headers arriving, write them to the response.
             requestOptions.onIncomingHeaders =
-                [response](Crt::Http::HttpStream&, enum aws_http_header_block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
+                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block block, const Crt::Http::HttpHeader* headersArray, std::size_t headersCount)
             {
-                for (size_t i = 0; i < headersCount; ++i)
-                {
-                    const Crt::Http::HttpHeader* header = &headersArray[i];
-                    Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
-                    Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
-                    response->AddHeader(headerNameStr, std::move(headerValueStr));
-                }
+                OnIncomingHeaders(stream, block, headersArray, headersCount, response);
             };
 
             // This will arrive at or around the same time as the headers. Use it to set the response code on the response
             requestOptions.onIncomingHeadersBlockDone =
-                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block)
+                [response](Crt::Http::HttpStream& stream, enum aws_http_header_block block)
             {
-                response->SetResponseCode((HttpResponseCode)stream.GetResponseStatusCode());
+                OnIncomingHeadersBlockDone(stream, block, response);
             };
 
-            // Request is done. If there was an error set it, otherwise just wake up the cvar.
+            // CRT client is async only so we'll need to do the synchronous part ourselves.
+            // We'll use a condition variable and wait on it until the request completes or errors out.
+            AsyncWaiter waiter;
+
             requestOptions.onStreamComplete =
-                [&waiterCVar, &waiterLock, &waitCompletedIntentionally, &response](Crt::Http::HttpStream&, int errorCode)
+                [&waiter, &response](Crt::Http::HttpStream& stream, int errorCode)
             {
-                if (errorCode)
-                {
-                    /* come back to this one and get the right error parsed out. */
-                    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-                    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
-                }
-
-                {
-                    std::lock_guard<std::mutex> locker(waiterLock);
-                    waitCompletedIntentionally = true;
-                }
-
-                waiterCVar.notify_one();
+                OnStreamComplete(stream, errorCode, waiter, response);
             };
 
             std::shared_ptr<Crt::Http::HttpClientConnection> connectionRef(nullptr);
 
             // now we finally have the request, get a connection and make the request.
-            // if the connection acquisition failed, go ahead and fail the request and wakeup the cvar.
             connectionManager->AcquireConnection(
-                    [&connectionRef, requestOptions, response, &waitCompletedIntentionally, &waiterCVar, &waiterLock]
-                    (std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode) {
-                    if (connection)
+                    [&connectionRef, &requestOptions, response, &waiter]
+                    (std::shared_ptr<Crt::Http::HttpClientConnection> connection, int errorCode)
                     {
-                        auto clientStream = connection->NewClientStream(requestOptions);
+                        OnClientConnectionAvailable(connection, errorCode, connectionRef, requestOptions, waiter, response);
+                    });
 
-                        {
-                            std::lock_guard<std::mutex> locker(waiterLock);
-                            connectionRef = connection;
-                        }
-
-                        // if client stream is nullptr, something went wrong. This SHOULDNT happen
-                        // because it's usually something not using the API correctly, but
-                        // there's probably a complex set of interactions that can result in in-proper use of the API over-time,
-                        // and we need to just surface the error rather than bringing down the whole process with an assertion.
-                        // If we have a valid stream go ahead and return allowing the request to continue.
-                        if (clientStream) {
-                            clientStream->Activate();
-                            return;
-                        }
-
-                        {
-                            response->SetClientErrorType(Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
-                            response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
-                            std::lock_guard<std::mutex> locker(waiterLock);
-                            waitCompletedIntentionally = true;
-                        }
-                    }
-                    else
-                    {
-
-                        const char *error_msg = aws_error_debug_str(errorCode);
-                        response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-                        response->SetClientErrorMessage(error_msg);
-                        std::lock_guard<std::mutex> locker(waiterLock);
-                        waitCompletedIntentionally = true;
-                    }
-
-                    waiterCVar.notify_one();
-                });
-
+            bool waiterTimedOut = false;
+            // Naive http request timeout implementation. This doesn't factor in how long it took to get the connection from the pool, and
+            // I'm undecided on the queueing theory implications of this decision so if this turns out to be the wrong granularity
+            // this is the section of code you should be changing. You can probably get "close" by having an additional
+            // atomic (not necessarily full on atomics implementation, but it needs to be the size of a WORD if it's not)
+            // counter that gets incremented in the acquireConnection callback as long as your connection timeout
+            // is shorter than your request timeout. Even if it's not, that would handle like.... 4-5 nines of getting this right.
+            // since in the worst case scenario, your connect timeout got preempted by the request timeout, and is it really worth
+            // all that effort if that's the worst thing that can happen?
+            if (m_configuration.requestTimeoutMs > 0 )
             {
-                std::unique_lock<std::mutex> cvarUniqueLock(waiterLock);
+                auto requestExpiryTime = std::chrono::high_resolution_clock::now() +
+                                         std::chrono::milliseconds(m_configuration.requestTimeoutMs);
+                waiterTimedOut = !waiter.WaitOnCompletionUntil(requestExpiryTime);
 
-                // Naive http request timeout implementation. This doesn't factor in how long it took to get the connection from the pool, and
-                // I'm undecided on the queueing theory implications of this decision so if this turns out to be the wrong granularity
-                // this is the section of code you should be changing. You can probably get "close" by having an additional
-                // atomic (not necessarily full on atomics implementation, but it needs to be the size of a WORD if it's not)
-                // counter that gets incremented in the acquireConnection callback as long as your connection timeout
-                // is shorter than your request timeout. Even if it's not, that would handle like.... 4-5 nines of getting this right.
-                // since in the worst case scenario, your connect timeout got preempted by the request timeout, and is it really worth
-                // all that effort if that's the worst thing that can happen?
-                if (m_configuration.requestTimeoutMs > 0 )
+                // if this is true, the waiter timed out without a terminal condition being woken up.
+                if (waiterTimedOut)
                 {
-                    auto requestExpiryTime = std::chrono::high_resolution_clock::now() +
-                                             std::chrono::milliseconds(m_configuration.requestTimeoutMs);
-                    auto waiterResult = waiterCVar.wait_until(cvarUniqueLock, requestExpiryTime,
-                                          [&waitCompletedIntentionally, response]()
-                                          {
-                                              // If the request is done, we don't care about the timeout.
-                                             return waitCompletedIntentionally;
-
-                                          });
-                    // if this is false, the cvar timed out without a terminal condition being reached.
-                    if (!waiterResult)
+                    // close the connection if it's still there so we can expedite anything we're waiting on.
+                    if (connectionRef)
                     {
-                        response->SetClientErrorType(
-                                Aws::Client::CoreErrors::REQUEST_TIMEOUT);
-                        response->SetClientErrorMessage("Request Timeout Has Expired");
-
-                        // close the connection if it's still there so we can expedite anything we're waiting on.
-                        if (connectionRef)
-                        {
-                            connectionRef->Close();
-                        }
+                        connectionRef->Close();
                     }
                 }
+            }
 
-                // always wait, even if the above section timed out, because waitCompletedIntentionally isn't set yet
-                // and this means we're still waiting on some queued up callbacks to fire.
-                // going past this point before that occurs will cause a segfault when the callback DOES finally fire
-                // since the mutex and the condition-variable are both on the stack.
-                waiterCVar.wait(cvarUniqueLock,
-                                    [&waitCompletedIntentionally]() { return waitCompletedIntentionally; });
+            // always wait, even if the above section timed out, because Wakeup() hasn't yet been called,
+            // and this means we're still waiting on some queued up callbacks to fire.
+            // going past this point before that occurs will cause a segfault when the callback DOES finally fire
+            // since the waiter is on the stack.
+            waiter.WaitOnCompletion();
+
+            // now handle if we timed out or not.
+            if (waiterTimedOut)
+            {
+                response->SetClientErrorType(
+                        Aws::Client::CoreErrors::REQUEST_TIMEOUT);
+                response->SetClientErrorMessage("Request Timeout Has Expired");
             }
 
             return response;
@@ -309,16 +352,16 @@ namespace Aws
         }
 
         // The main purpose of this is to ensure there's exactly one connection manager per unique endpoint.
-        // To do so, we simply keep a hash table of the hashed endpoint (see ResolveConnectionPoolKey()), and
+        // To do so, we simply keep a hash table of the endpoint key (see ResolveConnectionPoolKey()), and
         // put a connection manager for that endpoint as the value.
         // This runs in multiple threads potentially so there's a lock around it.
         std::shared_ptr<Crt::Http::HttpClientConnectionManager> CRTHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
         {
-            const auto connManagerRequestHash = ResolveConnectionPoolKey(request->GetUri());
+            const auto connManagerRequestKey = ResolveConnectionPoolKey(request->GetUri());
 
             std::lock_guard<std::mutex> locker(m_connectionPoolLock);
 
-            const auto& foundManager = m_connectionPools.find(connManagerRequestHash);
+            const auto& foundManager = m_connectionPools.find(connManagerRequestKey);
 
             // We've already got one, return it.
             if (foundManager != m_connectionPools.cend()) {
@@ -330,12 +373,12 @@ namespace Aws
             connectionManagerOptions.ConnectionOptions = options;
             connectionManagerOptions.MaxConnections = m_configuration.maxConnections;
             connectionManagerOptions.EnableBlockingShutdown = true;
-            // need to bind out Monitoring options to handle the read timeout config value.
+            //TODO: need to bind out Monitoring options to handle the read timeout config value.
             // once done, come back and use it to setup read timeouts.
 
             auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
             // put it in the hash table and return it.
-            m_connectionPools.emplace(connManagerRequestHash, connectionManager);
+            m_connectionPools.emplace(connManagerRequestKey, connectionManager);
 
             return connectionManager;
         }
@@ -343,10 +386,9 @@ namespace Aws
         Crt::Http::HttpClientConnectionOptions CRTHttpClient::CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const
         {
             // connection options are unique per request, this is mostly just connection-level configuration mapping.
-
             Crt::Http::HttpClientConnectionOptions connectionOptions;
             connectionOptions.HostName = request->GetUri().GetAuthority().c_str();
-            // probably want to come back and update this when we hook up the rate limiters.
+            // TODO: come back and update this when we hook up the rate limiters.
             connectionOptions.ManualWindowManagement = false;
             connectionOptions.Port = request->GetUri().GetPort();
             
