@@ -286,7 +286,10 @@ namespace Aws
 
     /**
      * Shutdown SDK wide state for the SDK. This method must be called when you are finished using the SDK.
-     * Do not call any other SDK methods after calling ShutdownAPI.
+     * Notes:
+     * 1) Please call this from the same thread from which InitAPI() has been called (use a dedicated thread
+     *    if necessary). This avoids problems in initializing the dependent Common RunTime C libraries.
+     * 2) Do not call any other SDK methods after calling ShutdownAPI.
      */
     AWS_CORE_API void ShutdownAPI(const SDKOptions& options);
 }
