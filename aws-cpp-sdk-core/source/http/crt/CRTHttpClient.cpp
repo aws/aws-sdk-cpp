@@ -91,7 +91,6 @@ namespace Aws
         {
             //first need to figure TLS out...
             Crt::Io::TlsContextOptions tlsContextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
-
             CheckAndInitializeProxySettings(clientConfig);
 
             // Given current SDK configuration assumptions, if the ca is overridden and a proxy is configured,
@@ -102,7 +101,11 @@ namespace Aws
                 {
                     const char* caPath = m_configuration.caPath.empty() ? nullptr : m_configuration.caPath.c_str();
                     const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
-                    tlsContextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                    if (!tlsContextOptions.OverrideDefaultTrustStore(caPath, caFile))
+                    {
+                        m_bad = true;
+                        return;
+                    }
                 }
             }
 
@@ -111,10 +114,21 @@ namespace Aws
             if (Crt::Io::TlsContextOptions::IsAlpnSupported())
             {
                 // this may need to be pulled from the client configuration....
-                tlsContextOptions.SetAlpnList("h2;http/1.1");
+                if (!tlsContextOptions.SetAlpnList("h2;http/1.1"))
+                {
+                    m_bad = true;
+                    return;
+                }
             }
 
             Crt::Io::TlsContext newContext(tlsContextOptions, Crt::Io::TlsMode::CLIENT);
+
+            if (!newContext)
+            {
+                m_bad = true;
+                return;
+            }
+
             m_context = std::move(newContext);
         }
 
@@ -235,12 +249,18 @@ namespace Aws
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*) const
         {
-            auto requestConnOptions = CreateConnectionOptionsForRequest(request);
-            auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
-
             auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
             auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
 
+            auto requestConnOptions = CreateConnectionOptionsForRequest(request);
+            auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
+
+            if (!connectionManager)
+            {
+                response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
+                response->SetClientErrorType(CoreErrors::INVALID_PARAMETER_COMBINATION);
+                return response;
+            }
             AddRequestMetadataToCrtRequest(request, crtRequest);
 
             // Set the request body stream on the crt request. Setup the write rate limiter if present
@@ -377,6 +397,12 @@ namespace Aws
             // once done, come back and use it to setup read timeouts.
 
             auto connectionManager = Crt::Http::HttpClientConnectionManager::NewClientConnectionManager(connectionManagerOptions);
+
+            if (!connectionManager)
+            {
+                return nullptr;
+            }
+
             // put it in the hash table and return it.
             m_connectionPools.emplace(connManagerRequestKey, connectionManager);
 

@@ -67,10 +67,17 @@ namespace Aws
 
             bool ContinueRequest(const Aws::Http::HttpRequest&) const;
 
+            explicit operator bool() const
+            {
+               return !m_bad;
+            }
+
+        protected:
+            bool m_bad;
+
         private:
 
             std::atomic< bool > m_disableRequestProcessing;
-
             std::mutex m_requestProcessingSignalLock;
             std::condition_variable m_requestProcessingSignal;
         };

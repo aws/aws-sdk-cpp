@@ -195,7 +195,16 @@ namespace Aws
         std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration)
         {
             assert(GetHttpClientFactory());
-            return GetHttpClientFactory()->CreateHttpClient(clientConfiguration);
+            auto client = GetHttpClientFactory()->CreateHttpClient(clientConfiguration);
+
+            if (!client)
+            {
+                AWS_LOGSTREAM_FATAL(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Initializing Http Client failed!");
+                // assert just in case this is a misconfiguration at development time to make the dev's job easier.
+                assert(false && "Http client initialization failed. Some client configuration parameters are probably invalid");
+            }
+
+            return client;
         }
 
         std::shared_ptr<HttpRequest> CreateHttpRequest(const Aws::String& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory)
