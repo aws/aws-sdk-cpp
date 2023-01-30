@@ -58,7 +58,6 @@ void ResponseStream::ReleaseStream()
 {
     if (m_underlyingStream)
     {
-        m_underlyingStream->flush();
         Aws::Delete(m_underlyingStream);
     }
 
