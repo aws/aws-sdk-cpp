@@ -17,6 +17,7 @@ fi
 PREFIX_DIR="$1"
 OUTPUT_DIR="${PREFIX_DIR}/$2"
 SRC_DIR="${PREFIX_DIR}/aws-sdk-cpp"
+CROSS_LINK_DIR="${SRC_DIR}/tools/doxygen/doc_crosslinks"
 
 export VERSION_NUM=$(grep AWS_SDK_VERSION_STRING "${SRC_DIR}/src/aws-cpp-sdk-core/include/aws/core/VersionConfig.h" | cut -d '"' -f2)
 echo "Setting config to build docs for version: ${VERSION_NUM}"
@@ -34,8 +35,11 @@ mkdir -p "${OUTPUT_DIR}/LATEST"
 rsync -av "${SRC_DIR}"/doxygen/output/* "${OUTPUT_DIR}/${VERSION_NUM}"
 rsync -av "${SRC_DIR}"/doxygen/output/* "${OUTPUT_DIR}/LATEST"
 echo "Creating Cross Links"
-python3 doc_crosslinks_new/generate_cross_link_data.py --apiDefinitionsPath ./tools/code-generation/api-descriptions/ --templatePath ./doc_crosslinks_new/crosslink_redirect.html --outputPath ./crosslink_redirect.html
+python3 "${CROSS_LINK_DIR}/generate_cross_link_data.py" \
+  --apiDefinitionsPath "./tools/code-generation/api-descriptions/" \
+  --templatePath "${CROSS_LINK_DIR}/crosslink_redirect.html" \
+  --outputPath "./crosslink_redirect.html"
 cp "${SRC_DIR}/doxygen/modules/static/index.html" -p "${OUTPUT_DIR}/"
-cp "${SRC_DIR}/doxygen/modules/static/local-index.html" "${OUTPUT_DIR}/LATEST/index.html"
-cp "${SRC_DIR}/doxygen/modules/static/local-index.html" "${OUTPUT_DIR}/${VERSION_NUM}/index.html"
+cp "${SRC_DIR}/doxygen/modules/static/index.html" "${OUTPUT_DIR}/LATEST/index.html"
+cp "${SRC_DIR}/doxygen/modules/static/index.html" "${OUTPUT_DIR}/${VERSION_NUM}/index.html"
 cp "${SRC_DIR}/crosslink_redirect.html" "${OUTPUT_DIR}/"
