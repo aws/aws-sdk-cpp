@@ -439,6 +439,47 @@ namespace Model
      */
     inline LocalGatewayRoute& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline LocalGatewayRoute& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline LocalGatewayRoute& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the prefix list. </p>
+     */
+    inline LocalGatewayRoute& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -470,6 +511,9 @@ namespace Model
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;
+
+    Aws::String m_destinationPrefixListId;
+    bool m_destinationPrefixListIdHasBeenSet = false;
   };
 
 } // namespace Model

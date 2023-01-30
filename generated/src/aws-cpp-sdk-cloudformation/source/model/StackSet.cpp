@@ -38,7 +38,8 @@ StackSet::StackSet() :
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
     m_organizationalUnitIdsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
+    m_managedExecutionHasBeenSet(false),
+    m_regionsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ StackSet::StackSet(const XmlNode& xmlNode) :
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
     m_organizationalUnitIdsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
+    m_managedExecutionHasBeenSet(false),
+    m_regionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -191,6 +193,18 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
       m_managedExecution = managedExecutionNode;
       m_managedExecutionHasBeenSet = true;
     }
+    XmlNode regionsNode = resultNode.FirstChild("Regions");
+    if(!regionsNode.IsNull())
+    {
+      XmlNode regionsMember = regionsNode.FirstChild("member");
+      while(!regionsMember.IsNull())
+      {
+        m_regions.push_back(regionsMember.GetText());
+        regionsMember = regionsMember.NextNode("member");
+      }
+
+      m_regionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -304,6 +318,15 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMemberSs.str().c_str());
   }
 
+  if(m_regionsHasBeenSet)
+  {
+      unsigned regionsIdx = 1;
+      for(auto& item : m_regions)
+      {
+        oStream << location << index << locationValue << ".Regions.member." << regionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -397,6 +420,14 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String managedExecutionLocationAndMember(location);
       managedExecutionLocationAndMember += ".ManagedExecution";
       m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMember.c_str());
+  }
+  if(m_regionsHasBeenSet)
+  {
+      unsigned regionsIdx = 1;
+      for(auto& item : m_regions)
+      {
+        oStream << location << ".Regions.member." << regionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

@@ -158,6 +158,63 @@ namespace Model
      */
     inline DeleteLocalGatewayRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+     * in the same request. </p>
+     */
+    inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -168,6 +225,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_destinationPrefixListId;
+    bool m_destinationPrefixListIdHasBeenSet = false;
   };
 
 } // namespace Model
