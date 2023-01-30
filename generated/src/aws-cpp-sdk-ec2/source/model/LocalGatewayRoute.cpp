@@ -32,7 +32,8 @@ LocalGatewayRoute::LocalGatewayRoute() :
     m_ownerIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_coipPoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false),
+    m_destinationPrefixListIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_coipPoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false),
+    m_destinationPrefixListIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +121,12 @@ LocalGatewayRoute& LocalGatewayRoute::operator =(const XmlNode& xmlNode)
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
+    XmlNode destinationPrefixListIdNode = resultNode.FirstChild("destinationPrefixListId");
+    if(!destinationPrefixListIdNode.IsNull())
+    {
+      m_destinationPrefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(destinationPrefixListIdNode.GetText());
+      m_destinationPrefixListIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -176,6 +184,11 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
+  if(m_destinationPrefixListIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DestinationPrefixListId=" << StringUtils::URLEncode(m_destinationPrefixListId.c_str()) << "&";
+  }
+
 }
 
 void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -219,6 +232,10 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_networkInterfaceIdHasBeenSet)
   {
       oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+  }
+  if(m_destinationPrefixListIdHasBeenSet)
+  {
+      oStream << location << ".DestinationPrefixListId=" << StringUtils::URLEncode(m_destinationPrefixListId.c_str()) << "&";
   }
 }
 

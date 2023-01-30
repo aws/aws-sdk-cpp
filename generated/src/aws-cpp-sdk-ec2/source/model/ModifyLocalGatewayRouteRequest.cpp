@@ -16,7 +16,8 @@ ModifyLocalGatewayRouteRequest::ModifyLocalGatewayRouteRequest() :
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_destinationPrefixListIdHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,11 @@ Aws::String ModifyLocalGatewayRouteRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_destinationPrefixListIdHasBeenSet)
+  {
+    ss << "DestinationPrefixListId=" << StringUtils::URLEncode(m_destinationPrefixListId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

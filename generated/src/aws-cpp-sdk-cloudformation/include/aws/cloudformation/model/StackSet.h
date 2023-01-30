@@ -904,6 +904,34 @@ namespace Model
      */
     inline StackSet& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+
+    
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+
+    
+    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    
+    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
+
+    
+    inline StackSet& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
+
+    
+    inline StackSet& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
+
+    
+    inline StackSet& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    
+    inline StackSet& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+
+    
+    inline StackSet& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
   private:
 
     Aws::String m_stackSetName;
@@ -953,6 +981,9 @@ namespace Model
 
     ManagedExecution m_managedExecution;
     bool m_managedExecutionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regions;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model
