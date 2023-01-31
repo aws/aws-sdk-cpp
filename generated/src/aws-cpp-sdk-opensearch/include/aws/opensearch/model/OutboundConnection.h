@@ -8,6 +8,8 @@
 #include <aws/opensearch/model/DomainInformationContainer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/OutboundConnectionStatus.h>
+#include <aws/opensearch/model/ConnectionMode.h>
+#include <aws/opensearch/model/ConnectionProperties.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +216,68 @@ namespace Model
      */
     inline OutboundConnection& WithConnectionStatus(OutboundConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(const ConnectionMode& value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(ConnectionMode&& value) { m_connectionModeHasBeenSet = true; m_connectionMode = std::move(value); }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline OutboundConnection& WithConnectionMode(const ConnectionMode& value) { SetConnectionMode(value); return *this;}
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline OutboundConnection& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline const ConnectionProperties& GetConnectionProperties() const{ return m_connectionProperties; }
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline void SetConnectionProperties(const ConnectionProperties& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline void SetConnectionProperties(ConnectionProperties&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline OutboundConnection& WithConnectionProperties(const ConnectionProperties& value) { SetConnectionProperties(value); return *this;}
+
+    /**
+     * <p>Properties for the outbound connection.</p>
+     */
+    inline OutboundConnection& WithConnectionProperties(ConnectionProperties&& value) { SetConnectionProperties(std::move(value)); return *this;}
+
   private:
 
     DomainInformationContainer m_localDomainInfo;
@@ -230,6 +294,12 @@ namespace Model
 
     OutboundConnectionStatus m_connectionStatus;
     bool m_connectionStatusHasBeenSet = false;
+
+    ConnectionMode m_connectionMode;
+    bool m_connectionModeHasBeenSet = false;
+
+    ConnectionProperties m_connectionProperties;
+    bool m_connectionPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

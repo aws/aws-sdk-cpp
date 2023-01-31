@@ -21,6 +21,8 @@ CreateMissionProfileRequest::CreateMissionProfileRequest() :
     m_minimumViableContactDurationSeconds(0),
     m_minimumViableContactDurationSecondsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_streamsKmsKeyHasBeenSet(false),
+    m_streamsKmsRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trackingConfigArnHasBeenSet(false)
 {
@@ -67,6 +69,18 @@ Aws::String CreateMissionProfileRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_streamsKmsKeyHasBeenSet)
+  {
+   payload.WithObject("streamsKmsKey", m_streamsKmsKey.Jsonize());
+
+  }
+
+  if(m_streamsKmsRoleHasBeenSet)
+  {
+   payload.WithString("streamsKmsRole", m_streamsKmsRole);
 
   }
 

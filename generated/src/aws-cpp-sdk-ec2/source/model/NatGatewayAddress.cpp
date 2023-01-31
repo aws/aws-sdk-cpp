@@ -24,7 +24,13 @@ NatGatewayAddress::NatGatewayAddress() :
     m_allocationIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
+    m_isPrimary(false),
+    m_isPrimaryHasBeenSet(false),
+    m_failureMessageHasBeenSet(false),
+    m_status(NatGatewayAddressStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -32,7 +38,13 @@ NatGatewayAddress::NatGatewayAddress(const XmlNode& xmlNode) :
     m_allocationIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
+    m_publicIpHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
+    m_isPrimary(false),
+    m_isPrimaryHasBeenSet(false),
+    m_failureMessageHasBeenSet(false),
+    m_status(NatGatewayAddressStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +79,30 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
+    XmlNode associationIdNode = resultNode.FirstChild("associationId");
+    if(!associationIdNode.IsNull())
+    {
+      m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
+      m_associationIdHasBeenSet = true;
+    }
+    XmlNode isPrimaryNode = resultNode.FirstChild("isPrimary");
+    if(!isPrimaryNode.IsNull())
+    {
+      m_isPrimary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPrimaryNode.GetText()).c_str()).c_str());
+      m_isPrimaryHasBeenSet = true;
+    }
+    XmlNode failureMessageNode = resultNode.FirstChild("failureMessage");
+    if(!failureMessageNode.IsNull())
+    {
+      m_failureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(failureMessageNode.GetText());
+      m_failureMessageHasBeenSet = true;
+    }
+    XmlNode statusNode = resultNode.FirstChild("status");
+    if(!statusNode.IsNull())
+    {
+      m_status = NatGatewayAddressStatusMapper::GetNatGatewayAddressStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -94,6 +130,26 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
+  if(m_associationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
+  }
+
+  if(m_isPrimaryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsPrimary=" << std::boolalpha << m_isPrimary << "&";
+  }
+
+  if(m_failureMessageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
+  }
+
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status) << "&";
+  }
+
 }
 
 void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -113,6 +169,22 @@ void NatGatewayAddress::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_publicIpHasBeenSet)
   {
       oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+  if(m_associationIdHasBeenSet)
+  {
+      oStream << location << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
+  }
+  if(m_isPrimaryHasBeenSet)
+  {
+      oStream << location << ".IsPrimary=" << std::boolalpha << m_isPrimary << "&";
+  }
+  if(m_failureMessageHasBeenSet)
+  {
+      oStream << location << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << NatGatewayAddressStatusMapper::GetNameForNatGatewayAddressStatus(m_status) << "&";
   }
 }
 

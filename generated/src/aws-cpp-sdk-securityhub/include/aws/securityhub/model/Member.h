@@ -172,19 +172,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -194,19 +194,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -216,19 +216,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -238,19 +238,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -260,19 +260,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -282,19 +282,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -304,19 +304,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>
@@ -326,19 +326,19 @@ namespace Model
     /**
      * <p>The status of the relationship between the member account and its
      * administrator account. </p> <p>The status can have one of the following
-     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * values:</p> <ul> <li> <p> <code>Created</code> - Indicates that the
      * administrator account added the member account, but has not yet invited the
-     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * member account.</p> </li> <li> <p> <code>Invited</code> - Indicates that the
      * administrator account invited the member account. The member account has not yet
-     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * responded to the invitation.</p> </li> <li> <p> <code>Enabled</code> - Indicates
      * that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.</p> </li>
-     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
-     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * <li> <p> <code>Removed</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>Resigned</code> -
      * Indicates that the member account disassociated themselves from the
-     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * administrator account.</p> </li> <li> <p> <code>Deleted</code> - Indicates that
      * the administrator account deleted the member account.</p> </li> <li> <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * <code>AccountSuspended</code> - Indicates that an organization account was
      * suspended from Amazon Web Services at the same time that the administrator
      * account tried to enable the organization account as a member account.</p> </li>
      * </ul>

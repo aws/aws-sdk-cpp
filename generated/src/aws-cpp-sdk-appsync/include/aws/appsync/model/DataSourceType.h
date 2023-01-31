@@ -22,7 +22,8 @@ namespace Model
     NONE,
     HTTP,
     RELATIONAL_DATABASE,
-    AMAZON_OPENSEARCH_SERVICE
+    AMAZON_OPENSEARCH_SERVICE,
+    AMAZON_EVENTBRIDGE
   };
 
 namespace DataSourceTypeMapper

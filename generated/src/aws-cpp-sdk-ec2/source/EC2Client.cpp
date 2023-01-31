@@ -35,6 +35,7 @@
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/AssignIpv6AddressesRequest.h>
 #include <aws/ec2/model/AssignPrivateIpAddressesRequest.h>
+#include <aws/ec2/model/AssignPrivateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateAddressRequest.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkRequest.h>
 #include <aws/ec2/model/AssociateDhcpOptionsRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/ec2/model/AssociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/AssociateInstanceEventWindowRequest.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryRequest.h>
+#include <aws/ec2/model/AssociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateRouteTableRequest.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockRequest.h>
 #include <aws/ec2/model/AssociateTransitGatewayMulticastDomainRequest.h>
@@ -402,6 +404,7 @@
 #include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/DisassociateInstanceEventWindowRequest.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryRequest.h>
+#include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
@@ -602,6 +605,7 @@
 #include <aws/ec2/model/TerminateInstancesRequest.h>
 #include <aws/ec2/model/UnassignIpv6AddressesRequest.h>
 #include <aws/ec2/model/UnassignPrivateIpAddressesRequest.h>
+#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/UnmonitorInstancesRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressRequest.h>
@@ -847,6 +851,14 @@ AssignPrivateIpAddressesOutcome EC2Client::AssignPrivateIpAddresses(const Assign
   return AssignPrivateIpAddressesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
+AssignPrivateNatGatewayAddressOutcome EC2Client::AssignPrivateNatGatewayAddress(const AssignPrivateNatGatewayAddressRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssignPrivateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssignPrivateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssignPrivateNatGatewayAddressOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 AssociateAddressOutcome EC2Client::AssociateAddress(const AssociateAddressRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -901,6 +913,14 @@ AssociateIpamResourceDiscoveryOutcome EC2Client::AssociateIpamResourceDiscovery(
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateIpamResourceDiscovery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return AssociateIpamResourceDiscoveryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AssociateNatGatewayAddressOutcome EC2Client::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateNatGatewayAddressOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 AssociateRouteTableOutcome EC2Client::AssociateRouteTable(const AssociateRouteTableRequest& request) const
@@ -3783,6 +3803,14 @@ DisassociateIpamResourceDiscoveryOutcome EC2Client::DisassociateIpamResourceDisc
   return DisassociateIpamResourceDiscoveryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
+DisassociateNatGatewayAddressOutcome EC2Client::DisassociateNatGatewayAddress(const DisassociateNatGatewayAddressRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateNatGatewayAddressOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 DisassociateRouteTableOutcome EC2Client::DisassociateRouteTable(const DisassociateRouteTableRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRouteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -5381,6 +5409,14 @@ UnassignPrivateIpAddressesOutcome EC2Client::UnassignPrivateIpAddresses(const Un
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnassignPrivateIpAddresses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UnassignPrivateIpAddressesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+UnassignPrivateNatGatewayAddressOutcome EC2Client::UnassignPrivateNatGatewayAddress(const UnassignPrivateNatGatewayAddressRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnassignPrivateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnassignPrivateNatGatewayAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UnassignPrivateNatGatewayAddressOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UnmonitorInstancesOutcome EC2Client::UnmonitorInstances(const UnmonitorInstancesRequest& request) const

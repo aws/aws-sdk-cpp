@@ -30,7 +30,8 @@ DataSource::DataSource() :
     m_elasticsearchConfigHasBeenSet(false),
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false)
+    m_relationalDatabaseConfigHasBeenSet(false),
+    m_eventBridgeConfigHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DataSource::DataSource(JsonView jsonValue) :
     m_elasticsearchConfigHasBeenSet(false),
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false)
+    m_relationalDatabaseConfigHasBeenSet(false),
+    m_eventBridgeConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +132,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_relationalDatabaseConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventBridgeConfig"))
+  {
+    m_eventBridgeConfig = jsonValue.GetObject("eventBridgeConfig");
+
+    m_eventBridgeConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +208,12 @@ JsonValue DataSource::Jsonize() const
   if(m_relationalDatabaseConfigHasBeenSet)
   {
    payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
+
+  }
+
+  if(m_eventBridgeConfigHasBeenSet)
+  {
+   payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
 
   }
 

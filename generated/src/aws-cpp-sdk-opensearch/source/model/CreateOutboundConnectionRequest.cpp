@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 CreateOutboundConnectionRequest::CreateOutboundConnectionRequest() : 
     m_localDomainInfoHasBeenSet(false),
     m_remoteDomainInfoHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false)
+    m_connectionAliasHasBeenSet(false),
+    m_connectionMode(ConnectionMode::NOT_SET),
+    m_connectionModeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String CreateOutboundConnectionRequest::SerializePayload() const
   {
    payload.WithString("ConnectionAlias", m_connectionAlias);
 
+  }
+
+  if(m_connectionModeHasBeenSet)
+  {
+   payload.WithString("ConnectionMode", ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
   }
 
   return payload.View().WriteReadable();

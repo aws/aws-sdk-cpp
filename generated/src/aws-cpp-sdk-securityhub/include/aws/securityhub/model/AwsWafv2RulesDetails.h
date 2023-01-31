@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p> Provides details about rules in a rule group. A rule identifies web requests
    * that you want to allow, block, or count. Each rule includes one top-level
-   * Statement that AWS WAF uses to identify matching web requests, and parameters
-   * that govern how AWS WAF handles them. </p><p><h3>See Also:</h3>   <a
+   * Statement that WAF uses to identify matching web requests, and parameters that
+   * govern how WAF handles them. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafv2RulesDetails">AWS
    * API Reference</a></p>
    */

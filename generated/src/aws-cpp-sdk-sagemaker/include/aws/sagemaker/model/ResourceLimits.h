@@ -85,6 +85,31 @@ namespace Model
      */
     inline ResourceLimits& WithMaxParallelTrainingJobs(int value) { SetMaxParallelTrainingJobs(value); return *this;}
 
+
+    /**
+     * <p>The maximum time in seconds that a training job launched by a hyperparameter
+     * tuning job can run.</p>
+     */
+    inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
+
+    /**
+     * <p>The maximum time in seconds that a training job launched by a hyperparameter
+     * tuning job can run.</p>
+     */
+    inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum time in seconds that a training job launched by a hyperparameter
+     * tuning job can run.</p>
+     */
+    inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
+
+    /**
+     * <p>The maximum time in seconds that a training job launched by a hyperparameter
+     * tuning job can run.</p>
+     */
+    inline ResourceLimits& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
+
   private:
 
     int m_maxNumberOfTrainingJobs;
@@ -92,6 +117,9 @@ namespace Model
 
     int m_maxParallelTrainingJobs;
     bool m_maxParallelTrainingJobsHasBeenSet = false;
+
+    int m_maxRuntimeInSeconds;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

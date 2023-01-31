@@ -24,7 +24,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_elasticsearchConfigHasBeenSet(false),
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false)
+    m_relationalDatabaseConfigHasBeenSet(false),
+    m_eventBridgeConfigHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_relationalDatabaseConfigHasBeenSet)
   {
    payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
+
+  }
+
+  if(m_eventBridgeConfigHasBeenSet)
+  {
+   payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
 
   }
 

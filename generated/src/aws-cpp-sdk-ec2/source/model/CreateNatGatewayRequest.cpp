@@ -20,7 +20,11 @@ CreateNatGatewayRequest::CreateNatGatewayRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_connectivityType(ConnectivityType::NOT_SET),
     m_connectivityTypeHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+    m_privateIpAddressHasBeenSet(false),
+    m_secondaryAllocationIdsHasBeenSet(false),
+    m_secondaryPrivateIpAddressesHasBeenSet(false),
+    m_secondaryPrivateIpAddressCount(0),
+    m_secondaryPrivateIpAddressCountHasBeenSet(false)
 {
 }
 
@@ -66,6 +70,33 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+  }
+
+  if(m_secondaryAllocationIdsHasBeenSet)
+  {
+    unsigned secondaryAllocationIdsCount = 1;
+    for(auto& item : m_secondaryAllocationIds)
+    {
+      ss << "SecondaryAllocationId." << secondaryAllocationIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      secondaryAllocationIdsCount++;
+    }
+  }
+
+  if(m_secondaryPrivateIpAddressesHasBeenSet)
+  {
+    unsigned secondaryPrivateIpAddressesCount = 1;
+    for(auto& item : m_secondaryPrivateIpAddresses)
+    {
+      ss << "SecondaryPrivateIpAddress." << secondaryPrivateIpAddressesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      secondaryPrivateIpAddressesCount++;
+    }
+  }
+
+  if(m_secondaryPrivateIpAddressCountHasBeenSet)
+  {
+    ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
 
   ss << "Version=2016-11-15";

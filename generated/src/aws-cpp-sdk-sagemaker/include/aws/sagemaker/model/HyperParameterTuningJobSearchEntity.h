@@ -15,6 +15,8 @@
 #include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 #include <aws/sagemaker/model/HyperParameterTrainingJobSummary.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobCompletionDetails.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobConsumedResources.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -535,6 +537,74 @@ namespace Model
      */
     inline HyperParameterTuningJobSearchEntity& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline const HyperParameterTuningJobCompletionDetails& GetTuningJobCompletionDetails() const{ return m_tuningJobCompletionDetails; }
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline bool TuningJobCompletionDetailsHasBeenSet() const { return m_tuningJobCompletionDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetTuningJobCompletionDetails(const HyperParameterTuningJobCompletionDetails& value) { m_tuningJobCompletionDetailsHasBeenSet = true; m_tuningJobCompletionDetails = value; }
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails&& value) { m_tuningJobCompletionDetailsHasBeenSet = true; m_tuningJobCompletionDetails = std::move(value); }
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline HyperParameterTuningJobSearchEntity& WithTuningJobCompletionDetails(const HyperParameterTuningJobCompletionDetails& value) { SetTuningJobCompletionDetails(value); return *this;}
+
+    /**
+     * <p>Information about either a current or completed hyperparameter tuning
+     * job.</p>
+     */
+    inline HyperParameterTuningJobSearchEntity& WithTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails&& value) { SetTuningJobCompletionDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline const HyperParameterTuningJobConsumedResources& GetConsumedResources() const{ return m_consumedResources; }
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline bool ConsumedResourcesHasBeenSet() const { return m_consumedResourcesHasBeenSet; }
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline void SetConsumedResources(const HyperParameterTuningJobConsumedResources& value) { m_consumedResourcesHasBeenSet = true; m_consumedResources = value; }
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline void SetConsumedResources(HyperParameterTuningJobConsumedResources&& value) { m_consumedResourcesHasBeenSet = true; m_consumedResources = std::move(value); }
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline HyperParameterTuningJobSearchEntity& WithConsumedResources(const HyperParameterTuningJobConsumedResources& value) { SetConsumedResources(value); return *this;}
+
+    /**
+     * <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
+     */
+    inline HyperParameterTuningJobSearchEntity& WithConsumedResources(HyperParameterTuningJobConsumedResources&& value) { SetConsumedResources(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hyperParameterTuningJobName;
@@ -584,6 +654,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    HyperParameterTuningJobCompletionDetails m_tuningJobCompletionDetails;
+    bool m_tuningJobCompletionDetailsHasBeenSet = false;
+
+    HyperParameterTuningJobConsumedResources m_consumedResources;
+    bool m_consumedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

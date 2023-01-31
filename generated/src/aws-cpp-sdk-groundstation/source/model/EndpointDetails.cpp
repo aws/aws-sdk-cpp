@@ -19,12 +19,14 @@ namespace Model
 {
 
 EndpointDetails::EndpointDetails() : 
+    m_awsGroundStationAgentEndpointHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_securityDetailsHasBeenSet(false)
 {
 }
 
 EndpointDetails::EndpointDetails(JsonView jsonValue) : 
+    m_awsGroundStationAgentEndpointHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_securityDetailsHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ EndpointDetails::EndpointDetails(JsonView jsonValue) :
 
 EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("awsGroundStationAgentEndpoint"))
+  {
+    m_awsGroundStationAgentEndpoint = jsonValue.GetObject("awsGroundStationAgentEndpoint");
+
+    m_awsGroundStationAgentEndpointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
@@ -53,6 +62,12 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
 JsonValue EndpointDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_awsGroundStationAgentEndpointHasBeenSet)
+  {
+   payload.WithObject("awsGroundStationAgentEndpoint", m_awsGroundStationAgentEndpoint.Jsonize());
+
+  }
 
   if(m_endpointHasBeenSet)
   {

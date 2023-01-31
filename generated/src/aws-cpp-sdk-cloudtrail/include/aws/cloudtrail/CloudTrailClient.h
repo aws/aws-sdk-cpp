@@ -92,9 +92,9 @@ namespace CloudTrail
         virtual ~CloudTrailClient();
 
         /**
-         * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
-         * Overwrites an existing tag's value when a new value is specified for an existing
-         * tag key. Tag key names must be unique for a trail; you cannot have two keys with
+         * <p>Adds one or more tags to a trail, event data store, or channel, up to a limit
+         * of 50. Overwrites an existing tag's value when a new value is specified for an
+         * existing tag key. Tag key names must be unique; you cannot have two keys with
          * the same name but different values. If you specify a key without a value, the
          * tag will be created with the specified key and a value of null. You can tag a
          * trail or event data store that applies to all Amazon Web Services Regions only
@@ -155,6 +155,34 @@ namespace CloudTrail
         }
 
         /**
+         * <p>Creates a channel for CloudTrail to ingest events from a partner or external
+         * source. After you create a channel, a CloudTrail Lake event data store can log
+         * events from the partner or source that you specify.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateChannelRequestT = Model::CreateChannelRequest>
+        Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::CreateChannel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateChannelRequestT = Model::CreateChannelRequest>
+        void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::CreateChannel, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new event data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore">AWS
          * API Reference</a></p>
@@ -206,6 +234,31 @@ namespace CloudTrail
         }
 
         /**
+         * <p>Deletes a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+        Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const DeleteChannelRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::DeleteChannel, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteChannelRequestT = Model::DeleteChannelRequest>
+        void DeleteChannelAsync(const DeleteChannelRequestT& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::DeleteChannel, request, handler, context);
+        }
+
+        /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
          * accepts an event data store ARN. After you run
          * <code>DeleteEventDataStore</code>, the event data store enters a
@@ -240,6 +293,32 @@ namespace CloudTrail
         void DeleteEventDataStoreAsync(const DeleteEventDataStoreRequestT& request, const DeleteEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::DeleteEventDataStore, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes the resource-based policy attached to the CloudTrail channel.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::DeleteResourcePolicy, request, handler, context);
         }
 
         /**
@@ -351,12 +430,7 @@ namespace CloudTrail
         }
 
         /**
-         * <p> Returns information about a specific channel. Amazon Web Services services
-         * create service-linked channels to get information about CloudTrail events on
-         * your behalf. For more information about service-linked channels, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Returns information about a specific channel. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
          * API Reference</a></p>
          */
@@ -529,6 +603,32 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Retrieves the JSON text of the resource-based policy document attached to
+         * the CloudTrail channel. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Returns settings information for a specified trail.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail">AWS
@@ -584,13 +684,8 @@ namespace CloudTrail
         }
 
         /**
-         * <p> Lists the channels in the current account, and their source names. Amazon
-         * Web Services services create service-linked channels get information about
-         * CloudTrail events on your behalf. For more information about service-linked
-         * channels, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Lists the channels in the current account, and their source names.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -757,7 +852,7 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Lists the tags for the trail or event data store in the current
+         * <p>Lists the tags for the trail, event data store, or channel in the current
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
@@ -940,6 +1035,36 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Attaches a resource-based permission policy to a CloudTrail channel that is
+         * used for an integration with an event source outside of Amazon Web Services. For
+         * more information about resource-based policies, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
+         * resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::PutResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Registers an organization’s member account as the CloudTrail delegated
          * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">AWS
@@ -966,8 +1091,8 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified tags from a trail, event data store, or
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
          * API Reference</a></p>
          */
@@ -1036,8 +1161,11 @@ namespace CloudTrail
          * more information about disabling ACLs, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
          * ownership of objects and disabling ACLs for your bucket</a>. </p> <p> When you
-         * retry an import, the <code>ImportID</code> parameter is required. </p><p><h3>See
-         * Also:</h3>   <a
+         * retry an import, the <code>ImportID</code> parameter is required. </p> 
+         * <p> If the destination event data store is for an organization, you must use the
+         * management account to import trail events. You cannot use the delegated
+         * administrator account for the organization. </p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">AWS
          * API Reference</a></p>
          */
@@ -1176,16 +1304,45 @@ namespace CloudTrail
         }
 
         /**
+         * <p>Updates a channel specified by a required channel ARN or UUID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+        Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const UpdateChannelRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::UpdateChannel, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateChannelRequestT = Model::UpdateChannelRequest>
+        void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::UpdateChannel, request, handler, context);
+        }
+
+        /**
          * <p>Updates an event data store. The required <code>EventDataStore</code> value
          * is an ARN or the ID portion of the ARN. Other parameters are optional, but at
          * least one optional parameter must be specified, or CloudTrail throws an error.
          * <code>RetentionPeriod</code> is in days, and valid values are integers between
-         * 90 and 2557. By default, <code>TerminationProtection</code> is enabled.
+         * 90 and 2557. By default, <code>TerminationProtection</code> is enabled.</p>
+         * <p>For event data stores for CloudTrail events,
          * <code>AdvancedEventSelectors</code> includes or excludes management and data
-         * events in your event data store; for more information about
+         * events in your event data store. For more information about
          * <code>AdvancedEventSelectors</code>, see
-         * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>. </p> <p> For event data
+         * stores for Config configuration items, Audit Manager evidence, or non-Amazon Web
+         * Services events, <code>AdvancedEventSelectors</code> includes events of that
+         * type in your event data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateEventDataStore">AWS
          * API Reference</a></p>
          */

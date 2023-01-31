@@ -20,13 +20,17 @@ namespace Model
 
 TuningJobCompletionCriteria::TuningJobCompletionCriteria() : 
     m_targetObjectiveMetricValue(0.0),
-    m_targetObjectiveMetricValueHasBeenSet(false)
+    m_targetObjectiveMetricValueHasBeenSet(false),
+    m_bestObjectiveNotImprovingHasBeenSet(false),
+    m_convergenceDetectedHasBeenSet(false)
 {
 }
 
 TuningJobCompletionCriteria::TuningJobCompletionCriteria(JsonView jsonValue) : 
     m_targetObjectiveMetricValue(0.0),
-    m_targetObjectiveMetricValueHasBeenSet(false)
+    m_targetObjectiveMetricValueHasBeenSet(false),
+    m_bestObjectiveNotImprovingHasBeenSet(false),
+    m_convergenceDetectedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,20 @@ TuningJobCompletionCriteria& TuningJobCompletionCriteria::operator =(JsonView js
     m_targetObjectiveMetricValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BestObjectiveNotImproving"))
+  {
+    m_bestObjectiveNotImproving = jsonValue.GetObject("BestObjectiveNotImproving");
+
+    m_bestObjectiveNotImprovingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConvergenceDetected"))
+  {
+    m_convergenceDetected = jsonValue.GetObject("ConvergenceDetected");
+
+    m_convergenceDetectedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +68,18 @@ JsonValue TuningJobCompletionCriteria::Jsonize() const
   if(m_targetObjectiveMetricValueHasBeenSet)
   {
    payload.WithDouble("TargetObjectiveMetricValue", m_targetObjectiveMetricValue);
+
+  }
+
+  if(m_bestObjectiveNotImprovingHasBeenSet)
+  {
+   payload.WithObject("BestObjectiveNotImproving", m_bestObjectiveNotImproving.Jsonize());
+
+  }
+
+  if(m_convergenceDetectedHasBeenSet)
+  {
+   payload.WithObject("ConvergenceDetected", m_convergenceDetected.Jsonize());
 
   }
 

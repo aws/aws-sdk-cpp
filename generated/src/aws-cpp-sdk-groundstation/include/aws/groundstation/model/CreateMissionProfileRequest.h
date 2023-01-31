@@ -8,6 +8,7 @@
 #include <aws/groundstation/GroundStationRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/groundstation/model/KmsKey.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -207,6 +208,78 @@ namespace Model
 
 
     /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline const KmsKey& GetStreamsKmsKey() const{ return m_streamsKmsKey; }
+
+    /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline bool StreamsKmsKeyHasBeenSet() const { return m_streamsKmsKeyHasBeenSet; }
+
+    /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline void SetStreamsKmsKey(const KmsKey& value) { m_streamsKmsKeyHasBeenSet = true; m_streamsKmsKey = value; }
+
+    /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline void SetStreamsKmsKey(KmsKey&& value) { m_streamsKmsKeyHasBeenSet = true; m_streamsKmsKey = std::move(value); }
+
+    /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline CreateMissionProfileRequest& WithStreamsKmsKey(const KmsKey& value) { SetStreamsKmsKey(value); return *this;}
+
+    /**
+     * <p>KMS key to use for encrypting streams.</p>
+     */
+    inline CreateMissionProfileRequest& WithStreamsKmsKey(KmsKey&& value) { SetStreamsKmsKey(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline const Aws::String& GetStreamsKmsRole() const{ return m_streamsKmsRole; }
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline bool StreamsKmsRoleHasBeenSet() const { return m_streamsKmsRoleHasBeenSet; }
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline void SetStreamsKmsRole(const Aws::String& value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole = value; }
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline void SetStreamsKmsRole(Aws::String&& value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole = std::move(value); }
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline void SetStreamsKmsRole(const char* value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole.assign(value); }
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline CreateMissionProfileRequest& WithStreamsKmsRole(const Aws::String& value) { SetStreamsKmsRole(value); return *this;}
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline CreateMissionProfileRequest& WithStreamsKmsRole(Aws::String&& value) { SetStreamsKmsRole(std::move(value)); return *this;}
+
+    /**
+     * <p>Role to use for encrypting streams with KMS key.</p>
+     */
+    inline CreateMissionProfileRequest& WithStreamsKmsRole(const char* value) { SetStreamsKmsRole(value); return *this;}
+
+
+    /**
      * <p>Tags assigned to a mission profile.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -328,6 +401,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    KmsKey m_streamsKmsKey;
+    bool m_streamsKmsKeyHasBeenSet = false;
+
+    Aws::String m_streamsKmsRole;
+    bool m_streamsKmsRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

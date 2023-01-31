@@ -99,7 +99,9 @@ namespace Model
     Sergio,
     Remi,
     Adriano,
-    Thiago
+    Thiago,
+    Ruth,
+    Stephen
   };
 
 namespace VoiceIdMapper

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/StatusReason.h>
+#include <aws/securityhub/model/AssociatedStandard.h>
 #include <utility>
 
 namespace Aws
@@ -268,6 +269,112 @@ namespace Model
      */
     inline Compliance& AddStatusReasons(StatusReason&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline Compliance& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline Compliance& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline Compliance& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline const Aws::Vector<AssociatedStandard>& GetAssociatedStandards() const{ return m_associatedStandards; }
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline bool AssociatedStandardsHasBeenSet() const { return m_associatedStandardsHasBeenSet; }
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline void SetAssociatedStandards(const Aws::Vector<AssociatedStandard>& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards = value; }
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline void SetAssociatedStandards(Aws::Vector<AssociatedStandard>&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards = std::move(value); }
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline Compliance& WithAssociatedStandards(const Aws::Vector<AssociatedStandard>& value) { SetAssociatedStandards(value); return *this;}
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline Compliance& WithAssociatedStandards(Aws::Vector<AssociatedStandard>&& value) { SetAssociatedStandards(std::move(value)); return *this;}
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline Compliance& AddAssociatedStandards(const AssociatedStandard& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.push_back(value); return *this; }
+
+    /**
+     * <p>The enabled security standards in which a security control is currently
+     * enabled. </p>
+     */
+    inline Compliance& AddAssociatedStandards(AssociatedStandard&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.push_back(std::move(value)); return *this; }
+
   private:
 
     ComplianceStatus m_status;
@@ -278,6 +385,12 @@ namespace Model
 
     Aws::Vector<StatusReason> m_statusReasons;
     bool m_statusReasonsHasBeenSet = false;
+
+    Aws::String m_securityControlId;
+    bool m_securityControlIdHasBeenSet = false;
+
+    Aws::Vector<AssociatedStandard> m_associatedStandards;
+    bool m_associatedStandardsHasBeenSet = false;
   };
 
 } // namespace Model

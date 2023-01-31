@@ -551,6 +551,35 @@ namespace EC2
         }
 
         /**
+         * <p>Assigns one or more private IPv4 addresses to a private NAT gateway. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+         * with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssignPrivateNatGatewayAddressOutcome AssignPrivateNatGatewayAddress(const Model::AssignPrivateNatGatewayAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssignPrivateNatGatewayAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssignPrivateNatGatewayAddressRequestT = Model::AssignPrivateNatGatewayAddressRequest>
+        Model::AssignPrivateNatGatewayAddressOutcomeCallable AssignPrivateNatGatewayAddressCallable(const AssignPrivateNatGatewayAddressRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssignPrivateNatGatewayAddress, request);
+        }
+
+        /**
+         * An Async wrapper for AssignPrivateNatGatewayAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssignPrivateNatGatewayAddressRequestT = Model::AssignPrivateNatGatewayAddressRequest>
+        void AssignPrivateNatGatewayAddressAsync(const AssignPrivateNatGatewayAddressRequestT& request, const AssignPrivateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssignPrivateNatGatewayAddress, request, handler, context);
+        }
+
+        /**
          * <p>Associates an Elastic IP address, or carrier IP address (for instances that
          * are in subnets in Wavelength Zones) with an instance or a network interface.
          * Before you can use an Elastic IP address, you must allocate it to your
@@ -798,6 +827,40 @@ namespace EC2
         void AssociateIpamResourceDiscoveryAsync(const AssociateIpamResourceDiscoveryRequestT& request, const AssociateIpamResourceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::AssociateIpamResourceDiscovery, request, handler, context);
+        }
+
+        /**
+         * <p>Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a
+         * public NAT gateway. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+         * with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * <p>By default, you can associate up to 2 Elastic IP addresses per public NAT
+         * gateway. You can increase the limit by requesting a quota adjustment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+         * IP address quotas</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateNatGatewayAddressOutcome AssociateNatGatewayAddress(const Model::AssociateNatGatewayAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateNatGatewayAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateNatGatewayAddressRequestT = Model::AssociateNatGatewayAddressRequest>
+        Model::AssociateNatGatewayAddressOutcomeCallable AssociateNatGatewayAddressCallable(const AssociateNatGatewayAddressRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateNatGatewayAddress, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateNatGatewayAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateNatGatewayAddressRequestT = Model::AssociateNatGatewayAddressRequest>
+        void AssociateNatGatewayAddressAsync(const AssociateNatGatewayAddressRequestT& request, const AssociateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateNatGatewayAddress, request, handler, context);
         }
 
         /**
@@ -11594,6 +11657,42 @@ namespace EC2
         }
 
         /**
+         * <p>Disassociates secondary Elastic IP addresses (EIPs) from a public NAT
+         * gateway. You cannot disassociate your primary EIP. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+         * secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud
+         * User Guide</i>.</p> <p>While disassociating is in progress, you cannot
+         * associate/disassociate additional EIPs while the connections are being drained.
+         * You are, however, allowed to delete the NAT gateway.</p> <p>An EIP will only be
+         * released at the end of MaxDrainDurationSeconds. The EIPs stay associated and
+         * support the existing connections but do not support any new connections (new
+         * connections are distributed across the remaining associated EIPs). As the
+         * existing connections drain out, the EIPs (and the corresponding private IPs
+         * mapped to them) get released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateNatGatewayAddressOutcome DisassociateNatGatewayAddress(const Model::DisassociateNatGatewayAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateNatGatewayAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateNatGatewayAddressRequestT = Model::DisassociateNatGatewayAddressRequest>
+        Model::DisassociateNatGatewayAddressOutcomeCallable DisassociateNatGatewayAddressCallable(const DisassociateNatGatewayAddressRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateNatGatewayAddress, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateNatGatewayAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateNatGatewayAddressRequestT = Model::DisassociateNatGatewayAddressRequest>
+        void DisassociateNatGatewayAddressAsync(const DisassociateNatGatewayAddressRequestT& request, const DisassociateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateNatGatewayAddress, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
          * perform this action, the subnet no longer uses the routes in the route table.
          * Instead, it uses the routes in the VPC's main route table. For more information
@@ -17863,6 +17962,44 @@ namespace EC2
         void UnassignPrivateIpAddressesAsync(const UnassignPrivateIpAddressesRequestT& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::UnassignPrivateIpAddresses, request, handler, context);
+        }
+
+        /**
+         * <p>Unassigns secondary private NAT gateway IPv4 addresses from a private NAT
+         * gateway. You cannot unassign your primary private IP. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+         * secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud
+         * User Guide</i>.</p> <p>While unassigning is in progress, you cannot
+         * assign/unassign additional IP addresses while the connections are being drained.
+         * You are, however, allowed to delete the NAT gateway.</p> <p>A private IP address
+         * will only be released at the end of MaxDrainDurationSeconds. The private IP
+         * addresses stay associated and support the existing connections but do not
+         * support any new connections (new connections are distributed across the
+         * remaining assigned private IP address). After the existing connections drain
+         * out, the private IP addresses get released. </p> <p/> <p/><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnassignPrivateNatGatewayAddressOutcome UnassignPrivateNatGatewayAddress(const Model::UnassignPrivateNatGatewayAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnassignPrivateNatGatewayAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UnassignPrivateNatGatewayAddressRequestT = Model::UnassignPrivateNatGatewayAddressRequest>
+        Model::UnassignPrivateNatGatewayAddressOutcomeCallable UnassignPrivateNatGatewayAddressCallable(const UnassignPrivateNatGatewayAddressRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::UnassignPrivateNatGatewayAddress, request);
+        }
+
+        /**
+         * An Async wrapper for UnassignPrivateNatGatewayAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UnassignPrivateNatGatewayAddressRequestT = Model::UnassignPrivateNatGatewayAddressRequest>
+        void UnassignPrivateNatGatewayAddressAsync(const UnassignPrivateNatGatewayAddressRequestT& request, const UnassignPrivateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::UnassignPrivateNatGatewayAddress, request, handler, context);
         }
 
         /**

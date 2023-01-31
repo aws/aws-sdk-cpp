@@ -32,12 +32,14 @@
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
 #include <aws/ec2/model/AssignPrivateIpAddressesResponse.h>
+#include <aws/ec2/model/AssignPrivateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssociateEnclaveCertificateIamRoleResponse.h>
 #include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/AssociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayMulticastDomainResponse.h>
@@ -366,6 +368,7 @@
 #include <aws/ec2/model/DisassociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/DisassociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayPolicyTableResponse.h>
@@ -543,6 +546,7 @@
 #include <aws/ec2/model/TerminateClientVpnConnectionsResponse.h>
 #include <aws/ec2/model/TerminateInstancesResponse.h>
 #include <aws/ec2/model/UnassignIpv6AddressesResponse.h>
+#include <aws/ec2/model/UnassignPrivateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
@@ -602,6 +606,7 @@ namespace Aws
       class ApplySecurityGroupsToClientVpnTargetNetworkRequest;
       class AssignIpv6AddressesRequest;
       class AssignPrivateIpAddressesRequest;
+      class AssignPrivateNatGatewayAddressRequest;
       class AssociateAddressRequest;
       class AssociateClientVpnTargetNetworkRequest;
       class AssociateDhcpOptionsRequest;
@@ -609,6 +614,7 @@ namespace Aws
       class AssociateIamInstanceProfileRequest;
       class AssociateInstanceEventWindowRequest;
       class AssociateIpamResourceDiscoveryRequest;
+      class AssociateNatGatewayAddressRequest;
       class AssociateRouteTableRequest;
       class AssociateSubnetCidrBlockRequest;
       class AssociateTransitGatewayMulticastDomainRequest;
@@ -969,6 +975,7 @@ namespace Aws
       class DisassociateIamInstanceProfileRequest;
       class DisassociateInstanceEventWindowRequest;
       class DisassociateIpamResourceDiscoveryRequest;
+      class DisassociateNatGatewayAddressRequest;
       class DisassociateRouteTableRequest;
       class DisassociateSubnetCidrBlockRequest;
       class DisassociateTransitGatewayMulticastDomainRequest;
@@ -1169,6 +1176,7 @@ namespace Aws
       class TerminateInstancesRequest;
       class UnassignIpv6AddressesRequest;
       class UnassignPrivateIpAddressesRequest;
+      class UnassignPrivateNatGatewayAddressRequest;
       class UnmonitorInstancesRequest;
       class UpdateSecurityGroupRuleDescriptionsEgressRequest;
       class UpdateSecurityGroupRuleDescriptionsIngressRequest;
@@ -1190,6 +1198,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ApplySecurityGroupsToClientVpnTargetNetworkResponse, EC2Error> ApplySecurityGroupsToClientVpnTargetNetworkOutcome;
       typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, EC2Error> AssignIpv6AddressesOutcome;
       typedef Aws::Utils::Outcome<AssignPrivateIpAddressesResponse, EC2Error> AssignPrivateIpAddressesOutcome;
+      typedef Aws::Utils::Outcome<AssignPrivateNatGatewayAddressResponse, EC2Error> AssignPrivateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<AssociateAddressResponse, EC2Error> AssociateAddressOutcome;
       typedef Aws::Utils::Outcome<AssociateClientVpnTargetNetworkResponse, EC2Error> AssociateClientVpnTargetNetworkOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AssociateDhcpOptionsOutcome;
@@ -1197,6 +1206,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, EC2Error> AssociateIamInstanceProfileOutcome;
       typedef Aws::Utils::Outcome<AssociateInstanceEventWindowResponse, EC2Error> AssociateInstanceEventWindowOutcome;
       typedef Aws::Utils::Outcome<AssociateIpamResourceDiscoveryResponse, EC2Error> AssociateIpamResourceDiscoveryOutcome;
+      typedef Aws::Utils::Outcome<AssociateNatGatewayAddressResponse, EC2Error> AssociateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
       typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, EC2Error> AssociateSubnetCidrBlockOutcome;
       typedef Aws::Utils::Outcome<AssociateTransitGatewayMulticastDomainResponse, EC2Error> AssociateTransitGatewayMulticastDomainOutcome;
@@ -1557,6 +1567,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, EC2Error> DisassociateIamInstanceProfileOutcome;
       typedef Aws::Utils::Outcome<DisassociateInstanceEventWindowResponse, EC2Error> DisassociateInstanceEventWindowOutcome;
       typedef Aws::Utils::Outcome<DisassociateIpamResourceDiscoveryResponse, EC2Error> DisassociateIpamResourceDiscoveryOutcome;
+      typedef Aws::Utils::Outcome<DisassociateNatGatewayAddressResponse, EC2Error> DisassociateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
       typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, EC2Error> DisassociateSubnetCidrBlockOutcome;
       typedef Aws::Utils::Outcome<DisassociateTransitGatewayMulticastDomainResponse, EC2Error> DisassociateTransitGatewayMulticastDomainOutcome;
@@ -1757,6 +1768,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TerminateInstancesResponse, EC2Error> TerminateInstancesOutcome;
       typedef Aws::Utils::Outcome<UnassignIpv6AddressesResponse, EC2Error> UnassignIpv6AddressesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> UnassignPrivateIpAddressesOutcome;
+      typedef Aws::Utils::Outcome<UnassignPrivateNatGatewayAddressResponse, EC2Error> UnassignPrivateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, EC2Error> UnmonitorInstancesOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, EC2Error> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
@@ -1778,6 +1790,7 @@ namespace Aws
       typedef std::future<ApplySecurityGroupsToClientVpnTargetNetworkOutcome> ApplySecurityGroupsToClientVpnTargetNetworkOutcomeCallable;
       typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
       typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
+      typedef std::future<AssignPrivateNatGatewayAddressOutcome> AssignPrivateNatGatewayAddressOutcomeCallable;
       typedef std::future<AssociateAddressOutcome> AssociateAddressOutcomeCallable;
       typedef std::future<AssociateClientVpnTargetNetworkOutcome> AssociateClientVpnTargetNetworkOutcomeCallable;
       typedef std::future<AssociateDhcpOptionsOutcome> AssociateDhcpOptionsOutcomeCallable;
@@ -1785,6 +1798,7 @@ namespace Aws
       typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProfileOutcomeCallable;
       typedef std::future<AssociateInstanceEventWindowOutcome> AssociateInstanceEventWindowOutcomeCallable;
       typedef std::future<AssociateIpamResourceDiscoveryOutcome> AssociateIpamResourceDiscoveryOutcomeCallable;
+      typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
       typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
       typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
       typedef std::future<AssociateTransitGatewayMulticastDomainOutcome> AssociateTransitGatewayMulticastDomainOutcomeCallable;
@@ -2145,6 +2159,7 @@ namespace Aws
       typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstanceProfileOutcomeCallable;
       typedef std::future<DisassociateInstanceEventWindowOutcome> DisassociateInstanceEventWindowOutcomeCallable;
       typedef std::future<DisassociateIpamResourceDiscoveryOutcome> DisassociateIpamResourceDiscoveryOutcomeCallable;
+      typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
       typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
       typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
       typedef std::future<DisassociateTransitGatewayMulticastDomainOutcome> DisassociateTransitGatewayMulticastDomainOutcomeCallable;
@@ -2345,6 +2360,7 @@ namespace Aws
       typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
       typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
       typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
+      typedef std::future<UnassignPrivateNatGatewayAddressOutcome> UnassignPrivateNatGatewayAddressOutcomeCallable;
       typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
       typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
       typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
@@ -2369,6 +2385,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest&, const Model::ApplySecurityGroupsToClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignIpv6AddressesRequest&, const Model::AssignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignPrivateIpAddressesRequest&, const Model::AssignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignPrivateIpAddressesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssignPrivateNatGatewayAddressRequest&, const Model::AssignPrivateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignPrivateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateAddressRequest&, const Model::AssociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateClientVpnTargetNetworkRequest&, const Model::AssociateClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateClientVpnTargetNetworkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateDhcpOptionsRequest&, const Model::AssociateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDhcpOptionsResponseReceivedHandler;
@@ -2376,6 +2393,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::AssociateIamInstanceProfileRequest&, const Model::AssociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateInstanceEventWindowRequest&, const Model::AssociateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateIpamResourceDiscoveryRequest&, const Model::AssociateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIpamResourceDiscoveryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateNatGatewayAddressRequest&, const Model::AssociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayMulticastDomainRequest&, const Model::AssociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayMulticastDomainResponseReceivedHandler;
@@ -2736,6 +2754,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DisassociateIamInstanceProfileRequest&, const Model::DisassociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateInstanceEventWindowRequest&, const Model::DisassociateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateIpamResourceDiscoveryRequest&, const Model::DisassociateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpamResourceDiscoveryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateNatGatewayAddressRequest&, const Model::DisassociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayMulticastDomainRequest&, const Model::DisassociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayMulticastDomainResponseReceivedHandler;
@@ -2936,6 +2955,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::TerminateInstancesRequest&, const Model::TerminateInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignIpv6AddressesRequest&, const Model::UnassignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateIpAddressesRequest&, const Model::UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateIpAddressesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UnassignPrivateNatGatewayAddressRequest&, const Model::UnassignPrivateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;

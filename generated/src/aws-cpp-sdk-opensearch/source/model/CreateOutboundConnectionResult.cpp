@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOutboundConnectionResult::CreateOutboundConnectionResult()
+CreateOutboundConnectionResult::CreateOutboundConnectionResult() : 
+    m_connectionMode(ConnectionMode::NOT_SET)
 {
 }
 
-CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_connectionMode(ConnectionMode::NOT_SET)
 {
   *this = result;
 }
@@ -55,6 +57,18 @@ CreateOutboundConnectionResult& CreateOutboundConnectionResult::operator =(const
   if(jsonValue.ValueExists("ConnectionId"))
   {
     m_connectionId = jsonValue.GetString("ConnectionId");
+
+  }
+
+  if(jsonValue.ValueExists("ConnectionMode"))
+  {
+    m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("ConnectionMode"));
+
+  }
+
+  if(jsonValue.ValueExists("ConnectionProperties"))
+  {
+    m_connectionProperties = jsonValue.GetObject("ConnectionProperties");
 
   }
 

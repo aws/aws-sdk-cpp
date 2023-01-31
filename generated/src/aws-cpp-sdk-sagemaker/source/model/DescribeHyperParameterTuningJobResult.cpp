@@ -123,6 +123,18 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
 
   }
 
+  if(jsonValue.ValueExists("TuningJobCompletionDetails"))
+  {
+    m_tuningJobCompletionDetails = jsonValue.GetObject("TuningJobCompletionDetails");
+
+  }
+
+  if(jsonValue.ValueExists("ConsumedResources"))
+  {
+    m_consumedResources = jsonValue.GetObject("ConsumedResources");
+
+  }
+
 
 
   return *this;

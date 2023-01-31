@@ -34,6 +34,7 @@ static const int TRAIL_NOT_FOUND_HASH = HashingUtils::HashString("TrailNotFoundE
 static const int NOT_ORGANIZATION_MASTER_ACCOUNT_HASH = HashingUtils::HashString("NotOrganizationMasterAccountException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int INACTIVE_QUERY_HASH = HashingUtils::HashString("InactiveQueryException");
+static const int CHANNEL_EXISTS_FOR_E_D_S_HASH = HashingUtils::HashString("ChannelExistsForEDSException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
 static const int INVALID_IMPORT_SOURCE_HASH = HashingUtils::HashString("InvalidImportSourceException");
 static const int CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("CloudTrailInvalidClientTokenIdException");
@@ -51,6 +52,7 @@ static const int INVALID_S3_PREFIX_HASH = HashingUtils::HashString("InvalidS3Pre
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int CHANNEL_NOT_FOUND_HASH = HashingUtils::HashString("ChannelNotFoundException");
 static const int INSIGHT_NOT_ENABLED_HASH = HashingUtils::HashString("InsightNotEnabledException");
+static const int CHANNEL_MAX_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ChannelMaxLimitExceededException");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
 static const int INVALID_S3_BUCKET_NAME_HASH = HashingUtils::HashString("InvalidS3BucketNameException");
 static const int INVALID_HOME_REGION_HASH = HashingUtils::HashString("InvalidHomeRegionException");
@@ -64,10 +66,13 @@ static const int EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH = HashingUtils::HashSt
 static const int INSUFFICIENT_SNS_TOPIC_POLICY_HASH = HashingUtils::HashString("InsufficientSnsTopicPolicyException");
 static const int INVALID_CLOUD_WATCH_LOGS_ROLE_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsRoleArnException");
 static const int MAX_CONCURRENT_QUERIES_HASH = HashingUtils::HashString("MaxConcurrentQueriesException");
+static const int CHANNEL_ALREADY_EXISTS_HASH = HashingUtils::HashString("ChannelAlreadyExistsException");
 static const int INVALID_QUERY_STATEMENT_HASH = HashingUtils::HashString("InvalidQueryStatementException");
 static const int INVALID_KMS_KEY_ID_HASH = HashingUtils::HashString("InvalidKmsKeyIdException");
 static const int EVENT_DATA_STORE_A_R_N_INVALID_HASH = HashingUtils::HashString("EventDataStoreARNInvalidException");
+static const int RESOURCE_A_R_N_NOT_VALID_HASH = HashingUtils::HashString("ResourceARNNotValidException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int RESOURCE_POLICY_NOT_VALID_HASH = HashingUtils::HashString("ResourcePolicyNotValidException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_EVENT_SELECTORS_HASH = HashingUtils::HashString("InvalidEventSelectorsException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
@@ -76,14 +81,16 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("Operat
 static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
 static const int INVALID_EVENT_DATA_STORE_STATUS_HASH = HashingUtils::HashString("InvalidEventDataStoreStatusException");
 static const int TRAIL_NOT_PROVIDED_HASH = HashingUtils::HashString("TrailNotProvidedException");
+static const int RESOURCE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("ResourcePolicyNotFoundException");
 static const int INVALID_QUERY_STATUS_HASH = HashingUtils::HashString("InvalidQueryStatusException");
 static const int INACTIVE_EVENT_DATA_STORE_HASH = HashingUtils::HashString("InactiveEventDataStoreException");
 static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
-static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
 static const int INVALID_EVENT_DATA_STORE_CATEGORY_HASH = HashingUtils::HashString("InvalidEventDataStoreCategoryException");
+static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
 static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsLogGroupArnException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
+static const int INVALID_SOURCE_HASH = HashingUtils::HashString("InvalidSourceException");
 static const int INVALID_EVENT_CATEGORY_HASH = HashingUtils::HashString("InvalidEventCategoryException");
 static const int CLOUD_TRAIL_A_R_N_INVALID_HASH = HashingUtils::HashString("CloudTrailARNInvalidException");
 static const int IMPORT_NOT_FOUND_HASH = HashingUtils::HashString("ImportNotFoundException");
@@ -158,6 +165,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INACTIVE_QUERY), false);
   }
+  else if (hashCode == CHANNEL_EXISTS_FOR_E_D_S_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_EXISTS_FOR_E_D_S), false);
+  }
   else if (hashCode == INSUFFICIENT_ENCRYPTION_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_ENCRYPTION_POLICY), false);
@@ -226,6 +237,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSIGHT_NOT_ENABLED), false);
   }
+  else if (hashCode == CHANNEL_MAX_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_MAX_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == KMS_KEY_DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_DISABLED), false);
@@ -278,6 +293,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::MAX_CONCURRENT_QUERIES), false);
   }
+  else if (hashCode == CHANNEL_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_ALREADY_EXISTS), false);
+  }
   else if (hashCode == INVALID_QUERY_STATEMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATEMENT), false);
@@ -290,9 +309,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_A_R_N_INVALID), false);
   }
+  else if (hashCode == RESOURCE_A_R_N_NOT_VALID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_A_R_N_NOT_VALID), false);
+  }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == RESOURCE_POLICY_NOT_VALID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_VALID), false);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
@@ -326,6 +353,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_PROVIDED), false);
   }
+  else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_FOUND), false);
+  }
   else if (hashCode == INVALID_QUERY_STATUS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATUS), false);
@@ -338,13 +369,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), false);
   }
-  else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_REGISTERED), false);
-  }
   else if (hashCode == INVALID_EVENT_DATA_STORE_CATEGORY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_CATEGORY), false);
+  }
+  else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_REGISTERED), false);
   }
   else if (hashCode == INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH)
   {
@@ -357,6 +388,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == KMS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS), false);
+  }
+  else if (hashCode == INVALID_SOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SOURCE), false);
   }
   else if (hashCode == INVALID_EVENT_CATEGORY_HASH)
   {

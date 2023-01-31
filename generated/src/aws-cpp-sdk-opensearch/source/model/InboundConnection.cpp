@@ -22,7 +22,9 @@ InboundConnection::InboundConnection() :
     m_localDomainInfoHasBeenSet(false),
     m_remoteDomainInfoHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionMode(ConnectionMode::NOT_SET),
+    m_connectionModeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ InboundConnection::InboundConnection(JsonView jsonValue) :
     m_localDomainInfoHasBeenSet(false),
     m_remoteDomainInfoHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionMode(ConnectionMode::NOT_SET),
+    m_connectionModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ InboundConnection& InboundConnection::operator =(JsonView jsonValue)
     m_connectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionMode"))
+  {
+    m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("ConnectionMode"));
+
+    m_connectionModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,11 @@ JsonValue InboundConnection::Jsonize() const
   {
    payload.WithObject("ConnectionStatus", m_connectionStatus.Jsonize());
 
+  }
+
+  if(m_connectionModeHasBeenSet)
+  {
+   payload.WithString("ConnectionMode", ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
   }
 
   return payload;

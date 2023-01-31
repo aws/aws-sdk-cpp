@@ -23,7 +23,10 @@ OutboundConnection::OutboundConnection() :
     m_remoteDomainInfoHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
     m_connectionAliasHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionMode(ConnectionMode::NOT_SET),
+    m_connectionModeHasBeenSet(false),
+    m_connectionPropertiesHasBeenSet(false)
 {
 }
 
@@ -32,7 +35,10 @@ OutboundConnection::OutboundConnection(JsonView jsonValue) :
     m_remoteDomainInfoHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
     m_connectionAliasHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionMode(ConnectionMode::NOT_SET),
+    m_connectionModeHasBeenSet(false),
+    m_connectionPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +80,20 @@ OutboundConnection& OutboundConnection::operator =(JsonView jsonValue)
     m_connectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionMode"))
+  {
+    m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("ConnectionMode"));
+
+    m_connectionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionProperties"))
+  {
+    m_connectionProperties = jsonValue.GetObject("ConnectionProperties");
+
+    m_connectionPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +128,17 @@ JsonValue OutboundConnection::Jsonize() const
   if(m_connectionStatusHasBeenSet)
   {
    payload.WithObject("ConnectionStatus", m_connectionStatus.Jsonize());
+
+  }
+
+  if(m_connectionModeHasBeenSet)
+  {
+   payload.WithString("ConnectionMode", ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
+  }
+
+  if(m_connectionPropertiesHasBeenSet)
+  {
+   payload.WithObject("ConnectionProperties", m_connectionProperties.Jsonize());
 
   }
 

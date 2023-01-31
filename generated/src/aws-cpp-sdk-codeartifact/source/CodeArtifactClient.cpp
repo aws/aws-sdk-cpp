@@ -27,6 +27,7 @@
 #include <aws/codeartifact/model/CreateRepositoryRequest.h>
 #include <aws/codeartifact/model/DeleteDomainRequest.h>
 #include <aws/codeartifact/model/DeleteDomainPermissionsPolicyRequest.h>
+#include <aws/codeartifact/model/DeletePackageRequest.h>
 #include <aws/codeartifact/model/DeletePackageVersionsRequest.h>
 #include <aws/codeartifact/model/DeleteRepositoryRequest.h>
 #include <aws/codeartifact/model/DeleteRepositoryPermissionsPolicyRequest.h>
@@ -302,6 +303,35 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomainPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain/permissions/policy");
   return DeleteDomainPermissionsPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePackageOutcome CodeArtifactClient::DeletePackage(const DeletePackageRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: Domain, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
+  }
+  if (!request.RepositoryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: Repository, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Repository]", false));
+  }
+  if (!request.FormatHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: Format, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
+  }
+  if (!request.PackageHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: Package, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<CodeArtifactErrors>(CodeArtifactErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Package]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package");
+  return DeletePackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const DeletePackageVersionsRequest& request) const

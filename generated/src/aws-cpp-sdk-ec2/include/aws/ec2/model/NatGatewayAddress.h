@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/NatGatewayAddressStatus.h>
 #include <utility>
 
 namespace Aws
@@ -219,6 +220,148 @@ namespace Model
      */
     inline NatGatewayAddress& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline NatGatewayAddress& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline NatGatewayAddress& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>[Public NAT gateway only] The association ID of the Elastic IP address that's
+     * associated with the NAT gateway.</p>
+     */
+    inline NatGatewayAddress& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
+
+    /**
+     * <p>Defines if the IP address is the primary address.</p>
+     */
+    inline bool GetIsPrimary() const{ return m_isPrimary; }
+
+    /**
+     * <p>Defines if the IP address is the primary address.</p>
+     */
+    inline bool IsPrimaryHasBeenSet() const { return m_isPrimaryHasBeenSet; }
+
+    /**
+     * <p>Defines if the IP address is the primary address.</p>
+     */
+    inline void SetIsPrimary(bool value) { m_isPrimaryHasBeenSet = true; m_isPrimary = value; }
+
+    /**
+     * <p>Defines if the IP address is the primary address.</p>
+     */
+    inline NatGatewayAddress& WithIsPrimary(bool value) { SetIsPrimary(value); return *this;}
+
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline NatGatewayAddress& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline NatGatewayAddress& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The address failure message.</p>
+     */
+    inline NatGatewayAddress& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline const NatGatewayAddressStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline void SetStatus(const NatGatewayAddressStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline void SetStatus(NatGatewayAddressStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline NatGatewayAddress& WithStatus(const NatGatewayAddressStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The address status.</p>
+     */
+    inline NatGatewayAddress& WithStatus(NatGatewayAddressStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_allocationId;
@@ -232,6 +375,18 @@ namespace Model
 
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet = false;
+
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
+
+    bool m_isPrimary;
+    bool m_isPrimaryHasBeenSet = false;
+
+    Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
+
+    NatGatewayAddressStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

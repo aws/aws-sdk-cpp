@@ -23,9 +23,12 @@
 #include <aws/cloudtrail/CloudTrailEndpointProvider.h>
 #include <aws/cloudtrail/model/AddTagsRequest.h>
 #include <aws/cloudtrail/model/CancelQueryRequest.h>
+#include <aws/cloudtrail/model/CreateChannelRequest.h>
 #include <aws/cloudtrail/model/CreateEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/CreateTrailRequest.h>
+#include <aws/cloudtrail/model/DeleteChannelRequest.h>
 #include <aws/cloudtrail/model/DeleteEventDataStoreRequest.h>
+#include <aws/cloudtrail/model/DeleteResourcePolicyRequest.h>
 #include <aws/cloudtrail/model/DeleteTrailRequest.h>
 #include <aws/cloudtrail/model/DeregisterOrganizationDelegatedAdminRequest.h>
 #include <aws/cloudtrail/model/DescribeQueryRequest.h>
@@ -36,6 +39,7 @@
 #include <aws/cloudtrail/model/GetImportRequest.h>
 #include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetQueryResultsRequest.h>
+#include <aws/cloudtrail/model/GetResourcePolicyRequest.h>
 #include <aws/cloudtrail/model/GetTrailRequest.h>
 #include <aws/cloudtrail/model/GetTrailStatusRequest.h>
 #include <aws/cloudtrail/model/ListChannelsRequest.h>
@@ -49,6 +53,7 @@
 #include <aws/cloudtrail/model/LookupEventsRequest.h>
 #include <aws/cloudtrail/model/PutEventSelectorsRequest.h>
 #include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
+#include <aws/cloudtrail/model/PutResourcePolicyRequest.h>
 #include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreRequest.h>
@@ -57,6 +62,7 @@
 #include <aws/cloudtrail/model/StartQueryRequest.h>
 #include <aws/cloudtrail/model/StopImportRequest.h>
 #include <aws/cloudtrail/model/StopLoggingRequest.h>
+#include <aws/cloudtrail/model/UpdateChannelRequest.h>
 #include <aws/cloudtrail/model/UpdateEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/UpdateTrailRequest.h>
 
@@ -203,6 +209,14 @@ CancelQueryOutcome CloudTrailClient::CancelQuery(const CancelQueryRequest& reque
   return CancelQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateChannelOutcome CloudTrailClient::CreateChannel(const CreateChannelRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateEventDataStoreOutcome CloudTrailClient::CreateEventDataStore(const CreateEventDataStoreRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventDataStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -219,12 +233,28 @@ CreateTrailOutcome CloudTrailClient::CreateTrail(const CreateTrailRequest& reque
   return CreateTrailOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteChannelOutcome CloudTrailClient::DeleteChannel(const DeleteChannelRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteEventDataStoreOutcome CloudTrailClient::DeleteEventDataStore(const DeleteEventDataStoreRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventDataStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEventDataStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteEventDataStoreOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourcePolicyOutcome CloudTrailClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTrailOutcome CloudTrailClient::DeleteTrail(const DeleteTrailRequest& request) const
@@ -305,6 +335,14 @@ GetQueryResultsOutcome CloudTrailClient::GetQueryResults(const GetQueryResultsRe
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQueryResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetQueryResultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourcePolicyOutcome CloudTrailClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTrailOutcome CloudTrailClient::GetTrail(const GetTrailRequest& request) const
@@ -411,6 +449,14 @@ PutInsightSelectorsOutcome CloudTrailClient::PutInsightSelectors(const PutInsigh
   return PutInsightSelectorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+PutResourcePolicyOutcome CloudTrailClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 RegisterOrganizationDelegatedAdminOutcome CloudTrailClient::RegisterOrganizationDelegatedAdmin(const RegisterOrganizationDelegatedAdminRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOrganizationDelegatedAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -473,6 +519,14 @@ StopLoggingOutcome CloudTrailClient::StopLogging(const StopLoggingRequest& reque
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return StopLoggingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateChannelOutcome CloudTrailClient::UpdateChannel(const UpdateChannelRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateChannelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEventDataStoreOutcome CloudTrailClient::UpdateEventDataStore(const UpdateEventDataStoreRequest& request) const

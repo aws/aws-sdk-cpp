@@ -20,13 +20,17 @@ namespace Model
 
 CloudwatchLogsAction::CloudwatchLogsAction() : 
     m_roleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+    m_logGroupNameHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
 }
 
 CloudwatchLogsAction::CloudwatchLogsAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
+    m_logGroupNameHasBeenSet(false),
+    m_batchMode(false),
+    m_batchModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ CloudwatchLogsAction& CloudwatchLogsAction::operator =(JsonView jsonValue)
     m_logGroupNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("batchMode"))
+  {
+    m_batchMode = jsonValue.GetBool("batchMode");
+
+    m_batchModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue CloudwatchLogsAction::Jsonize() const
   if(m_logGroupNameHasBeenSet)
   {
    payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  if(m_batchModeHasBeenSet)
+  {
+   payload.WithBool("batchMode", m_batchMode);
 
   }
 

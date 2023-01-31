@@ -25,7 +25,7 @@ namespace Model
    * <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
-   * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+   * EBS���optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BaselineEbsBandwidthMbps">AWS
    * API Reference</a></p>
