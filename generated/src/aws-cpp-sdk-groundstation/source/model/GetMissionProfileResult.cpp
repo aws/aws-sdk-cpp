@@ -92,6 +92,18 @@ GetMissionProfileResult& GetMissionProfileResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("streamsKmsKey"))
+  {
+    m_streamsKmsKey = jsonValue.GetObject("streamsKmsKey");
+
+  }
+
+  if(jsonValue.ValueExists("streamsKmsRole"))
+  {
+    m_streamsKmsRole = jsonValue.GetString("streamsKmsRole");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

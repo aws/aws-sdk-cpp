@@ -109,7 +109,9 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_findingProviderFieldsSeverityLabelHasBeenSet(false),
     m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
     m_findingProviderFieldsTypesHasBeenSet(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_complianceSecurityControlIdHasBeenSet(false),
+    m_complianceAssociatedStandardsIdHasBeenSet(false)
 {
 }
 
@@ -204,7 +206,9 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_findingProviderFieldsSeverityLabelHasBeenSet(false),
     m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
     m_findingProviderFieldsTypesHasBeenSet(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_complianceSecurityControlIdHasBeenSet(false),
+    m_complianceAssociatedStandardsIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -1119,6 +1123,26 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_sample.push_back(sampleJsonList[sampleIndex].AsObject());
     }
     m_sampleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceSecurityControlId"))
+  {
+    Aws::Utils::Array<JsonView> complianceSecurityControlIdJsonList = jsonValue.GetArray("ComplianceSecurityControlId");
+    for(unsigned complianceSecurityControlIdIndex = 0; complianceSecurityControlIdIndex < complianceSecurityControlIdJsonList.GetLength(); ++complianceSecurityControlIdIndex)
+    {
+      m_complianceSecurityControlId.push_back(complianceSecurityControlIdJsonList[complianceSecurityControlIdIndex].AsObject());
+    }
+    m_complianceSecurityControlIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComplianceAssociatedStandardsId"))
+  {
+    Aws::Utils::Array<JsonView> complianceAssociatedStandardsIdJsonList = jsonValue.GetArray("ComplianceAssociatedStandardsId");
+    for(unsigned complianceAssociatedStandardsIdIndex = 0; complianceAssociatedStandardsIdIndex < complianceAssociatedStandardsIdJsonList.GetLength(); ++complianceAssociatedStandardsIdIndex)
+    {
+      m_complianceAssociatedStandardsId.push_back(complianceAssociatedStandardsIdJsonList[complianceAssociatedStandardsIdIndex].AsObject());
+    }
+    m_complianceAssociatedStandardsIdHasBeenSet = true;
   }
 
   return *this;
@@ -2126,6 +2150,28 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      sampleJsonList[sampleIndex].AsObject(m_sample[sampleIndex].Jsonize());
    }
    payload.WithArray("Sample", std::move(sampleJsonList));
+
+  }
+
+  if(m_complianceSecurityControlIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> complianceSecurityControlIdJsonList(m_complianceSecurityControlId.size());
+   for(unsigned complianceSecurityControlIdIndex = 0; complianceSecurityControlIdIndex < complianceSecurityControlIdJsonList.GetLength(); ++complianceSecurityControlIdIndex)
+   {
+     complianceSecurityControlIdJsonList[complianceSecurityControlIdIndex].AsObject(m_complianceSecurityControlId[complianceSecurityControlIdIndex].Jsonize());
+   }
+   payload.WithArray("ComplianceSecurityControlId", std::move(complianceSecurityControlIdJsonList));
+
+  }
+
+  if(m_complianceAssociatedStandardsIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> complianceAssociatedStandardsIdJsonList(m_complianceAssociatedStandardsId.size());
+   for(unsigned complianceAssociatedStandardsIdIndex = 0; complianceAssociatedStandardsIdIndex < complianceAssociatedStandardsIdJsonList.GetLength(); ++complianceAssociatedStandardsIdIndex)
+   {
+     complianceAssociatedStandardsIdJsonList[complianceAssociatedStandardsIdIndex].AsObject(m_complianceAssociatedStandardsId[complianceAssociatedStandardsIdIndex].Jsonize());
+   }
+   payload.WithArray("ComplianceAssociatedStandardsId", std::move(complianceAssociatedStandardsIdJsonList));
 
   }
 

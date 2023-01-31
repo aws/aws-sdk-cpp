@@ -61,6 +61,12 @@ GetChannelResult& GetChannelResult::operator =(const Aws::AmazonWebServiceResult
     }
   }
 
+  if(jsonValue.ValueExists("IngestionStatus"))
+  {
+    m_ingestionStatus = jsonValue.GetObject("IngestionStatus");
+
+  }
+
 
 
   return *this;

@@ -22,7 +22,9 @@ ResourceLimits::ResourceLimits() :
     m_maxNumberOfTrainingJobs(0),
     m_maxNumberOfTrainingJobsHasBeenSet(false),
     m_maxParallelTrainingJobs(0),
-    m_maxParallelTrainingJobsHasBeenSet(false)
+    m_maxParallelTrainingJobsHasBeenSet(false),
+    m_maxRuntimeInSeconds(0),
+    m_maxRuntimeInSecondsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ResourceLimits::ResourceLimits(JsonView jsonValue) :
     m_maxNumberOfTrainingJobs(0),
     m_maxNumberOfTrainingJobsHasBeenSet(false),
     m_maxParallelTrainingJobs(0),
-    m_maxParallelTrainingJobsHasBeenSet(false)
+    m_maxParallelTrainingJobsHasBeenSet(false),
+    m_maxRuntimeInSeconds(0),
+    m_maxRuntimeInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ ResourceLimits& ResourceLimits::operator =(JsonView jsonValue)
     m_maxParallelTrainingJobsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxRuntimeInSeconds"))
+  {
+    m_maxRuntimeInSeconds = jsonValue.GetInteger("MaxRuntimeInSeconds");
+
+    m_maxRuntimeInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue ResourceLimits::Jsonize() const
   if(m_maxParallelTrainingJobsHasBeenSet)
   {
    payload.WithInteger("MaxParallelTrainingJobs", m_maxParallelTrainingJobs);
+
+  }
+
+  if(m_maxRuntimeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaxRuntimeInSeconds", m_maxRuntimeInSeconds);
 
   }
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A custom key-value pair associated with a resource such as a CloudTrail
-   * trail.</p><p><h3>See Also:</h3>   <a
+   * trail, event data store, or channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Tag">AWS API
    * Reference</a></p>
    */

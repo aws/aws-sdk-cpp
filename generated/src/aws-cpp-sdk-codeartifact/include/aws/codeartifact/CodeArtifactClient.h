@@ -367,12 +367,40 @@ namespace CodeArtifact
         }
 
         /**
+         * <p>Deletes a package and all associated package versions. A deleted package
+         * cannot be restored. To delete one or more package versions, use the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePackageOutcome DeletePackage(const Model::DeletePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePackageRequestT = Model::DeletePackageRequest>
+        Model::DeletePackageOutcomeCallable DeletePackageCallable(const DeletePackageRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::DeletePackage, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePackageRequestT = Model::DeletePackageRequest>
+        void DeletePackageAsync(const DeletePackageRequestT& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::DeletePackage, request, handler, context);
+        }
+
+        /**
          * <p> Deletes one or more versions of a package. A deleted package version cannot
          * be restored in your repository. If you want to remove a package version from
          * your repository and be able to restore it later, set its status to
          * <code>Archived</code>. Archived packages cannot be downloaded from a repository
          * and don't show up with list package APIs (for example, <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
          * but you can restore them using <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -903,6 +931,8 @@ namespace CodeArtifact
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
          * objects for package versions in a repository that match the request parameters.
+         * Package versions of all statuses will be returned by default when calling
+         * <code>list-package-versions</code> with no <code>--status</code> parameter.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">AWS
          * API Reference</a></p>

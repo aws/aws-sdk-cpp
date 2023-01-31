@@ -364,6 +364,32 @@ namespace GroundStation
         }
 
         /**
+         * <p>Gets the latest configuration information for a registered
+         * agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAgentConfigurationOutcome GetAgentConfiguration(const Model::GetAgentConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAgentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAgentConfigurationRequestT = Model::GetAgentConfigurationRequest>
+        Model::GetAgentConfigurationOutcomeCallable GetAgentConfigurationCallable(const GetAgentConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&GroundStationClient::GetAgentConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetAgentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAgentConfigurationRequestT = Model::GetAgentConfigurationRequest>
+        void GetAgentConfigurationAsync(const GetAgentConfigurationRequestT& request, const GetAgentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GroundStationClient::GetAgentConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code>
          * response can be returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetConfig">AWS
@@ -695,6 +721,31 @@ namespace GroundStation
         }
 
         /**
+         * <p>Registers a new agent with AWS Groundstation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterAgentOutcome RegisterAgent(const Model::RegisterAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RegisterAgentRequestT = Model::RegisterAgentRequest>
+        Model::RegisterAgentOutcomeCallable RegisterAgentCallable(const RegisterAgentRequestT& request) const
+        {
+            return SubmitCallable(&GroundStationClient::RegisterAgent, request);
+        }
+
+        /**
+         * An Async wrapper for RegisterAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RegisterAgentRequestT = Model::RegisterAgentRequest>
+        void RegisterAgentAsync(const RegisterAgentRequestT& request, const RegisterAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GroundStationClient::RegisterAgent, request, handler, context);
+        }
+
+        /**
          * <p>Reserves a contact using specified parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ReserveContact">AWS
          * API Reference</a></p>
@@ -767,6 +818,31 @@ namespace GroundStation
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GroundStationClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Update the status of the agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAgentStatusOutcome UpdateAgentStatus(const Model::UpdateAgentStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAgentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAgentStatusRequestT = Model::UpdateAgentStatusRequest>
+        Model::UpdateAgentStatusOutcomeCallable UpdateAgentStatusCallable(const UpdateAgentStatusRequestT& request) const
+        {
+            return SubmitCallable(&GroundStationClient::UpdateAgentStatus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAgentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAgentStatusRequestT = Model::UpdateAgentStatusRequest>
+        void UpdateAgentStatusAsync(const UpdateAgentStatusRequestT& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GroundStationClient::UpdateAgentStatus, request, handler, context);
         }
 
         /**

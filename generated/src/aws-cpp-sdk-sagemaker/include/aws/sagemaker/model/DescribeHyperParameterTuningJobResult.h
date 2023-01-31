@@ -15,6 +15,8 @@
 #include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 #include <aws/sagemaker/model/HyperParameterTrainingJobSummary.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobCompletionDetails.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobConsumedResources.h>
 #include <utility>
 
 namespace Aws
@@ -547,6 +549,63 @@ namespace Model
      */
     inline DescribeHyperParameterTuningJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>Tuning job completion information returned as the response from a
+     * hyperparameter tuning job. This information tells if your tuning job has or has
+     * not converged. It also includes the number of training jobs that have not
+     * improved model performance as evaluated against the objective function.</p>
+     */
+    inline const HyperParameterTuningJobCompletionDetails& GetTuningJobCompletionDetails() const{ return m_tuningJobCompletionDetails; }
+
+    /**
+     * <p>Tuning job completion information returned as the response from a
+     * hyperparameter tuning job. This information tells if your tuning job has or has
+     * not converged. It also includes the number of training jobs that have not
+     * improved model performance as evaluated against the objective function.</p>
+     */
+    inline void SetTuningJobCompletionDetails(const HyperParameterTuningJobCompletionDetails& value) { m_tuningJobCompletionDetails = value; }
+
+    /**
+     * <p>Tuning job completion information returned as the response from a
+     * hyperparameter tuning job. This information tells if your tuning job has or has
+     * not converged. It also includes the number of training jobs that have not
+     * improved model performance as evaluated against the objective function.</p>
+     */
+    inline void SetTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails&& value) { m_tuningJobCompletionDetails = std::move(value); }
+
+    /**
+     * <p>Tuning job completion information returned as the response from a
+     * hyperparameter tuning job. This information tells if your tuning job has or has
+     * not converged. It also includes the number of training jobs that have not
+     * improved model performance as evaluated against the objective function.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithTuningJobCompletionDetails(const HyperParameterTuningJobCompletionDetails& value) { SetTuningJobCompletionDetails(value); return *this;}
+
+    /**
+     * <p>Tuning job completion information returned as the response from a
+     * hyperparameter tuning job. This information tells if your tuning job has or has
+     * not converged. It also includes the number of training jobs that have not
+     * improved model performance as evaluated against the objective function.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails&& value) { SetTuningJobCompletionDetails(std::move(value)); return *this;}
+
+
+    
+    inline const HyperParameterTuningJobConsumedResources& GetConsumedResources() const{ return m_consumedResources; }
+
+    
+    inline void SetConsumedResources(const HyperParameterTuningJobConsumedResources& value) { m_consumedResources = value; }
+
+    
+    inline void SetConsumedResources(HyperParameterTuningJobConsumedResources&& value) { m_consumedResources = std::move(value); }
+
+    
+    inline DescribeHyperParameterTuningJobResult& WithConsumedResources(const HyperParameterTuningJobConsumedResources& value) { SetConsumedResources(value); return *this;}
+
+    
+    inline DescribeHyperParameterTuningJobResult& WithConsumedResources(HyperParameterTuningJobConsumedResources&& value) { SetConsumedResources(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hyperParameterTuningJobName;
@@ -578,6 +637,10 @@ namespace Model
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
 
     Aws::String m_failureReason;
+
+    HyperParameterTuningJobCompletionDetails m_tuningJobCompletionDetails;
+
+    HyperParameterTuningJobConsumedResources m_consumedResources;
   };
 
 } // namespace Model

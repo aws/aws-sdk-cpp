@@ -24,6 +24,7 @@
 #include <aws/codeartifact/model/CreateRepositoryResult.h>
 #include <aws/codeartifact/model/DeleteDomainResult.h>
 #include <aws/codeartifact/model/DeleteDomainPermissionsPolicyResult.h>
+#include <aws/codeartifact/model/DeletePackageResult.h>
 #include <aws/codeartifact/model/DeletePackageVersionsResult.h>
 #include <aws/codeartifact/model/DeleteRepositoryResult.h>
 #include <aws/codeartifact/model/DeleteRepositoryPermissionsPolicyResult.h>
@@ -100,6 +101,7 @@ namespace Aws
       class CreateRepositoryRequest;
       class DeleteDomainRequest;
       class DeleteDomainPermissionsPolicyRequest;
+      class DeletePackageRequest;
       class DeletePackageVersionsRequest;
       class DeleteRepositoryRequest;
       class DeleteRepositoryPermissionsPolicyRequest;
@@ -139,6 +141,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateRepositoryResult, CodeArtifactError> CreateRepositoryOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, CodeArtifactError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainPermissionsPolicyResult, CodeArtifactError> DeleteDomainPermissionsPolicyOutcome;
+      typedef Aws::Utils::Outcome<DeletePackageResult, CodeArtifactError> DeletePackageOutcome;
       typedef Aws::Utils::Outcome<DeletePackageVersionsResult, CodeArtifactError> DeletePackageVersionsOutcome;
       typedef Aws::Utils::Outcome<DeleteRepositoryResult, CodeArtifactError> DeleteRepositoryOutcome;
       typedef Aws::Utils::Outcome<DeleteRepositoryPermissionsPolicyResult, CodeArtifactError> DeleteRepositoryPermissionsPolicyOutcome;
@@ -178,6 +181,7 @@ namespace Aws
       typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<DeleteDomainPermissionsPolicyOutcome> DeleteDomainPermissionsPolicyOutcomeCallable;
+      typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
       typedef std::future<DeletePackageVersionsOutcome> DeletePackageVersionsOutcomeCallable;
       typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
       typedef std::future<DeleteRepositoryPermissionsPolicyOutcome> DeleteRepositoryPermissionsPolicyOutcomeCallable;
@@ -220,6 +224,7 @@ namespace Aws
     typedef std::function<void(const CodeArtifactClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteDomainPermissionsPolicyRequest&, const Model::DeleteDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainPermissionsPolicyResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::DeletePackageRequest&, const Model::DeletePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeletePackageVersionsRequest&, const Model::DeletePackageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageVersionsResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::DeleteRepositoryPermissionsPolicyRequest&, const Model::DeleteRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPermissionsPolicyResponseReceivedHandler;

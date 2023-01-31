@@ -13,6 +13,7 @@
 #include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
+#include <aws/appsync/model/EventBridgeDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -173,13 +174,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
@@ -189,13 +191,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -205,13 +208,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -221,13 +225,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -237,13 +242,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
@@ -253,13 +259,14 @@ namespace Model
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
-     * an Amazon OpenSearch Service domain.</p> </li> <li> <p> <b>NONE</b>: There is no
-     * data source. Use this type when you want to invoke a GraphQL operation without
-     * connecting to a data source, such as when you're performing data transformation
-     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
-     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
-     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
-     * </ul>
+     * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
+     * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
+     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
+     * type when you want to invoke a GraphQL operation without connecting to a data
+     * source, such as when you're performing data transformation with resolvers or
+     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -506,6 +513,37 @@ namespace Model
      */
     inline DataSource& WithRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { SetRelationalDatabaseConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline const EventBridgeDataSourceConfig& GetEventBridgeConfig() const{ return m_eventBridgeConfig; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline bool EventBridgeConfigHasBeenSet() const { return m_eventBridgeConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline void SetEventBridgeConfig(const EventBridgeDataSourceConfig& value) { m_eventBridgeConfigHasBeenSet = true; m_eventBridgeConfig = value; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline void SetEventBridgeConfig(EventBridgeDataSourceConfig&& value) { m_eventBridgeConfigHasBeenSet = true; m_eventBridgeConfig = std::move(value); }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline DataSource& WithEventBridgeConfig(const EventBridgeDataSourceConfig& value) { SetEventBridgeConfig(value); return *this;}
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline DataSource& WithEventBridgeConfig(EventBridgeDataSourceConfig&& value) { SetEventBridgeConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dataSourceArn;
@@ -540,6 +578,9 @@ namespace Model
 
     RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
     bool m_relationalDatabaseConfigHasBeenSet = false;
+
+    EventBridgeDataSourceConfig m_eventBridgeConfig;
+    bool m_eventBridgeConfigHasBeenSet = false;
   };
 
 } // namespace Model

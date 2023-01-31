@@ -14,6 +14,7 @@
 #include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
+#include <aws/appsync/model/EventBridgeDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -459,6 +460,37 @@ namespace Model
      */
     inline CreateDataSourceRequest& WithRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { SetRelationalDatabaseConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline const EventBridgeDataSourceConfig& GetEventBridgeConfig() const{ return m_eventBridgeConfig; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline bool EventBridgeConfigHasBeenSet() const { return m_eventBridgeConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline void SetEventBridgeConfig(const EventBridgeDataSourceConfig& value) { m_eventBridgeConfigHasBeenSet = true; m_eventBridgeConfig = value; }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline void SetEventBridgeConfig(EventBridgeDataSourceConfig&& value) { m_eventBridgeConfigHasBeenSet = true; m_eventBridgeConfig = std::move(value); }
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline CreateDataSourceRequest& WithEventBridgeConfig(const EventBridgeDataSourceConfig& value) { SetEventBridgeConfig(value); return *this;}
+
+    /**
+     * <p>Amazon EventBridge settings.</p>
+     */
+    inline CreateDataSourceRequest& WithEventBridgeConfig(EventBridgeDataSourceConfig&& value) { SetEventBridgeConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -493,6 +525,9 @@ namespace Model
 
     RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
     bool m_relationalDatabaseConfigHasBeenSet = false;
+
+    EventBridgeDataSourceConfig m_eventBridgeConfig;
+    bool m_eventBridgeConfigHasBeenSet = false;
   };
 
 } // namespace Model

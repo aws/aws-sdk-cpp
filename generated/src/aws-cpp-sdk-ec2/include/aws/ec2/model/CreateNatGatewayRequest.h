@@ -204,42 +204,42 @@ namespace Model
 
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline CreateNatGatewayRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The subnet in which to create the NAT gateway.</p>
+     * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
     inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -370,6 +370,189 @@ namespace Model
      */
     inline CreateNatGatewayRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecondaryAllocationIds() const{ return m_secondaryAllocationIds; }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline bool SecondaryAllocationIdsHasBeenSet() const { return m_secondaryAllocationIdsHasBeenSet; }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = value; }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = std::move(value); }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& WithSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { SetSecondaryAllocationIds(value); return *this;}
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& WithSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { SetSecondaryAllocationIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const Aws::String& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(Aws::String&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Secondary EIP allocation IDs. For more information about secondary addresses,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const char* value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecondaryPrivateIpAddresses() const{ return m_secondaryPrivateIpAddresses; }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline bool SecondaryPrivateIpAddressesHasBeenSet() const { return m_secondaryPrivateIpAddressesHasBeenSet; }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = value; }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = std::move(value); }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetSecondaryPrivateIpAddresses(value); return *this;}
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetSecondaryPrivateIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const Aws::String& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(Aws::String&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Secondary private IPv4 addresses. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const char* value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
+
+
+    /**
+     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
+     * want to assign to the NAT gateway. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+
+    /**
+     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
+     * want to assign to the NAT gateway. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
+
+    /**
+     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
+     * want to assign to the NAT gateway. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
+
+    /**
+     * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
+     * want to assign to the NAT gateway. For more information about secondary
+     * addresses, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+
   private:
 
     Aws::String m_allocationId;
@@ -392,6 +575,15 @@ namespace Model
 
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_secondaryAllocationIds;
+    bool m_secondaryAllocationIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_secondaryPrivateIpAddresses;
+    bool m_secondaryPrivateIpAddressesHasBeenSet = false;
+
+    int m_secondaryPrivateIpAddressCount;
+    bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
   };
 
 } // namespace Model

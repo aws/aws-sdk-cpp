@@ -31,11 +31,11 @@ namespace Model
    * resource itself. These are also known as data plane operations. You can specify
    * up to 250 data resources for a trail.</p>  <p>The total number of allowed
    * data resources is 250. This number can be distributed between 1 and 5 event
-   * selectors, but the total cannot exceed 250 across all selectors.</p> <p>If you
-   * are using advanced event selectors, the maximum total number of values for all
-   * conditions, across all advanced event selectors for the trail, is 500.</p>
-   *  <p>The following example demonstrates how logging works when you
-   * configure logging of all data events for an S3 bucket named
+   * selectors, but the total cannot exceed 250 across all selectors for the
+   * trail.</p> <p>If you are using advanced event selectors, the maximum total
+   * number of values for all conditions, across all advanced event selectors for the
+   * trail, is 500.</p>  <p>The following example demonstrates how logging
+   * works when you configure logging of all data events for an S3 bucket named
    * <code>bucket-1</code>. In this example, the CloudTrail user specified an empty
    * prefix, and the option to log both <code>Read</code> and <code>Write</code> data
    * events.</p> <ol> <li> <p>A user uploads an image file to
@@ -84,13 +84,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -104,13 +108,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -124,13 +132,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -144,13 +156,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -164,13 +180,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -184,13 +204,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -204,13 +228,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -224,13 +252,17 @@ namespace Model
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
      * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> </ul>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 

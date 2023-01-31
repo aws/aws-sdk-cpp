@@ -29,6 +29,7 @@
 #include <aws/groundstation/model/DeleteMissionProfileResult.h>
 #include <aws/groundstation/model/DescribeContactResult.h>
 #include <aws/groundstation/model/DescribeEphemerisResult.h>
+#include <aws/groundstation/model/GetAgentConfigurationResult.h>
 #include <aws/groundstation/model/GetConfigResult.h>
 #include <aws/groundstation/model/GetDataflowEndpointGroupResult.h>
 #include <aws/groundstation/model/GetMinuteUsageResult.h>
@@ -42,9 +43,11 @@
 #include <aws/groundstation/model/ListMissionProfilesResult.h>
 #include <aws/groundstation/model/ListSatellitesResult.h>
 #include <aws/groundstation/model/ListTagsForResourceResult.h>
+#include <aws/groundstation/model/RegisterAgentResult.h>
 #include <aws/groundstation/model/ReserveContactResult.h>
 #include <aws/groundstation/model/TagResourceResult.h>
 #include <aws/groundstation/model/UntagResourceResult.h>
+#include <aws/groundstation/model/UpdateAgentStatusResult.h>
 #include <aws/groundstation/model/UpdateConfigResult.h>
 #include <aws/groundstation/model/UpdateEphemerisResult.h>
 #include <aws/groundstation/model/UpdateMissionProfileResult.h>
@@ -99,6 +102,7 @@ namespace Aws
       class DeleteMissionProfileRequest;
       class DescribeContactRequest;
       class DescribeEphemerisRequest;
+      class GetAgentConfigurationRequest;
       class GetConfigRequest;
       class GetDataflowEndpointGroupRequest;
       class GetMinuteUsageRequest;
@@ -112,9 +116,11 @@ namespace Aws
       class ListMissionProfilesRequest;
       class ListSatellitesRequest;
       class ListTagsForResourceRequest;
+      class RegisterAgentRequest;
       class ReserveContactRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateAgentStatusRequest;
       class UpdateConfigRequest;
       class UpdateEphemerisRequest;
       class UpdateMissionProfileRequest;
@@ -132,6 +138,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteMissionProfileResult, GroundStationError> DeleteMissionProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeContactResult, GroundStationError> DescribeContactOutcome;
       typedef Aws::Utils::Outcome<DescribeEphemerisResult, GroundStationError> DescribeEphemerisOutcome;
+      typedef Aws::Utils::Outcome<GetAgentConfigurationResult, GroundStationError> GetAgentConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetConfigResult, GroundStationError> GetConfigOutcome;
       typedef Aws::Utils::Outcome<GetDataflowEndpointGroupResult, GroundStationError> GetDataflowEndpointGroupOutcome;
       typedef Aws::Utils::Outcome<GetMinuteUsageResult, GroundStationError> GetMinuteUsageOutcome;
@@ -145,9 +152,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMissionProfilesResult, GroundStationError> ListMissionProfilesOutcome;
       typedef Aws::Utils::Outcome<ListSatellitesResult, GroundStationError> ListSatellitesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, GroundStationError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<RegisterAgentResult, GroundStationError> RegisterAgentOutcome;
       typedef Aws::Utils::Outcome<ReserveContactResult, GroundStationError> ReserveContactOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, GroundStationError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, GroundStationError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateAgentStatusResult, GroundStationError> UpdateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateConfigResult, GroundStationError> UpdateConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateEphemerisResult, GroundStationError> UpdateEphemerisOutcome;
       typedef Aws::Utils::Outcome<UpdateMissionProfileResult, GroundStationError> UpdateMissionProfileOutcome;
@@ -165,6 +174,7 @@ namespace Aws
       typedef std::future<DeleteMissionProfileOutcome> DeleteMissionProfileOutcomeCallable;
       typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
       typedef std::future<DescribeEphemerisOutcome> DescribeEphemerisOutcomeCallable;
+      typedef std::future<GetAgentConfigurationOutcome> GetAgentConfigurationOutcomeCallable;
       typedef std::future<GetConfigOutcome> GetConfigOutcomeCallable;
       typedef std::future<GetDataflowEndpointGroupOutcome> GetDataflowEndpointGroupOutcomeCallable;
       typedef std::future<GetMinuteUsageOutcome> GetMinuteUsageOutcomeCallable;
@@ -178,9 +188,11 @@ namespace Aws
       typedef std::future<ListMissionProfilesOutcome> ListMissionProfilesOutcomeCallable;
       typedef std::future<ListSatellitesOutcome> ListSatellitesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<RegisterAgentOutcome> RegisterAgentOutcomeCallable;
       typedef std::future<ReserveContactOutcome> ReserveContactOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
       typedef std::future<UpdateConfigOutcome> UpdateConfigOutcomeCallable;
       typedef std::future<UpdateEphemerisOutcome> UpdateEphemerisOutcomeCallable;
       typedef std::future<UpdateMissionProfileOutcome> UpdateMissionProfileOutcomeCallable;
@@ -201,6 +213,7 @@ namespace Aws
     typedef std::function<void(const GroundStationClient*, const Model::DeleteMissionProfileRequest&, const Model::DeleteMissionProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMissionProfileResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::DescribeEphemerisRequest&, const Model::DescribeEphemerisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEphemerisResponseReceivedHandler;
+    typedef std::function<void(const GroundStationClient*, const Model::GetAgentConfigurationRequest&, const Model::GetAgentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAgentConfigurationResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::GetConfigRequest&, const Model::GetConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::GetDataflowEndpointGroupRequest&, const Model::GetDataflowEndpointGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataflowEndpointGroupResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::GetMinuteUsageRequest&, const Model::GetMinuteUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMinuteUsageResponseReceivedHandler;
@@ -214,9 +227,11 @@ namespace Aws
     typedef std::function<void(const GroundStationClient*, const Model::ListMissionProfilesRequest&, const Model::ListMissionProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMissionProfilesResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::ListSatellitesRequest&, const Model::ListSatellitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSatellitesResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const GroundStationClient*, const Model::RegisterAgentRequest&, const Model::RegisterAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterAgentResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::ReserveContactRequest&, const Model::ReserveContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReserveContactResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const GroundStationClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::UpdateConfigRequest&, const Model::UpdateConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::UpdateEphemerisRequest&, const Model::UpdateEphemerisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEphemerisResponseReceivedHandler;
     typedef std::function<void(const GroundStationClient*, const Model::UpdateMissionProfileRequest&, const Model::UpdateMissionProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMissionProfileResponseReceivedHandler;

@@ -35,7 +35,9 @@ HyperParameterTuningJobSearchEntity::HyperParameterTuningJobSearchEntity() :
     m_overallBestTrainingJobHasBeenSet(false),
     m_warmStartConfigHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tuningJobCompletionDetailsHasBeenSet(false),
+    m_consumedResourcesHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ HyperParameterTuningJobSearchEntity::HyperParameterTuningJobSearchEntity(JsonVie
     m_overallBestTrainingJobHasBeenSet(false),
     m_warmStartConfigHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tuningJobCompletionDetailsHasBeenSet(false),
+    m_consumedResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -181,6 +185,20 @@ HyperParameterTuningJobSearchEntity& HyperParameterTuningJobSearchEntity::operat
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TuningJobCompletionDetails"))
+  {
+    m_tuningJobCompletionDetails = jsonValue.GetObject("TuningJobCompletionDetails");
+
+    m_tuningJobCompletionDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedResources"))
+  {
+    m_consumedResources = jsonValue.GetObject("ConsumedResources");
+
+    m_consumedResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -287,6 +305,18 @@ JsonValue HyperParameterTuningJobSearchEntity::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_tuningJobCompletionDetailsHasBeenSet)
+  {
+   payload.WithObject("TuningJobCompletionDetails", m_tuningJobCompletionDetails.Jsonize());
+
+  }
+
+  if(m_consumedResourcesHasBeenSet)
+  {
+   payload.WithObject("ConsumedResources", m_consumedResources.Jsonize());
 
   }
 

@@ -27,6 +27,7 @@ namespace Aws
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
         static const int RELATIONAL_DATABASE_HASH = HashingUtils::HashString("RELATIONAL_DATABASE");
         static const int AMAZON_OPENSEARCH_SERVICE_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
+        static const int AMAZON_EVENTBRIDGE_HASH = HashingUtils::HashString("AMAZON_EVENTBRIDGE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return DataSourceType::AMAZON_OPENSEARCH_SERVICE;
           }
+          else if (hashCode == AMAZON_EVENTBRIDGE_HASH)
+          {
+            return DataSourceType::AMAZON_EVENTBRIDGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "RELATIONAL_DATABASE";
           case DataSourceType::AMAZON_OPENSEARCH_SERVICE:
             return "AMAZON_OPENSEARCH_SERVICE";
+          case DataSourceType::AMAZON_EVENTBRIDGE:
+            return "AMAZON_EVENTBRIDGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

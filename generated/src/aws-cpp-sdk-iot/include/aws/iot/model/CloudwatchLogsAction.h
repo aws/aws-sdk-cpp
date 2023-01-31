@@ -119,6 +119,35 @@ namespace Model
      */
     inline CloudwatchLogsAction& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether batches of log records will be extracted and uploaded into
+     * CloudWatch. Values include <code>true</code> or <code>false</code>
+     * <i>(default)</i>.</p>
+     */
+    inline bool GetBatchMode() const{ return m_batchMode; }
+
+    /**
+     * <p>Indicates whether batches of log records will be extracted and uploaded into
+     * CloudWatch. Values include <code>true</code> or <code>false</code>
+     * <i>(default)</i>.</p>
+     */
+    inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether batches of log records will be extracted and uploaded into
+     * CloudWatch. Values include <code>true</code> or <code>false</code>
+     * <i>(default)</i>.</p>
+     */
+    inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
+
+    /**
+     * <p>Indicates whether batches of log records will be extracted and uploaded into
+     * CloudWatch. Values include <code>true</code> or <code>false</code>
+     * <i>(default)</i>.</p>
+     */
+    inline CloudwatchLogsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -126,6 +155,9 @@ namespace Model
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
+
+    bool m_batchMode;
+    bool m_batchModeHasBeenSet = false;
   };
 
 } // namespace Model

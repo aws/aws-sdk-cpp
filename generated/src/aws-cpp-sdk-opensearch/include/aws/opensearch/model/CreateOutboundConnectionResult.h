@@ -8,6 +8,8 @@
 #include <aws/opensearch/model/DomainInformationContainer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/OutboundConnectionStatus.h>
+#include <aws/opensearch/model/ConnectionMode.h>
+#include <aws/opensearch/model/ConnectionProperties.h>
 #include <utility>
 
 namespace Aws
@@ -197,6 +199,58 @@ namespace Model
      */
     inline CreateOutboundConnectionResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(const ConnectionMode& value) { m_connectionMode = value; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(ConnectionMode&& value) { m_connectionMode = std::move(value); }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline CreateOutboundConnectionResult& WithConnectionMode(const ConnectionMode& value) { SetConnectionMode(value); return *this;}
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline CreateOutboundConnectionResult& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+     */
+    inline const ConnectionProperties& GetConnectionProperties() const{ return m_connectionProperties; }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+     */
+    inline void SetConnectionProperties(const ConnectionProperties& value) { m_connectionProperties = value; }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+     */
+    inline void SetConnectionProperties(ConnectionProperties&& value) { m_connectionProperties = std::move(value); }
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+     */
+    inline CreateOutboundConnectionResult& WithConnectionProperties(const ConnectionProperties& value) { SetConnectionProperties(value); return *this;}
+
+    /**
+     * <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
+     */
+    inline CreateOutboundConnectionResult& WithConnectionProperties(ConnectionProperties&& value) { SetConnectionProperties(std::move(value)); return *this;}
+
   private:
 
     DomainInformationContainer m_localDomainInfo;
@@ -208,6 +262,10 @@ namespace Model
     OutboundConnectionStatus m_connectionStatus;
 
     Aws::String m_connectionId;
+
+    ConnectionMode m_connectionMode;
+
+    ConnectionProperties m_connectionProperties;
   };
 
 } // namespace Model

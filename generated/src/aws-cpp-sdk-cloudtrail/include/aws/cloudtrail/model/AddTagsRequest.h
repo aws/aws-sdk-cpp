@@ -19,8 +19,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to add to a trail or event data store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the tags to add to a trail, event data store, or
+   * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -41,58 +41,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline AddTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline AddTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the trail or event data store to which one or more tags
-     * will be added. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
+     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
+     * format of an event data store ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a channel ARN is:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline AddTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

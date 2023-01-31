@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/AwsGroundStationAgentEndpoint.h>
 #include <aws/groundstation/model/DataflowEndpoint.h>
 #include <aws/groundstation/model/SecurityDetails.h>
 #include <utility>
@@ -36,6 +37,37 @@ namespace Model
     AWS_GROUNDSTATION_API EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline const AwsGroundStationAgentEndpoint& GetAwsGroundStationAgentEndpoint() const{ return m_awsGroundStationAgentEndpoint; }
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline bool AwsGroundStationAgentEndpointHasBeenSet() const { return m_awsGroundStationAgentEndpointHasBeenSet; }
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline void SetAwsGroundStationAgentEndpoint(const AwsGroundStationAgentEndpoint& value) { m_awsGroundStationAgentEndpointHasBeenSet = true; m_awsGroundStationAgentEndpoint = value; }
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline void SetAwsGroundStationAgentEndpoint(AwsGroundStationAgentEndpoint&& value) { m_awsGroundStationAgentEndpointHasBeenSet = true; m_awsGroundStationAgentEndpoint = std::move(value); }
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline EndpointDetails& WithAwsGroundStationAgentEndpoint(const AwsGroundStationAgentEndpoint& value) { SetAwsGroundStationAgentEndpoint(value); return *this;}
+
+    /**
+     * <p>An agent endpoint.</p>
+     */
+    inline EndpointDetails& WithAwsGroundStationAgentEndpoint(AwsGroundStationAgentEndpoint&& value) { SetAwsGroundStationAgentEndpoint(std::move(value)); return *this;}
 
 
     /**
@@ -106,6 +138,9 @@ namespace Model
     inline EndpointDetails& WithSecurityDetails(SecurityDetails&& value) { SetSecurityDetails(std::move(value)); return *this;}
 
   private:
+
+    AwsGroundStationAgentEndpoint m_awsGroundStationAgentEndpoint;
+    bool m_awsGroundStationAgentEndpointHasBeenSet = false;
 
     DataflowEndpoint m_endpoint;
     bool m_endpointHasBeenSet = false;

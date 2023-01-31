@@ -4377,6 +4377,136 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddSample(BooleanFilter&& value) { m_sampleHasBeenSet = true; m_sample.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const{ return m_complianceSecurityControlId; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline bool ComplianceSecurityControlIdHasBeenSet() const { return m_complianceSecurityControlIdHasBeenSet; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline void SetComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = value; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline void SetComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = std::move(value); }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlId(value); return *this;}
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlId(std::move(value)); return *this;}
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlId(const StringFilter& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(value); return *this; }
+
+    /**
+     * <p> The unique identifier of a control across standards. Values for this field
+     * typically consist of an Amazon Web Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlId(StringFilter&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceAssociatedStandardsId() const{ return m_complianceAssociatedStandardsId; }
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline bool ComplianceAssociatedStandardsIdHasBeenSet() const { return m_complianceAssociatedStandardsIdHasBeenSet; }
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline void SetComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = value; }
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline void SetComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = std::move(value); }
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { SetComplianceAssociatedStandardsId(value); return *this;}
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { SetComplianceAssociatedStandardsId(std::move(value)); return *this;}
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(const StringFilter& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(value); return *this; }
+
+    /**
+     * <p> The unique identifier of a standard in which a control is enabled. This
+     * field consists of the resource portion of the Amazon Resource Name (ARN)
+     * returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -4651,6 +4781,12 @@ namespace Model
 
     Aws::Vector<BooleanFilter> m_sample;
     bool m_sampleHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlId;
+    bool m_complianceSecurityControlIdHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceAssociatedStandardsId;
+    bool m_complianceAssociatedStandardsIdHasBeenSet = false;
   };
 
 } // namespace Model

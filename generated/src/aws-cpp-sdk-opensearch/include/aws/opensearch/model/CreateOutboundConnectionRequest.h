@@ -8,6 +8,7 @@
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/model/DomainInformationContainer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/model/ConnectionMode.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,37 @@ namespace Model
      */
     inline CreateOutboundConnectionRequest& WithConnectionAlias(const char* value) { SetConnectionAlias(value); return *this;}
 
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(const ConnectionMode& value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline void SetConnectionMode(ConnectionMode&& value) { m_connectionModeHasBeenSet = true; m_connectionMode = std::move(value); }
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline CreateOutboundConnectionRequest& WithConnectionMode(const ConnectionMode& value) { SetConnectionMode(value); return *this;}
+
+    /**
+     * <p>The connection mode.</p>
+     */
+    inline CreateOutboundConnectionRequest& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
+
   private:
 
     DomainInformationContainer m_localDomainInfo;
@@ -149,6 +181,9 @@ namespace Model
 
     Aws::String m_connectionAlias;
     bool m_connectionAliasHasBeenSet = false;
+
+    ConnectionMode m_connectionMode;
+    bool m_connectionModeHasBeenSet = false;
   };
 
 } // namespace Model

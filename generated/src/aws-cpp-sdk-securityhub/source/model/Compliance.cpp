@@ -22,7 +22,9 @@ Compliance::Compliance() :
     m_status(ComplianceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_relatedRequirementsHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false)
+    m_statusReasonsHasBeenSet(false),
+    m_securityControlIdHasBeenSet(false),
+    m_associatedStandardsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ Compliance::Compliance(JsonView jsonValue) :
     m_status(ComplianceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_relatedRequirementsHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false)
+    m_statusReasonsHasBeenSet(false),
+    m_securityControlIdHasBeenSet(false),
+    m_associatedStandardsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,6 +68,23 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     m_statusReasonsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityControlId"))
+  {
+    m_securityControlId = jsonValue.GetString("SecurityControlId");
+
+    m_securityControlIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociatedStandards"))
+  {
+    Aws::Utils::Array<JsonView> associatedStandardsJsonList = jsonValue.GetArray("AssociatedStandards");
+    for(unsigned associatedStandardsIndex = 0; associatedStandardsIndex < associatedStandardsJsonList.GetLength(); ++associatedStandardsIndex)
+    {
+      m_associatedStandards.push_back(associatedStandardsJsonList[associatedStandardsIndex].AsObject());
+    }
+    m_associatedStandardsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +116,23 @@ JsonValue Compliance::Jsonize() const
      statusReasonsJsonList[statusReasonsIndex].AsObject(m_statusReasons[statusReasonsIndex].Jsonize());
    }
    payload.WithArray("StatusReasons", std::move(statusReasonsJsonList));
+
+  }
+
+  if(m_securityControlIdHasBeenSet)
+  {
+   payload.WithString("SecurityControlId", m_securityControlId);
+
+  }
+
+  if(m_associatedStandardsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associatedStandardsJsonList(m_associatedStandards.size());
+   for(unsigned associatedStandardsIndex = 0; associatedStandardsIndex < associatedStandardsJsonList.GetLength(); ++associatedStandardsIndex)
+   {
+     associatedStandardsJsonList[associatedStandardsIndex].AsObject(m_associatedStandards[associatedStandardsIndex].Jsonize());
+   }
+   payload.WithArray("AssociatedStandards", std::move(associatedStandardsJsonList));
 
   }
 

@@ -32,6 +32,7 @@
 #include <aws/groundstation/model/DeleteMissionProfileRequest.h>
 #include <aws/groundstation/model/DescribeContactRequest.h>
 #include <aws/groundstation/model/DescribeEphemerisRequest.h>
+#include <aws/groundstation/model/GetAgentConfigurationRequest.h>
 #include <aws/groundstation/model/GetConfigRequest.h>
 #include <aws/groundstation/model/GetDataflowEndpointGroupRequest.h>
 #include <aws/groundstation/model/GetMinuteUsageRequest.h>
@@ -45,9 +46,11 @@
 #include <aws/groundstation/model/ListMissionProfilesRequest.h>
 #include <aws/groundstation/model/ListSatellitesRequest.h>
 #include <aws/groundstation/model/ListTagsForResourceRequest.h>
+#include <aws/groundstation/model/RegisterAgentRequest.h>
 #include <aws/groundstation/model/ReserveContactRequest.h>
 #include <aws/groundstation/model/TagResourceRequest.h>
 #include <aws/groundstation/model/UntagResourceRequest.h>
+#include <aws/groundstation/model/UpdateAgentStatusRequest.h>
 #include <aws/groundstation/model/UpdateConfigRequest.h>
 #include <aws/groundstation/model/UpdateEphemerisRequest.h>
 #include <aws/groundstation/model/UpdateMissionProfileRequest.h>
@@ -326,6 +329,22 @@ DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEp
   return DescribeEphemerisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const GetAgentConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentConfiguration", "Required field: AgentId, is not set");
+    return GetAgentConfigurationOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAgentConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/agent/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return GetAgentConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -479,6 +498,15 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+RegisterAgentOutcome GroundStationClient::RegisterAgent(const RegisterAgentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/agent");
+  return RegisterAgentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReserveContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -521,6 +549,21 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAgentStatusOutcome GroundStationClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentStatus", "Required field: AgentId, is not set");
+    return UpdateAgentStatusOutcome(Aws::Client::AWSError<GroundStationErrors>(GroundStationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/agent/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+  return UpdateAgentStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest& request) const
