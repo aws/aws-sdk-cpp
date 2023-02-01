@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/forecast/model/DataSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/ImportMode.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -152,12 +153,12 @@ namespace Model
 
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -165,12 +166,12 @@ namespace Model
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -178,12 +179,12 @@ namespace Model
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -191,12 +192,12 @@ namespace Model
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -204,12 +205,12 @@ namespace Model
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -217,12 +218,12 @@ namespace Model
     inline CreateDatasetImportJobRequest& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
-     * key and the IAM role must allow Amazon Forecast permission to access the key.
-     * The KMS key and IAM role must match those specified in the
+     * used, <code>DataSource</code> must include an Key Management Service (KMS) key
+     * and the IAM role must allow Amazon Forecast permission to access the key. The
+     * KMS key and IAM role must match those specified in the
      * <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
@@ -508,12 +509,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -531,12 +532,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -554,12 +555,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -577,12 +578,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -600,12 +601,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetImportJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -623,12 +624,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetImportJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -646,12 +647,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetImportJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -669,12 +670,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetImportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -727,6 +728,55 @@ namespace Model
      */
     inline CreateDatasetImportJobRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the dataset import job is a <code>FULL</code> or
+     * <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all
+     * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
+     * import appends the imported data to the existing data.</p>
+     */
+    inline CreateDatasetImportJobRequest& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetImportJobName;
@@ -755,6 +805,9 @@ namespace Model
 
     Aws::String m_format;
     bool m_formatHasBeenSet = false;
+
+    ImportMode m_importMode;
+    bool m_importModeHasBeenSet = false;
   };
 
 } // namespace Model

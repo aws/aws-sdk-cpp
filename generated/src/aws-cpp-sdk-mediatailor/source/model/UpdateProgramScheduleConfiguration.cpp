@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/ScheduleConfiguration.h>
+#include <aws/mediatailor/model/UpdateProgramScheduleConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,20 +18,20 @@ namespace MediaTailor
 namespace Model
 {
 
-ScheduleConfiguration::ScheduleConfiguration() : 
+UpdateProgramScheduleConfiguration::UpdateProgramScheduleConfiguration() : 
     m_clipRangeHasBeenSet(false),
     m_transitionHasBeenSet(false)
 {
 }
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) : 
+UpdateProgramScheduleConfiguration::UpdateProgramScheduleConfiguration(JsonView jsonValue) : 
     m_clipRangeHasBeenSet(false),
     m_transitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ScheduleConfiguration& ScheduleConfiguration::operator =(JsonView jsonValue)
+UpdateProgramScheduleConfiguration& UpdateProgramScheduleConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClipRange"))
   {
@@ -50,7 +50,7 @@ ScheduleConfiguration& ScheduleConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ScheduleConfiguration::Jsonize() const
+JsonValue UpdateProgramScheduleConfiguration::Jsonize() const
 {
   JsonValue payload;
 

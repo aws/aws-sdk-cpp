@@ -25,7 +25,9 @@ DatasetImportJobSummary::DatasetImportJobSummary() :
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+    m_lastModificationTimeHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ DatasetImportJobSummary::DatasetImportJobSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
+    m_lastModificationTimeHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ DatasetImportJobSummary& DatasetImportJobSummary::operator =(JsonView jsonValue)
     m_lastModificationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImportMode"))
+  {
+    m_importMode = ImportModeMapper::GetImportModeForName(jsonValue.GetString("ImportMode"));
+
+    m_importModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +148,11 @@ JsonValue DatasetImportJobSummary::Jsonize() const
   if(m_lastModificationTimeHasBeenSet)
   {
    payload.WithDouble("LastModificationTime", m_lastModificationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_importModeHasBeenSet)
+  {
+   payload.WithString("ImportMode", ImportModeMapper::GetNameForImportMode(m_importMode));
   }
 
   return payload;

@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access
-   * Management (IAM) role that Amazon Forecast can assume to access the key. You can
-   * specify this optional object in the <a>CreateDataset</a> and
-   * <a>CreatePredictor</a> requests.</p><p><h3>See Also:</h3>   <a
+   * <p>An Key Management Service (KMS) key and an Identity and Access Management
+   * (IAM) role that Amazon Forecast can assume to access the key. You can specify
+   * this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a>
+   * requests.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/EncryptionConfig">AWS
    * API Reference</a></p>
    */
@@ -41,66 +41,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline EncryptionConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline EncryptionConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS
-     * key.</p> <p>Passing a role across AWS accounts is not allowed. If you pass a
-     * role that isn't in your account, you get an <code>InvalidInputException</code>
-     * error.</p>
+     * <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS
+     * key.</p> <p>Passing a role across Amazon Web Services accounts is not allowed.
+     * If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.</p>
      */
     inline EncryptionConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

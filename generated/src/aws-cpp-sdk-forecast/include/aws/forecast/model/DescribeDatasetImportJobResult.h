@@ -9,6 +9,7 @@
 #include <aws/forecast/model/DataSource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/forecast/model/ImportMode.h>
 #include <aws/forecast/model/Statistics.h>
 #include <utility>
 
@@ -321,41 +322,41 @@ namespace Model
 
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * <p>If encryption is used, <code>DataSource</code> includes an Key Management
      * Service (KMS) key.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * <p>If encryption is used, <code>DataSource</code> includes an Key Management
      * Service (KMS) key.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * <p>If encryption is used, <code>DataSource</code> includes an Key Management
      * Service (KMS) key.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * <p>If encryption is used, <code>DataSource</code> includes an Key Management
      * Service (KMS) key.</p>
      */
     inline DescribeDatasetImportJobResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
-     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * <p>If encryption is used, <code>DataSource</code> includes an Key Management
      * Service (KMS) key.</p>
      */
     inline DescribeDatasetImportJobResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
@@ -679,6 +680,32 @@ namespace Model
      */
     inline DescribeDatasetImportJobResult& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline void SetImportMode(const ImportMode& value) { m_importMode = value; }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline void SetImportMode(ImportMode&& value) { m_importMode = std::move(value); }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetImportJobName;
@@ -712,6 +739,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModificationTime;
 
     Aws::String m_format;
+
+    ImportMode m_importMode;
   };
 
 } // namespace Model

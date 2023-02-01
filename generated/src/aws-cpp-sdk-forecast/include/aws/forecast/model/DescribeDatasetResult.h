@@ -255,32 +255,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>The Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>The Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>The Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>The Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline DescribeDatasetResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>The Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline DescribeDatasetResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 

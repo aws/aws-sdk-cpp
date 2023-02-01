@@ -605,7 +605,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
@@ -624,7 +625,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
@@ -643,7 +645,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
@@ -662,7 +665,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
@@ -681,7 +685,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
@@ -700,7 +705,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
@@ -719,7 +725,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -738,7 +745,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
@@ -757,7 +765,8 @@ namespace Model
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
-     * Reference</i>.</p>
+     * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
+     * supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -778,7 +787,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
@@ -798,7 +808,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
 
@@ -818,7 +829,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
@@ -838,7 +850,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
@@ -858,7 +871,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
@@ -878,7 +892,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
@@ -898,7 +913,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
@@ -918,7 +934,8 @@ namespace Model
      * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
+     * resource-based policies isn't supported for IAM roles.</p> 
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

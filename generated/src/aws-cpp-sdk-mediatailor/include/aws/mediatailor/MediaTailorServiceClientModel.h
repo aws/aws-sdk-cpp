@@ -57,6 +57,7 @@
 #include <aws/mediatailor/model/StopChannelResult.h>
 #include <aws/mediatailor/model/UpdateChannelResult.h>
 #include <aws/mediatailor/model/UpdateLiveSourceResult.h>
+#include <aws/mediatailor/model/UpdateProgramResult.h>
 #include <aws/mediatailor/model/UpdateSourceLocationResult.h>
 #include <aws/mediatailor/model/UpdateVodSourceResult.h>
 #include <aws/core/NoResult.h>
@@ -141,6 +142,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateChannelRequest;
       class UpdateLiveSourceRequest;
+      class UpdateProgramRequest;
       class UpdateSourceLocationRequest;
       class UpdateVodSourceRequest;
       /* End of service model forward declarations required in MediaTailorClient header */
@@ -187,6 +189,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, MediaTailorError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, MediaTailorError> UpdateChannelOutcome;
       typedef Aws::Utils::Outcome<UpdateLiveSourceResult, MediaTailorError> UpdateLiveSourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateProgramResult, MediaTailorError> UpdateProgramOutcome;
       typedef Aws::Utils::Outcome<UpdateSourceLocationResult, MediaTailorError> UpdateSourceLocationOutcome;
       typedef Aws::Utils::Outcome<UpdateVodSourceResult, MediaTailorError> UpdateVodSourceOutcome;
       /* End of service model Outcome class definitions */
@@ -233,6 +236,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
       typedef std::future<UpdateLiveSourceOutcome> UpdateLiveSourceOutcomeCallable;
+      typedef std::future<UpdateProgramOutcome> UpdateProgramOutcomeCallable;
       typedef std::future<UpdateSourceLocationOutcome> UpdateSourceLocationOutcomeCallable;
       typedef std::future<UpdateVodSourceOutcome> UpdateVodSourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -282,6 +286,7 @@ namespace Aws
     typedef std::function<void(const MediaTailorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::UpdateLiveSourceRequest&, const Model::UpdateLiveSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLiveSourceResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::UpdateProgramRequest&, const Model::UpdateProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProgramResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::UpdateSourceLocationRequest&, const Model::UpdateSourceLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceLocationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::UpdateVodSourceRequest&, const Model::UpdateVodSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVodSourceResponseReceivedHandler;
     /* End of service model async handlers definitions */

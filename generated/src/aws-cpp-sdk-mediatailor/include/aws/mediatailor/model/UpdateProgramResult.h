@@ -28,12 +28,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class DescribeProgramResult
+  class UpdateProgramResult
   {
   public:
-    AWS_MEDIATAILOR_API DescribeProgramResult();
-    AWS_MEDIATAILOR_API DescribeProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MEDIATAILOR_API DescribeProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateProgramResult();
+    AWS_MEDIATAILOR_API UpdateProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -54,94 +54,94 @@ namespace Model
     /**
      * <p>The ad break configuration settings.</p>
      */
-    inline DescribeProgramResult& WithAdBreaks(const Aws::Vector<AdBreak>& value) { SetAdBreaks(value); return *this;}
+    inline UpdateProgramResult& WithAdBreaks(const Aws::Vector<AdBreak>& value) { SetAdBreaks(value); return *this;}
 
     /**
      * <p>The ad break configuration settings.</p>
      */
-    inline DescribeProgramResult& WithAdBreaks(Aws::Vector<AdBreak>&& value) { SetAdBreaks(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithAdBreaks(Aws::Vector<AdBreak>&& value) { SetAdBreaks(std::move(value)); return *this;}
 
     /**
      * <p>The ad break configuration settings.</p>
      */
-    inline DescribeProgramResult& AddAdBreaks(const AdBreak& value) { m_adBreaks.push_back(value); return *this; }
+    inline UpdateProgramResult& AddAdBreaks(const AdBreak& value) { m_adBreaks.push_back(value); return *this; }
 
     /**
      * <p>The ad break configuration settings.</p>
      */
-    inline DescribeProgramResult& AddAdBreaks(AdBreak&& value) { m_adBreaks.push_back(std::move(value)); return *this; }
+    inline UpdateProgramResult& AddAdBreaks(AdBreak&& value) { m_adBreaks.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
-    inline DescribeProgramResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline UpdateProgramResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
-    inline DescribeProgramResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the program.</p>
+     * <p>The ARN to assign to the program.</p>
      */
-    inline DescribeProgramResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline UpdateProgramResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelName = value; }
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelName = std::move(value); }
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
     inline void SetChannelName(const char* value) { m_channelName.assign(value); }
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
-    inline DescribeProgramResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
+    inline UpdateProgramResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
-    inline DescribeProgramResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the channel that the program belongs to.</p>
+     * <p>The name to assign to the channel for this program.</p>
      */
-    inline DescribeProgramResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    inline UpdateProgramResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
 
     /**
@@ -162,38 +162,38 @@ namespace Model
     /**
      * <p>The clip range configuration settings.</p>
      */
-    inline DescribeProgramResult& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
+    inline UpdateProgramResult& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
 
     /**
      * <p>The clip range configuration settings.</p>
      */
-    inline DescribeProgramResult& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp of when the program was created.</p>
+     * <p>The time the program was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The timestamp of when the program was created.</p>
+     * <p>The time the program was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
-     * <p>The timestamp of when the program was created.</p>
+     * <p>The time the program was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>The timestamp of when the program was created.</p>
+     * <p>The time the program was created.</p>
      */
-    inline DescribeProgramResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline UpdateProgramResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The timestamp of when the program was created.</p>
+     * <p>The time the program was created.</p>
      */
-    inline DescribeProgramResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -209,7 +209,7 @@ namespace Model
     /**
      * <p>The duration of the live program in milliseconds.</p>
      */
-    inline DescribeProgramResult& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+    inline UpdateProgramResult& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
 
     /**
@@ -235,125 +235,115 @@ namespace Model
     /**
      * <p>The name of the LiveSource for this Program.</p>
      */
-    inline DescribeProgramResult& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
+    inline UpdateProgramResult& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
 
     /**
      * <p>The name of the LiveSource for this Program.</p>
      */
-    inline DescribeProgramResult& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the LiveSource for this Program.</p>
      */
-    inline DescribeProgramResult& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+    inline UpdateProgramResult& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
 
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
     inline void SetProgramName(const Aws::String& value) { m_programName = value; }
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
     inline void SetProgramName(Aws::String&& value) { m_programName = std::move(value); }
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
     inline void SetProgramName(const char* value) { m_programName.assign(value); }
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
-    inline DescribeProgramResult& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
+    inline UpdateProgramResult& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
-    inline DescribeProgramResult& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the program.</p>
+     * <p>The name to assign to this program.</p>
      */
-    inline DescribeProgramResult& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    inline UpdateProgramResult& WithProgramName(const char* value) { SetProgramName(value); return *this;}
 
 
     /**
-     * <p>The date and time that the program is scheduled to start in ISO 8601 format
-     * and Coordinated Universal Time (UTC). For example, the value
-     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     * <p>The scheduled start time for this Program.</p>
      */
     inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
 
     /**
-     * <p>The date and time that the program is scheduled to start in ISO 8601 format
-     * and Coordinated Universal Time (UTC). For example, the value
-     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     * <p>The scheduled start time for this Program.</p>
      */
     inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTime = value; }
 
     /**
-     * <p>The date and time that the program is scheduled to start in ISO 8601 format
-     * and Coordinated Universal Time (UTC). For example, the value
-     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     * <p>The scheduled start time for this Program.</p>
      */
     inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTime = std::move(value); }
 
     /**
-     * <p>The date and time that the program is scheduled to start in ISO 8601 format
-     * and Coordinated Universal Time (UTC). For example, the value
-     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     * <p>The scheduled start time for this Program.</p>
      */
-    inline DescribeProgramResult& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
+    inline UpdateProgramResult& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
 
     /**
-     * <p>The date and time that the program is scheduled to start in ISO 8601 format
-     * and Coordinated Universal Time (UTC). For example, the value
-     * 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+     * <p>The scheduled start time for this Program.</p>
      */
-    inline DescribeProgramResult& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationName = value; }
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationName = std::move(value); }
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationName.assign(value); }
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
-    inline DescribeProgramResult& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
+    inline UpdateProgramResult& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
-    inline DescribeProgramResult& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
 
     /**
-     * <p>The source location name.</p>
+     * <p>The name to assign to the source location for this program.</p>
      */
-    inline DescribeProgramResult& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
+    inline UpdateProgramResult& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
 
 
     /**
@@ -379,17 +369,17 @@ namespace Model
     /**
      * <p>The name that's used to refer to a VOD source.</p>
      */
-    inline DescribeProgramResult& WithVodSourceName(const Aws::String& value) { SetVodSourceName(value); return *this;}
+    inline UpdateProgramResult& WithVodSourceName(const Aws::String& value) { SetVodSourceName(value); return *this;}
 
     /**
      * <p>The name that's used to refer to a VOD source.</p>
      */
-    inline DescribeProgramResult& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
+    inline UpdateProgramResult& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
 
     /**
      * <p>The name that's used to refer to a VOD source.</p>
      */
-    inline DescribeProgramResult& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
+    inline UpdateProgramResult& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
 
   private:
 

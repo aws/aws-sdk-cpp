@@ -89,51 +89,51 @@ namespace Model
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>The AutoML strategy used to train
-     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
-     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
-     * predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>The AutoML
+     * strategy used to train the predictor. Unless <code>LatencyOptimized</code> is
+     * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
      */
     inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>The AutoML strategy used to train
-     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
-     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
-     * predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>The AutoML
+     * strategy used to train the predictor. Unless <code>LatencyOptimized</code> is
+     * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategy = value; }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>The AutoML strategy used to train
-     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
-     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
-     * predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>The AutoML
+     * strategy used to train the predictor. Unless <code>LatencyOptimized</code> is
+     * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategy = std::move(value); }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>The AutoML strategy used to train
-     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
-     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
-     * predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>The AutoML
+     * strategy used to train the predictor. Unless <code>LatencyOptimized</code> is
+     * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
      */
     inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>The AutoML strategy used to train
-     * the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
-     * strategy optimizes predictor accuracy.</p> <p>This parameter is only valid for
-     * predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>The AutoML
+     * strategy used to train the predictor. Unless <code>LatencyOptimized</code> is
+     * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
      */
     inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 

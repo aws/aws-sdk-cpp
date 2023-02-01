@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/forecast/model/DataSource.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/forecast/model/ImportMode.h>
 #include <utility>
 
 namespace Aws
@@ -127,56 +128,50 @@ namespace Model
 
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline DatasetImportJobSummary& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The location of the training data to import and an AWS Identity and Access
+     * <p>The location of the training data to import and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the data. The
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
-     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
-     * key.</p>
+     * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
     inline DatasetImportJobSummary& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
@@ -400,6 +395,37 @@ namespace Model
      */
     inline DatasetImportJobSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline DatasetImportJobSummary& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
+
+    /**
+     * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+     */
+    inline DatasetImportJobSummary& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetImportJobArn;
@@ -422,6 +448,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModificationTime;
     bool m_lastModificationTimeHasBeenSet = false;
+
+    ImportMode m_importMode;
+    bool m_importModeHasBeenSet = false;
   };
 
 } // namespace Model

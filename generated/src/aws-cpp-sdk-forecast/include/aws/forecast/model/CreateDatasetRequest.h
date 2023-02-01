@@ -217,73 +217,121 @@ namespace Model
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline const Aws::String& GetDataFrequency() const{ return m_dataFrequency; }
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline bool DataFrequencyHasBeenSet() const { return m_dataFrequencyHasBeenSet; }
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline void SetDataFrequency(const Aws::String& value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency = value; }
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline void SetDataFrequency(Aws::String&& value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency = std::move(value); }
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline void SetDataFrequency(const char* value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency.assign(value); }
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(const Aws::String& value) { SetDataFrequency(value); return *this;}
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(Aws::String&& value) { SetDataFrequency(std::move(value)); return *this;}
 
     /**
      * <p>The frequency of data collection. This parameter is required for
-     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
-     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
-     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
-     * every day and "15min" indicates every 15 minutes.</p>
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are an integer followed by
+     * Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example,
+     * "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     * specify a value that would overlap with the next larger frequency. That means,
+     * for example, you cannot specify a frequency of 60 minutes, because that is
+     * equivalent to 1 hour. The valid values for each frequency are the following:</p>
+     * <ul> <li> <p>Minute - 1-59</p> </li> <li> <p>Hour - 1-23</p> </li> <li> <p>Day -
+     * 1-6</p> </li> <li> <p>Week - 1-4</p> </li> <li> <p>Month - 1-11</p> </li> <li>
+     * <p>Year - 1</p> </li> </ul> <p>Thus, if you want every other week forecasts,
+     * specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(const char* value) { SetDataFrequency(value); return *this;}
 
@@ -356,38 +404,38 @@ namespace Model
 
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline CreateDatasetRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline CreateDatasetRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 
@@ -406,12 +454,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -429,12 +477,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -452,12 +500,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -475,12 +523,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -498,12 +546,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -521,12 +569,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -544,12 +592,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -567,12 +615,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateDatasetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

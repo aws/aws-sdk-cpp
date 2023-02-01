@@ -22,7 +22,9 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_useGeolocationForTimeZoneHasBeenSet(false),
     m_geolocationFormatHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,11 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
   {
    payload.WithString("Format", m_format);
 
+  }
+
+  if(m_importModeHasBeenSet)
+  {
+   payload.WithString("ImportMode", ImportModeMapper::GetNameForImportMode(m_importMode));
   }
 
   return payload.View().WriteReadable();

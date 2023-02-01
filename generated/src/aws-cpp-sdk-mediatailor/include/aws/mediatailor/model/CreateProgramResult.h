@@ -7,6 +7,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/ClipRange.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/AdBreak.h>
 #include <utility>
@@ -144,6 +145,32 @@ namespace Model
 
 
     /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline const ClipRange& GetClipRange() const{ return m_clipRange; }
+
+    /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline void SetClipRange(const ClipRange& value) { m_clipRange = value; }
+
+    /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline void SetClipRange(ClipRange&& value) { m_clipRange = std::move(value); }
+
+    /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline CreateProgramResult& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
+
+    /**
+     * <p>The clip range configuration settings.</p>
+     */
+    inline CreateProgramResult& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time the program was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -167,6 +194,22 @@ namespace Model
      * <p>The time the program was created.</p>
      */
     inline CreateProgramResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The duration of the live program in milliseconds.</p>
+     */
+    inline long long GetDurationMillis() const{ return m_durationMillis; }
+
+    /**
+     * <p>The duration of the live program in milliseconds.</p>
+     */
+    inline void SetDurationMillis(long long value) { m_durationMillis = value; }
+
+    /**
+     * <p>The duration of the live program in milliseconds.</p>
+     */
+    inline CreateProgramResult& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
 
     /**
@@ -346,7 +389,11 @@ namespace Model
 
     Aws::String m_channelName;
 
+    ClipRange m_clipRange;
+
     Aws::Utils::DateTime m_creationTime;
+
+    long long m_durationMillis;
 
     Aws::String m_liveSourceName;
 

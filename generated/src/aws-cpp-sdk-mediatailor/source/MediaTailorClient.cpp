@@ -62,6 +62,7 @@
 #include <aws/mediatailor/model/UntagResourceRequest.h>
 #include <aws/mediatailor/model/UpdateChannelRequest.h>
 #include <aws/mediatailor/model/UpdateLiveSourceRequest.h>
+#include <aws/mediatailor/model/UpdateProgramRequest.h>
 #include <aws/mediatailor/model/UpdateSourceLocationRequest.h>
 #include <aws/mediatailor/model/UpdateVodSourceRequest.h>
 
@@ -869,6 +870,28 @@ UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSour
   endpointResolutionOutcome.GetResult().AddPathSegments("/liveSource/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLiveSourceName());
   return UpdateLiveSourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateProgramOutcome MediaTailorClient::UpdateProgram(const UpdateProgramRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProgram", "Required field: ChannelName, is not set");
+    return UpdateProgramOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
+  if (!request.ProgramNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProgram", "Required field: ProgramName, is not set");
+    return UpdateProgramOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channel/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/program/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
+  return UpdateProgramOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const UpdateSourceLocationRequest& request) const

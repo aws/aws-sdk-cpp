@@ -125,62 +125,56 @@ namespace Model
 
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline const DataDestination& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline void SetDestination(const DataDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline void SetDestination(DataDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline CreateWhatIfForecastExportRequest& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline CreateWhatIfForecastExportRequest& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
 

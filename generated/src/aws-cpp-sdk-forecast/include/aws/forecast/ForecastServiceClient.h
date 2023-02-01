@@ -209,10 +209,10 @@ namespace ForecastService
          * bucket and the Amazon Resource Name (ARN) of the dataset that you want to import
          * the data to.</p> <p>You must specify a <a
          * href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
-         * object that includes an AWS Identity and Access Management (IAM) role that
-         * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy
-         * of your data and processes it in an internal AWS system. For more information,
-         * see <a
+         * object that includes an Identity and Access Management (IAM) role that Amazon
+         * Forecast can assume to access the data, as Amazon Forecast makes a copy of your
+         * data and processes it in an internal Amazon Web Services system. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
          * up permissions</a>.</p> <p>The training data must be in CSV or Parquet format.
          * The delimiter must be a comma (,).</p> <p>You can specify the path to a specific
@@ -321,8 +321,8 @@ namespace ForecastService
          * <p>Exports an Explainability resource created by the <a>CreateExplainability</a>
          * operation. Exported files are exported to an Amazon Simple Storage Service
          * (Amazon S3) bucket.</p> <p>You must specify a <a>DataDestination</a> object that
-         * includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM)
-         * role that Amazon Forecast can assume to access the Amazon S3 bucket. For more
+         * includes an Amazon S3 bucket and an Identity and Access Management (IAM) role
+         * that Amazon Forecast can assume to access the Amazon S3 bucket. For more
          * information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
          * <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
          * access the export in your Amazon S3 bucket. To get the status, use the
@@ -403,8 +403,8 @@ namespace ForecastService
          * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</p>
          * <p>where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
-         * that includes an AWS Identity and Access Management (IAM) role that Amazon
-         * Forecast can assume to access the Amazon S3 bucket. For more information, see
+         * that includes an Identity and Access Management (IAM) role that Amazon Forecast
+         * can assume to access the Amazon S3 bucket. For more information, see
          * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <p>To get a list of all your forecast export
          * jobs, use the <a>ListForecastExportJobs</a> operation.</p>  <p>The
@@ -533,9 +533,9 @@ namespace ForecastService
          * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
          * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDate format
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
-         * that includes an Amazon S3 bucket and an AWS Identity and Access Management
-         * (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For
-         * more information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
+         * that includes an Amazon S3 bucket and an Identity and Access Management (IAM)
+         * role that Amazon Forecast can assume to access the Amazon S3 bucket. For more
+         * information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
          * <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
          * access the export in your Amazon S3 bucket. To get the status, use the
          * <a>DescribePredictorBacktestExportJob</a> operation.</p> <p><h3>See
@@ -572,17 +572,18 @@ namespace ForecastService
          * example, imagine you are a clothing retailer who is considering an end of season
          * sale to clear space for new styles. After creating a baseline forecast, you can
          * use a what-if analysis to investigate how different sales tactics might affect
-         * your goals. You could create a scenario where everything is given a 25% markdown
-         * and another where everything is given a fixed dollar markdown. You can create a
-         * scenario where the sale lasts for 1 week and another where the sale lasts for 1
-         * month. Your what-if analysis enables you to compare many different scenarios
-         * against each other.</p> <p>Note that a what-if analysis is meant to display what
-         * the forecasting model has learned and how it will behave in the scenarios that
-         * you are evaluating. Do not blindly use the results of the what-if analysis to
-         * make business decisions. For instance, forecasts might not be accurate for novel
-         * scenarios where there is no reference available to determine whether a forecast
-         * is good.</p> <p>The <a>TimeSeriesSelector</a> object defines the items that you
-         * want in the what-if analysis.</p><p><h3>See Also:</h3>   <a
+         * your goals.</p> <p>You could create a scenario where everything is given a 25%
+         * markdown, and another where everything is given a fixed dollar markdown. You
+         * could create a scenario where the sale lasts for one week and another where the
+         * sale lasts for one month. With a what-if analysis, you can compare many
+         * different scenarios against each other.</p> <p>Note that a what-if analysis is
+         * meant to display what the forecasting model has learned and how it will behave
+         * in the scenarios that you are evaluating. Do not blindly use the results of the
+         * what-if analysis to make business decisions. For instance, forecasts might not
+         * be accurate for novel scenarios where there is no reference available to
+         * determine whether a forecast is good.</p> <p>The <a>TimeSeriesSelector</a>
+         * object defines the items that you want in the what-if analysis.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">AWS
          * API Reference</a></p>
          */
@@ -641,8 +642,8 @@ namespace ForecastService
          * <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
          * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
-         * that includes an AWS Identity and Access Management (IAM) role that Amazon
-         * Forecast can assume to access the Amazon S3 bucket. For more information, see
+         * that includes an Identity and Access Management (IAM) role that Amazon Forecast
+         * can assume to access the Amazon S3 bucket. For more information, see
          * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <p>To get a list of all your what-if forecast
          * export jobs, use the <a>ListWhatIfForecastExports</a> operation.</p> 

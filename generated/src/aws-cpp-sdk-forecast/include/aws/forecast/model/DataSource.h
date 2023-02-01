@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The source of your data, an AWS Identity and Access Management (IAM) role
-   * that allows Amazon Forecast to access the data and, optionally, an AWS Key
-   * Management Service (KMS) key.</p><p><h3>See Also:</h3>   <a
+   * <p>The source of your data, an Identity and Access Management (IAM) role that
+   * allows Amazon Forecast to access the data and, optionally, an Key Management
+   * Service (KMS) key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataSource">AWS
    * API Reference</a></p>
    */

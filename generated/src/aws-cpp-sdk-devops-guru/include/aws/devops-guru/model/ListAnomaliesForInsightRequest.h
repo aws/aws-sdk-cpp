@@ -8,6 +8,7 @@
 #include <aws/devops-guru/DevOpsGuruRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/model/StartTimeRange.h>
+#include <aws/devops-guru/model/ListAnomaliesForInsightFilters.h>
 #include <utility>
 
 namespace Aws
@@ -229,6 +230,37 @@ namespace Model
      */
     inline ListAnomaliesForInsightRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline const ListAnomaliesForInsightFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline void SetFilters(const ListAnomaliesForInsightFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline void SetFilters(ListAnomaliesForInsightFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline ListAnomaliesForInsightRequest& WithFilters(const ListAnomaliesForInsightFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p> Specifies one or more service names that are used to list anomalies. </p>
+     */
+    inline ListAnomaliesForInsightRequest& WithFilters(ListAnomaliesForInsightFilters&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_insightId;
@@ -245,6 +277,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    ListAnomaliesForInsightFilters m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

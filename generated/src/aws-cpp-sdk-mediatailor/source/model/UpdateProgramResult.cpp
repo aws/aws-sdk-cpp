@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/CreateProgramResult.h>
+#include <aws/mediatailor/model/UpdateProgramResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -16,18 +16,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProgramResult::CreateProgramResult() : 
+UpdateProgramResult::UpdateProgramResult() : 
     m_durationMillis(0)
 {
 }
 
-CreateProgramResult::CreateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+UpdateProgramResult::UpdateProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_durationMillis(0)
 {
   *this = result;
 }
 
-CreateProgramResult& CreateProgramResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateProgramResult& UpdateProgramResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AdBreaks"))
