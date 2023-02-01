@@ -39,8 +39,14 @@ else()
         PATH_SUFFIXES include
     )
 
+    if (OPENSSL_CRYPTO_LIBRARY)
+        get_filename_component(libcrypto_name ${OPENSSL_CRYPTO_LIBRARY} NAME_WE)
+    else()
+        set(libcrypto_name "libcrypto")
+    endif()
+
     find_library(crypto_SHARED_LIBRARY
-        NAMES libcrypto.so libcrypto.dylib
+        NAMES ${libcrypto_name}.so ${libcrypto_name}.dylib
         HINTS
         "${CMAKE_PREFIX_PATH}"
         "${CMAKE_INSTALL_PREFIX}"
@@ -48,7 +54,7 @@ else()
     )
 
     find_library(crypto_STATIC_LIBRARY
-        NAMES libcrypto.a
+        NAMES ${libcrypto_name}.a
         HINTS
         "${CMAKE_PREFIX_PATH}"
         "${CMAKE_INSTALL_PREFIX}"
