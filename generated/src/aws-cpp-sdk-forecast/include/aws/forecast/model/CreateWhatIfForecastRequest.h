@@ -198,13 +198,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline const TimeSeriesReplacementsDataSource& GetTimeSeriesReplacementsDataSource() const{ return m_timeSeriesReplacementsDataSource; }
 
@@ -213,13 +213,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline bool TimeSeriesReplacementsDataSourceHasBeenSet() const { return m_timeSeriesReplacementsDataSourceHasBeenSet; }
 
@@ -228,13 +228,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline void SetTimeSeriesReplacementsDataSource(const TimeSeriesReplacementsDataSource& value) { m_timeSeriesReplacementsDataSourceHasBeenSet = true; m_timeSeriesReplacementsDataSource = value; }
 
@@ -243,13 +243,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline void SetTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSource&& value) { m_timeSeriesReplacementsDataSourceHasBeenSet = true; m_timeSeriesReplacementsDataSource = std::move(value); }
 
@@ -258,13 +258,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline CreateWhatIfForecastRequest& WithTimeSeriesReplacementsDataSource(const TimeSeriesReplacementsDataSource& value) { SetTimeSeriesReplacementsDataSource(value); return *this;}
 
@@ -273,13 +273,13 @@ namespace Model
      * change in the related time series dataset. A replacement time series does not
      * need to contain all rows that are in the baseline related time series. Include
      * only the rows (measure-dimension combinations) that you want to include in the
-     * what-if forecast. This dataset is merged with the original time series to create
-     * a transformed dataset that is used for the what-if analysis.</p> <p>This dataset
-     * should contain the items to modify (such as item_id or workforce_type), any
-     * relevant dimensions, the timestamp column, and at least one of the related time
-     * series columns. This file should not contain duplicate timestamps for the same
-     * time series.</p> <p>Timestamps and item_ids not included in this dataset are not
-     * included in the what-if analysis. </p>
+     * what-if forecast.</p> <p>This dataset is merged with the original time series to
+     * create a transformed dataset that is used for the what-if analysis.</p> <p>This
+     * dataset should contain the items to modify (such as item_id or workforce_type),
+     * any relevant dimensions, the timestamp column, and at least one of the related
+     * time series columns. This file should not contain duplicate timestamps for the
+     * same time series.</p> <p>Timestamps and item_ids not included in this dataset
+     * are not included in the what-if analysis. </p>
      */
     inline CreateWhatIfForecastRequest& WithTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSource&& value) { SetTimeSeriesReplacementsDataSource(std::move(value)); return *this;}
 

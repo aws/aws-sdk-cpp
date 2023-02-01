@@ -18,7 +18,8 @@ ListAnomaliesForInsightRequest::ListAnomaliesForInsightRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String ListAnomaliesForInsightRequest::SerializePayload() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

@@ -456,7 +456,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -464,7 +464,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -472,7 +472,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -480,7 +480,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -488,7 +488,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -496,7 +496,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -504,7 +504,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */
@@ -512,7 +512,7 @@ namespace Model
 
     /**
      * <p>The quantiles at which probabilistic forecasts are generated. You can specify
-     * up to 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
+     * up to five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a>
      * operation. If you didn't specify quantiles, the default values are <code>["0.1",
      * "0.5", "0.9"]</code>. </p>
      */

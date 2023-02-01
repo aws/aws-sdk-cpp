@@ -54,90 +54,146 @@ namespace Model
 
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline const Aws::String& GetForecastFrequency() const{ return m_forecastFrequency; }
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline bool ForecastFrequencyHasBeenSet() const { return m_forecastFrequencyHasBeenSet; }
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline void SetForecastFrequency(const Aws::String& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = value; }
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline void SetForecastFrequency(Aws::String&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::move(value); }
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline void SetForecastFrequency(const char* value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency.assign(value); }
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline FeaturizationConfig& WithForecastFrequency(const Aws::String& value) { SetForecastFrequency(value); return *this;}
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline FeaturizationConfig& WithForecastFrequency(Aws::String&& value) { SetForecastFrequency(std::move(value)); return *this;}
 
     /**
-     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are Y
-     * (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-     * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-     * <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-     * frequency.</p> <p>When a RELATED_TIME_SERIES dataset is provided, the frequency
-     * must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+     * <p>The frequency of predictions in a forecast.</p> <p>Valid intervals are an
+     * integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     * (Minute). For example, "1D" indicates every day and "15min" indicates every 15
+     * minutes. You cannot specify a value that would overlap with the next larger
+     * frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each
+     * frequency are the following:</p> <ul> <li> <p>Minute - 1-59</p> </li> <li>
+     * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
+     * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul> <p>Thus,
+     * if you want every other week forecasts, specify "2W". Or, if you want quarterly
+     * forecasts, you specify "3M".</p> <p>The frequency must be greater than or equal
+     * to the TARGET_TIME_SERIES dataset frequency.</p> <p>When a RELATED_TIME_SERIES
+     * dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES
+     * dataset frequency.</p>
      */
     inline FeaturizationConfig& WithForecastFrequency(const char* value) { SetForecastFrequency(value); return *this;}
 

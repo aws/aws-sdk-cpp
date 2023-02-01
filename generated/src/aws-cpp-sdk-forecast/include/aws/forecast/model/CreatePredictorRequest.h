@@ -364,61 +364,67 @@ namespace Model
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline bool AutoMLOverrideStrategyHasBeenSet() const { return m_autoMLOverrideStrategyHasBeenSet; }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = std::move(value); }
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline CreatePredictorRequest& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
 
     /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
-     * available in private beta. Contact AWS Support or your account manager to learn
-     * more about access privileges. </p>  <p>Used to overide the default AutoML
-     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
-     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
-     * parameter is only valid for predictors trained using AutoML.</p>
+     * available in private beta. Contact Amazon Web Services Support or your account
+     * manager to learn more about access privileges. </p>  <p>Used to overide
+     * the default AutoML strategy, which is to optimize predictor accuracy. To apply
+     * an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
      */
     inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 
@@ -759,38 +765,38 @@ namespace Model
 
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline CreatePredictorRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
-     * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+     * <p>An Key Management Service (KMS) key and the Identity and Access Management
+     * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline CreatePredictorRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 
@@ -809,12 +815,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -832,12 +838,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -855,12 +861,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -878,12 +884,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -901,12 +907,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreatePredictorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -924,12 +930,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreatePredictorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -947,12 +953,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreatePredictorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -970,12 +976,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreatePredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

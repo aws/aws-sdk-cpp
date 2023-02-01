@@ -120,62 +120,56 @@ namespace Model
 
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline const DataDestination& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline void SetDestination(const DataDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline void SetDestination(DataDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline CreateForecastExportJobRequest& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The location where you want to save the forecast and an AWS Identity and
-     * Access Management (IAM) role that Amazon Forecast can assume to access the
-     * location. The forecast must be exported to an Amazon S3 bucket.</p> <p>If
-     * encryption is used, <code>Destination</code> must include an AWS Key Management
-     * Service (KMS) key. The IAM role must allow Amazon Forecast permission to access
-     * the key.</p>
+     * <p>The location where you want to save the forecast and an Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the location.
+     * The forecast must be exported to an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>Destination</code> must include an Key Management Service (KMS) key.
+     * The IAM role must allow Amazon Forecast permission to access the key.</p>
      */
     inline CreateForecastExportJobRequest& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
 
@@ -194,12 +188,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -217,12 +211,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -240,12 +234,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -263,12 +257,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -286,12 +280,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateForecastExportJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -309,12 +303,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateForecastExportJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -332,12 +326,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateForecastExportJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -355,12 +349,12 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
-     * delete tag keys with this prefix. Values can have this prefix. If a tag value
-     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
-     * it to be a user tag and will count against the limit of 50 tags. Tags with only
-     * the key prefix of <code>aws</code> do not count against your tags per resource
-     * limit.</p> </li> </ul>
+     * such as a prefix for keys as it is reserved for Amazon Web Services use. You
+     * cannot edit or delete tag keys with this prefix. Values can have this prefix. If
+     * a tag value has <code>aws</code> as its prefix but the key does not, then
+     * Forecast considers it to be a user tag and will count against the limit of 50
+     * tags. Tags with only the key prefix of <code>aws</code> do not count against
+     * your tags per resource limit.</p> </li> </ul>
      */
     inline CreateForecastExportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

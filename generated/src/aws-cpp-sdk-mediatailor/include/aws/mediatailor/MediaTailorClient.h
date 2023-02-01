@@ -1200,6 +1200,31 @@ namespace MediaTailor
         }
 
         /**
+         * <p>Updates a program within a channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProgramOutcome UpdateProgram(const Model::UpdateProgramRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateProgram that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateProgramRequestT = Model::UpdateProgramRequest>
+        Model::UpdateProgramOutcomeCallable UpdateProgramCallable(const UpdateProgramRequestT& request) const
+        {
+            return SubmitCallable(&MediaTailorClient::UpdateProgram, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateProgram that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateProgramRequestT = Model::UpdateProgramRequest>
+        void UpdateProgramAsync(const UpdateProgramRequestT& request, const UpdateProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaTailorClient::UpdateProgram, request, handler, context);
+        }
+
+        /**
          * <p>Updates a source location. A source location is a container for sources. For
          * more information about source locations, see <a
          * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working

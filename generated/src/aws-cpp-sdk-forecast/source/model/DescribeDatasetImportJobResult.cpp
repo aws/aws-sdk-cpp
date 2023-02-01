@@ -19,14 +19,16 @@ using namespace Aws;
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult() : 
     m_useGeolocationForTimeZone(false),
     m_estimatedTimeRemainingInMinutes(0),
-    m_dataSize(0.0)
+    m_dataSize(0.0),
+    m_importMode(ImportMode::NOT_SET)
 {
 }
 
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_useGeolocationForTimeZone(false),
     m_estimatedTimeRemainingInMinutes(0),
-    m_dataSize(0.0)
+    m_dataSize(0.0),
+    m_importMode(ImportMode::NOT_SET)
 {
   *this = result;
 }
@@ -130,6 +132,12 @@ DescribeDatasetImportJobResult& DescribeDatasetImportJobResult::operator =(const
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
+
+  }
+
+  if(jsonValue.ValueExists("ImportMode"))
+  {
+    m_importMode = ImportModeMapper::GetImportModeForName(jsonValue.GetString("ImportMode"));
 
   }
 

@@ -480,50 +480,114 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(const Aws::String& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(Aws::String&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(const char* value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary.assign(value); }
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateRoleRequest& WithPermissionsBoundary(const Aws::String& value) { SetPermissionsBoundary(value); return *this;}
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateRoleRequest& WithPermissionsBoundary(Aws::String&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the policy that is used to set the permissions boundary for the
-     * role.</p>
+     * <p>The ARN of the managed policy that is used to set the permissions boundary
+     * for the role.</p> <p>A permissions boundary policy defines the maximum
+     * permissions that identity-based policies can grant to an entity, but does not
+     * grant permissions. Permissions boundaries do not define the maximum permissions
+     * that a resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <p>For more
+     * information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     * types </a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateRoleRequest& WithPermissionsBoundary(const char* value) { SetPermissionsBoundary(value); return *this;}
 

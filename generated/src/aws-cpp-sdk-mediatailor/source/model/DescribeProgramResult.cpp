@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProgramResult::DescribeProgramResult()
+DescribeProgramResult::DescribeProgramResult() : 
+    m_durationMillis(0)
 {
 }
 
-DescribeProgramResult::DescribeProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeProgramResult::DescribeProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_durationMillis(0)
 {
   *this = result;
 }
@@ -49,9 +51,21 @@ DescribeProgramResult& DescribeProgramResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("ClipRange"))
+  {
+    m_clipRange = jsonValue.GetObject("ClipRange");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("DurationMillis"))
+  {
+    m_durationMillis = jsonValue.GetInt64("DurationMillis");
 
   }
 

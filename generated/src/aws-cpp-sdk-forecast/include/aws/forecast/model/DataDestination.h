@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The destination for an export job. Provide an S3 path, an AWS Identity and
-   * Access Management (IAM) role that allows Amazon Forecast to access the location,
-   * and an AWS Key Management Service (KMS) key (optional). </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The destination for an export job. Provide an S3 path, an Identity and Access
+   * Management (IAM) role that allows Amazon Forecast to access the location, and an
+   * Key Management Service (KMS) key (optional). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataDestination">AWS
    * API Reference</a></p>
    */
