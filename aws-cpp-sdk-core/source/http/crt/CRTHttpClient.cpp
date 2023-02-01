@@ -16,7 +16,7 @@ static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
 // Adapts AWS SDK input streams and rate limiters to the CRT input stream reading model.
 class SDKAdaptingInputStream : public Crt::Io::StdIOStreamInputStream {
 public:
-    SDKAdaptingInputStream(Utils::RateLimits::RateLimiterInterface& rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream, 
+    SDKAdaptingInputStream(const std::shared_ptr<Utils::RateLimits::RateLimiterInterface>& rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream,
         const Http::HttpClient& client, const Http::HttpRequest& request, bool isStreaming,
         Aws::Crt::Allocator *allocator = Crt::ApiAllocator()) noexcept : 
         Crt::Io::StdIOStreamInputStream(std::move(stream), allocator), m_rateLimiter(rateLimiter), 
@@ -47,7 +47,7 @@ protected:
         }        
 
         // initial check to see if we should avoid reading for the moment.
-        if (m_rateLimiter.ApplyCost(0) == std::chrono::milliseconds(0)) {
+        if (!m_rateLimiter || (m_rateLimiter && m_rateLimiter->ApplyCost(0) == std::chrono::milliseconds(0))) {
             size_t currentPos = buffer.len;
 
             // now do the read. We may over read by an IO buffer size, but it's fine. The throttle will still
@@ -114,16 +114,19 @@ protected:
                 sentHandler(&m_currentRequest, static_cast<long long>(amountRead));
             }
 
-            // now actually reduce the window.
-            m_rateLimiter.ApplyCost(static_cast<int64_t>(newPos - currentPos));
-            return retValue;
+            if (m_rateLimiter)
+            {
+                // now actually reduce the window.
+                m_rateLimiter->ApplyCost(static_cast<int64_t>(newPos - currentPos));
+                return retValue;
+            }
         }
 
         return true;
     }
 
 private:
-    Utils::RateLimits::RateLimiterInterface& m_rateLimiter;
+    std::shared_ptr<Utils::RateLimits::RateLimiterInterface> m_rateLimiter;
     const Http::HttpClient& m_client;
     const Http::HttpRequest& m_currentRequest;
     bool m_isStreaming;
@@ -236,7 +239,7 @@ namespace Aws
             m_connectionPools.clear();
         }
 
-        static void AddRequestMetadataToCrtRequest(const std::shared_ptr<HttpRequest>& request, const std::shared_ptr<Crt::Http::HttpRequest>& crtRequest, const ClientConfiguration& clientConfig)
+        static void AddRequestMetadataToCrtRequest(const std::shared_ptr<HttpRequest>& request, const std::shared_ptr<Crt::Http::HttpRequest>& crtRequest)
         {
             const char* methodStr = Aws::Http::HttpMethodMapper::GetNameForHttpMethod(request->GetMethod());
             AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, "Making " << methodStr << " request to " << request->GetURIString());
@@ -249,40 +252,6 @@ namespace Aws
                 crtHeader.name = Crt::ByteCursorFromArray((const uint8_t *)header.first.data(), header.first.length());
                 crtHeader.value = Crt::ByteCursorFromArray((const uint8_t *)header.second.data(), header.second.length());
                 crtRequest->AddHeader(crtHeader);
-            }
-
-            // Explicitly send empty headers for some of the more quirky HTTP interop behaviors if they aren't set.
-            if (!request->HasHeader(Http::TRANSFER_ENCODING_HEADER))
-            {
-                Crt::Http::HttpHeader transferEncodingHeader;
-                transferEncodingHeader.name = Crt::ByteCursorFromCString("transfer-encoding");
-                transferEncodingHeader.value = Crt::ByteCursorFromCString("");
-                crtRequest->AddHeader(transferEncodingHeader);
-            }
-
-            if (!request->HasHeader(Http::CONTENT_LENGTH_HEADER))
-            {
-                Crt::Http::HttpHeader contentLengthHeader;
-                contentLengthHeader.name = Crt::ByteCursorFromCString("content-length");
-                contentLengthHeader.value = Crt::ByteCursorFromCString("");
-                crtRequest->AddHeader(contentLengthHeader);
-            }
-
-            if (!request->HasHeader(Http::CONTENT_TYPE_HEADER))
-            {
-                Crt::Http::HttpHeader contentTypeHeader;
-                contentTypeHeader.name = Crt::ByteCursorFromCString("content-type");
-                contentTypeHeader.value = Crt::ByteCursorFromCString("");
-                crtRequest->AddHeader(contentTypeHeader);
-            }
-
-            // Discard Expect header so as to avoid using multiple payloads to send a http request (header + body)
-            if (clientConfig.disableExpectHeader)
-            {
-                Crt::Http::HttpHeader expectHeader;
-                expectHeader.name = Crt::ByteCursorFromCString("expect");
-                expectHeader.value = Crt::ByteCursorFromCString("");
-                crtRequest->AddHeader(expectHeader);
             }
 
             // HTTP method, GET, PUT, DELETE, etc...
@@ -311,7 +280,6 @@ namespace Aws
             }
 
             //TODO: handle the read rate limiter here, once backpressure is setup.
-
             for (const auto& hashIterator : request->GetResponseValidationHashes())
             {
                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
@@ -428,13 +396,13 @@ namespace Aws
                 response->SetClientErrorType(CoreErrors::INVALID_PARAMETER_COMBINATION);
                 return response;
             }
-            AddRequestMetadataToCrtRequest(request, crtRequest, m_configuration);
+            AddRequestMetadataToCrtRequest(request, crtRequest);
 
             // Set the request body stream on the crt request. Setup the write rate limiter if present
             if (request->GetContentBody())
             {
                 bool isStreaming = request->IsEventStreamRequest();
-                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, *m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
+                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
             }
 
             Crt::Http::HttpRequestOptions requestOptions;

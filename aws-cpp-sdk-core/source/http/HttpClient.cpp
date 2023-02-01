@@ -10,10 +10,10 @@ using namespace Aws;
 using namespace Aws::Http;
 
 HttpClient::HttpClient() :
+    m_bad(false),
     m_disableRequestProcessing( false ),
     m_requestProcessingSignalLock(),
-    m_requestProcessingSignal(),
-    m_bad(false)
+    m_requestProcessingSignal()
 {
 }
 
