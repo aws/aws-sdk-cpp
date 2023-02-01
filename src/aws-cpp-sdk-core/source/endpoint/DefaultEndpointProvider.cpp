@@ -128,10 +128,12 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
         {
             if(EndpointParameter::ParameterType::BOOLEAN == parameter.GetStoredType())
             {
+                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint bool eval parameter: " << parameter.GetName() << " = " << parameter.GetBoolValueNoCheck());
                 crtRequestCtx.AddBoolean(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), parameter.GetBoolValueNoCheck());
             }
             else if(EndpointParameter::ParameterType::STRING == parameter.GetStoredType())
             {
+                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint str eval parameter: " << parameter.GetName() << " = " << parameter.GetStrValueNoCheck());
                 crtRequestCtx.AddString(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), Aws::Crt::ByteCursorFromCString(parameter.GetStrValueNoCheck().c_str()));
             }
             else
@@ -175,6 +177,7 @@ ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
             const auto crtProps = resolved->GetProperties();
             if (crtProps && crtProps->size() > 2) {
                 Aws::String sdkCrtProps = crtProps ? Aws::String(crtProps->begin(), crtProps->end()) : "";
+                AWS_LOGSTREAM_TRACE(DEFAULT_ENDPOINT_PROVIDER_TAG, "Endpoint rules evaluated props: " << sdkCrtProps);
 
                 Internal::Endpoint::EndpointAttributes epAttributes = Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(
                         sdkCrtProps);
