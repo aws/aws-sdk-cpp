@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required (VERSION 3.1)
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 if(POLICY CMP0056)
     cmake_policy(SET CMP0056 NEW) # CMP0056: Honor link flags in try_compile() source-file signature. Introduced in 3.2
 endif()
@@ -11,12 +11,6 @@ if(POLICY CMP0057)
 endif()
 if (POLICY CMP0077)
     cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
-endif()
-
-# 3.12 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
-# Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
-if(CMAKE_VERSION VERSION_LESS 3.12)
-    message(WARNING "Building with CMake 3.12 or higher is strongly suggested; current version is ${CMAKE_VERSION}")
 endif()
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
@@ -62,6 +56,7 @@ option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIE
                                 You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode." ON)
 option(REGENERATE_DEFAULTS "If set to ON, defaults mode configuration will be regenerated from the JSON definitions, this option involves some setup of python, java 8+, and maven" OFF)
 
+set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
 
@@ -286,6 +281,8 @@ endif()
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
     add_definitions(-DLEGACY_GCC)
 endif()
+
+add_definitions("-DAWS_TEST_REGION=${AWS_TEST_REGION}")
 
 add_sdks()
 

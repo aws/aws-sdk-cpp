@@ -1,0 +1,8 @@
+#if(0)
+void ${className}::${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, ${operation.name}(), context);
+    } );
+}#end
