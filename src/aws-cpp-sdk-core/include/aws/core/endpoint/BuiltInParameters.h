@@ -20,6 +20,8 @@ namespace Aws
         public:
             using EndpointParameter = Aws::Endpoint::EndpointParameter;
 
+            BuiltInParameters() = default;
+            BuiltInParameters(const BuiltInParameters&) = delete; // avoid accidental copy
             virtual ~BuiltInParameters(){};
 
             virtual void SetFromClientConfiguration(const Client::ClientConfiguration& config);

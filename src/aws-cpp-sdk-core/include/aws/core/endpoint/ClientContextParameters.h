@@ -18,6 +18,10 @@ namespace Aws
         public:
             using EndpointParameter = Aws::Endpoint::EndpointParameter;
 
+            ClientContextParameters() = default;
+            // avoid accidental copy from endpointProvider::AccessClientContextParameters()
+            ClientContextParameters(const ClientContextParameters&) = delete;
+
             virtual ~ClientContextParameters(){};
 
             const EndpointParameter& GetParameter(const Aws::String& name) const;
