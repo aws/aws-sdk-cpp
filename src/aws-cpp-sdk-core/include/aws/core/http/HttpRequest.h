@@ -552,7 +552,7 @@ namespace Aws
             {
                 m_requestHash = std::make_pair(algorithmName, hash);
             }
-            const std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>& GetRequestHash() { return m_requestHash; }
+            const std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>& GetRequestHash() const { return m_requestHash; }
 
             void AddResponseValidationHash(const Aws::String& algorithmName, const std::shared_ptr<Aws::Utils::Crypto::Hash>& hash)
             {
