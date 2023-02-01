@@ -44,12 +44,15 @@ const char* ${className}::ALLOCATION_TAG = "${className}";
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
-#if($operation.name == "CreateQueue" || $operation.name == "ListQueues" || $operation.name == "GetQueueUrl")
+#set($operationsUseQueueUrlEndpoint = ['AddPermission' , 'RemovePermission' , 'ChangeMessageVisibility', 'DeleteQueue', 'DeleteMessage', 'GetQueueAttributes',
+  'ReceiveMessage', 'SetQueueAttributes', 'SendMessage', 'SendMessageBatch', 'ChangeMessageVisibilityBatch',
+  'DeleteMessageBatch', 'ListDeadLetterSourceQueues', 'PurgeQueue', 'TagQueue', 'UntagQueue', 'ListQueueTags'])
+#if($operationsUseQueueUrlEndpoint.contains($operation.name))
+  return ${operation.name}Outcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
   return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
-#else
-  return ${operation.name}Outcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
 }
 
