@@ -364,12 +364,12 @@ namespace Aws
                 connectionReference = connection;
 
                 if (clientStream && clientStream->Activate()) {
-                    AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Initiation of request failed because " << aws_error_debug_str(aws_last_error()));
-                    waiter.Wakeup();
                     return;
                 }
 
                 finalErrorCode = aws_last_error();
+                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Initiation of request failed because " << aws_error_debug_str(finalErrorCode));
+
             }
 
             const char *errorMsg = aws_error_debug_str(finalErrorCode);
