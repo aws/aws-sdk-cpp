@@ -279,7 +279,7 @@ namespace Aws
                 return;
             }
 
-            //TODO: handle the read rate limiter here, once backpressure is setup.
+            //TODO: handle the read rate limiter here, once back pressure is setup.
             for (const auto& hashIterator : request->GetResponseValidationHashes())
             {
                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
