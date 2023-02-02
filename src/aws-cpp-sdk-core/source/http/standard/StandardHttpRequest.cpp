@@ -61,7 +61,7 @@ HeaderValueCollection StandardHttpRequest::GetHeaders() const
 
 const Aws::String& StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
-    auto iter = headerMap.find(headerName);
+    auto iter = headerMap.find(StringUtils::ToLower(headerName));
     assert (iter != headerMap.end());
     if (iter == headerMap.end()) {
         AWS_LOGSTREAM_ERROR(STANDARD_HTTP_REQUEST_LOG_TAG, "Requested a header value for a missing header key: " << headerName);
