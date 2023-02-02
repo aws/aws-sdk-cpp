@@ -46,7 +46,7 @@ public:
 #endif
         m_client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
         m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), config);
-        config.endpointOverride = "https://0xxxabcdefg123456789.com";
+        //config.endpointOverride = "https://0xxxabcdefg123456789.com";
         m_clientWithWrongEndpoint = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
 
@@ -61,7 +61,7 @@ public:
 
 };
 
-#if 0
+//#if 0
 // Temporarilly bypassing this test
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
@@ -141,7 +141,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE));
 }
-#endif
+//#endif
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
 {
