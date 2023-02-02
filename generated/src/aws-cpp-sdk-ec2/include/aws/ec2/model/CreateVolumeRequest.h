@@ -497,7 +497,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>
@@ -510,7 +512,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>
@@ -523,7 +527,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>
@@ -536,7 +542,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>
@@ -549,7 +557,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>
@@ -562,7 +572,9 @@ namespace Model
      * <p>Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> </p> </li> <li>
      * <p>Throughput Optimized HDD: <code>st1</code> </p> </li> <li> <p>Cold HDD:
      * <code>sc1</code> </p> </li> <li> <p>Magnetic: <code>standard</code> </p> </li>
-     * </ul> <p>For more information, see <a
+     * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
+     * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Default: <code>gp2</code> </p>

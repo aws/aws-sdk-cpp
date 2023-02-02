@@ -284,42 +284,42 @@ namespace Model
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline const FleetExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
 
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
 
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline void SetExcessCapacityTerminationPolicy(const FleetExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
 
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline void SetExcessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
 
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline FleetData& WithExcessCapacityTerminationPolicy(const FleetExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
 
     /**
      * <p>Indicates whether running instances should be terminated if the target
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
-     * Fleet.</p>
+     * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
     inline FleetData& WithExcessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
 

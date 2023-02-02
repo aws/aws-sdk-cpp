@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>A resource discovery is an IPAM component that enables IPAM Service to manage
-   * and monitor resources that belong to the owning account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A resource discovery is an IPAM component that enables IPAM to manage and
+   * monitor resources that belong to the owning account.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamResourceDiscovery">AWS
    * API Reference</a></p>
    */

@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline const Aws::Vector<ExtensionSummary>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline void SetItems(const Aws::Vector<ExtensionSummary>& value) { m_items = value; }
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline void SetItems(Aws::Vector<ExtensionSummary>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline ListExtensionsResult& WithItems(const Aws::Vector<ExtensionSummary>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline ListExtensionsResult& WithItems(Aws::Vector<ExtensionSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline ListExtensionsResult& AddItems(const ExtensionSummary& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The list of available extensions. The list includes Amazon Web
-     * Services-authored and user-created extensions.</p>
+     * <p>The list of available extensions. The list includes Amazon Web Services
+     * authored and user-created extensions.</p>
      */
     inline ListExtensionsResult& AddItems(ExtensionSummary&& value) { m_items.push_back(std::move(value)); return *this; }
 

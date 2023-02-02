@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Determines if hidden fields are included in an exported
+   * dashboard.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExportHiddenFieldsOption">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline ExportHiddenFieldsOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
     inline ExportHiddenFieldsOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
 

@@ -162,6 +162,18 @@ GetDeploymentResult& GetDeploymentResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+
+  }
+
 
 
   return *this;

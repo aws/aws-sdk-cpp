@@ -8,7 +8,13 @@
 #include <aws/quicksight/model/AdHocFilteringOption.h>
 #include <aws/quicksight/model/ExportToCSVOption.h>
 #include <aws/quicksight/model/SheetControlsOption.h>
-#include <aws/quicksight/model/DashboardVisualPublishOptions.h>
+#include <aws/quicksight/model/SheetLayoutElementMaximizationOption.h>
+#include <aws/quicksight/model/VisualMenuOption.h>
+#include <aws/quicksight/model/VisualAxisSortOption.h>
+#include <aws/quicksight/model/ExportWithHiddenFieldsOption.h>
+#include <aws/quicksight/model/DataPointDrillUpDownOption.h>
+#include <aws/quicksight/model/DataPointMenuLabelOption.h>
+#include <aws/quicksight/model/DataPointTooltipOption.h>
 #include <utility>
 
 namespace Aws
@@ -134,34 +140,220 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline const DashboardVisualPublishOptions& GetVisualPublishOptions() const{ return m_visualPublishOptions; }
+    inline const SheetLayoutElementMaximizationOption& GetSheetLayoutElementMaximizationOption() const{ return m_sheetLayoutElementMaximizationOption; }
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline bool VisualPublishOptionsHasBeenSet() const { return m_visualPublishOptionsHasBeenSet; }
+    inline bool SheetLayoutElementMaximizationOptionHasBeenSet() const { return m_sheetLayoutElementMaximizationOptionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline void SetVisualPublishOptions(const DashboardVisualPublishOptions& value) { m_visualPublishOptionsHasBeenSet = true; m_visualPublishOptions = value; }
+    inline void SetSheetLayoutElementMaximizationOption(const SheetLayoutElementMaximizationOption& value) { m_sheetLayoutElementMaximizationOptionHasBeenSet = true; m_sheetLayoutElementMaximizationOption = value; }
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline void SetVisualPublishOptions(DashboardVisualPublishOptions&& value) { m_visualPublishOptionsHasBeenSet = true; m_visualPublishOptions = std::move(value); }
+    inline void SetSheetLayoutElementMaximizationOption(SheetLayoutElementMaximizationOption&& value) { m_sheetLayoutElementMaximizationOptionHasBeenSet = true; m_sheetLayoutElementMaximizationOption = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline DashboardPublishOptions& WithVisualPublishOptions(const DashboardVisualPublishOptions& value) { SetVisualPublishOptions(value); return *this;}
+    inline DashboardPublishOptions& WithSheetLayoutElementMaximizationOption(const SheetLayoutElementMaximizationOption& value) { SetSheetLayoutElementMaximizationOption(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The sheet layout maximization options of a dashbaord.</p>
      */
-    inline DashboardPublishOptions& WithVisualPublishOptions(DashboardVisualPublishOptions&& value) { SetVisualPublishOptions(std::move(value)); return *this;}
+    inline DashboardPublishOptions& WithSheetLayoutElementMaximizationOption(SheetLayoutElementMaximizationOption&& value) { SetSheetLayoutElementMaximizationOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline const VisualMenuOption& GetVisualMenuOption() const{ return m_visualMenuOption; }
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline bool VisualMenuOptionHasBeenSet() const { return m_visualMenuOptionHasBeenSet; }
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline void SetVisualMenuOption(const VisualMenuOption& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = value; }
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline void SetVisualMenuOption(VisualMenuOption&& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = std::move(value); }
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithVisualMenuOption(const VisualMenuOption& value) { SetVisualMenuOption(value); return *this;}
+
+    /**
+     * <p>The menu options of a visual in a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithVisualMenuOption(VisualMenuOption&& value) { SetVisualMenuOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline const VisualAxisSortOption& GetVisualAxisSortOption() const{ return m_visualAxisSortOption; }
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline bool VisualAxisSortOptionHasBeenSet() const { return m_visualAxisSortOptionHasBeenSet; }
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline void SetVisualAxisSortOption(const VisualAxisSortOption& value) { m_visualAxisSortOptionHasBeenSet = true; m_visualAxisSortOption = value; }
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline void SetVisualAxisSortOption(VisualAxisSortOption&& value) { m_visualAxisSortOptionHasBeenSet = true; m_visualAxisSortOption = std::move(value); }
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithVisualAxisSortOption(const VisualAxisSortOption& value) { SetVisualAxisSortOption(value); return *this;}
+
+    /**
+     * <p>The axis sort options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithVisualAxisSortOption(VisualAxisSortOption&& value) { SetVisualAxisSortOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline const ExportWithHiddenFieldsOption& GetExportWithHiddenFieldsOption() const{ return m_exportWithHiddenFieldsOption; }
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline bool ExportWithHiddenFieldsOptionHasBeenSet() const { return m_exportWithHiddenFieldsOptionHasBeenSet; }
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline void SetExportWithHiddenFieldsOption(const ExportWithHiddenFieldsOption& value) { m_exportWithHiddenFieldsOptionHasBeenSet = true; m_exportWithHiddenFieldsOption = value; }
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline void SetExportWithHiddenFieldsOption(ExportWithHiddenFieldsOption&& value) { m_exportWithHiddenFieldsOptionHasBeenSet = true; m_exportWithHiddenFieldsOption = std::move(value); }
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithExportWithHiddenFieldsOption(const ExportWithHiddenFieldsOption& value) { SetExportWithHiddenFieldsOption(value); return *this;}
+
+    /**
+     * <p>Determines if hidden fields are exported with a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithExportWithHiddenFieldsOption(ExportWithHiddenFieldsOption&& value) { SetExportWithHiddenFieldsOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline const DataPointDrillUpDownOption& GetDataPointDrillUpDownOption() const{ return m_dataPointDrillUpDownOption; }
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline bool DataPointDrillUpDownOptionHasBeenSet() const { return m_dataPointDrillUpDownOptionHasBeenSet; }
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline void SetDataPointDrillUpDownOption(const DataPointDrillUpDownOption& value) { m_dataPointDrillUpDownOptionHasBeenSet = true; m_dataPointDrillUpDownOption = value; }
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline void SetDataPointDrillUpDownOption(DataPointDrillUpDownOption&& value) { m_dataPointDrillUpDownOptionHasBeenSet = true; m_dataPointDrillUpDownOption = std::move(value); }
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointDrillUpDownOption(const DataPointDrillUpDownOption& value) { SetDataPointDrillUpDownOption(value); return *this;}
+
+    /**
+     * <p>The drill-down options of data points in a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointDrillUpDownOption(DataPointDrillUpDownOption&& value) { SetDataPointDrillUpDownOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline const DataPointMenuLabelOption& GetDataPointMenuLabelOption() const{ return m_dataPointMenuLabelOption; }
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline bool DataPointMenuLabelOptionHasBeenSet() const { return m_dataPointMenuLabelOptionHasBeenSet; }
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline void SetDataPointMenuLabelOption(const DataPointMenuLabelOption& value) { m_dataPointMenuLabelOptionHasBeenSet = true; m_dataPointMenuLabelOption = value; }
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline void SetDataPointMenuLabelOption(DataPointMenuLabelOption&& value) { m_dataPointMenuLabelOptionHasBeenSet = true; m_dataPointMenuLabelOption = std::move(value); }
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointMenuLabelOption(const DataPointMenuLabelOption& value) { SetDataPointMenuLabelOption(value); return *this;}
+
+    /**
+     * <p>The data point menu label options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointMenuLabelOption(DataPointMenuLabelOption&& value) { SetDataPointMenuLabelOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline const DataPointTooltipOption& GetDataPointTooltipOption() const{ return m_dataPointTooltipOption; }
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline bool DataPointTooltipOptionHasBeenSet() const { return m_dataPointTooltipOptionHasBeenSet; }
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline void SetDataPointTooltipOption(const DataPointTooltipOption& value) { m_dataPointTooltipOptionHasBeenSet = true; m_dataPointTooltipOption = value; }
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline void SetDataPointTooltipOption(DataPointTooltipOption&& value) { m_dataPointTooltipOptionHasBeenSet = true; m_dataPointTooltipOption = std::move(value); }
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointTooltipOption(const DataPointTooltipOption& value) { SetDataPointTooltipOption(value); return *this;}
+
+    /**
+     * <p>The data point tool tip options of a dashboard.</p>
+     */
+    inline DashboardPublishOptions& WithDataPointTooltipOption(DataPointTooltipOption&& value) { SetDataPointTooltipOption(std::move(value)); return *this;}
 
   private:
 
@@ -174,8 +366,26 @@ namespace Model
     SheetControlsOption m_sheetControlsOption;
     bool m_sheetControlsOptionHasBeenSet = false;
 
-    DashboardVisualPublishOptions m_visualPublishOptions;
-    bool m_visualPublishOptionsHasBeenSet = false;
+    SheetLayoutElementMaximizationOption m_sheetLayoutElementMaximizationOption;
+    bool m_sheetLayoutElementMaximizationOptionHasBeenSet = false;
+
+    VisualMenuOption m_visualMenuOption;
+    bool m_visualMenuOptionHasBeenSet = false;
+
+    VisualAxisSortOption m_visualAxisSortOption;
+    bool m_visualAxisSortOptionHasBeenSet = false;
+
+    ExportWithHiddenFieldsOption m_exportWithHiddenFieldsOption;
+    bool m_exportWithHiddenFieldsOptionHasBeenSet = false;
+
+    DataPointDrillUpDownOption m_dataPointDrillUpDownOption;
+    bool m_dataPointDrillUpDownOptionHasBeenSet = false;
+
+    DataPointMenuLabelOption m_dataPointMenuLabelOption;
+    bool m_dataPointMenuLabelOptionHasBeenSet = false;
+
+    DataPointTooltipOption m_dataPointTooltipOption;
+    bool m_dataPointTooltipOptionHasBeenSet = false;
   };
 
 } // namespace Model

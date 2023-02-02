@@ -804,8 +804,8 @@ namespace EC2
 
         /**
          * <p>Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource
-         * discovery is an IPAM component that enables IPAM Service to manage and monitor
-         * resources that belong to the owning account.</p><p><h3>See Also:</h3>   <a
+         * discovery is an IPAM component that enables IPAM to manage and monitor resources
+         * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">AWS
          * API Reference</a></p>
          */
@@ -2559,8 +2559,8 @@ namespace EC2
 
         /**
          * <p>Creates an IPAM resource discovery. A resource discovery is an IPAM component
-         * that enables IPAM Service to manage and monitor resources that belong to the
-         * owning account.</p><p><h3>See Also:</h3>   <a
+         * that enables IPAM to manage and monitor resources that belong to the owning
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">AWS
          * API Reference</a></p>
          */
@@ -4946,8 +4946,8 @@ namespace EC2
 
         /**
          * <p>Deletes an IPAM resource discovery. A resource discovery is an IPAM component
-         * that enables IPAM Service to manage and monitor resources that belong to the
-         * owning account.</p><p><h3>See Also:</h3>   <a
+         * that enables IPAM to manage and monitor resources that belong to the owning
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">AWS
          * API Reference</a></p>
          */
@@ -8348,8 +8348,8 @@ namespace EC2
 
         /**
          * <p>Describes IPAM resource discoveries. A resource discovery is an IPAM
-         * component that enables IPAM Service to manage and monitor resources that belong
-         * to the owning account.</p><p><h3>See Also:</h3>   <a
+         * component that enables IPAM to manage and monitor resources that belong to the
+         * owning account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">AWS
          * API Reference</a></p>
          */
@@ -11631,8 +11631,8 @@ namespace EC2
 
         /**
          * <p>Disassociates a resource discovery from an Amazon VPC IPAM. A resource
-         * discovery is an IPAM component that enables IPAM Service to manage and monitor
-         * resources that belong to the owning account.</p><p><h3>See Also:</h3>   <a
+         * discovery is an IPAM component that enables IPAM to manage and monitor resources
+         * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">AWS
          * API Reference</a></p>
          */
@@ -13029,8 +13029,8 @@ namespace EC2
          * <p>Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is
          * associated with more than one resource discovery, the resource CIDRs across all
          * of the resource discoveries is returned. A resource discovery is an IPAM
-         * component that enables IPAM Service to manage and monitor resources that belong
-         * to the owning account.</p><p><h3>See Also:</h3>   <a
+         * component that enables IPAM to manage and monitor resources that belong to the
+         * owning account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">AWS
          * API Reference</a></p>
          */
@@ -14698,7 +14698,7 @@ namespace EC2
 
         /**
          * <p>Modifies a resource discovery. A resource discovery is an IPAM component that
-         * enables IPAM Service to manage and monitor resources that belong to the owning
+         * enables IPAM to manage and monitor resources that belong to the owning
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">AWS
          * API Reference</a></p>

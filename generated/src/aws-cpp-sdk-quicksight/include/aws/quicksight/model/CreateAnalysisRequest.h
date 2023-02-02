@@ -298,42 +298,48 @@ namespace Model
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline const AnalysisSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline void SetSourceEntity(const AnalysisSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline void SetSourceEntity(AnalysisSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline CreateAnalysisRequest& WithSourceEntity(const AnalysisSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
      * <p>A source entity to use for the analysis that you're creating. This metadata
      * structure contains details that describe a source template and one or more
-     * datasets.</p>
+     * datasets.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code>
+     * must be provided in order for the request to be valid.</p>
      */
     inline CreateAnalysisRequest& WithSourceEntity(AnalysisSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
@@ -446,37 +452,49 @@ namespace Model
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline const AnalysisDefinition& GetDefinition() const{ return m_definition; }
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(const AnalysisDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(AnalysisDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateAnalysisRequest& WithDefinition(const AnalysisDefinition& value) { SetDefinition(value); return *this;}
 
     /**
      * <p>The definition of an analysis.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateAnalysisRequest& WithDefinition(AnalysisDefinition&& value) { SetDefinition(std::move(value)); return *this;}
 

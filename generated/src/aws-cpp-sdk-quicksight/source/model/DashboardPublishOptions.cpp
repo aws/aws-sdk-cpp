@@ -22,7 +22,13 @@ DashboardPublishOptions::DashboardPublishOptions() :
     m_adHocFilteringOptionHasBeenSet(false),
     m_exportToCSVOptionHasBeenSet(false),
     m_sheetControlsOptionHasBeenSet(false),
-    m_visualPublishOptionsHasBeenSet(false)
+    m_sheetLayoutElementMaximizationOptionHasBeenSet(false),
+    m_visualMenuOptionHasBeenSet(false),
+    m_visualAxisSortOptionHasBeenSet(false),
+    m_exportWithHiddenFieldsOptionHasBeenSet(false),
+    m_dataPointDrillUpDownOptionHasBeenSet(false),
+    m_dataPointMenuLabelOptionHasBeenSet(false),
+    m_dataPointTooltipOptionHasBeenSet(false)
 {
 }
 
@@ -30,7 +36,13 @@ DashboardPublishOptions::DashboardPublishOptions(JsonView jsonValue) :
     m_adHocFilteringOptionHasBeenSet(false),
     m_exportToCSVOptionHasBeenSet(false),
     m_sheetControlsOptionHasBeenSet(false),
-    m_visualPublishOptionsHasBeenSet(false)
+    m_sheetLayoutElementMaximizationOptionHasBeenSet(false),
+    m_visualMenuOptionHasBeenSet(false),
+    m_visualAxisSortOptionHasBeenSet(false),
+    m_exportWithHiddenFieldsOptionHasBeenSet(false),
+    m_dataPointDrillUpDownOptionHasBeenSet(false),
+    m_dataPointMenuLabelOptionHasBeenSet(false),
+    m_dataPointTooltipOptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,11 +70,53 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
     m_sheetControlsOptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("VisualPublishOptions"))
+  if(jsonValue.ValueExists("SheetLayoutElementMaximizationOption"))
   {
-    m_visualPublishOptions = jsonValue.GetObject("VisualPublishOptions");
+    m_sheetLayoutElementMaximizationOption = jsonValue.GetObject("SheetLayoutElementMaximizationOption");
 
-    m_visualPublishOptionsHasBeenSet = true;
+    m_sheetLayoutElementMaximizationOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VisualMenuOption"))
+  {
+    m_visualMenuOption = jsonValue.GetObject("VisualMenuOption");
+
+    m_visualMenuOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VisualAxisSortOption"))
+  {
+    m_visualAxisSortOption = jsonValue.GetObject("VisualAxisSortOption");
+
+    m_visualAxisSortOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExportWithHiddenFieldsOption"))
+  {
+    m_exportWithHiddenFieldsOption = jsonValue.GetObject("ExportWithHiddenFieldsOption");
+
+    m_exportWithHiddenFieldsOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataPointDrillUpDownOption"))
+  {
+    m_dataPointDrillUpDownOption = jsonValue.GetObject("DataPointDrillUpDownOption");
+
+    m_dataPointDrillUpDownOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataPointMenuLabelOption"))
+  {
+    m_dataPointMenuLabelOption = jsonValue.GetObject("DataPointMenuLabelOption");
+
+    m_dataPointMenuLabelOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataPointTooltipOption"))
+  {
+    m_dataPointTooltipOption = jsonValue.GetObject("DataPointTooltipOption");
+
+    m_dataPointTooltipOptionHasBeenSet = true;
   }
 
   return *this;
@@ -90,9 +144,45 @@ JsonValue DashboardPublishOptions::Jsonize() const
 
   }
 
-  if(m_visualPublishOptionsHasBeenSet)
+  if(m_sheetLayoutElementMaximizationOptionHasBeenSet)
   {
-   payload.WithObject("VisualPublishOptions", m_visualPublishOptions.Jsonize());
+   payload.WithObject("SheetLayoutElementMaximizationOption", m_sheetLayoutElementMaximizationOption.Jsonize());
+
+  }
+
+  if(m_visualMenuOptionHasBeenSet)
+  {
+   payload.WithObject("VisualMenuOption", m_visualMenuOption.Jsonize());
+
+  }
+
+  if(m_visualAxisSortOptionHasBeenSet)
+  {
+   payload.WithObject("VisualAxisSortOption", m_visualAxisSortOption.Jsonize());
+
+  }
+
+  if(m_exportWithHiddenFieldsOptionHasBeenSet)
+  {
+   payload.WithObject("ExportWithHiddenFieldsOption", m_exportWithHiddenFieldsOption.Jsonize());
+
+  }
+
+  if(m_dataPointDrillUpDownOptionHasBeenSet)
+  {
+   payload.WithObject("DataPointDrillUpDownOption", m_dataPointDrillUpDownOption.Jsonize());
+
+  }
+
+  if(m_dataPointMenuLabelOptionHasBeenSet)
+  {
+   payload.WithObject("DataPointMenuLabelOption", m_dataPointMenuLabelOption.Jsonize());
+
+  }
+
+  if(m_dataPointTooltipOptionHasBeenSet)
+  {
+   payload.WithObject("DataPointTooltipOption", m_dataPointTooltipOption.Jsonize());
 
   }
 
