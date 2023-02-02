@@ -61,7 +61,7 @@ public:
 
 };
 
-//#if 0
+#if 0
 // Temporarilly bypassing this test
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
@@ -141,7 +141,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE));
 }
-//#endif
+#endif
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
 {
