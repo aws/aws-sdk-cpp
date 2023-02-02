@@ -57,7 +57,9 @@
         // Dependencies
         "openssl", "libcurl",
         // Aws common runtime libraries
-        "mqtt"
+        "mqtt",
+        // Aws common runtime API
+        "Mtls"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf
