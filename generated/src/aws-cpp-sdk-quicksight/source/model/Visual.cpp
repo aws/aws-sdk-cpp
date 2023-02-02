@@ -40,7 +40,8 @@ Visual::Visual() :
     m_insightVisualHasBeenSet(false),
     m_sankeyDiagramVisualHasBeenSet(false),
     m_customContentVisualHasBeenSet(false),
-    m_emptyVisualHasBeenSet(false)
+    m_emptyVisualHasBeenSet(false),
+    m_radarChartVisualHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Visual::Visual(JsonView jsonValue) :
     m_insightVisualHasBeenSet(false),
     m_sankeyDiagramVisualHasBeenSet(false),
     m_customContentVisualHasBeenSet(false),
-    m_emptyVisualHasBeenSet(false)
+    m_emptyVisualHasBeenSet(false),
+    m_radarChartVisualHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ Visual& Visual::operator =(JsonView jsonValue)
     m_emptyVisualHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RadarChartVisual"))
+  {
+    m_radarChartVisual = jsonValue.GetObject("RadarChartVisual");
+
+    m_radarChartVisualHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue Visual::Jsonize() const
   if(m_emptyVisualHasBeenSet)
   {
    payload.WithObject("EmptyVisual", m_emptyVisual.Jsonize());
+
+  }
+
+  if(m_radarChartVisualHasBeenSet)
+  {
+   payload.WithObject("RadarChartVisual", m_radarChartVisual.Jsonize());
 
   }
 

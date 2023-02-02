@@ -27,6 +27,7 @@
 #include <aws/quicksight/model/SankeyDiagramVisual.h>
 #include <aws/quicksight/model/CustomContentVisual.h>
 #include <aws/quicksight/model/EmptyVisual.h>
+#include <aws/quicksight/model/RadarChartVisual.h>
 #include <utility>
 
 namespace Aws
@@ -999,6 +1000,49 @@ namespace Model
      */
     inline Visual& WithEmptyVisual(EmptyVisual&& value) { SetEmptyVisual(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline const RadarChartVisual& GetRadarChartVisual() const{ return m_radarChartVisual; }
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline bool RadarChartVisualHasBeenSet() const { return m_radarChartVisualHasBeenSet; }
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline void SetRadarChartVisual(const RadarChartVisual& value) { m_radarChartVisualHasBeenSet = true; m_radarChartVisual = value; }
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline void SetRadarChartVisual(RadarChartVisual&& value) { m_radarChartVisualHasBeenSet = true; m_radarChartVisual = std::move(value); }
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline Visual& WithRadarChartVisual(const RadarChartVisual& value) { SetRadarChartVisual(value); return *this;}
+
+    /**
+     * <p>A radar chart visual.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
+     * radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline Visual& WithRadarChartVisual(RadarChartVisual&& value) { SetRadarChartVisual(std::move(value)); return *this;}
+
   private:
 
     TableVisual m_tableVisual;
@@ -1066,6 +1110,9 @@ namespace Model
 
     EmptyVisual m_emptyVisual;
     bool m_emptyVisualHasBeenSet = false;
+
+    RadarChartVisual m_radarChartVisual;
+    bool m_radarChartVisualHasBeenSet = false;
   };
 
 } // namespace Model

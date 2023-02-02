@@ -77,6 +77,12 @@ DescribeDashboardDefinitionResult& DescribeDashboardDefinitionResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("DashboardPublishOptions"))
+  {
+    m_dashboardPublishOptions = jsonValue.GetObject("DashboardPublishOptions");
+
+  }
+
 
 
   m_status = static_cast<int>(result.GetResponseCode());

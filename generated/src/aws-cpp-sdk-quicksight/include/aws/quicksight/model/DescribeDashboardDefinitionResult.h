@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/quicksight/model/DashboardVersionDefinition.h>
+#include <aws/quicksight/model/DashboardPublishOptions.h>
 #include <aws/quicksight/model/DashboardError.h>
 #include <utility>
 
@@ -318,6 +319,97 @@ namespace Model
      */
     inline DescribeDashboardDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .CSV format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
+     */
+    inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
+
+    /**
+     * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .CSV format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
+     */
+    inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptions = value; }
+
+    /**
+     * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .CSV format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
+     */
+    inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptions = std::move(value); }
+
+    /**
+     * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .CSV format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
+     */
+    inline DescribeDashboardDefinitionResult& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
+
+    /**
+     * <p>Options for publishing the dashboard:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .CSV format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
+     */
+    inline DescribeDashboardDefinitionResult& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dashboardId;
@@ -335,6 +427,8 @@ namespace Model
     int m_status;
 
     Aws::String m_requestId;
+
+    DashboardPublishOptions m_dashboardPublishOptions;
   };
 
 } // namespace Model

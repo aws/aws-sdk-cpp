@@ -291,7 +291,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
@@ -308,7 +310,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
@@ -325,7 +329,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
@@ -342,7 +348,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
@@ -359,7 +367,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline CreateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
@@ -376,7 +386,9 @@ namespace Model
      * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
      * entity within <code>SourceTemplate</code> to list the replacement datasets for
      * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * its placeholder. </p> <p>Either a <code>SourceEntity</code> or a
+     * <code>Definition</code> must be provided in order for the request to be
+     * valid.</p>
      */
     inline CreateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
@@ -647,37 +659,49 @@ namespace Model
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline const DashboardVersionDefinition& GetDefinition() const{ return m_definition; }
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(const DashboardVersionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(DashboardVersionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateDashboardRequest& WithDefinition(const DashboardVersionDefinition& value) { SetDefinition(value); return *this;}
 
     /**
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateDashboardRequest& WithDefinition(DashboardVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
 

@@ -615,6 +615,113 @@ namespace Model
      */
     inline StartDeploymentResult& AddAppliedExtensions(AppliedExtension&& value) { m_appliedExtensions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the Key Management Service key used to encrypt
+     * configuration data. You can encrypt secrets stored in Secrets Manager, Amazon
+     * Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure
+     * string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
+     * ID to encrypt the configuration data using a customer managed key. </p>
+     */
+    inline StartDeploymentResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -654,6 +761,10 @@ namespace Model
     Aws::Utils::DateTime m_completedAt;
 
     Aws::Vector<AppliedExtension> m_appliedExtensions;
+
+    Aws::String m_kmsKeyArn;
+
+    Aws::String m_kmsKeyIdentifier;
   };
 
 } // namespace Model

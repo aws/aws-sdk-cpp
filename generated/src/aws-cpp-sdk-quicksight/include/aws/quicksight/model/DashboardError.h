@@ -113,42 +113,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline DashboardError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline DashboardError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline DashboardError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline DashboardError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
 

@@ -135,11 +135,15 @@ namespace AppConfig
         /**
          * <p>Creates a configuration profile, which is information that enables AppConfig
          * to access the configuration source. Valid configuration sources include the
-         * AppConfig hosted configuration store, Amazon Web Services Systems Manager (SSM)
-         * documents, SSM Parameter Store parameters, Amazon S3 objects, or any <a
-         * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
-         * source action</a> supported by CodePipeline. A configuration profile includes
-         * the following information:</p> <ul> <li> <p>The URI location of the
+         * following:</p> <ul> <li> <p>Configuration data in YAML, JSON, and other formats
+         * stored in the AppConfig hosted configuration store</p> </li> <li>
+         * <p>Configuration data stored as objects in an Amazon Simple Storage Service
+         * (Amazon S3) bucket</p> </li> <li> <p>Pipelines stored in CodePipeline</p> </li>
+         * <li> <p>Secrets stored in Secrets Manager</p> </li> <li> <p>Standard and secure
+         * string parameters stored in Amazon Web Services Systems Manager Parameter
+         * Store</p> </li> <li> <p>Configuration data in SSM documents stored in the
+         * Systems Manager document store</p> </li> </ul> <p>A configuration profile
+         * includes the following information:</p> <ul> <li> <p>The URI location of the
          * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
          * role that provides access to the configuration data.</p> </li> <li> <p>A
          * validator for the configuration data. Available validators include either a JSON
@@ -237,8 +241,8 @@ namespace AppConfig
          * <p>Creates an AppConfig extension. An extension augments your ability to inject
          * logic or behavior at different points during the AppConfig workflow of creating
          * or deploying a configuration.</p> <p>You can create your own extensions or use
-         * the Amazon Web Services-authored extensions provided by AppConfig. For most
-         * use-cases, to create your own extension, you must create an Lambda function to
+         * the Amazon Web Services authored extensions provided by AppConfig. For most use
+         * cases, to create your own extension, you must create an Lambda function to
          * perform any computation and processing defined in the extension. For more
          * information about extensions, see <a
          * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
@@ -268,17 +272,16 @@ namespace AppConfig
         }
 
         /**
-         * <p>When you create an extension or configure an Amazon Web Services-authored
+         * <p>When you create an extension or configure an Amazon Web Services authored
          * extension, you associate the extension with an AppConfig application,
          * environment, or configuration profile. For example, you can choose to run the
-         * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web
-         * Services-authored extension and receive notifications on an Amazon SNS topic
-         * anytime a configuration deployment is started for a specific application.
-         * Defining which extension to associate with an AppConfig resource is called an
-         * <i>extension association</i>. An extension association is a specified
-         * relationship between an extension and an AppConfig resource, such as an
-         * application or a configuration profile. For more information about extensions
-         * and associations, see <a
+         * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services
+         * authored extension and receive notifications on an Amazon SNS topic anytime a
+         * configuration deployment is started for a specific application. Defining which
+         * extension to associate with an AppConfig resource is called an <i>extension
+         * association</i>. An extension association is a specified relationship between an
+         * extension and an AppConfig resource, such as an application or a configuration
+         * profile. For more information about extensions and associations, see <a
          * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
          * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -890,7 +893,7 @@ namespace AppConfig
         }
 
         /**
-         * <p>Lists all custom and Amazon Web Services-authored AppConfig extensions in the
+         * <p>Lists all custom and Amazon Web Services authored AppConfig extensions in the
          * account. For more information about extensions, see <a
          * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
          * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See

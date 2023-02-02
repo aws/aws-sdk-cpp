@@ -508,6 +508,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * <p>For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this
+     * parameter only for block device mappings that result in new, empty volumes when
+     * instances are launched from the image. Omit this parameter on block device
+     * mappings that include an existing volume or snapshot. If you include this
+     * parameter, and specify an encryption setting that is different from the existing
+     * volume or snapshot, the request will fail.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -525,6 +531,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * <p>For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this
+     * parameter only for block device mappings that result in new, empty volumes when
+     * instances are launched from the image. Omit this parameter on block device
+     * mappings that include an existing volume or snapshot. If you include this
+     * parameter, and specify an encryption setting that is different from the existing
+     * volume or snapshot, the request will fail.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -542,6 +554,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * <p>For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this
+     * parameter only for block device mappings that result in new, empty volumes when
+     * instances are launched from the image. Omit this parameter on block device
+     * mappings that include an existing volume or snapshot. If you include this
+     * parameter, and specify an encryption setting that is different from the existing
+     * volume or snapshot, the request will fail.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -559,6 +577,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * <p>For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this
+     * parameter only for block device mappings that result in new, empty volumes when
+     * instances are launched from the image. Omit this parameter on block device
+     * mappings that include an existing volume or snapshot. If you include this
+     * parameter, and specify an encryption setting that is different from the existing
+     * volume or snapshot, the request will fail.</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
