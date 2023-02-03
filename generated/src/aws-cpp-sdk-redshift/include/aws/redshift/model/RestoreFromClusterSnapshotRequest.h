@@ -132,7 +132,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -148,7 +148,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -156,7 +156,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -164,7 +164,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -172,7 +172,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -180,7 +180,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive. You can specify this parameter or
+     * isn't case sensitive. You must specify this parameter or
      * <code>snapshotArn</code>, but not both.</p> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -197,56 +197,56 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
-     * restore from a cluster. You can specify this parameter or
+     * restore from a cluster. You must specify this parameter or
      * <code>snapshotIdentifier</code>, but not both.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}

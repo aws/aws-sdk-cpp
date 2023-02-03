@@ -78,56 +78,56 @@ namespace Model
 
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or
+     * <p>The Amazon Web Services account ID of either the cluster owner (grantor) or
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */

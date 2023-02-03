@@ -274,56 +274,65 @@ namespace Model
 
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogExports() const{ return m_logExports; }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline void SetLogExports(const Aws::Vector<Aws::String>& value) { m_logExportsHasBeenSet = true; m_logExports = value; }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline void SetLogExports(Aws::Vector<Aws::String>&& value) { m_logExportsHasBeenSet = true; m_logExports = std::move(value); }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline EnableLoggingRequest& WithLogExports(const Aws::Vector<Aws::String>& value) { SetLogExports(value); return *this;}
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline EnableLoggingRequest& WithLogExports(Aws::Vector<Aws::String>&& value) { SetLogExports(std::move(value)); return *this;}
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline EnableLoggingRequest& AddLogExports(const Aws::String& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline EnableLoggingRequest& AddLogExports(Aws::String&& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The collection of exported log types. Log types include the connection log,
-     * user log and user activity log.</p>
+     * <p>The collection of exported log types. Possible values are
+     * <code>connectionlog</code>, <code>useractivitylog</code>, and
+     * <code>userlog</code>.</p>
      */
     inline EnableLoggingRequest& AddLogExports(const char* value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
 

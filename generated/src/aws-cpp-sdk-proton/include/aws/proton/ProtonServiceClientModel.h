@@ -51,6 +51,7 @@
 #include <aws/proton/model/GetEnvironmentTemplateVersionResult.h>
 #include <aws/proton/model/GetRepositoryResult.h>
 #include <aws/proton/model/GetRepositorySyncStatusResult.h>
+#include <aws/proton/model/GetResourcesSummaryResult.h>
 #include <aws/proton/model/GetServiceResult.h>
 #include <aws/proton/model/GetServiceInstanceResult.h>
 #include <aws/proton/model/GetServiceTemplateResult.h>
@@ -166,6 +167,7 @@ namespace Aws
       class GetEnvironmentTemplateVersionRequest;
       class GetRepositoryRequest;
       class GetRepositorySyncStatusRequest;
+      class GetResourcesSummaryRequest;
       class GetServiceRequest;
       class GetServiceInstanceRequest;
       class GetServiceTemplateRequest;
@@ -244,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetEnvironmentTemplateVersionResult, ProtonError> GetEnvironmentTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<GetRepositoryResult, ProtonError> GetRepositoryOutcome;
       typedef Aws::Utils::Outcome<GetRepositorySyncStatusResult, ProtonError> GetRepositorySyncStatusOutcome;
+      typedef Aws::Utils::Outcome<GetResourcesSummaryResult, ProtonError> GetResourcesSummaryOutcome;
       typedef Aws::Utils::Outcome<GetServiceResult, ProtonError> GetServiceOutcome;
       typedef Aws::Utils::Outcome<GetServiceInstanceResult, ProtonError> GetServiceInstanceOutcome;
       typedef Aws::Utils::Outcome<GetServiceTemplateResult, ProtonError> GetServiceTemplateOutcome;
@@ -322,6 +325,7 @@ namespace Aws
       typedef std::future<GetEnvironmentTemplateVersionOutcome> GetEnvironmentTemplateVersionOutcomeCallable;
       typedef std::future<GetRepositoryOutcome> GetRepositoryOutcomeCallable;
       typedef std::future<GetRepositorySyncStatusOutcome> GetRepositorySyncStatusOutcomeCallable;
+      typedef std::future<GetResourcesSummaryOutcome> GetResourcesSummaryOutcomeCallable;
       typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
       typedef std::future<GetServiceInstanceOutcome> GetServiceInstanceOutcomeCallable;
       typedef std::future<GetServiceTemplateOutcome> GetServiceTemplateOutcomeCallable;
@@ -403,6 +407,7 @@ namespace Aws
     typedef std::function<void(const ProtonClient*, const Model::GetEnvironmentTemplateVersionRequest&, const Model::GetEnvironmentTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetRepositoryRequest&, const Model::GetRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetRepositorySyncStatusRequest&, const Model::GetRepositorySyncStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositorySyncStatusResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::GetResourcesSummaryRequest&, const Model::GetResourcesSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcesSummaryResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceInstanceRequest&, const Model::GetServiceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceInstanceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceTemplateRequest&, const Model::GetServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceTemplateResponseReceivedHandler;

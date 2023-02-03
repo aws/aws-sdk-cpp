@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The name of a cluster security group for which you are requesting details.
-     * You can specify either the <b>Marker</b> parameter or a
+     * You must specify either the <b>Marker</b> parameter or a
      * <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example:
      * <code>securitygroup1</code> </p>
      */
@@ -153,7 +153,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -165,7 +165,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
@@ -177,7 +177,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
@@ -189,7 +189,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
@@ -201,7 +201,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
@@ -213,7 +213,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline DescribeClusterSecurityGroupsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
@@ -225,7 +225,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline DescribeClusterSecurityGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
@@ -237,7 +237,7 @@ namespace Model
      * Services returns a value in the <code>Marker</code> field of the response. You
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
-     * <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b>
+     * <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b>
      * parameter or the <b>Marker</b> parameter, but not both. </p>
      */
     inline DescribeClusterSecurityGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}

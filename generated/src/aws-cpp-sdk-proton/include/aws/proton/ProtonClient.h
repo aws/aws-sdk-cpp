@@ -1158,6 +1158,45 @@ namespace Proton
         }
 
         /**
+         * <p>Get counts of Proton resources.</p> <p>For infrastructure-provisioning
+         * resources (environments, services, service instances, pipelines), the action
+         * returns staleness counts. A resource is stale when it's behind the recommended
+         * version of the Proton template that it uses and it needs an update to become
+         * current.</p> <p>The action returns staleness counts (counts of resources that
+         * are up-to-date, behind a template major version, or behind a template minor
+         * version), the total number of resources, and the number of resources that are in
+         * a failed state, grouped by resource type. Components, environments, and service
+         * templates are exceptions—see the <code>components</code>,
+         * <code>environments</code>, and <code>serviceTemplates</code> field
+         * descriptions.</p> <p>For context, the action also returns the total number of
+         * each type of Proton template in the Amazon Web Services account.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton
+         * dashboard</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcesSummaryOutcome GetResourcesSummary(const Model::GetResourcesSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcesSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcesSummaryRequestT = Model::GetResourcesSummaryRequest>
+        Model::GetResourcesSummaryOutcomeCallable GetResourcesSummaryCallable(const GetResourcesSummaryRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::GetResourcesSummary, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcesSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcesSummaryRequestT = Model::GetResourcesSummaryRequest>
+        void GetResourcesSummaryAsync(const GetResourcesSummaryRequestT& request, const GetResourcesSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::GetResourcesSummary, request, handler, context);
+        }
+
+        /**
          * <p>Get detailed data for a service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">AWS
          * API Reference</a></p>

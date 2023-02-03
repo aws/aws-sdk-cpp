@@ -3410,8 +3410,10 @@ namespace Redshift
          * When you have renamed your original table, then you can pass the original name
          * of the table as the <code>NewTableName</code> parameter value in the call to
          * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p><p><h3>See
-         * Also:</h3>   <a
+         * original table with the table created from the snapshot.</p> <p>You can't use
+         * this operation to restore tables with <a
+         * href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+         * sort keys</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">AWS
          * API Reference</a></p>
          */
