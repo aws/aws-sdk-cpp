@@ -1,0 +1,18 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#define AWS_CPP_SDK_VERSION_STRING "@aws-cpp-sdk_VERSION_STRING@"
+#define AWS_CPP_SDK_VERSION_MAJOR @aws-cpp-sdk_VERSION_MAJOR@
+#define AWS_CPP_SDK_VERSION_MINOR @aws-cpp-sdk_VERSION_MINOR@
+#define AWS_CPP_SDK_VERSION_PATCH @aws-cpp-sdk_VERSION_PATCH@
+#define AWS_CPP_SDK_GIT_HASH "@aws-cpp-sdk_GIT_HASH@"
+
+// DEPRECATED in 1.12: The follow defines are kept for backward compatibility
+//                     Please prefer the use the new ones defined above
+#define AWS_SDK_VERSION_STRING AWS_CPP_SDK_VERSION_STRING
+#define AWS_SDK_VERSION_MAJOR AWS_CPP_SDK_VERSION_MAJOR
+#define AWS_SDK_VERSION_MINOR AWS_CPP_SDK_VERSION_MINOR
+#define AWS_SDK_VERSION_PATCH AWS_CPP_SDK_VERSION_PATCH
+
