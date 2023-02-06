@@ -357,28 +357,28 @@ namespace Model
 
     /**
      * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
-     * (FixedAfd) to specify a four-bit AFD value which the service will write on all 
+     * (FixedAfd) to specify a four-bit AFD value which the service will write on all
      * frames of this video output.
      */
     inline int GetFixedAfd() const{ return m_fixedAfd; }
 
     /**
      * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
-     * (FixedAfd) to specify a four-bit AFD value which the service will write on all 
+     * (FixedAfd) to specify a four-bit AFD value which the service will write on all
      * frames of this video output.
      */
     inline bool FixedAfdHasBeenSet() const { return m_fixedAfdHasBeenSet; }
 
     /**
      * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
-     * (FixedAfd) to specify a four-bit AFD value which the service will write on all 
+     * (FixedAfd) to specify a four-bit AFD value which the service will write on all
      * frames of this video output.
      */
     inline void SetFixedAfd(int value) { m_fixedAfdHasBeenSet = true; m_fixedAfd = value; }
 
     /**
      * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
-     * (FixedAfd) to specify a four-bit AFD value which the service will write on all 
+     * (FixedAfd) to specify a four-bit AFD value which the service will write on all
      * frames of this video output.
      */
     inline VideoDescription& WithFixedAfd(int value) { SetFixedAfd(value); return *this;}

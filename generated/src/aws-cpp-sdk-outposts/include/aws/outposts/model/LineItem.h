@@ -246,6 +246,88 @@ namespace Model
      */
     inline LineItem& AddAssetInformationList(LineItemAssetInformation&& value) { m_assetInformationListHasBeenSet = true; m_assetInformationList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline const Aws::String& GetPreviousLineItemId() const{ return m_previousLineItemId; }
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline bool PreviousLineItemIdHasBeenSet() const { return m_previousLineItemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline void SetPreviousLineItemId(const Aws::String& value) { m_previousLineItemIdHasBeenSet = true; m_previousLineItemId = value; }
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline void SetPreviousLineItemId(Aws::String&& value) { m_previousLineItemIdHasBeenSet = true; m_previousLineItemId = std::move(value); }
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline void SetPreviousLineItemId(const char* value) { m_previousLineItemIdHasBeenSet = true; m_previousLineItemId.assign(value); }
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline LineItem& WithPreviousLineItemId(const Aws::String& value) { SetPreviousLineItemId(value); return *this;}
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline LineItem& WithPreviousLineItemId(Aws::String&& value) { SetPreviousLineItemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the previous line item.</p>
+     */
+    inline LineItem& WithPreviousLineItemId(const char* value) { SetPreviousLineItemId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline const Aws::String& GetPreviousOrderId() const{ return m_previousOrderId; }
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline bool PreviousOrderIdHasBeenSet() const { return m_previousOrderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline void SetPreviousOrderId(const Aws::String& value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId = value; }
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline void SetPreviousOrderId(Aws::String&& value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId = std::move(value); }
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline void SetPreviousOrderId(const char* value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId.assign(value); }
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline LineItem& WithPreviousOrderId(const Aws::String& value) { SetPreviousOrderId(value); return *this;}
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline LineItem& WithPreviousOrderId(Aws::String&& value) { SetPreviousOrderId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the previous order.</p>
+     */
+    inline LineItem& WithPreviousOrderId(const char* value) { SetPreviousOrderId(value); return *this;}
+
   private:
 
     Aws::String m_catalogItemId;
@@ -265,6 +347,12 @@ namespace Model
 
     Aws::Vector<LineItemAssetInformation> m_assetInformationList;
     bool m_assetInformationListHasBeenSet = false;
+
+    Aws::String m_previousLineItemId;
+    bool m_previousLineItemIdHasBeenSet = false;
+
+    Aws::String m_previousOrderId;
+    bool m_previousOrderIdHasBeenSet = false;
   };
 
 } // namespace Model

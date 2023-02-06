@@ -26,7 +26,9 @@ LineItem::LineItem() :
     m_status(LineItemStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_shipmentInformationHasBeenSet(false),
-    m_assetInformationListHasBeenSet(false)
+    m_assetInformationListHasBeenSet(false),
+    m_previousLineItemIdHasBeenSet(false),
+    m_previousOrderIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ LineItem::LineItem(JsonView jsonValue) :
     m_status(LineItemStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_shipmentInformationHasBeenSet(false),
-    m_assetInformationListHasBeenSet(false)
+    m_assetInformationListHasBeenSet(false),
+    m_previousLineItemIdHasBeenSet(false),
+    m_previousOrderIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,20 @@ LineItem& LineItem::operator =(JsonView jsonValue)
     m_assetInformationListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreviousLineItemId"))
+  {
+    m_previousLineItemId = jsonValue.GetString("PreviousLineItemId");
+
+    m_previousLineItemIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreviousOrderId"))
+  {
+    m_previousOrderId = jsonValue.GetString("PreviousOrderId");
+
+    m_previousOrderIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +152,18 @@ JsonValue LineItem::Jsonize() const
      assetInformationListJsonList[assetInformationListIndex].AsObject(m_assetInformationList[assetInformationListIndex].Jsonize());
    }
    payload.WithArray("AssetInformationList", std::move(assetInformationListJsonList));
+
+  }
+
+  if(m_previousLineItemIdHasBeenSet)
+  {
+   payload.WithString("PreviousLineItemId", m_previousLineItemId);
+
+  }
+
+  if(m_previousOrderIdHasBeenSet)
+  {
+   payload.WithString("PreviousOrderId", m_previousOrderId);
 
   }
 

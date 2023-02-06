@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IGNORE,
     FRAUD,
-    LEGIT
+    LEGIT,
+    AUTO
   };
 
 namespace UnlabeledEventsTreatmentMapper

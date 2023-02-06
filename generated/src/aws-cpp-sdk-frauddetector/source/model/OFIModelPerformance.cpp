@@ -20,13 +20,15 @@ namespace Model
 
 OFIModelPerformance::OFIModelPerformance() : 
     m_auc(0.0),
-    m_aucHasBeenSet(false)
+    m_aucHasBeenSet(false),
+    m_uncertaintyRangeHasBeenSet(false)
 {
 }
 
 OFIModelPerformance::OFIModelPerformance(JsonView jsonValue) : 
     m_auc(0.0),
-    m_aucHasBeenSet(false)
+    m_aucHasBeenSet(false),
+    m_uncertaintyRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ OFIModelPerformance& OFIModelPerformance::operator =(JsonView jsonValue)
     m_aucHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("uncertaintyRange"))
+  {
+    m_uncertaintyRange = jsonValue.GetObject("uncertaintyRange");
+
+    m_uncertaintyRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue OFIModelPerformance::Jsonize() const
   if(m_aucHasBeenSet)
   {
    payload.WithDouble("auc", m_auc);
+
+  }
+
+  if(m_uncertaintyRangeHasBeenSet)
+  {
+   payload.WithObject("uncertaintyRange", m_uncertaintyRange.Jsonize());
 
   }
 

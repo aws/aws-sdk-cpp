@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
+#include <aws/frauddetector/model/UncertaintyRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,10 +66,50 @@ namespace Model
      */
     inline OFIModelPerformance& WithAuc(double value) { SetAuc(value); return *this;}
 
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline const UncertaintyRange& GetUncertaintyRange() const{ return m_uncertaintyRange; }
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline bool UncertaintyRangeHasBeenSet() const { return m_uncertaintyRangeHasBeenSet; }
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline void SetUncertaintyRange(const UncertaintyRange& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = value; }
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline void SetUncertaintyRange(UncertaintyRange&& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = std::move(value); }
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline OFIModelPerformance& WithUncertaintyRange(const UncertaintyRange& value) { SetUncertaintyRange(value); return *this;}
+
+    /**
+     * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
+     * range greater than 0.1 indicates higher model uncertainity. </p>
+     */
+    inline OFIModelPerformance& WithUncertaintyRange(UncertaintyRange&& value) { SetUncertaintyRange(std::move(value)); return *this;}
+
   private:
 
     double m_auc;
     bool m_aucHasBeenSet = false;
+
+    UncertaintyRange m_uncertaintyRange;
+    bool m_uncertaintyRangeHasBeenSet = false;
   };
 
 } // namespace Model
