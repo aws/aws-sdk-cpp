@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
@@ -8,6 +8,8 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -16,13 +18,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HeadBucketResult::HeadBucketResult() : 
+HeadBucketResult::HeadBucketResult() :
     m_bucketLocationType(LocationType::NOT_SET),
     m_accessPointAlias(false)
 {
 }
 
-HeadBucketResult::HeadBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+HeadBucketResult::HeadBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) :
     m_bucketLocationType(LocationType::NOT_SET),
     m_accessPointAlias(false)
 {
