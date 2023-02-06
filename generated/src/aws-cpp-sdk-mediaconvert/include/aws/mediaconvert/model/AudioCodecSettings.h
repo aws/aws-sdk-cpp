@@ -52,7 +52,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.
@@ -63,7 +63,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.
@@ -74,7 +74,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.
@@ -85,7 +85,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.
@@ -96,7 +96,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.
@@ -107,7 +107,7 @@ namespace Model
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value AAC. The service accepts one of two mutually exclusive groups of AAC
      * settings--VBR and CBR. To select one of these modes, set the value of Bitrate
-     * control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the
+     * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the
      * audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use
      * the setting Bitrate (bitrate). Defaults and valid values depend on the rate
      * control mode.

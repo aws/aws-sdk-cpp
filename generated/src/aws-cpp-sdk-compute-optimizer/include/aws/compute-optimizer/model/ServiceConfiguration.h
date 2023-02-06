@@ -42,84 +42,84 @@ namespace Model
 
 
     /**
-     * <p> The amount of memory used by the tasks in the ECS service. </p>
+     * <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p> The amount of memory used by the tasks in the ECS service. </p>
+     * <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p> The amount of memory used by the tasks in the ECS service. </p>
+     * <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p> The amount of memory used by the tasks in the ECS service. </p>
+     * <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithMemory(int value) { SetMemory(value); return *this;}
 
 
     /**
-     * <p> The number of CPU units used by the tasks in the ECS service. </p>
+     * <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
      */
     inline int GetCpu() const{ return m_cpu; }
 
     /**
-     * <p> The number of CPU units used by the tasks in the ECS service. </p>
+     * <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p> The number of CPU units used by the tasks in the ECS service. </p>
+     * <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
      */
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p> The number of CPU units used by the tasks in the ECS service. </p>
+     * <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithCpu(int value) { SetCpu(value); return *this;}
 
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline const Aws::Vector<ContainerConfiguration>& GetContainerConfigurations() const{ return m_containerConfigurations; }
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline bool ContainerConfigurationsHasBeenSet() const { return m_containerConfigurationsHasBeenSet; }
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline void SetContainerConfigurations(const Aws::Vector<ContainerConfiguration>& value) { m_containerConfigurationsHasBeenSet = true; m_containerConfigurations = value; }
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline void SetContainerConfigurations(Aws::Vector<ContainerConfiguration>&& value) { m_containerConfigurationsHasBeenSet = true; m_containerConfigurations = std::move(value); }
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithContainerConfigurations(const Aws::Vector<ContainerConfiguration>& value) { SetContainerConfigurations(value); return *this;}
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithContainerConfigurations(Aws::Vector<ContainerConfiguration>&& value) { SetContainerConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline ServiceConfiguration& AddContainerConfigurations(const ContainerConfiguration& value) { m_containerConfigurationsHasBeenSet = true; m_containerConfigurations.push_back(value); return *this; }
 
     /**
-     * <p> The container configurations within a task of an ECS service. </p>
+     * <p> The container configurations within a task of an Amazon ECS service. </p>
      */
     inline ServiceConfiguration& AddContainerConfigurations(ContainerConfiguration&& value) { m_containerConfigurationsHasBeenSet = true; m_containerConfigurations.push_back(std::move(value)); return *this; }
 
@@ -127,15 +127,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -147,15 +147,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -167,15 +167,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -187,15 +187,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -207,15 +207,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -227,15 +227,15 @@ namespace Model
     /**
      * <p> Describes the Auto Scaling configuration methods for an Amazon ECS service.
      * This affects the generated recommendations. For example, if Auto Scaling is
-     * configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU
-     * size recommendations. </p> <p>The Auto Scaling configuration methods
-     * include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS
+     * configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size
+     * recommendations. </p> <p>The Auto Scaling configuration methods include:</p>
+     * <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS
      * service is configured to use target scaling on CPU, Compute Optimizer doesn't
      * generate CPU recommendations.</p> </li> <li> <p>
-     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured
-     * to use target scaling on memory, Compute Optimizer doesn't generate memory
-     * recommendations.</p> </li> </ul> <p>For more information about step scaling and
-     * target scaling, see <a
+     * <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is
+     * configured to use target scaling on memory, Compute Optimizer doesn't generate
+     * memory recommendations.</p> </li> </ul> <p>For more information about step
+     * scaling and target scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">
      * Step scaling policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">
@@ -246,42 +246,42 @@ namespace Model
 
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = std::move(value); }
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline void SetTaskDefinitionArn(const char* value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn.assign(value); }
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p> The task definition ARN used by the tasks in the ECS service. </p>
+     * <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
      */
     inline ServiceConfiguration& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
 

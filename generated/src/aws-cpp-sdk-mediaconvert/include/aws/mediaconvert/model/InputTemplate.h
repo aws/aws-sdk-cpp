@@ -394,37 +394,37 @@ namespace Model
 
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline void SetDenoiseFilter(const InputDenoiseFilter& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline void SetDenoiseFilter(InputDenoiseFilter&& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = std::move(value); }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline InputTemplate& WithDenoiseFilter(const InputDenoiseFilter& value) { SetDenoiseFilter(value); return *this;}
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
      * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline InputTemplate& WithDenoiseFilter(InputDenoiseFilter&& value) { SetDenoiseFilter(std::move(value)); return *this;}
@@ -604,25 +604,25 @@ namespace Model
 
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
      */
     inline int GetFilterStrength() const{ return m_filterStrength; }
 
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
      */
     inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
 
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
      */
     inline void SetFilterStrength(int value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
 
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
      */
     inline InputTemplate& WithFilterStrength(int value) { SetFilterStrength(value); return *this;}
 

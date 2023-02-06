@@ -435,7 +435,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -445,7 +445,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -455,7 +455,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -465,7 +465,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -476,7 +476,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -486,7 +486,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -496,7 +496,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -506,7 +506,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -1564,43 +1564,43 @@ namespace Model
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(Mpeg2Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(const Mpeg2Syntax& value) { SetSyntax(value); return *this;}
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
-     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to D10 (D_10).
+     * to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF
+     * profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(Mpeg2Syntax&& value) { SetSyntax(std::move(value)); return *this;}
 

@@ -75,37 +75,37 @@ namespace Model
 
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline const AvailBlanking& GetAvailBlanking() const{ return m_availBlanking; }
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline bool AvailBlankingHasBeenSet() const { return m_availBlankingHasBeenSet; }
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline void SetAvailBlanking(const AvailBlanking& value) { m_availBlankingHasBeenSet = true; m_availBlanking = value; }
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline void SetAvailBlanking(AvailBlanking&& value) { m_availBlankingHasBeenSet = true; m_availBlanking = std::move(value); }
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline JobTemplateSettings& WithAvailBlanking(const AvailBlanking& value) { SetAvailBlanking(value); return *this;}
 
     /**
-     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline JobTemplateSettings& WithAvailBlanking(AvailBlanking&& value) { SetAvailBlanking(std::move(value)); return *this;}
@@ -205,57 +205,57 @@ namespace Model
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline const Aws::Vector<InputTemplate>& GetInputs() const{ return m_inputs; }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline void SetInputs(const Aws::Vector<InputTemplate>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline void SetInputs(Aws::Vector<InputTemplate>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline JobTemplateSettings& WithInputs(const Aws::Vector<InputTemplate>& value) { SetInputs(value); return *this;}
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline JobTemplateSettings& WithInputs(Aws::Vector<InputTemplate>&& value) { SetInputs(std::move(value)); return *this;}
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline JobTemplateSettings& AddInputs(const InputTemplate& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
-     * can only be one input in a job template.  Using the API, you can include
-     * multiple inputs when referencing a job template.
+     * can only be one input in a job template. Using the API, you can include multiple
+     * inputs when referencing a job template.
      */
     inline JobTemplateSettings& AddInputs(InputTemplate&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
@@ -439,9 +439,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
@@ -450,9 +450,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
@@ -461,9 +461,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
@@ -472,9 +472,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
@@ -483,9 +483,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
@@ -494,9 +494,9 @@ namespace Model
 
     /**
      * Ignore these settings unless you are using Nielsen non-linear watermarking.
-     * Specify the values that  MediaConvert uses to generate and place Nielsen
-     * watermarks in your output audio. In addition to  specifying these values, you
-     * also need to set up your cloud TIC server. These settings apply to  every output
+     * Specify the values that MediaConvert uses to generate and place Nielsen
+     * watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
      * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
      * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]

@@ -210,32 +210,92 @@ namespace Model
 
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline const UnlabeledEventsTreatment& GetUnlabeledEventsTreatment() const{ return m_unlabeledEventsTreatment; }
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline bool UnlabeledEventsTreatmentHasBeenSet() const { return m_unlabeledEventsTreatmentHasBeenSet; }
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline void SetUnlabeledEventsTreatment(const UnlabeledEventsTreatment& value) { m_unlabeledEventsTreatmentHasBeenSet = true; m_unlabeledEventsTreatment = value; }
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline void SetUnlabeledEventsTreatment(UnlabeledEventsTreatment&& value) { m_unlabeledEventsTreatmentHasBeenSet = true; m_unlabeledEventsTreatment = std::move(value); }
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline LabelSchema& WithUnlabeledEventsTreatment(const UnlabeledEventsTreatment& value) { SetUnlabeledEventsTreatment(value); return *this;}
 
     /**
-     * <p>The action to take for unlabeled events.</p>
+     * <p>The action to take for unlabeled events.</p> <ul> <li> <p>Use
+     * <code>IGNORE</code> if you want the unlabeled events to be ignored. This is
+     * recommended when the majority of the events in the dataset are labeled.</p>
+     * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
+     * events as “Fraud”. This is recommended when most of the events in your dataset
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * categorize all unlabeled events as “Legit”. This is recommended when most of the
+     * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
+     * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
+     * is recommended when there is significant unlabeled events in the dataset.</p>
+     * </li> </ul> <p>By default, Amazon Fraud Detector ignores the unlabeled data.</p>
      */
     inline LabelSchema& WithUnlabeledEventsTreatment(UnlabeledEventsTreatment&& value) { SetUnlabeledEventsTreatment(std::move(value)); return *this;}
 

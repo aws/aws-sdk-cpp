@@ -1116,6 +1116,88 @@ namespace Model
      */
     inline Profile& AddFoundByItems(FoundByKeyValue&& value) { m_foundByItemsHasBeenSet = true; m_foundByItems.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline const Aws::String& GetPartyTypeString() const{ return m_partyTypeString; }
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline bool PartyTypeStringHasBeenSet() const { return m_partyTypeStringHasBeenSet; }
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline void SetPartyTypeString(const Aws::String& value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString = value; }
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline void SetPartyTypeString(Aws::String&& value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString = std::move(value); }
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline void SetPartyTypeString(const char* value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString.assign(value); }
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline Profile& WithPartyTypeString(const Aws::String& value) { SetPartyTypeString(value); return *this;}
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline Profile& WithPartyTypeString(Aws::String&& value) { SetPartyTypeString(std::move(value)); return *this;}
+
+    /**
+     * <p>An alternative to PartyType which accepts any string as input.</p>
+     */
+    inline Profile& WithPartyTypeString(const char* value) { SetPartyTypeString(value); return *this;}
+
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline const Aws::String& GetGenderString() const{ return m_genderString; }
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline bool GenderStringHasBeenSet() const { return m_genderStringHasBeenSet; }
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline void SetGenderString(const Aws::String& value) { m_genderStringHasBeenSet = true; m_genderString = value; }
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline void SetGenderString(Aws::String&& value) { m_genderStringHasBeenSet = true; m_genderString = std::move(value); }
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline void SetGenderString(const char* value) { m_genderStringHasBeenSet = true; m_genderString.assign(value); }
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline Profile& WithGenderString(const Aws::String& value) { SetGenderString(value); return *this;}
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline Profile& WithGenderString(Aws::String&& value) { SetGenderString(std::move(value)); return *this;}
+
+    /**
+     * <p>An alternative to Gender which accepts any string as input.</p>
+     */
+    inline Profile& WithGenderString(const char* value) { SetGenderString(value); return *this;}
+
   private:
 
     Aws::String m_profileId;
@@ -1186,6 +1268,12 @@ namespace Model
 
     Aws::Vector<FoundByKeyValue> m_foundByItems;
     bool m_foundByItemsHasBeenSet = false;
+
+    Aws::String m_partyTypeString;
+    bool m_partyTypeStringHasBeenSet = false;
+
+    Aws::String m_genderString;
+    bool m_genderStringHasBeenSet = false;
   };
 
 } // namespace Model

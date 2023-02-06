@@ -11,6 +11,7 @@
 #include <aws/outposts/model/PaymentOption.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/outposts/model/PaymentTerm.h>
+#include <aws/outposts/model/OrderType.h>
 #include <aws/outposts/model/LineItem.h>
 #include <utility>
 
@@ -368,6 +369,37 @@ namespace Model
      */
     inline Order& WithPaymentTerm(PaymentTerm&& value) { SetPaymentTerm(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline const OrderType& GetOrderType() const{ return m_orderType; }
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline bool OrderTypeHasBeenSet() const { return m_orderTypeHasBeenSet; }
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline void SetOrderType(const OrderType& value) { m_orderTypeHasBeenSet = true; m_orderType = value; }
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline void SetOrderType(OrderType&& value) { m_orderTypeHasBeenSet = true; m_orderType = std::move(value); }
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline Order& WithOrderType(const OrderType& value) { SetOrderType(value); return *this;}
+
+    /**
+     * <p>The type of order.</p>
+     */
+    inline Order& WithOrderType(OrderType&& value) { SetOrderType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outpostId;
@@ -393,6 +425,9 @@ namespace Model
 
     PaymentTerm m_paymentTerm;
     bool m_paymentTermHasBeenSet = false;
+
+    OrderType m_orderType;
+    bool m_orderTypeHasBeenSet = false;
   };
 
 } // namespace Model

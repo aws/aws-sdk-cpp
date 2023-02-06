@@ -37,64 +37,64 @@ namespace Model
 
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
     inline GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN that identifies the ECS service. </p> <p> The following is the
-     * format of the ARN: </p> <p>
+     * <p> The ARN that identifies the Amazon ECS service. </p> <p> The following is
+     * the format of the ARN: </p> <p>
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */

@@ -43,62 +43,62 @@ namespace Model
 
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline const OutputSdt& GetOutputSdt() const{ return m_outputSdt; }
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline bool OutputSdtHasBeenSet() const { return m_outputSdtHasBeenSet; }
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline void SetOutputSdt(const OutputSdt& value) { m_outputSdtHasBeenSet = true; m_outputSdt = value; }
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline void SetOutputSdt(OutputSdt&& value) { m_outputSdtHasBeenSet = true; m_outputSdt = std::move(value); }
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline DvbSdtSettings& WithOutputSdt(const OutputSdt& value) { SetOutputSdt(value); return *this;}
 
     /**
-     * Selects method of inserting SDT information into output stream.  "Follow input
-     * SDT" copies SDT information from input stream to  output stream. "Follow input
-     * SDT if present" copies SDT information from  input stream to output stream if
-     * SDT information is present in the input, otherwise it will fall back on the
-     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
-     * information. "No SDT" means output  stream will not contain SDT information.
+     * Selects method of inserting SDT information into output stream. "Follow input
+     * SDT" copies SDT information from input stream to output stream. "Follow input
+     * SDT if present" copies SDT information from input stream to output stream if SDT
+     * information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT Manually" means user will enter the SDT
+     * information. "No SDT" means output stream will not contain SDT information.
      */
     inline DvbSdtSettings& WithOutputSdt(OutputSdt&& value) { SetOutputSdt(std::move(value)); return *this;}
 

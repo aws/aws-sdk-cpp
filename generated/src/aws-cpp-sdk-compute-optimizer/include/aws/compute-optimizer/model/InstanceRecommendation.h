@@ -1480,7 +1480,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
 
@@ -1497,7 +1498,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
 
@@ -1514,7 +1516,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
 
@@ -1531,7 +1534,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
 
@@ -1548,7 +1552,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
 
@@ -1565,7 +1570,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
@@ -1582,7 +1588,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
 
@@ -1599,7 +1606,8 @@ namespace Model
      * that NGINX might be running on the instance.</p> </li> <li> <p>
      * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
      * instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
-     * running on the instance.</p> </li> </ul>
+     * running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that
+     * Kafka might be running on the instance.</p> </li> </ul>
      */
     inline InstanceRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
 

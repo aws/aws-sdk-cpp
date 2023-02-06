@@ -46,42 +46,42 @@ namespace Model
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline const AudioChannelTag& GetChannelTag() const{ return m_channelTag; }
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline bool ChannelTagHasBeenSet() const { return m_channelTagHasBeenSet; }
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline void SetChannelTag(const AudioChannelTag& value) { m_channelTagHasBeenSet = true; m_channelTag = value; }
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline void SetChannelTag(AudioChannelTag&& value) { m_channelTagHasBeenSet = true; m_channelTag = std::move(value); }
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline AudioChannelTaggingSettings& WithChannelTag(const AudioChannelTag& value) { SetChannelTag(value); return *this;}
 
     /**
      * You can add a tag for this mono-channel audio track to mimic its placement in a
-     * multi-channel layout.  For example, if this track is the left surround channel,
+     * multi-channel layout. For example, if this track is the left surround channel,
      * choose Left surround (LS).
      */
     inline AudioChannelTaggingSettings& WithChannelTag(AudioChannelTag&& value) { SetChannelTag(std::move(value)); return *this;}

@@ -425,23 +425,23 @@ namespace Model
 
 
     /**
-     * <p>Boolean to indicate if the Flow associated with the Integration is created
-     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
-     * flowDefinition</p>
+     * <p>Boolean that shows if the Flow that's associated with the Integration is
+     * created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+     * API/CLI in flowDefinition.</p>
      */
     inline bool GetIsUnstructured() const{ return m_isUnstructured; }
 
     /**
-     * <p>Boolean to indicate if the Flow associated with the Integration is created
-     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
-     * flowDefinition</p>
+     * <p>Boolean that shows if the Flow that's associated with the Integration is
+     * created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+     * API/CLI in flowDefinition.</p>
      */
     inline void SetIsUnstructured(bool value) { m_isUnstructured = value; }
 
     /**
-     * <p>Boolean to indicate if the Flow associated with the Integration is created
-     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
-     * flowDefinition</p>
+     * <p>Boolean that shows if the Flow that's associated with the Integration is
+     * created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+     * API/CLI in flowDefinition.</p>
      */
     inline PutIntegrationResult& WithIsUnstructured(bool value) { SetIsUnstructured(value); return *this;}
 

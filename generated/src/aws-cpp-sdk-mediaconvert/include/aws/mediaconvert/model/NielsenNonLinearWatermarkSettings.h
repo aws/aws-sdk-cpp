@@ -28,9 +28,9 @@ namespace Model
 
   /**
    * Ignore these settings unless you are using Nielsen non-linear watermarking.
-   * Specify the values that  MediaConvert uses to generate and place Nielsen
-   * watermarks in your output audio. In addition to  specifying these values, you
-   * also need to set up your cloud TIC server. These settings apply to  every output
+   * Specify the values that MediaConvert uses to generate and place Nielsen
+   * watermarks in your output audio. In addition to specifying these values, you
+   * also need to set up your cloud TIC server. These settings apply to every output
    * in your job. The MediaConvert implementation is currently with the following
    * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
    * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version
@@ -104,8 +104,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -113,8 +113,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -122,8 +122,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -131,8 +131,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -140,8 +140,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -149,8 +149,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -158,8 +158,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -167,8 +167,8 @@ namespace Model
 
     /**
      * Optional. Use this setting when you want the service to include an ADI file in
-     * the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3
-     * and provide a URL to it  here. The URL should be in the following format:
+     * the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3
+     * and provide a URL to it here. The URL should be in the following format:
      * S3://bucket/path/ADI-file. For more information about the metadata .zip file,
      * see the setting Metadata destination (metadataDestination).
      */
@@ -509,7 +509,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline const NielsenSourceWatermarkStatusType& GetSourceWatermarkStatus() const{ return m_sourceWatermarkStatus; }
 
@@ -517,7 +517,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline bool SourceWatermarkStatusHasBeenSet() const { return m_sourceWatermarkStatusHasBeenSet; }
 
@@ -525,7 +525,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline void SetSourceWatermarkStatus(const NielsenSourceWatermarkStatusType& value) { m_sourceWatermarkStatusHasBeenSet = true; m_sourceWatermarkStatus = value; }
 
@@ -533,7 +533,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline void SetSourceWatermarkStatus(NielsenSourceWatermarkStatusType&& value) { m_sourceWatermarkStatusHasBeenSet = true; m_sourceWatermarkStatus = std::move(value); }
 
@@ -541,7 +541,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline NielsenNonLinearWatermarkSettings& WithSourceWatermarkStatus(const NielsenSourceWatermarkStatusType& value) { SetSourceWatermarkStatus(value); return *this;}
 
@@ -549,7 +549,7 @@ namespace Model
      * Required. Specify whether your source content already contains Nielsen
      * non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the
      * service fails the job. Nielsen requires that you add non-linear watermarking to
-     * only clean content that doesn't already  have non-linear Nielsen watermarks.
+     * only clean content that doesn't already have non-linear Nielsen watermarks.
      */
     inline NielsenNonLinearWatermarkSettings& WithSourceWatermarkStatus(NielsenSourceWatermarkStatusType&& value) { SetSourceWatermarkStatus(std::move(value)); return *this;}
 

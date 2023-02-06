@@ -873,7 +873,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -884,7 +884,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -895,7 +895,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -906,7 +906,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -917,7 +917,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -928,7 +928,7 @@ namespace Model
 
     /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
-     * profile (MAIN_PROFILE), the service signals 
+     * profile (MAIN_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
      * choose On-demand (ON_DEMAND_PROFILE), the service signals
      * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose

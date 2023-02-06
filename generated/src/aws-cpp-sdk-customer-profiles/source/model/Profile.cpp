@@ -43,7 +43,9 @@ Profile::Profile() :
     m_mailingAddressHasBeenSet(false),
     m_billingAddressHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_foundByItemsHasBeenSet(false)
+    m_foundByItemsHasBeenSet(false),
+    m_partyTypeStringHasBeenSet(false),
+    m_genderStringHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ Profile::Profile(JsonView jsonValue) :
     m_mailingAddressHasBeenSet(false),
     m_billingAddressHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_foundByItemsHasBeenSet(false)
+    m_foundByItemsHasBeenSet(false),
+    m_partyTypeStringHasBeenSet(false),
+    m_genderStringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -246,6 +250,20 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_foundByItemsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PartyTypeString"))
+  {
+    m_partyTypeString = jsonValue.GetString("PartyTypeString");
+
+    m_partyTypeStringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GenderString"))
+  {
+    m_genderString = jsonValue.GetString("GenderString");
+
+    m_genderStringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -396,6 +414,18 @@ JsonValue Profile::Jsonize() const
      foundByItemsJsonList[foundByItemsIndex].AsObject(m_foundByItems[foundByItemsIndex].Jsonize());
    }
    payload.WithArray("FoundByItems", std::move(foundByItemsJsonList));
+
+  }
+
+  if(m_partyTypeStringHasBeenSet)
+  {
+   payload.WithString("PartyTypeString", m_partyTypeString);
+
+  }
+
+  if(m_genderStringHasBeenSet)
+  {
+   payload.WithString("GenderString", m_genderString);
 
   }
 

@@ -96,73 +96,73 @@ namespace Model
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline const DeinterlacerControl& GetControl() const{ return m_control; }
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline void SetControl(const DeinterlacerControl& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline void SetControl(DeinterlacerControl&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline Deinterlacer& WithControl(const DeinterlacerControl& value) { SetControl(value); return *this;}
 
     /**
      * - When set to NORMAL (default), the deinterlacer does not convert frames that
-     * are tagged  in metadata as progressive. It will only convert those that are
+     * are tagged in metadata as progressive. It will only convert those that are
      * tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer
      * converts every frame to progressive - even those that are already tagged as
-     * progressive. Turn Force mode on only if there is  a good chance that the
-     * metadata has tagged frames as progressive when they are not  progressive. Do not
-     * turn on otherwise; processing frames that are already progressive  into
-     * progressive will probably result in lower quality video.
+     * progressive. Turn Force mode on only if there is a good chance that the metadata
+     * has tagged frames as progressive when they are not progressive. Do not turn on
+     * otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
      */
     inline Deinterlacer& WithControl(DeinterlacerControl&& value) { SetControl(std::move(value)); return *this;}
 

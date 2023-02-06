@@ -50,7 +50,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline const S3ServerSideEncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -65,7 +65,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
@@ -80,7 +80,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline void SetEncryptionType(const S3ServerSideEncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
@@ -95,7 +95,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline void SetEncryptionType(S3ServerSideEncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
@@ -110,7 +110,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline S3EncryptionSettings& WithEncryptionType(const S3ServerSideEncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -125,7 +125,7 @@ namespace Model
      * AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your
      * data keys. You can optionally choose to specify a different, customer managed
      * CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the
-     * setting  KMS ARN (kmsKeyArn).
+     * setting KMS ARN (kmsKeyArn).
      */
     inline S3EncryptionSettings& WithEncryptionType(S3ServerSideEncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

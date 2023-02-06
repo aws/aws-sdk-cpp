@@ -196,7 +196,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.
@@ -210,7 +210,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.
@@ -224,7 +224,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.
@@ -238,7 +238,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.
@@ -252,7 +252,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.
@@ -266,7 +266,7 @@ namespace Model
      * metadata from your input. Related settings--Use these settings to specify your
      * downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left
      * total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center
-     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and
+     * (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and
      * Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix
      * control (DownmixControl) and you don't specify values for the related settings,
      * MediaConvert uses default values for those settings.

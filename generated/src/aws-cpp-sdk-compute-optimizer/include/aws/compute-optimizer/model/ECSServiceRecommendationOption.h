@@ -42,43 +42,43 @@ namespace Model
 
 
     /**
-     * <p> The memory size of the ECS service recommendation option. </p>
+     * <p> The memory size of the Amazon ECS service recommendation option. </p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p> The memory size of the ECS service recommendation option. </p>
+     * <p> The memory size of the Amazon ECS service recommendation option. </p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p> The memory size of the ECS service recommendation option. </p>
+     * <p> The memory size of the Amazon ECS service recommendation option. </p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p> The memory size of the ECS service recommendation option. </p>
+     * <p> The memory size of the Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& WithMemory(int value) { SetMemory(value); return *this;}
 
 
     /**
-     * <p> The CPU size of the ECS service recommendation option. </p>
+     * <p> The CPU size of the Amazon ECS service recommendation option. </p>
      */
     inline int GetCpu() const{ return m_cpu; }
 
     /**
-     * <p> The CPU size of the ECS service recommendation option. </p>
+     * <p> The CPU size of the Amazon ECS service recommendation option. </p>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p> The CPU size of the ECS service recommendation option. </p>
+     * <p> The CPU size of the Amazon ECS service recommendation option. </p>
      */
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p> The CPU size of the ECS service recommendation option. </p>
+     * <p> The CPU size of the Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& WithCpu(int value) { SetCpu(value); return *this;}
 
@@ -104,98 +104,98 @@ namespace Model
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline const Aws::Vector<ECSServiceProjectedUtilizationMetric>& GetProjectedUtilizationMetrics() const{ return m_projectedUtilizationMetrics; }
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline void SetProjectedUtilizationMetrics(const Aws::Vector<ECSServiceProjectedUtilizationMetric>& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = value; }
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline void SetProjectedUtilizationMetrics(Aws::Vector<ECSServiceProjectedUtilizationMetric>&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::move(value); }
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& WithProjectedUtilizationMetrics(const Aws::Vector<ECSServiceProjectedUtilizationMetric>& value) { SetProjectedUtilizationMetrics(value); return *this;}
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& WithProjectedUtilizationMetrics(Aws::Vector<ECSServiceProjectedUtilizationMetric>&& value) { SetProjectedUtilizationMetrics(std::move(value)); return *this;}
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& AddProjectedUtilizationMetrics(const ECSServiceProjectedUtilizationMetric& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(value); return *this; }
 
     /**
      * <p> An array of objects that describe the projected utilization metrics of the
-     * ECS service recommendation option. </p>
+     * Amazon ECS service recommendation option. </p>
      */
     inline ECSServiceRecommendationOption& AddProjectedUtilizationMetrics(ECSServiceProjectedUtilizationMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline const Aws::Vector<ContainerRecommendation>& GetContainerRecommendations() const{ return m_containerRecommendations; }
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline bool ContainerRecommendationsHasBeenSet() const { return m_containerRecommendationsHasBeenSet; }
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline void SetContainerRecommendations(const Aws::Vector<ContainerRecommendation>& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations = value; }
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline void SetContainerRecommendations(Aws::Vector<ContainerRecommendation>&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations = std::move(value); }
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline ECSServiceRecommendationOption& WithContainerRecommendations(const Aws::Vector<ContainerRecommendation>& value) { SetContainerRecommendations(value); return *this;}
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline ECSServiceRecommendationOption& WithContainerRecommendations(Aws::Vector<ContainerRecommendation>&& value) { SetContainerRecommendations(std::move(value)); return *this;}
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline ECSServiceRecommendationOption& AddContainerRecommendations(const ContainerRecommendation& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.push_back(value); return *this; }
 
     /**
      * <p> The CPU and memory size recommendations for the containers within the task
-     * of your ECS service. </p>
+     * of your Amazon ECS service. </p>
      */
     inline ECSServiceRecommendationOption& AddContainerRecommendations(ContainerRecommendation&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.push_back(std::move(value)); return *this; }
 

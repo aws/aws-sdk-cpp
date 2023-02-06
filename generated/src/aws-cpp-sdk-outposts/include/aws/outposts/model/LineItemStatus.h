@@ -23,7 +23,8 @@ namespace Model
     INSTALLING,
     INSTALLED,
     ERROR_,
-    CANCELLED
+    CANCELLED,
+    REPLACED
   };
 
 namespace LineItemStatusMapper
