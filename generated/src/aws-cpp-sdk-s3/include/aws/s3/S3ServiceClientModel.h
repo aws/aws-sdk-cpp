@@ -56,6 +56,7 @@
 #include <aws/s3/model/GetObjectTorrentResult.h>
 #include <aws/s3/model/GetPublicAccessBlockResult.h>
 #include <aws/s3/model/HeadObjectResult.h>
+#include <aws/s3/model/HeadBucketResult.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsResult.h>
 #include <aws/s3/model/ListBucketIntelligentTieringConfigurationsResult.h>
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
@@ -261,7 +262,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetObjectTaggingResult, S3Error> GetObjectTaggingOutcome;
       typedef Aws::Utils::Outcome<GetObjectTorrentResult, S3Error> GetObjectTorrentOutcome;
       typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, S3Error> GetPublicAccessBlockOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> HeadBucketOutcome;
+      typedef Aws::Utils::Outcome<HeadBucketResult, S3Error> HeadBucketOutcome;
       typedef Aws::Utils::Outcome<HeadObjectResult, S3Error> HeadObjectOutcome;
       typedef Aws::Utils::Outcome<ListBucketAnalyticsConfigurationsResult, S3Error> ListBucketAnalyticsConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListBucketIntelligentTieringConfigurationsResult, S3Error> ListBucketIntelligentTieringConfigurationsOutcome;
