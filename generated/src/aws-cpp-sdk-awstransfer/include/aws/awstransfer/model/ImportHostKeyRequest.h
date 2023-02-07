@@ -86,49 +86,49 @@ namespace Model
 
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline const Aws::String& GetHostKeyBody() const{ return m_hostKeyBody; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline bool HostKeyBodyHasBeenSet() const { return m_hostKeyBodyHasBeenSet; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetHostKeyBody(const Aws::String& value) { m_hostKeyBodyHasBeenSet = true; m_hostKeyBody = value; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetHostKeyBody(Aws::String&& value) { m_hostKeyBodyHasBeenSet = true; m_hostKeyBody = std::move(value); }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetHostKeyBody(const char* value) { m_hostKeyBodyHasBeenSet = true; m_hostKeyBody.assign(value); }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportHostKeyRequest& WithHostKeyBody(const Aws::String& value) { SetHostKeyBody(value); return *this;}
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportHostKeyRequest& WithHostKeyBody(Aws::String&& value) { SetHostKeyBody(std::move(value)); return *this;}
 
     /**
-     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * <p>The private key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportHostKeyRequest& WithHostKeyBody(const char* value) { SetHostKeyBody(value); return *this;}

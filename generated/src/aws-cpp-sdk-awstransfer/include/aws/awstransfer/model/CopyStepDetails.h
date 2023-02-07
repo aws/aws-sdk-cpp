@@ -82,81 +82,129 @@ namespace Model
 
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline const InputFileLocation& GetDestinationFileLocation() const{ return m_destinationFileLocation; }
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline bool DestinationFileLocationHasBeenSet() const { return m_destinationFileLocationHasBeenSet; }
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline void SetDestinationFileLocation(const InputFileLocation& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = value; }
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline void SetDestinationFileLocation(InputFileLocation&& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = std::move(value); }
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline CopyStepDetails& WithDestinationFileLocation(const InputFileLocation& value) { SetDestinationFileLocation(value); return *this;}
 
     /**
-     * <p>Specifies the location for the file being copied. Only applicable for Copy
-     * type workflow steps. Use <code>${Transfer:username}</code> in this field to
-     * parametrize the destination prefix by username.</p>
+     * <p>Specifies the location for the file being copied. Use
+     * <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this
+     * field to parametrize the destination prefix by username or uploaded date.</p>
+     * <ul> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket
+     * that is prefixed with the name of the Transfer Family user that uploaded the
+     * file.</p> </li> <li> <p>Set the value of <code>DestinationFileLocation</code> to
+     * <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3
+     * bucket that is prefixed with the date of the upload.</p>  <p>The system
+     * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
+     * the date the file is uploaded.</p>  </li> </ul>
      */
     inline CopyStepDetails& WithDestinationFileLocation(InputFileLocation&& value) { SetDestinationFileLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline const OverwriteExisting& GetOverwriteExisting() const{ return m_overwriteExisting; }
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline bool OverwriteExistingHasBeenSet() const { return m_overwriteExistingHasBeenSet; }
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline void SetOverwriteExisting(const OverwriteExisting& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = value; }
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline void SetOverwriteExisting(OverwriteExisting&& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = std::move(value); }
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline CopyStepDetails& WithOverwriteExisting(const OverwriteExisting& value) { SetOverwriteExisting(value); return *this;}
 
     /**
-     * <p>A flag that indicates whether or not to overwrite an existing file of the
-     * same name. The default is <code>FALSE</code>.</p>
+     * <p>A flag that indicates whether to overwrite an existing file of the same name.
+     * The default is <code>FALSE</code>.</p>
      */
     inline CopyStepDetails& WithOverwriteExisting(OverwriteExisting&& value) { SetOverwriteExisting(std::move(value)); return *this;}
 
@@ -164,88 +212,88 @@ namespace Model
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceFileLocation() const{ return m_sourceFileLocation; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline bool SourceFileLocationHasBeenSet() const { return m_sourceFileLocationHasBeenSet; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(const Aws::String& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = value; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(Aws::String&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::move(value); }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(const char* value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation.assign(value); }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline CopyStepDetails& WithSourceFileLocation(const Aws::String& value) { SetSourceFileLocation(value); return *this;}
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline CopyStepDetails& WithSourceFileLocation(Aws::String&& value) { SetSourceFileLocation(std::move(value)); return *this;}
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline CopyStepDetails& WithSourceFileLocation(const char* value) { SetSourceFileLocation(value); return *this;}
 

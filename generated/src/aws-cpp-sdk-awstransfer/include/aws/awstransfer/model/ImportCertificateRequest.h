@@ -70,42 +70,74 @@ namespace Model
 
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline ImportCertificateRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline ImportCertificateRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The file that contains the certificate to import.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a certificate in URI format.
+     * For example, <code>--certificate file://encryption-cert.pem</code>.
+     * Alternatively, you can provide the raw content.</p> </li> <li> <p>For the SDK,
+     * specify the raw content of a certificate file. For example, <code>--certificate
+     * "`cat encryption-cert.pem`"</code>.</p> </li> </ul>
      */
     inline ImportCertificateRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
@@ -160,50 +192,74 @@ namespace Model
 
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline ImportCertificateRequest& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline ImportCertificateRequest& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
-     * <p>The file that contains the private key for the certificate that's being
-     * imported.</p>
+     * <ul> <li> <p>For the CLI, provide a file path for a private key in URI
+     * format.For example, <code>--private-key file://encryption-key.pem</code>.
+     * Alternatively, you can provide the raw content of the private key file.</p>
+     * </li> <li> <p>For the SDK, specify the raw content of a private key file. For
+     * example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li> </ul>
      */
     inline ImportCertificateRequest& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 

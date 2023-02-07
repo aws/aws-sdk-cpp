@@ -861,15 +861,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
 
@@ -887,15 +890,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
@@ -913,15 +919,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
@@ -939,15 +948,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
@@ -965,15 +977,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
 
@@ -991,15 +1006,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
 
@@ -1017,15 +1035,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
@@ -1043,15 +1064,18 @@ namespace Model
      * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
      * includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
      * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
      * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
      * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
      * <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
-     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
-     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of
+     * the supported identity types: <code>SERVICE_MANAGED</code>,
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
+     * and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline DescribedServer& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 
@@ -1295,8 +1319,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>
@@ -1305,8 +1329,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>
@@ -1315,8 +1339,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>
@@ -1325,8 +1349,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>
@@ -1335,8 +1359,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>
@@ -1345,8 +1369,8 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * that's used for executing the workflow.</p> <p>In additon to a workflow to
-     * execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     * that's used for executing the workflow.</p> <p>In addition to a workflow to
+     * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
      * partial upload. A partial upload occurs when a file is open when the session
      * disconnects.</p>

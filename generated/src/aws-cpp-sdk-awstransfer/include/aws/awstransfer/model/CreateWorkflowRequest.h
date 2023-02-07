@@ -81,104 +81,120 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline const Aws::Vector<WorkflowStep>& GetSteps() const{ return m_steps; }
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline void SetSteps(const Aws::Vector<WorkflowStep>& value) { m_stepsHasBeenSet = true; m_steps = value; }
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline void SetSteps(Aws::Vector<WorkflowStep>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline CreateWorkflowRequest& WithSteps(const Aws::Vector<WorkflowStep>& value) { SetSteps(value); return *this;}
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline CreateWorkflowRequest& WithSteps(Aws::Vector<WorkflowStep>&& value) { SetSteps(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline CreateWorkflowRequest& AddSteps(const WorkflowStep& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
 
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      * <p> The <code>TYPE</code> specifies which of the following actions is being
-     * taken for this step. </p> <ul> <li> <p> <i>COPY</i>: Copy the file to another
-     * location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda
-     * function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
-     * <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>  <p>
-     * Currently, copying and tagging are supported only on S3. </p>  <p> For
-     * file location, you specify either the S3 bucket and key, or the EFS file system
-     * ID and path. </p>
+     * taken for this step. </p> <ul> <li> <p> <b> <code>COPY</code> </b> - Copy the
+     * file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code> </b> -
+     * Perform a custom step with an Lambda function target.</p> </li> <li> <p> <b>
+     * <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>  <p> Currently, copying and tagging are supported only on S3. </p>
+     *  <p> For file location, you specify either the Amazon S3 bucket and key,
+     * or the Amazon EFS file system ID and path. </p>
      */
     inline CreateWorkflowRequest& AddSteps(WorkflowStep&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 

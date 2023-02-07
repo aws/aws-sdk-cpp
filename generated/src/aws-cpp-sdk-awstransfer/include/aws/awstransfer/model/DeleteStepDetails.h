@@ -82,88 +82,88 @@ namespace Model
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceFileLocation() const{ return m_sourceFileLocation; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline bool SourceFileLocationHasBeenSet() const { return m_sourceFileLocationHasBeenSet; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(const Aws::String& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = value; }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(Aws::String&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::move(value); }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline void SetSourceFileLocation(const char* value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation.assign(value); }
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline DeleteStepDetails& WithSourceFileLocation(const Aws::String& value) { SetSourceFileLocation(value); return *this;}
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline DeleteStepDetails& WithSourceFileLocation(Aws::String&& value) { SetSourceFileLocation(std::move(value)); return *this;}
 
     /**
      * <p>Specifies which file to use as input to the workflow step: either the output
      * from the previous step, or the originally uploaded file for the workflow.</p>
-     * <ul> <li> <p>Enter <code>${previous.file}</code> to use the previous file as the
-     * input. In this case, this workflow step uses the output file from the previous
-     * workflow step as input. This is the default value.</p> </li> <li> <p>Enter
-     * <code>${original.file}</code> to use the originally-uploaded file location as
-     * input for this step.</p> </li> </ul>
+     * <ul> <li> <p>To use the previous file as the input, enter
+     * <code>${previous.file}</code>. In this case, this workflow step uses the output
+     * file from the previous workflow step as input. This is the default value.</p>
+     * </li> <li> <p>To use the originally uploaded file location as input for this
+     * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
     inline DeleteStepDetails& WithSourceFileLocation(const char* value) { SetSourceFileLocation(value); return *this;}
 

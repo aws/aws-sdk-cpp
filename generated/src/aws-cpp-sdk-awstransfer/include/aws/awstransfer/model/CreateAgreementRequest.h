@@ -212,56 +212,56 @@ namespace Model
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetBaseDirectory() const{ return m_baseDirectory; }
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline bool BaseDirectoryHasBeenSet() const { return m_baseDirectoryHasBeenSet; }
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline void SetBaseDirectory(const Aws::String& value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory = value; }
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline void SetBaseDirectory(Aws::String&& value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory = std::move(value); }
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline void SetBaseDirectory(const char* value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory.assign(value); }
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline CreateAgreementRequest& WithBaseDirectory(const Aws::String& value) { SetBaseDirectory(value); return *this;}
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline CreateAgreementRequest& WithBaseDirectory(Aws::String&& value) { SetBaseDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>.</p>
+     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
      */
     inline CreateAgreementRequest& WithBaseDirectory(const char* value) { SetBaseDirectory(value); return *this;}
 

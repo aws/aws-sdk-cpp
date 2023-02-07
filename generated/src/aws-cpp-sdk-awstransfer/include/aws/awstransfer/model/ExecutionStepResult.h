@@ -41,50 +41,68 @@ namespace Model
 
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline const WorkflowStepType& GetStepType() const{ return m_stepType; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline bool StepTypeHasBeenSet() const { return m_stepTypeHasBeenSet; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline void SetStepType(const WorkflowStepType& value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline void SetStepType(WorkflowStepType&& value) { m_stepTypeHasBeenSet = true; m_stepType = std::move(value); }
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline ExecutionStepResult& WithStepType(const WorkflowStepType& value) { SetStepType(value); return *this;}
 
     /**
-     * <p>One of the available step types.</p> <ul> <li> <p> <i>COPY</i>: Copy the file
-     * to another location.</p> </li> <li> <p> <i>CUSTOM</i>: Perform a custom step
-     * with an Lambda function target.</p> </li> <li> <p> <i>DELETE</i>: Delete the
-     * file.</p> </li> <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li> </ul>
+     * <p>One of the available step types.</p> <ul> <li> <p> <b> <code>COPY</code> </b>
+     * - Copy the file to another location.</p> </li> <li> <p> <b> <code>CUSTOM</code>
+     * </b> - Perform a custom step with an Lambda function target.</p> </li> <li> <p>
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was
+     * uploaded.</p> </li> <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p>
+     * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
+     * </ul>
      */
     inline ExecutionStepResult& WithStepType(WorkflowStepType&& value) { SetStepType(std::move(value)); return *this;}
 
