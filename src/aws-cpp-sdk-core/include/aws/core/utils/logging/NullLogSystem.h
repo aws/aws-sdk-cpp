@@ -42,6 +42,8 @@ namespace Aws
                     AWS_UNREFERENCED_PARAM(tag);
                     AWS_UNREFERENCED_PARAM(messageStream);
                 }
+
+                virtual void Flush() override {}
             };
 
         } // namespace Logging
