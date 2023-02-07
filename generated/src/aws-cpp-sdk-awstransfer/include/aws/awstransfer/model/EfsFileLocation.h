@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p> <p> </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the details for the file location for the file that's being used in
+   * the workflow. Only applicable if you are using Amazon Elastic File Systems
+   * (Amazon EFS) for storage.</p> <p> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EfsFileLocation">AWS
    * API Reference</a></p>
    */

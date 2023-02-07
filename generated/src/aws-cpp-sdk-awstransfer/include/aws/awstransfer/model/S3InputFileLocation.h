@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the customer input S3 file location. If it is used inside
+   * <p>Specifies the customer input Amazon S3 file location. If it is used inside
    * <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy
    * destination.</p> <p> You need to provide the bucket and key. The key can
    * represent either a path or a file. This is determined by whether or not you end
