@@ -55,6 +55,7 @@ option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIE
                                 You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode." ON)
 option(REGENERATE_DEFAULTS "If set to ON, defaults mode configuration will be regenerated from the JSON definitions, this option involves some setup of python, java 8+, and maven" OFF)
 
+set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
 set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
@@ -282,6 +283,10 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_
 endif()
 
 add_definitions("-DAWS_TEST_REGION=${AWS_TEST_REGION}")
+if (NOT AWS_USER_AGENT_CUSTOMIZATION STREQUAL "")
+    message(STATUS "Adding user agent customization ${AWS_USER_AGENT_CUSTOMIZATION}")
+    add_definitions("-DAWS_USER_AGENT_CUSTOMIZATION=${AWS_USER_AGENT_CUSTOMIZATION}")
+endif()
 
 add_sdks()
 
