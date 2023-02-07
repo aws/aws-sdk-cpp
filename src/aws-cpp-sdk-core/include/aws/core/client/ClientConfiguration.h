@@ -280,5 +280,11 @@ namespace Aws
          */
         std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
 
+        /**
+         * A helper function to compute a user agent
+         * @return Aws::String with a user-agent
+         */
+        AWS_CORE_API Aws::String ComputeUserAgentString();
+
     } // namespace Client
 } // namespace Aws

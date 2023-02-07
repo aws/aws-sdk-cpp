@@ -29,11 +29,19 @@ namespace Client
 
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
 
-AWS_CORE_API Aws::String ComputeUserAgentString()
+Aws::String ComputeUserAgentString()
 {
   Aws::StringStream ss;
-  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
-      << " " << Version::GetCompilerVersionString();
+  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " "
+#if defined(AWS_USER_AGENT_CUSTOMIZATION)
+#define XSTR(V) STR(V)
+#define STR(V) #V
+     << XSTR(AWS_USER_AGENT_CUSTOMIZATION) << " "
+#undef STR
+#undef XSTR
+#endif
+     << Aws::OSVersionInfo::ComputeOSVersionString() << " "
+     << Version::GetCompilerVersionString();
   return ss.str();
 }
 
