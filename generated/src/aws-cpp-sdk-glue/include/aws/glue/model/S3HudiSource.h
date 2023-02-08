@@ -195,22 +195,34 @@ namespace Model
     inline S3HudiSource& AddAdditionalHudiOptions(const char* key, const char* value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline const S3DirectSourceAdditionalOptions& GetAdditionalOptions() const{ return m_additionalOptions; }
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline void SetAdditionalOptions(const S3DirectSourceAdditionalOptions& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline void SetAdditionalOptions(S3DirectSourceAdditionalOptions&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline S3HudiSource& WithAdditionalOptions(const S3DirectSourceAdditionalOptions& value) { SetAdditionalOptions(value); return *this;}
 
-    
+    /**
+     * <p>Specifies additional options for the connector.</p>
+     */
     inline S3HudiSource& WithAdditionalOptions(S3DirectSourceAdditionalOptions&& value) { SetAdditionalOptions(std::move(value)); return *this;}
 
 

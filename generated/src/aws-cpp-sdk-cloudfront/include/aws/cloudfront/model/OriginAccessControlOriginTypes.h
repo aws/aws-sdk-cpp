@@ -16,7 +16,8 @@ namespace Model
   enum class OriginAccessControlOriginTypes
   {
     NOT_SET,
-    s3
+    s3,
+    mediastore
   };
 
 namespace OriginAccessControlOriginTypesMapper

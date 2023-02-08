@@ -38,7 +38,11 @@ KafkaStreamingSourceOptions::KafkaStreamingSourceOptions() :
     m_maxOffsetsPerTrigger(0),
     m_maxOffsetsPerTriggerHasBeenSet(false),
     m_minPartitions(0),
-    m_minPartitionsHasBeenSet(false)
+    m_minPartitionsHasBeenSet(false),
+    m_includeHeaders(false),
+    m_includeHeadersHasBeenSet(false),
+    m_addRecordTimestampHasBeenSet(false),
+    m_emitConsumerLagMetricsHasBeenSet(false)
 {
 }
 
@@ -62,7 +66,11 @@ KafkaStreamingSourceOptions::KafkaStreamingSourceOptions(JsonView jsonValue) :
     m_maxOffsetsPerTrigger(0),
     m_maxOffsetsPerTriggerHasBeenSet(false),
     m_minPartitions(0),
-    m_minPartitionsHasBeenSet(false)
+    m_minPartitionsHasBeenSet(false),
+    m_includeHeaders(false),
+    m_includeHeadersHasBeenSet(false),
+    m_addRecordTimestampHasBeenSet(false),
+    m_emitConsumerLagMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +182,27 @@ KafkaStreamingSourceOptions& KafkaStreamingSourceOptions::operator =(JsonView js
     m_minPartitionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludeHeaders"))
+  {
+    m_includeHeaders = jsonValue.GetBool("IncludeHeaders");
+
+    m_includeHeadersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AddRecordTimestamp"))
+  {
+    m_addRecordTimestamp = jsonValue.GetString("AddRecordTimestamp");
+
+    m_addRecordTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmitConsumerLagMetrics"))
+  {
+    m_emitConsumerLagMetrics = jsonValue.GetString("EmitConsumerLagMetrics");
+
+    m_emitConsumerLagMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -268,6 +297,24 @@ JsonValue KafkaStreamingSourceOptions::Jsonize() const
   if(m_minPartitionsHasBeenSet)
   {
    payload.WithInteger("MinPartitions", m_minPartitions);
+
+  }
+
+  if(m_includeHeadersHasBeenSet)
+  {
+   payload.WithBool("IncludeHeaders", m_includeHeaders);
+
+  }
+
+  if(m_addRecordTimestampHasBeenSet)
+  {
+   payload.WithString("AddRecordTimestamp", m_addRecordTimestamp);
+
+  }
+
+  if(m_emitConsumerLagMetricsHasBeenSet)
+  {
+   payload.WithString("EmitConsumerLagMetrics", m_emitConsumerLagMetrics);
 
   }
 

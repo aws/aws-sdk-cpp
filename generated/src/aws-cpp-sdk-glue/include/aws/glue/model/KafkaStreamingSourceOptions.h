@@ -699,6 +699,181 @@ namespace Model
      */
     inline KafkaStreamingSourceOptions& WithMinPartitions(int value) { SetMinPartitions(value); return *this;}
 
+
+    /**
+     * <p>Whether to include the Kafka headers. When the option is set to "true", the
+     * data output will contain an additional column named
+     * "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value:
+     * String)]</code>. The default value is "false". This option is available in Glue
+     * version 3.0 or later only.</p>
+     */
+    inline bool GetIncludeHeaders() const{ return m_includeHeaders; }
+
+    /**
+     * <p>Whether to include the Kafka headers. When the option is set to "true", the
+     * data output will contain an additional column named
+     * "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value:
+     * String)]</code>. The default value is "false". This option is available in Glue
+     * version 3.0 or later only.</p>
+     */
+    inline bool IncludeHeadersHasBeenSet() const { return m_includeHeadersHasBeenSet; }
+
+    /**
+     * <p>Whether to include the Kafka headers. When the option is set to "true", the
+     * data output will contain an additional column named
+     * "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value:
+     * String)]</code>. The default value is "false". This option is available in Glue
+     * version 3.0 or later only.</p>
+     */
+    inline void SetIncludeHeaders(bool value) { m_includeHeadersHasBeenSet = true; m_includeHeaders = value; }
+
+    /**
+     * <p>Whether to include the Kafka headers. When the option is set to "true", the
+     * data output will contain an additional column named
+     * "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value:
+     * String)]</code>. The default value is "false". This option is available in Glue
+     * version 3.0 or later only.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithIncludeHeaders(bool value) { SetIncludeHeaders(value); return *this;}
+
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline const Aws::String& GetAddRecordTimestamp() const{ return m_addRecordTimestamp; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline bool AddRecordTimestampHasBeenSet() const { return m_addRecordTimestampHasBeenSet; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(const Aws::String& value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp = value; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(Aws::String&& value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp = std::move(value); }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(const char* value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp.assign(value); }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithAddRecordTimestamp(const Aws::String& value) { SetAddRecordTimestamp(value); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithAddRecordTimestamp(Aws::String&& value) { SetAddRecordTimestamp(std::move(value)); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the topic. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithAddRecordTimestamp(const char* value) { SetAddRecordTimestamp(value); return *this;}
+
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline const Aws::String& GetEmitConsumerLagMetrics() const{ return m_emitConsumerLagMetrics; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline bool EmitConsumerLagMetricsHasBeenSet() const { return m_emitConsumerLagMetricsHasBeenSet; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(const Aws::String& value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics = value; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(Aws::String&& value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics = std::move(value); }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(const char* value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics.assign(value); }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithEmitConsumerLagMetrics(const Aws::String& value) { SetEmitConsumerLagMetrics(value); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithEmitConsumerLagMetrics(Aws::String&& value) { SetEmitConsumerLagMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the topic and the time it
+     * arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithEmitConsumerLagMetrics(const char* value) { SetEmitConsumerLagMetrics(value); return *this;}
+
   private:
 
     Aws::String m_bootstrapServers;
@@ -745,6 +920,15 @@ namespace Model
 
     int m_minPartitions;
     bool m_minPartitionsHasBeenSet = false;
+
+    bool m_includeHeaders;
+    bool m_includeHeadersHasBeenSet = false;
+
+    Aws::String m_addRecordTimestamp;
+    bool m_addRecordTimestampHasBeenSet = false;
+
+    Aws::String m_emitConsumerLagMetrics;
+    bool m_emitConsumerLagMetricsHasBeenSet = false;
   };
 
 } // namespace Model

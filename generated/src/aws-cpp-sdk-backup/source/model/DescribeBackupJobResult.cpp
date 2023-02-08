@@ -188,6 +188,12 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+  }
+
 
 
   return *this;

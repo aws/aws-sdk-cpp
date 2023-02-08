@@ -1075,6 +1075,49 @@ namespace Model
      */
     inline DescribeRecoveryPointResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
 
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(Aws::String&& value) { m_resourceName = std::move(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeRecoveryPointResult& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeRecoveryPointResult& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeRecoveryPointResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
@@ -1120,6 +1163,8 @@ namespace Model
     Aws::String m_compositeMemberIdentifier;
 
     bool m_isParent;
+
+    Aws::String m_resourceName;
   };
 
 } // namespace Model

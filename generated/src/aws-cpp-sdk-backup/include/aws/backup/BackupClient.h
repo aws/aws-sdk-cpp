@@ -1622,9 +1622,12 @@ namespace Backup
          * prevents attempts to update the lifecycle policy that controls the retention
          * period of any recovery point currently stored in a backup vault. If specified,
          * Vault Lock enforces a minimum and maximum retention period for future backup and
-         * copy jobs that target a backup vault.</p>  <p>Backup Vault Lock has yet to
-         * receive a third-party assessment for SEC 17a-4(f) and CFTC.</p>
-         * <p><h3>See Also:</h3>   <a
+         * copy jobs that target a backup vault.</p>  <p>Backup Vault Lock has been
+         * assessed by Cohasset Associates for use in environments that are subject to SEC
+         * 17a-4, CFTC, and FINRA regulations. For more information about how Backup Vault
+         * Lock relates to these regulations, see the <a
+         * href="samples/cohassetreport.zip">Cohasset Associates Compliance Assessment.</a>
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">AWS
          * API Reference</a></p>
          */
