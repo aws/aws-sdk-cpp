@@ -317,22 +317,34 @@ namespace Model
     inline S3HudiCatalogTarget& AddAdditionalOptions(const char* key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline const CatalogSchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline void SetSchemaChangePolicy(const CatalogSchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline void SetSchemaChangePolicy(CatalogSchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline S3HudiCatalogTarget& WithSchemaChangePolicy(const CatalogSchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline S3HudiCatalogTarget& WithSchemaChangePolicy(CatalogSchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
   private:

@@ -47,7 +47,9 @@ KinesisStreamingSourceOptions::KinesisStreamingSourceOptions() :
     m_avoidEmptyBatchesHasBeenSet(false),
     m_streamArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_roleSessionNameHasBeenSet(false)
+    m_roleSessionNameHasBeenSet(false),
+    m_addRecordTimestampHasBeenSet(false),
+    m_emitConsumerLagMetricsHasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ KinesisStreamingSourceOptions::KinesisStreamingSourceOptions(JsonView jsonValue)
     m_avoidEmptyBatchesHasBeenSet(false),
     m_streamArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_roleSessionNameHasBeenSet(false)
+    m_roleSessionNameHasBeenSet(false),
+    m_addRecordTimestampHasBeenSet(false),
+    m_emitConsumerLagMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -213,6 +217,20 @@ KinesisStreamingSourceOptions& KinesisStreamingSourceOptions::operator =(JsonVie
     m_roleSessionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AddRecordTimestamp"))
+  {
+    m_addRecordTimestamp = jsonValue.GetString("AddRecordTimestamp");
+
+    m_addRecordTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmitConsumerLagMetrics"))
+  {
+    m_emitConsumerLagMetrics = jsonValue.GetString("EmitConsumerLagMetrics");
+
+    m_emitConsumerLagMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -324,6 +342,18 @@ JsonValue KinesisStreamingSourceOptions::Jsonize() const
   if(m_roleSessionNameHasBeenSet)
   {
    payload.WithString("RoleSessionName", m_roleSessionName);
+
+  }
+
+  if(m_addRecordTimestampHasBeenSet)
+  {
+   payload.WithString("AddRecordTimestamp", m_addRecordTimestamp);
+
+  }
+
+  if(m_emitConsumerLagMetricsHasBeenSet)
+  {
+   payload.WithString("EmitConsumerLagMetrics", m_emitConsumerLagMetrics);
 
   }
 

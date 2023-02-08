@@ -170,6 +170,12 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+  }
+
 
 
   return *this;

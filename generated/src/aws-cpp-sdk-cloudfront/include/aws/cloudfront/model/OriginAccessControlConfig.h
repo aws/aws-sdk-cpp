@@ -318,38 +318,32 @@ namespace Model
 
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline const OriginAccessControlOriginTypes& GetOriginAccessControlOriginType() const{ return m_originAccessControlOriginType; }
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline bool OriginAccessControlOriginTypeHasBeenSet() const { return m_originAccessControlOriginTypeHasBeenSet; }
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline void SetOriginAccessControlOriginType(const OriginAccessControlOriginTypes& value) { m_originAccessControlOriginTypeHasBeenSet = true; m_originAccessControlOriginType = value; }
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline void SetOriginAccessControlOriginType(OriginAccessControlOriginTypes&& value) { m_originAccessControlOriginTypeHasBeenSet = true; m_originAccessControlOriginType = std::move(value); }
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline OriginAccessControlConfig& WithOriginAccessControlOriginType(const OriginAccessControlOriginTypes& value) { SetOriginAccessControlOriginType(value); return *this;}
 
     /**
-     * <p>The type of origin that this origin access control is for. The only valid
-     * value is <code>s3</code>.</p>
+     * <p>The type of origin that this origin access control is for.</p>
      */
     inline OriginAccessControlConfig& WithOriginAccessControlOriginType(OriginAccessControlOriginTypes&& value) { SetOriginAccessControlOriginType(std::move(value)); return *this;}
 

@@ -682,6 +682,144 @@ namespace Model
      */
     inline KinesisStreamingSourceOptions& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline const Aws::String& GetAddRecordTimestamp() const{ return m_addRecordTimestamp; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline bool AddRecordTimestampHasBeenSet() const { return m_addRecordTimestampHasBeenSet; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(const Aws::String& value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp = value; }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(Aws::String&& value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp = std::move(value); }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetAddRecordTimestamp(const char* value) { m_addRecordTimestampHasBeenSet = true; m_addRecordTimestamp.assign(value); }
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithAddRecordTimestamp(const Aws::String& value) { SetAddRecordTimestamp(value); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithAddRecordTimestamp(Aws::String&& value) { SetAddRecordTimestamp(std::move(value)); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', the data output will contain an additional
+     * column named "__src_timestamp" that indicates the time when the corresponding
+     * record received by the stream. The default value is 'false'. This option is
+     * supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithAddRecordTimestamp(const char* value) { SetAddRecordTimestamp(value); return *this;}
+
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline const Aws::String& GetEmitConsumerLagMetrics() const{ return m_emitConsumerLagMetrics; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline bool EmitConsumerLagMetricsHasBeenSet() const { return m_emitConsumerLagMetricsHasBeenSet; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(const Aws::String& value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics = value; }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(Aws::String&& value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics = std::move(value); }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline void SetEmitConsumerLagMetrics(const char* value) { m_emitConsumerLagMetricsHasBeenSet = true; m_emitConsumerLagMetrics.assign(value); }
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithEmitConsumerLagMetrics(const Aws::String& value) { SetEmitConsumerLagMetrics(value); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithEmitConsumerLagMetrics(Aws::String&& value) { SetEmitConsumerLagMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>When this option is set to 'true', for each batch, it will emit the metrics
+     * for the duration between the oldest record received by the stream and the time
+     * it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.</p>
+     */
+    inline KinesisStreamingSourceOptions& WithEmitConsumerLagMetrics(const char* value) { SetEmitConsumerLagMetrics(value); return *this;}
+
   private:
 
     Aws::String m_endpointUrl;
@@ -737,6 +875,12 @@ namespace Model
 
     Aws::String m_roleSessionName;
     bool m_roleSessionNameHasBeenSet = false;
+
+    Aws::String m_addRecordTimestamp;
+    bool m_addRecordTimestampHasBeenSet = false;
+
+    Aws::String m_emitConsumerLagMetrics;
+    bool m_emitConsumerLagMetricsHasBeenSet = false;
   };
 
 } // namespace Model

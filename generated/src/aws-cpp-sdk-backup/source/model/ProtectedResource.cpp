@@ -21,14 +21,16 @@ namespace Model
 ProtectedResource::ProtectedResource() : 
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastBackupTimeHasBeenSet(false)
+    m_lastBackupTimeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
 ProtectedResource::ProtectedResource(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastBackupTimeHasBeenSet(false)
+    m_lastBackupTimeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ProtectedResource& ProtectedResource::operator =(JsonView jsonValue)
     m_lastBackupTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+    m_resourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ProtectedResource::Jsonize() const
   if(m_lastBackupTimeHasBeenSet)
   {
    payload.WithDouble("LastBackupTime", m_lastBackupTime.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceNameHasBeenSet)
+  {
+   payload.WithString("ResourceName", m_resourceName);
+
   }
 
   return payload;

@@ -286,62 +286,100 @@ namespace Model
     inline S3HudiDirectTarget& WithFormat(TargetFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const{ return m_additionalOptions; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline void SetAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline void SetAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& WithAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalOptions(value); return *this;}
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& WithAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalOptions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(const Aws::String& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(Aws::String&& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(const Aws::String& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(Aws::String&& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(const char* key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(Aws::String&& key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>Specifies additional connection options for the connector.</p>
+     */
     inline S3HudiDirectTarget& AddAdditionalOptions(const char* key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline void SetSchemaChangePolicy(const DirectSchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline void SetSchemaChangePolicy(DirectSchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline S3HudiDirectTarget& WithSchemaChangePolicy(const DirectSchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
 
-    
+    /**
+     * <p>A policy that specifies update behavior for the crawler.</p>
+     */
     inline S3HudiDirectTarget& WithSchemaChangePolicy(DirectSchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
   private:

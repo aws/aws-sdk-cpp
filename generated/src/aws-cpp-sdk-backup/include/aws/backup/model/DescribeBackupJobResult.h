@@ -1002,6 +1002,49 @@ namespace Model
      */
     inline DescribeBackupJobResult& AddChildJobsInState(BackupJobState&& key, long long value) { m_childJobsInState.emplace(std::move(key), value); return *this; }
 
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(Aws::String&& value) { m_resourceName = std::move(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeBackupJobResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -1051,6 +1094,8 @@ namespace Model
     long long m_numberOfChildJobs;
 
     Aws::Map<BackupJobState, long long> m_childJobsInState;
+
+    Aws::String m_resourceName;
   };
 
 } // namespace Model
