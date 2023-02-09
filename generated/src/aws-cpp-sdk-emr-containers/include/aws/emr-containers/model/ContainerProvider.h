@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline const ContainerProviderType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline void SetType(const ContainerProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline void SetType(ContainerProviderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline ContainerProvider& WithType(const ContainerProviderType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the container provider. EKS is the only supported type as of
-     * now.</p>
+     * <p>The type of the container provider. Amazon EKS is the only supported type as
+     * of now.</p>
      */
     inline ContainerProvider& WithType(ContainerProviderType&& value) { SetType(std::move(value)); return *this;}
 

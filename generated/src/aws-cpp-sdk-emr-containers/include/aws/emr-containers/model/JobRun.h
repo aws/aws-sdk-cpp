@@ -12,6 +12,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/emr-containers/model/FailureReason.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/emr-containers/model/RetryPolicyConfiguration.h>
+#include <aws/emr-containers/model/RetryPolicyExecution.h>
 #include <utility>
 
 namespace Aws
@@ -671,6 +673,68 @@ namespace Model
      */
     inline JobRun& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline const RetryPolicyConfiguration& GetRetryPolicyConfiguration() const{ return m_retryPolicyConfiguration; }
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline bool RetryPolicyConfigurationHasBeenSet() const { return m_retryPolicyConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline void SetRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = value; }
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline void SetRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline JobRun& WithRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { SetRetryPolicyConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of the retry policy that the job runs on.</p>
+     */
+    inline JobRun& WithRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { SetRetryPolicyConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline const RetryPolicyExecution& GetRetryPolicyExecution() const{ return m_retryPolicyExecution; }
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline bool RetryPolicyExecutionHasBeenSet() const { return m_retryPolicyExecutionHasBeenSet; }
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline void SetRetryPolicyExecution(const RetryPolicyExecution& value) { m_retryPolicyExecutionHasBeenSet = true; m_retryPolicyExecution = value; }
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline void SetRetryPolicyExecution(RetryPolicyExecution&& value) { m_retryPolicyExecutionHasBeenSet = true; m_retryPolicyExecution = std::move(value); }
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline JobRun& WithRetryPolicyExecution(const RetryPolicyExecution& value) { SetRetryPolicyExecution(value); return *this;}
+
+    /**
+     * <p>The current status of the retry policy executed on the job.</p>
+     */
+    inline JobRun& WithRetryPolicyExecution(RetryPolicyExecution&& value) { SetRetryPolicyExecution(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -720,6 +784,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    RetryPolicyConfiguration m_retryPolicyConfiguration;
+    bool m_retryPolicyConfigurationHasBeenSet = false;
+
+    RetryPolicyExecution m_retryPolicyExecution;
+    bool m_retryPolicyExecutionHasBeenSet = false;
   };
 
 } // namespace Model

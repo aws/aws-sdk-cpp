@@ -121,9 +121,10 @@ namespace MigrationHubRefactorSpaces
          * services, and routes created within the environment. They are referred to as the
          * <i>environment owner</i>. The environment owner has cross-account visibility and
          * control of Refactor Spaces resources that are added to the environment by other
-         * accounts that the environment is shared with. When creating an environment,
-         * Refactor Spaces provisions a transit gateway in your account.</p><p><h3>See
-         * Also:</h3>   <a
+         * accounts that the environment is shared with.</p> <p>When creating an
+         * environment with a network fabric type of <code>TRANSIT_GATEWAY</code>, Refactor
+         * Spaces provisions a transit gateway in your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateEnvironment">AWS
          * API Reference</a></p>
          */

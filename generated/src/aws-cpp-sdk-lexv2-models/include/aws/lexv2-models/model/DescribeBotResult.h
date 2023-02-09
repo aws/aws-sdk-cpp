@@ -9,6 +9,9 @@
 #include <aws/lexv2-models/model/DataPrivacy.h>
 #include <aws/lexv2-models/model/BotStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -318,6 +321,117 @@ namespace Model
      */
     inline DescribeBotResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of the bot that was described.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of the bot that was described.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botType = value; }
+
+    /**
+     * <p>The type of the bot that was described.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botType = std::move(value); }
+
+    /**
+     * <p>The type of the bot that was described.</p>
+     */
+    inline DescribeBotResult& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of the bot that was described.</p>
+     */
+    inline DescribeBotResult& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembers = value; }
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembers = std::move(value); }
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline DescribeBotResult& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline DescribeBotResult& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline DescribeBotResult& AddBotMembers(const BotMember& value) { m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of bots in the network that was described.</p>
+     */
+    inline DescribeBotResult& AddBotMembers(BotMember&& value) { m_botMembers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasons = value; }
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasons = std::move(value); }
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline DescribeBotResult& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline DescribeBotResult& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline DescribeBotResult& AddFailureReasons(const Aws::String& value) { m_failureReasons.push_back(value); return *this; }
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline DescribeBotResult& AddFailureReasons(Aws::String&& value) { m_failureReasons.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of
+     * reasons that the bot couldn't be built.</p>
+     */
+    inline DescribeBotResult& AddFailureReasons(const char* value) { m_failureReasons.push_back(value); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -337,6 +451,12 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    BotType m_botType;
+
+    Aws::Vector<BotMember> m_botMembers;
+
+    Aws::Vector<Aws::String> m_failureReasons;
   };
 
 } // namespace Model

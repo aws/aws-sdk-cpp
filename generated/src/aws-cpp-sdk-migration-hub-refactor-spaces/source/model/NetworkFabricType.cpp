@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         NetworkFabricType GetNetworkFabricTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TRANSIT_GATEWAY_HASH)
           {
             return NetworkFabricType::TRANSIT_GATEWAY;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return NetworkFabricType::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case NetworkFabricType::TRANSIT_GATEWAY:
             return "TRANSIT_GATEWAY";
+          case NetworkFabricType::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

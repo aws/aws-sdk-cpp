@@ -10,6 +10,9 @@
 #include <aws/lexv2-models/model/BotStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/lexv2-models/model/ParentBotNetwork.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -109,37 +112,37 @@ namespace Model
 
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline DescribeBotVersionResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline DescribeBotVersionResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the bot to describe.</p>
+     * <p>The version of the bot that was described.</p>
      */
     inline DescribeBotVersionResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
@@ -373,6 +376,104 @@ namespace Model
      */
     inline DescribeBotVersionResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline const Aws::Vector<ParentBotNetwork>& GetParentBotNetworks() const{ return m_parentBotNetworks; }
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline void SetParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { m_parentBotNetworks = value; }
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline void SetParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { m_parentBotNetworks = std::move(value); }
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline DescribeBotVersionResult& WithParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { SetParentBotNetworks(value); return *this;}
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline DescribeBotVersionResult& WithParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { SetParentBotNetworks(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline DescribeBotVersionResult& AddParentBotNetworks(const ParentBotNetwork& value) { m_parentBotNetworks.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the networks to which the bot version you described belongs.</p>
+     */
+    inline DescribeBotVersionResult& AddParentBotNetworks(ParentBotNetwork&& value) { m_parentBotNetworks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of the bot in the version that was described.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of the bot in the version that was described.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botType = value; }
+
+    /**
+     * <p>The type of the bot in the version that was described.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botType = std::move(value); }
+
+    /**
+     * <p>The type of the bot in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of the bot in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembers = value; }
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembers = std::move(value); }
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& AddBotMembers(const BotMember& value) { m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The members of bot network in the version that was described.</p>
+     */
+    inline DescribeBotVersionResult& AddBotMembers(BotMember&& value) { m_botMembers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -394,6 +495,12 @@ namespace Model
     Aws::Vector<Aws::String> m_failureReasons;
 
     Aws::Utils::DateTime m_creationDateTime;
+
+    Aws::Vector<ParentBotNetwork> m_parentBotNetworks;
+
+    BotType m_botType;
+
+    Aws::Vector<BotMember> m_botMembers;
   };
 
 } // namespace Model

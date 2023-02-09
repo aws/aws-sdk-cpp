@@ -25,7 +25,9 @@ BotSummary::BotSummary() :
     m_botStatus(BotStatus::NOT_SET),
     m_botStatusHasBeenSet(false),
     m_latestBotVersionHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_botType(BotType::NOT_SET),
+    m_botTypeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ BotSummary::BotSummary(JsonView jsonValue) :
     m_botStatus(BotStatus::NOT_SET),
     m_botStatusHasBeenSet(false),
     m_latestBotVersionHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_botType(BotType::NOT_SET),
+    m_botTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ BotSummary& BotSummary::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("botType"))
+  {
+    m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("botType"));
+
+    m_botTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +135,11 @@ JsonValue BotSummary::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_botTypeHasBeenSet)
+  {
+   payload.WithString("botType", BotTypeMapper::GetNameForBotType(m_botType));
   }
 
   return payload;

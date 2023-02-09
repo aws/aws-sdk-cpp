@@ -20,7 +20,10 @@ CreateBotRequest::CreateBotRequest() :
     m_idleSessionTTLInSeconds(0),
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_botTagsHasBeenSet(false),
-    m_testBotAliasTagsHasBeenSet(false)
+    m_testBotAliasTagsHasBeenSet(false),
+    m_botType(BotType::NOT_SET),
+    m_botTypeHasBeenSet(false),
+    m_botMembersHasBeenSet(false)
 {
 }
 
@@ -77,6 +80,22 @@ Aws::String CreateBotRequest::SerializePayload() const
      testBotAliasTagsJsonMap.WithString(testBotAliasTagsItem.first, testBotAliasTagsItem.second);
    }
    payload.WithObject("testBotAliasTags", std::move(testBotAliasTagsJsonMap));
+
+  }
+
+  if(m_botTypeHasBeenSet)
+  {
+   payload.WithString("botType", BotTypeMapper::GetNameForBotType(m_botType));
+  }
+
+  if(m_botMembersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> botMembersJsonList(m_botMembers.size());
+   for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
+   {
+     botMembersJsonList[botMembersIndex].AsObject(m_botMembers[botMembersIndex].Jsonize());
+   }
+   payload.WithArray("botMembers", std::move(botMembersJsonList));
 
   }
 

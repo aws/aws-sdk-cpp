@@ -162,50 +162,50 @@ namespace Model
 
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline const Aws::String& GetDisplayAs() const{ return m_displayAs; }
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline bool DisplayAsHasBeenSet() const { return m_displayAsHasBeenSet; }
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline void SetDisplayAs(const Aws::String& value) { m_displayAsHasBeenSet = true; m_displayAs = value; }
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline void SetDisplayAs(Aws::String&& value) { m_displayAsHasBeenSet = true; m_displayAs = std::move(value); }
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline void SetDisplayAs(const char* value) { m_displayAsHasBeenSet = true; m_displayAs.assign(value); }
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline CustomVocabularyItem& WithDisplayAs(const Aws::String& value) { SetDisplayAs(value); return *this;}
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline CustomVocabularyItem& WithDisplayAs(Aws::String&& value) { SetDisplayAs(std::move(value)); return *this;}
 
     /**
-     * <p>The display as value for the custom vocabulary item from the custom
-     * vocabulary list.</p>
+     * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
+     * list.</p>
      */
     inline CustomVocabularyItem& WithDisplayAs(const char* value) { SetDisplayAs(value); return *this;}
 

@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeBotResult::DescribeBotResult() : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
 }
 
 DescribeBotResult::DescribeBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
   *this = result;
 }
@@ -84,6 +86,30 @@ DescribeBotResult& DescribeBotResult::operator =(const Aws::AmazonWebServiceResu
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
 
+  }
+
+  if(jsonValue.ValueExists("botType"))
+  {
+    m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("botType"));
+
+  }
+
+  if(jsonValue.ValueExists("botMembers"))
+  {
+    Aws::Utils::Array<JsonView> botMembersJsonList = jsonValue.GetArray("botMembers");
+    for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
+    {
+      m_botMembers.push_back(botMembersJsonList[botMembersIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
+    }
   }
 
 

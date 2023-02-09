@@ -241,42 +241,66 @@ namespace Model
 
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline const Aws::String& GetExternalMeetingId() const{ return m_externalMeetingId; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline bool ExternalMeetingIdHasBeenSet() const { return m_externalMeetingIdHasBeenSet; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(const Aws::String& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = value; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(Aws::String&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::move(value); }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(const char* value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId.assign(value); }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingRequest& WithExternalMeetingId(const Aws::String& value) { SetExternalMeetingId(value); return *this;}
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingRequest& WithExternalMeetingId(Aws::String&& value) { SetExternalMeetingId(std::move(value)); return *this;}
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingRequest& WithExternalMeetingId(const char* value) { SetExternalMeetingId(value); return *this;}
 
@@ -479,17 +503,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -513,17 +537,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -547,17 +571,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -581,17 +605,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -615,17 +639,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline CreateMeetingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -649,17 +673,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline CreateMeetingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -683,17 +707,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline CreateMeetingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -717,17 +741,17 @@ namespace Model
      * identifiable information (PII) or other confidential or sensitive information in
      * tags. We use tags to provide you with billing and administration services. Tags
      * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
-     * </code>permission required by this operation, you must also have the tagging
-     * permission defined by the service that created the resource. For example, to tag
-     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
-     * operation, you must have both of the following permissions:</p> <p>
-     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
-     * </p>  <p>Some services might have specific requirements for tagging some
-     * resources. For example, to tag an Amazon S3 bucket, you must also have the
-     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
-     * don't work, check the documentation for that service's tagging APIs for more
-     * information.</p> 
+     * <b>Minimum permissions</b> </p> <p>In addition to the
+     * <code>tag:TagResources</code> permission required by this operation, you must
+     * also have the tagging permission defined by the service that created the
+     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
+     * <code>TagResources</code> operation, you must have both of the following
+     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
+     * specific requirements for tagging some resources. For example, to tag an Amazon
+     * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
+     * If the expected minimum permissions don't work, check the documentation for that
+     * service's tagging APIs for more information.</p> 
      */
     inline CreateMeetingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

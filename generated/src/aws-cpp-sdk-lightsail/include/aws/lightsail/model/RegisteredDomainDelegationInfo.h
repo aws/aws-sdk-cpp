@@ -95,22 +95,40 @@ namespace Model
     inline RegisteredDomainDelegationInfo& WithNameServersUpdateState(NameServersUpdateState&& value) { SetNameServersUpdateState(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline const R53HostedZoneDeletionState& GetR53HostedZoneDeletionState() const{ return m_r53HostedZoneDeletionState; }
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline bool R53HostedZoneDeletionStateHasBeenSet() const { return m_r53HostedZoneDeletionStateHasBeenSet; }
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline void SetR53HostedZoneDeletionState(const R53HostedZoneDeletionState& value) { m_r53HostedZoneDeletionStateHasBeenSet = true; m_r53HostedZoneDeletionState = value; }
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline void SetR53HostedZoneDeletionState(R53HostedZoneDeletionState&& value) { m_r53HostedZoneDeletionStateHasBeenSet = true; m_r53HostedZoneDeletionState = std::move(value); }
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline RegisteredDomainDelegationInfo& WithR53HostedZoneDeletionState(const R53HostedZoneDeletionState& value) { SetR53HostedZoneDeletionState(value); return *this;}
 
-    
+    /**
+     * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
+     * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
+     */
     inline RegisteredDomainDelegationInfo& WithR53HostedZoneDeletionState(R53HostedZoneDeletionState&& value) { SetR53HostedZoneDeletionState(std::move(value)); return *this;}
 
   private:

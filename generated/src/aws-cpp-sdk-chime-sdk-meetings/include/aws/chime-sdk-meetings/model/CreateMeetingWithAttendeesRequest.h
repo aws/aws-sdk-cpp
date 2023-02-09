@@ -242,42 +242,66 @@ namespace Model
 
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline const Aws::String& GetExternalMeetingId() const{ return m_externalMeetingId; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline bool ExternalMeetingIdHasBeenSet() const { return m_externalMeetingIdHasBeenSet; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(const Aws::String& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = value; }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(Aws::String&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::move(value); }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalMeetingId(const char* value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId.assign(value); }
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithExternalMeetingId(const Aws::String& value) { SetExternalMeetingId(value); return *this;}
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithExternalMeetingId(Aws::String&& value) { SetExternalMeetingId(std::move(value)); return *this;}
 
     /**
-     * <p>The external meeting ID.</p>
+     * <p>The external meeting ID.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithExternalMeetingId(const char* value) { SetExternalMeetingId(value); return *this;}
 

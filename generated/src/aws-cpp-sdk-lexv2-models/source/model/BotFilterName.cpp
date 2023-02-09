@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int BotName_HASH = HashingUtils::HashString("BotName");
+        static const int BotType_HASH = HashingUtils::HashString("BotType");
 
 
         BotFilterName GetBotFilterNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == BotName_HASH)
           {
             return BotFilterName::BotName;
+          }
+          else if (hashCode == BotType_HASH)
+          {
+            return BotFilterName::BotType;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case BotFilterName::BotName:
             return "BotName";
+          case BotFilterName::BotType:
+            return "BotType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

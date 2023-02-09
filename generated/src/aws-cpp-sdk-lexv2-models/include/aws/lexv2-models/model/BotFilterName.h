@@ -16,7 +16,8 @@ namespace Model
   enum class BotFilterName
   {
     NOT_SET,
-    BotName
+    BotName,
+    BotType
   };
 
 namespace BotFilterNameMapper

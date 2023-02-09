@@ -27,6 +27,7 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Versioning_HASH = HashingUtils::HashString("Versioning");
         static const int Importing_HASH = HashingUtils::HashString("Importing");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
 
 
         BotStatus GetBotStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return BotStatus::Importing;
           }
+          else if (hashCode == Updating_HASH)
+          {
+            return BotStatus::Updating;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "Versioning";
           case BotStatus::Importing:
             return "Importing";
+          case BotStatus::Updating:
+            return "Updating";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

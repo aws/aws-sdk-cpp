@@ -84,38 +84,38 @@ namespace Model
 
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline const ContainerProviderType& GetContainerProviderType() const{ return m_containerProviderType; }
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline bool ContainerProviderTypeHasBeenSet() const { return m_containerProviderTypeHasBeenSet; }
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline void SetContainerProviderType(const ContainerProviderType& value) { m_containerProviderTypeHasBeenSet = true; m_containerProviderType = value; }
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline void SetContainerProviderType(ContainerProviderType&& value) { m_containerProviderTypeHasBeenSet = true; m_containerProviderType = std::move(value); }
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline ListVirtualClustersRequest& WithContainerProviderType(const ContainerProviderType& value) { SetContainerProviderType(value); return *this;}
 
     /**
-     * <p>The container provider type of the virtual cluster. EKS is the only supported
-     * type as of now.</p>
+     * <p>The container provider type of the virtual cluster. Amazon EKS is the only
+     * supported type as of now.</p>
      */
     inline ListVirtualClustersRequest& WithContainerProviderType(ContainerProviderType&& value) { SetContainerProviderType(std::move(value)); return *this;}
 

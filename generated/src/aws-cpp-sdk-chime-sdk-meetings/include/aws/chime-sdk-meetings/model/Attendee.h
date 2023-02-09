@@ -48,49 +48,73 @@ namespace Model
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline const Aws::String& GetExternalUserId() const{ return m_externalUserId; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline bool ExternalUserIdHasBeenSet() const { return m_externalUserIdHasBeenSet; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalUserId(const Aws::String& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = value; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalUserId(Aws::String&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::move(value); }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline void SetExternalUserId(const char* value) { m_externalUserIdHasBeenSet = true; m_externalUserId.assign(value); }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline Attendee& WithExternalUserId(const Aws::String& value) { SetExternalUserId(value); return *this;}
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline Attendee& WithExternalUserId(Aws::String&& value) { SetExternalUserId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p> <p>Pattern:
+     * <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that
+     * begin with <code>aws:</code> are reserved. You can't configure a value that uses
+     * this prefix. Case insensitive.</p>
      */
     inline Attendee& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The configuration settings of the features available to a
-   * meeting.&gt;</p><p><h3>See Also:</h3>   <a
+   * meeting.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/MeetingFeaturesConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,38 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline const AudioFeatures& GetAudio() const{ return m_audio; }
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline void SetAudio(const AudioFeatures& value) { m_audioHasBeenSet = true; m_audio = value; }
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline void SetAudio(AudioFeatures&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline MeetingFeaturesConfiguration& WithAudio(const AudioFeatures& value) { SetAudio(value); return *this;}
 
     /**
-     * <p>The configuration settings for the audio features available to a meeting.
-     * </p>
+     * <p>The configuration settings for the audio features available to a meeting.</p>
      */
     inline MeetingFeaturesConfiguration& WithAudio(AudioFeatures&& value) { SetAudio(std::move(value)); return *this;}
 

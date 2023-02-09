@@ -23,7 +23,8 @@ StartJobRunRequest::StartJobRunRequest() :
     m_configurationOverridesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_jobTemplateIdHasBeenSet(false),
-    m_jobTemplateParametersHasBeenSet(false)
+    m_jobTemplateParametersHasBeenSet(false),
+    m_retryPolicyConfigurationHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String StartJobRunRequest::SerializePayload() const
      jobTemplateParametersJsonMap.WithString(jobTemplateParametersItem.first, jobTemplateParametersItem.second);
    }
    payload.WithObject("jobTemplateParameters", std::move(jobTemplateParametersJsonMap));
+
+  }
+
+  if(m_retryPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("retryPolicyConfiguration", m_retryPolicyConfiguration.Jsonize());
 
   }
 

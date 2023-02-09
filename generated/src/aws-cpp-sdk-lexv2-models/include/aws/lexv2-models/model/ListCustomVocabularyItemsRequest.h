@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
 
@@ -115,63 +123,87 @@ namespace Model
 
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline const Aws::String& GetLocaleId() const{ return m_localeId; }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline ListCustomVocabularyItemsRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline ListCustomVocabularyItemsRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary request.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see Supported languages
+     * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
     inline ListCustomVocabularyItemsRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
 
     /**
-     * <p>The maximum results to the list custom vocabulary request.</p>
+     * <p>The maximum number of items returned by the list operation.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum results to the list custom vocabulary request.</p>
+     * <p>The maximum number of items returned by the list operation.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum results to the list custom vocabulary request.</p>
+     * <p>The maximum number of items returned by the list operation.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum results to the list custom vocabulary request.</p>
+     * <p>The maximum number of items returned by the list operation.</p>
      */
     inline ListCustomVocabularyItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline const Aws::Vector<StandbyWorkspace>& GetStandbyWorkspaces() const{ return m_standbyWorkspaces; }
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline bool StandbyWorkspacesHasBeenSet() const { return m_standbyWorkspacesHasBeenSet; }
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline void SetStandbyWorkspaces(const Aws::Vector<StandbyWorkspace>& value) { m_standbyWorkspacesHasBeenSet = true; m_standbyWorkspaces = value; }
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline void SetStandbyWorkspaces(Aws::Vector<StandbyWorkspace>&& value) { m_standbyWorkspacesHasBeenSet = true; m_standbyWorkspaces = std::move(value); }
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline CreateStandbyWorkspacesRequest& WithStandbyWorkspaces(const Aws::Vector<StandbyWorkspace>& value) { SetStandbyWorkspaces(value); return *this;}
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline CreateStandbyWorkspacesRequest& WithStandbyWorkspaces(Aws::Vector<StandbyWorkspace>&& value) { SetStandbyWorkspaces(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline CreateStandbyWorkspacesRequest& AddStandbyWorkspaces(const StandbyWorkspace& value) { m_standbyWorkspacesHasBeenSet = true; m_standbyWorkspaces.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Standby WorkSpace to be created.</p>
+     * <p>Information about the standby WorkSpace to be created.</p>
      */
     inline CreateStandbyWorkspacesRequest& AddStandbyWorkspaces(StandbyWorkspace&& value) { m_standbyWorkspacesHasBeenSet = true; m_standbyWorkspaces.push_back(std::move(value)); return *this; }
 

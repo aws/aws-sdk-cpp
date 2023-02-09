@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CO,
-    EQ
+    EQ,
+    NE
   };
 
 namespace BotFilterOperatorMapper

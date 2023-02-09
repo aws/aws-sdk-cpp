@@ -95,9 +95,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline const Aws::String& GetEvaluationContext() const{ return m_evaluationContext; }
 
@@ -107,9 +106,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline bool EvaluationContextHasBeenSet() const { return m_evaluationContextHasBeenSet; }
 
@@ -119,9 +117,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline void SetEvaluationContext(const Aws::String& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = value; }
 
@@ -131,9 +128,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline void SetEvaluationContext(Aws::String&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::move(value); }
 
@@ -143,9 +139,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline void SetEvaluationContext(const char* value) { m_evaluationContextHasBeenSet = true; m_evaluationContext.assign(value); }
 
@@ -155,9 +150,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(const Aws::String& value) { SetEvaluationContext(value); return *this;}
 
@@ -167,9 +161,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(Aws::String&& value) { SetEvaluationContext(std::move(value)); return *this;}
 
@@ -179,9 +172,8 @@ namespace Model
      * value to match user sessions with defined audience segments. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
-     * segments to focus your audience</a>.</p> <pre><code> &lt;p&gt;If you include
-     * this parameter, the value must be a JSON object. A JSON array is not
-     * supported.&lt;/p&gt; </code></pre>
+     * segments to focus your audience</a>.</p> <p>If you include this parameter, the
+     * value must be a JSON object. A JSON array is not supported.</p>
      */
     inline EvaluateFeatureRequest& WithEvaluationContext(const char* value) { SetEvaluationContext(value); return *this;}
 

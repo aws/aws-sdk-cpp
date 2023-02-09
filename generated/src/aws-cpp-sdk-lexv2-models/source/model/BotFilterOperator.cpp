@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CO_HASH = HashingUtils::HashString("CO");
         static const int EQ_HASH = HashingUtils::HashString("EQ");
+        static const int NE_HASH = HashingUtils::HashString("NE");
 
 
         BotFilterOperator GetBotFilterOperatorForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == EQ_HASH)
           {
             return BotFilterOperator::EQ;
+          }
+          else if (hashCode == NE_HASH)
+          {
+            return BotFilterOperator::NE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CO";
           case BotFilterOperator::EQ:
             return "EQ";
+          case BotFilterOperator::NE:
+            return "NE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

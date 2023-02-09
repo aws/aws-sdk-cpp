@@ -108,6 +108,15 @@ DescribeBotAliasResult& DescribeBotAliasResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("parentBotNetworks"))
+  {
+    Aws::Utils::Array<JsonView> parentBotNetworksJsonList = jsonValue.GetArray("parentBotNetworks");
+    for(unsigned parentBotNetworksIndex = 0; parentBotNetworksIndex < parentBotNetworksJsonList.GetLength(); ++parentBotNetworksIndex)
+    {
+      m_parentBotNetworks.push_back(parentBotNetworksJsonList[parentBotNetworksIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -35,109 +35,137 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botId = value; }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline void SetBotId(const char* value) { m_botId.assign(value); }
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
 
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The bot version of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the version of the bot associated with this custom
+     * vocabulary.</p>
      */
     inline ListCustomVocabularyItemsResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline const Aws::String& GetLocaleId() const{ return m_localeId; }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline ListCustomVocabularyItemsResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline ListCustomVocabularyItemsResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
 
     /**
-     * <p>The locale identifier of the bot to the list custom vocabulary response.</p>
+     * <p>The identifier of the language and locale where this custom vocabulary is
+     * used. The string must match one of the supported locales. For more information,
+     * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+     * Supported Languages </a>.</p>
      */
     inline ListCustomVocabularyItemsResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 

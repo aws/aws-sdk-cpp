@@ -25,7 +25,8 @@ IntentResultEvent::IntentResultEvent() :
     m_sessionStateHasBeenSet(false),
     m_requestAttributesHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_recognizedBotMemberHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ IntentResultEvent::IntentResultEvent(JsonView jsonValue) :
     m_sessionStateHasBeenSet(false),
     m_requestAttributesHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_recognizedBotMemberHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ IntentResultEvent& IntentResultEvent::operator =(JsonView jsonValue)
     m_eventIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recognizedBotMember"))
+  {
+    m_recognizedBotMember = jsonValue.GetObject("recognizedBotMember");
+
+    m_recognizedBotMemberHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue IntentResultEvent::Jsonize() const
   if(m_eventIdHasBeenSet)
   {
    payload.WithString("eventId", m_eventId);
+
+  }
+
+  if(m_recognizedBotMemberHasBeenSet)
+  {
+   payload.WithObject("recognizedBotMember", m_recognizedBotMember.Jsonize());
 
   }
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the login information for the container image registry of an Amazon
-   * Lightsail account.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the sign-in credentials for the container image registry of an
+   * Amazon Lightsail account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceRegistryLogin">AWS
    * API Reference</a></p>
    */
@@ -138,7 +138,7 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -146,7 +146,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -154,7 +154,7 @@ namespace Model
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -162,7 +162,7 @@ namespace Model
     inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -170,7 +170,7 @@ namespace Model
     inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -178,7 +178,7 @@ namespace Model
     inline ContainerServiceRegistryLogin& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
 
     /**
-     * <p>The timestamp of when the container image registry username and password
+     * <p>The timestamp of when the container image registry sign-in credentials
      * expire.</p> <p>The log in credentials expire 12 hours after they are created, at
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>

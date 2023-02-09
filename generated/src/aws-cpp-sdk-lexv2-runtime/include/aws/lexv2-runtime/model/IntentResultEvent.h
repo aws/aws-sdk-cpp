@@ -10,6 +10,7 @@
 #include <aws/lexv2-runtime/model/SessionState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-runtime/model/RecognizedBotMember.h>
 #include <aws/lexv2-runtime/model/Interpretation.h>
 #include <utility>
 
@@ -329,6 +330,37 @@ namespace Model
      */
     inline IntentResultEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline const RecognizedBotMember& GetRecognizedBotMember() const{ return m_recognizedBotMember; }
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline bool RecognizedBotMemberHasBeenSet() const { return m_recognizedBotMemberHasBeenSet; }
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline void SetRecognizedBotMember(const RecognizedBotMember& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = value; }
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline void SetRecognizedBotMember(RecognizedBotMember&& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = std::move(value); }
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline IntentResultEvent& WithRecognizedBotMember(const RecognizedBotMember& value) { SetRecognizedBotMember(value); return *this;}
+
+    /**
+     * <p>The bot member that is processing the intent.</p>
+     */
+    inline IntentResultEvent& WithRecognizedBotMember(RecognizedBotMember&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
+
   private:
 
     InputMode m_inputMode;
@@ -348,6 +380,9 @@ namespace Model
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
+
+    RecognizedBotMember m_recognizedBotMember;
+    bool m_recognizedBotMemberHasBeenSet = false;
   };
 
 } // namespace Model

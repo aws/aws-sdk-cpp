@@ -36,7 +36,9 @@ JobRun::JobRun() :
     m_stateDetailsHasBeenSet(false),
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_retryPolicyConfigurationHasBeenSet(false),
+    m_retryPolicyExecutionHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_stateDetailsHasBeenSet(false),
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_retryPolicyConfigurationHasBeenSet(false),
+    m_retryPolicyExecutionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +184,20 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryPolicyConfiguration"))
+  {
+    m_retryPolicyConfiguration = jsonValue.GetObject("retryPolicyConfiguration");
+
+    m_retryPolicyConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retryPolicyExecution"))
+  {
+    m_retryPolicyExecution = jsonValue.GetObject("retryPolicyExecution");
+
+    m_retryPolicyExecutionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -281,6 +299,18 @@ JsonValue JobRun::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_retryPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("retryPolicyConfiguration", m_retryPolicyConfiguration.Jsonize());
+
+  }
+
+  if(m_retryPolicyExecutionHasBeenSet)
+  {
+   payload.WithObject("retryPolicyExecution", m_retryPolicyExecution.Jsonize());
 
   }
 
