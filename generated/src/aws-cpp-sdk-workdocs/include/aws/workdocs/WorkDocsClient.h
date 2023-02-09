@@ -16,30 +16,30 @@ namespace Aws
 namespace WorkDocs
 {
   /**
-   * <p>The WorkDocs API is designed for the following use cases:</p> <ul> <li>
-   * <p>File Migration: File migration applications are supported for users who want
-   * to migrate their files from an on-premises or off-premises file system or
+   * <p>The Amazon WorkDocs API is designed for the following use cases:</p> <ul>
+   * <li> <p>File Migration: File migration applications are supported for users who
+   * want to migrate their files from an on-premises or off-premises file system or
    * service. Users can insert files into a user directory structure, as well as
    * allow for basic metadata changes, such as modifications to the permissions of
    * files.</p> </li> <li> <p>Security: Support security applications are supported
    * for users who have additional security needs, such as antivirus or data loss
-   * prevention. The API actions, along with AWS CloudTrail, allow these applications
-   * to detect when changes occur in Amazon WorkDocs. Then, the application can take
-   * the necessary actions and replace the target file. If the target file violates
-   * the policy, the application can also choose to email the user.</p> </li> <li>
+   * prevention. The API actions, along with CloudTrail, allow these applications to
+   * detect when changes occur in Amazon WorkDocs. Then, the application can take the
+   * necessary actions and replace the target file. If the target file violates the
+   * policy, the application can also choose to email the user.</p> </li> <li>
    * <p>eDiscovery/Analytics: General administrative applications are supported, such
    * as eDiscovery and analytics. These applications can choose to mimic or record
-   * the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to replicate
-   * data for eDiscovery, backup, or analytical applications.</p> </li> </ul> <p>All
+   * the actions in an Amazon WorkDocs site, along with CloudTrail, to replicate data
+   * for eDiscovery, backup, or analytical applications.</p> </li> </ul> <p>All
    * Amazon WorkDocs API actions are Amazon authenticated and certificate-signed.
-   * They not only require the use of the AWS SDK, but also allow for the exclusive
-   * use of IAM users and roles to help facilitate access, trust, and permission
-   * policies. By creating a role and allowing an IAM user to access the Amazon
-   * WorkDocs site, the IAM user gains full administrative visibility into the entire
-   * Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not
-   * limited to, the ability to modify file permissions and upload any file to any
-   * user. This allows developers to perform the three use cases above, as well as
-   * give users the ability to grant access on a selective basis using the IAM
+   * They not only require the use of the Amazon Web Services SDK, but also allow for
+   * the exclusive use of IAM users and roles to help facilitate access, trust, and
+   * permission policies. By creating a role and allowing an IAM user to access the
+   * Amazon WorkDocs site, the IAM user gains full administrative visibility into the
+   * entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is
+   * not limited to, the ability to modify file permissions and upload any file to
+   * any user. This allows developers to perform the three use cases above, as well
+   * as give users the ability to grant access on a selective basis using the IAM
    * model.</p>  <p>The pricing for Amazon WorkDocs APIs varies depending on
    * the API call type for these actions:</p> <ul> <li> <p> <code>READ (Get*)</code>
    * </p> </li> <li> <p> <code>WRITE (Activate*, Add*, Create*, Deactivate*,
@@ -451,9 +451,7 @@ namespace WorkDocs
         }
 
         /**
-         * <p>Deletes a version of an Amazon WorkDocs document. Use the
-         * <code>DeletePriorVersions</code> parameter to delete prior
-         * versions.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific version of a document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion">AWS
          * API Reference</a></p>
          */
@@ -581,8 +579,10 @@ namespace WorkDocs
         }
 
         /**
-         * <p>Deletes the specified user from a Simple AD or Microsoft AD
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
+         *  <p>Deleting a user immediately and permanently deletes all content
+         * in that user's folder structure. Site retention policies do NOT apply to this
+         * type of deletion.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">AWS
          * API Reference</a></p>
          */

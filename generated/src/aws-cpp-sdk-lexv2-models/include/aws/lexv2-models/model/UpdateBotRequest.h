@@ -8,6 +8,9 @@
 #include <aws/lexv2-models/LexModelsV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/model/DataPrivacy.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +39,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
@@ -44,7 +47,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
@@ -52,7 +55,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
@@ -60,7 +63,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
@@ -68,7 +71,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
@@ -76,7 +79,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
@@ -84,7 +87,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
@@ -92,7 +95,7 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
      * the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a>
      * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
@@ -310,6 +313,78 @@ namespace Model
      */
     inline UpdateBotRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline bool BotTypeHasBeenSet() const { return m_botTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botTypeHasBeenSet = true; m_botType = value; }
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botTypeHasBeenSet = true; m_botType = std::move(value); }
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline UpdateBotRequest& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of the bot to be updated.</p>
+     */
+    inline UpdateBotRequest& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline bool BotMembersHasBeenSet() const { return m_botMembersHasBeenSet; }
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembersHasBeenSet = true; m_botMembers = value; }
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembersHasBeenSet = true; m_botMembers = std::move(value); }
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline UpdateBotRequest& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline UpdateBotRequest& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline UpdateBotRequest& AddBotMembers(const BotMember& value) { m_botMembersHasBeenSet = true; m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of bot members in the network associated with the update action.</p>
+     */
+    inline UpdateBotRequest& AddBotMembers(BotMember&& value) { m_botMembersHasBeenSet = true; m_botMembers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -329,6 +404,12 @@ namespace Model
 
     int m_idleSessionTTLInSeconds;
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
+
+    BotType m_botType;
+    bool m_botTypeHasBeenSet = false;
+
+    Aws::Vector<BotMember> m_botMembers;
+    bool m_botMembersHasBeenSet = false;
   };
 
 } // namespace Model

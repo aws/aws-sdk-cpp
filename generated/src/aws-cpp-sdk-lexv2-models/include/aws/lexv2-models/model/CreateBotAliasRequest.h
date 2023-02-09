@@ -128,56 +128,56 @@ namespace Model
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline CreateBotAliasRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline CreateBotAliasRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the bot that this alias points to. You can use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
      * operation to change the bot version associated with the alias.</p>
      */
     inline CreateBotAliasRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}

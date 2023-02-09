@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline const TemplateParameterDataType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline void SetType(const TemplateParameterDataType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline void SetType(TemplateParameterDataType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline TemplateParameterConfiguration& WithType(const TemplateParameterDataType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the job template parameter. Allowed values are: ‘String’,
-     * ‘Number’.</p>
+     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
+     * ‘NUMBER’.</p>
      */
     inline TemplateParameterConfiguration& WithType(TemplateParameterDataType&& value) { SetType(std::move(value)); return *this;}
 

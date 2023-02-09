@@ -22,7 +22,8 @@ namespace Model
     Deleting,
     Failed,
     Versioning,
-    Importing
+    Importing,
+    Updating
   };
 
 namespace BotStatusMapper

@@ -16,7 +16,8 @@ namespace Model
   enum class NetworkFabricType
   {
     NOT_SET,
-    TRANSIT_GATEWAY
+    TRANSIT_GATEWAY,
+    NONE
   };
 
 namespace NetworkFabricTypeMapper

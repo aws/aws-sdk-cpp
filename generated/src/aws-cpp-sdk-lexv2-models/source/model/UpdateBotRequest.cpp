@@ -19,7 +19,10 @@ UpdateBotRequest::UpdateBotRequest() :
     m_roleArnHasBeenSet(false),
     m_dataPrivacyHasBeenSet(false),
     m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false)
+    m_idleSessionTTLInSecondsHasBeenSet(false),
+    m_botType(BotType::NOT_SET),
+    m_botTypeHasBeenSet(false),
+    m_botMembersHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,22 @@ Aws::String UpdateBotRequest::SerializePayload() const
   if(m_idleSessionTTLInSecondsHasBeenSet)
   {
    payload.WithInteger("idleSessionTTLInSeconds", m_idleSessionTTLInSeconds);
+
+  }
+
+  if(m_botTypeHasBeenSet)
+  {
+   payload.WithString("botType", BotTypeMapper::GetNameForBotType(m_botType));
+  }
+
+  if(m_botMembersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> botMembersJsonList(m_botMembers.size());
+   for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
+   {
+     botMembersJsonList[botMembersIndex].AsObject(m_botMembers[botMembersIndex].Jsonize());
+   }
+   payload.WithArray("botMembers", std::move(botMembersJsonList));
 
   }
 

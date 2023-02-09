@@ -10,6 +10,7 @@
 #include <aws/emr-containers/model/JobDriver.h>
 #include <aws/emr-containers/model/ConfigurationOverrides.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/emr-containers/model/RetryPolicyConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -475,6 +476,37 @@ namespace Model
      */
     inline StartJobRunRequest& AddJobTemplateParameters(const char* key, const char* value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline const RetryPolicyConfiguration& GetRetryPolicyConfiguration() const{ return m_retryPolicyConfiguration; }
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline bool RetryPolicyConfigurationHasBeenSet() const { return m_retryPolicyConfigurationHasBeenSet; }
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline void SetRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = value; }
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline void SetRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = std::move(value); }
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline StartJobRunRequest& WithRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { SetRetryPolicyConfiguration(value); return *this;}
+
+    /**
+     * <p>The retry policy configuration for the job run.</p>
+     */
+    inline StartJobRunRequest& WithRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { SetRetryPolicyConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -506,6 +538,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_jobTemplateParameters;
     bool m_jobTemplateParametersHasBeenSet = false;
+
+    RetryPolicyConfiguration m_retryPolicyConfiguration;
+    bool m_retryPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

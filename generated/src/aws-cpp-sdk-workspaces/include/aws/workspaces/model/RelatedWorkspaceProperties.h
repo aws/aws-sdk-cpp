@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the related WorkSpace. The related WorkSpace could be a Standby
-   * WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p><p><h3>See
+   * <p>Describes the related WorkSpace. The related WorkSpace could be a standby
+   * WorkSpace or primary WorkSpace related to the specified WorkSpace.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RelatedWorkspaceProperties">AWS
    * API Reference</a></p>
