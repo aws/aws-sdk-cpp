@@ -34,7 +34,8 @@ InstanceRefresh::InstanceRefresh() :
     m_instancesToUpdateHasBeenSet(false),
     m_progressDetailsHasBeenSet(false),
     m_preferencesHasBeenSet(false),
-    m_desiredConfigurationHasBeenSet(false)
+    m_desiredConfigurationHasBeenSet(false),
+    m_rollbackDetailsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode) :
     m_instancesToUpdateHasBeenSet(false),
     m_progressDetailsHasBeenSet(false),
     m_preferencesHasBeenSet(false),
-    m_desiredConfigurationHasBeenSet(false)
+    m_desiredConfigurationHasBeenSet(false),
+    m_rollbackDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +131,12 @@ InstanceRefresh& InstanceRefresh::operator =(const XmlNode& xmlNode)
       m_desiredConfiguration = desiredConfigurationNode;
       m_desiredConfigurationHasBeenSet = true;
     }
+    XmlNode rollbackDetailsNode = resultNode.FirstChild("RollbackDetails");
+    if(!rollbackDetailsNode.IsNull())
+    {
+      m_rollbackDetails = rollbackDetailsNode;
+      m_rollbackDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -197,6 +205,13 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
       m_desiredConfiguration.OutputToStream(oStream, desiredConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_rollbackDetailsHasBeenSet)
+  {
+      Aws::StringStream rollbackDetailsLocationAndMemberSs;
+      rollbackDetailsLocationAndMemberSs << location << index << locationValue << ".RollbackDetails";
+      m_rollbackDetails.OutputToStream(oStream, rollbackDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -250,6 +265,12 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
       Aws::String desiredConfigurationLocationAndMember(location);
       desiredConfigurationLocationAndMember += ".DesiredConfiguration";
       m_desiredConfiguration.OutputToStream(oStream, desiredConfigurationLocationAndMember.c_str());
+  }
+  if(m_rollbackDetailsHasBeenSet)
+  {
+      Aws::String rollbackDetailsLocationAndMember(location);
+      rollbackDetailsLocationAndMember += ".RollbackDetails";
+      m_rollbackDetails.OutputToStream(oStream, rollbackDetailsLocationAndMember.c_str());
   }
 }
 

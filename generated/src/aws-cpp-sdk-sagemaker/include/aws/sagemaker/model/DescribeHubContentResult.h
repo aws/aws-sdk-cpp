@@ -352,37 +352,44 @@ namespace Model
 
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline const Aws::String& GetHubContentMarkdown() const{ return m_hubContentMarkdown; }
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline void SetHubContentMarkdown(const Aws::String& value) { m_hubContentMarkdown = value; }
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline void SetHubContentMarkdown(Aws::String&& value) { m_hubContentMarkdown = std::move(value); }
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline void SetHubContentMarkdown(const char* value) { m_hubContentMarkdown.assign(value); }
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline DescribeHubContentResult& WithHubContentMarkdown(const Aws::String& value) { SetHubContentMarkdown(value); return *this;}
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline DescribeHubContentResult& WithHubContentMarkdown(Aws::String&& value) { SetHubContentMarkdown(std::move(value)); return *this;}
 
     /**
-     * <p>Markdown files associated with the hub content to import.</p>
+     * <p>A string that provides a description of the hub content. This string can
+     * include links, tables, and standard markdown formating.</p>
      */
     inline DescribeHubContentResult& WithHubContentMarkdown(const char* value) { SetHubContentMarkdown(value); return *this;}
 

@@ -36,44 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline DescribeStaleSecurityGroupsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline DescribeStaleSecurityGroupsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. If
+     * there are no additional items to return, the string is empty.</p>
      */
     inline DescribeStaleSecurityGroupsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

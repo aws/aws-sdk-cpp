@@ -24,7 +24,9 @@ FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric() :
     m_metricName(AutoMLMetricEnum::NOT_SET),
     m_metricNameHasBeenSet(false),
     m_value(0.0),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_standardMetricName(AutoMLMetricEnum::NOT_SET),
+    m_standardMetricNameHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric(JsonView jsonValue)
     m_metricName(AutoMLMetricEnum::NOT_SET),
     m_metricNameHasBeenSet(false),
     m_value(0.0),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_standardMetricName(AutoMLMetricEnum::NOT_SET),
+    m_standardMetricNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ FinalAutoMLJobObjectiveMetric& FinalAutoMLJobObjectiveMetric::operator =(JsonVie
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StandardMetricName"))
+  {
+    m_standardMetricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("StandardMetricName"));
+
+    m_standardMetricNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,6 +94,11 @@ JsonValue FinalAutoMLJobObjectiveMetric::Jsonize() const
   {
    payload.WithDouble("Value", m_value);
 
+  }
+
+  if(m_standardMetricNameHasBeenSet)
+  {
+   payload.WithString("StandardMetricName", AutoMLMetricEnumMapper::GetNameForAutoMLMetricEnum(m_standardMetricName));
   }
 
   return payload;

@@ -1264,42 +1264,66 @@ namespace Model
 
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline AutoScalingGroup& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline AutoScalingGroup& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline AutoScalingGroup& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
 
     /**
-     * <p>The unique identifiers of the traffic sources.</p>
+     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
+     * is subject to change. Do not use this parameter for production workloads. It is
+     * also subject to change.</b> </p> <p>The unique identifiers of the traffic
+     * sources.</p>
      */
     inline AutoScalingGroup& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
 

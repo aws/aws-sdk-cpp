@@ -21,7 +21,10 @@ namespace Model
     Successful,
     Failed,
     Cancelling,
-    Cancelled
+    Cancelled,
+    RollbackInProgress,
+    RollbackFailed,
+    RollbackSuccessful
   };
 
 namespace InstanceRefreshStatusMapper

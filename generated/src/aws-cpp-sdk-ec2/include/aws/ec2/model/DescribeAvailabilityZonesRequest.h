@@ -45,7 +45,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -58,13 +58,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -75,7 +74,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -88,13 +87,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -105,7 +103,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -118,13 +116,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -135,7 +132,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -148,13 +145,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -165,7 +161,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -178,13 +174,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -195,7 +190,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -208,13 +203,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -225,7 +219,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -238,13 +232,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -255,7 +248,7 @@ namespace Model
      * Wavelength Zones, use the name of the group associated with the Wavelength Zone
      * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
      * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
@@ -268,13 +261,12 @@ namespace Model
      * <code>zone-id</code> - The ID of the Availability Zone (for example,
      * <code>use1-az1</code>), the Local Zone (for example,
      * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>), the Local Zone (for example,
-     * <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-type</code>
-     * - The type of zone, for example, <code>local-zone</code>.</p> </li> </ul>
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
