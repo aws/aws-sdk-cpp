@@ -58,6 +58,8 @@ if (LEGACY_BUILD)
                                 If disabled, SDK will add compiler flags '-ffunction-sections -fdata-sections' for gcc and clang when compiling. \
                                 You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode." ON)
     option(REGENERATE_DEFAULTS "If set to ON, defaults mode configuration will be regenerated from the JSON definitions, this option involves some setup of python, java 8+, and maven" OFF)
+    option(ENABLE_ZLIB_REQUEST_COMPRESSION "For services that support it, request content will be compressed. On by default if dependency available" ON)
+
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
@@ -106,10 +108,6 @@ if (LEGACY_BUILD)
 
     set(PYTHON_CMD "python")
 
-    set(Python_ADDITIONAL_VERSIONS 3.7 3.8 3.9 3.10)
-    find_package(PythonInterp)
-    set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
-
     # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
     # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
     # Add ${CMAKE_INSTALL_LIBDIR}/cmake and ${CMAKE_PREFIX_PATH}/lib/cmake to search list
@@ -150,6 +148,17 @@ if (LEGACY_BUILD)
 
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
+    set(Python_ADDITIONAL_VERSIONS 3.7 3.8 3.9 3.10)
+    find_package(PythonInterp)
+    set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
+
+    # Find zlib (gzip) and use it if available
+    find_package(ZLIB QUIET)
+    if ( NOT ZLIB_FOUND)
+        set(ENABLE_ZLIB_REQUEST_COMPRESSION OFF)
+        message(WARNING "ZLIB is not available, it will not be used to compress requests")
+    endif()
 
     if (UNIX AND NOT APPLE)
         include(GNUInstallDirs)
