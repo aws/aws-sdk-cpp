@@ -35,7 +35,7 @@ ${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)$initializers
 
 ${typeInfo.className}& ${typeInfo.className}::operator =(JsonView jsonValue)
 {
-#if($shape.members.size() == 0)
+#if(!$shape.hasPayloadMembers())
   AWS_UNREFERENCED_PARAM(jsonValue);
 #end
 #set($useRequiredField = true)
