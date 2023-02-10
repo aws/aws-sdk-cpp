@@ -42,25 +42,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -128,23 +128,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>
@@ -155,25 +155,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -241,23 +241,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>
@@ -268,25 +268,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -354,23 +354,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>
@@ -381,25 +381,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -467,23 +467,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>
@@ -494,25 +494,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -580,23 +580,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>
@@ -607,25 +607,25 @@ namespace Model
      * <p>The name of the objective metric used to measure the predictive quality of a
      * machine learning system. This metric is optimized during training to provide the
      * best estimate for model parameter values from data.</p> <p>Here are the
-     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p> The ratio of the number of
-     * correctly classified items to the total number of (correctly and incorrectly)
-     * classified items. It is used for both binary and multiclass classification.
-     * Accuracy measures how close the predicted class values are to the actual values.
-     * Values for accuracy metrics vary between zero (0) and one (1). A value of 1
-     * indicates perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd>
-     * <dt>AUC</dt> <dd> <p>The area under the curve (AUC) metric is used to compare
-     * and evaluate binary classification by algorithms that return probabilities, such
-     * as logistic regression. To map the probabilities into classifications, these are
-     * compared against a threshold value. </p> <p>The relevant curve is the receiver
-     * operating characteristic curve (ROC curve). The ROC curve plots the true
-     * positive rate (TPR) of predictions (or recall) against the false positive rate
-     * (FPR) as a function of the threshold value, above which a prediction is
-     * considered positive. Increasing the threshold results in fewer false positives,
-     * but more false negatives. </p> <p>AUC is the area under this ROC curve.
-     * Therefore, AUC provides an aggregated measure of the model performance across
-     * all possible classification thresholds. AUC scores vary between 0 and 1. A score
-     * of 1 indicates perfect accuracy, and a score of one half (0.5) indicates that
-     * the prediction is not better than a random classifier. </p> </dd>
+     * options:</p> <dl> <dt>Accuracy</dt> <dd> <p>The ratio of the number of correctly
+     * classified items to the total number of (correctly and incorrectly) classified
+     * items. It is used for both binary and multiclass classification. Accuracy
+     * measures how close the predicted class values are to the actual values. Values
+     * for accuracy metrics vary between zero (0) and one (1). A value of 1 indicates
+     * perfect accuracy, and 0 indicates perfect inaccuracy.</p> </dd> <dt>AUC</dt>
+     * <dd> <p>The area under the curve (AUC) metric is used to compare and evaluate
+     * binary classification by algorithms that return probabilities, such as logistic
+     * regression. To map the probabilities into classifications, these are compared
+     * against a threshold value. </p> <p>The relevant curve is the receiver operating
+     * characteristic curve (ROC curve). The ROC curve plots the true positive rate
+     * (TPR) of predictions (or recall) against the false positive rate (FPR) as a
+     * function of the threshold value, above which a prediction is considered
+     * positive. Increasing the threshold results in fewer false positives, but more
+     * false negatives. </p> <p>AUC is the area under this ROC curve. Therefore, AUC
+     * provides an aggregated measure of the model performance across all possible
+     * classification thresholds. AUC scores vary between 0 and 1. A score of 1
+     * indicates perfect accuracy, and a score of one half (0.5) indicates that the
+     * prediction is not better than a random classifier. </p> </dd>
      * <dt>BalancedAccuracy</dt> <dd> <p> <code>BalancedAccuracy</code> is a metric
      * that measures the ratio of accurate predictions to all predictions. This ratio
      * is calculated after normalizing true positives (TP) and true negatives (TN) by
@@ -693,23 +693,23 @@ namespace Model
      * is important when testing for cancer because it's used to find all of the true
      * positives. A false positive (FP) reflects a positive prediction that is actually
      * negative in the data. It is often insufficient to measure only recall, because
-     * predicting every output as a true positive will yield a perfect recall
-     * score.</p> </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall
-     * for multiclass classification problems by calculating recall for each class and
+     * predicting every output as a true positive yield a perfect recall score.</p>
+     * </dd> <dt>RecallMacro</dt> <dd> <p>The RecallMacro computes recall for
+     * multiclass classification problems by calculating recall for each class and
      * averaging scores to obtain recall for several classes. RecallMacro scores range
      * from 0 to 1. Higher scores reflect the model's ability to predict true positives
      * (TP) in a dataset. Whereas, a true positive reflects a positive prediction that
      * is also an actual positive value in the data. It is often insufficient to
-     * measure only recall, because predicting every output as a true positive will
-     * yield a perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared
-     * error (RMSE) measures the square root of the squared difference between
-     * predicted and actual values, and it's averaged over all values. It is used in
-     * regression analysis to understand model prediction error. It's an important
-     * metric to indicate the presence of large model errors and outliers. Values range
-     * from zero (0) to infinity, with smaller numbers indicating a better model fit to
-     * the data. RMSE is dependent on scale, and should not be used to compare datasets
-     * of different sizes.</p> </dd> </dl> <p>If you do not specify a metric
-     * explicitly, the default behavior is to automatically use:</p> <ul> <li> <p>
+     * measure only recall, because predicting every output as a true positive yields a
+     * perfect recall score.</p> </dd> <dt>RMSE</dt> <dd> <p>Root mean squared error
+     * (RMSE) measures the square root of the squared difference between predicted and
+     * actual values, and it's averaged over all values. It is used in regression
+     * analysis to understand model prediction error. It's an important metric to
+     * indicate the presence of large model errors and outliers. Values range from zero
+     * (0) to infinity, with smaller numbers indicating a better model fit to the data.
+     * RMSE is dependent on scale, and should not be used to compare datasets of
+     * different sizes.</p> </dd> </dl> <p>If you do not specify a metric explicitly,
+     * the default behavior is to automatically use:</p> <ul> <li> <p>
      * <code>MSE</code>: for regression.</p> </li> <li> <p> <code>F1</code>: for binary
      * classification</p> </li> <li> <p> <code>Accuracy</code>: for multiclass
      * classification.</p> </li> </ul>

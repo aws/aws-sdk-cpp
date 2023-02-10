@@ -11,6 +11,7 @@
 #include <aws/connect/model/QueueInfo.h>
 #include <aws/connect/model/AgentInfo.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/connect/model/WisdomInfo.h>
 #include <utility>
 
 namespace Aws
@@ -650,6 +651,37 @@ namespace Model
      */
     inline Contact& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
 
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline const WisdomInfo& GetWisdomInfo() const{ return m_wisdomInfo; }
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline bool WisdomInfoHasBeenSet() const { return m_wisdomInfoHasBeenSet; }
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline void SetWisdomInfo(const WisdomInfo& value) { m_wisdomInfoHasBeenSet = true; m_wisdomInfo = value; }
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline void SetWisdomInfo(WisdomInfo&& value) { m_wisdomInfoHasBeenSet = true; m_wisdomInfo = std::move(value); }
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline Contact& WithWisdomInfo(const WisdomInfo& value) { SetWisdomInfo(value); return *this;}
+
+    /**
+     * <p>Information about Amazon Connect Wisdom.</p>
+     */
+    inline Contact& WithWisdomInfo(WisdomInfo&& value) { SetWisdomInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -696,6 +728,9 @@ namespace Model
 
     Aws::String m_relatedContactId;
     bool m_relatedContactIdHasBeenSet = false;
+
+    WisdomInfo m_wisdomInfo;
+    bool m_wisdomInfoHasBeenSet = false;
   };
 
 } // namespace Model

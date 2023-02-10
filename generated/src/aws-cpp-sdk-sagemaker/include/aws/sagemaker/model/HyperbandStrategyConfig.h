@@ -44,32 +44,32 @@ namespace Model
     /**
      * <p>The minimum number of resources (such as epochs) that can be used by a
      * training job launched by a hyperparameter tuning job. If the value for
-     * <code>MinResource</code> has not been reached, the training job will not be
-     * stopped by <code>Hyperband</code>.</p>
+     * <code>MinResource</code> has not been reached, the training job is not stopped
+     * by <code>Hyperband</code>.</p>
      */
     inline int GetMinResource() const{ return m_minResource; }
 
     /**
      * <p>The minimum number of resources (such as epochs) that can be used by a
      * training job launched by a hyperparameter tuning job. If the value for
-     * <code>MinResource</code> has not been reached, the training job will not be
-     * stopped by <code>Hyperband</code>.</p>
+     * <code>MinResource</code> has not been reached, the training job is not stopped
+     * by <code>Hyperband</code>.</p>
      */
     inline bool MinResourceHasBeenSet() const { return m_minResourceHasBeenSet; }
 
     /**
      * <p>The minimum number of resources (such as epochs) that can be used by a
      * training job launched by a hyperparameter tuning job. If the value for
-     * <code>MinResource</code> has not been reached, the training job will not be
-     * stopped by <code>Hyperband</code>.</p>
+     * <code>MinResource</code> has not been reached, the training job is not stopped
+     * by <code>Hyperband</code>.</p>
      */
     inline void SetMinResource(int value) { m_minResourceHasBeenSet = true; m_minResource = value; }
 
     /**
      * <p>The minimum number of resources (such as epochs) that can be used by a
      * training job launched by a hyperparameter tuning job. If the value for
-     * <code>MinResource</code> has not been reached, the training job will not be
-     * stopped by <code>Hyperband</code>.</p>
+     * <code>MinResource</code> has not been reached, the training job is not stopped
+     * by <code>Hyperband</code>.</p>
      */
     inline HyperbandStrategyConfig& WithMinResource(int value) { SetMinResource(value); return *this;}
 

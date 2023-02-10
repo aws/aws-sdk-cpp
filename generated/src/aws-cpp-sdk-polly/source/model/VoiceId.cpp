@@ -106,6 +106,8 @@ namespace Aws
         static const int Thiago_HASH = HashingUtils::HashString("Thiago");
         static const int Ruth_HASH = HashingUtils::HashString("Ruth");
         static const int Stephen_HASH = HashingUtils::HashString("Stephen");
+        static const int Kazuha_HASH = HashingUtils::HashString("Kazuha");
+        static const int Tomoko_HASH = HashingUtils::HashString("Tomoko");
 
 
         VoiceId GetVoiceIdForName(const Aws::String& name)
@@ -455,6 +457,14 @@ namespace Aws
           {
             return VoiceId::Stephen;
           }
+          else if (hashCode == Kazuha_HASH)
+          {
+            return VoiceId::Kazuha;
+          }
+          else if (hashCode == Tomoko_HASH)
+          {
+            return VoiceId::Tomoko;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -641,6 +651,10 @@ namespace Aws
             return "Ruth";
           case VoiceId::Stephen:
             return "Stephen";
+          case VoiceId::Kazuha:
+            return "Kazuha";
+          case VoiceId::Tomoko:
+            return "Tomoko";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

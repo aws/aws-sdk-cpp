@@ -120,37 +120,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline const Aws::Vector<AutoMLChannel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { m_inputDataConfig = value; }
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { m_inputDataConfig = std::move(value); }
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& AddInputDataConfig(const AutoMLChannel& value) { m_inputDataConfig.push_back(value); return *this; }
 
     /**
-     * <p>Returns the input data configuration for the AutoML job..</p>
+     * <p>Returns the input data configuration for the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& AddInputDataConfig(AutoMLChannel&& value) { m_inputDataConfig.push_back(std::move(value)); return *this; }
 
@@ -603,7 +603,7 @@ namespace Model
 
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+     * <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -611,7 +611,7 @@ namespace Model
     inline const ResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+     * <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -619,7 +619,7 @@ namespace Model
     inline void SetResolvedAttributes(const ResolvedAttributes& value) { m_resolvedAttributes = value; }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+     * <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -627,7 +627,7 @@ namespace Model
     inline void SetResolvedAttributes(ResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+     * <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -635,7 +635,7 @@ namespace Model
     inline DescribeAutoMLJobResult& WithResolvedAttributes(const ResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
+     * <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>

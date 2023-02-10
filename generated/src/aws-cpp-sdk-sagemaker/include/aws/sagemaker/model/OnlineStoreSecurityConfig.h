@@ -53,7 +53,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -75,7 +75,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -97,7 +97,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -119,7 +119,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -141,7 +141,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -163,7 +163,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -185,7 +185,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>
@@ -207,7 +207,7 @@ namespace Model
      * <code>"kms:GenerateDataKey"</code> </p> </li> <li> <p>
      * <code>"kms:ListAliases"</code> </p> </li> <li> <p> <code>"kms:ListGrants"</code>
      * </p> </li> <li> <p> <code>"kms:RevokeGrant"</code> </p> </li> </ul> <p>The
-     * caller (either IAM user or IAM role) to all DataPlane operations
+     * caller (either user or IAM role) to all DataPlane operations
      * (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must
      * have the following permissions to the <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Decrypt"</code> </p> </li> </ul>

@@ -47,14 +47,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -62,8 +64,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -99,14 +107,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -114,8 +124,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -151,14 +167,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -166,8 +184,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -203,14 +227,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -218,8 +244,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -255,14 +287,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -270,8 +304,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -307,14 +347,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -322,8 +364,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -359,14 +407,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -374,8 +424,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -411,14 +467,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -426,8 +484,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -463,14 +527,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -478,8 +544,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -515,14 +587,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -530,8 +604,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -567,14 +647,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -582,8 +664,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
@@ -619,14 +707,16 @@ namespace Model
      * field for notifications to <code>email</code> and <code>email-json</code>
      * endpoints.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
-     * account.</p> </li> <li> <p> <code>Owner</code> ��� The Amazon Web Services
-     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
-     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
-     * <code>SignatureVersion</code> – The version of the Amazon SNS signature used for
-     * the topic.</p> <ul> <li> <p>By default, <code>SignatureVersion</code> is set to
-     * <b>1</b>. The signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p>
-     * </li> <li> <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS
-     * uses a Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
+     * account.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services account
+     * ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The JSON
+     * serialization of the topic's access control policy.</p> </li> <li> <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing
+     * algorithm used while creating the signature of the notifications, subscription
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p> <ul>
+     * <li> <p>By default, <code>SignatureVersion</code> is set to <b>1</b>. The
+     * signature is a Base64-encoded <b>SHA1withRSA</b> signature.</p> </li> <li>
+     * <p>When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a
+     * Base64-encoded <b>SHA256withRSA</b> signature. </p>  <p>If the API
      * response does not include the <code>SignatureVersion</code> attribute, it means
      * that the <code>SignatureVersion</code> for the topic has value <b>1</b>.</p>
      *  </li> </ul> </li> <li> <p> <code>SubscriptionsConfirmed</code> – The
@@ -634,8 +724,14 @@ namespace Model
      * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the
      * topic.</p> </li> <li> <p> <code>SubscriptionsPending</code> – The number of
      * subscriptions pending confirmation for the topic.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic's ARN.</p> </li> </ul> <p>The following
-     * attribute applies only to <a
+     * <code>TopicArn</code> – The topic's ARN.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> </ul> <p>The
+     * following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services
      * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more

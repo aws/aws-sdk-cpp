@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Reports the progress of an instance refresh on instances that are in the warm
+   * <p>Reports progress on replacing instances that are in the warm
    * pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshWarmPoolProgress">AWS
    * API Reference</a></p>

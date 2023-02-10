@@ -44,49 +44,49 @@ namespace Model
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
      * <p>Identifies an Autopilot job. The name must be unique to your account and is
-     * case-insensitive.</p>
+     * case insensitive.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
 

@@ -229,7 +229,8 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Allows the specified Amazon Connect instance to access the
-         * specified Amazon Lex bot.</p><p><h3>See Also:</h3>   <a
+         * specified Amazon Lex V1 bot. This API only supports the association of Amazon
+         * Lex V1 bots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">AWS
          * API Reference</a></p>
          */

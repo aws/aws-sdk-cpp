@@ -25,6 +25,7 @@ static const int RESOURCE_CONTENTION_FAULT_HASH = HashingUtils::HashString("Reso
 static const int SERVICE_LINKED_ROLE_FAILURE_HASH = HashingUtils::HashString("ServiceLinkedRoleFailure");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
 static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("ScalingActivityInProgress");
+static const int IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH = HashingUtils::HashString("IrreversibleInstanceRefresh");
 static const int ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ActiveInstanceRefreshNotFound");
 static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
 
@@ -60,6 +61,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT), false);
+  }
+  else if (hashCode == IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IRREVERSIBLE_INSTANCE_REFRESH_FAULT), false);
   }
   else if (hashCode == ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH)
   {

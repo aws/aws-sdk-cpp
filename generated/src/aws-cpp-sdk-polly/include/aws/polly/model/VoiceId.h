@@ -101,7 +101,9 @@ namespace Model
     Adriano,
     Thiago,
     Ruth,
-    Stephen
+    Stephen,
+    Kazuha,
+    Tomoko
   };
 
 namespace VoiceIdMapper

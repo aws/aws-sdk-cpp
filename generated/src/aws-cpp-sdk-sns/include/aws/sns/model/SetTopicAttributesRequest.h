@@ -91,17 +91,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -159,8 +166,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -188,17 +196,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -256,8 +271,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -285,17 +301,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -353,8 +376,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -382,17 +406,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -450,8 +481,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -479,17 +511,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -547,8 +586,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -576,17 +616,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -644,8 +691,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -673,17 +721,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -741,8 +796,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,
@@ -770,17 +826,24 @@ namespace Model
      * endpoints.</p> </li> <li> <p> <code>DisplayName</code> – The display name to use
      * for a topic with SMS subscriptions.</p> </li> <li> <p> <code>Policy</code> – The
      * policy that defines who can access your topic. By default, only the topic owner
-     * can publish or subscribe to the topic.</p> </li> <li> <p>HTTP</p> <ul> <li> <p>
-     * <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message delivery
-     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-     * </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates percentage
-     * of successful messages to sample for an Amazon SNS topic that is subscribed to
-     * an HTTP endpoint.</p> </li> <li> <p> <code>HTTPFailureFeedbackRoleArn</code> –
-     * Indicates failed message delivery status for an Amazon SNS topic that is
-     * subscribed to an HTTP endpoint.</p> </li> </ul> </li> <li> <p>Amazon Kinesis
-     * Data Firehose</p> <ul> <li> <p> <code>FirehoseSuccessFeedbackRoleArn</code> –
-     * Indicates successful message delivery status for an Amazon SNS topic that is
-     * subscribed to an Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
+     * can publish or subscribe to the topic.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     * segment data to topic owner account if the sampled flag in the tracing header is
+     * true. This is only supported on standard topics.</p> </li> <li> <p>HTTP</p> <ul>
+     * <li> <p> <code>HTTPSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint.
+     * </p> </li> <li> <p> <code>HTTPSuccessFeedbackSampleRate</code> – Indicates
+     * percentage of successful messages to sample for an Amazon SNS topic that is
+     * subscribed to an HTTP endpoint.</p> </li> <li> <p>
+     * <code>HTTPFailureFeedbackRoleArn</code> – Indicates failed message delivery
+     * status for an Amazon SNS topic that is subscribed to an HTTP endpoint.</p> </li>
+     * </ul> </li> <li> <p>Amazon Kinesis Data Firehose</p> <ul> <li> <p>
+     * <code>FirehoseSuccessFeedbackRoleArn</code> – Indicates successful message
+     * delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis
+     * Data Firehose endpoint.</p> </li> <li> <p>
      * <code>FirehoseSuccessFeedbackSampleRate</code> – Indicates percentage of
      * successful messages to sample for an Amazon SNS topic that is subscribed to an
      * Amazon Kinesis Data Firehose endpoint.</p> </li> <li> <p>
@@ -838,8 +901,9 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>SignatureVersion</code> – The signature version corresponds to the hashing
      * algorithm used while creating the signature of the notifications, subscription
-     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS.</p>
-     * </li> </ul> <p>The following attribute applies only to <a
+     * confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By
+     * default, <code>SignatureVersion</code> is set to <code>1</code>.</p> </li> </ul>
+     * <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ContentBasedDeduplication</code> – Enables
      * content-based deduplication for FIFO topics.</p> <ul> <li> <p>By default,

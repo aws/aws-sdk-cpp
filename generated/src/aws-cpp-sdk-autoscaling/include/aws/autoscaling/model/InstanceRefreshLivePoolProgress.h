@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Reports the progress of an instance refresh on instances that are in the Auto
-   * Scaling group.</p><p><h3>See Also:</h3>   <a
+   * <p>Reports progress on replacing instances that are in the Auto Scaling
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshLivePoolProgress">AWS
    * API Reference</a></p>
    */

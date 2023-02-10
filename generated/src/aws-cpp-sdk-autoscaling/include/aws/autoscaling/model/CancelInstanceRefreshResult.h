@@ -34,37 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline const Aws::String& GetInstanceRefreshId() const{ return m_instanceRefreshId; }
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline void SetInstanceRefreshId(const Aws::String& value) { m_instanceRefreshId = value; }
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline void SetInstanceRefreshId(Aws::String&& value) { m_instanceRefreshId = std::move(value); }
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline void SetInstanceRefreshId(const char* value) { m_instanceRefreshId.assign(value); }
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline CancelInstanceRefreshResult& WithInstanceRefreshId(const Aws::String& value) { SetInstanceRefreshId(value); return *this;}
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline CancelInstanceRefreshResult& WithInstanceRefreshId(Aws::String&& value) { SetInstanceRefreshId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance refresh ID.</p>
+     * <p>The instance refresh ID associated with the request. This is the unique ID
+     * assigned to the instance refresh when it was started.</p>
      */
     inline CancelInstanceRefreshResult& WithInstanceRefreshId(const char* value) { SetInstanceRefreshId(value); return *this;}
 

@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline HubS3StorageConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline HubS3StorageConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 output path for the hub.</p>
+     * <p>The Amazon S3 bucket prefix for hosting hub content.</p>
      */
     inline HubS3StorageConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 

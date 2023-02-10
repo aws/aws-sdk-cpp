@@ -12,6 +12,7 @@
 #include <aws/autoscaling/model/InstanceRefreshProgressDetails.h>
 #include <aws/autoscaling/model/RefreshPreferences.h>
 #include <aws/autoscaling/model/DesiredConfiguration.h>
+#include <aws/autoscaling/model/RollbackDetails.h>
 #include <utility>
 
 namespace Aws
@@ -129,132 +130,150 @@ namespace Model
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline const InstanceRefreshStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceRefreshStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline void SetStatus(InstanceRefreshStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline InstanceRefresh& WithStatus(const InstanceRefreshStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status for the instance refresh operation:</p> <ul> <li> <p>
-     * <code>Pending</code> - The request was created, but the operation has not
-     * started.</p> </li> <li> <p> <code>InProgress</code> - The operation is in
-     * progress.</p> </li> <li> <p> <code>Successful</code> - The operation completed
-     * successfully.</p> </li> <li> <p> <code>Failed</code> - The operation failed to
-     * complete. You can troubleshoot using the status reason and the scaling
-     * activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing operation
-     * is being cancelled. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
-     * </p> </li> <li> <p> <code>Cancelled</code> - The operation is cancelled. </p>
-     * </li> </ul>
+     * <code>Pending</code> - The request was created, but the instance refresh has not
+     * started.</p> </li> <li> <p> <code>InProgress</code> - An instance refresh is in
+     * progress.</p> </li> <li> <p> <code>Successful</code> - An instance refresh
+     * completed successfully.</p> </li> <li> <p> <code>Failed</code> - An instance
+     * refresh failed to complete. You can troubleshoot using the status reason and the
+     * scaling activities. </p> </li> <li> <p> <code>Cancelling</code> - An ongoing
+     * instance refresh is being cancelled.</p> </li> <li> <p> <code>Cancelled</code> -
+     * The instance refresh is cancelled. </p> </li> <li> <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p>
+     * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
+     * You can troubleshoot using the status reason and the scaling activities.</p>
+     * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
+     * successfully.</p> </li> </ul>
      */
     inline InstanceRefresh& WithStatus(InstanceRefreshStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline InstanceRefresh& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline InstanceRefresh& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>Provides more details about the current status of the instance refresh. </p>
+     * <p>The explanation for the specific status assigned to this operation.</p>
      */
     inline InstanceRefresh& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -326,7 +345,9 @@ namespace Model
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
      * specified warm-up time passes, the instance is considered updated and is added
-     * to the percentage complete.</p>
+     * to the percentage complete.</p>  <p> <code>PercentageComplete</code> does
+     * not include instances that are replaced during a rollback. This value gradually
+     * goes back down to zero during a rollback.</p> 
      */
     inline int GetPercentageComplete() const{ return m_percentageComplete; }
 
@@ -335,7 +356,9 @@ namespace Model
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
      * specified warm-up time passes, the instance is considered updated and is added
-     * to the percentage complete.</p>
+     * to the percentage complete.</p>  <p> <code>PercentageComplete</code> does
+     * not include instances that are replaced during a rollback. This value gradually
+     * goes back down to zero during a rollback.</p> 
      */
     inline bool PercentageCompleteHasBeenSet() const { return m_percentageCompleteHasBeenSet; }
 
@@ -344,7 +367,9 @@ namespace Model
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
      * specified warm-up time passes, the instance is considered updated and is added
-     * to the percentage complete.</p>
+     * to the percentage complete.</p>  <p> <code>PercentageComplete</code> does
+     * not include instances that are replaced during a rollback. This value gradually
+     * goes back down to zero during a rollback.</p> 
      */
     inline void SetPercentageComplete(int value) { m_percentageCompleteHasBeenSet = true; m_percentageComplete = value; }
 
@@ -353,32 +378,46 @@ namespace Model
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
      * specified warm-up time passes, the instance is considered updated and is added
-     * to the percentage complete.</p>
+     * to the percentage complete.</p>  <p> <code>PercentageComplete</code> does
+     * not include instances that are replaced during a rollback. This value gradually
+     * goes back down to zero during a rollback.</p> 
      */
     inline InstanceRefresh& WithPercentageComplete(int value) { SetPercentageComplete(value); return *this;}
 
 
     /**
      * <p>The number of instances remaining to update before the instance refresh is
-     * complete.</p>
+     * complete.</p>  <p>If you roll back the instance refresh,
+     * <code>InstancesToUpdate</code> shows you the number of instances that were not
+     * yet updated by the instance refresh. Therefore, these instances don't need to be
+     * replaced as part of the rollback.</p> 
      */
     inline int GetInstancesToUpdate() const{ return m_instancesToUpdate; }
 
     /**
      * <p>The number of instances remaining to update before the instance refresh is
-     * complete.</p>
+     * complete.</p>  <p>If you roll back the instance refresh,
+     * <code>InstancesToUpdate</code> shows you the number of instances that were not
+     * yet updated by the instance refresh. Therefore, these instances don't need to be
+     * replaced as part of the rollback.</p> 
      */
     inline bool InstancesToUpdateHasBeenSet() const { return m_instancesToUpdateHasBeenSet; }
 
     /**
      * <p>The number of instances remaining to update before the instance refresh is
-     * complete.</p>
+     * complete.</p>  <p>If you roll back the instance refresh,
+     * <code>InstancesToUpdate</code> shows you the number of instances that were not
+     * yet updated by the instance refresh. Therefore, these instances don't need to be
+     * replaced as part of the rollback.</p> 
      */
     inline void SetInstancesToUpdate(int value) { m_instancesToUpdateHasBeenSet = true; m_instancesToUpdate = value; }
 
     /**
      * <p>The number of instances remaining to update before the instance refresh is
-     * complete.</p>
+     * complete.</p>  <p>If you roll back the instance refresh,
+     * <code>InstancesToUpdate</code> shows you the number of instances that were not
+     * yet updated by the instance refresh. Therefore, these instances don't need to be
+     * replaced as part of the rollback.</p> 
      */
     inline InstanceRefresh& WithInstancesToUpdate(int value) { SetInstancesToUpdate(value); return *this;}
 
@@ -440,34 +479,65 @@ namespace Model
 
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline const DesiredConfiguration& GetDesiredConfiguration() const{ return m_desiredConfiguration; }
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline bool DesiredConfigurationHasBeenSet() const { return m_desiredConfigurationHasBeenSet; }
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline void SetDesiredConfiguration(const DesiredConfiguration& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = value; }
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline void SetDesiredConfiguration(DesiredConfiguration&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::move(value); }
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline InstanceRefresh& WithDesiredConfiguration(const DesiredConfiguration& value) { SetDesiredConfiguration(value); return *this;}
 
     /**
-     * <p>Describes the specific update you want to deploy.</p>
+     * <p>Describes the desired configuration for the instance refresh.</p>
      */
     inline InstanceRefresh& WithDesiredConfiguration(DesiredConfiguration&& value) { SetDesiredConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline const RollbackDetails& GetRollbackDetails() const{ return m_rollbackDetails; }
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline bool RollbackDetailsHasBeenSet() const { return m_rollbackDetailsHasBeenSet; }
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline void SetRollbackDetails(const RollbackDetails& value) { m_rollbackDetailsHasBeenSet = true; m_rollbackDetails = value; }
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline void SetRollbackDetails(RollbackDetails&& value) { m_rollbackDetailsHasBeenSet = true; m_rollbackDetails = std::move(value); }
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline InstanceRefresh& WithRollbackDetails(const RollbackDetails& value) { SetRollbackDetails(value); return *this;}
+
+    /**
+     * <p>The rollback details.</p>
+     */
+    inline InstanceRefresh& WithRollbackDetails(RollbackDetails&& value) { SetRollbackDetails(std::move(value)); return *this;}
 
   private:
 
@@ -503,6 +573,9 @@ namespace Model
 
     DesiredConfiguration m_desiredConfiguration;
     bool m_desiredConfigurationHasBeenSet = false;
+
+    RollbackDetails m_rollbackDetails;
+    bool m_rollbackDetailsHasBeenSet = false;
   };
 
 } // namespace Model

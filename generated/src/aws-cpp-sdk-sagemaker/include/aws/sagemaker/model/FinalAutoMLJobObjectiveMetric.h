@@ -127,6 +127,55 @@ namespace Model
      */
     inline FinalAutoMLJobObjectiveMetric& WithValue(double value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline const AutoMLMetricEnum& GetStandardMetricName() const{ return m_standardMetricName; }
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline void SetStandardMetricName(const AutoMLMetricEnum& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline void SetStandardMetricName(AutoMLMetricEnum&& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = std::move(value); }
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(const AutoMLMetricEnum& value) { SetStandardMetricName(value); return *this;}
+
+    /**
+     * <p>The name of the standard metric. For a description of the standard metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+     * candidate metrics</a>.</p>
+     */
+    inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(AutoMLMetricEnum&& value) { SetStandardMetricName(std::move(value)); return *this;}
+
   private:
 
     AutoMLJobObjectiveType m_type;
@@ -137,6 +186,9 @@ namespace Model
 
     double m_value;
     bool m_valueHasBeenSet = false;
+
+    AutoMLMetricEnum m_standardMetricName;
+    bool m_standardMetricNameHasBeenSet = false;
   };
 
 } // namespace Model
