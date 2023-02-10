@@ -9,6 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/model/DataPrivacy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -451,6 +454,78 @@ namespace Model
      */
     inline CreateBotRequest& AddTestBotAliasTags(const char* key, const char* value) { m_testBotAliasTagsHasBeenSet = true; m_testBotAliasTags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline bool BotTypeHasBeenSet() const { return m_botTypeHasBeenSet; }
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botTypeHasBeenSet = true; m_botType = value; }
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botTypeHasBeenSet = true; m_botType = std::move(value); }
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline CreateBotRequest& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of a bot to create.</p>
+     */
+    inline CreateBotRequest& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline bool BotMembersHasBeenSet() const { return m_botMembersHasBeenSet; }
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembersHasBeenSet = true; m_botMembers = value; }
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembersHasBeenSet = true; m_botMembers = std::move(value); }
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline CreateBotRequest& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline CreateBotRequest& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline CreateBotRequest& AddBotMembers(const BotMember& value) { m_botMembersHasBeenSet = true; m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of bot members in a network to be created.</p>
+     */
+    inline CreateBotRequest& AddBotMembers(BotMember&& value) { m_botMembersHasBeenSet = true; m_botMembers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botName;
@@ -473,6 +548,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
     bool m_testBotAliasTagsHasBeenSet = false;
+
+    BotType m_botType;
+    bool m_botTypeHasBeenSet = false;
+
+    Aws::Vector<BotMember> m_botMembers;
+    bool m_botMembersHasBeenSet = false;
   };
 
 } // namespace Model

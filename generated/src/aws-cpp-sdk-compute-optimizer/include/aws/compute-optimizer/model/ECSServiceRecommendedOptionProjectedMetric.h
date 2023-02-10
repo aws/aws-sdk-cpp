@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p> Describes the projected metrics of an Amazon ECS service recommendation
-   * option. </p> <p>To determine the performance difference between your current ECS
-   * service and the recommended option, compare the metric data of your service
-   * against its projected metric data.</p><p><h3>See Also:</h3>   <a
+   * option. </p> <p>To determine the performance difference between your current
+   * Amazon ECS service and the recommended option, compare the metric data of your
+   * service against its projected metric data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ECSServiceRecommendedOptionProjectedMetric">AWS
    * API Reference</a></p>
    */
@@ -42,43 +42,43 @@ namespace Model
 
 
     /**
-     * <p> The recommended CPU size for the ECS service. </p>
+     * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
     inline int GetRecommendedCpuUnits() const{ return m_recommendedCpuUnits; }
 
     /**
-     * <p> The recommended CPU size for the ECS service. </p>
+     * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
     inline bool RecommendedCpuUnitsHasBeenSet() const { return m_recommendedCpuUnitsHasBeenSet; }
 
     /**
-     * <p> The recommended CPU size for the ECS service. </p>
+     * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
     inline void SetRecommendedCpuUnits(int value) { m_recommendedCpuUnitsHasBeenSet = true; m_recommendedCpuUnits = value; }
 
     /**
-     * <p> The recommended CPU size for the ECS service. </p>
+     * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedCpuUnits(int value) { SetRecommendedCpuUnits(value); return *this;}
 
 
     /**
-     * <p> The recommended memory size for the ECS service. </p>
+     * <p> The recommended memory size for the Amazon ECS service. </p>
      */
     inline int GetRecommendedMemorySize() const{ return m_recommendedMemorySize; }
 
     /**
-     * <p> The recommended memory size for the ECS service. </p>
+     * <p> The recommended memory size for the Amazon ECS service. </p>
      */
     inline bool RecommendedMemorySizeHasBeenSet() const { return m_recommendedMemorySizeHasBeenSet; }
 
     /**
-     * <p> The recommended memory size for the ECS service. </p>
+     * <p> The recommended memory size for the Amazon ECS service. </p>
      */
     inline void SetRecommendedMemorySize(int value) { m_recommendedMemorySizeHasBeenSet = true; m_recommendedMemorySize = value; }
 
     /**
-     * <p> The recommended memory size for the ECS service. </p>
+     * <p> The recommended memory size for the Amazon ECS service. </p>
      */
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedMemorySize(int value) { SetRecommendedMemorySize(value); return *this;}
 

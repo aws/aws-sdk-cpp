@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline const Aws::String& GetImportId() const{ return m_importId; }
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline StartImportRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline StartImportRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>The unique identifier for the import. It is included in the response from the
      * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
     inline StartImportRequest& WithImportId(const char* value) { SetImportId(value); return *this;}

@@ -637,7 +637,7 @@ namespace Model
      * <p>The number of consecutive health check successes required before considering
      * a target healthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
@@ -646,7 +646,7 @@ namespace Model
      * <p>The number of consecutive health check successes required before considering
      * a target healthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
@@ -655,7 +655,7 @@ namespace Model
      * <p>The number of consecutive health check successes required before considering
      * a target healthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline void SetHealthyThresholdCount(int value) { m_healthyThresholdCountHasBeenSet = true; m_healthyThresholdCount = value; }
@@ -664,7 +664,7 @@ namespace Model
      * <p>The number of consecutive health check successes required before considering
      * a target healthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline CreateTargetGroupRequest& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
@@ -674,7 +674,7 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering a
      * target unhealthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
@@ -683,7 +683,7 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering a
      * target unhealthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
@@ -692,7 +692,7 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering a
      * target unhealthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
@@ -701,7 +701,7 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering a
      * target unhealthy. The range is 2-10. If the target group protocol is TCP,
      * TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a
-     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>,
+     * protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>,
      * the default is 5.</p>
      */
     inline CreateTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}

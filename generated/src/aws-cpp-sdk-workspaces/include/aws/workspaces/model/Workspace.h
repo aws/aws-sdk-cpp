@@ -680,49 +680,49 @@ namespace Model
 
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline const Aws::Vector<RelatedWorkspaceProperties>& GetRelatedWorkspaces() const{ return m_relatedWorkspaces; }
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline bool RelatedWorkspacesHasBeenSet() const { return m_relatedWorkspacesHasBeenSet; }
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline void SetRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = value; }
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline void SetRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = std::move(value); }
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline Workspace& WithRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { SetRelatedWorkspaces(value); return *this;}
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline Workspace& WithRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { SetRelatedWorkspaces(std::move(value)); return *this;}
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline Workspace& AddRelatedWorkspaces(const RelatedWorkspaceProperties& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(value); return *this; }
 
     /**
-     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * <p>The standby WorkSpace or primary WorkSpace related to the specified
      * WorkSpace.</p>
      */
     inline Workspace& AddRelatedWorkspaces(RelatedWorkspaceProperties&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(std::move(value)); return *this; }

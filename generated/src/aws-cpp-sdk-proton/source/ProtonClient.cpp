@@ -54,6 +54,7 @@
 #include <aws/proton/model/GetEnvironmentTemplateVersionRequest.h>
 #include <aws/proton/model/GetRepositoryRequest.h>
 #include <aws/proton/model/GetRepositorySyncStatusRequest.h>
+#include <aws/proton/model/GetResourcesSummaryRequest.h>
 #include <aws/proton/model/GetServiceRequest.h>
 #include <aws/proton/model/GetServiceInstanceRequest.h>
 #include <aws/proton/model/GetServiceTemplateRequest.h>
@@ -486,6 +487,14 @@ GetRepositorySyncStatusOutcome ProtonClient::GetRepositorySyncStatus(const GetRe
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRepositorySyncStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetRepositorySyncStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourcesSummaryOutcome ProtonClient::GetResourcesSummary(const GetResourcesSummaryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcesSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcesSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourcesSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetServiceOutcome ProtonClient::GetService(const GetServiceRequest& request) const

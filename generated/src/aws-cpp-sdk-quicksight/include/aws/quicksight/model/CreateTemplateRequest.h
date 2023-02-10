@@ -237,7 +237,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
@@ -253,7 +255,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
@@ -269,7 +273,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
@@ -285,7 +291,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
@@ -301,7 +309,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
@@ -317,7 +327,9 @@ namespace Model
      * </p> <p>Use the <code>DataSetReferences</code> entity within
      * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
      * replacement datasets for the placeholders listed in the original. The schema in
-     * each dataset must match its placeholder. </p>
+     * each dataset must match its placeholder. </p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
@@ -446,37 +458,49 @@ namespace Model
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline const TemplateVersionDefinition& GetDefinition() const{ return m_definition; }
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(const TemplateVersionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline void SetDefinition(TemplateVersionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateTemplateRequest& WithDefinition(const TemplateVersionDefinition& value) { SetDefinition(value); return *this;}
 
     /**
      * <p>The definition of a template.</p> <p>A definition is the data model of all
-     * features in a Dashboard, Template, or Analysis.</p>
+     * features in a Dashboard, Template, or Analysis.</p> <p>Either a
+     * <code>SourceEntity</code> or a <code>Definition</code> must be provided in order
+     * for the request to be valid.</p>
      */
     inline CreateTemplateRequest& WithDefinition(TemplateVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
 

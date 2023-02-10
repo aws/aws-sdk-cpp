@@ -18,13 +18,15 @@ using namespace Aws;
 
 CreateBotResult::CreateBotResult() : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
 }
 
 CreateBotResult::CreateBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
   *this = result;
 }
@@ -95,6 +97,21 @@ CreateBotResult& CreateBotResult::operator =(const Aws::AmazonWebServiceResult<J
     for(auto& testBotAliasTagsItem : testBotAliasTagsJsonMap)
     {
       m_testBotAliasTags[testBotAliasTagsItem.first] = testBotAliasTagsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("botType"))
+  {
+    m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("botType"));
+
+  }
+
+  if(jsonValue.ValueExists("botMembers"))
+  {
+    Aws::Utils::Array<JsonView> botMembersJsonList = jsonValue.GetArray("botMembers");
+    for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
+    {
+      m_botMembers.push_back(botMembersJsonList[botMembersIndex].AsObject());
     }
   }
 

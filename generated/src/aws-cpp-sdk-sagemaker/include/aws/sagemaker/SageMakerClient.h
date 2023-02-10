@@ -541,16 +541,15 @@ namespace SageMaker
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
          * consists of an associated Amazon Elastic File System (EFS) volume, a list of
          * authorized users, and a variety of security, application, policy, and Amazon
-         * Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is
-         * limited to one domain per region. Users within a domain can share notebook files
-         * and other artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a
-         * domain is created, an EFS volume is created for use by all of the users within
-         * the domain. Each user receives a private home directory within the EFS volume
-         * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
-         * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
-         * the EFS volume attached to the domain with an Amazon Web Services managed key by
-         * default. For more control, you can specify a customer managed key. For more
-         * information, see <a
+         * Virtual Private Cloud (VPC) configurations. Users within a domain can share
+         * notebook files and other artifacts with each other.</p> <p> <b>EFS storage</b>
+         * </p> <p>When a domain is created, an EFS volume is created for use by all of the
+         * users within the domain. Each user receives a private home directory within the
+         * EFS volume for notebooks, Git repositories, and data files.</p> <p>SageMaker
+         * uses the Amazon Web Services Key Management Service (Amazon Web Services KMS) to
+         * encrypt the EFS volume attached to the domain with an Amazon Web Services
+         * managed key by default. For more control, you can specify a customer managed
+         * key. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -711,9 +710,9 @@ namespace SageMaker
          * API.</p> <p>If any of the models hosted at this endpoint get model data from an
          * Amazon S3 location, SageMaker uses Amazon Web Services Security Token Service to
          * download model artifacts from the S3 path you provided. Amazon Web Services STS
-         * is activated in your IAM user account by default. If you previously deactivated
-         * Amazon Web Services STS for a region, you need to reactivate Amazon Web Services
-         * STS for that region. For more information, see <a
+         * is activated in your Amazon Web Services account by default. If you previously
+         * deactivated Amazon Web Services STS for a region, you need to reactivate Amazon
+         * Web Services STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
          * the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
@@ -916,7 +915,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Create a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a hub.</p>  <p>Hub APIs are only callable through SageMaker
+         * Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">AWS
          * API Reference</a></p>
          */
@@ -2524,7 +2524,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Delete a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a hub.</p>  <p>Hub APIs are only callable through SageMaker
+         * Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">AWS
          * API Reference</a></p>
          */
@@ -2549,7 +2550,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Delete the contents of a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete the contents of a hub.</p>  <p>Hub APIs are only callable
+         * through SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">AWS
          * API Reference</a></p>
          */
@@ -3818,7 +3820,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describe a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe a hub.</p>  <p>Hub APIs are only callable through SageMaker
+         * Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">AWS
          * API Reference</a></p>
          */
@@ -3843,7 +3846,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describe the content of a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe the content of a hub.</p>  <p>Hub APIs are only callable
+         * through SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">AWS
          * API Reference</a></p>
          */
@@ -4975,7 +4979,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Import hub content.</p><p><h3>See Also:</h3>   <a
+         * <p>Import hub content.</p>  <p>Hub APIs are only callable through
+         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">AWS
          * API Reference</a></p>
          */
@@ -5592,7 +5597,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>List hub content versions.</p><p><h3>See Also:</h3>   <a
+         * <p>List hub content versions.</p>  <p>Hub APIs are only callable through
+         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">AWS
          * API Reference</a></p>
          */
@@ -5617,7 +5623,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>List the contents of a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>List the contents of a hub.</p>  <p>Hub APIs are only callable through
+         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">AWS
          * API Reference</a></p>
          */
@@ -5642,7 +5649,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>List all existing hubs.</p><p><h3>See Also:</h3>   <a
+         * <p>List all existing hubs.</p>  <p>Hub APIs are only callable through
+         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">AWS
          * API Reference</a></p>
          */
@@ -7207,8 +7215,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>A method for forcing the termination of a running job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A method for forcing a running job to shut down.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">AWS
          * API Reference</a></p>
          */
@@ -7956,7 +7964,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Update a hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a hub.</p>  <p>Hub APIs are only callable through SageMaker
+         * Studio.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">AWS
          * API Reference</a></p>
          */

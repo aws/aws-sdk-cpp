@@ -82,61 +82,37 @@ namespace Model
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline const RefreshStrategy& GetStrategy() const{ return m_strategy; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline void SetStrategy(const RefreshStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline void SetStrategy(RefreshStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline StartInstanceRefreshRequest& WithStrategy(const RefreshStrategy& value) { SetStrategy(value); return *this;}
 
     /**
      * <p>The strategy to use for the instance refresh. The only valid value is
-     * <code>Rolling</code>.</p> <p>A rolling update helps you update your instances
-     * gradually. A rolling update can fail due to failed health checks or if instances
-     * are on standby or are protected from scale in. If the rolling update process
-     * fails, any instances that are replaced are not rolled back to their previous
-     * configuration. </p>
+     * <code>Rolling</code>.</p>
      */
     inline StartInstanceRefreshRequest& WithStrategy(RefreshStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
@@ -150,8 +126,8 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline const DesiredConfiguration& GetDesiredConfiguration() const{ return m_desiredConfiguration; }
 
@@ -164,8 +140,8 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline bool DesiredConfigurationHasBeenSet() const { return m_desiredConfigurationHasBeenSet; }
 
@@ -178,8 +154,8 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline void SetDesiredConfiguration(const DesiredConfiguration& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = value; }
 
@@ -192,8 +168,8 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline void SetDesiredConfiguration(DesiredConfiguration&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::move(value); }
 
@@ -206,8 +182,8 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline StartInstanceRefreshRequest& WithDesiredConfiguration(const DesiredConfiguration& value) { SetDesiredConfiguration(value); return *this;}
 
@@ -220,45 +196,75 @@ namespace Model
      * current launch template for your desired configuration, consider enabling the
      * <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2
      * Auto Scaling skips replacing instances that already use the specified launch
-     * template and version. This can help you reduce the number of replacements that
-     * are required to apply updates. </p> 
+     * template and instance types. This can help you reduce the number of replacements
+     * that are required to apply updates. </p> 
      */
     inline StartInstanceRefreshRequest& WithDesiredConfiguration(DesiredConfiguration&& value) { SetDesiredConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline StartInstanceRefreshRequest& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
 
     /**
-     * <p>Set of preferences associated with the instance refresh request. If not
-     * provided, the default values are used.</p>
+     * <p>Sets your preferences for the instance refresh so that it performs as
+     * expected when you start it. Includes the instance warmup time, the minimum
+     * healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to
+     * use if instances that are in <code>Standby</code> state or protected from scale
+     * in are found. You can also choose to enable additional features, such as the
+     * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
+     * </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline StartInstanceRefreshRequest& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
 

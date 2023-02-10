@@ -16,7 +16,8 @@ namespace Aws
 namespace LexRuntimeV2
 {
   /**
-   * <p/>
+   * <p>This section contains documentation for the Amazon Lex V2 Runtime V2 API
+   * operations.</p>
    */
   class AWS_LEXRUNTIMEV2_API LexRuntimeV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeV2Client>
   {

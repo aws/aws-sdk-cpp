@@ -203,7 +203,9 @@ namespace QuickSight
         }
 
         /**
-         * <p>Creates an analysis in Amazon QuickSight.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an analysis in Amazon QuickSight. Analyses can be created either from
+         * a template or from an <code>AnalysisDefinition</code>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis">AWS
          * API Reference</a></p>
          */
@@ -228,8 +230,8 @@ namespace QuickSight
         }
 
         /**
-         * <p>Creates a dashboard from a template. To first create a template, see the
-         * <code> <a
+         * <p>Creates a dashboard from either a template or directly with a
+         * <code>DashboardDefinition</code>. To first create a template, see the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
          * </code> API operation.</p> <p>A dashboard is an entity in Amazon QuickSight that
          * identifies Amazon QuickSight reports, created from analyses. You can share
@@ -517,8 +519,9 @@ namespace QuickSight
         }
 
         /**
-         * <p>Creates a template from an existing Amazon QuickSight analysis or template.
-         * You can use the resulting template to create a dashboard.</p> <p>A
+         * <p>Creates a template either from a <code>TemplateDefinition</code> or from an
+         * existing Amazon QuickSight analysis or template. You can use the resulting
+         * template to create additional dashboards, templates, or analyses.</p> <p>A
          * <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
          * required to create an analysis and that you can use to create s dashboard. A
          * template adds a layer of abstraction by using placeholders to replace the

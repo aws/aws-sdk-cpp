@@ -34,49 +34,49 @@ namespace Model
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline const Aws::String& GetImportId() const{ return m_importId; }
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline void SetImportId(const Aws::String& value) { m_importId = value; }
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline void SetImportId(const char* value) { m_importId.assign(value); }
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline CreateUploadUrlResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline CreateUploadUrlResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for a unique import job. Use it when you call the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
      * operation.</p>
      */
     inline CreateUploadUrlResult& WithImportId(const char* value) { SetImportId(value); return *this;}

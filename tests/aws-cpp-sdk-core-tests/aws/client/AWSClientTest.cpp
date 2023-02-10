@@ -598,6 +598,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
+    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
 
     headerValues[Http::CONTENT_LENGTH_HEADER] = "0";
     headerValues[Http::CONTENT_TYPE_HEADER] = "blah";
@@ -618,6 +619,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
+    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
@@ -657,6 +659,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
+    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
@@ -707,6 +710,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
+    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();

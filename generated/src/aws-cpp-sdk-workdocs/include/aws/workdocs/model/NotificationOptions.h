@@ -40,25 +40,25 @@ namespace Model
 
     /**
      * <p>Boolean value to indicate an email notification should be sent to the
-     * receipients.</p>
+     * recipients.</p>
      */
     inline bool GetSendEmail() const{ return m_sendEmail; }
 
     /**
      * <p>Boolean value to indicate an email notification should be sent to the
-     * receipients.</p>
+     * recipients.</p>
      */
     inline bool SendEmailHasBeenSet() const { return m_sendEmailHasBeenSet; }
 
     /**
      * <p>Boolean value to indicate an email notification should be sent to the
-     * receipients.</p>
+     * recipients.</p>
      */
     inline void SetSendEmail(bool value) { m_sendEmailHasBeenSet = true; m_sendEmail = value; }
 
     /**
      * <p>Boolean value to indicate an email notification should be sent to the
-     * receipients.</p>
+     * recipients.</p>
      */
     inline NotificationOptions& WithSendEmail(bool value) { SetSendEmail(value); return *this;}
 

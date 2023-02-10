@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/http/crt/CRTHttpClient.h>
+#include <aws/core/http/crt/CrtHttpClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
@@ -11,174 +11,192 @@
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 
-static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
-
-// Adapts AWS SDK input streams and rate limiters to the CRT input stream reading model.
-class SDKAdaptingInputStream : public Crt::Io::StdIOStreamInputStream {
-public:
-    SDKAdaptingInputStream(const std::shared_ptr<Utils::RateLimits::RateLimiterInterface>& rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream,
-        const Http::HttpClient& client, const Http::HttpRequest& request, bool isStreaming,
-        Aws::Crt::Allocator *allocator = Crt::ApiAllocator()) noexcept : 
-        Crt::Io::StdIOStreamInputStream(std::move(stream), allocator), m_rateLimiter(rateLimiter), 
-        m_client(client), m_currentRequest(request), m_isStreaming(isStreaming), m_chunkEnd(false) 
-    {
-    }
-protected:
-
-    bool ReadImpl(Crt::ByteBuf &buffer) noexcept override
-    {
-        if (!m_client.ContinueRequest(m_currentRequest) || !m_client.IsRequestProcessingEnabled())
-        {
-            return false;
-        }
-
-        bool isAwsChunked = m_currentRequest.HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
-            m_currentRequest.GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
-
-        size_t amountToRead = buffer.capacity - buffer.len;
-        uint8_t* originalBufferPos = buffer.buffer;
-
-        // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
-        // Needs to reserve bytes of sizeof(hex(chunk-size)) + sizeof(CRLF) + sizeof(CRLF)
-        if (isAwsChunked)
-        {
-            Aws::String amountToReadHexString = Aws::Utils::StringUtils::ToHexString(amountToRead);
-            amountToRead -= (amountToReadHexString.size() + 4);
-        }        
-
-        // initial check to see if we should avoid reading for the moment.
-        if (!m_rateLimiter || (m_rateLimiter && m_rateLimiter->ApplyCost(0) == std::chrono::milliseconds(0))) {
-            size_t currentPos = buffer.len;
-
-            // now do the read. We may over read by an IO buffer size, but it's fine. The throttle will still
-            // kick-in in plenty of time.
-            bool retValue = Crt::Io::StdIOStreamInputStream::ReadImpl(buffer);
-            size_t newPos = buffer.len;
-            AWS_ASSERT(newPos >= currentPos && !"the buffer length should not have decreased in value.");
-
-            if (retValue && m_isStreaming)
-            {
-                Crt::Io::StreamStatus streamStatus;
-                GetStatus(streamStatus);
-
-                if (newPos == currentPos && !streamStatus.is_end_of_stream && streamStatus.is_valid)
-                {
-                    return true;
-                }
-            }
-            
-            size_t amountRead = newPos - currentPos;
-
-            if (isAwsChunked)
-            {
-                // if we have a chunk to wrap, wrap it, be sure to update the running checksum.
-                if (amountRead > 0)
-                {
-                    if (m_currentRequest.GetRequestHash().second != nullptr)
-                    {
-                        m_currentRequest.GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(originalBufferPos), amountRead);
-                    }
-
-                    Aws::String hex = Aws::Utils::StringUtils::ToHexString(amountRead);
-                    // this is safe because of the isAwsChunked branch above.
-                    // I don't see a aws_byte_buf equivalent of memmove. This is lifted from the curl implementation.
-                    memmove(originalBufferPos + hex.size() + 2, originalBufferPos, amountRead);
-                    memmove(originalBufferPos + hex.size() + 2 + amountRead, "\r\n", 2);
-                    memmove(originalBufferPos, hex.c_str(), hex.size());
-                    memmove(originalBufferPos + hex.size(), "\r\n", 2);
-                    amountRead += hex.size() + 4;
-                }
-                else if (!m_chunkEnd)
-                {
-                    // if we didn't read anything, then lets finish up the chunk and send it.
-                    // the reference implementation seems to assume only one chunk is allowed, because the chunkEnd bit is never updated.
-                    // keep that same behavior here.
-                    Aws::StringStream chunkedTrailer;
-                    chunkedTrailer << "0\r\n";
-                    if (m_currentRequest.GetRequestHash().second != nullptr)
-                    {
-                        chunkedTrailer << "x-amz-checksum-" << m_currentRequest.GetRequestHash().first << ":"
-                            << HashingUtils::Base64Encode(m_currentRequest.GetRequestHash().second->GetHash().GetResult()) << "\r\n";
-                    }
-                    chunkedTrailer << "\r\n";
-                    amountRead = chunkedTrailer.str().size();
-                    memcpy(originalBufferPos, chunkedTrailer.str().c_str(), amountRead);
-                    m_chunkEnd = true;
-                }
-                buffer.len += amountRead;
-            }
-
-            auto& sentHandler = m_currentRequest.GetDataSentEventHandler();
-            if (sentHandler)
-            {
-                sentHandler(&m_currentRequest, static_cast<long long>(amountRead));
-            }
-
-            if (m_rateLimiter)
-            {
-                // now actually reduce the window.
-                m_rateLimiter->ApplyCost(static_cast<int64_t>(newPos - currentPos));
-                return retValue;
-            }
-        }
-
-        return true;
-    }
-
-private:
-    std::shared_ptr<Utils::RateLimits::RateLimiterInterface> m_rateLimiter;
-    const Http::HttpClient& m_client;
-    const Http::HttpRequest& m_currentRequest;
-    bool m_isStreaming;
-    bool m_chunkEnd;
-};
-
-// Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
-// from spurious wakeups.
-class AsyncWaiter
-{
-public:
-    AsyncWaiter() = default;
-    AsyncWaiter(const AsyncWaiter&) = delete;
-    AsyncWaiter& operator=(const AsyncWaiter&) = delete;
-
-    void Wakeup()
-    {
-        {
-            std::lock_guard<std::mutex> locker(m_lock);
-            m_wakeupIntentional = true;
-        }
-        m_cvar.notify_one();
-    }
-
-    void WaitOnCompletion()
-    {
-        std::unique_lock<std::mutex> uniqueLocker(m_lock);
-        m_cvar.wait(uniqueLocker, [this](){return m_wakeupIntentional;});
-    }
-
-    bool WaitOnCompletionUntil(std::chrono::time_point<std::chrono::high_resolution_clock> until)
-    {
-        std::unique_lock<std::mutex> uniqueLocker(m_lock);
-        return m_cvar.wait_until(uniqueLocker, until, [this](){return m_wakeupIntentional;});
-    }
-
-private:
-    std::mutex m_lock;
-    std::condition_variable m_cvar;
-    bool m_wakeupIntentional{false};
-};
-
 namespace Aws
 {
     namespace Http
     {
-        CRTHttpClient::CRTHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap) : 
+        static const char *const CRT_HTTP_CLIENT_TAG = "CrtHttpClient";
+
+        // Adapts AWS SDK input streams and rate limiters to the Crt input stream reading model.
+        class SDKAdaptingInputStream : public Crt::Io::StdIOStreamInputStream
+        {
+        public:
+            SDKAdaptingInputStream(Utils::RateLimits::RateLimiterInterface* rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream,
+                                   const Http::HttpClient& client, const Http::HttpRequest& request,
+                                   Aws::Crt::Allocator *allocator = Crt::ApiAllocator()) noexcept :
+                    Crt::Io::StdIOStreamInputStream(std::move(stream), allocator), m_rateLimiter(rateLimiter),
+                    m_client(client), m_currentRequest(request), m_chunkEnd(false)
+            {
+                m_isAwsChunked = m_currentRequest.HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
+                                    m_currentRequest.GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
+            }
+        protected:
+
+            bool ReadImpl(Crt::ByteBuf &buffer) noexcept override
+            {
+                if (!m_client.ContinueRequest(m_currentRequest) || !m_client.IsRequestProcessingEnabled())
+                {
+                    return false;
+                }
+
+                size_t amountToRead = buffer.capacity - buffer.len;
+                uint8_t* originalBufferPos = buffer.buffer;
+
+                // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
+                // Needs to reserve bytes of sizeof(hex(chunk-size)) + sizeof(CRLF) + sizeof(CRLF)
+                if (m_isAwsChunked)
+                {
+                    Aws::String amountToReadHexString = Aws::Utils::StringUtils::ToHexString(amountToRead);
+
+                    auto expansionSpace = amountToReadHexString.size() + 4;
+                    if (amountToRead < expansionSpace)
+                    {
+                        // if we don't have enough left to read into go ahead and bail. We can handle it next time.
+                        return true;
+                    }
+
+                    amountToRead -= expansionSpace;
+                }
+
+                // initial check to see if we should avoid reading for the moment.
+                if (!m_rateLimiter || m_rateLimiter->ApplyCost(0) == std::chrono::milliseconds(0)) {
+                    size_t currentPos = buffer.len;
+
+                    // now do the read. We may over read by an IO buffer size, but it's fine. The throttle will still
+                    // kick-in in plenty of time.
+                    if (!Crt::Io::StdIOStreamInputStream::ReadImpl(buffer))
+                    {
+                        return false;
+                    }
+
+                    size_t newPos = buffer.len;
+                    assert(newPos >= currentPos && "the buffer length should not have decreased in value.");
+                    size_t amountRead = newPos - currentPos;
+
+                    if (m_isAwsChunked)
+                    {
+                        // if we have a chunk to wrap, wrap it, be sure to update the running checksum.
+                        if (amountRead > 0)
+                        {
+                            if (m_currentRequest.GetRequestHash().second != nullptr)
+                            {
+                                m_currentRequest.GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(originalBufferPos), amountRead);
+                            }
+
+                            Aws::String hex = Aws::Utils::StringUtils::ToHexString(amountRead);
+                            // this is safe because of the isAwsChunked branch above.
+                            // I don't see a aws_byte_buf equivalent of memmove. This is lifted from the curl implementation.
+                            memmove(originalBufferPos + hex.size() + 2, originalBufferPos, amountRead);
+                            memmove(originalBufferPos + hex.size() + 2 + amountRead, "\r\n", 2);
+                            memmove(originalBufferPos, hex.c_str(), hex.size());
+                            memmove(originalBufferPos + hex.size(), "\r\n", 2);
+                            amountRead += hex.size() + 4;
+                        }
+                        else if (!m_chunkEnd)
+                        {
+                            auto status = GetStatusImpl();
+                            if (!status.is_end_of_stream)
+                            {
+                                // if we didn't read anything, then lets finish up the chunk and send it.
+                                // the reference implementation seems to assume only one chunk is allowed,
+                                // because the chunkEnd bit is never updated keep that same behavior here.
+                                Aws::StringStream chunkedTrailer;
+                                chunkedTrailer << "0\r\n";
+                                if (m_currentRequest.GetRequestHash().second != nullptr)
+                                {
+                                    chunkedTrailer << "x-amz-checksum-" << m_currentRequest.GetRequestHash().first
+                                                   << ":"
+                                                   << HashingUtils::Base64Encode(
+                                                           m_currentRequest.GetRequestHash().second->GetHash().GetResult())
+                                                   << "\r\n";
+                                }
+                                chunkedTrailer << "\r\n";
+                                amountRead = chunkedTrailer.str().size();
+                                memcpy(originalBufferPos, chunkedTrailer.str().c_str(), amountRead);
+                                m_chunkEnd = true;
+                            }
+                        }
+                        buffer.len += amountRead;
+                    }
+
+                    auto& sentHandler = m_currentRequest.GetDataSentEventHandler();
+                    if (sentHandler)
+                    {
+                        sentHandler(&m_currentRequest, static_cast<long long>(amountRead));
+                    }
+
+                    if (m_rateLimiter)
+                    {
+                        // now actually reduce the window.
+                        m_rateLimiter->ApplyCost(static_cast<int64_t>(newPos - currentPos));
+                    }
+                }
+
+                return true;
+            }
+
+        private:
+            Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
+            const Http::HttpClient& m_client;
+            const Http::HttpRequest& m_currentRequest;
+            bool m_chunkEnd;
+            bool m_isAwsChunked;
+        };
+
+        // Just a wrapper around a Condition Variable and a mutex, which handles wait and timed waits while protecting
+        // from spurious wakeups.
+        class AsyncWaiter
+        {
+        public:
+            AsyncWaiter() = default;
+            AsyncWaiter(const AsyncWaiter&) = delete;
+            AsyncWaiter& operator=(const AsyncWaiter&) = delete;
+
+            void Wakeup()
+            {
+                {
+                    std::lock_guard<std::mutex> locker(m_lock);
+                    m_wakeupIntentional = true;
+                }
+                m_cvar.notify_one();
+            }
+
+            void WaitOnCompletion()
+            {
+                std::unique_lock<std::mutex> uniqueLocker(m_lock);
+                m_cvar.wait(uniqueLocker, [this](){return m_wakeupIntentional;});
+            }
+
+            bool WaitOnCompletionUntil(std::chrono::time_point<std::chrono::high_resolution_clock> until)
+            {
+                std::unique_lock<std::mutex> uniqueLocker(m_lock);
+                return m_cvar.wait_until(uniqueLocker, until, [this](){return m_wakeupIntentional;});
+            }
+
+        private:
+            std::mutex m_lock;
+            std::condition_variable m_cvar;
+            bool m_wakeupIntentional{false};
+        };
+
+        CrtHttpClient::CrtHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap) :
             HttpClient(), m_context(), m_proxyOptions(), m_bootstrap(bootstrap), m_configuration(clientConfig)
         {
             //first need to figure TLS out...
             Crt::Io::TlsContextOptions tlsContextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
-            CheckAndInitializeProxySettings(clientConfig);
+            if (!tlsContextOptions)
+            {
+                m_bad = true;
+                return;
+            }
+
+            CheckAndInitializeProxySettings();
+            // the previous function can fail to setup the proxy options correctly.
+            // if that happened the bad bit has been set, early exit here in that case.
+            if (m_bad)
+            {
+                return;
+            }
 
             // Given current SDK configuration assumptions, if the ca is overridden and a proxy is configured,
             // it's intended for the proxy, not this context.
@@ -221,7 +239,7 @@ namespace Aws
 
         // this isn't entirely necessary, but if you want to be nice to debuggers and memory checkers, let's go ahead
         // and shut everything down cleanly.
-        CRTHttpClient::~CRTHttpClient()
+        CrtHttpClient::~CrtHttpClient()
         {
             Aws::Vector<std::future<void>> shutdownFutures;
 
@@ -263,7 +281,7 @@ namespace Aws
             auto queryStrCpy = request->GetUri().GetQueryString();
             Aws::StringStream ss;
 
-            //CRT client has you pass the query string as part of the path. concatenate that here.
+            //Crt client has you pass the query string as part of the path. concatenate that here.
             ss << pathStrCpy << queryStrCpy;
             auto fullPathAndQueryCpy = ss.str();
             auto pathCursor = Crt::ByteCursorFromArray((uint8_t *)fullPathAndQueryCpy.c_str(), fullPathAndQueryCpy.length());
@@ -327,13 +345,20 @@ namespace Aws
         }
 
         // Request is done. If there was an error set it, otherwise just wake up the cvar.
-        static void OnStreamComplete(Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter, const std::shared_ptr<HttpResponse>& response)
+        static void OnStreamComplete(Crt::Http::HttpStream&, int errorCode, AsyncWaiter& waiter, const std::shared_ptr<HttpRequest>& request, const std::shared_ptr<HttpResponse>& response, const HttpClient& client)
         {
             if (errorCode)
             {
-                //TODO: get the right error parsed out.
-                response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
-                response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+                if (!client.IsRequestProcessingEnabled() || !client.ContinueRequest(*request))
+                {
+                    response->SetClientErrorType(Aws::Client::CoreErrors::USER_CANCELLED);
+                    response->SetClientErrorMessage("Request cancelled by user");
+                }
+                else
+                {
+                    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                    response->SetClientErrorMessage(aws_error_debug_str(errorCode));
+                }
             }
 
             waiter.Wakeup();
@@ -345,7 +370,7 @@ namespace Aws
                                          Crt::Http::HttpRequestOptions& requestOptions, AsyncWaiter& waiter, const std::shared_ptr<HttpRequest>& request, 
                                          const std::shared_ptr<HttpResponse>& response, const HttpClient& client)
         {
-            bool shouldContinueRequest = client.ContinueRequest(*request);
+            bool shouldContinueRequest = client.ContinueRequest(*request) && client.IsRequestProcessingEnabled();
 
             if (!shouldContinueRequest)
             {
@@ -380,10 +405,15 @@ namespace Aws
             waiter.Wakeup();
         }
 
-        std::shared_ptr<HttpResponse> CRTHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+        std::shared_ptr<HttpResponse> CrtHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*,
                                                                  Aws::Utils::RateLimits::RateLimiterInterface*) const
         {
+            if (m_bad)
+            {
+                return nullptr;
+            }
+
             auto crtRequest = Crt::MakeShared<Crt::Http::HttpRequest>(Crt::g_allocator);
             auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
 
@@ -401,8 +431,7 @@ namespace Aws
             // Set the request body stream on the crt request. Setup the write rate limiter if present
             if (request->GetContentBody())
             {
-                bool isStreaming = request->IsEventStreamRequest();
-                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
+                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter.get(), request->GetContentBody(), *this, *request));
             }
 
             Crt::Http::HttpRequestOptions requestOptions;
@@ -427,14 +456,14 @@ namespace Aws
                 OnIncomingHeadersBlockDone(stream, block, response);
             };
 
-            // CRT client is async only so we'll need to do the synchronous part ourselves.
+            // Crt client is async only so we'll need to do the synchronous part ourselves.
             // We'll use a condition variable and wait on it until the request completes or errors out.
             AsyncWaiter waiter;
 
             requestOptions.onStreamComplete =
-                [&waiter, &response](Crt::Http::HttpStream& stream, int errorCode)
+                [&waiter, &request, this, &response](Crt::Http::HttpStream& stream, int errorCode)
             {
-                OnStreamComplete(stream, errorCode, waiter, response);
+                OnStreamComplete(stream, errorCode, waiter, request, response, *this);
             };
 
             std::shared_ptr<Crt::Http::HttpClientConnection> connectionRef(nullptr);
@@ -480,7 +509,10 @@ namespace Aws
             waiter.WaitOnCompletion();
 
             // now handle if we timed out or not.
-            if (waiterTimedOut)
+            // OnStreamComplete will have set an error by this point if the connection was closed out
+            // due to a timeout. Check that an error hasn't been set first, because if it hasn't
+            // the request actually succeeded.
+            if (waiterTimedOut && response->GetClientErrorType() != Aws::Client::CoreErrors::OK)
             {
                 response->SetClientErrorType(
                         Aws::Client::CoreErrors::REQUEST_TIMEOUT);
@@ -491,7 +523,7 @@ namespace Aws
             return response;
         }
 
-        Aws::String CRTHttpClient::ResolveConnectionPoolKey(const URI& uri)
+        Aws::String CrtHttpClient::ResolveConnectionPoolKey(const URI& uri)
         {
             // create a unique key for this endpoint.
             Aws::StringStream ss;
@@ -504,7 +536,7 @@ namespace Aws
         // To do so, we simply keep a hash table of the endpoint key (see ResolveConnectionPoolKey()), and
         // put a connection manager for that endpoint as the value.
         // This runs in multiple threads potentially so there's a lock around it.
-        std::shared_ptr<Crt::Http::HttpClientConnectionManager> CRTHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
+        std::shared_ptr<Crt::Http::HttpClientConnectionManager> CrtHttpClient::GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& options) const
         {
             const auto connManagerRequestKey = ResolveConnectionPoolKey(request->GetUri());
 
@@ -538,7 +570,7 @@ namespace Aws
             return connectionManager;
         }
 
-        Crt::Http::HttpClientConnectionOptions CRTHttpClient::CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const
+        Crt::Http::HttpClientConnectionOptions CrtHttpClient::CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const
         {
             // connection options are unique per request, this is mostly just connection-level configuration mapping.
             Crt::Http::HttpClientConnectionOptions connectionOptions;
@@ -547,9 +579,9 @@ namespace Aws
             connectionOptions.ManualWindowManagement = false;
             connectionOptions.Port = request->GetUri().GetPort();
             
-            if (m_context.has_value() && request->GetUri().GetScheme() == Scheme::HTTPS) 
+            if (request->GetUri().GetScheme() == Scheme::HTTPS)
             {
-                connectionOptions.TlsOptions = m_context.value().NewConnectionOptions();
+                connectionOptions.TlsOptions = m_context.NewConnectionOptions();
                 auto serverName = request->GetUri().GetAuthority();
                 auto serverNameCursor = Crt::ByteCursorFromCString(serverName.c_str());
                 connectionOptions.TlsOptions->SetServerName(serverNameCursor);
@@ -576,59 +608,85 @@ namespace Aws
         }
 
         // The proxy config is pretty hefty, so we don't want to create one for each request when we don't have to.
-        // This converts whatever proxy settings are in clientConfig to CRT specific proxy settings.
+        // This converts whatever proxy settings are in clientConfig to Crt specific proxy settings.
         // It then sets it on the member variable for re-use elsewhere.
-        void CRTHttpClient::CheckAndInitializeProxySettings(const Aws::Client::ClientConfiguration& clientConfig)
+        void CrtHttpClient::CheckAndInitializeProxySettings()
         {
-            if (!clientConfig.proxyHost.empty())
+            if (!m_configuration.proxyHost.empty())
             {
                 Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
 
-                if (!clientConfig.proxyUserName.empty())
+                if (!m_configuration.proxyUserName.empty())
                 {
                     proxyOptions.AuthType = Crt::Http::AwsHttpProxyAuthenticationType::Basic;
-                    proxyOptions.BasicAuthUsername = clientConfig.proxyUserName.c_str();
-                    proxyOptions.BasicAuthPassword = clientConfig.proxyPassword.c_str();
+                    proxyOptions.BasicAuthUsername = m_configuration.proxyUserName.c_str();
+                    proxyOptions.BasicAuthPassword = m_configuration.proxyPassword.c_str();
                 }
 
                 proxyOptions.HostName = m_configuration.proxyHost.c_str();
 
-                if (clientConfig.proxyPort != 0)
+                if (m_configuration.proxyPort != 0)
                 {
-                    proxyOptions.Port = static_cast<uint16_t>(clientConfig.proxyPort);
+                    proxyOptions.Port = static_cast<uint16_t>(m_configuration.proxyPort);
                 }
                 else
                 {
-                    proxyOptions.Port = clientConfig.proxyScheme == Scheme::HTTPS ? 443 : 80;
+                    proxyOptions.Port = m_configuration.proxyScheme == Scheme::HTTPS ? 443 : 80;
                 }
 
-                if (clientConfig.proxyScheme == Scheme::HTTPS)
+                if (m_configuration.proxyScheme == Scheme::HTTPS)
                 {
                     Crt::Io::TlsContextOptions contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
 
-                    if (clientConfig.proxySSLKeyPassword.empty() && !clientConfig.proxySSLCertPath.empty())
+                    if (!contextOptions)
                     {
-                        const char* certPath = clientConfig.proxySSLCertPath.empty() ? nullptr : clientConfig.proxySSLCertPath.c_str();
-                        const char* certFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
-                        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
+                        m_bad = true;
+                        return;
                     }
-                    else if (!clientConfig.proxySSLKeyPassword.empty())
+
+                    if (m_configuration.proxySSLKeyPassword.empty() && !m_configuration.proxySSLCertPath.empty())
                     {
-                        const char* pkcs12CertFile = clientConfig.proxySSLKeyPath.empty() ? nullptr : clientConfig.proxySSLKeyPath.c_str();
-                        const char* pkcs12Pwd = clientConfig.proxySSLKeyPassword.c_str();
+                        const char* certPath = m_configuration.proxySSLCertPath.empty() ? nullptr : m_configuration.proxySSLCertPath.c_str();
+                        const char* certFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
+                        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
+                        if (!contextOptions)
+                        {
+                            m_bad = true;
+                            return;
+                        }
+                    }
+                    else if (!m_configuration.proxySSLKeyPassword.empty())
+                    {
+                        const char* pkcs12CertFile = m_configuration.proxySSLKeyPath.empty() ? nullptr : m_configuration.proxySSLKeyPath.c_str();
+                        const char* pkcs12Pwd = m_configuration.proxySSLKeyPassword.c_str();
                         contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
+                        if (!contextOptions)
+                        {
+                            m_bad = true;
+                            return;
+                        }
                     }
 
                     if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
                     {
-                        const char* caPath = clientConfig.caPath.empty() ? nullptr : clientConfig.caPath.c_str();
-                        const char* caFile = clientConfig.caFile.empty() ? nullptr : clientConfig.caFile.c_str();
+                        const char* caPath = m_configuration.caPath.empty() ? nullptr : m_configuration.caPath.c_str();
+                        const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
                         contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                        if (!contextOptions)
+                        {
+                            m_bad = true;
+                            return;
+                        }
                     }
 
-                    contextOptions.SetVerifyPeer(clientConfig.verifySSL);
+                    contextOptions.SetVerifyPeer(m_configuration.verifySSL);
                     Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
-                    proxyOptions.TlsOptions = context.NewConnectionOptions();                    
+                    proxyOptions.TlsOptions = context.NewConnectionOptions();
+                    if (proxyOptions.TlsOptions)
+                    {
+                        m_bad = true;
+                        return;
+                    }
                 }
 
                 m_proxyOptions = std::move(proxyOptions);

@@ -70,43 +70,57 @@ namespace Model
 
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArn = value; }
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArn = std::move(value); }
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArn.assign(value); }
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline StartBackupJobResult& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline StartBackupJobResult& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
 
     /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <p> <i>Note: This field is only returned for Amazon EFS and Advanced DynamoDB
+     * resources.</i> </p> <p>An ARN that uniquely identifies a recovery point; for
+     * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline StartBackupJobResult& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}

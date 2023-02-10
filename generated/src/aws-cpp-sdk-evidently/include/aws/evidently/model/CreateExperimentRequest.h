@@ -443,10 +443,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -456,10 +456,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -469,10 +469,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -482,10 +482,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -495,10 +495,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -508,10 +508,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -521,10 +521,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -534,10 +534,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -547,10 +547,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -560,10 +560,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -573,10 +573,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -586,10 +586,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -599,10 +599,10 @@ namespace Model
      * user permissions by granting a user permission to access or change only
      * resources with certain tag values.</p> <p>Tags don't have any semantic meaning
      * to Amazon Web Services and are interpreted strictly as strings of
-     * characters.</p> <pre><code> &lt;p&gt;You can associate as many as 50 tags with
-     * an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a
-     * href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-     * Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+     * characters.</p> <p>You can associate as many as 50 tags with an experiment.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>.</p>
      */
     inline CreateExperimentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

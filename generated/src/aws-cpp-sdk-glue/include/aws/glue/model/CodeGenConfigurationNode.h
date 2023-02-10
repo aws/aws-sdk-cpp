@@ -374,41 +374,65 @@ namespace Model
     inline CodeGenConfigurationNode& WithS3ParquetSource(S3ParquetSource&& value) { SetS3ParquetSource(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline const RelationalCatalogSource& GetRelationalCatalogSource() const{ return m_relationalCatalogSource; }
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline bool RelationalCatalogSourceHasBeenSet() const { return m_relationalCatalogSourceHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline void SetRelationalCatalogSource(const RelationalCatalogSource& value) { m_relationalCatalogSourceHasBeenSet = true; m_relationalCatalogSource = value; }
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline void SetRelationalCatalogSource(RelationalCatalogSource&& value) { m_relationalCatalogSourceHasBeenSet = true; m_relationalCatalogSource = std::move(value); }
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline CodeGenConfigurationNode& WithRelationalCatalogSource(const RelationalCatalogSource& value) { SetRelationalCatalogSource(value); return *this;}
 
-    
+    /**
+     * <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
+     */
     inline CodeGenConfigurationNode& WithRelationalCatalogSource(RelationalCatalogSource&& value) { SetRelationalCatalogSource(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline const DynamoDBCatalogSource& GetDynamoDBCatalogSource() const{ return m_dynamoDBCatalogSource; }
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline bool DynamoDBCatalogSourceHasBeenSet() const { return m_dynamoDBCatalogSourceHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline void SetDynamoDBCatalogSource(const DynamoDBCatalogSource& value) { m_dynamoDBCatalogSourceHasBeenSet = true; m_dynamoDBCatalogSource = value; }
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline void SetDynamoDBCatalogSource(DynamoDBCatalogSource&& value) { m_dynamoDBCatalogSourceHasBeenSet = true; m_dynamoDBCatalogSource = std::move(value); }
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline CodeGenConfigurationNode& WithDynamoDBCatalogSource(const DynamoDBCatalogSource& value) { SetDynamoDBCatalogSource(value); return *this;}
 
-    
+    /**
+     * <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
+     */
     inline CodeGenConfigurationNode& WithDynamoDBCatalogSource(DynamoDBCatalogSource&& value) { SetDynamoDBCatalogSource(std::move(value)); return *this;}
 
 

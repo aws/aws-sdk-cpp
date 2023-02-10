@@ -210,49 +210,97 @@ namespace Model
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const{ return m_queueConfigs; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline void SetQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = value; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline void SetQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::move(value); }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline CreateRoutingProfileRequest& WithQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { SetQueueConfigs(value); return *this;}
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline CreateRoutingProfileRequest& WithQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { SetQueueConfigs(std::move(value)); return *this;}
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline CreateRoutingProfileRequest& AddQueueConfigs(const RoutingProfileQueueConfig& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(value); return *this; }
 
     /**
      * <p>The inbound queues associated with the routing profile. If no queue is added,
-     * the agent can make only outbound calls.</p>
+     * the agent can make only outbound calls.</p> <p>The limit of 10 array members
+     * applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different
+     * from the quota of 50 queues per routing profile per instance that is listed in
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     * Connect service quotas</a>. </p>
      */
     inline CreateRoutingProfileRequest& AddQueueConfigs(RoutingProfileQueueConfig&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(std::move(value)); return *this; }
 

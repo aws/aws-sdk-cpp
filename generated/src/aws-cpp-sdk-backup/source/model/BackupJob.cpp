@@ -44,7 +44,8 @@ BackupJob::BackupJob() :
     m_backupTypeHasBeenSet(false),
     m_parentJobIdHasBeenSet(false),
     m_isParent(false),
-    m_isParentHasBeenSet(false)
+    m_isParentHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ BackupJob::BackupJob(JsonView jsonValue) :
     m_backupTypeHasBeenSet(false),
     m_parentJobIdHasBeenSet(false),
     m_isParent(false),
-    m_isParentHasBeenSet(false)
+    m_isParentHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +240,13 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_isParentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+    m_resourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -374,6 +383,12 @@ JsonValue BackupJob::Jsonize() const
   if(m_isParentHasBeenSet)
   {
    payload.WithBool("IsParent", m_isParent);
+
+  }
+
+  if(m_resourceNameHasBeenSet)
+  {
+   payload.WithString("ResourceName", m_resourceName);
 
   }
 

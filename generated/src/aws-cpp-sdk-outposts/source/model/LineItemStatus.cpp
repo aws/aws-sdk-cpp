@@ -28,6 +28,7 @@ namespace Aws
         static const int INSTALLED_HASH = HashingUtils::HashString("INSTALLED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int REPLACED_HASH = HashingUtils::HashString("REPLACED");
 
 
         LineItemStatus GetLineItemStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return LineItemStatus::CANCELLED;
           }
+          else if (hashCode == REPLACED_HASH)
+          {
+            return LineItemStatus::REPLACED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "ERROR";
           case LineItemStatus::CANCELLED:
             return "CANCELLED";
+          case LineItemStatus::REPLACED:
+            return "REPLACED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

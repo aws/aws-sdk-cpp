@@ -19,7 +19,8 @@ StartDeploymentRequest::StartDeploymentRequest() :
     m_configurationProfileIdHasBeenSet(false),
     m_configurationVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyIdentifierHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,12 @@ Aws::String StartDeploymentRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
 
   }
 

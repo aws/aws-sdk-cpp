@@ -159,6 +159,49 @@ namespace Model
      */
     inline DescribeProtectedResourceResult& WithLastBackupTime(Aws::Utils::DateTime&& value) { SetLastBackupTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(Aws::String&& value) { m_resourceName = std::move(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeProtectedResourceResult& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeProtectedResourceResult& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the non-unique name of the resource that belongs to the specified
+     * backup.</p>
+     */
+    inline DescribeProtectedResourceResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -166,6 +209,8 @@ namespace Model
     Aws::String m_resourceType;
 
     Aws::Utils::DateTime m_lastBackupTime;
+
+    Aws::String m_resourceName;
   };
 
 } // namespace Model

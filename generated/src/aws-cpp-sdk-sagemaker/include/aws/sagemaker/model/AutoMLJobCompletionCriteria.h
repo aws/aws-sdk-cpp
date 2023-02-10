@@ -91,8 +91,8 @@ namespace Model
      * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
-     * steps of the job, such as automatic one-click Autopilot model deployment, will
-     * not be completed. </p>
+     * steps of the job, such as automatic one-click Autopilot model deployment, are
+     * not completed. </p>
      */
     inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
 
@@ -101,8 +101,8 @@ namespace Model
      * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
-     * steps of the job, such as automatic one-click Autopilot model deployment, will
-     * not be completed. </p>
+     * steps of the job, such as automatic one-click Autopilot model deployment, are
+     * not completed. </p>
      */
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
 
@@ -111,8 +111,8 @@ namespace Model
      * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
-     * steps of the job, such as automatic one-click Autopilot model deployment, will
-     * not be completed. </p>
+     * steps of the job, such as automatic one-click Autopilot model deployment, are
+     * not completed. </p>
      */
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
 
@@ -121,8 +121,8 @@ namespace Model
      * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
-     * steps of the job, such as automatic one-click Autopilot model deployment, will
-     * not be completed. </p>
+     * steps of the job, such as automatic one-click Autopilot model deployment, are
+     * not completed. </p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
 

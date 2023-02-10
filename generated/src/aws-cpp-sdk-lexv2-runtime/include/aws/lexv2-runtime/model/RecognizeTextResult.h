@@ -9,6 +9,7 @@
 #include <aws/lexv2-runtime/model/SessionState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-runtime/model/RecognizedBotMember.h>
 #include <aws/lexv2-runtime/model/Message.h>
 #include <aws/lexv2-runtime/model/Interpretation.h>
 #include <utility>
@@ -283,6 +284,32 @@ namespace Model
      */
     inline RecognizeTextResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>The bot member that recognized the text.</p>
+     */
+    inline const RecognizedBotMember& GetRecognizedBotMember() const{ return m_recognizedBotMember; }
+
+    /**
+     * <p>The bot member that recognized the text.</p>
+     */
+    inline void SetRecognizedBotMember(const RecognizedBotMember& value) { m_recognizedBotMember = value; }
+
+    /**
+     * <p>The bot member that recognized the text.</p>
+     */
+    inline void SetRecognizedBotMember(RecognizedBotMember&& value) { m_recognizedBotMember = std::move(value); }
+
+    /**
+     * <p>The bot member that recognized the text.</p>
+     */
+    inline RecognizeTextResult& WithRecognizedBotMember(const RecognizedBotMember& value) { SetRecognizedBotMember(value); return *this;}
+
+    /**
+     * <p>The bot member that recognized the text.</p>
+     */
+    inline RecognizeTextResult& WithRecognizedBotMember(RecognizedBotMember&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Message> m_messages;
@@ -294,6 +321,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
 
     Aws::String m_sessionId;
+
+    RecognizedBotMember m_recognizedBotMember;
   };
 
 } // namespace Model

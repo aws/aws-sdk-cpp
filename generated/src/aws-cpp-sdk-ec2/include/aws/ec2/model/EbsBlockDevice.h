@@ -506,8 +506,27 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * instance types</a>.</p> <p>This parameter is not returned by
+     * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
+     * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
+     * values differ depending on the type of block device mapping you are
+     * creating.</p> <ul> <li> <p>If you are creating a block device mapping for a
+     * <b>new (empty) volume</b>, you can include this parameter, and specify either
+     * <code>true</code> for an encrypted volume, or <code>false</code> for an
+     * unencrypted volume. If you omit this parameter, it defaults to
+     * <code>false</code> (unencrypted).</p> </li> <li> <p>If you are creating a block
+     * device mapping from an <b>existing encrypted or unencrypted snapshot</b>, you
+     * must omit this parameter. If you include this parameter, the request will fail,
+     * regardless of the value that you specify.</p> </li> <li> <p>If you are creating
+     * a block device mapping from an <b>existing unencrypted volume</b>, you can
+     * include this parameter, but you must specify <code>false</code>. If you specify
+     * <code>true</code>, the request will fail. In this case, we recommend that you
+     * omit the parameter.</p> </li> <li> <p>If you are creating a block device mapping
+     * from an <b>existing encrypted volume</b>, you can include this parameter, and
+     * specify either <code>true</code> or <code>false</code>. However, if you specify
+     * <code>false</code>, the parameter is ignored and the block device mapping is
+     * always encrypted. In this case, we recommend that you omit the parameter.</p>
+     * </li> </ul>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -523,8 +542,27 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * instance types</a>.</p> <p>This parameter is not returned by
+     * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
+     * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
+     * values differ depending on the type of block device mapping you are
+     * creating.</p> <ul> <li> <p>If you are creating a block device mapping for a
+     * <b>new (empty) volume</b>, you can include this parameter, and specify either
+     * <code>true</code> for an encrypted volume, or <code>false</code> for an
+     * unencrypted volume. If you omit this parameter, it defaults to
+     * <code>false</code> (unencrypted).</p> </li> <li> <p>If you are creating a block
+     * device mapping from an <b>existing encrypted or unencrypted snapshot</b>, you
+     * must omit this parameter. If you include this parameter, the request will fail,
+     * regardless of the value that you specify.</p> </li> <li> <p>If you are creating
+     * a block device mapping from an <b>existing unencrypted volume</b>, you can
+     * include this parameter, but you must specify <code>false</code>. If you specify
+     * <code>true</code>, the request will fail. In this case, we recommend that you
+     * omit the parameter.</p> </li> <li> <p>If you are creating a block device mapping
+     * from an <b>existing encrypted volume</b>, you can include this parameter, and
+     * specify either <code>true</code> or <code>false</code>. However, if you specify
+     * <code>false</code>, the parameter is ignored and the block device mapping is
+     * always encrypted. In this case, we recommend that you omit the parameter.</p>
+     * </li> </ul>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -540,8 +578,27 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * instance types</a>.</p> <p>This parameter is not returned by
+     * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
+     * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
+     * values differ depending on the type of block device mapping you are
+     * creating.</p> <ul> <li> <p>If you are creating a block device mapping for a
+     * <b>new (empty) volume</b>, you can include this parameter, and specify either
+     * <code>true</code> for an encrypted volume, or <code>false</code> for an
+     * unencrypted volume. If you omit this parameter, it defaults to
+     * <code>false</code> (unencrypted).</p> </li> <li> <p>If you are creating a block
+     * device mapping from an <b>existing encrypted or unencrypted snapshot</b>, you
+     * must omit this parameter. If you include this parameter, the request will fail,
+     * regardless of the value that you specify.</p> </li> <li> <p>If you are creating
+     * a block device mapping from an <b>existing unencrypted volume</b>, you can
+     * include this parameter, but you must specify <code>false</code>. If you specify
+     * <code>true</code>, the request will fail. In this case, we recommend that you
+     * omit the parameter.</p> </li> <li> <p>If you are creating a block device mapping
+     * from an <b>existing encrypted volume</b>, you can include this parameter, and
+     * specify either <code>true</code> or <code>false</code>. However, if you specify
+     * <code>false</code>, the parameter is ignored and the block device mapping is
+     * always encrypted. In this case, we recommend that you omit the parameter.</p>
+     * </li> </ul>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -557,8 +614,27 @@ namespace Model
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
+     * instance types</a>.</p> <p>This parameter is not returned by
+     * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
+     * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
+     * values differ depending on the type of block device mapping you are
+     * creating.</p> <ul> <li> <p>If you are creating a block device mapping for a
+     * <b>new (empty) volume</b>, you can include this parameter, and specify either
+     * <code>true</code> for an encrypted volume, or <code>false</code> for an
+     * unencrypted volume. If you omit this parameter, it defaults to
+     * <code>false</code> (unencrypted).</p> </li> <li> <p>If you are creating a block
+     * device mapping from an <b>existing encrypted or unencrypted snapshot</b>, you
+     * must omit this parameter. If you include this parameter, the request will fail,
+     * regardless of the value that you specify.</p> </li> <li> <p>If you are creating
+     * a block device mapping from an <b>existing unencrypted volume</b>, you can
+     * include this parameter, but you must specify <code>false</code>. If you specify
+     * <code>true</code>, the request will fail. In this case, we recommend that you
+     * omit the parameter.</p> </li> <li> <p>If you are creating a block device mapping
+     * from an <b>existing encrypted volume</b>, you can include this parameter, and
+     * specify either <code>true</code> or <code>false</code>. However, if you specify
+     * <code>false</code>, the parameter is ignored and the block device mapping is
+     * always encrypted. In this case, we recommend that you omit the parameter.</p>
+     * </li> </ul>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

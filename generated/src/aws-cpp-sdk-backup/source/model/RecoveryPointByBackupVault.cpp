@@ -43,7 +43,8 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_parentRecoveryPointArnHasBeenSet(false),
     m_compositeMemberIdentifierHasBeenSet(false),
     m_isParent(false),
-    m_isParentHasBeenSet(false)
+    m_isParentHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_parentRecoveryPointArnHasBeenSet(false),
     m_compositeMemberIdentifierHasBeenSet(false),
     m_isParent(false),
-    m_isParentHasBeenSet(false)
+    m_isParentHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -226,6 +228,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_isParentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+    m_resourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -352,6 +361,12 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_isParentHasBeenSet)
   {
    payload.WithBool("IsParent", m_isParent);
+
+  }
+
+  if(m_resourceNameHasBeenSet)
+  {
+   payload.WithString("ResourceName", m_resourceName);
 
   }
 

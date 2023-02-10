@@ -38,16 +38,24 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The number of seconds after which the user can invoke the API again.</p>
+     */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
 
-    
+    /**
+     * <p>The number of seconds after which the user can invoke the API again.</p>
+     */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
 
-    
+    /**
+     * <p>The number of seconds after which the user can invoke the API again.</p>
+     */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
 
-    
+    /**
+     * <p>The number of seconds after which the user can invoke the API again.</p>
+     */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 
 

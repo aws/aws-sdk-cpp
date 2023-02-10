@@ -27,9 +27,9 @@ namespace Model
 
   /**
    * <p> Describes the projected metrics of an Amazon ECS service recommendation
-   * option. </p> <p>To determine the performance difference between your current ECS
-   * service and the recommended option, compare the metric data of your service
-   * against its projected metric data.</p><p><h3>See Also:</h3>   <a
+   * option. </p> <p>To determine the performance difference between your current
+   * Amazon ECS service and the recommended option, compare the metric data of your
+   * service against its projected metric data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ECSServiceProjectedMetric">AWS
    * API Reference</a></p>
    */
@@ -44,55 +44,55 @@ namespace Model
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline const ECSServiceMetricName& GetName() const{ return m_name; }
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline void SetName(const ECSServiceMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline void SetName(ECSServiceMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline ECSServiceProjectedMetric& WithName(const ECSServiceMetricName& value) { SetName(value); return *this;}
 
     /**
      * <p> The name of the projected metric. </p> <p>The following metrics are
-     * available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated
-     * compute units that are currently in use on the ECS service tasks.</p> </li> <li>
-     * <p> <code>Memory</code> — The percentage of memory that is currently in use on
-     * the ECS service tasks.</p> </li> </ul>
+     * available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated
+     * compute units that are currently in use on the service tasks.</p> </li> <li> <p>
+     * <code>Memory</code> — The percentage of memory that's currently in use on the
+     * service tasks.</p> </li> </ul>
      */
     inline ECSServiceProjectedMetric& WithName(ECSServiceMetricName&& value) { SetName(std::move(value)); return *this;}
 

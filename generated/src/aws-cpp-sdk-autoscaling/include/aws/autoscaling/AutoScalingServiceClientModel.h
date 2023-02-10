@@ -59,6 +59,7 @@
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/PutWarmPoolResult.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
+#include <aws/autoscaling/model/RollbackInstanceRefreshResult.h>
 #include <aws/autoscaling/model/SetInstanceProtectionResult.h>
 #include <aws/autoscaling/model/StartInstanceRefreshResult.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
@@ -160,6 +161,7 @@ namespace Aws
       class PutWarmPoolRequest;
       class RecordLifecycleActionHeartbeatRequest;
       class ResumeProcessesRequest;
+      class RollbackInstanceRefreshRequest;
       class SetDesiredCapacityRequest;
       class SetInstanceHealthRequest;
       class SetInstanceProtectionRequest;
@@ -227,6 +229,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutWarmPoolResult, AutoScalingError> PutWarmPoolOutcome;
       typedef Aws::Utils::Outcome<RecordLifecycleActionHeartbeatResult, AutoScalingError> RecordLifecycleActionHeartbeatOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ResumeProcessesOutcome;
+      typedef Aws::Utils::Outcome<RollbackInstanceRefreshResult, AutoScalingError> RollbackInstanceRefreshOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SetDesiredCapacityOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SetInstanceHealthOutcome;
       typedef Aws::Utils::Outcome<SetInstanceProtectionResult, AutoScalingError> SetInstanceProtectionOutcome;
@@ -294,6 +297,7 @@ namespace Aws
       typedef std::future<PutWarmPoolOutcome> PutWarmPoolOutcomeCallable;
       typedef std::future<RecordLifecycleActionHeartbeatOutcome> RecordLifecycleActionHeartbeatOutcomeCallable;
       typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
+      typedef std::future<RollbackInstanceRefreshOutcome> RollbackInstanceRefreshOutcomeCallable;
       typedef std::future<SetDesiredCapacityOutcome> SetDesiredCapacityOutcomeCallable;
       typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
       typedef std::future<SetInstanceProtectionOutcome> SetInstanceProtectionOutcomeCallable;
@@ -364,6 +368,7 @@ namespace Aws
     typedef std::function<void(const AutoScalingClient*, const Model::PutWarmPoolRequest&, const Model::PutWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWarmPoolResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::RecordLifecycleActionHeartbeatRequest&, const Model::RecordLifecycleActionHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordLifecycleActionHeartbeatResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeProcessesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::RollbackInstanceRefreshRequest&, const Model::RollbackInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackInstanceRefreshResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDesiredCapacityResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceHealthResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceProtectionRequest&, const Model::SetInstanceProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceProtectionResponseReceivedHandler;

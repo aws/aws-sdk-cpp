@@ -23,6 +23,7 @@ namespace Aws
         static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
         static const int FRAUD_HASH = HashingUtils::HashString("FRAUD");
         static const int LEGIT_HASH = HashingUtils::HashString("LEGIT");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         UnlabeledEventsTreatment GetUnlabeledEventsTreatmentForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == LEGIT_HASH)
           {
             return UnlabeledEventsTreatment::LEGIT;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return UnlabeledEventsTreatment::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "FRAUD";
           case UnlabeledEventsTreatment::LEGIT:
             return "LEGIT";
+          case UnlabeledEventsTreatment::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

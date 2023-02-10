@@ -550,6 +550,42 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
 
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline const Aws::String& GetRecognizedBotMember() const{ return m_recognizedBotMember; }
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline void SetRecognizedBotMember(const Aws::String& value) { m_recognizedBotMember = value; }
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline void SetRecognizedBotMember(Aws::String&& value) { m_recognizedBotMember = std::move(value); }
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline void SetRecognizedBotMember(const char* value) { m_recognizedBotMember.assign(value); }
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline RecognizeUtteranceResult& WithRecognizedBotMember(const Aws::String& value) { SetRecognizedBotMember(value); return *this;}
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline RecognizeUtteranceResult& WithRecognizedBotMember(Aws::String&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
+
+    /**
+     * <p>The bot member that recognized the utterance.</p>
+     */
+    inline RecognizeUtteranceResult& WithRecognizedBotMember(const char* value) { SetRecognizedBotMember(value); return *this;}
+
   private:
 
     Aws::String m_inputMode;
@@ -569,6 +605,8 @@ namespace Model
     Aws::String m_inputTranscript;
 
   Aws::Utils::Stream::ResponseStream m_audioStream;
+
+    Aws::String m_recognizedBotMember;
   };
 
 } // namespace Model

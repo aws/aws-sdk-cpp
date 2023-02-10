@@ -72,9 +72,9 @@ namespace Model
     /**
      * <p>The current status of the deletion. When the deletion is complete, the export
      * will no longer be returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
      * operation and calls to the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">
      * DescribeExport</a> operation with the export identifier will fail.</p>
      */
     inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
@@ -82,9 +82,9 @@ namespace Model
     /**
      * <p>The current status of the deletion. When the deletion is complete, the export
      * will no longer be returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
      * operation and calls to the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">
      * DescribeExport</a> operation with the export identifier will fail.</p>
      */
     inline void SetExportStatus(const ExportStatus& value) { m_exportStatus = value; }
@@ -92,9 +92,9 @@ namespace Model
     /**
      * <p>The current status of the deletion. When the deletion is complete, the export
      * will no longer be returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
      * operation and calls to the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">
      * DescribeExport</a> operation with the export identifier will fail.</p>
      */
     inline void SetExportStatus(ExportStatus&& value) { m_exportStatus = std::move(value); }
@@ -102,9 +102,9 @@ namespace Model
     /**
      * <p>The current status of the deletion. When the deletion is complete, the export
      * will no longer be returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
      * operation and calls to the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">
      * DescribeExport</a> operation with the export identifier will fail.</p>
      */
     inline DeleteExportResult& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
@@ -112,9 +112,9 @@ namespace Model
     /**
      * <p>The current status of the deletion. When the deletion is complete, the export
      * will no longer be returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
      * operation and calls to the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">
      * DescribeExport</a> operation with the export identifier will fail.</p>
      */
     inline DeleteExportResult& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}

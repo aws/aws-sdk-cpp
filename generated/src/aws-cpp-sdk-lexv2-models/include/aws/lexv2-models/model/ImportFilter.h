@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>Filters the response from the <a
-   * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+   * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportFilter">AWS
    * API Reference</a></p>

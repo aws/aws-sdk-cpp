@@ -10,6 +10,9 @@
 #include <aws/lexv2-models/model/BotStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -233,7 +236,7 @@ namespace Model
      * <p>Shows the current status of the bot. The bot is first in the
      * <code>Creating</code> status. Once the bot is read for use, it changes to the
      * <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.</p>
+     * <code>DRAFT</code> version of the bot.</p>
      */
     inline const BotStatus& GetBotStatus() const{ return m_botStatus; }
 
@@ -241,7 +244,7 @@ namespace Model
      * <p>Shows the current status of the bot. The bot is first in the
      * <code>Creating</code> status. Once the bot is read for use, it changes to the
      * <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.</p>
+     * <code>DRAFT</code> version of the bot.</p>
      */
     inline void SetBotStatus(const BotStatus& value) { m_botStatus = value; }
 
@@ -249,7 +252,7 @@ namespace Model
      * <p>Shows the current status of the bot. The bot is first in the
      * <code>Creating</code> status. Once the bot is read for use, it changes to the
      * <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.</p>
+     * <code>DRAFT</code> version of the bot.</p>
      */
     inline void SetBotStatus(BotStatus&& value) { m_botStatus = std::move(value); }
 
@@ -257,7 +260,7 @@ namespace Model
      * <p>Shows the current status of the bot. The bot is first in the
      * <code>Creating</code> status. Once the bot is read for use, it changes to the
      * <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.</p>
+     * <code>DRAFT</code> version of the bot.</p>
      */
     inline CreateBotResult& WithBotStatus(const BotStatus& value) { SetBotStatus(value); return *this;}
 
@@ -265,7 +268,7 @@ namespace Model
      * <p>Shows the current status of the bot. The bot is first in the
      * <code>Creating</code> status. Once the bot is read for use, it changes to the
      * <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.</p>
+     * <code>DRAFT</code> version of the bot.</p>
      */
     inline CreateBotResult& WithBotStatus(BotStatus&& value) { SetBotStatus(std::move(value)); return *this;}
 
@@ -417,6 +420,68 @@ namespace Model
      */
     inline CreateBotResult& AddTestBotAliasTags(const char* key, const char* value) { m_testBotAliasTags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The type of a bot that was created.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of a bot that was created.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botType = value; }
+
+    /**
+     * <p>The type of a bot that was created.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botType = std::move(value); }
+
+    /**
+     * <p>The type of a bot that was created.</p>
+     */
+    inline CreateBotResult& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of a bot that was created.</p>
+     */
+    inline CreateBotResult& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembers = value; }
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembers = std::move(value); }
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline CreateBotResult& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline CreateBotResult& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline CreateBotResult& AddBotMembers(const BotMember& value) { m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of bots in a network that was created.</p>
+     */
+    inline CreateBotResult& AddBotMembers(BotMember&& value) { m_botMembers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -438,6 +503,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_botTags;
 
     Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
+
+    BotType m_botType;
+
+    Aws::Vector<BotMember> m_botMembers;
   };
 
 } // namespace Model

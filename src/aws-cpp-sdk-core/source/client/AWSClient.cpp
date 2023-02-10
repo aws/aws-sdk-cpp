@@ -153,10 +153,7 @@ void AWSClient::SetServiceClientName(const Aws::String& name)
     m_serviceName = name;
     if (!m_customizedUserAgent)
     {
-        Aws::StringStream ss;
-        ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
-            << " " << Version::GetCompilerVersionString();
-        m_userAgent = ss.str();
+        m_userAgent = Aws::Client::ComputeUserAgentString();
     }
 }
 

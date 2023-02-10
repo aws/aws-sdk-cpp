@@ -18,13 +18,15 @@ using namespace Aws;
 
 DescribeBotVersionResult::DescribeBotVersionResult() : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
 }
 
 DescribeBotVersionResult::DescribeBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_idleSessionTTLInSeconds(0),
-    m_botStatus(BotStatus::NOT_SET)
+    m_botStatus(BotStatus::NOT_SET),
+    m_botType(BotType::NOT_SET)
 {
   *this = result;
 }
@@ -93,6 +95,30 @@ DescribeBotVersionResult& DescribeBotVersionResult::operator =(const Aws::Amazon
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
 
+  }
+
+  if(jsonValue.ValueExists("parentBotNetworks"))
+  {
+    Aws::Utils::Array<JsonView> parentBotNetworksJsonList = jsonValue.GetArray("parentBotNetworks");
+    for(unsigned parentBotNetworksIndex = 0; parentBotNetworksIndex < parentBotNetworksJsonList.GetLength(); ++parentBotNetworksIndex)
+    {
+      m_parentBotNetworks.push_back(parentBotNetworksJsonList[parentBotNetworksIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("botType"))
+  {
+    m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("botType"));
+
+  }
+
+  if(jsonValue.ValueExists("botMembers"))
+  {
+    Aws::Utils::Array<JsonView> botMembersJsonList = jsonValue.GetArray("botMembers");
+    for(unsigned botMembersIndex = 0; botMembersIndex < botMembersJsonList.GetLength(); ++botMembersIndex)
+    {
+      m_botMembers.push_back(botMembersJsonList[botMembersIndex].AsObject());
+    }
   }
 
 

@@ -14,6 +14,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/BotAliasLocaleSettings.h>
 #include <aws/lexv2-models/model/BotAliasHistoryEvent.h>
+#include <aws/lexv2-models/model/ParentBotNetwork.h>
 #include <utility>
 
 namespace Aws
@@ -448,6 +449,42 @@ namespace Model
      */
     inline DescribeBotAliasResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline const Aws::Vector<ParentBotNetwork>& GetParentBotNetworks() const{ return m_parentBotNetworks; }
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline void SetParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { m_parentBotNetworks = value; }
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline void SetParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { m_parentBotNetworks = std::move(value); }
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline DescribeBotAliasResult& WithParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { SetParentBotNetworks(value); return *this;}
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline DescribeBotAliasResult& WithParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { SetParentBotNetworks(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline DescribeBotAliasResult& AddParentBotNetworks(const ParentBotNetwork& value) { m_parentBotNetworks.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the networks to which the bot alias you described belongs.</p>
+     */
+    inline DescribeBotAliasResult& AddParentBotNetworks(ParentBotNetwork&& value) { m_parentBotNetworks.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botAliasId;
@@ -473,6 +510,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    Aws::Vector<ParentBotNetwork> m_parentBotNetworks;
   };
 
 } // namespace Model

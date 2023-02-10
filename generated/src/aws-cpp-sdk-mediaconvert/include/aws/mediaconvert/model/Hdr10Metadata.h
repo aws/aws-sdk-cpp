@@ -157,28 +157,28 @@ namespace Model
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.  This setting doesn't have a default value; you must
+     * candelas per square meter. This setting doesn't have a default value; you must
      * specify a value that is suitable for the content.
      */
     inline int GetMaxContentLightLevel() const{ return m_maxContentLightLevel; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.  This setting doesn't have a default value; you must
+     * candelas per square meter. This setting doesn't have a default value; you must
      * specify a value that is suitable for the content.
      */
     inline bool MaxContentLightLevelHasBeenSet() const { return m_maxContentLightLevelHasBeenSet; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.  This setting doesn't have a default value; you must
+     * candelas per square meter. This setting doesn't have a default value; you must
      * specify a value that is suitable for the content.
      */
     inline void SetMaxContentLightLevel(int value) { m_maxContentLightLevelHasBeenSet = true; m_maxContentLightLevel = value; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.  This setting doesn't have a default value; you must
+     * candelas per square meter. This setting doesn't have a default value; you must
      * specify a value that is suitable for the content.
      */
     inline Hdr10Metadata& WithMaxContentLightLevel(int value) { SetMaxContentLightLevel(value); return *this;}

@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline const Aws::String& GetInstanceRefreshId() const{ return m_instanceRefreshId; }
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline void SetInstanceRefreshId(const Aws::String& value) { m_instanceRefreshId = value; }
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline void SetInstanceRefreshId(Aws::String&& value) { m_instanceRefreshId = std::move(value); }
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline void SetInstanceRefreshId(const char* value) { m_instanceRefreshId.assign(value); }
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline StartInstanceRefreshResult& WithInstanceRefreshId(const Aws::String& value) { SetInstanceRefreshId(value); return *this;}
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline StartInstanceRefreshResult& WithInstanceRefreshId(Aws::String&& value) { SetInstanceRefreshId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique ID for tracking the progress of the request.</p>
+     * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
     inline StartInstanceRefreshResult& WithInstanceRefreshId(const char* value) { SetInstanceRefreshId(value); return *this;}
 

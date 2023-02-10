@@ -326,7 +326,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -346,7 +346,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -356,7 +356,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -367,7 +367,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -377,7 +377,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -387,7 +387,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -397,7 +397,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal

@@ -35,7 +35,8 @@ Contact::Contact() :
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false)
+    m_relatedContactIdHasBeenSet(false),
+    m_wisdomInfoHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Contact::Contact(JsonView jsonValue) :
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false)
+    m_relatedContactIdHasBeenSet(false),
+    m_wisdomInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +170,13 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_relatedContactIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WisdomInfo"))
+  {
+    m_wisdomInfo = jsonValue.GetObject("WisdomInfo");
+
+    m_wisdomInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +265,12 @@ JsonValue Contact::Jsonize() const
   if(m_relatedContactIdHasBeenSet)
   {
    payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
+
+  if(m_wisdomInfoHasBeenSet)
+  {
+   payload.WithObject("WisdomInfo", m_wisdomInfo.Jsonize());
 
   }
 

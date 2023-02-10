@@ -159,122 +159,138 @@ namespace Model
 
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
-     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
-     * parameter, or an Amazon S3 object. For the hosted configuration store and for
-     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
-     * the document name in the format
-     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
-     * (ARN). For a parameter, specify either the parameter name in the format
-     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
-     * object, specify the URI in the following format:
+     * <p>A URI to locate the configuration. You can specify the following:</p> <ul>
+     * <li> <p>For the AppConfig hosted configuration store and for feature flags,
+     * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
+     * Systems Manager Parameter Store parameter, specify either the parameter name in
+     * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
+     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
+     * <p>For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
+     * <p>For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
+     * (ARN).</p> </li> </ul>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

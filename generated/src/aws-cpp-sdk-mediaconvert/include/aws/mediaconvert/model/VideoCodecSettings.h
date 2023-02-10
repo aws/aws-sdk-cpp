@@ -150,37 +150,37 @@ namespace Model
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline const VideoCodec& GetCodec() const{ return m_codec; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline void SetCodec(const VideoCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline void SetCodec(VideoCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline VideoCodecSettings& WithCodec(const VideoCodec& value) { SetCodec(value); return *this;}
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object  VideoCodec.
+     * by the object VideoCodec.
      */
     inline VideoCodecSettings& WithCodec(VideoCodec&& value) { SetCodec(std::move(value)); return *this;}
 

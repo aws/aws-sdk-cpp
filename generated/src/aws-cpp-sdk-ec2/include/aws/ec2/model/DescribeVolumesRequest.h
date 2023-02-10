@@ -423,131 +423,91 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of volumes to return for this request. This value can be
+     * between 5 and 500; if you specify a value larger than 500, only 500 items are
+     * returned. If this parameter is not used, then all items are returned. You cannot
+     * specify this parameter and the volume IDs parameter in the same request. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of volumes to return for this request. This value can be
+     * between 5 and 500; if you specify a value larger than 500, only 500 items are
+     * returned. If this parameter is not used, then all items are returned. You cannot
+     * specify this parameter and the volume IDs parameter in the same request. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of volumes to return for this request. This value can be
+     * between 5 and 500; if you specify a value larger than 500, only 500 items are
+     * returned. If this parameter is not used, then all items are returned. You cannot
+     * specify this parameter and the volume IDs parameter in the same request. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
-     * in paginated output. When this parameter is used, <code>DescribeVolumes</code>
-     * only returns <code>MaxResults</code> results in a single page along with a
-     * <code>NextToken</code> response element. The remaining results of the initial
-     * request can be seen by sending another <code>DescribeVolumes</code> request with
-     * the returned <code>NextToken</code> value. This value can be between 5 and 500;
-     * if <code>MaxResults</code> is given a value larger than 500, only 500 results
-     * are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-     * returns all results. You cannot specify this parameter and the volume IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of volumes to return for this request. This value can be
+     * between 5 and 500; if you specify a value larger than 500, only 500 items are
+     * returned. If this parameter is not used, then all items are returned. You cannot
+     * specify this parameter and the volume IDs parameter in the same request. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline DescribeVolumesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline DescribeVolumesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline DescribeVolumesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value returned from a previous paginated
-     * <code>DescribeVolumes</code> request where <code>MaxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>NextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned from the previous request.</p>
      */
     inline DescribeVolumesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

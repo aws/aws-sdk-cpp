@@ -22,7 +22,8 @@ namespace Model
     Memcached,
     Nginx,
     PostgreSql,
-    Redis
+    Redis,
+    Kafka
   };
 
 namespace InferredWorkloadTypeMapper

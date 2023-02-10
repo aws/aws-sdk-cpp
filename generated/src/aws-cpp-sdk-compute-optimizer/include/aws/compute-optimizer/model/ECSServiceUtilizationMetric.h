@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p> Describes the utilization metric of an Amazon ECS service. </p> <p>To
-   * determine the performance difference between your current ECS service and the
-   * recommended option, compare the utilization metric data of your service against
-   * its projected utilization metric data.</p><p><h3>See Also:</h3>   <a
+   * determine the performance difference between your current Amazon ECS service and
+   * the recommended option, compare the utilization metric data of your service
+   * against its projected utilization metric data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ECSServiceUtilizationMetric">AWS
    * API Reference</a></p>
    */
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline const ECSServiceMetricName& GetName() const{ return m_name; }
 
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline void SetName(const ECSServiceMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline void SetName(ECSServiceMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline ECSServiceUtilizationMetric& WithName(const ECSServiceMetricName& value) { SetName(value); return *this;}
 
     /**
      * <p> The name of the utilization metric. </p> <p>The following utilization
      * metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU
-     * units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The
-     * amount of memory that is used in the service.</p> </li> </ul>
+     * capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> —
+     * The amount of memory that's used in the service.</p> </li> </ul>
      */
     inline ECSServiceUtilizationMetric& WithName(ECSServiceMetricName&& value) { SetName(std::move(value)); return *this;}
 

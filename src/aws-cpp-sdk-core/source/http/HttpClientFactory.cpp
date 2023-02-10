@@ -6,7 +6,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 
 #if AWS_SDK_USE_CRT_HTTP
-#include <aws/core/http/crt/CRTHttpClient.h>
+#include <aws/core/http/crt/CrtHttpClient.h>
 #include <aws/core/Globals.h>
 #endif
 #if ENABLE_CURL_CLIENT
@@ -67,7 +67,7 @@ namespace Aws
             std::shared_ptr<HttpClient> CreateHttpClient(const ClientConfiguration& clientConfiguration) const override
             {
 #if AWS_SDK_USE_CRT_HTTP
-                return Aws::MakeShared<CRTHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration, *GetDefaultClientBootstrap());
+                return Aws::MakeShared<CrtHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration, *GetDefaultClientBootstrap());
                 // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
                 // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
                 // Other clients: Curl is your default
@@ -202,6 +202,7 @@ namespace Aws
                 AWS_LOGSTREAM_FATAL(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Initializing Http Client failed!");
                 // assert just in case this is a misconfiguration at development time to make the dev's job easier.
                 assert(false && "Http client initialization failed. Some client configuration parameters are probably invalid");
+                std::abort();
             }
 
             return client;

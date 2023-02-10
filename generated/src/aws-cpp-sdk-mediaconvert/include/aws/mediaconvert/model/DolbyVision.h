@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * Create Dolby Vision Profile 5 or Profile 8.1  compatible video output.<p><h3>See
+   * Create Dolby Vision Profile 5 or Profile 8.1 compatible video output.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision">AWS
    * API Reference</a></p>

@@ -78,6 +78,7 @@
 #include <aws/autoscaling/model/PutWarmPoolRequest.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatRequest.h>
 #include <aws/autoscaling/model/ResumeProcessesRequest.h>
+#include <aws/autoscaling/model/RollbackInstanceRefreshRequest.h>
 #include <aws/autoscaling/model/SetDesiredCapacityRequest.h>
 #include <aws/autoscaling/model/SetInstanceHealthRequest.h>
 #include <aws/autoscaling/model/SetInstanceProtectionRequest.h>
@@ -690,6 +691,14 @@ ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesR
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeProcesses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ResumeProcessesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RollbackInstanceRefreshOutcome AutoScalingClient::RollbackInstanceRefresh(const RollbackInstanceRefreshRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RollbackInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RollbackInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RollbackInstanceRefreshOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesiredCapacityRequest& request) const

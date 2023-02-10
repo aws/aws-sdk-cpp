@@ -46,7 +46,7 @@ public:
 #endif
         m_client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
         m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), config);
-        //config.endpointOverride = "https://0xxxabcdefg123456789.com";
+        config.endpointOverride = "https://0xxxabcdefg123456789.com";
         m_clientWithWrongEndpoint = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
 

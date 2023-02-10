@@ -593,7 +593,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -603,7 +603,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -613,7 +613,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -623,7 +623,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
      * console for transcode jobs that use frame rate conversion, provide the value as
@@ -634,7 +634,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -644,7 +644,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -654,7 +654,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -664,7 +664,7 @@ namespace Model
 
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify
-     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator. When you use the console for
      * transcode jobs that use frame rate conversion, provide the value as a decimal
@@ -1490,37 +1490,37 @@ namespace Model
 
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline const H265SampleAdaptiveOffsetFilterMode& GetSampleAdaptiveOffsetFilterMode() const{ return m_sampleAdaptiveOffsetFilterMode; }
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline bool SampleAdaptiveOffsetFilterModeHasBeenSet() const { return m_sampleAdaptiveOffsetFilterModeHasBeenSet; }
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline void SetSampleAdaptiveOffsetFilterMode(const H265SampleAdaptiveOffsetFilterMode& value) { m_sampleAdaptiveOffsetFilterModeHasBeenSet = true; m_sampleAdaptiveOffsetFilterMode = value; }
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline void SetSampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode&& value) { m_sampleAdaptiveOffsetFilterModeHasBeenSet = true; m_sampleAdaptiveOffsetFilterMode = std::move(value); }
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline H265Settings& WithSampleAdaptiveOffsetFilterMode(const H265SampleAdaptiveOffsetFilterMode& value) { SetSampleAdaptiveOffsetFilterMode(value); return *this;}
 
     /**
-     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically
      * selects best strength based on content
      */
     inline H265Settings& WithSampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode&& value) { SetSampleAdaptiveOffsetFilterMode(std::move(value)); return *this;}
@@ -1890,10 +1890,10 @@ namespace Model
 
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.
@@ -1901,10 +1901,10 @@ namespace Model
     inline const H265Telecine& GetTelecine() const{ return m_telecine; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.
@@ -1912,10 +1912,10 @@ namespace Model
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.
@@ -1923,10 +1923,10 @@ namespace Model
     inline void SetTelecine(const H265Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.
@@ -1934,10 +1934,10 @@ namespace Model
     inline void SetTelecine(H265Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.
@@ -1945,10 +1945,10 @@ namespace Model
     inline H265Settings& WithTelecine(const H265Telecine& value) { SetTelecine(value); return *this;}
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field
      * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode) to identify the scan type for the output:
      * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
      * output from 23.976 input. - Soft: produces 23.976; the player converts this
      * output to 29.97i.

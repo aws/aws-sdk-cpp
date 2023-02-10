@@ -38,15 +38,15 @@ namespace Aws
         /**
          *  Common Runtime implementation of AWS SDK for C++ HttpClient interface.
          */
-        class AWS_CORE_API CRTHttpClient : public HttpClient {
+        class AWS_CORE_API CrtHttpClient : public HttpClient {
         public:
             using Base = HttpClient;
 
             /**
              * Initializes the client with relevant parameters from clientConfig.
              */
-            CRTHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap);
-            ~CRTHttpClient() override;
+            CrtHttpClient(const Aws::Client::ClientConfiguration& clientConfig, Crt::Io::ClientBootstrap& bootstrap);
+            ~CrtHttpClient() override;
 
             std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
@@ -59,7 +59,7 @@ namespace Aws
             mutable std::unordered_map<Aws::String, const std::shared_ptr<Crt::Http::HttpClientConnectionManager>> m_connectionPools;
             mutable std::mutex m_connectionPoolLock;
 
-            Crt::Optional<Crt::Io::TlsContext> m_context;
+            Crt::Io::TlsContext m_context;
             Crt::Optional<Crt::Http::HttpClientConnectionProxyOptions> m_proxyOptions;
 
             Crt::Io::ClientBootstrap& m_bootstrap;
@@ -67,7 +67,7 @@ namespace Aws
 
             std::shared_ptr<Crt::Http::HttpClientConnectionManager> GetWithCreateConnectionManagerForRequest(const std::shared_ptr<HttpRequest>& request, const Crt::Http::HttpClientConnectionOptions& connectionOptions) const;
             Crt::Http::HttpClientConnectionOptions CreateConnectionOptionsForRequest(const std::shared_ptr<HttpRequest>& request) const;
-            void CheckAndInitializeProxySettings(const Aws::Client::ClientConfiguration& clientConfig);
+            void CheckAndInitializeProxySettings();
 
             static Aws::String ResolveConnectionPoolKey(const URI& uri);
         };

@@ -36,49 +36,57 @@ namespace Model
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline DeleteUserRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline DeleteUserRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
-     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     * administrative API actions, as in accessing the API using Amazon Web Services
+     * credentials.</p>
      */
     inline DeleteUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 

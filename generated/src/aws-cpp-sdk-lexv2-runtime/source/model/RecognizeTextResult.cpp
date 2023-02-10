@@ -67,6 +67,12 @@ RecognizeTextResult& RecognizeTextResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("recognizedBotMember"))
+  {
+    m_recognizedBotMember = jsonValue.GetObject("recognizedBotMember");
+
+  }
+
 
 
   return *this;

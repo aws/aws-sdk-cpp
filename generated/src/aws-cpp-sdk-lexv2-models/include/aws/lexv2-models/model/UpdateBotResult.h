@@ -9,6 +9,9 @@
 #include <aws/lexv2-models/model/DataPrivacy.h>
 #include <aws/lexv2-models/model/BotStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/BotType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/BotMember.h>
 #include <utility>
 
 namespace Aws
@@ -320,6 +323,68 @@ namespace Model
      */
     inline UpdateBotResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of the bot that was updated.</p>
+     */
+    inline const BotType& GetBotType() const{ return m_botType; }
+
+    /**
+     * <p>The type of the bot that was updated.</p>
+     */
+    inline void SetBotType(const BotType& value) { m_botType = value; }
+
+    /**
+     * <p>The type of the bot that was updated.</p>
+     */
+    inline void SetBotType(BotType&& value) { m_botType = std::move(value); }
+
+    /**
+     * <p>The type of the bot that was updated.</p>
+     */
+    inline UpdateBotResult& WithBotType(const BotType& value) { SetBotType(value); return *this;}
+
+    /**
+     * <p>The type of the bot that was updated.</p>
+     */
+    inline UpdateBotResult& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembers = value; }
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembers = std::move(value); }
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline UpdateBotResult& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline UpdateBotResult& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline UpdateBotResult& AddBotMembers(const BotMember& value) { m_botMembers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of bot members in the network that was updated.</p>
+     */
+    inline UpdateBotResult& AddBotMembers(BotMember&& value) { m_botMembers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -339,6 +404,10 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    BotType m_botType;
+
+    Aws::Vector<BotMember> m_botMembers;
   };
 
 } // namespace Model
