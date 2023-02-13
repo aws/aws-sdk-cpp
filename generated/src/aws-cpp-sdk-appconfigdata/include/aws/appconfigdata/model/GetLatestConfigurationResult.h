@@ -39,50 +39,71 @@ namespace Model
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline const Aws::String& GetNextPollConfigurationToken() const{ return m_nextPollConfigurationToken; }
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline void SetNextPollConfigurationToken(const Aws::String& value) { m_nextPollConfigurationToken = value; }
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline void SetNextPollConfigurationToken(Aws::String&& value) { m_nextPollConfigurationToken = std::move(value); }
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline void SetNextPollConfigurationToken(const char* value) { m_nextPollConfigurationToken.assign(value); }
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const Aws::String& value) { SetNextPollConfigurationToken(value); return *this;}
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline GetLatestConfigurationResult& WithNextPollConfigurationToken(Aws::String&& value) { SetNextPollConfigurationToken(std::move(value)); return *this;}
 
     /**
      * <p>The latest token describing the current state of the configuration session.
-     * This MUST be provided to the next call to <code>GetLatestConfiguration.</code>
-     * </p>
+     * This <i>must</i> be provided to the next call to
+     * <code>GetLatestConfiguration.</code> </p>  <p>This token should only
+     * be used once. To support long poll use cases, the token is valid for up to 24
+     * hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the
+     * system returns <code>BadRequestException</code>.</p> 
      */
     inline GetLatestConfigurationResult& WithNextPollConfigurationToken(const char* value) { SetNextPollConfigurationToken(value); return *this;}
 
@@ -157,6 +178,63 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_configuration = Aws::Utils::Stream::ResponseStream(body); }
 
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabel = std::move(value); }
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline GetLatestConfigurationResult& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline GetLatestConfigurationResult& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The user-defined label for the AppConfig hosted configuration version. This
+     * attribute doesn't apply if the configuration is not from an AppConfig hosted
+     * configuration version. If the client already has the latest version of the
+     * configuration data, this value is empty.</p>
+     */
+    inline GetLatestConfigurationResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
   private:
 
     Aws::String m_nextPollConfigurationToken;
@@ -166,6 +244,8 @@ namespace Model
     Aws::String m_contentType;
 
   Aws::Utils::Stream::ResponseStream m_configuration;
+
+    Aws::String m_versionLabel;
   };
 
 } // namespace Model

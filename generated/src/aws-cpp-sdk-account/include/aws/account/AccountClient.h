@@ -109,6 +109,58 @@ namespace Account
         }
 
         /**
+         * <p>Disables (opts-out) a particular Region for an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableRegionOutcome DisableRegion(const Model::DisableRegionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableRegion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableRegionRequestT = Model::DisableRegionRequest>
+        Model::DisableRegionOutcomeCallable DisableRegionCallable(const DisableRegionRequestT& request) const
+        {
+            return SubmitCallable(&AccountClient::DisableRegion, request);
+        }
+
+        /**
+         * An Async wrapper for DisableRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableRegionRequestT = Model::DisableRegionRequest>
+        void DisableRegionAsync(const DisableRegionRequestT& request, const DisableRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccountClient::DisableRegion, request, handler, context);
+        }
+
+        /**
+         * <p>Enables (opts-in) a particular Region for an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableRegionOutcome EnableRegion(const Model::EnableRegionRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableRegion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableRegionRequestT = Model::EnableRegionRequest>
+        Model::EnableRegionOutcomeCallable EnableRegionCallable(const EnableRegionRequestT& request) const
+        {
+            return SubmitCallable(&AccountClient::EnableRegion, request);
+        }
+
+        /**
+         * An Async wrapper for EnableRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableRegionRequestT = Model::EnableRegionRequest>
+        void EnableRegionAsync(const EnableRegionRequestT& request, const EnableRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccountClient::EnableRegion, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
          * account.</p> <p>For complete details about how to use the alternate contact
          * operations, see <a
@@ -170,6 +222,60 @@ namespace Account
         void GetContactInformationAsync(const GetContactInformationRequestT& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AccountClient::GetContactInformation, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the opt-in status of a particular Region.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRegionOptStatusOutcome GetRegionOptStatus(const Model::GetRegionOptStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRegionOptStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRegionOptStatusRequestT = Model::GetRegionOptStatusRequest>
+        Model::GetRegionOptStatusOutcomeCallable GetRegionOptStatusCallable(const GetRegionOptStatusRequestT& request) const
+        {
+            return SubmitCallable(&AccountClient::GetRegionOptStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetRegionOptStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRegionOptStatusRequestT = Model::GetRegionOptStatusRequest>
+        void GetRegionOptStatusAsync(const GetRegionOptStatusRequestT& request, const GetRegionOptStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccountClient::GetRegionOptStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the Regions for a given account and their respective opt-in
+         * statuses. Optionally, this list can be filtered by the
+         * <code>region-opt-status-contains</code> parameter. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRegionsOutcome ListRegions(const Model::ListRegionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRegionsRequestT = Model::ListRegionsRequest>
+        Model::ListRegionsOutcomeCallable ListRegionsCallable(const ListRegionsRequestT& request) const
+        {
+            return SubmitCallable(&AccountClient::ListRegions, request);
+        }
+
+        /**
+         * An Async wrapper for ListRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRegionsRequestT = Model::ListRegionsRequest>
+        void ListRegionsAsync(const ListRegionsRequestT& request, const ListRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccountClient::ListRegions, request, handler, context);
         }
 
         /**

@@ -7,6 +7,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/NFSOnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/TGWOnDeviceServiceConfiguration.h>
+#include <aws/snowball/model/EKSOnDeviceServiceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +108,37 @@ namespace Model
      */
     inline OnDeviceServiceConfiguration& WithTGWOnDeviceService(TGWOnDeviceServiceConfiguration&& value) { SetTGWOnDeviceService(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline const EKSOnDeviceServiceConfiguration& GetEKSOnDeviceService() const{ return m_eKSOnDeviceService; }
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline bool EKSOnDeviceServiceHasBeenSet() const { return m_eKSOnDeviceServiceHasBeenSet; }
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline void SetEKSOnDeviceService(const EKSOnDeviceServiceConfiguration& value) { m_eKSOnDeviceServiceHasBeenSet = true; m_eKSOnDeviceService = value; }
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline void SetEKSOnDeviceService(EKSOnDeviceServiceConfiguration&& value) { m_eKSOnDeviceServiceHasBeenSet = true; m_eKSOnDeviceService = std::move(value); }
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline OnDeviceServiceConfiguration& WithEKSOnDeviceService(const EKSOnDeviceServiceConfiguration& value) { SetEKSOnDeviceService(value); return *this;}
+
+    /**
+     * <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+     */
+    inline OnDeviceServiceConfiguration& WithEKSOnDeviceService(EKSOnDeviceServiceConfiguration&& value) { SetEKSOnDeviceService(std::move(value)); return *this;}
+
   private:
 
     NFSOnDeviceServiceConfiguration m_nFSOnDeviceService;
@@ -114,6 +146,9 @@ namespace Model
 
     TGWOnDeviceServiceConfiguration m_tGWOnDeviceService;
     bool m_tGWOnDeviceServiceHasBeenSet = false;
+
+    EKSOnDeviceServiceConfiguration m_eKSOnDeviceService;
+    bool m_eKSOnDeviceServiceHasBeenSet = false;
   };
 
 } // namespace Model

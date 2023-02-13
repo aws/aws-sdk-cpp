@@ -20,6 +20,8 @@
 /* Service model headers required in AccountClient header */
 #include <aws/account/model/GetAlternateContactResult.h>
 #include <aws/account/model/GetContactInformationResult.h>
+#include <aws/account/model/GetRegionOptStatusResult.h>
+#include <aws/account/model/ListRegionsResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AccountClient header */
 
@@ -62,24 +64,36 @@ namespace Aws
     {
       /* Service model forward declarations required in AccountClient header */
       class DeleteAlternateContactRequest;
+      class DisableRegionRequest;
+      class EnableRegionRequest;
       class GetAlternateContactRequest;
       class GetContactInformationRequest;
+      class GetRegionOptStatusRequest;
+      class ListRegionsRequest;
       class PutAlternateContactRequest;
       class PutContactInformationRequest;
       /* End of service model forward declarations required in AccountClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> DeleteAlternateContactOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> DisableRegionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> EnableRegionOutcome;
       typedef Aws::Utils::Outcome<GetAlternateContactResult, AccountError> GetAlternateContactOutcome;
       typedef Aws::Utils::Outcome<GetContactInformationResult, AccountError> GetContactInformationOutcome;
+      typedef Aws::Utils::Outcome<GetRegionOptStatusResult, AccountError> GetRegionOptStatusOutcome;
+      typedef Aws::Utils::Outcome<ListRegionsResult, AccountError> ListRegionsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> PutAlternateContactOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> PutContactInformationOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<DeleteAlternateContactOutcome> DeleteAlternateContactOutcomeCallable;
+      typedef std::future<DisableRegionOutcome> DisableRegionOutcomeCallable;
+      typedef std::future<EnableRegionOutcome> EnableRegionOutcomeCallable;
       typedef std::future<GetAlternateContactOutcome> GetAlternateContactOutcomeCallable;
       typedef std::future<GetContactInformationOutcome> GetContactInformationOutcomeCallable;
+      typedef std::future<GetRegionOptStatusOutcome> GetRegionOptStatusOutcomeCallable;
+      typedef std::future<ListRegionsOutcome> ListRegionsOutcomeCallable;
       typedef std::future<PutAlternateContactOutcome> PutAlternateContactOutcomeCallable;
       typedef std::future<PutContactInformationOutcome> PutContactInformationOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -89,8 +103,12 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const AccountClient*, const Model::DeleteAlternateContactRequest&, const Model::DeleteAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlternateContactResponseReceivedHandler;
+    typedef std::function<void(const AccountClient*, const Model::DisableRegionRequest&, const Model::DisableRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRegionResponseReceivedHandler;
+    typedef std::function<void(const AccountClient*, const Model::EnableRegionRequest&, const Model::EnableRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRegionResponseReceivedHandler;
     typedef std::function<void(const AccountClient*, const Model::GetAlternateContactRequest&, const Model::GetAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAlternateContactResponseReceivedHandler;
     typedef std::function<void(const AccountClient*, const Model::GetContactInformationRequest&, const Model::GetContactInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactInformationResponseReceivedHandler;
+    typedef std::function<void(const AccountClient*, const Model::GetRegionOptStatusRequest&, const Model::GetRegionOptStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegionOptStatusResponseReceivedHandler;
+    typedef std::function<void(const AccountClient*, const Model::ListRegionsRequest&, const Model::ListRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegionsResponseReceivedHandler;
     typedef std::function<void(const AccountClient*, const Model::PutAlternateContactRequest&, const Model::PutAlternateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAlternateContactResponseReceivedHandler;
     typedef std::function<void(const AccountClient*, const Model::PutContactInformationRequest&, const Model::PutContactInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContactInformationResponseReceivedHandler;
     /* End of service model async handlers definitions */
