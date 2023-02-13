@@ -36,10 +36,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline const Aws::String& GetInitialConfigurationToken() const{ return m_initialConfigurationToken; }
 
@@ -47,10 +52,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline void SetInitialConfigurationToken(const Aws::String& value) { m_initialConfigurationToken = value; }
 
@@ -58,10 +68,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline void SetInitialConfigurationToken(Aws::String&& value) { m_initialConfigurationToken = std::move(value); }
 
@@ -69,10 +84,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline void SetInitialConfigurationToken(const char* value) { m_initialConfigurationToken.assign(value); }
 
@@ -80,10 +100,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(const Aws::String& value) { SetInitialConfigurationToken(value); return *this;}
 
@@ -91,10 +116,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(Aws::String&& value) { SetInitialConfigurationToken(std::move(value)); return *this;}
 
@@ -102,10 +132,15 @@ namespace Model
      * <p>Token encapsulating state about the configuration session. Provide this token
      * to the <code>GetLatestConfiguration</code> API to retrieve configuration
      * data.</p>  <p>This token should only be used once in your first call
-     * to <code>GetLatestConfiguration</code>. You MUST use the new token in the
+     * to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
      * <code>GetLatestConfiguration</code> response
      * (<code>NextPollConfigurationToken</code>) in each subsequent call to
-     * <code>GetLatestConfiguration</code>.</p> 
+     * <code>GetLatestConfiguration</code>.</p> <p>The
+     * <code>InitialConfigurationToken</code> and
+     * <code>NextPollConfigurationToken</code> should only be used once. To support
+     * long poll use cases, the tokens are valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system
+     * returns <code>BadRequestException</code>.</p> 
      */
     inline StartConfigurationSessionResult& WithInitialConfigurationToken(const char* value) { SetInitialConfigurationToken(value); return *this;}
 

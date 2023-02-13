@@ -220,17 +220,14 @@ namespace Snowball
          * T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
          * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li>
          * <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
-         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>V3_5C</b>
-         * </p> <ul> <li> <p>Capacity: T32</p> </li> <li> <p>Description: Snowball Edge
-         * Compute Optimized without GPU</p> </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description:
-         * Original Snowball device</p>  <p>This device is only available in the
-         * Ningxia, Beijing, and Singapore Amazon Web Services Region </p>  </li>
-         * </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul> <li>
-         * <p>Capacity: T80</p> </li> <li> <p>Description: Original Snowball device</p>
-         *  <p>This device is only available in the Ningxia, Beijing, and Singapore
-         * Amazon Web Services Region. </p>  </li> </ul> <p/> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
+         * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
+         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
+         * Singapore Amazon Web Services Region </p>  </li> </ul> <p/> </li> <li>
+         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li>
+         * <p>Description: Original Snowball device</p>  <p>This device is only
+         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
+         * </p>  </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -713,6 +710,33 @@ namespace Snowball
         void ListLongTermPricingAsync(const ListLongTermPricingRequestT& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SnowballClient::ListLongTermPricing, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all supported versions for Snow on-device services. Returns an array of
+         * <code>ServiceVersion</code> object containing the supported versions for a
+         * particular service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceVersionsOutcome ListServiceVersions(const Model::ListServiceVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServiceVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceVersionsRequestT = Model::ListServiceVersionsRequest>
+        Model::ListServiceVersionsOutcomeCallable ListServiceVersionsCallable(const ListServiceVersionsRequestT& request) const
+        {
+            return SubmitCallable(&SnowballClient::ListServiceVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceVersionsRequestT = Model::ListServiceVersionsRequest>
+        void ListServiceVersionsAsync(const ListServiceVersionsRequestT& request, const ListServiceVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SnowballClient::ListServiceVersions, request, handler, context);
         }
 
         /**

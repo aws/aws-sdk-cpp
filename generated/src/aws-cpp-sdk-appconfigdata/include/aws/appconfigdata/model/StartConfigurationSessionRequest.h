@@ -158,28 +158,28 @@ namespace Model
     /**
      * <p>Sets a constraint on a session. If you specify a value of, for example, 60
      * seconds, then the client that established the session can't call
-     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
+     * <a>GetLatestConfiguration</a> more frequently than every 60 seconds.</p>
      */
     inline int GetRequiredMinimumPollIntervalInSeconds() const{ return m_requiredMinimumPollIntervalInSeconds; }
 
     /**
      * <p>Sets a constraint on a session. If you specify a value of, for example, 60
      * seconds, then the client that established the session can't call
-     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
+     * <a>GetLatestConfiguration</a> more frequently than every 60 seconds.</p>
      */
     inline bool RequiredMinimumPollIntervalInSecondsHasBeenSet() const { return m_requiredMinimumPollIntervalInSecondsHasBeenSet; }
 
     /**
      * <p>Sets a constraint on a session. If you specify a value of, for example, 60
      * seconds, then the client that established the session can't call
-     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
+     * <a>GetLatestConfiguration</a> more frequently than every 60 seconds.</p>
      */
     inline void SetRequiredMinimumPollIntervalInSeconds(int value) { m_requiredMinimumPollIntervalInSecondsHasBeenSet = true; m_requiredMinimumPollIntervalInSeconds = value; }
 
     /**
      * <p>Sets a constraint on a session. If you specify a value of, for example, 60
      * seconds, then the client that established the session can't call
-     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
+     * <a>GetLatestConfiguration</a> more frequently than every 60 seconds.</p>
      */
     inline StartConfigurationSessionRequest& WithRequiredMinimumPollIntervalInSeconds(int value) { SetRequiredMinimumPollIntervalInSeconds(value); return *this;}
 

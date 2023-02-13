@@ -25,7 +25,8 @@ GetLatestConfigurationResult::GetLatestConfigurationResult(GetLatestConfiguratio
     m_nextPollConfigurationToken(std::move(toMove.m_nextPollConfigurationToken)),
     m_nextPollIntervalInSeconds(toMove.m_nextPollIntervalInSeconds),
     m_contentType(std::move(toMove.m_contentType)),
-    m_configuration(std::move(toMove.m_configuration))
+    m_configuration(std::move(toMove.m_configuration)),
+    m_versionLabel(std::move(toMove.m_versionLabel))
 {
 }
 
@@ -40,6 +41,7 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator=(GetLatestC
    m_nextPollIntervalInSeconds = toMove.m_nextPollIntervalInSeconds;
    m_contentType = std::move(toMove.m_contentType);
    m_configuration = std::move(toMove.m_configuration);
+   m_versionLabel = std::move(toMove.m_versionLabel);
 
    return *this;
 }
@@ -71,6 +73,12 @@ GetLatestConfigurationResult& GetLatestConfigurationResult::operator =(Aws::Amaz
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& versionLabelIter = headers.find("version-label");
+  if(versionLabelIter != headers.end())
+  {
+    m_versionLabel = versionLabelIter->second;
   }
 
    return *this;

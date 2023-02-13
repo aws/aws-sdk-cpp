@@ -29,7 +29,12 @@ namespace AppConfigData
    * wait between calls to <code>GetLatestConfiguration</code>.</p> </li> </ul> <p>In
    * response, AppConfig provides an <code>InitialConfigurationToken</code> to be
    * given to the session's client and used the first time it calls
-   * <code>GetLatestConfiguration</code> for that session.</p> <p>When calling
+   * <code>GetLatestConfiguration</code> for that session.</p>  <p>This
+   * token should only be used once in your first call to
+   * <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the
+   * <code>GetLatestConfiguration</code> response
+   * (<code>NextPollConfigurationToken</code>) in each subsequent call to
+   * <code>GetLatestConfiguration</code>.</p>  <p>When calling
    * <code>GetLatestConfiguration</code>, your client code sends the most recent
    * <code>ConfigurationToken</code> value it has and receives in response:</p> <ul>
    * <li> <p> <code>NextPollConfigurationToken</code>: the
@@ -41,11 +46,15 @@ namespace AppConfigData
    * of the value sent on the <code>StartConfigurationSession</code> call.</p> </li>
    * <li> <p>The configuration: the latest data intended for the session. This may be
    * empty if the client already has the latest version of the configuration.</p>
-   * </li> </ul> <p>For more information and to view example CLI commands that show
-   * how to retrieve a configuration using the AppConfig Data
-   * <code>StartConfigurationSession</code> and <code>GetLatestConfiguration</code>
-   * API actions, see <a
-   * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+   * </li> </ul>  <p>The <code>InitialConfigurationToken</code> and
+   * <code>NextPollConfigurationToken</code> should only be used once. To support
+   * long poll use cases, the tokens are valid for up to 24 hours. If a
+   * <code>GetLatestConfiguration</code> call uses an expired token, the system
+   * returns <code>BadRequestException</code>.</p>  <p>For more
+   * information and to view example CLI commands that show how to retrieve a
+   * configuration using the AppConfig Data <code>StartConfigurationSession</code>
+   * and <code>GetLatestConfiguration</code> API actions, see <a
+   * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
    * the configuration</a> in the <i>AppConfig User Guide</i>.</p>
    */
   class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>
@@ -108,7 +117,7 @@ namespace AppConfigData
          * configuration data if the client already has the latest version. For more
          * information about this API action and to view example CLI commands that show how
          * to use it with the <a>StartConfigurationSession</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
          * the configuration</a> in the <i>AppConfig User Guide</i>. </p> 
          * <p>Note the following important information.</p> <ul> <li> <p>Each configuration
          * token is only valid for one call to <code>GetLatestConfiguration</code>. The
@@ -146,7 +155,7 @@ namespace AppConfigData
          * <p>Starts a configuration session used to retrieve a deployed configuration. For
          * more information about this API action and to view example CLI commands that
          * show how to use it with the <a>GetLatestConfiguration</a> API action, see <a
-         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+         * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
          * the configuration</a> in the <i>AppConfig User Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession">AWS

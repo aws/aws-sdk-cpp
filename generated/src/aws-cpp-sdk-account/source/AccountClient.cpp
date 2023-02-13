@@ -22,8 +22,12 @@
 #include <aws/account/AccountErrorMarshaller.h>
 #include <aws/account/AccountEndpointProvider.h>
 #include <aws/account/model/DeleteAlternateContactRequest.h>
+#include <aws/account/model/DisableRegionRequest.h>
+#include <aws/account/model/EnableRegionRequest.h>
 #include <aws/account/model/GetAlternateContactRequest.h>
 #include <aws/account/model/GetContactInformationRequest.h>
+#include <aws/account/model/GetRegionOptStatusRequest.h>
+#include <aws/account/model/ListRegionsRequest.h>
 #include <aws/account/model/PutAlternateContactRequest.h>
 #include <aws/account/model/PutContactInformationRequest.h>
 
@@ -163,6 +167,24 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
   return DeleteAlternateContactOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/disableRegion");
+  return DisableRegionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/enableRegion");
+  return EnableRegionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -179,6 +201,24 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/getContactInformation");
   return GetContactInformationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRegionOptStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRegionOptStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/getRegionOptStatus");
+  return GetRegionOptStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRegionsOutcome AccountClient::ListRegions(const ListRegionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRegions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRegions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/listRegions");
+  return ListRegionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const

@@ -73,26 +73,26 @@ namespace Model
 
 
     /**
-     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
-     * the device should be renewed.</p>
+     * <p>Specifies whether the current long-term pricing type for the device should be
+     * renewed.</p>
      */
     inline bool GetIsLongTermPricingAutoRenew() const{ return m_isLongTermPricingAutoRenew; }
 
     /**
-     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
-     * the device should be renewed.</p>
+     * <p>Specifies whether the current long-term pricing type for the device should be
+     * renewed.</p>
      */
     inline bool IsLongTermPricingAutoRenewHasBeenSet() const { return m_isLongTermPricingAutoRenewHasBeenSet; }
 
     /**
-     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
-     * the device should be renewed.</p>
+     * <p>Specifies whether the current long-term pricing type for the device should be
+     * renewed.</p>
      */
     inline void SetIsLongTermPricingAutoRenew(bool value) { m_isLongTermPricingAutoRenewHasBeenSet = true; m_isLongTermPricingAutoRenew = value; }
 
     /**
-     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
-     * the device should be renewed.</p>
+     * <p>Specifies whether the current long-term pricing type for the device should be
+     * renewed.</p>
      */
     inline CreateLongTermPricingRequest& WithIsLongTermPricingAutoRenew(bool value) { SetIsLongTermPricingAutoRenew(value); return *this;}
 

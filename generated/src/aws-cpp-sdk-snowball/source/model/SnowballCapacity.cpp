@@ -27,8 +27,8 @@ namespace Aws
         static const int T98_HASH = HashingUtils::HashString("T98");
         static const int T8_HASH = HashingUtils::HashString("T8");
         static const int T14_HASH = HashingUtils::HashString("T14");
-        static const int NoPreference_HASH = HashingUtils::HashString("NoPreference");
         static const int T32_HASH = HashingUtils::HashString("T32");
+        static const int NoPreference_HASH = HashingUtils::HashString("NoPreference");
 
 
         SnowballCapacity GetSnowballCapacityForName(const Aws::String& name)
@@ -62,13 +62,13 @@ namespace Aws
           {
             return SnowballCapacity::T14;
           }
-          else if (hashCode == NoPreference_HASH)
-          {
-            return SnowballCapacity::NoPreference;
-          }
           else if (hashCode == T32_HASH)
           {
             return SnowballCapacity::T32;
+          }
+          else if (hashCode == NoPreference_HASH)
+          {
+            return SnowballCapacity::NoPreference;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -98,10 +98,10 @@ namespace Aws
             return "T8";
           case SnowballCapacity::T14:
             return "T14";
-          case SnowballCapacity::NoPreference:
-            return "NoPreference";
           case SnowballCapacity::T32:
             return "T32";
+          case SnowballCapacity::NoPreference:
+            return "NoPreference";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
