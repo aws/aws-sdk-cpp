@@ -27,7 +27,8 @@ GetHostedConfigurationVersionResult::GetHostedConfigurationVersionResult(GetHost
     m_versionNumber(toMove.m_versionNumber),
     m_description(std::move(toMove.m_description)),
     m_content(std::move(toMove.m_content)),
-    m_contentType(std::move(toMove.m_contentType))
+    m_contentType(std::move(toMove.m_contentType)),
+    m_versionLabel(std::move(toMove.m_versionLabel))
 {
 }
 
@@ -44,6 +45,7 @@ GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operat
    m_description = std::move(toMove.m_description);
    m_content = std::move(toMove.m_content);
    m_contentType = std::move(toMove.m_contentType);
+   m_versionLabel = std::move(toMove.m_versionLabel);
 
    return *this;
 }
@@ -87,6 +89,12 @@ GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operat
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& versionLabelIter = headers.find("versionlabel");
+  if(versionLabelIter != headers.end())
+  {
+    m_versionLabel = versionLabelIter->second;
   }
 
    return *this;

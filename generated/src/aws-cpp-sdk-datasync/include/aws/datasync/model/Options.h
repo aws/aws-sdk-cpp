@@ -209,7 +209,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline const OverwriteMode& GetOverwriteMode() const{ return m_overwriteMode; }
 
@@ -222,7 +222,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline bool OverwriteModeHasBeenSet() const { return m_overwriteModeHasBeenSet; }
 
@@ -235,7 +235,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline void SetOverwriteMode(const OverwriteMode& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = value; }
 
@@ -248,7 +248,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline void SetOverwriteMode(OverwriteMode&& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = std::move(value); }
 
@@ -261,7 +261,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline Options& WithOverwriteMode(const OverwriteMode& value) { SetOverwriteMode(value); return *this;}
 
@@ -274,7 +274,7 @@ namespace Model
      * storage classes have specific behaviors that can affect your Amazon S3 storage
      * cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p>
+     * when working with Amazon S3 storage classes in DataSync</a>.</p>
      */
     inline Options& WithOverwriteMode(OverwriteMode&& value) { SetOverwriteMode(std::move(value)); return *this;}
 
@@ -607,10 +607,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline const PreserveDeletedFiles& GetPreserveDeletedFiles() const{ return m_preserveDeletedFiles; }
 
@@ -620,10 +623,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline bool PreserveDeletedFilesHasBeenSet() const { return m_preserveDeletedFilesHasBeenSet; }
 
@@ -633,10 +639,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline void SetPreserveDeletedFiles(const PreserveDeletedFiles& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = value; }
 
@@ -646,10 +655,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline void SetPreserveDeletedFiles(PreserveDeletedFiles&& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = std::move(value); }
 
@@ -659,10 +671,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline Options& WithPreserveDeletedFiles(const PreserveDeletedFiles& value) { SetPreserveDeletedFiles(value); return *this;}
 
@@ -672,10 +687,13 @@ namespace Model
      * If your task deletes objects, you might incur minimum storage duration charges
      * for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a>.</p> <p>Default
+     * when working with Amazon S3 storage classes in DataSync</a>.</p> <p>Default
      * value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Ignore such
      * destination files (recommended). </p> <p> <code>REMOVE</code>: Delete
-     * destination files that aren’t present in the source.</p>
+     * destination files that aren’t present in the source.</p>  <p>If you set
+     * this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+     * to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
+     * destination location and doesn't know what to delete.</p> 
      */
     inline Options& WithPreserveDeletedFiles(PreserveDeletedFiles&& value) { SetPreserveDeletedFiles(std::move(value)); return *this;}
 

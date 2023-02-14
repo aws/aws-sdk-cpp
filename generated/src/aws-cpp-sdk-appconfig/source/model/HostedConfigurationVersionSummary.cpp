@@ -24,7 +24,8 @@ HostedConfigurationVersionSummary::HostedConfigurationVersionSummary() :
     m_versionNumber(0),
     m_versionNumberHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_versionLabelHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ HostedConfigurationVersionSummary::HostedConfigurationVersionSummary(JsonView js
     m_versionNumber(0),
     m_versionNumberHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_versionLabelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ HostedConfigurationVersionSummary& HostedConfigurationVersionSummary::operator =
     m_contentTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VersionLabel"))
+  {
+    m_versionLabel = jsonValue.GetString("VersionLabel");
+
+    m_versionLabelHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue HostedConfigurationVersionSummary::Jsonize() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", m_contentType);
+
+  }
+
+  if(m_versionLabelHasBeenSet)
+  {
+   payload.WithString("VersionLabel", m_versionLabel);
 
   }
 

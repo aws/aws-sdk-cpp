@@ -157,59 +157,61 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline const Aws::String& GetStorageVirtualMachineArn() const{ return m_storageVirtualMachineArn; }
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline bool StorageVirtualMachineArnHasBeenSet() const { return m_storageVirtualMachineArnHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline void SetStorageVirtualMachineArn(const Aws::String& value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn = value; }
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline void SetStorageVirtualMachineArn(Aws::String&& value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline void SetStorageVirtualMachineArn(const char* value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(const Aws::String& value) { SetStorageVirtualMachineArn(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(Aws::String&& value) { SetStorageVirtualMachineArn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the storage virtual machine (SVM) on your file system
-     * where you're copying data to or from.</p>
+     * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
+     * where you want to copy data to or from.</p>
      */
     inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(const char* value) { SetStorageVirtualMachineArn(value); return *this;}
 
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -217,10 +219,12 @@ namespace Model
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -228,10 +232,12 @@ namespace Model
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -239,10 +245,12 @@ namespace Model
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -250,10 +258,12 @@ namespace Model
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -261,10 +271,12 @@ namespace Model
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -272,10 +284,12 @@ namespace Model
     inline CreateLocationFsxOntapRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
@@ -283,10 +297,12 @@ namespace Model
     inline CreateLocationFsxOntapRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the junction path (also known as a mount point) in the SVM volume
-     * where you're copying data to or from (for example, <code>/vol1</code>).</p>
-     *  <p>Don't specify a junction path in the SVM's root volume. For more
-     * information, see <a
+     * <p>Specifies a path to the file share in the SVM where you'll copy your
+     * data.</p> <p>You can specify a junction path (also known as a mount point),
+     * qtree path (for NFS file shares), or share name (for SMB file shares). For
+     * example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>,
+     * or <code>/share1</code>.</p>  <p>Don't specify a junction path in the
+     * SVM's root volume. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 

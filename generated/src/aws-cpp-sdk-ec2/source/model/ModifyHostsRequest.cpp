@@ -17,7 +17,9 @@ ModifyHostsRequest::ModifyHostsRequest() :
     m_hostRecovery(HostRecovery::NOT_SET),
     m_hostRecoveryHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false)
+    m_instanceFamilyHasBeenSet(false),
+    m_hostMaintenance(HostMaintenance::NOT_SET),
+    m_hostMaintenanceHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,11 @@ Aws::String ModifyHostsRequest::SerializePayload() const
   if(m_instanceFamilyHasBeenSet)
   {
     ss << "InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
+  }
+
+  if(m_hostMaintenanceHasBeenSet)
+  {
+    ss << "HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
   }
 
   ss << "Version=2016-11-15";

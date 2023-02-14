@@ -23,6 +23,8 @@ namespace Aws
         static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
         static const int SMB2_HASH = HashingUtils::HashString("SMB2");
         static const int SMB3_HASH = HashingUtils::HashString("SMB3");
+        static const int SMB1_HASH = HashingUtils::HashString("SMB1");
+        static const int SMB2_0_HASH = HashingUtils::HashString("SMB2_0");
 
 
         SmbVersion GetSmbVersionForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == SMB3_HASH)
           {
             return SmbVersion::SMB3;
+          }
+          else if (hashCode == SMB1_HASH)
+          {
+            return SmbVersion::SMB1;
+          }
+          else if (hashCode == SMB2_0_HASH)
+          {
+            return SmbVersion::SMB2_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "SMB2";
           case SmbVersion::SMB3:
             return "SMB3";
+          case SmbVersion::SMB1:
+            return "SMB1";
+          case SmbVersion::SMB2_0:
+            return "SMB2_0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

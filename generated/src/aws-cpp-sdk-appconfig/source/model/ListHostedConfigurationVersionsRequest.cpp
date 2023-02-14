@@ -20,7 +20,8 @@ ListHostedConfigurationVersionsRequest::ListHostedConfigurationVersionsRequest()
     m_configurationProfileIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_versionLabelHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,13 @@ void ListHostedConfigurationVersionsRequest::AddQueryStringParameters(URI& uri) 
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("next_token", ss.str());
+      ss.str("");
+    }
+
+    if(m_versionLabelHasBeenSet)
+    {
+      ss << m_versionLabel;
+      uri.AddQueryStringParameter("version_label", ss.str());
       ss.str("");
     }
 

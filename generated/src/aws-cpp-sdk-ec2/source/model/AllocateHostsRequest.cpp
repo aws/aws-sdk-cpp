@@ -22,7 +22,9 @@ AllocateHostsRequest::AllocateHostsRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_hostRecovery(HostRecovery::NOT_SET),
     m_hostRecoveryHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_hostMaintenance(HostMaintenance::NOT_SET),
+    m_hostMaintenanceHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,11 @@ Aws::String AllocateHostsRequest::SerializePayload() const
   if(m_outpostArnHasBeenSet)
   {
     ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
+  if(m_hostMaintenanceHasBeenSet)
+  {
+    ss << "HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
   }
 
   ss << "Version=2016-11-15";

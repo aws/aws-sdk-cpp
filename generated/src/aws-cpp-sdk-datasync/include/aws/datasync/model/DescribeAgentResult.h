@@ -42,37 +42,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline void SetAgentArn(const Aws::String& value) { m_agentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline void SetAgentArn(Aws::String&& value) { m_agentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline void SetAgentArn(const char* value) { m_agentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline DescribeAgentResult& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline DescribeAgentResult& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     * <p>The ARN of the agent.</p>
      */
     inline DescribeAgentResult& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
 

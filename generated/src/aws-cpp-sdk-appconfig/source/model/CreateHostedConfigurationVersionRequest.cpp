@@ -20,7 +20,8 @@ CreateHostedConfigurationVersionRequest::CreateHostedConfigurationVersionRequest
     m_configurationProfileIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false)
+    m_latestVersionNumberHasBeenSet(false),
+    m_versionLabelHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,13 @@ Aws::Http::HeaderValueCollection CreateHostedConfigurationVersionRequest::GetReq
   {
     ss << m_latestVersionNumber;
     headers.emplace("latest-version-number",  ss.str());
+    ss.str("");
+  }
+
+  if(m_versionLabelHasBeenSet)
+  {
+    ss << m_versionLabel;
+    headers.emplace("versionlabel",  ss.str());
     ss.str("");
   }
 
