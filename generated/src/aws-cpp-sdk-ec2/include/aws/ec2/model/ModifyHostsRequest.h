@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/HostRecovery.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/HostMaintenance.h>
 #include <utility>
 
 namespace Aws
@@ -326,6 +327,55 @@ namespace Model
      */
     inline ModifyHostsRequest& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const HostMaintenance& GetHostMaintenance() const{ return m_hostMaintenance; }
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool HostMaintenanceHasBeenSet() const { return m_hostMaintenanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetHostMaintenance(const HostMaintenance& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetHostMaintenance(HostMaintenance&& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = std::move(value); }
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline ModifyHostsRequest& WithHostMaintenance(const HostMaintenance& value) { SetHostMaintenance(value); return *this;}
+
+    /**
+     * <p>Indicates whether to enable or disable host maintenance for the Dedicated
+     * Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
+     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline ModifyHostsRequest& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -342,6 +392,9 @@ namespace Model
 
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet = false;
+
+    HostMaintenance m_hostMaintenance;
+    bool m_hostMaintenanceHasBeenSet = false;
   };
 
 } // namespace Model

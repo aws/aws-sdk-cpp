@@ -198,42 +198,58 @@ namespace Model
 
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline const Aws::String& GetConfigurationVersion() const{ return m_configurationVersion; }
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline bool ConfigurationVersionHasBeenSet() const { return m_configurationVersionHasBeenSet; }
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline void SetConfigurationVersion(const Aws::String& value) { m_configurationVersionHasBeenSet = true; m_configurationVersion = value; }
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline void SetConfigurationVersion(Aws::String&& value) { m_configurationVersionHasBeenSet = true; m_configurationVersion = std::move(value); }
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline void SetConfigurationVersion(const char* value) { m_configurationVersionHasBeenSet = true; m_configurationVersion.assign(value); }
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline StartDeploymentRequest& WithConfigurationVersion(const Aws::String& value) { SetConfigurationVersion(value); return *this;}
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline StartDeploymentRequest& WithConfigurationVersion(Aws::String&& value) { SetConfigurationVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration version to deploy.</p>
+     * <p>The configuration version to deploy. If deploying an AppConfig hosted
+     * configuration version, you can specify either the version number or version
+     * label.</p>
      */
     inline StartDeploymentRequest& WithConfigurationVersion(const char* value) { SetConfigurationVersion(value); return *this;}
 

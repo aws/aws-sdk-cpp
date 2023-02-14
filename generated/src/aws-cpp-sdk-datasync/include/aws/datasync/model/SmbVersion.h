@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     AUTOMATIC,
     SMB2,
-    SMB3
+    SMB3,
+    SMB1,
+    SMB2_0
   };
 
 namespace SmbVersionMapper

@@ -237,6 +237,47 @@ namespace Model
      */
     inline HostedConfigurationVersionSummary& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline HostedConfigurationVersionSummary& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline HostedConfigurationVersionSummary& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline HostedConfigurationVersionSummary& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -253,6 +294,9 @@ namespace Model
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
+
+    Aws::String m_versionLabel;
+    bool m_versionLabelHasBeenSet = false;
   };
 
 } // namespace Model

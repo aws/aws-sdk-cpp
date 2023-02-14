@@ -221,6 +221,42 @@ namespace Model
      */
     inline CreateHostedConfigurationVersionResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabel = std::move(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline CreateHostedConfigurationVersionResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -234,6 +270,8 @@ namespace Model
   Aws::Utils::Stream::ResponseStream m_content;
 
     Aws::String m_contentType;
+
+    Aws::String m_versionLabel;
   };
 
 } // namespace Model

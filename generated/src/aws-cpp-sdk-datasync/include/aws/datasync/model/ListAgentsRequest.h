@@ -38,71 +38,75 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of agents to list.</p>
+     * <p>Specifies the maximum number of DataSync agents to list in a response. By
+     * default, a response shows a maximum of 100 agents.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of agents to list.</p>
+     * <p>Specifies the maximum number of DataSync agents to list in a response. By
+     * default, a response shows a maximum of 100 agents.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of agents to list.</p>
+     * <p>Specifies the maximum number of DataSync agents to list in a response. By
+     * default, a response shows a maximum of 100 agents.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of agents to list.</p>
+     * <p>Specifies the maximum number of DataSync agents to list in a response. By
+     * default, a response shows a maximum of 100 agents.</p>
      */
     inline ListAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline ListAgentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline ListAgentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of agents.</p>
+     * <p>Specifies an opaque string that indicates the position to begin the next list
+     * of results in the response.</p>
      */
     inline ListAgentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

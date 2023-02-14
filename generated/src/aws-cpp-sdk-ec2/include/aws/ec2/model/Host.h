@@ -15,6 +15,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/HostRecovery.h>
 #include <aws/ec2/model/AllowsMultipleInstanceTypes.h>
+#include <aws/ec2/model/HostMaintenance.h>
 #include <aws/ec2/model/HostInstance.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -766,6 +767,43 @@ namespace Model
      */
     inline Host& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline const HostMaintenance& GetHostMaintenance() const{ return m_hostMaintenance; }
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline bool HostMaintenanceHasBeenSet() const { return m_hostMaintenanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline void SetHostMaintenance(const HostMaintenance& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = value; }
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline void SetHostMaintenance(HostMaintenance&& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = std::move(value); }
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline Host& WithHostMaintenance(const HostMaintenance& value) { SetHostMaintenance(value); return *this;}
+
+    /**
+     * <p>Indicates whether host maintenance is enabled or disabled for the Dedicated
+     * Host.</p>
+     */
+    inline Host& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -821,6 +859,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
+
+    HostMaintenance m_hostMaintenance;
+    bool m_hostMaintenanceHasBeenSet = false;
   };
 
 } // namespace Model

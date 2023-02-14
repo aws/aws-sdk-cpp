@@ -192,6 +192,63 @@ namespace Model
      */
     inline CreateHostedConfigurationVersionRequest& WithLatestVersionNumber(int value) { SetLatestVersionNumber(value); return *this;}
 
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional, user-defined label for the AppConfig hosted configuration
+     * version. This value must contain at least one non-numeric character. For
+     * example, "v2.2.0".</p>
+     */
+    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -206,6 +263,9 @@ namespace Model
 
     int m_latestVersionNumber;
     bool m_latestVersionNumberHasBeenSet = false;
+
+    Aws::String m_versionLabel;
+    bool m_versionLabelHasBeenSet = false;
   };
 
 } // namespace Model
