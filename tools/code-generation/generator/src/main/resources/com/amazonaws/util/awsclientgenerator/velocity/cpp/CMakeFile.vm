@@ -1,6 +1,6 @@
 #set($metadata = $serviceModel.metadata)
 #if($metadata.standalone)
-cmake_minimum_required (VERSION 3.13 FATAL)
+cmake_minimum_required (VERSION 3.13 FATAL_ERROR)
 
 project(aws-cpp-sdk-${metadata.projectName})
 find_package(AWSSDK REQUIRED COMPONENTS core)
