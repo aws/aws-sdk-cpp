@@ -85,6 +85,7 @@ namespace Aws
         static const int OVERSIZE_HANDLING_HASH = HashingUtils::HashString("OVERSIZE_HANDLING");
         static const int CHALLENGE_CONFIG_HASH = HashingUtils::HashString("CHALLENGE_CONFIG");
         static const int TOKEN_DOMAIN_HASH = HashingUtils::HashString("TOKEN_DOMAIN");
+        static const int ATP_RULE_SET_RESPONSE_INSPECTION_HASH = HashingUtils::HashString("ATP_RULE_SET_RESPONSE_INSPECTION");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -350,6 +351,10 @@ namespace Aws
           {
             return ParameterExceptionField::TOKEN_DOMAIN;
           }
+          else if (hashCode == ATP_RULE_SET_RESPONSE_INSPECTION_HASH)
+          {
+            return ParameterExceptionField::ATP_RULE_SET_RESPONSE_INSPECTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -494,6 +499,8 @@ namespace Aws
             return "CHALLENGE_CONFIG";
           case ParameterExceptionField::TOKEN_DOMAIN:
             return "TOKEN_DOMAIN";
+          case ParameterExceptionField::ATP_RULE_SET_RESPONSE_INSPECTION:
+            return "ATP_RULE_SET_RESPONSE_INSPECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

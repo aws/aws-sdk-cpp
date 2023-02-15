@@ -95,25 +95,33 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to delete the resources in the green
-     * environment.</p>
+     * environment. You can't specify this option if the blue/green deployment <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+     * is <code>SWITCHOVER_COMPLETED</code>.</p>
      */
     inline bool GetDeleteTarget() const{ return m_deleteTarget; }
 
     /**
      * <p>A value that indicates whether to delete the resources in the green
-     * environment.</p>
+     * environment. You can't specify this option if the blue/green deployment <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+     * is <code>SWITCHOVER_COMPLETED</code>.</p>
      */
     inline bool DeleteTargetHasBeenSet() const { return m_deleteTargetHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to delete the resources in the green
-     * environment.</p>
+     * environment. You can't specify this option if the blue/green deployment <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+     * is <code>SWITCHOVER_COMPLETED</code>.</p>
      */
     inline void SetDeleteTarget(bool value) { m_deleteTargetHasBeenSet = true; m_deleteTarget = value; }
 
     /**
      * <p>A value that indicates whether to delete the resources in the green
-     * environment.</p>
+     * environment. You can't specify this option if the blue/green deployment <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+     * is <code>SWITCHOVER_COMPLETED</code>.</p>
      */
     inline DeleteBlueGreenDeploymentRequest& WithDeleteTarget(bool value) { SetDeleteTarget(value); return *this;}
 

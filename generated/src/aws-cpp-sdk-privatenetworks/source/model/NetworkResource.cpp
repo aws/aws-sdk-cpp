@@ -30,6 +30,7 @@ NetworkResource::NetworkResource() :
     m_networkSiteArnHasBeenSet(false),
     m_orderArnHasBeenSet(false),
     m_positionHasBeenSet(false),
+    m_returnInformationHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_status(NetworkResourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -52,6 +53,7 @@ NetworkResource::NetworkResource(JsonView jsonValue) :
     m_networkSiteArnHasBeenSet(false),
     m_orderArnHasBeenSet(false),
     m_positionHasBeenSet(false),
+    m_returnInformationHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_status(NetworkResourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -136,6 +138,13 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
     m_position = jsonValue.GetObject("position");
 
     m_positionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("returnInformation"))
+  {
+    m_returnInformation = jsonValue.GetObject("returnInformation");
+
+    m_returnInformationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serialNumber"))
@@ -240,6 +249,12 @@ JsonValue NetworkResource::Jsonize() const
   if(m_positionHasBeenSet)
   {
    payload.WithObject("position", m_position.Jsonize());
+
+  }
+
+  if(m_returnInformationHasBeenSet)
+  {
+   payload.WithObject("returnInformation", m_returnInformation.Jsonize());
 
   }
 

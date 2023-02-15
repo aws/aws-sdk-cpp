@@ -39,6 +39,7 @@
 #include <aws/privatenetworks/model/ListOrdersResult.h>
 #include <aws/privatenetworks/model/ListTagsForResourceResult.h>
 #include <aws/privatenetworks/model/PingResult.h>
+#include <aws/privatenetworks/model/StartNetworkResourceUpdateResult.h>
 #include <aws/privatenetworks/model/TagResourceResult.h>
 #include <aws/privatenetworks/model/UntagResourceResult.h>
 #include <aws/privatenetworks/model/UpdateNetworkSiteResult.h>
@@ -103,6 +104,7 @@ namespace Aws
       class ListNetworksRequest;
       class ListOrdersRequest;
       class ListTagsForResourceRequest;
+      class StartNetworkResourceUpdateRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateNetworkSiteRequest;
@@ -131,6 +133,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListOrdersResult, PrivateNetworksError> ListOrdersOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, PrivateNetworksError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PingResult, PrivateNetworksError> PingOutcome;
+      typedef Aws::Utils::Outcome<StartNetworkResourceUpdateResult, PrivateNetworksError> StartNetworkResourceUpdateOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, PrivateNetworksError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PrivateNetworksError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateNetworkSiteResult, PrivateNetworksError> UpdateNetworkSiteOutcome;
@@ -159,6 +162,7 @@ namespace Aws
       typedef std::future<ListOrdersOutcome> ListOrdersOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PingOutcome> PingOutcomeCallable;
+      typedef std::future<StartNetworkResourceUpdateOutcome> StartNetworkResourceUpdateOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateNetworkSiteOutcome> UpdateNetworkSiteOutcomeCallable;
@@ -190,6 +194,7 @@ namespace Aws
     typedef std::function<void(const PrivateNetworksClient*, const Model::ListOrdersRequest&, const Model::ListOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrdersResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::PingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PingResponseReceivedHandler;
+    typedef std::function<void(const PrivateNetworksClient*, const Model::StartNetworkResourceUpdateRequest&, const Model::StartNetworkResourceUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNetworkResourceUpdateResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::UpdateNetworkSiteRequest&, const Model::UpdateNetworkSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkSiteResponseReceivedHandler;

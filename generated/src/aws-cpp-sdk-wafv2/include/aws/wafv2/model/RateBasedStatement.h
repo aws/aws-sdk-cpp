@@ -45,7 +45,7 @@ namespace Model
    * statement. For example, based on recent requests that you have seen from an
    * attacker, you might create a rate-based rule with a nested AND rule statement
    * that contains the following nested statements:</p> <ul> <li> <p>An IP match
-   * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
+   * statement with an IP set that specifies the address 192.0.2.44.</p> </li> <li>
    * <p>A string match statement that searches in the User-Agent header for the
    * string BadBot.</p> </li> </ul> <p>In this rate-based rule, you also define a
    * rate limit. For this example, the rate limit is 1,000. Requests that meet the

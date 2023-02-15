@@ -80,7 +80,8 @@ namespace Model
     MAP_MATCH_SCOPE,
     OVERSIZE_HANDLING,
     CHALLENGE_CONFIG,
-    TOKEN_DOMAIN
+    TOKEN_DOMAIN,
+    ATP_RULE_SET_RESPONSE_INSPECTION
   };
 
 namespace ParameterExceptionFieldMapper

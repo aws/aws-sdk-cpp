@@ -326,10 +326,10 @@ namespace EFS
          * that of the source file system, unless the destination file system uses EFS One
          * Zone storage. In that case, the General Purpose performance mode is used. The
          * performance mode cannot be changed.</p> </li> <li> <p> <b>Throughput mode</b> -
-         * The destination file system uses the Bursting Throughput mode by default. After
-         * the file system is created, you can modify the throughput mode.</p> </li> </ul>
-         * <p>The following properties are turned off by default:</p> <ul> <li> <p>
-         * <b>Lifecycle management</b> - EFS lifecycle management and EFS
+         * The destination file system's throughput mode matches that of the source file
+         * system. After the file system is created, you can modify the throughput
+         * mode.</p> </li> </ul> <p>The following properties are turned off by default:</p>
+         * <ul> <li> <p> <b>Lifecycle management</b> - EFS lifecycle management and EFS
          * Intelligent-Tiering are not enabled on the destination file system. After the
          * destination file system is created, you can enable EFS lifecycle management and
          * EFS Intelligent-Tiering.</p> </li> <li> <p> <b>Automatic backups</b> - Automatic

@@ -93,37 +93,37 @@ namespace Model
 
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline const Aws::Vector<ExportTask>& GetExportTasks() const{ return m_exportTasks; }
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline void SetExportTasks(const Aws::Vector<ExportTask>& value) { m_exportTasks = value; }
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline void SetExportTasks(Aws::Vector<ExportTask>&& value) { m_exportTasks = std::move(value); }
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline DescribeExportTasksResult& WithExportTasks(const Aws::Vector<ExportTask>& value) { SetExportTasks(value); return *this;}
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline DescribeExportTasksResult& WithExportTasks(Aws::Vector<ExportTask>&& value) { SetExportTasks(std::move(value)); return *this;}
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline DescribeExportTasksResult& AddExportTasks(const ExportTask& value) { m_exportTasks.push_back(value); return *this; }
 
     /**
-     * <p>Information about an export of a snapshot to Amazon S3.</p>
+     * <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
      */
     inline DescribeExportTasksResult& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(std::move(value)); return *this; }
 

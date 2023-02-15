@@ -213,29 +213,29 @@ namespace Model
 
     /**
      * <p>Specifies whether the database activity stream includes engine-native audit
-     * fields. This option only applies to an Oracle DB instance. By default, no
-     * engine-native audit fields are included.</p>
+     * fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By
+     * default, no engine-native audit fields are included.</p>
      */
     inline bool GetEngineNativeAuditFieldsIncluded() const{ return m_engineNativeAuditFieldsIncluded; }
 
     /**
      * <p>Specifies whether the database activity stream includes engine-native audit
-     * fields. This option only applies to an Oracle DB instance. By default, no
-     * engine-native audit fields are included.</p>
+     * fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By
+     * default, no engine-native audit fields are included.</p>
      */
     inline bool EngineNativeAuditFieldsIncludedHasBeenSet() const { return m_engineNativeAuditFieldsIncludedHasBeenSet; }
 
     /**
      * <p>Specifies whether the database activity stream includes engine-native audit
-     * fields. This option only applies to an Oracle DB instance. By default, no
-     * engine-native audit fields are included.</p>
+     * fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By
+     * default, no engine-native audit fields are included.</p>
      */
     inline void SetEngineNativeAuditFieldsIncluded(bool value) { m_engineNativeAuditFieldsIncludedHasBeenSet = true; m_engineNativeAuditFieldsIncluded = value; }
 
     /**
      * <p>Specifies whether the database activity stream includes engine-native audit
-     * fields. This option only applies to an Oracle DB instance. By default, no
-     * engine-native audit fields are included.</p>
+     * fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By
+     * default, no engine-native audit fields are included.</p>
      */
     inline StartActivityStreamRequest& WithEngineNativeAuditFieldsIncluded(bool value) { SetEngineNativeAuditFieldsIncluded(value); return *this;}
 

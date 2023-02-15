@@ -62,6 +62,7 @@
 #include <aws/glue/model/S3HudiSource.h>
 #include <aws/glue/model/S3HudiCatalogTarget.h>
 #include <aws/glue/model/S3HudiDirectTarget.h>
+#include <aws/glue/model/DirectJDBCSource.h>
 #include <utility>
 
 namespace Aws
@@ -2053,6 +2054,25 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithS3HudiDirectTarget(S3HudiDirectTarget&& value) { SetS3HudiDirectTarget(std::move(value)); return *this;}
 
+
+    
+    inline const DirectJDBCSource& GetDirectJDBCSource() const{ return m_directJDBCSource; }
+
+    
+    inline bool DirectJDBCSourceHasBeenSet() const { return m_directJDBCSourceHasBeenSet; }
+
+    
+    inline void SetDirectJDBCSource(const DirectJDBCSource& value) { m_directJDBCSourceHasBeenSet = true; m_directJDBCSource = value; }
+
+    
+    inline void SetDirectJDBCSource(DirectJDBCSource&& value) { m_directJDBCSourceHasBeenSet = true; m_directJDBCSource = std::move(value); }
+
+    
+    inline CodeGenConfigurationNode& WithDirectJDBCSource(const DirectJDBCSource& value) { SetDirectJDBCSource(value); return *this;}
+
+    
+    inline CodeGenConfigurationNode& WithDirectJDBCSource(DirectJDBCSource&& value) { SetDirectJDBCSource(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2225,6 +2245,9 @@ namespace Model
 
     S3HudiDirectTarget m_s3HudiDirectTarget;
     bool m_s3HudiDirectTargetHasBeenSet = false;
+
+    DirectJDBCSource m_directJDBCSource;
+    bool m_directJDBCSourceHasBeenSet = false;
   };
 
 } // namespace Model

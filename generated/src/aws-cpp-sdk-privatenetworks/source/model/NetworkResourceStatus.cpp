@@ -28,6 +28,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int PENDING_RETURN_HASH = HashingUtils::HashString("PENDING_RETURN");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int CREATING_SHIPPING_LABEL_HASH = HashingUtils::HashString("CREATING_SHIPPING_LABEL");
 
 
         NetworkResourceStatus GetNetworkResourceStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return NetworkResourceStatus::DELETED;
           }
+          else if (hashCode == CREATING_SHIPPING_LABEL_HASH)
+          {
+            return NetworkResourceStatus::CREATING_SHIPPING_LABEL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "PENDING_RETURN";
           case NetworkResourceStatus::DELETED:
             return "DELETED";
+          case NetworkResourceStatus::CREATING_SHIPPING_LABEL:
+            return "CREATING_SHIPPING_LABEL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
