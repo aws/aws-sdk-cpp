@@ -2948,36 +2948,36 @@ namespace Model
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
      * for your read replica so that the create operation can succeed. You can also
-     * allocate additional memory for future growth.</p> 
+     * allocate additional storage for future growth.</p> 
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
      * for your read replica so that the create operation can succeed. You can also
-     * allocate additional memory for future growth.</p> 
+     * allocate additional storage for future growth.</p> 
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
      * for your read replica so that the create operation can succeed. You can also
-     * allocate additional memory for future growth.</p> 
+     * allocate additional storage for future growth.</p> 
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough memory
+     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
      * for your read replica so that the create operation can succeed. You can also
-     * allocate additional memory for future growth.</p> 
+     * allocate additional storage for future growth.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 

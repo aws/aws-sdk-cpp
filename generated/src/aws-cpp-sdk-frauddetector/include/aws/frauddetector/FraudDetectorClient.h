@@ -266,6 +266,35 @@ namespace FraudDetector
         }
 
         /**
+         * <p> Creates a list. </p> <p>List is a set of input data for a variable in your
+         * event dataset. You use the input data in a rule that's associated with your
+         * detector. For more information, see <a
+         * href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateListOutcome CreateList(const Model::CreateListRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateListRequestT = Model::CreateListRequest>
+        Model::CreateListOutcomeCallable CreateListCallable(const CreateListRequestT& request) const
+        {
+            return SubmitCallable(&FraudDetectorClient::CreateList, request);
+        }
+
+        /**
+         * An Async wrapper for CreateList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateListRequestT = Model::CreateListRequest>
+        void CreateListAsync(const CreateListRequestT& request, const CreateListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FraudDetectorClient::CreateList, request, handler, context);
+        }
+
+        /**
          * <p>Creates a model using the specified model type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel">AWS
          * API Reference</a></p>
@@ -638,6 +667,33 @@ namespace FraudDetector
         void DeleteLabelAsync(const DeleteLabelRequestT& request, const DeleteLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FraudDetectorClient::DeleteLabel, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes the list, provided it is not used in a rule. </p> <p> When you
+         * delete a list, Amazon Fraud Detector permanently deletes that list and the
+         * elements in the list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteListOutcome DeleteList(const Model::DeleteListRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteListRequestT = Model::DeleteListRequest>
+        Model::DeleteListOutcomeCallable DeleteListCallable(const DeleteListRequestT& request) const
+        {
+            return SubmitCallable(&FraudDetectorClient::DeleteList, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteListRequestT = Model::DeleteListRequest>
+        void DeleteListAsync(const DeleteListRequestT& request, const DeleteListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FraudDetectorClient::DeleteList, request, handler, context);
         }
 
         /**
@@ -1209,6 +1265,57 @@ namespace FraudDetector
         void GetLabelsAsync(const GetLabelsRequestT& request, const GetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FraudDetectorClient::GetLabels, request, handler, context);
+        }
+
+        /**
+         * <p> Gets all the elements in the specified list. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetListElementsOutcome GetListElements(const Model::GetListElementsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetListElements that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetListElementsRequestT = Model::GetListElementsRequest>
+        Model::GetListElementsOutcomeCallable GetListElementsCallable(const GetListElementsRequestT& request) const
+        {
+            return SubmitCallable(&FraudDetectorClient::GetListElements, request);
+        }
+
+        /**
+         * An Async wrapper for GetListElements that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetListElementsRequestT = Model::GetListElementsRequest>
+        void GetListElementsAsync(const GetListElementsRequestT& request, const GetListElementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FraudDetectorClient::GetListElements, request, handler, context);
+        }
+
+        /**
+         * <p> Gets the metadata of either all the lists under the account or the specified
+         * list. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetListsMetadataOutcome GetListsMetadata(const Model::GetListsMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetListsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetListsMetadataRequestT = Model::GetListsMetadataRequest>
+        Model::GetListsMetadataOutcomeCallable GetListsMetadataCallable(const GetListsMetadataRequestT& request) const
+        {
+            return SubmitCallable(&FraudDetectorClient::GetListsMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for GetListsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetListsMetadataRequestT = Model::GetListsMetadataRequest>
+        void GetListsMetadataAsync(const GetListsMetadataRequestT& request, const GetListsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FraudDetectorClient::GetListsMetadata, request, handler, context);
         }
 
         /**
@@ -1802,6 +1909,31 @@ namespace FraudDetector
         void UpdateEventLabelAsync(const UpdateEventLabelRequestT& request, const UpdateEventLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FraudDetectorClient::UpdateEventLabel, request, handler, context);
+        }
+
+        /**
+         * <p> Updates a list. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateListOutcome UpdateList(const Model::UpdateListRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateListRequestT = Model::UpdateListRequest>
+        Model::UpdateListOutcomeCallable UpdateListCallable(const UpdateListRequestT& request) const
+        {
+            return SubmitCallable(&FraudDetectorClient::UpdateList, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateListRequestT = Model::UpdateListRequest>
+        void UpdateListAsync(const UpdateListRequestT& request, const UpdateListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FraudDetectorClient::UpdateList, request, handler, context);
         }
 
         /**

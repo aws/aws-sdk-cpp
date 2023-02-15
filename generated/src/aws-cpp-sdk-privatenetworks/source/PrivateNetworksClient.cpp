@@ -41,6 +41,7 @@
 #include <aws/privatenetworks/model/ListNetworksRequest.h>
 #include <aws/privatenetworks/model/ListOrdersRequest.h>
 #include <aws/privatenetworks/model/ListTagsForResourceRequest.h>
+#include <aws/privatenetworks/model/StartNetworkResourceUpdateRequest.h>
 #include <aws/privatenetworks/model/TagResourceRequest.h>
 #include <aws/privatenetworks/model/UntagResourceRequest.h>
 #include <aws/privatenetworks/model/UpdateNetworkSiteRequest.h>
@@ -409,6 +410,15 @@ PingOutcome PrivateNetworksClient::Ping() const
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Ping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/ping");
   return PingOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "Ping"));
+}
+
+StartNetworkResourceUpdateOutcome PrivateNetworksClient::StartNetworkResourceUpdate(const StartNetworkResourceUpdateRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/network-resources/update");
+  return StartNetworkResourceUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& request) const

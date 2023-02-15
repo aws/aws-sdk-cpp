@@ -28,6 +28,7 @@
 #include <aws/frauddetector/model/CreateBatchImportJobRequest.h>
 #include <aws/frauddetector/model/CreateBatchPredictionJobRequest.h>
 #include <aws/frauddetector/model/CreateDetectorVersionRequest.h>
+#include <aws/frauddetector/model/CreateListRequest.h>
 #include <aws/frauddetector/model/CreateModelRequest.h>
 #include <aws/frauddetector/model/CreateModelVersionRequest.h>
 #include <aws/frauddetector/model/CreateRuleRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/frauddetector/model/DeleteEventsByEventTypeRequest.h>
 #include <aws/frauddetector/model/DeleteExternalModelRequest.h>
 #include <aws/frauddetector/model/DeleteLabelRequest.h>
+#include <aws/frauddetector/model/DeleteListRequest.h>
 #include <aws/frauddetector/model/DeleteModelRequest.h>
 #include <aws/frauddetector/model/DeleteModelVersionRequest.h>
 #include <aws/frauddetector/model/DeleteOutcomeRequest.h>
@@ -61,6 +63,8 @@
 #include <aws/frauddetector/model/GetEventTypesRequest.h>
 #include <aws/frauddetector/model/GetExternalModelsRequest.h>
 #include <aws/frauddetector/model/GetLabelsRequest.h>
+#include <aws/frauddetector/model/GetListElementsRequest.h>
+#include <aws/frauddetector/model/GetListsMetadataRequest.h>
 #include <aws/frauddetector/model/GetModelVersionRequest.h>
 #include <aws/frauddetector/model/GetModelsRequest.h>
 #include <aws/frauddetector/model/GetOutcomesRequest.h>
@@ -82,6 +86,7 @@
 #include <aws/frauddetector/model/UpdateDetectorVersionMetadataRequest.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionStatusRequest.h>
 #include <aws/frauddetector/model/UpdateEventLabelRequest.h>
+#include <aws/frauddetector/model/UpdateListRequest.h>
 #include <aws/frauddetector/model/UpdateModelRequest.h>
 #include <aws/frauddetector/model/UpdateModelVersionRequest.h>
 #include <aws/frauddetector/model/UpdateModelVersionStatusRequest.h>
@@ -272,6 +277,14 @@ CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const Cr
   return CreateDetectorVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateListOutcome FraudDetectorClient::CreateList(const CreateListRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateListOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateModelOutcome FraudDetectorClient::CreateModel(const CreateModelRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -382,6 +395,14 @@ DeleteLabelOutcome FraudDetectorClient::DeleteLabel(const DeleteLabelRequest& re
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteLabelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteListOutcome FraudDetectorClient::DeleteList(const DeleteListRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteListOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteModelOutcome FraudDetectorClient::DeleteModel(const DeleteModelRequest& request) const
@@ -543,6 +564,22 @@ GetLabelsOutcome FraudDetectorClient::GetLabels(const GetLabelsRequest& request)
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLabels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetLabelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetListElementsOutcome FraudDetectorClient::GetListElements(const GetListElementsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetListElements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetListElements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetListElementsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetListsMetadataOutcome FraudDetectorClient::GetListsMetadata(const GetListsMetadataRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetListsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetListsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetListsMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersionRequest& request) const
@@ -711,6 +748,14 @@ UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventL
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEventLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateEventLabelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateListOutcome FraudDetectorClient::UpdateList(const UpdateListRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateListOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& request) const

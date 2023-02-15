@@ -75,7 +75,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_catalogHudiSourceHasBeenSet(false),
     m_s3HudiSourceHasBeenSet(false),
     m_s3HudiCatalogTargetHasBeenSet(false),
-    m_s3HudiDirectTargetHasBeenSet(false)
+    m_s3HudiDirectTargetHasBeenSet(false),
+    m_directJDBCSourceHasBeenSet(false)
 {
 }
 
@@ -136,7 +137,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_catalogHudiSourceHasBeenSet(false),
     m_s3HudiSourceHasBeenSet(false),
     m_s3HudiCatalogTargetHasBeenSet(false),
-    m_s3HudiDirectTargetHasBeenSet(false)
+    m_s3HudiDirectTargetHasBeenSet(false),
+    m_directJDBCSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -542,6 +544,13 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3HudiDirectTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DirectJDBCSource"))
+  {
+    m_directJDBCSource = jsonValue.GetObject("DirectJDBCSource");
+
+    m_directJDBCSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -888,6 +897,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_s3HudiDirectTargetHasBeenSet)
   {
    payload.WithObject("S3HudiDirectTarget", m_s3HudiDirectTarget.Jsonize());
+
+  }
+
+  if(m_directJDBCSourceHasBeenSet)
+  {
+   payload.WithObject("DirectJDBCSource", m_directJDBCSource.Jsonize());
 
   }
 

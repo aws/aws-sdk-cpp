@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/privatenetworks/model/HealthStatus.h>
 #include <aws/privatenetworks/model/Position.h>
+#include <aws/privatenetworks/model/ReturnInformation.h>
 #include <aws/privatenetworks/model/NetworkResourceStatus.h>
 #include <aws/privatenetworks/model/NetworkResourceType.h>
 #include <aws/privatenetworks/model/NameValuePair.h>
@@ -449,6 +450,37 @@ namespace Model
 
 
     /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline const ReturnInformation& GetReturnInformation() const{ return m_returnInformation; }
+
+    /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline bool ReturnInformationHasBeenSet() const { return m_returnInformationHasBeenSet; }
+
+    /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline void SetReturnInformation(const ReturnInformation& value) { m_returnInformationHasBeenSet = true; m_returnInformation = value; }
+
+    /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline void SetReturnInformation(ReturnInformation&& value) { m_returnInformationHasBeenSet = true; m_returnInformation = std::move(value); }
+
+    /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline NetworkResource& WithReturnInformation(const ReturnInformation& value) { SetReturnInformation(value); return *this;}
+
+    /**
+     * <p>Information about a request to return the network resource.</p>
+     */
+    inline NetworkResource& WithReturnInformation(ReturnInformation&& value) { SetReturnInformation(std::move(value)); return *this;}
+
+
+    /**
      * <p>The serial number of the network resource.</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
@@ -663,6 +695,9 @@ namespace Model
 
     Position m_position;
     bool m_positionHasBeenSet = false;
+
+    ReturnInformation m_returnInformation;
+    bool m_returnInformationHasBeenSet = false;
 
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet = false;

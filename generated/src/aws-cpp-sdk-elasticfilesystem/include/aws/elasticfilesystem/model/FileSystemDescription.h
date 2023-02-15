@@ -45,58 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline FileSystemDescription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline FileSystemDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an IAM user, the parent account to which the user belongs
-     * is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system.</p>
      */
     inline FileSystemDescription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

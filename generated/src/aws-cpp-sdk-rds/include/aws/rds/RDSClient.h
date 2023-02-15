@@ -335,8 +335,8 @@ namespace Aws
         }
 
         /**
-         * <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3.
-         * Any data that has already been written to the S3 bucket isn't
+         * <p>Cancels an export task in progress that is exporting a snapshot or cluster to
+         * Amazon S3. Any data that has already been written to the S3 bucket isn't
          * removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">AWS
          * API Reference</a></p>
@@ -420,8 +420,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -599,13 +599,15 @@ namespace Aws
          * <p>Creates a new Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> <p>You can
          * use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
          * Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or
-         * PostgreSQL DB instance.</p> <p>For more information on Amazon Aurora, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
-         * more information on Multi-AZ DB clusters, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * PostgreSQL DB instance. For more information about Amazon Aurora, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+         * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>You can
+         * also use the <code>ReplicationSourceIdentifier</code> parameter to create a
+         * Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the
+         * source. For more information about Multi-AZ DB clusters, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+         * DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          */
@@ -686,8 +688,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -718,8 +720,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1159,9 +1161,8 @@ namespace Aws
          * accesses your Amazon S3 bucket. These calls originate from the MediaImport
          * service for the <code>DeleteCustomDbEngineVersion</code> event.</p> 
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
-         * Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting
+         * a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">AWS
          * API Reference</a></p>
          */
@@ -1194,8 +1195,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          */
@@ -1254,8 +1255,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -1288,8 +1289,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1815,8 +1816,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
          */
@@ -1847,8 +1848,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
          */
@@ -1915,8 +1916,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
          */
@@ -1948,10 +1949,9 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p> <p>This operation can also return information for Amazon
-         * Neptune DB instances and Amazon DocumentDB instances.</p><p><h3>See Also:</h3>  
-         * <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <p>This operation can also return information for Amazon Neptune DB instances
+         * and Amazon DocumentDB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
@@ -2518,8 +2518,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns information about a snapshot export to Amazon S3. This API operation
-         * supports pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a snapshot or cluster export to Amazon S3. This API
+         * operation supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">AWS
          * API Reference</a></p>
          */
@@ -2833,8 +2833,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          */
@@ -2934,8 +2934,8 @@ namespace Aws
          * activity stream isn't required. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html">
          * Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>.
-         * </p> <p>This operation is supported for RDS for Oracle only.</p><p><h3>See
-         * Also:</h3>   <a
+         * </p> <p>This operation is supported for RDS for Oracle and Microsoft SQL
+         * Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">AWS
          * API Reference</a></p>
          */
@@ -3093,8 +3093,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
          * API Reference</a></p>
          */
@@ -3170,8 +3170,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -3664,8 +3664,8 @@ namespace Aws
          * for a non-Aurora Multi-AZ DB cluster.</p> <p>For more information on Multi-AZ DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBCluster">AWS
          * API Reference</a></p>
          */
@@ -3788,8 +3788,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
          * API Reference</a></p>
          */
@@ -3910,8 +3910,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -4023,8 +4023,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -4066,8 +4066,8 @@ namespace Aws
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-         * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
-         * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -4367,9 +4367,19 @@ namespace Aws
         }
 
         /**
-         * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
-         * access to the S3 bucket.</p> <p>This command doesn't apply to RDS
-         * Custom.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided
+         * IAM role must have access to the S3 bucket.</p> <p>You can't export snapshot
+         * data from RDS Custom DB instances.</p> <p>You can't export cluster data from
+         * Multi-AZ DB clusters.</p> <p>For more information on exporting DB snapshot data,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
+         * DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-export-snapshot.html">Exporting
+         * DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p> <p>For more information on exporting DB cluster data, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/export-cluster-data.html">Exporting
+         * DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
          * API Reference</a></p>
          */

@@ -23,7 +23,8 @@ namespace Model
     AVAILABLE,
     DELETING,
     PENDING_RETURN,
-    DELETED
+    DELETED,
+    CREATING_SHIPPING_LABEL
   };
 
 namespace NetworkResourceStatusMapper

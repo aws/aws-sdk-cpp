@@ -25,6 +25,7 @@
 #include <aws/frauddetector/model/CreateBatchImportJobResult.h>
 #include <aws/frauddetector/model/CreateBatchPredictionJobResult.h>
 #include <aws/frauddetector/model/CreateDetectorVersionResult.h>
+#include <aws/frauddetector/model/CreateListResult.h>
 #include <aws/frauddetector/model/CreateModelResult.h>
 #include <aws/frauddetector/model/CreateModelVersionResult.h>
 #include <aws/frauddetector/model/CreateRuleResult.h>
@@ -39,6 +40,7 @@
 #include <aws/frauddetector/model/DeleteEventsByEventTypeResult.h>
 #include <aws/frauddetector/model/DeleteExternalModelResult.h>
 #include <aws/frauddetector/model/DeleteLabelResult.h>
+#include <aws/frauddetector/model/DeleteListResult.h>
 #include <aws/frauddetector/model/DeleteModelResult.h>
 #include <aws/frauddetector/model/DeleteModelVersionResult.h>
 #include <aws/frauddetector/model/DeleteOutcomeResult.h>
@@ -59,6 +61,8 @@
 #include <aws/frauddetector/model/GetExternalModelsResult.h>
 #include <aws/frauddetector/model/GetKMSEncryptionKeyResult.h>
 #include <aws/frauddetector/model/GetLabelsResult.h>
+#include <aws/frauddetector/model/GetListElementsResult.h>
+#include <aws/frauddetector/model/GetListsMetadataResult.h>
 #include <aws/frauddetector/model/GetModelVersionResult.h>
 #include <aws/frauddetector/model/GetModelsResult.h>
 #include <aws/frauddetector/model/GetOutcomesResult.h>
@@ -80,6 +84,7 @@
 #include <aws/frauddetector/model/UpdateDetectorVersionMetadataResult.h>
 #include <aws/frauddetector/model/UpdateDetectorVersionStatusResult.h>
 #include <aws/frauddetector/model/UpdateEventLabelResult.h>
+#include <aws/frauddetector/model/UpdateListResult.h>
 #include <aws/frauddetector/model/UpdateModelResult.h>
 #include <aws/frauddetector/model/UpdateModelVersionResult.h>
 #include <aws/frauddetector/model/UpdateModelVersionStatusResult.h>
@@ -133,6 +138,7 @@ namespace Aws
       class CreateBatchImportJobRequest;
       class CreateBatchPredictionJobRequest;
       class CreateDetectorVersionRequest;
+      class CreateListRequest;
       class CreateModelRequest;
       class CreateModelVersionRequest;
       class CreateRuleRequest;
@@ -147,6 +153,7 @@ namespace Aws
       class DeleteEventsByEventTypeRequest;
       class DeleteExternalModelRequest;
       class DeleteLabelRequest;
+      class DeleteListRequest;
       class DeleteModelRequest;
       class DeleteModelVersionRequest;
       class DeleteOutcomeRequest;
@@ -166,6 +173,8 @@ namespace Aws
       class GetEventTypesRequest;
       class GetExternalModelsRequest;
       class GetLabelsRequest;
+      class GetListElementsRequest;
+      class GetListsMetadataRequest;
       class GetModelVersionRequest;
       class GetModelsRequest;
       class GetOutcomesRequest;
@@ -187,6 +196,7 @@ namespace Aws
       class UpdateDetectorVersionMetadataRequest;
       class UpdateDetectorVersionStatusRequest;
       class UpdateEventLabelRequest;
+      class UpdateListRequest;
       class UpdateModelRequest;
       class UpdateModelVersionRequest;
       class UpdateModelVersionStatusRequest;
@@ -203,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBatchImportJobResult, FraudDetectorError> CreateBatchImportJobOutcome;
       typedef Aws::Utils::Outcome<CreateBatchPredictionJobResult, FraudDetectorError> CreateBatchPredictionJobOutcome;
       typedef Aws::Utils::Outcome<CreateDetectorVersionResult, FraudDetectorError> CreateDetectorVersionOutcome;
+      typedef Aws::Utils::Outcome<CreateListResult, FraudDetectorError> CreateListOutcome;
       typedef Aws::Utils::Outcome<CreateModelResult, FraudDetectorError> CreateModelOutcome;
       typedef Aws::Utils::Outcome<CreateModelVersionResult, FraudDetectorError> CreateModelVersionOutcome;
       typedef Aws::Utils::Outcome<CreateRuleResult, FraudDetectorError> CreateRuleOutcome;
@@ -217,6 +228,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteEventsByEventTypeResult, FraudDetectorError> DeleteEventsByEventTypeOutcome;
       typedef Aws::Utils::Outcome<DeleteExternalModelResult, FraudDetectorError> DeleteExternalModelOutcome;
       typedef Aws::Utils::Outcome<DeleteLabelResult, FraudDetectorError> DeleteLabelOutcome;
+      typedef Aws::Utils::Outcome<DeleteListResult, FraudDetectorError> DeleteListOutcome;
       typedef Aws::Utils::Outcome<DeleteModelResult, FraudDetectorError> DeleteModelOutcome;
       typedef Aws::Utils::Outcome<DeleteModelVersionResult, FraudDetectorError> DeleteModelVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteOutcomeResult, FraudDetectorError> DeleteOutcomeOutcome;
@@ -237,6 +249,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetExternalModelsResult, FraudDetectorError> GetExternalModelsOutcome;
       typedef Aws::Utils::Outcome<GetKMSEncryptionKeyResult, FraudDetectorError> GetKMSEncryptionKeyOutcome;
       typedef Aws::Utils::Outcome<GetLabelsResult, FraudDetectorError> GetLabelsOutcome;
+      typedef Aws::Utils::Outcome<GetListElementsResult, FraudDetectorError> GetListElementsOutcome;
+      typedef Aws::Utils::Outcome<GetListsMetadataResult, FraudDetectorError> GetListsMetadataOutcome;
       typedef Aws::Utils::Outcome<GetModelVersionResult, FraudDetectorError> GetModelVersionOutcome;
       typedef Aws::Utils::Outcome<GetModelsResult, FraudDetectorError> GetModelsOutcome;
       typedef Aws::Utils::Outcome<GetOutcomesResult, FraudDetectorError> GetOutcomesOutcome;
@@ -258,6 +272,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDetectorVersionMetadataResult, FraudDetectorError> UpdateDetectorVersionMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateDetectorVersionStatusResult, FraudDetectorError> UpdateDetectorVersionStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateEventLabelResult, FraudDetectorError> UpdateEventLabelOutcome;
+      typedef Aws::Utils::Outcome<UpdateListResult, FraudDetectorError> UpdateListOutcome;
       typedef Aws::Utils::Outcome<UpdateModelResult, FraudDetectorError> UpdateModelOutcome;
       typedef Aws::Utils::Outcome<UpdateModelVersionResult, FraudDetectorError> UpdateModelVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateModelVersionStatusResult, FraudDetectorError> UpdateModelVersionStatusOutcome;
@@ -274,6 +289,7 @@ namespace Aws
       typedef std::future<CreateBatchImportJobOutcome> CreateBatchImportJobOutcomeCallable;
       typedef std::future<CreateBatchPredictionJobOutcome> CreateBatchPredictionJobOutcomeCallable;
       typedef std::future<CreateDetectorVersionOutcome> CreateDetectorVersionOutcomeCallable;
+      typedef std::future<CreateListOutcome> CreateListOutcomeCallable;
       typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
       typedef std::future<CreateModelVersionOutcome> CreateModelVersionOutcomeCallable;
       typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
@@ -288,6 +304,7 @@ namespace Aws
       typedef std::future<DeleteEventsByEventTypeOutcome> DeleteEventsByEventTypeOutcomeCallable;
       typedef std::future<DeleteExternalModelOutcome> DeleteExternalModelOutcomeCallable;
       typedef std::future<DeleteLabelOutcome> DeleteLabelOutcomeCallable;
+      typedef std::future<DeleteListOutcome> DeleteListOutcomeCallable;
       typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
       typedef std::future<DeleteModelVersionOutcome> DeleteModelVersionOutcomeCallable;
       typedef std::future<DeleteOutcomeOutcome> DeleteOutcomeOutcomeCallable;
@@ -308,6 +325,8 @@ namespace Aws
       typedef std::future<GetExternalModelsOutcome> GetExternalModelsOutcomeCallable;
       typedef std::future<GetKMSEncryptionKeyOutcome> GetKMSEncryptionKeyOutcomeCallable;
       typedef std::future<GetLabelsOutcome> GetLabelsOutcomeCallable;
+      typedef std::future<GetListElementsOutcome> GetListElementsOutcomeCallable;
+      typedef std::future<GetListsMetadataOutcome> GetListsMetadataOutcomeCallable;
       typedef std::future<GetModelVersionOutcome> GetModelVersionOutcomeCallable;
       typedef std::future<GetModelsOutcome> GetModelsOutcomeCallable;
       typedef std::future<GetOutcomesOutcome> GetOutcomesOutcomeCallable;
@@ -329,6 +348,7 @@ namespace Aws
       typedef std::future<UpdateDetectorVersionMetadataOutcome> UpdateDetectorVersionMetadataOutcomeCallable;
       typedef std::future<UpdateDetectorVersionStatusOutcome> UpdateDetectorVersionStatusOutcomeCallable;
       typedef std::future<UpdateEventLabelOutcome> UpdateEventLabelOutcomeCallable;
+      typedef std::future<UpdateListOutcome> UpdateListOutcomeCallable;
       typedef std::future<UpdateModelOutcome> UpdateModelOutcomeCallable;
       typedef std::future<UpdateModelVersionOutcome> UpdateModelVersionOutcomeCallable;
       typedef std::future<UpdateModelVersionStatusOutcome> UpdateModelVersionStatusOutcomeCallable;
@@ -348,6 +368,7 @@ namespace Aws
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateBatchImportJobRequest&, const Model::CreateBatchImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchImportJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateBatchPredictionJobRequest&, const Model::CreateBatchPredictionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchPredictionJobResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateDetectorVersionRequest&, const Model::CreateDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDetectorVersionResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::CreateListRequest&, const Model::CreateListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateListResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateModelVersionRequest&, const Model::CreateModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
@@ -362,6 +383,7 @@ namespace Aws
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventsByEventTypeRequest&, const Model::DeleteEventsByEventTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsByEventTypeResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteExternalModelRequest&, const Model::DeleteExternalModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExternalModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteLabelRequest&, const Model::DeleteLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLabelResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteListRequest&, const Model::DeleteListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteListResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteModelVersionRequest&, const Model::DeleteModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteOutcomeRequest&, const Model::DeleteOutcomeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutcomeResponseReceivedHandler;
@@ -382,6 +404,8 @@ namespace Aws
     typedef std::function<void(const FraudDetectorClient*, const Model::GetExternalModelsRequest&, const Model::GetExternalModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExternalModelsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetKMSEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKMSEncryptionKeyResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetLabelsRequest&, const Model::GetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelsResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetListElementsRequest&, const Model::GetListElementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetListElementsResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetListsMetadataRequest&, const Model::GetListsMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetListsMetadataResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetModelVersionRequest&, const Model::GetModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetModelsRequest&, const Model::GetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetOutcomesRequest&, const Model::GetOutcomesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutcomesResponseReceivedHandler;
@@ -403,6 +427,7 @@ namespace Aws
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateDetectorVersionMetadataRequest&, const Model::UpdateDetectorVersionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorVersionMetadataResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateDetectorVersionStatusRequest&, const Model::UpdateDetectorVersionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorVersionStatusResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateEventLabelRequest&, const Model::UpdateEventLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventLabelResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::UpdateListRequest&, const Model::UpdateListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateListResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelRequest&, const Model::UpdateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelVersionRequest&, const Model::UpdateModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::UpdateModelVersionStatusRequest&, const Model::UpdateModelVersionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelVersionStatusResponseReceivedHandler;

@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Details for your use of the Bot Control managed rule group, used in
+   * <p>Details for your use of the Bot Control managed rule group,
+   * <code>AWSManagedRulesBotControlRuleSet</code>. This configuration is used in
    * <code>ManagedRuleGroupConfig</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AWSManagedRulesBotControlRuleSet">AWS
    * API Reference</a></p>

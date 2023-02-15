@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -58,7 +58,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -82,7 +82,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -106,7 +106,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -130,7 +130,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -154,7 +154,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>A string value that you want WAF to search for. WAF searches only in the part
      * of web requests that you designate for inspection in <a>FieldToMatch</a>. The
-     * maximum length of the value is 50 bytes.</p> <p>Valid values depend on the
+     * maximum length of the value is 200 bytes.</p> <p>Valid values depend on the
      * component that you specify for inspection in <code>FieldToMatch</code>:</p> <ul>
      * <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for.
      * This indicates the type of operation specified in the request. </p> </li> <li>
@@ -178,7 +178,7 @@ namespace Model
      * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
      * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
      * <p>Specify a base64-encoded version of the value. The maximum length of the
-     * value before you base64-encode it is 50 bytes.</p> <p>For example, suppose the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
      * value of <code>Type</code> is <code>HEADER</code> and the value of
      * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you

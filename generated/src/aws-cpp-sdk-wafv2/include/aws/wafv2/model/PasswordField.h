@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about your login page password field, used in a
-   * <code>ManagedRuleGroupConfig</code>. </p><p><h3>See Also:</h3>   <a
+   * <p>Details about your login page password field for request inspection, used in
+   * the <code>AWSManagedRulesATPRuleSet</code> <code>RequestInspection</code>
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PasswordField">AWS
    * API Reference</a></p>
    */

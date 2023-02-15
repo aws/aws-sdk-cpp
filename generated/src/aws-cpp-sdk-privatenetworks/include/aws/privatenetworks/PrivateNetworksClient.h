@@ -447,9 +447,9 @@ namespace PrivateNetworks
          * <p>Lists device identifiers. Add filters to your request to return a more
          * specific list of results. Use filters to match the Amazon Resource Name (ARN) of
          * an order, the status of device identifiers, or the ARN of the traffic group.</p>
-         * <pre><code> &lt;p&gt;If you specify multiple filters, filters are joined with an
-         * OR, and the request </code></pre> <p>returns results that match all of the
-         * specified filters.</p></p><p><h3>See Also:</h3>   <a
+         * <p>If you specify multiple filters, filters are joined with an OR, and the
+         * request returns results that match all of the specified filters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/ListDeviceIdentifiers">AWS
          * API Reference</a></p>
          */
@@ -634,6 +634,38 @@ namespace PrivateNetworks
         {
             return SubmitAsync(&PrivateNetworksClient::Ping, handler, context);
         }
+        /**
+         * <p>Starts an update of the specified network resource.</p> <p>After you submit a
+         * request to replace or return a network resource, the status of the network
+         * resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is
+         * available when the status of the network resource is
+         * <code>PENDING_RETURN</code>. After the network resource is successfully
+         * returned, its status is <code>DELETED</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
+         * a radio unit</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartNetworkResourceUpdateOutcome StartNetworkResourceUpdate(const Model::StartNetworkResourceUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartNetworkResourceUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartNetworkResourceUpdateRequestT = Model::StartNetworkResourceUpdateRequest>
+        Model::StartNetworkResourceUpdateOutcomeCallable StartNetworkResourceUpdateCallable(const StartNetworkResourceUpdateRequestT& request) const
+        {
+            return SubmitCallable(&PrivateNetworksClient::StartNetworkResourceUpdate, request);
+        }
+
+        /**
+         * An Async wrapper for StartNetworkResourceUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartNetworkResourceUpdateRequestT = Model::StartNetworkResourceUpdateRequest>
+        void StartNetworkResourceUpdateAsync(const StartNetworkResourceUpdateRequestT& request, const StartNetworkResourceUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PrivateNetworksClient::StartNetworkResourceUpdate, request, handler, context);
+        }
+
         /**
          * <p> Adds tags to the specified resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/TagResource">AWS
