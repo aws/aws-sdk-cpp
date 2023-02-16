@@ -25,9 +25,11 @@ PREFIX_DIR="$1"
 echo "Building the Sample App"
 
 mkdir "${PREFIX_DIR}/sample-build"
+mkdir "${PREFIX_DIR}/sample-install"
 cd "${PREFIX_DIR}/sample-build"
-cmake ../aws-sdk-cpp/tools/CI/install-test -G Ninja -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/al2-install"
-ninja-build
+cmake ../aws-sdk-cpp/tools/CI/install-test -G Ninja -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/al2-install" -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/sample_install"
+cmake --build .
+cmake --build . --target install
 
 if [ "${AUTORUN}" -eq 0 ]; then
   # Only continue if there is a scheduled autorun
@@ -43,5 +45,7 @@ aws configure set aws_secret_access_key $(echo "$sts" | jq -r '.[1]') --profile 
 aws configure set aws_session_token $(echo "$sts" | jq -r '.[2]') --profile "$profile"
 aws configure list --profile "$profile"
 export AWS_PROFILE=$profile
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
 echo "Running the app"
+cd "${PREFIX_DIR}/sample_install/bin"
 ./app
