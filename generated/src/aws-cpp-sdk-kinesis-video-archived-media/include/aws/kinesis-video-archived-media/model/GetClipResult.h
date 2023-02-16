@@ -80,7 +80,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis
      * Video Streams Limits</a>. </p>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>Traditional MP4 file that contains the media clip from the specified video
@@ -95,7 +95,7 @@ namespace Model
 
     Aws::String m_contentType;
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

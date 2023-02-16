@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> Stream containing the synthesized speech. </p>
      */
-    inline Aws::IOStream& GetAudioStream() { return m_audioStream.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetAudioStream() const { return m_audioStream.GetUnderlyingStream(); }
 
     /**
      * <p> Stream containing the synthesized speech. </p>
@@ -171,7 +171,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_contentType;
 

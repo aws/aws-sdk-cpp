@@ -101,7 +101,7 @@ namespace Model
      * the stream</p> </li> <li> <p>4506 - Unable to find the KMS key specified in the
      * stream</p> </li> <li> <p>5000 - Internal error</p> </li> </ul>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p> The payload Kinesis Video Streams returns is a sequence of chunks from the
@@ -137,7 +137,7 @@ namespace Model
 
     Aws::String m_contentType;
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The data content of the block.</p>
      */
-    inline Aws::IOStream& GetBlockData() { return m_blockData.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBlockData() const { return m_blockData.GetUnderlyingStream(); }
 
     /**
      * <p>The data content of the block.</p>
@@ -135,7 +135,7 @@ namespace Model
 
     int m_dataLength;
 
-  Aws::Utils::Stream::ResponseStream m_blockData;
+    Aws::Utils::Stream::ResponseStream m_blockData;
 
     Aws::String m_checksum;
 

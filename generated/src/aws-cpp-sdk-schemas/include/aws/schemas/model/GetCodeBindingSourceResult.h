@@ -37,14 +37,14 @@ namespace Model
 
 
     
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
   };
 
 } // namespace Model

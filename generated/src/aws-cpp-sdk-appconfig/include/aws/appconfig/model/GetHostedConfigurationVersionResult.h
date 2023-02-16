@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The content of the configuration or the configuration data.</p>
      */
-    inline Aws::IOStream& GetContent() { return m_content.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetContent() const { return m_content.GetUnderlyingStream(); }
 
     /**
      * <p>The content of the configuration or the configuration data.</p>
@@ -267,7 +267,7 @@ namespace Model
 
     Aws::String m_description;
 
-  Aws::Utils::Stream::ResponseStream m_content;
+    Aws::Utils::Stream::ResponseStream m_content;
 
     Aws::String m_contentType;
 

@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The state information, in JSON format.</p>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>The state information, in JSON format.</p>
@@ -53,7 +53,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model
