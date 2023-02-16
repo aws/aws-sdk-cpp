@@ -26,9 +26,11 @@ echo "Building the Sample App"
 
 cd aws-sdk-cpp/tools/CI/install-test
 mkdir "${PREFIX_DIR}/sample-build"
+mkdir "${PREFIX_DIR}/sample-install"
 cd "${PREFIX_DIR}/sample-build"
-cmake ../aws-sdk-cpp/tools/CI/install-test -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/mac-install"
+cmake ../aws-sdk-cpp/tools/CI/install-test -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/mac-install" -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/sample_install"
 cmake --build .
+cmake --install .
 
 if [ "${AUTORUN}" -eq 0 ]; then
   # Only continue if there is a scheduled autorun
@@ -45,5 +47,7 @@ aws configure set aws_secret_access_key $(echo "$sts" | jq -r '.[1]') --profile 
 aws configure set aws_session_token $(echo "$sts" | jq -r '.[2]') --profile "$profile"
 aws configure list --profile "$profile"
 export AWS_PROFILE=$profile
+export DYLD_LIBRARY_PATH=$CATAPULT_WORKSPACE_DIR/mac-install/lib
 echo "Running the app"
+cd "${PREFIX_DIR}/sample_install/bin"
 ./app
