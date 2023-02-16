@@ -170,7 +170,7 @@ namespace Model
      * <p>The data of the configuration. This may be empty if the client already has
      * the latest version of configuration.</p>
      */
-    inline Aws::IOStream& GetConfiguration() { return m_configuration.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetConfiguration() const { return m_configuration.GetUnderlyingStream(); }
 
     /**
      * <p>The data of the configuration. This may be empty if the client already has
@@ -243,7 +243,7 @@ namespace Model
 
     Aws::String m_contentType;
 
-  Aws::Utils::Stream::ResponseStream m_configuration;
+    Aws::Utils::Stream::ResponseStream m_configuration;
 
     Aws::String m_versionLabel;
   };

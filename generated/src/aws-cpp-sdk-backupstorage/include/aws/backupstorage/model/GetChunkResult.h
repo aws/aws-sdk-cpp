@@ -41,7 +41,7 @@ namespace Model
     /**
      * Chunk data
      */
-    inline Aws::IOStream& GetData() { return m_data.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetData() const { return m_data.GetUnderlyingStream(); }
 
     /**
      * Chunk data
@@ -128,7 +128,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_data;
+    Aws::Utils::Stream::ResponseStream m_data;
 
     long long m_length;
 

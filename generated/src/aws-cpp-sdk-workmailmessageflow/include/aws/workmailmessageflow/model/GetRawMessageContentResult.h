@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The raw content of the email message, in MIME format.</p>
      */
-    inline Aws::IOStream& GetMessageContent() { return m_messageContent.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetMessageContent() const { return m_messageContent.GetUnderlyingStream(); }
 
     /**
      * <p>The raw content of the email message, in MIME format.</p>
@@ -48,7 +48,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_messageContent;
+    Aws::Utils::Stream::ResponseStream m_messageContent;
   };
 
 } // namespace Model

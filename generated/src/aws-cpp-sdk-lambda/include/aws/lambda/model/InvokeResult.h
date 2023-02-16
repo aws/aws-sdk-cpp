@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>The response from the function, or an error object.</p>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>The response from the function, or an error object.</p>
@@ -202,7 +202,7 @@ namespace Model
 
     Aws::String m_logResult;
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
 
     Aws::String m_executedVersion;
   };

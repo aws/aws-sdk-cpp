@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The blob's content type.</p>
      */
-    inline Aws::IOStream& GetBlob() { return m_blob.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
 
     /**
      * <p>The blob's content type.</p>
@@ -92,7 +92,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_blob;
+    Aws::Utils::Stream::ResponseStream m_blob;
 
     Aws::String m_contentType;
   };

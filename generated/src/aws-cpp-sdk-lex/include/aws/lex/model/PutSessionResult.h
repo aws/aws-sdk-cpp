@@ -498,7 +498,7 @@ namespace Model
     /**
      * <p>The audio version of the message to convey to the user.</p>
      */
-    inline Aws::IOStream& GetAudioStream() { return m_audioStream.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetAudioStream() const { return m_audioStream.GetUnderlyingStream(); }
 
     /**
      * <p>The audio version of the message to convey to the user.</p>
@@ -595,7 +595,7 @@ namespace Model
 
     Aws::String m_slotToElicit;
 
-  Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_sessionId;
 

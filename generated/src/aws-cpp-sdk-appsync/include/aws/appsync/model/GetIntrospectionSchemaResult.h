@@ -41,7 +41,7 @@ namespace Model
      * more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
      * documentation</a>.</p>
      */
-    inline Aws::IOStream& GetSchema() { return m_schema.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetSchema() const { return m_schema.GetUnderlyingStream(); }
 
     /**
      * <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p> <p>For
@@ -52,7 +52,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_schema;
+    Aws::Utils::Stream::ResponseStream m_schema;
   };
 
 } // namespace Model

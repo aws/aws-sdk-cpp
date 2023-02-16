@@ -49,7 +49,7 @@ namespace Model
      * The binary data for the thumbnail that the Link device has most recently sent to
      * MediaLive.
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * The binary data for the thumbnail that the Link device has most recently sent to
@@ -163,7 +163,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     ContentType m_contentType;
 

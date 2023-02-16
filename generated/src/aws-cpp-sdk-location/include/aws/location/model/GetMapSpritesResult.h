@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
      */
-    inline Aws::IOStream& GetBlob() { return m_blob.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
 
     /**
      * <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
@@ -99,7 +99,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_blob;
+    Aws::Utils::Stream::ResponseStream m_blob;
 
     Aws::String m_contentType;
   };
