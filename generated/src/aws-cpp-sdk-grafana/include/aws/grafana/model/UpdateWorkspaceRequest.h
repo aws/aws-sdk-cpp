@@ -7,6 +7,7 @@
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/grafana/ManagedGrafanaRequest.h>
 #include <aws/grafana/model/AccountAccessType.h>
+#include <aws/grafana/model/NetworkAccessConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/PermissionType.h>
 #include <aws/grafana/model/VpcConfiguration.h>
@@ -100,6 +101,67 @@ namespace Model
 
 
     /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline const NetworkAccessConfiguration& GetNetworkAccessControl() const{ return m_networkAccessControl; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline void SetNetworkAccessControl(const NetworkAccessConfiguration& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = value; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline void SetNetworkAccessControl(NetworkAccessConfiguration&& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = std::move(value); }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline UpdateWorkspaceRequest& WithNetworkAccessControl(const NetworkAccessConfiguration& value) { SetNetworkAccessControl(value); return *this;}
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p> <p>When
+     * this is configured, only listed IP addresses and VPC endpoints will be able to
+     * access your workspace. Standard Grafana authentication and authorization will
+     * still be required.</p> <p>If this is not configured, or is removed, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline UpdateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessConfiguration&& value) { SetNetworkAccessControl(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of an IAM role that already exists to use to access resources
      * through Organizations.</p>
      */
@@ -149,7 +211,7 @@ namespace Model
 
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -165,7 +227,7 @@ namespace Model
     inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -181,7 +243,7 @@ namespace Model
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -197,7 +259,7 @@ namespace Model
     inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -213,7 +275,7 @@ namespace Model
     inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -229,7 +291,7 @@ namespace Model
     inline UpdateWorkspaceRequest& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
 
     /**
-     * <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana
+     * <p>If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana
      * automatically creates the IAM roles and provisions the permissions that the
      * workspace needs to use Amazon Web Services data sources and notification
      * channels.</p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage
@@ -243,6 +305,47 @@ namespace Model
      * and notification channels</a> </p>
      */
     inline UpdateWorkspaceRequest& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether to remove the network access configuration from the workspace.</p>
+     * <p>Setting this to <code>true</code> and providing a
+     * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
+     * remove this configuration by setting this to <code>true</code>, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline bool GetRemoveNetworkAccessConfiguration() const{ return m_removeNetworkAccessConfiguration; }
+
+    /**
+     * <p>Whether to remove the network access configuration from the workspace.</p>
+     * <p>Setting this to <code>true</code> and providing a
+     * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
+     * remove this configuration by setting this to <code>true</code>, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline bool RemoveNetworkAccessConfigurationHasBeenSet() const { return m_removeNetworkAccessConfigurationHasBeenSet; }
+
+    /**
+     * <p>Whether to remove the network access configuration from the workspace.</p>
+     * <p>Setting this to <code>true</code> and providing a
+     * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
+     * remove this configuration by setting this to <code>true</code>, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline void SetRemoveNetworkAccessConfiguration(bool value) { m_removeNetworkAccessConfigurationHasBeenSet = true; m_removeNetworkAccessConfiguration = value; }
+
+    /**
+     * <p>Whether to remove the network access configuration from the workspace.</p>
+     * <p>Setting this to <code>true</code> and providing a
+     * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
+     * remove this configuration by setting this to <code>true</code>, then all IP
+     * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline UpdateWorkspaceRequest& WithRemoveNetworkAccessConfiguration(bool value) { SetRemoveNetworkAccessConfiguration(value); return *this;}
 
 
     /**
@@ -794,11 +897,17 @@ namespace Model
     AccountAccessType m_accountAccessType;
     bool m_accountAccessTypeHasBeenSet = false;
 
+    NetworkAccessConfiguration m_networkAccessControl;
+    bool m_networkAccessControlHasBeenSet = false;
+
     Aws::String m_organizationRoleName;
     bool m_organizationRoleNameHasBeenSet = false;
 
     PermissionType m_permissionType;
     bool m_permissionTypeHasBeenSet = false;
+
+    bool m_removeNetworkAccessConfiguration;
+    bool m_removeNetworkAccessConfigurationHasBeenSet = false;
 
     bool m_removeVpcConfiguration;
     bool m_removeVpcConfigurationHasBeenSet = false;

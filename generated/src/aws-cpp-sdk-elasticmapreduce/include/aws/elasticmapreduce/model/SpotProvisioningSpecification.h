@@ -48,7 +48,7 @@ namespace Model
 
 
     /**
-     * <p>The spot provisioning timeout period in minutes. If Spot Instances are not
+     * <p>The Spot provisioning timeout period in minutes. If Spot Instances are not
      * provisioned within this time period, the <code>TimeOutAction</code> is taken.
      * Minimum value is 5 and maximum value is 1440. The timeout applies only during
      * initial provisioning, when the cluster is first created.</p>
@@ -56,7 +56,7 @@ namespace Model
     inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
 
     /**
-     * <p>The spot provisioning timeout period in minutes. If Spot Instances are not
+     * <p>The Spot provisioning timeout period in minutes. If Spot Instances are not
      * provisioned within this time period, the <code>TimeOutAction</code> is taken.
      * Minimum value is 5 and maximum value is 1440. The timeout applies only during
      * initial provisioning, when the cluster is first created.</p>
@@ -64,7 +64,7 @@ namespace Model
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
 
     /**
-     * <p>The spot provisioning timeout period in minutes. If Spot Instances are not
+     * <p>The Spot provisioning timeout period in minutes. If Spot Instances are not
      * provisioned within this time period, the <code>TimeOutAction</code> is taken.
      * Minimum value is 5 and maximum value is 1440. The timeout applies only during
      * initial provisioning, when the cluster is first created.</p>
@@ -72,7 +72,7 @@ namespace Model
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
 
     /**
-     * <p>The spot provisioning timeout period in minutes. If Spot Instances are not
+     * <p>The Spot provisioning timeout period in minutes. If Spot Instances are not
      * provisioned within this time period, the <code>TimeOutAction</code> is taken.
      * Minimum value is 5 and maximum value is 1440. The timeout applies only during
      * initial provisioning, when the cluster is first created.</p>

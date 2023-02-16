@@ -29,7 +29,7 @@ namespace Model
    * the defined duration, provisioning timeout behavior, and allocation
    * strategy.</p>  <p>The instance fleet configuration is available only in
    * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and
-   * Spot Instance allocation strategies are available in Amazon EMR version 5.12.1
+   * Spot instance allocation strategies are available in Amazon EMR version 5.12.1
    * and later.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetProvisioningSpecifications">AWS
    * API Reference</a></p>
@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */
     inline const SpotProvisioningSpecification& GetSpotSpecification() const{ return m_spotSpecification; }
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */
     inline bool SpotSpecificationHasBeenSet() const { return m_spotSpecificationHasBeenSet; }
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */
     inline void SetSpotSpecification(const SpotProvisioningSpecification& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = value; }
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */
     inline void SetSpotSpecification(SpotProvisioningSpecification&& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = std::move(value); }
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */
     inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(const SpotProvisioningSpecification& value) { SetSpotSpecification(value); return *this;}
 
     /**
-     * <p>The launch specification for Spot Instances in the fleet, which determines
+     * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration, provisioning timeout behavior, and allocation
      * strategy.</p>
      */

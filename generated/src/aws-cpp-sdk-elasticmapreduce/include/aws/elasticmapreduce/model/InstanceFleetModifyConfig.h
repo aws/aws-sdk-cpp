@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/model/InstanceFleetResizingSpecifications.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +131,37 @@ namespace Model
      */
     inline InstanceFleetModifyConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline const InstanceFleetResizingSpecifications& GetResizeSpecifications() const{ return m_resizeSpecifications; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline bool ResizeSpecificationsHasBeenSet() const { return m_resizeSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline void SetResizeSpecifications(const InstanceFleetResizingSpecifications& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = value; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline void SetResizeSpecifications(InstanceFleetResizingSpecifications&& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = std::move(value); }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline InstanceFleetModifyConfig& WithResizeSpecifications(const InstanceFleetResizingSpecifications& value) { SetResizeSpecifications(value); return *this;}
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline InstanceFleetModifyConfig& WithResizeSpecifications(InstanceFleetResizingSpecifications&& value) { SetResizeSpecifications(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceFleetId;
@@ -140,6 +172,9 @@ namespace Model
 
     int m_targetSpotCapacity;
     bool m_targetSpotCapacityHasBeenSet = false;
+
+    InstanceFleetResizingSpecifications m_resizeSpecifications;
+    bool m_resizeSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

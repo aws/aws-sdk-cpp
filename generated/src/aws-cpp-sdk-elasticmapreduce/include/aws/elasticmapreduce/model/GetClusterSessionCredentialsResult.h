@@ -35,31 +35,31 @@ namespace Model
 
     /**
      * <p>The credentials that you can use to connect to cluster endpoints that support
-     * username-based and password-based authentication.</p>
+     * username and password authentication.</p>
      */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
     /**
      * <p>The credentials that you can use to connect to cluster endpoints that support
-     * username-based and password-based authentication.</p>
+     * username and password authentication.</p>
      */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
     /**
      * <p>The credentials that you can use to connect to cluster endpoints that support
-     * username-based and password-based authentication.</p>
+     * username and password authentication.</p>
      */
     inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
 
     /**
      * <p>The credentials that you can use to connect to cluster endpoints that support
-     * username-based and password-based authentication.</p>
+     * username and password authentication.</p>
      */
     inline GetClusterSessionCredentialsResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
     /**
      * <p>The credentials that you can use to connect to cluster endpoints that support
-     * username-based and password-based authentication.</p>
+     * username and password authentication.</p>
      */
     inline GetClusterSessionCredentialsResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 

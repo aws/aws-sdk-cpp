@@ -19,6 +19,7 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_configurationHasBeenSet(false),
+    m_networkAccessControlHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
@@ -63,6 +64,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("configuration", m_configuration);
+
+  }
+
+  if(m_networkAccessControlHasBeenSet)
+  {
+   payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
 
   }
 

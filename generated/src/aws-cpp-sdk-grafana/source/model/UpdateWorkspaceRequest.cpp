@@ -15,9 +15,12 @@ using namespace Aws::Utils;
 UpdateWorkspaceRequest::UpdateWorkspaceRequest() : 
     m_accountAccessType(AccountAccessType::NOT_SET),
     m_accountAccessTypeHasBeenSet(false),
+    m_networkAccessControlHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
+    m_removeNetworkAccessConfiguration(false),
+    m_removeNetworkAccessConfigurationHasBeenSet(false),
     m_removeVpcConfiguration(false),
     m_removeVpcConfigurationHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
@@ -41,6 +44,12 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
    payload.WithString("accountAccessType", AccountAccessTypeMapper::GetNameForAccountAccessType(m_accountAccessType));
   }
 
+  if(m_networkAccessControlHasBeenSet)
+  {
+   payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
+
+  }
+
   if(m_organizationRoleNameHasBeenSet)
   {
    payload.WithString("organizationRoleName", m_organizationRoleName);
@@ -50,6 +59,12 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
   if(m_permissionTypeHasBeenSet)
   {
    payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
+  }
+
+  if(m_removeNetworkAccessConfigurationHasBeenSet)
+  {
+   payload.WithBool("removeNetworkAccessConfiguration", m_removeNetworkAccessConfiguration);
+
   }
 
   if(m_removeVpcConfigurationHasBeenSet)

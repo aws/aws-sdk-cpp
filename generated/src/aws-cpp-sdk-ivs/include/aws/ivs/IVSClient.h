@@ -79,9 +79,9 @@ namespace IVS
    * Amazon IVS API directly, it’s your responsibility to sign the requests.</p>
    * <p>You generate a signature using valid Amazon Web Services credentials that
    * have permission to perform the requested action. For example, you must sign
-   * PutMetadata requests with a signature generated from an IAM user account that
-   * has the <code>ivs:PutMetadata</code> permission.</p> <p>For more
-   * information:</p> <ul> <li> <p>Authentication and generating signatures — See <a
+   * PutMetadata requests with a signature generated from a user account that has the
+   * <code>ivs:PutMetadata</code> permission.</p> <p>For more information:</p> <ul>
+   * <li> <p>Authentication and generating signatures — See <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
    * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon Web
    * Services General Reference</i>.</p> </li> <li> <p>Managing Amazon IVS

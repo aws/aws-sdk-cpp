@@ -27,7 +27,13 @@ namespace Model
   /**
    * <p>Configures inspection of the response body. This is part of the
    * <code>ResponseInspection</code> configuration for
-   * <code>AWSManagedRulesATPRuleSet</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>AWSManagedRulesATPRuleSet</code>. </p>  <p>Response inspection is
+   * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+   *   <p>For regional web ACLs in Region US East (N. Virginia)
+   * us-east-1, it's possible to configure response inspection through the APIs, but
+   * ATP response inspection will not be enabled. You can only use the response
+   * inspection capabilities of the ATP managed rule group in web ACLs that protect
+   * CloudFront distributions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ResponseInspectionBodyContains">AWS
    * API Reference</a></p>
    */

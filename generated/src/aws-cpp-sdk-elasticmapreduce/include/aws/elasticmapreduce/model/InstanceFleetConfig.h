@@ -9,6 +9,7 @@
 #include <aws/elasticmapreduce/model/InstanceFleetType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/InstanceFleetProvisioningSpecifications.h>
+#include <aws/elasticmapreduce/model/InstanceFleetResizingSpecifications.h>
 #include <aws/elasticmapreduce/model/InstanceTypeConfig.h>
 #include <utility>
 
@@ -366,6 +367,37 @@ namespace Model
      */
     inline InstanceFleetConfig& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline const InstanceFleetResizingSpecifications& GetResizeSpecifications() const{ return m_resizeSpecifications; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline bool ResizeSpecificationsHasBeenSet() const { return m_resizeSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline void SetResizeSpecifications(const InstanceFleetResizingSpecifications& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = value; }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline void SetResizeSpecifications(InstanceFleetResizingSpecifications&& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = std::move(value); }
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline InstanceFleetConfig& WithResizeSpecifications(const InstanceFleetResizingSpecifications& value) { SetResizeSpecifications(value); return *this;}
+
+    /**
+     * <p>The resize specification for the instance fleet.</p>
+     */
+    inline InstanceFleetConfig& WithResizeSpecifications(InstanceFleetResizingSpecifications&& value) { SetResizeSpecifications(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -385,6 +417,9 @@ namespace Model
 
     InstanceFleetProvisioningSpecifications m_launchSpecifications;
     bool m_launchSpecificationsHasBeenSet = false;
+
+    InstanceFleetResizingSpecifications m_resizeSpecifications;
+    bool m_resizeSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,7 +151,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline const ResponseInspection& GetResponseInspection() const{ return m_responseInspection; }
 
@@ -163,7 +168,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline bool ResponseInspectionHasBeenSet() const { return m_responseInspectionHasBeenSet; }
 
@@ -175,7 +185,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline void SetResponseInspection(const ResponseInspection& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = value; }
 
@@ -187,7 +202,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline void SetResponseInspection(ResponseInspection&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::move(value); }
 
@@ -199,7 +219,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(const ResponseInspection& value) { SetResponseInspection(value); return *this;}
 
@@ -211,7 +236,12 @@ namespace Model
      * session. Using this information, the rule group labels and mitigates requests
      * from client sessions and IP addresses that submit too many failed login attempts
      * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * in web ACLs that protect Amazon CloudFront distributions.</p>  
+     * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+     * possible to configure response inspection through the APIs, but ATP response
+     * inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     * distributions.</p> 
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(ResponseInspection&& value) { SetResponseInspection(std::move(value)); return *this;}
 

@@ -606,11 +606,10 @@ namespace EMR
         }
 
         /**
-         * <p>Provides Temporary, basic HTTP credentials that are associated with a given
+         * <p>Provides temporary, HTTP basic credentials that are associated with a given
          * runtime IAM role and used by a cluster with fine-grained access control
          * activated. You can use these credentials to connect to cluster endpoints that
-         * support username-based and password-based authentication.</p><p><h3>See
-         * Also:</h3>   <a
+         * support username and password authentication.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials">AWS
          * API Reference</a></p>
          */
