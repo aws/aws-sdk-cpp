@@ -70,7 +70,7 @@
 #end
 #if($isStream)
     $memberDocumentation
-    ${inline}Aws::IOStream& ${getterFunctionName}() { return ${memberVariableName}.GetUnderlyingStream(); }
+    ${inline}Aws::IOStream& ${getterFunctionName}() const { return ${memberVariableName}.GetUnderlyingStream(); }
 
     $memberDocumentation
     ${inline}void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
@@ -219,7 +219,7 @@
 #set($isEventStreamInput = false)
 #end
 #if((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.result)
-  Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
+    Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
 #if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
