@@ -47,7 +47,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke
      * the Endpoint</a> in the Developer Guide.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>Includes the inference provided by the model. </p> <p>For information about
@@ -276,7 +276,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     Aws::String m_contentType;
 

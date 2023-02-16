@@ -90,7 +90,7 @@ namespace Model
      * code of the exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A
      * text description of the exception</p> </li> </ul>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>The payload that Kinesis Video Streams returns is a sequence of chunks from
@@ -115,7 +115,7 @@ namespace Model
 
     Aws::String m_contentType;
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

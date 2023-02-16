@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> The binary file, or asset, that is downloaded.</p>
      */
-    inline Aws::IOStream& GetAsset() { return m_asset.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetAsset() const { return m_asset.GetUnderlyingStream(); }
 
     /**
      * <p> The binary file, or asset, that is downloaded.</p>
@@ -171,7 +171,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_asset;
+    Aws::Utils::Stream::ResponseStream m_asset;
 
     Aws::String m_assetName;
 

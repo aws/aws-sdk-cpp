@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>Information about the profile.</p>
      */
-    inline Aws::IOStream& GetProfile() { return m_profile.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetProfile() const { return m_profile.GetUnderlyingStream(); }
 
     /**
      * <p>Information about the profile.</p>
@@ -145,7 +145,7 @@ namespace Model
 
     Aws::String m_contentType;
 
-  Aws::Utils::Stream::ResponseStream m_profile;
+    Aws::Utils::Stream::ResponseStream m_profile;
   };
 
 } // namespace Model

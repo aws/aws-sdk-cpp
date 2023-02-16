@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The bucket policy as a JSON document.</p>
      */
-    inline Aws::IOStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPolicy() const { return m_policy.GetUnderlyingStream(); }
 
     /**
      * <p>The bucket policy as a JSON document.</p>
@@ -48,7 +48,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_policy;
+    Aws::Utils::Stream::ResponseStream m_policy;
   };
 
 } // namespace Model

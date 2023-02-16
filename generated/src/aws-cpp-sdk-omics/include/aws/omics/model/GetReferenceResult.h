@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The reference file payload.</p>
      */
-    inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
     /**
      * <p>The reference file payload.</p>
@@ -48,7 +48,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

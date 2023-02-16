@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>The binary blob response to GetExport, which contains the export.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>The binary blob response to GetExport, which contains the export.</p>
@@ -138,7 +138,7 @@ namespace Model
 
     Aws::String m_contentDisposition;
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
   };
 
 } // namespace Model

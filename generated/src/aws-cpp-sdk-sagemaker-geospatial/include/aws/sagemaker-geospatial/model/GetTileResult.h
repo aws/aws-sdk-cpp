@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The output binary file.</p>
      */
-    inline Aws::IOStream& GetBinaryFile() { return m_binaryFile.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBinaryFile() const { return m_binaryFile.GetUnderlyingStream(); }
 
     /**
      * <p>The output binary file.</p>
@@ -48,7 +48,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_binaryFile;
+    Aws::Utils::Stream::ResponseStream m_binaryFile;
   };
 
 } // namespace Model

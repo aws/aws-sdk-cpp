@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The job data, either archive data or inventory data.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>The job data, either archive data or inventory data.</p>
@@ -380,7 +380,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     Aws::String m_checksum;
 

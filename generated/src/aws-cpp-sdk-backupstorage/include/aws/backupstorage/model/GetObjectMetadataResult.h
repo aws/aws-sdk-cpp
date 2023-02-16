@@ -77,7 +77,7 @@ namespace Model
     /**
      * Metadata blob.
      */
-    inline Aws::IOStream& GetMetadataBlob() { return m_metadataBlob.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetMetadataBlob() const { return m_metadataBlob.GetUnderlyingStream(); }
 
     /**
      * Metadata blob.
@@ -166,7 +166,7 @@ namespace Model
 
     Aws::String m_metadataString;
 
-  Aws::Utils::Stream::ResponseStream m_metadataBlob;
+    Aws::Utils::Stream::ResponseStream m_metadataBlob;
 
     long long m_metadataBlobLength;
 

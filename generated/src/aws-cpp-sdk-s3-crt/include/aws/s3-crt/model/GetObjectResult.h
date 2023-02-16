@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>Object data.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>Object data.</p>
@@ -1455,7 +1455,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     bool m_deleteMarker;
 

@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
@@ -65,7 +65,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     RequestCharged m_requestCharged;
   };

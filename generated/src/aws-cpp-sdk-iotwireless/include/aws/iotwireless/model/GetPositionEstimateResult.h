@@ -42,7 +42,7 @@ namespace Model
      * data structures. For more information, see <a
      * href="https://geojson.org/">GeoJSON</a>.</p>
      */
-    inline Aws::IOStream& GetGeoJsonPayload() { return m_geoJsonPayload.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetGeoJsonPayload() const { return m_geoJsonPayload.GetUnderlyingStream(); }
 
     /**
      * <p>The position information of the resource, displayed as a JSON payload. The
@@ -54,7 +54,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_geoJsonPayload;
+    Aws::Utils::Stream::ResponseStream m_geoJsonPayload;
   };
 
 } // namespace Model

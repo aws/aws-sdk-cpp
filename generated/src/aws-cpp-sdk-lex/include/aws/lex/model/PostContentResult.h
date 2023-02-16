@@ -924,7 +924,7 @@ namespace Model
      * Lambda function successfully fulfilled the intent, and sent a message to convey
      * to the user. Then Amazon Lex sends that message in the response. </p>
      */
-    inline Aws::IOStream& GetAudioStream() { return m_audioStream.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetAudioStream() const { return m_audioStream.GetUnderlyingStream(); }
 
     /**
      * <p>The prompt (or statement) to convey to the user. This is based on the bot
@@ -1113,7 +1113,7 @@ namespace Model
 
     Aws::String m_encodedInputTranscript;
 
-  Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_botVersion;
 

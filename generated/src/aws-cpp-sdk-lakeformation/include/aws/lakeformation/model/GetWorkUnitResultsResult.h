@@ -45,7 +45,7 @@ namespace Model
      * <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream
      * of Apache Arrow v1.0 messages.</p>
      */
-    inline Aws::IOStream& GetResultStream() { return m_resultStream.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetResultStream() const { return m_resultStream.GetUnderlyingStream(); }
 
     /**
      * <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream
@@ -55,7 +55,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_resultStream;
+    Aws::Utils::Stream::ResponseStream m_resultStream;
   };
 
 } // namespace Model

@@ -270,7 +270,7 @@ namespace Model
      * <p>If the requested content type was audio, the audio version of the message to
      * convey to the user.</p>
      */
-    inline Aws::IOStream& GetAudioStream() { return m_audioStream.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetAudioStream() const { return m_audioStream.GetUnderlyingStream(); }
 
     /**
      * <p>If the requested content type was audio, the audio version of the message to
@@ -290,7 +290,7 @@ namespace Model
 
     Aws::String m_sessionId;
 
-  Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream;
   };
 
 } // namespace Model

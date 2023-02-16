@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The response body from the underlying API tracked by the API asset.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>The response body from the underlying API tracked by the API asset.</p>
@@ -110,7 +110,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body;
 
     Aws::Map<Aws::String, Aws::String> m_responseHeaders;
   };

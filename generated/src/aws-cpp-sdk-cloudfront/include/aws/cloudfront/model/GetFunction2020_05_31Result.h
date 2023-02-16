@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The function code of a CloudFront function.</p>
      */
-    inline Aws::IOStream& GetFunctionCode() { return m_functionCode.GetUnderlyingStream(); }
+    inline Aws::IOStream& GetFunctionCode() const { return m_functionCode.GetUnderlyingStream(); }
 
     /**
      * <p>The function code of a CloudFront function.</p>
@@ -128,7 +128,7 @@ namespace Model
 
   private:
 
-  Aws::Utils::Stream::ResponseStream m_functionCode;
+    Aws::Utils::Stream::ResponseStream m_functionCode;
 
     Aws::String m_eTag;
 
