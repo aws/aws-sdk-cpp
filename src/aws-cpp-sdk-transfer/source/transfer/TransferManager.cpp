@@ -790,6 +790,7 @@ namespace Aws
                 handle->SetMetadata(getObjectOutcome.GetResult().GetMetadata());
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
+                getObjectOutcome.GetResult().GetBody().flush();
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
@@ -957,8 +958,11 @@ namespace Aws
 
                     auto getObjectTask = Aws::MakeShared<TransferHandle>(CLASS_TAG, handle->GetBucketName(), handle->GetKey()); // fake handle
                     AddTask(getObjectTask);
-                    auto callback = [self, getObjectTask](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
-                        const Aws::S3::Model::GetObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+                    auto callback =
+                            [self, getObjectTask](const Aws::S3::S3Client* client,
+                                                  const Aws::S3::Model::GetObjectRequest& request,
+                                                  const Aws::S3::Model::GetObjectOutcome& outcome,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
                     {
                         self->HandleGetObjectResponse(client, request, outcome, context);
                         self->RemoveTask(getObjectTask);
@@ -1044,6 +1048,7 @@ namespace Aws
             {
                 if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
+                    outcome.GetResult().GetBody().flush();
                     handle->UpdateStatus(TransferStatus::COMPLETED);
                 }
                 else
