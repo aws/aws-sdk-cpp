@@ -118,10 +118,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF
@@ -135,10 +140,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF
@@ -152,10 +162,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF
@@ -169,10 +184,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF
@@ -186,10 +206,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF
@@ -203,10 +228,15 @@ namespace Model
      * managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide
      * login request information to the rule group. For web ACLs that protect
      * CloudFront distributions, use this to also provide the information about how
-     * your distribution responds to login requests. This configuration replaces the
-     * individual configuration fields in <code>ManagedRuleGroupConfig</code> and
-     * provides additional feature configuration. </p> <p>For information about using
-     * the ATP managed rule group, see <a
+     * your distribution responds to login requests. </p>  <p>For regional web
+     * ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure
+     * response inspection through the APIs, but ATP response inspection will not be
+     * enabled. You can only use the response inspection capabilities of the ATP
+     * managed rule group in web ACLs that protect CloudFront distributions.</p>
+     *  <p>This configuration replaces the individual configuration fields in
+     * <code>ManagedRuleGroupConfig</code> and provides additional feature
+     * configuration. </p> <p>For information about using the ATP managed rule group,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF
      * Fraud Control account takeover prevention (ATP) rule group</a> and <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF

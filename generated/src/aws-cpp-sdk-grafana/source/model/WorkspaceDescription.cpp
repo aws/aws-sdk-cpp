@@ -36,6 +36,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_licenseTypeHasBeenSet(false),
     m_modifiedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_networkAccessControlHasBeenSet(false),
     m_notificationDestinationsHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_organizationalUnitsHasBeenSet(false),
@@ -68,6 +69,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_licenseTypeHasBeenSet(false),
     m_modifiedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_networkAccessControlHasBeenSet(false),
     m_notificationDestinationsHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_organizationalUnitsHasBeenSet(false),
@@ -184,6 +186,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkAccessControl"))
+  {
+    m_networkAccessControl = jsonValue.GetObject("networkAccessControl");
+
+    m_networkAccessControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("notificationDestinations"))
@@ -345,6 +354,12 @@ JsonValue WorkspaceDescription::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_networkAccessControlHasBeenSet)
+  {
+   payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
 
   }
 

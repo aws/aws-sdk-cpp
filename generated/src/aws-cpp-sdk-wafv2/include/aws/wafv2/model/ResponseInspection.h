@@ -34,8 +34,13 @@ namespace Model
    * session. Using this information, the rule group labels and mitigates requests
    * from client sessions and IP addresses that submit too many failed login attempts
    * in a short amount of time. </p>  <p>Response inspection is available only
-   * in web ACLs that protect Amazon CloudFront distributions.</p>  <p>This is
-   * part of the <code>AWSManagedRulesATPRuleSet</code> configuration in
+   * in web ACLs that protect Amazon CloudFront distributions.</p>  
+   * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
+   * possible to configure response inspection through the APIs, but ATP response
+   * inspection will not be enabled. You can only use the response inspection
+   * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+   * distributions.</p>  <p>This is part of the
+   * <code>AWSManagedRulesATPRuleSet</code> configuration in
    * <code>ManagedRuleGroupConfig</code>.</p> <p>Enable login response inspection by
    * configuring exactly one component of the response to inspect. You can't
    * configure more than one. If you don't configure any of the response inspection

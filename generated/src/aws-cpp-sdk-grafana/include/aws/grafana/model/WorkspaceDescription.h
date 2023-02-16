@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/LicenseType.h>
+#include <aws/grafana/model/NetworkAccessConfiguration.h>
 #include <aws/grafana/model/PermissionType.h>
 #include <aws/grafana/model/WorkspaceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -610,6 +611,37 @@ namespace Model
 
 
     /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline const NetworkAccessConfiguration& GetNetworkAccessControl() const{ return m_networkAccessControl; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline void SetNetworkAccessControl(const NetworkAccessConfiguration& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = value; }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline void SetNetworkAccessControl(NetworkAccessConfiguration&& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = std::move(value); }
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline WorkspaceDescription& WithNetworkAccessControl(const NetworkAccessConfiguration& value) { SetNetworkAccessControl(value); return *this;}
+
+    /**
+     * <p>The configuration settings for network access to your workspace.</p>
+     */
+    inline WorkspaceDescription& WithNetworkAccessControl(NetworkAccessConfiguration&& value) { SetNetworkAccessControl(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services notification channels that Amazon Managed Grafana can
      * automatically create IAM roles and permissions for, to allow Amazon Managed
      * Grafana to use these channels.</p>
@@ -780,7 +812,7 @@ namespace Model
 
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -796,7 +828,7 @@ namespace Model
     inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -812,7 +844,7 @@ namespace Model
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -828,7 +860,7 @@ namespace Model
     inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -844,7 +876,7 @@ namespace Model
     inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -860,7 +892,7 @@ namespace Model
     inline WorkspaceDescription& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
 
     /**
-     * <p>If this is <code>Service Managed</code>, Amazon Managed Grafana automatically
+     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
      * creates the IAM roles and provisions the permissions that the workspace needs to
      * use Amazon Web Services data sources and notification channels.</p> <p>If this
      * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
@@ -1150,6 +1182,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    NetworkAccessConfiguration m_networkAccessControl;
+    bool m_networkAccessControlHasBeenSet = false;
 
     Aws::Vector<NotificationDestinationType> m_notificationDestinations;
     bool m_notificationDestinationsHasBeenSet = false;

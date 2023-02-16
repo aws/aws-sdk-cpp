@@ -9,6 +9,7 @@
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/grafana/model/NetworkAccessConfiguration.h>
 #include <aws/grafana/model/PermissionType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/grafana/model/VpcConfiguration.h>
@@ -287,6 +288,67 @@ namespace Model
      * in your Grafana workspace</a>.</p>
      */
     inline CreateWorkspaceRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline const NetworkAccessConfiguration& GetNetworkAccessControl() const{ return m_networkAccessControl; }
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline void SetNetworkAccessControl(const NetworkAccessConfiguration& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = value; }
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline void SetNetworkAccessControl(NetworkAccessConfiguration&& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = std::move(value); }
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline CreateWorkspaceRequest& WithNetworkAccessControl(const NetworkAccessConfiguration& value) { SetNetworkAccessControl(value); return *this;}
+
+    /**
+     * <p>Configuration for network access to your workspace.</p> <p>When this is
+     * configured, only listed IP addresses and VPC endpoints will be able to access
+     * your workspace. Standard Grafana authentication and authorization will still be
+     * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+     * and VPC endpoints will be allowed. Standard Grafana authentication and
+     * authorization will still be required.</p>
+     */
+    inline CreateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessConfiguration&& value) { SetNetworkAccessControl(std::move(value)); return *this;}
 
 
     /**
@@ -1018,6 +1080,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    NetworkAccessConfiguration m_networkAccessControl;
+    bool m_networkAccessControlHasBeenSet = false;
 
     Aws::String m_organizationRoleName;
     bool m_organizationRoleNameHasBeenSet = false;
