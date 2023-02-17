@@ -478,148 +478,188 @@ namespace Model
 
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline const Aws::String& GetViewOriginalText() const{ return m_viewOriginalText; }
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline bool ViewOriginalTextHasBeenSet() const { return m_viewOriginalTextHasBeenSet; }
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline void SetViewOriginalText(const Aws::String& value) { m_viewOriginalTextHasBeenSet = true; m_viewOriginalText = value; }
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline void SetViewOriginalText(Aws::String&& value) { m_viewOriginalTextHasBeenSet = true; m_viewOriginalText = std::move(value); }
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline void SetViewOriginalText(const char* value) { m_viewOriginalTextHasBeenSet = true; m_viewOriginalText.assign(value); }
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline Table& WithViewOriginalText(const Aws::String& value) { SetViewOriginalText(value); return *this;}
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline Table& WithViewOriginalText(Aws::String&& value) { SetViewOriginalText(std::move(value)); return *this;}
 
     /**
-     * <p>If the table is a view, the original text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena
+     * configuration encoded in base64.</p>
      */
     inline Table& WithViewOriginalText(const char* value) { SetViewOriginalText(value); return *this;}
 
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline const Aws::String& GetViewExpandedText() const{ return m_viewExpandedText; }
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline bool ViewExpandedTextHasBeenSet() const { return m_viewExpandedTextHasBeenSet; }
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline void SetViewExpandedText(const Aws::String& value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText = value; }
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline void SetViewExpandedText(Aws::String&& value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText = std::move(value); }
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline void SetViewExpandedText(const char* value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText.assign(value); }
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline Table& WithViewExpandedText(const Aws::String& value) { SetViewExpandedText(value); return *this;}
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline Table& WithViewExpandedText(Aws::String&& value) { SetViewExpandedText(std::move(value)); return *this;}
 
     /**
-     * <p>If the table is a view, the expanded text of the view; otherwise
-     * <code>null</code>.</p>
+     * <p>Included for Apache Hive compatibility. Not used in the normal course of Glue
+     * operations.</p>
      */
     inline Table& WithViewExpandedText(const char* value) { SetViewExpandedText(value); return *this;}
 
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline const Aws::String& GetTableType() const{ return m_tableType; }
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline bool TableTypeHasBeenSet() const { return m_tableTypeHasBeenSet; }
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline void SetTableType(const Aws::String& value) { m_tableTypeHasBeenSet = true; m_tableType = value; }
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline void SetTableType(Aws::String&& value) { m_tableTypeHasBeenSet = true; m_tableType = std::move(value); }
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline void SetTableType(const char* value) { m_tableTypeHasBeenSet = true; m_tableType.assign(value); }
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline Table& WithTableType(const Aws::String& value) { SetTableType(value); return *this;}
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline Table& WithTableType(Aws::String&& value) { SetTableType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
-     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     * <p>The type of this table. Glue will create tables with the
+     * <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create
+     * tables with additional table types. </p> <p>Glue related table types:</p> <dl>
+     * <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive
+     * managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The
+     * Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
      */
     inline Table& WithTableType(const char* value) { SetTableType(value); return *this;}
 

@@ -25,6 +25,7 @@ namespace Aws
         static const int PAUSE_SERVICE_HASH = HashingUtils::HashString("PAUSE_SERVICE");
         static const int RESUME_SERVICE_HASH = HashingUtils::HashString("RESUME_SERVICE");
         static const int DELETE_SERVICE_HASH = HashingUtils::HashString("DELETE_SERVICE");
+        static const int UPDATE_SERVICE_HASH = HashingUtils::HashString("UPDATE_SERVICE");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return OperationType::DELETE_SERVICE;
           }
+          else if (hashCode == UPDATE_SERVICE_HASH)
+          {
+            return OperationType::UPDATE_SERVICE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "RESUME_SERVICE";
           case OperationType::DELETE_SERVICE:
             return "DELETE_SERVICE";
+          case OperationType::UPDATE_SERVICE:
+            return "UPDATE_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

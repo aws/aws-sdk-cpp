@@ -20,7 +20,8 @@ namespace Model
     CREATE_SERVICE,
     PAUSE_SERVICE,
     RESUME_SERVICE,
-    DELETE_SERVICE
+    DELETE_SERVICE,
+    UPDATE_SERVICE
   };
 
 namespace OperationTypeMapper
