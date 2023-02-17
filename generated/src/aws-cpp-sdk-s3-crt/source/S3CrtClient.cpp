@@ -123,6 +123,7 @@
 #include <aws/crt/auth/Credentials.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <aws/crt/io/Stream.h>
+#include <aws/crt/io/Uri.h>
 #include <aws/http/request_response.h>
 #include <aws/common/string.h>
 
@@ -469,6 +470,9 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   options->headers_callback = S3CrtRequestHeadersCallback;
   options->body_callback = S3CrtRequestGetBodyCallback;
   options->finish_callback = S3CrtRequestFinishCallback;
+  const auto endpointStr = uri.GetURIString();
+  const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
+  aws_uri_init_parse(options->endpoint, Aws::get_aws_allocator(), &endpointCursor);
 }
 
 static void GetObjectRequestShutdownCallback(void *user_data)
@@ -508,6 +512,10 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
+  aws_uri endpoint;
+  AWS_ZERO_STRUCT(endpoint);
+  options.endpoint = &endpoint;
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
 
   userData->getResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
@@ -595,6 +603,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
+  aws_uri endpoint;
+  AWS_ZERO_STRUCT(endpoint);
+  options.endpoint = &endpoint;
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
 
   userData->putResponseHandler = handler;
   userData->asyncCallerContext = handlerContext;
