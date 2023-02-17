@@ -3375,7 +3375,11 @@ namespace Glue
         }
 
         /**
-         * 
+         * <p>Retrieves partition metadata from the Data Catalog that contains unfiltered
+         * metadata.</p> <p>For IAM authorization, the public IAM action associated with
+         * this API is <code>glue:GetPartition</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionMetadata">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUnfilteredPartitionMetadataOutcome GetUnfilteredPartitionMetadata(const Model::GetUnfilteredPartitionMetadataRequest& request) const;
 
@@ -3398,7 +3402,11 @@ namespace Glue
         }
 
         /**
-         * 
+         * <p>Retrieves partition metadata from the Data Catalog that contains unfiltered
+         * metadata.</p> <p>For IAM authorization, the public IAM action associated with
+         * this API is <code>glue:GetPartitions</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionsMetadata">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUnfilteredPartitionsMetadataOutcome GetUnfilteredPartitionsMetadata(const Model::GetUnfilteredPartitionsMetadataRequest& request) const;
 
@@ -3421,7 +3429,11 @@ namespace Glue
         }
 
         /**
-         * 
+         * <p>Retrieves table metadata from the Data Catalog that contains unfiltered
+         * metadata.</p> <p>For IAM authorization, the public IAM action associated with
+         * this API is <code>glue:GetTable</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUnfilteredTableMetadataOutcome GetUnfilteredTableMetadata(const Model::GetUnfilteredTableMetadataRequest& request) const;
 

@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Glue
+{
+namespace Model
+{
+  enum class DeltaTargetCompressionType
+  {
+    NOT_SET,
+    uncompressed,
+    snappy
+  };
+
+namespace DeltaTargetCompressionTypeMapper
+{
+AWS_GLUE_API DeltaTargetCompressionType GetDeltaTargetCompressionTypeForName(const Aws::String& name);
+
+AWS_GLUE_API Aws::String GetNameForDeltaTargetCompressionType(DeltaTargetCompressionType value);
+} // namespace DeltaTargetCompressionTypeMapper
+} // namespace Model
+} // namespace Glue
+} // namespace Aws

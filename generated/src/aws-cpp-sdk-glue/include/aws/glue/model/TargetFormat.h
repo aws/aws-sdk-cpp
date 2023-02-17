@@ -21,7 +21,8 @@ namespace Model
     avro,
     orc,
     parquet,
-    hudi
+    hudi,
+    delta
   };
 
 namespace TargetFormatMapper

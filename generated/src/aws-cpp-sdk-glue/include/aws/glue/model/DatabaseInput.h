@@ -253,42 +253,50 @@ namespace Model
 
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline const Aws::Vector<PrincipalPermissions>& GetCreateTableDefaultPermissions() const{ return m_createTableDefaultPermissions; }
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline bool CreateTableDefaultPermissionsHasBeenSet() const { return m_createTableDefaultPermissionsHasBeenSet; }
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline void SetCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = value; }
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline void SetCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = std::move(value); }
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline DatabaseInput& WithCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateTableDefaultPermissions(value); return *this;}
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline DatabaseInput& WithCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateTableDefaultPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline DatabaseInput& AddCreateTableDefaultPermissions(const PrincipalPermissions& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(value); return *this; }
 
     /**
-     * <p>Creates a set of default permissions on the table for principals. </p>
+     * <p>Creates a set of default permissions on the table for principals. Used by
+     * Lake Formation. Not used in the normal course of Glue operations.</p>
      */
     inline DatabaseInput& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
 

@@ -63,6 +63,11 @@
 #include <aws/glue/model/S3HudiCatalogTarget.h>
 #include <aws/glue/model/S3HudiDirectTarget.h>
 #include <aws/glue/model/DirectJDBCSource.h>
+#include <aws/glue/model/S3CatalogDeltaSource.h>
+#include <aws/glue/model/CatalogDeltaSource.h>
+#include <aws/glue/model/S3DeltaSource.h>
+#include <aws/glue/model/S3DeltaCatalogTarget.h>
+#include <aws/glue/model/S3DeltaDirectTarget.h>
 #include <utility>
 
 namespace Aws
@@ -1890,37 +1895,37 @@ namespace Model
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline const S3CatalogHudiSource& GetS3CatalogHudiSource() const{ return m_s3CatalogHudiSource; }
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline bool S3CatalogHudiSourceHasBeenSet() const { return m_s3CatalogHudiSourceHasBeenSet; }
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline void SetS3CatalogHudiSource(const S3CatalogHudiSource& value) { m_s3CatalogHudiSourceHasBeenSet = true; m_s3CatalogHudiSource = value; }
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline void SetS3CatalogHudiSource(S3CatalogHudiSource&& value) { m_s3CatalogHudiSourceHasBeenSet = true; m_s3CatalogHudiSource = std::move(value); }
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline CodeGenConfigurationNode& WithS3CatalogHudiSource(const S3CatalogHudiSource& value) { SetS3CatalogHudiSource(value); return *this;}
 
     /**
      * <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The
-     * Hudi data source must be stored in Amazon S3.</p>
+     * data source must be stored in Amazon S3.</p>
      */
     inline CodeGenConfigurationNode& WithS3CatalogHudiSource(S3CatalogHudiSource&& value) { SetS3CatalogHudiSource(std::move(value)); return *this;}
 
@@ -2072,6 +2077,179 @@ namespace Model
 
     
     inline CodeGenConfigurationNode& WithDirectJDBCSource(DirectJDBCSource&& value) { SetDirectJDBCSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline const S3CatalogDeltaSource& GetS3CatalogDeltaSource() const{ return m_s3CatalogDeltaSource; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline bool S3CatalogDeltaSourceHasBeenSet() const { return m_s3CatalogDeltaSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline void SetS3CatalogDeltaSource(const S3CatalogDeltaSource& value) { m_s3CatalogDeltaSourceHasBeenSet = true; m_s3CatalogDeltaSource = value; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline void SetS3CatalogDeltaSource(S3CatalogDeltaSource&& value) { m_s3CatalogDeltaSourceHasBeenSet = true; m_s3CatalogDeltaSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3CatalogDeltaSource(const S3CatalogDeltaSource& value) { SetS3CatalogDeltaSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog. The data source must be stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3CatalogDeltaSource(S3CatalogDeltaSource&& value) { SetS3CatalogDeltaSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline const CatalogDeltaSource& GetCatalogDeltaSource() const{ return m_catalogDeltaSource; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline bool CatalogDeltaSourceHasBeenSet() const { return m_catalogDeltaSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetCatalogDeltaSource(const CatalogDeltaSource& value) { m_catalogDeltaSourceHasBeenSet = true; m_catalogDeltaSource = value; }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetCatalogDeltaSource(CatalogDeltaSource&& value) { m_catalogDeltaSourceHasBeenSet = true; m_catalogDeltaSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithCatalogDeltaSource(const CatalogDeltaSource& value) { SetCatalogDeltaSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Delta Lake data source that is registered in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithCatalogDeltaSource(CatalogDeltaSource&& value) { SetCatalogDeltaSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline const S3DeltaSource& GetS3DeltaSource() const{ return m_s3DeltaSource; }
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline bool S3DeltaSourceHasBeenSet() const { return m_s3DeltaSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline void SetS3DeltaSource(const S3DeltaSource& value) { m_s3DeltaSourceHasBeenSet = true; m_s3DeltaSource = value; }
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline void SetS3DeltaSource(S3DeltaSource&& value) { m_s3DeltaSourceHasBeenSet = true; m_s3DeltaSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaSource(const S3DeltaSource& value) { SetS3DeltaSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaSource(S3DeltaSource&& value) { SetS3DeltaSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline const S3DeltaCatalogTarget& GetS3DeltaCatalogTarget() const{ return m_s3DeltaCatalogTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline bool S3DeltaCatalogTargetHasBeenSet() const { return m_s3DeltaCatalogTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetS3DeltaCatalogTarget(const S3DeltaCatalogTarget& value) { m_s3DeltaCatalogTargetHasBeenSet = true; m_s3DeltaCatalogTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline void SetS3DeltaCatalogTarget(S3DeltaCatalogTarget&& value) { m_s3DeltaCatalogTargetHasBeenSet = true; m_s3DeltaCatalogTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaCatalogTarget(const S3DeltaCatalogTarget& value) { SetS3DeltaCatalogTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in the Glue Data
+     * Catalog.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaCatalogTarget(S3DeltaCatalogTarget&& value) { SetS3DeltaCatalogTarget(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline const S3DeltaDirectTarget& GetS3DeltaDirectTarget() const{ return m_s3DeltaDirectTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline bool S3DeltaDirectTargetHasBeenSet() const { return m_s3DeltaDirectTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline void SetS3DeltaDirectTarget(const S3DeltaDirectTarget& value) { m_s3DeltaDirectTargetHasBeenSet = true; m_s3DeltaDirectTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline void SetS3DeltaDirectTarget(S3DeltaDirectTarget&& value) { m_s3DeltaDirectTargetHasBeenSet = true; m_s3DeltaDirectTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaDirectTarget(const S3DeltaDirectTarget& value) { SetS3DeltaDirectTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
+     */
+    inline CodeGenConfigurationNode& WithS3DeltaDirectTarget(S3DeltaDirectTarget&& value) { SetS3DeltaDirectTarget(std::move(value)); return *this;}
 
   private:
 
@@ -2248,6 +2426,21 @@ namespace Model
 
     DirectJDBCSource m_directJDBCSource;
     bool m_directJDBCSourceHasBeenSet = false;
+
+    S3CatalogDeltaSource m_s3CatalogDeltaSource;
+    bool m_s3CatalogDeltaSourceHasBeenSet = false;
+
+    CatalogDeltaSource m_catalogDeltaSource;
+    bool m_catalogDeltaSourceHasBeenSet = false;
+
+    S3DeltaSource m_s3DeltaSource;
+    bool m_s3DeltaSourceHasBeenSet = false;
+
+    S3DeltaCatalogTarget m_s3DeltaCatalogTarget;
+    bool m_s3DeltaCatalogTargetHasBeenSet = false;
+
+    S3DeltaDirectTarget m_s3DeltaDirectTarget;
+    bool m_s3DeltaDirectTargetHasBeenSet = false;
   };
 
 } // namespace Model

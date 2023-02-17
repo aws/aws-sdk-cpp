@@ -26,6 +26,7 @@ namespace Aws
         static const int orc_HASH = HashingUtils::HashString("orc");
         static const int parquet_HASH = HashingUtils::HashString("parquet");
         static const int hudi_HASH = HashingUtils::HashString("hudi");
+        static const int delta_HASH = HashingUtils::HashString("delta");
 
 
         TargetFormat GetTargetFormatForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return TargetFormat::hudi;
           }
+          else if (hashCode == delta_HASH)
+          {
+            return TargetFormat::delta;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "parquet";
           case TargetFormat::hudi:
             return "hudi";
+          case TargetFormat::delta:
+            return "delta";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
