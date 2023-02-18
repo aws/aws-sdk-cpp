@@ -28,6 +28,8 @@ namespace Client
 {
 
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
+static const char* USE_REQUEST_COMPRESSION_ENV_VAR = "USE_REQUEST_COMPRESSION";
+static const char* USE_REQUEST_COMPRESSION_CONFIG_VAR = "use_request_compression";
 
 Aws::String ComputeUserAgentString()
 {
@@ -69,6 +71,21 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.enableClockSkewAdjustment = true;
     clientConfig.enableHostPrefixInjection = true;
     clientConfig.profileName = Aws::Auth::GetConfigProfileName();
+
+    Aws::String useCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
+        USE_REQUEST_COMPRESSION_ENV_VAR,
+        Aws::Auth::GetConfigProfileName(),
+        USE_REQUEST_COMPRESSION_CONFIG_VAR,
+        {"TRUE", "FALSE", "true", "false"},
+        "TRUE"
+        );
+
+    if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "false") {
+      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::FALSE;
+    } else {
+      //Using default to true for forward compatibility in case new config is added but SDK is not updated.
+      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::TRUE;
+    }
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 

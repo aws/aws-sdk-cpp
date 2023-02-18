@@ -27,6 +27,7 @@ protected:
     SaveEnvironmentVariable("AWS_DEFAULT_REGION");
     SaveEnvironmentVariable("AWS_REGION");
     SaveEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    SaveEnvironmentVariable("USE_REQUEST_COMPRESSION");
 
     Aws::StringStream ss;
     ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
@@ -37,6 +38,7 @@ protected:
     Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
     Aws::Environment::UnSetEnv("AWS_REGION");
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::UnSetEnv("USE_REQUEST_COMPRESSION");
 
     auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
@@ -114,6 +116,78 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
   Aws::Client::ClientConfiguration config("Dijkstra");
   EXPECT_EQ(Aws::Region::US_WEST_2, config.region);
   EXPECT_STREQ("Dijkstra", config.profileName.c_str());
+
+  // cleanup
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigSetsUseRequestCompressionToTrue){
+  // create an empty config file
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_EQ(Aws::Client::UseRequestCompression::TRUE, config.useRequestCompression);
+
+  // cleanup
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestEnvToFalseAndNoConfigSetsUseRequestCompressionToFalse){
+  //Set Env variable
+  Aws::Environment::SetEnv("USE_REQUEST_COMPRESSION", "FALSE", 1/*overwrite*/);
+  // create an empty config file
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_EQ(Aws::Client::UseRequestCompression::FALSE, config.useRequestCompression);
+
+  // cleanup
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestEnvToTrueAndConfigSetToFalseSetsUseRequestCompressionToTrue){
+  //Set Env variable
+  Aws::Environment::SetEnv("USE_REQUEST_COMPRESSION", "TRUE", 1/*overwrite*/);
+  // create an empty config file
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
+  configFileNew << "use_request_compression = false" << std::endl;
+
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config("Dijkstra");
+
+  EXPECT_EQ(Aws::Client::UseRequestCompression::TRUE, config.useRequestCompression);
+
+  // cleanup
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompressionToFalse){
+  // create an empty config file
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew << "[profile default]" << std::endl;  // profile keyword is mandatory per specification
+  configFileNew << "use_request_compression = false" << std::endl;
+
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_EQ(Aws::Client::UseRequestCompression::FALSE, config.useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
