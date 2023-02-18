@@ -46,6 +46,15 @@ namespace Aws
         };
 
         /**
+         * This setting is an enumeration, not a boolean, to allow for future expansion.
+         */
+        enum class UseRequestCompression
+        {
+          FALSE,
+          TRUE,
+        };
+
+        /**
          * This mutable structure is used to configure any of the AWS clients.
          * Default values can only be overwritten prior to passing to the client constructors.
          */
@@ -265,7 +274,14 @@ namespace Aws
             Aws::String profileName;
 
             /**
-             * A helper function to read config value from env variable of aws profile config
+             * Use request compression when available.
+             * To use this feature, the service needs to provide the support, and the compression
+             * algorithms needs to be available at SDK build time.
+             */
+            Aws::Client::UseRequestCompression useRequestCompression;
+
+            /**
+             * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
                                                           const Aws::String& profile,
