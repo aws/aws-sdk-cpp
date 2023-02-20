@@ -1764,7 +1764,7 @@ namespace AuditManager
         }
 
         /**
-         * <p> Updates Audit Manager settings for the current user account. </p><p><h3>See
+         * <p> Updates Audit Manager settings for the current account. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">AWS
          * API Reference</a></p>

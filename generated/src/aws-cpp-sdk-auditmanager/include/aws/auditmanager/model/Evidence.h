@@ -414,49 +414,49 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline const Aws::String& GetIamId() const{ return m_iamId; }
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline bool IamIdHasBeenSet() const { return m_iamIdHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline void SetIamId(const Aws::String& value) { m_iamIdHasBeenSet = true; m_iamId = value; }
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline void SetIamId(Aws::String&& value) { m_iamIdHasBeenSet = true; m_iamId = std::move(value); }
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline void SetIamId(const char* value) { m_iamIdHasBeenSet = true; m_iamId.assign(value); }
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline Evidence& WithIamId(const Aws::String& value) { SetIamId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline Evidence& WithIamId(Aws::String&& value) { SetIamId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the IAM user or role that's associated with the
+     * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
     inline Evidence& WithIamId(const char* value) { SetIamId(value); return *this;}

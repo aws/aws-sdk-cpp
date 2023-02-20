@@ -71,49 +71,73 @@ namespace Model
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline EncryptionConfig& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline EncryptionConfig& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The full ARN of the encryption key. </p>  <p>Be sure to provide the
-     * full ARN of the encryption key, not just the ID.</p> 
+     * full ARN of the encryption key, not just the ID.</p> <p>Amazon Connect supports
+     * only KMS keys with the default key spec of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+     * <code>SYMMETRIC_DEFAULT</code> </a>. </p> 
      */
     inline EncryptionConfig& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

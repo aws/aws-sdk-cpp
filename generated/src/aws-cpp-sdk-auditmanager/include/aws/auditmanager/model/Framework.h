@@ -473,83 +473,83 @@ namespace Model
 
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline Framework& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline Framework& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM user or role that created the framework. </p>
+     * <p> The user or role that created the framework. </p>
      */
     inline Framework& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline Framework& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline Framework& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM user or role that most recently updated the framework. </p>
+     * <p> The user or role that most recently updated the framework. </p>
      */
     inline Framework& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 

@@ -458,42 +458,42 @@ namespace Model
 
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline Delegation& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline Delegation& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM user or role that created the delegation. </p>
+     * <p> The user or role that created the delegation. </p>
      */
     inline Delegation& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
