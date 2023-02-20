@@ -24,8 +24,15 @@ namespace Model
 {
 
   /**
-   * <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p> <p>For an
+   * example of how to find an Amazon Web Service name and how to define it in your
+   * assessment scope, see the following:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html#API_GetServicesInScope_Example_2">Finding
+   * an Amazon Web Service name to use in your assessment scope</a> </p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html#API_GetServicesInScope_Example_3">Defining
+   * an Amazon Web Service name in your assessment scope</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AWSService">AWS
    * API Reference</a></p>
    */

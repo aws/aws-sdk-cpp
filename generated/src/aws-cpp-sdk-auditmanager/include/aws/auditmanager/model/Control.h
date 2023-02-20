@@ -521,83 +521,83 @@ namespace Model
 
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline Control& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline Control& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM user or role that created the control. </p>
+     * <p> The user or role that created the control. </p>
      */
     inline Control& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline Control& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline Control& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
 
     /**
-     * <p> The IAM user or role that most recently updated the control. </p>
+     * <p> The user or role that most recently updated the control. </p>
      */
     inline Control& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 
