@@ -128,7 +128,7 @@ namespace Aws
         {
         public:
             /**
-             * Create a new TransferManager instance intialized with config. 
+             * Create a new TransferManager instance initialized with config.
              */
             static std::shared_ptr<TransferManager> Create(const TransferManagerConfiguration& config);
 
@@ -265,7 +265,7 @@ namespace Aws
                                                                    const Aws::String& fileName = "");
 
             /**
-             * Submits the actual task to task schecduler
+             * Submits the actual task to task scheduler
              */
             std::shared_ptr<TransferHandle> SubmitUpload(const std::shared_ptr<TransferHandle>& handle, const std::shared_ptr<Aws::IOStream>& fileStream = nullptr);
 
@@ -283,7 +283,7 @@ namespace Aws
             /**
              * Uploads the contents of file, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
              * then a multi-part upload will be performed.
-             * Keeps file to be unopenned until doing actual upload, this is useful for uplodaing directories with many small files (avoid having too many open files, which may exceed system limit)
+             * Keeps file to be unopened until doing actual upload, this is useful for uploading directories with many small files (avoid having too many open files, which may exceed system limit)
              */
             std::shared_ptr<TransferHandle> DoUploadFile(const Aws::String& fileName,
                                                          const Aws::String& bucketName,

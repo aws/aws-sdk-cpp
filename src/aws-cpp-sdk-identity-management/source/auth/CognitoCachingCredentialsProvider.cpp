@@ -34,9 +34,9 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 {
     if (IsTimeExpired(m_expiry.load()))
     {
-        AWS_LOGSTREAM_TRACE(LOG_TAG, "Expiry expired, attempting to aquire lock and refresh credentials.");
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Expiry expired, attempting to acquire lock and refresh credentials.");
         std::lock_guard<std::mutex> locker(m_credsMutex);
-        AWS_LOGSTREAM_TRACE(LOG_TAG, "Lock aquired, checking if the expiry is still expired.");
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Lock acquired, checking if the expiry is still expired.");
         if (IsTimeExpired(m_expiry.load()))
         {
             AWS_LOGSTREAM_INFO(LOG_TAG, "Expiry expired on cognito credentials attempting to pull new credentials.");

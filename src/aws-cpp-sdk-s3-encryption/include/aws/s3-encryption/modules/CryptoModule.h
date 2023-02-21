@@ -98,12 +98,13 @@ namespace Aws
                 virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) = 0;
 
                 /*
-                * This function checks for any prohibitted actions within each module.
+                * This function checks for any prohibited actions within each module.
                 */
                 virtual bool DecryptionConditionCheck(const Aws::String& requestRange) = 0;
 
                 /*
-                * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. It also adjusts the range if the a range-get request was specified according to the range for the cipher block.
+                * This function adjusts the get object request range to specifically get only the body of the content and not any addition content.
+                 * It also adjusts the range if a range-get request was specified according to the range for the cipher block.
                 */
                 virtual std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
 
@@ -148,7 +149,7 @@ namespace Aws
                 Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
-                * Function to check for any prohibitted actions specific to each module for decryption.
+                * Function to check for any prohibited actions specific to each module for decryption.
                 */
                 virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
@@ -192,7 +193,7 @@ namespace Aws
                 Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
-                * Function to check for any prohibitted actions specific to each module for decryption.
+                * Function to check for any prohibited actions specific to each module for decryption.
                 */
                 virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 
@@ -236,7 +237,7 @@ namespace Aws
                 Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
-                * Function to check for any prohibitted actions specific to each module for decryption.
+                * Function to check for any prohibited actions specific to each module for decryption.
                 */
                 virtual bool DecryptionConditionCheck(const Aws::String& requestRange) override;
 

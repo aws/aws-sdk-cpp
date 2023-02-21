@@ -30,7 +30,7 @@ if (PLATFORM_LINUX)
     else()
         message(WARNING "We've detected that you are building on linux, but the header files for pulseaudio are not available.\
                 If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
-                However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for pulseAudio.\
+                However, if you are not providing your own implementation and you want to use text-to-speech, you need to install the dev files for pulseAudio.\
                 e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
     endif()
 endif()
@@ -47,7 +47,7 @@ if(PLATFORM_APPLE)
         else()
             message(FATAL "We've detected that you are building on macos, but there is no coreAudio library and pulseAudio library available.\
                     If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
-                    However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for coreAudio or pulseAudio.\
+                    However, if you are not providing your own implementation and you want to use text-to-speech, you need to install the dev files for coreAudio or pulseAudio.\
                     e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
         endif()
     else()

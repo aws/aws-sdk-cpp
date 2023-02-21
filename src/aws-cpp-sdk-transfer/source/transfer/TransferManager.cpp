@@ -852,7 +852,7 @@ namespace Aws
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
-                /* When bucket versioning is susppended, head object will return "null" for unversioned object.
+                /* When bucket versioning is suspended, head object will return "null" for unversioned object.
                  * Send following GetObject with "null" as versionId will result in 403 access denied error if your IAM role or policy
                  * doesn't have GetObjectVersion permission.
                  */
@@ -1163,10 +1163,10 @@ namespace Aws
                                 << downloadContext->prefix <<" that goes outside local target directory: " << directory);
                             continue;
                         }
-                        auto lastDelimter = fileName.find_last_of(Aws::FileSystem::PATH_DELIM);
-                        if (lastDelimter != std::string::npos)
+                        auto lastDelimiter = fileName.find_last_of(Aws::FileSystem::PATH_DELIM);
+                        if (lastDelimiter != std::string::npos)
                         {
-                            Aws::FileSystem::CreateDirectoryIfNotExists(fileName.substr(0, lastDelimter).c_str(), true/*create parent dirs*/);
+                            Aws::FileSystem::CreateDirectoryIfNotExists(fileName.substr(0, lastDelimiter).c_str(), true/*create parent dirs*/);
                         }
                         AWS_LOGSTREAM_INFO(CLASS_TAG, "Initiating download of key: [" << content.GetKey() <<
                                 "] in bucket: [" << directory << "] to destination file: [" << fileName << "]");

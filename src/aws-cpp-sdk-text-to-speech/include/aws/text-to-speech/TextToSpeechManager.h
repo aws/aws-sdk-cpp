@@ -73,7 +73,7 @@ namespace Aws
             OutputDeviceList EnumerateDevices() const;
 
             /**
-             * Sets the active driver (if there are multiple possbilities), the device to use for that driver, and the 
+             * Sets the active driver (if there are multiple possibilities), the device to use for that driver, and the
              * audio format to configure the device for. This format will also be used for calls to the Polly service.
              */
             void SetActiveDevice(const std::shared_ptr<PCMOutputDriver>&, const DeviceInfo&, const CapabilityInfo&);
@@ -93,9 +93,9 @@ namespace Aws
             TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient,
                 const std::shared_ptr<PCMOutputDriverFactory>& driverFactory);
 
-            void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
-                const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
-            
+            void OnPollySynthSpeechOutcomeReceived(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,
+                                                   const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
+
             Polly::PollyClient* m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
