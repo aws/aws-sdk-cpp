@@ -78,7 +78,7 @@ namespace Aws
                                                         const Polly::Model::SynthesizeSpeechOutcome& speechOutcome,
                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
                                                         {
-                                                            self->OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, lambdaContext);
+                                                            self->OnPollySynthSpeechOutcomeReceived(client, request, speechOutcome, lambdaContext);
                                                         },
                                                         context);
         }
@@ -140,8 +140,8 @@ namespace Aws
             m_activeVoice = VoiceIdMapper::GetVoiceIdForName(voice);
         }
 
-        void TextToSpeechManager::OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest& request,
-            const Polly::Model::SynthesizeSpeechOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+        void TextToSpeechManager::OnPollySynthSpeechOutcomeReceived(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest& request,
+                                                                    const Polly::Model::SynthesizeSpeechOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
         {
             bool played(false);
 
@@ -149,8 +149,8 @@ namespace Aws
             {
                 auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
                 auto& stream = result.GetAudioStream();
-                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Audio retrieved from Polly. " << result.GetContentType() << " with " 
-                    << result.GetRequestCharacters() << " characters syntesized");
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Audio retrieved from Polly. " << result.GetContentType() << " with "
+                                                                              << result.GetRequestCharacters() << " characters synthesized");
 
                 unsigned char buffer[BUFF_SIZE];
 
@@ -172,7 +172,7 @@ namespace Aws
             else
             {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error while fetching audio from polly. " << outcome.GetError().GetExceptionName() << " "
-                    << outcome.GetError().GetMessage());
+                                                                                         << outcome.GetError().GetMessage());
             }
 
             auto callback = ((const std::shared_ptr<SendTextCompletionHandlerCallbackContext>&)context)->callback;
