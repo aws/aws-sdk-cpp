@@ -38,7 +38,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -48,7 +48,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
 
@@ -58,7 +58,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
 
@@ -68,7 +68,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline DeleteResiliencyPolicyResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
@@ -88,7 +88,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline DeleteResiliencyPolicyResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline DeleteResiliencyPolicyResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

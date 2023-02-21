@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/ResourceImportStrategyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/model/TerraformSource.h>
 #include <utility>
@@ -35,84 +36,121 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the application. The format for this ARN
-     * is:
+     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
+     * format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline const ResourceImportStrategyType& GetImportStrategy() const{ return m_importStrategy; }
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline bool ImportStrategyHasBeenSet() const { return m_importStrategyHasBeenSet; }
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline void SetImportStrategy(const ResourceImportStrategyType& value) { m_importStrategyHasBeenSet = true; m_importStrategy = value; }
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline void SetImportStrategy(ResourceImportStrategyType&& value) { m_importStrategyHasBeenSet = true; m_importStrategy = std::move(value); }
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(const ResourceImportStrategyType& value) { SetImportStrategy(value); return *this;}
+
+    /**
+     * <p>The import strategy you would like to set to import resources into AWS
+     * Resilience Hub application.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(ResourceImportStrategyType&& value) { SetImportStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -214,6 +252,9 @@ namespace Model
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
+
+    ResourceImportStrategyType m_importStrategy;
+    bool m_importStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceArns;
     bool m_sourceArnsHasBeenSet = false;

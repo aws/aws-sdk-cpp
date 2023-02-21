@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 ImportResourcesToDraftAppVersionRequest::ImportResourcesToDraftAppVersionRequest() : 
     m_appArnHasBeenSet(false),
+    m_importStrategy(ResourceImportStrategyType::NOT_SET),
+    m_importStrategyHasBeenSet(false),
     m_sourceArnsHasBeenSet(false),
     m_terraformSourcesHasBeenSet(false)
 {
@@ -27,6 +29,11 @@ Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
   {
    payload.WithString("appArn", m_appArn);
 
+  }
+
+  if(m_importStrategyHasBeenSet)
+  {
+   payload.WithString("importStrategy", ResourceImportStrategyTypeMapper::GetNameForResourceImportStrategyType(m_importStrategy));
   }
 
   if(m_sourceArnsHasBeenSet)

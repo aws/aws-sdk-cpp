@@ -42,7 +42,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetInaccessibleEncryptionDateTime() const{ return m_inaccessibleEncryptionDateTime; }
@@ -51,7 +52,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool InaccessibleEncryptionDateTimeHasBeenSet() const { return m_inaccessibleEncryptionDateTimeHasBeenSet; }
@@ -60,7 +62,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInaccessibleEncryptionDateTime(const Aws::String& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = value; }
@@ -69,7 +72,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInaccessibleEncryptionDateTime(Aws::String&& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = std::move(value); }
@@ -78,7 +82,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInaccessibleEncryptionDateTime(const char* value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime.assign(value); }
@@ -87,7 +92,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const Aws::String& value) { SetInaccessibleEncryptionDateTime(value); return *this;}
@@ -96,7 +102,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(Aws::String&& value) { SetInaccessibleEncryptionDateTime(std::move(value)); return *this;}
@@ -105,7 +112,8 @@ namespace Model
      * <p>If the key is inaccessible, the date and time when DynamoDB detected that the
      * key was inaccessible.</p> <p>Uses the <code>date-time</code> format specified in
      * <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const char* value) { SetInaccessibleEncryptionDateTime(value); return *this;}

@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines an application component.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines an Application Component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppComponent">AWS
    * API Reference</a></p>
    */
@@ -38,87 +40,255 @@ namespace Model
 
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& WithAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(const char* key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline AppComponent& AddAdditionalInfo(const char* key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline AppComponent& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline AppComponent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier of the Application Component.</p>
+     */
+    inline AppComponent& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The name of the Application Component.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline AppComponent& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline AppComponent& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline AppComponent& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline AppComponent& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline AppComponent& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of application component.</p>
+     * <p>The type of Application Component.</p>
      */
     inline AppComponent& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
+    bool m_additionalInfoHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

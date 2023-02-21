@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/model/LogicalResourceId.h>
 #include <aws/resiliencehub/model/PhysicalResourceId.h>
@@ -29,7 +30,7 @@ namespace Model
 
   /**
    * <p>Defines a physical resource. A physical resource is a resource that exists in
-   * your account. It can be identified using an Amazon Resource Name (ARN) or a
+   * your account. It can be identified using an Amazon Resource Name (ARN) or an AWS
    * Resilience Hub-native identifier. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PhysicalResource">AWS
    * API Reference</a></p>
@@ -41,6 +42,127 @@ namespace Model
     AWS_RESILIENCEHUB_API PhysicalResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API PhysicalResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& WithAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(const char* key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional configuration parameters for an AWS Resilience Hub
+     * application.</p>  <p>Currently, this parameter accepts a key-value mapping
+     * (in a string format) of only one failover region and one associated account.</p>
+     * <p>Key: <code>"failover-regions"</code> </p> <p>Value:
+     * <code>"[{"region":"&lt;REGION&gt;",
+     * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p> 
+     */
+    inline PhysicalResource& AddAdditionalInfo(const char* key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
 
     /**
@@ -82,6 +204,27 @@ namespace Model
      * <p>The application components that belong to this resource.</p>
      */
     inline PhysicalResource& AddAppComponents(AppComponent&& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates if a resource is included or excluded from the assessment.</p>
+     */
+    inline bool GetExcluded() const{ return m_excluded; }
+
+    /**
+     * <p>Indicates if a resource is included or excluded from the assessment.</p>
+     */
+    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+
+    /**
+     * <p>Indicates if a resource is included or excluded from the assessment.</p>
+     */
+    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
+
+    /**
+     * <p>Indicates if a resource is included or excluded from the assessment.</p>
+     */
+    inline PhysicalResource& WithExcluded(bool value) { SetExcluded(value); return *this;}
 
 
     /**
@@ -229,8 +372,14 @@ namespace Model
 
   private:
 
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
+    bool m_additionalInfoHasBeenSet = false;
+
     Aws::Vector<AppComponent> m_appComponents;
     bool m_appComponentsHasBeenSet = false;
+
+    bool m_excluded;
+    bool m_excludedHasBeenSet = false;
 
     LogicalResourceId m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet = false;

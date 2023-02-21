@@ -336,56 +336,88 @@ namespace Model
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddFirstObservedAt(DateFilter&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(std::move(value)); return *this; }
 
@@ -393,154 +425,258 @@ namespace Model
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
      * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * captured.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddLastObservedAt(DateFilter&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider captured the potential security issue that a finding captured.</p>
+     * provider captured the potential security issue that a finding captured.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddCreatedAt(DateFilter&& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * provider last updated the finding record. </p> <p>A correctly formatted example
+     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For more information, see
+     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+     * 5.6, Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
 
@@ -1880,83 +2016,163 @@ namespace Model
 
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetProcessLaunchedAt() const{ return m_processLaunchedAt; }
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool ProcessLaunchedAtHasBeenSet() const { return m_processLaunchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = value; }
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = std::move(value); }
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { SetProcessLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { SetProcessLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessLaunchedAt(const DateFilter& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time that the process was launched.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
+     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
+     * contain spaces, and date and time should be separated by <code>T</code>. For
+     * more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessLaunchedAt(DateFilter&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetProcessTerminatedAt() const{ return m_processTerminatedAt; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool ProcessTerminatedAtHasBeenSet() const { return m_processTerminatedAtHasBeenSet; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = value; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = std::move(value); }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { SetProcessTerminatedAt(value); return *this;}
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { SetProcessTerminatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessTerminatedAt(const DateFilter& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessTerminatedAt(DateFilter&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(std::move(value)); return *this; }
 
@@ -2085,42 +2301,50 @@ namespace Model
 
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline const Aws::Vector<DateFilter>& GetThreatIntelIndicatorLastObservedAt() const{ return m_threatIntelIndicatorLastObservedAt; }
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline bool ThreatIntelIndicatorLastObservedAtHasBeenSet() const { return m_threatIntelIndicatorLastObservedAtHasBeenSet; }
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline void SetThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = value; }
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline void SetThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = std::move(value); }
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { SetThreatIntelIndicatorLastObservedAt(value); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { SetThreatIntelIndicatorLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(const DateFilter& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
+     * <p>A timestamp that identifies the last observation of a threat intelligence
+     * indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(DateFilter&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(std::move(value)); return *this; }
 
@@ -3175,42 +3399,82 @@ namespace Model
 
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::Vector<DateFilter>& GetResourceContainerLaunchedAt() const{ return m_resourceContainerLaunchedAt; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool ResourceContainerLaunchedAtHasBeenSet() const { return m_resourceContainerLaunchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = value; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = std::move(value); }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { SetResourceContainerLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { SetResourceContainerLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(const DateFilter& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(DateFilter&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(std::move(value)); return *this; }
 

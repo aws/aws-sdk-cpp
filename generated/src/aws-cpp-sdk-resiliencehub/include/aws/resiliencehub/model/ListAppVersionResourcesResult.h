@@ -114,37 +114,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline const Aws::String& GetResolutionId() const{ return m_resolutionId; }
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline void SetResolutionId(const Aws::String& value) { m_resolutionId = value; }
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline void SetResolutionId(Aws::String&& value) { m_resolutionId = std::move(value); }
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline void SetResolutionId(const char* value) { m_resolutionId.assign(value); }
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline ListAppVersionResourcesResult& WithResolutionId(const Aws::String& value) { SetResolutionId(value); return *this;}
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline ListAppVersionResourcesResult& WithResolutionId(Aws::String&& value) { SetResolutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for a specific resolution.</p>
+     * <p>The ID for a specific resolution.</p>
      */
     inline ListAppVersionResourcesResult& WithResolutionId(const char* value) { SetResolutionId(value); return *this;}
 

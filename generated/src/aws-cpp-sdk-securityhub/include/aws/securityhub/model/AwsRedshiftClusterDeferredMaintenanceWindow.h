@@ -42,7 +42,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetDeferMaintenanceEndTime() const{ return m_deferMaintenanceEndTime; }
@@ -51,7 +52,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool DeferMaintenanceEndTimeHasBeenSet() const { return m_deferMaintenanceEndTimeHasBeenSet; }
@@ -60,7 +62,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceEndTime(const Aws::String& value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime = value; }
@@ -69,7 +72,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceEndTime(Aws::String&& value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime = std::move(value); }
@@ -78,7 +82,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceEndTime(const char* value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime.assign(value); }
@@ -87,7 +92,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(const Aws::String& value) { SetDeferMaintenanceEndTime(value); return *this;}
@@ -96,7 +102,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(Aws::String&& value) { SetDeferMaintenanceEndTime(std::move(value)); return *this;}
@@ -105,7 +112,8 @@ namespace Model
      * <p>The end of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(const char* value) { SetDeferMaintenanceEndTime(value); return *this;}
@@ -156,7 +164,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetDeferMaintenanceStartTime() const{ return m_deferMaintenanceStartTime; }
@@ -165,7 +174,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool DeferMaintenanceStartTimeHasBeenSet() const { return m_deferMaintenanceStartTimeHasBeenSet; }
@@ -174,7 +184,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceStartTime(const Aws::String& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = value; }
@@ -183,7 +194,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceStartTime(Aws::String&& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = std::move(value); }
@@ -192,7 +204,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetDeferMaintenanceStartTime(const char* value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime.assign(value); }
@@ -201,7 +214,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(const Aws::String& value) { SetDeferMaintenanceStartTime(value); return *this;}
@@ -210,7 +224,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(Aws::String&& value) { SetDeferMaintenanceStartTime(std::move(value)); return *this;}
@@ -219,7 +234,8 @@ namespace Model
      * <p>The start of the time window for which maintenance was deferred.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(const char* value) { SetDeferMaintenanceStartTime(value); return *this;}

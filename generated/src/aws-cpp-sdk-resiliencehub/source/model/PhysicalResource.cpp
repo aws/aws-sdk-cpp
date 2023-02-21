@@ -19,7 +19,10 @@ namespace Model
 {
 
 PhysicalResource::PhysicalResource() : 
+    m_additionalInfoHasBeenSet(false),
     m_appComponentsHasBeenSet(false),
+    m_excluded(false),
+    m_excludedHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
@@ -28,7 +31,10 @@ PhysicalResource::PhysicalResource() :
 }
 
 PhysicalResource::PhysicalResource(JsonView jsonValue) : 
+    m_additionalInfoHasBeenSet(false),
     m_appComponentsHasBeenSet(false),
+    m_excluded(false),
+    m_excludedHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
@@ -39,6 +45,23 @@ PhysicalResource::PhysicalResource(JsonView jsonValue) :
 
 PhysicalResource& PhysicalResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalInfo"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalInfoJsonMap = jsonValue.GetObject("additionalInfo").GetAllObjects();
+    for(auto& additionalInfoItem : additionalInfoJsonMap)
+    {
+      Aws::Utils::Array<JsonView> additionalInfoValueListJsonList = additionalInfoItem.second.AsArray();
+      Aws::Vector<Aws::String> additionalInfoValueListList;
+      additionalInfoValueListList.reserve((size_t)additionalInfoValueListJsonList.GetLength());
+      for(unsigned additionalInfoValueListIndex = 0; additionalInfoValueListIndex < additionalInfoValueListJsonList.GetLength(); ++additionalInfoValueListIndex)
+      {
+        additionalInfoValueListList.push_back(additionalInfoValueListJsonList[additionalInfoValueListIndex].AsString());
+      }
+      m_additionalInfo[additionalInfoItem.first] = std::move(additionalInfoValueListList);
+    }
+    m_additionalInfoHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("appComponents"))
   {
     Aws::Utils::Array<JsonView> appComponentsJsonList = jsonValue.GetArray("appComponents");
@@ -47,6 +70,13 @@ PhysicalResource& PhysicalResource::operator =(JsonView jsonValue)
       m_appComponents.push_back(appComponentsJsonList[appComponentsIndex].AsObject());
     }
     m_appComponentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("excluded"))
+  {
+    m_excluded = jsonValue.GetBool("excluded");
+
+    m_excludedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logicalResourceId"))
@@ -84,6 +114,22 @@ JsonValue PhysicalResource::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_additionalInfoHasBeenSet)
+  {
+   JsonValue additionalInfoJsonMap;
+   for(auto& additionalInfoItem : m_additionalInfo)
+   {
+     Aws::Utils::Array<JsonValue> additionalInfoValueListJsonList(additionalInfoItem.second.size());
+     for(unsigned additionalInfoValueListIndex = 0; additionalInfoValueListIndex < additionalInfoValueListJsonList.GetLength(); ++additionalInfoValueListIndex)
+     {
+       additionalInfoValueListJsonList[additionalInfoValueListIndex].AsString(additionalInfoItem.second[additionalInfoValueListIndex]);
+     }
+     additionalInfoJsonMap.WithArray(additionalInfoItem.first, std::move(additionalInfoValueListJsonList));
+   }
+   payload.WithObject("additionalInfo", std::move(additionalInfoJsonMap));
+
+  }
+
   if(m_appComponentsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> appComponentsJsonList(m_appComponents.size());
@@ -92,6 +138,12 @@ JsonValue PhysicalResource::Jsonize() const
      appComponentsJsonList[appComponentsIndex].AsObject(m_appComponents[appComponentsIndex].Jsonize());
    }
    payload.WithArray("appComponents", std::move(appComponentsJsonList));
+
+  }
+
+  if(m_excludedHasBeenSet)
+  {
+   payload.WithBool("excluded", m_excluded);
 
   }
 

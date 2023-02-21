@@ -123,7 +123,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetRestoreDateTime() const{ return m_restoreDateTime; }
@@ -132,7 +133,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool RestoreDateTimeHasBeenSet() const { return m_restoreDateTimeHasBeenSet; }
@@ -141,7 +143,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetRestoreDateTime(const Aws::String& value) { m_restoreDateTimeHasBeenSet = true; m_restoreDateTime = value; }
@@ -150,7 +153,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetRestoreDateTime(Aws::String&& value) { m_restoreDateTimeHasBeenSet = true; m_restoreDateTime = std::move(value); }
@@ -159,7 +163,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetRestoreDateTime(const char* value) { m_restoreDateTimeHasBeenSet = true; m_restoreDateTime.assign(value); }
@@ -168,7 +173,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableRestoreSummary& WithRestoreDateTime(const Aws::String& value) { SetRestoreDateTime(value); return *this;}
@@ -177,7 +183,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableRestoreSummary& WithRestoreDateTime(Aws::String&& value) { SetRestoreDateTime(std::move(value)); return *this;}
@@ -186,7 +193,8 @@ namespace Model
      * <p>Indicates the point in time that the table was restored to.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableRestoreSummary& WithRestoreDateTime(const char* value) { SetRestoreDateTime(value); return *this;}

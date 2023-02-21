@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The specified resource could not be found.</p><p><h3>See Also:</h3>   <a
+   * <p>This exception occurs when the specified resource could not be
+   * found.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

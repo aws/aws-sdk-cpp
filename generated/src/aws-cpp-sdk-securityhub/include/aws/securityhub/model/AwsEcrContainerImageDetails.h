@@ -276,7 +276,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetImagePublishedAt() const{ return m_imagePublishedAt; }
@@ -285,7 +286,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool ImagePublishedAtHasBeenSet() const { return m_imagePublishedAtHasBeenSet; }
@@ -294,7 +296,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImagePublishedAt(const Aws::String& value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt = value; }
@@ -303,7 +306,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImagePublishedAt(Aws::String&& value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt = std::move(value); }
@@ -312,7 +316,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImagePublishedAt(const char* value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt.assign(value); }
@@ -321,7 +326,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(const Aws::String& value) { SetImagePublishedAt(value); return *this;}
@@ -330,7 +336,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(Aws::String&& value) { SetImagePublishedAt(std::move(value)); return *this;}
@@ -339,7 +346,8 @@ namespace Model
      * <p>The date and time when the image was pushed to the repository.</p> <p>Uses
      * the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(const char* value) { SetImagePublishedAt(value); return *this;}

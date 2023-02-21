@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The limit on the number of requests per second was exceeded.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>This exception occurs when you have exceeded the limit on the number of
+   * requests per second.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ThrottlingException">AWS
    * API Reference</a></p>
    */

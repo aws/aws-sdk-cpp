@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline const PhysicalIdentifierType& GetType() const{ return m_type; }
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline void SetType(const PhysicalIdentifierType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -188,7 +188,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline void SetType(PhysicalIdentifierType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline PhysicalResourceId& WithType(const PhysicalIdentifierType& value) { SetType(value); return *this;}
@@ -204,7 +204,7 @@ namespace Model
     /**
      * <p>Specifies the type of physical resource identifier.</p> <dl> <dt>Arn</dt>
      * <dd> <p>The resource identifier is an Amazon Resource Name (ARN) .</p> </dd>
-     * <dt>Native</dt> <dd> <p>The resource identifier is a Resilience Hub-native
+     * <dt>Native</dt> <dd> <p>The resource identifier is an AWS Resilience Hub-native
      * identifier.</p> </dd> </dl>
      */
     inline PhysicalResourceId& WithType(PhysicalIdentifierType&& value) { SetType(std::move(value)); return *this;}
