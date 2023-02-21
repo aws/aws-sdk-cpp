@@ -98,7 +98,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
@@ -107,7 +108,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
@@ -116,7 +118,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetSnapshotCreateTime(const Aws::String& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
@@ -125,7 +128,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetSnapshotCreateTime(Aws::String&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
@@ -134,7 +138,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetSnapshotCreateTime(const char* value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime.assign(value); }
@@ -143,7 +148,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithSnapshotCreateTime(const Aws::String& value) { SetSnapshotCreateTime(value); return *this;}
@@ -152,7 +158,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithSnapshotCreateTime(Aws::String&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
@@ -161,7 +168,8 @@ namespace Model
      * <p>Indicates when the snapshot was taken.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithSnapshotCreateTime(const char* value) { SetSnapshotCreateTime(value); return *this;}
@@ -348,7 +356,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetClusterCreateTime() const{ return m_clusterCreateTime; }
@@ -357,7 +366,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool ClusterCreateTimeHasBeenSet() const { return m_clusterCreateTimeHasBeenSet; }
@@ -366,7 +376,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetClusterCreateTime(const Aws::String& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
@@ -375,7 +386,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetClusterCreateTime(Aws::String&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = std::move(value); }
@@ -384,7 +396,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetClusterCreateTime(const char* value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime.assign(value); }
@@ -393,7 +406,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithClusterCreateTime(const Aws::String& value) { SetClusterCreateTime(value); return *this;}
@@ -402,7 +416,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithClusterCreateTime(Aws::String&& value) { SetClusterCreateTime(std::move(value)); return *this;}
@@ -411,7 +426,8 @@ namespace Model
      * <p>Indicates when the DB cluster was created, in Universal Coordinated Time
      * (UTC).</p> <p>Uses the <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithClusterCreateTime(const char* value) { SetClusterCreateTime(value); return *this;}

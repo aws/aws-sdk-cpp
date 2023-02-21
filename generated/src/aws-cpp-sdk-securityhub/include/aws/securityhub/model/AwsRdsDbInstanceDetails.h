@@ -628,7 +628,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
@@ -637,7 +638,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
@@ -646,7 +648,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInstanceCreateTime(const Aws::String& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
@@ -655,7 +658,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInstanceCreateTime(Aws::String&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = std::move(value); }
@@ -664,7 +668,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetInstanceCreateTime(const char* value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime.assign(value); }
@@ -673,7 +678,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithInstanceCreateTime(const Aws::String& value) { SetInstanceCreateTime(value); return *this;}
@@ -682,7 +688,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithInstanceCreateTime(Aws::String&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
@@ -691,7 +698,8 @@ namespace Model
      * <p>Indicates when the DB instance was created.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithInstanceCreateTime(const char* value) { SetInstanceCreateTime(value); return *this;}
@@ -1418,8 +1426,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLatestRestorableTime() const{ return m_latestRestorableTime; }
 
@@ -1427,8 +1436,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LatestRestorableTimeHasBeenSet() const { return m_latestRestorableTimeHasBeenSet; }
 
@@ -1436,8 +1446,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLatestRestorableTime(const Aws::String& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
 
@@ -1445,8 +1456,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLatestRestorableTime(Aws::String&& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = std::move(value); }
 
@@ -1454,8 +1466,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLatestRestorableTime(const char* value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime.assign(value); }
 
@@ -1463,8 +1476,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithLatestRestorableTime(const Aws::String& value) { SetLatestRestorableTime(value); return *this;}
 
@@ -1472,8 +1486,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithLatestRestorableTime(Aws::String&& value) { SetLatestRestorableTime(std::move(value)); return *this;}
 
@@ -1481,8 +1496,9 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p> <p>Uses the <code>date-time</code> format specified
      * in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsRdsDbInstanceDetails& WithLatestRestorableTime(const char* value) { SetLatestRestorableTime(value); return *this;}
 

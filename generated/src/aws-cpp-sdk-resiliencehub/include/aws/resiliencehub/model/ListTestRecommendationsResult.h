@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline const Aws::Vector<TestRecommendation>& GetTestRecommendations() const{ return m_testRecommendations; }
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline void SetTestRecommendations(const Aws::Vector<TestRecommendation>& value) { m_testRecommendations = value; }
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline void SetTestRecommendations(Aws::Vector<TestRecommendation>&& value) { m_testRecommendations = std::move(value); }
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline ListTestRecommendationsResult& WithTestRecommendations(const Aws::Vector<TestRecommendation>& value) { SetTestRecommendations(value); return *this;}
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline ListTestRecommendationsResult& WithTestRecommendations(Aws::Vector<TestRecommendation>&& value) { SetTestRecommendations(std::move(value)); return *this;}
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline ListTestRecommendationsResult& AddTestRecommendations(const TestRecommendation& value) { m_testRecommendations.push_back(value); return *this; }
 
     /**
-     * <p>The test recommendations for the Resilience Hub application.</p>
+     * <p>The test recommendations for the AWS Resilience Hub application.</p>
      */
     inline ListTestRecommendationsResult& AddTestRecommendations(TestRecommendation&& value) { m_testRecommendations.push_back(std::move(value)); return *this; }
 

@@ -97,7 +97,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
@@ -106,7 +107,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -115,7 +117,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
@@ -124,7 +127,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
@@ -133,7 +137,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
@@ -142,7 +147,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
@@ -151,7 +157,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
@@ -160,7 +167,8 @@ namespace Model
      * <p>Indicates when the certificate was requested.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
@@ -446,8 +454,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetImportedAt() const{ return m_importedAt; }
 
@@ -455,8 +464,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool ImportedAtHasBeenSet() const { return m_importedAtHasBeenSet; }
 
@@ -464,8 +474,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImportedAt(const Aws::String& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
 
@@ -473,8 +484,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImportedAt(Aws::String&& value) { m_importedAtHasBeenSet = true; m_importedAt = std::move(value); }
 
@@ -482,8 +494,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetImportedAt(const char* value) { m_importedAtHasBeenSet = true; m_importedAt.assign(value); }
 
@@ -491,8 +504,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithImportedAt(const Aws::String& value) { SetImportedAt(value); return *this;}
 
@@ -500,8 +514,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithImportedAt(Aws::String&& value) { SetImportedAt(std::move(value)); return *this;}
 
@@ -509,8 +524,9 @@ namespace Model
      * <p>Indicates when the certificate was imported. Provided if the certificate type
      * is <code>IMPORTED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithImportedAt(const char* value) { SetImportedAt(value); return *this;}
 
@@ -574,8 +590,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetIssuedAt() const{ return m_issuedAt; }
 
@@ -583,8 +600,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool IssuedAtHasBeenSet() const { return m_issuedAtHasBeenSet; }
 
@@ -592,8 +610,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetIssuedAt(const Aws::String& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
@@ -601,8 +620,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetIssuedAt(Aws::String&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = std::move(value); }
 
@@ -610,8 +630,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetIssuedAt(const char* value) { m_issuedAtHasBeenSet = true; m_issuedAt.assign(value); }
 
@@ -619,8 +640,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithIssuedAt(const Aws::String& value) { SetIssuedAt(value); return *this;}
 
@@ -628,8 +650,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithIssuedAt(Aws::String&& value) { SetIssuedAt(std::move(value)); return *this;}
 
@@ -637,8 +660,9 @@ namespace Model
      * <p>Indicates when the certificate was issued. Provided if the certificate type
      * is <code>AMAZON_ISSUED</code>.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithIssuedAt(const char* value) { SetIssuedAt(value); return *this;}
 
@@ -802,7 +826,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetNotAfter() const{ return m_notAfter; }
@@ -811,7 +836,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
@@ -820,7 +846,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotAfter(const Aws::String& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
@@ -829,7 +856,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotAfter(Aws::String&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
@@ -838,7 +866,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotAfter(const char* value) { m_notAfterHasBeenSet = true; m_notAfter.assign(value); }
@@ -847,7 +876,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotAfter(const Aws::String& value) { SetNotAfter(value); return *this;}
@@ -856,7 +886,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotAfter(Aws::String&& value) { SetNotAfter(std::move(value)); return *this;}
@@ -865,7 +896,8 @@ namespace Model
      * <p>The time after which the certificate becomes invalid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotAfter(const char* value) { SetNotAfter(value); return *this;}
@@ -875,7 +907,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetNotBefore() const{ return m_notBefore; }
@@ -884,7 +917,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
@@ -893,7 +927,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotBefore(const Aws::String& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
@@ -902,7 +937,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotBefore(Aws::String&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
@@ -911,7 +947,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetNotBefore(const char* value) { m_notBeforeHasBeenSet = true; m_notBefore.assign(value); }
@@ -920,7 +957,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotBefore(const Aws::String& value) { SetNotBefore(value); return *this;}
@@ -929,7 +967,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotBefore(Aws::String&& value) { SetNotBefore(std::move(value)); return *this;}
@@ -938,7 +977,8 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithNotBefore(const char* value) { SetNotBefore(value); return *this;}

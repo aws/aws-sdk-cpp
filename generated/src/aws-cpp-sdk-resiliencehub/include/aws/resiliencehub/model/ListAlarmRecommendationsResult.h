@@ -36,7 +36,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -44,7 +44,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes application component names, descriptions,
+     * an object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */

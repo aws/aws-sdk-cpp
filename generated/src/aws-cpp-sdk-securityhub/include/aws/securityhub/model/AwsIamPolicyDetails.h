@@ -63,64 +63,72 @@ namespace Model
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>When the policy was created.</p> <p>Uses the <code>date-time</code> format
      * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
-     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
-     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and
+     * date and time should be separated by <code>T</code>. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
 
@@ -421,7 +429,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetUpdateDate() const{ return m_updateDate; }
@@ -430,7 +439,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
@@ -439,7 +449,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdateDate(const Aws::String& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
@@ -448,7 +459,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdateDate(Aws::String&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
@@ -457,7 +469,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdateDate(const char* value) { m_updateDateHasBeenSet = true; m_updateDate.assign(value); }
@@ -466,7 +479,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithUpdateDate(const Aws::String& value) { SetUpdateDate(value); return *this;}
@@ -475,7 +489,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithUpdateDate(Aws::String&& value) { SetUpdateDate(std::move(value)); return *this;}
@@ -484,7 +499,8 @@ namespace Model
      * <p>When the policy was most recently updated.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamPolicyDetails& WithUpdateDate(const char* value) { SetUpdateDate(value); return *this;}

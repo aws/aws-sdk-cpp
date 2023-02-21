@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines a resource that is not supported by Resilience Hub.</p><p><h3>See
+   * <p>Defines a resource that is not supported by AWS Resilience Hub.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UnsupportedResource">AWS
    * API Reference</a></p>

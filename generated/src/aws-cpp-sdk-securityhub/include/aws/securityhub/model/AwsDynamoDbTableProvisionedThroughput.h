@@ -42,7 +42,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
@@ -51,7 +52,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastDecreaseDateTimeHasBeenSet() const { return m_lastDecreaseDateTimeHasBeenSet; }
@@ -60,7 +62,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastDecreaseDateTime(const Aws::String& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
@@ -69,7 +72,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastDecreaseDateTime(Aws::String&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = std::move(value); }
@@ -78,7 +82,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastDecreaseDateTime(const char* value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime.assign(value); }
@@ -87,7 +92,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastDecreaseDateTime(const Aws::String& value) { SetLastDecreaseDateTime(value); return *this;}
@@ -96,7 +102,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastDecreaseDateTime(Aws::String&& value) { SetLastDecreaseDateTime(std::move(value)); return *this;}
@@ -105,7 +112,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last decreased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastDecreaseDateTime(const char* value) { SetLastDecreaseDateTime(value); return *this;}
@@ -115,7 +123,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
@@ -124,7 +133,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastIncreaseDateTimeHasBeenSet() const { return m_lastIncreaseDateTimeHasBeenSet; }
@@ -133,7 +143,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastIncreaseDateTime(const Aws::String& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
@@ -142,7 +153,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastIncreaseDateTime(Aws::String&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = std::move(value); }
@@ -151,7 +163,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastIncreaseDateTime(const char* value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime.assign(value); }
@@ -160,7 +173,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastIncreaseDateTime(const Aws::String& value) { SetLastIncreaseDateTime(value); return *this;}
@@ -169,7 +183,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastIncreaseDateTime(Aws::String&& value) { SetLastIncreaseDateTime(std::move(value)); return *this;}
@@ -178,7 +193,8 @@ namespace Model
      * <p>Indicates when the provisioned throughput was last increased.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsDynamoDbTableProvisionedThroughput& WithLastIncreaseDateTime(const char* value) { SetLastIncreaseDateTime(value); return *this;}

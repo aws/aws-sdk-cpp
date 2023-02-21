@@ -39,83 +39,163 @@ namespace Model
 
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::String& GetStart() const{ return m_start; }
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithStart(const Aws::String& value) { SetStart(value); return *this;}
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
 
     /**
-     * <p>A start date for the date filter.</p>
+     * <p>A timestamp that provides the start date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithStart(const char* value) { SetStart(value); return *this;}
 
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
 
     /**
-     * <p>An end date for the date filter.</p>
+     * <p>A timestamp that provides the end date for the date filter.</p> <p>A
+     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+     * cannot contain spaces, and date and time should be separated by <code>T</code>.
+     * For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline DateFilter& WithEnd(const char* value) { SetEnd(value); return *this;}
 

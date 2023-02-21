@@ -20,14 +20,22 @@
 /* Service model headers required in ResilienceHubClient header */
 #include <aws/resiliencehub/model/AddDraftAppVersionResourceMappingsResult.h>
 #include <aws/resiliencehub/model/CreateAppResult.h>
+#include <aws/resiliencehub/model/CreateAppVersionAppComponentResult.h>
+#include <aws/resiliencehub/model/CreateAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/CreateRecommendationTemplateResult.h>
 #include <aws/resiliencehub/model/CreateResiliencyPolicyResult.h>
 #include <aws/resiliencehub/model/DeleteAppResult.h>
 #include <aws/resiliencehub/model/DeleteAppAssessmentResult.h>
+#include <aws/resiliencehub/model/DeleteAppInputSourceResult.h>
+#include <aws/resiliencehub/model/DeleteAppVersionAppComponentResult.h>
+#include <aws/resiliencehub/model/DeleteAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/DeleteRecommendationTemplateResult.h>
 #include <aws/resiliencehub/model/DeleteResiliencyPolicyResult.h>
 #include <aws/resiliencehub/model/DescribeAppResult.h>
 #include <aws/resiliencehub/model/DescribeAppAssessmentResult.h>
+#include <aws/resiliencehub/model/DescribeAppVersionResult.h>
+#include <aws/resiliencehub/model/DescribeAppVersionAppComponentResult.h>
+#include <aws/resiliencehub/model/DescribeAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/DescribeAppVersionResourcesResolutionStatusResult.h>
 #include <aws/resiliencehub/model/DescribeAppVersionTemplateResult.h>
 #include <aws/resiliencehub/model/DescribeDraftAppVersionResourcesImportStatusResult.h>
@@ -37,6 +45,8 @@
 #include <aws/resiliencehub/model/ListAppAssessmentsResult.h>
 #include <aws/resiliencehub/model/ListAppComponentCompliancesResult.h>
 #include <aws/resiliencehub/model/ListAppComponentRecommendationsResult.h>
+#include <aws/resiliencehub/model/ListAppInputSourcesResult.h>
+#include <aws/resiliencehub/model/ListAppVersionAppComponentsResult.h>
 #include <aws/resiliencehub/model/ListAppVersionResourceMappingsResult.h>
 #include <aws/resiliencehub/model/ListAppVersionResourcesResult.h>
 #include <aws/resiliencehub/model/ListAppVersionsResult.h>
@@ -56,6 +66,9 @@
 #include <aws/resiliencehub/model/TagResourceResult.h>
 #include <aws/resiliencehub/model/UntagResourceResult.h>
 #include <aws/resiliencehub/model/UpdateAppResult.h>
+#include <aws/resiliencehub/model/UpdateAppVersionResult.h>
+#include <aws/resiliencehub/model/UpdateAppVersionAppComponentResult.h>
+#include <aws/resiliencehub/model/UpdateAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/UpdateResiliencyPolicyResult.h>
 /* End of service model headers required in ResilienceHubClient header */
 
@@ -99,14 +112,22 @@ namespace Aws
       /* Service model forward declarations required in ResilienceHubClient header */
       class AddDraftAppVersionResourceMappingsRequest;
       class CreateAppRequest;
+      class CreateAppVersionAppComponentRequest;
+      class CreateAppVersionResourceRequest;
       class CreateRecommendationTemplateRequest;
       class CreateResiliencyPolicyRequest;
       class DeleteAppRequest;
       class DeleteAppAssessmentRequest;
+      class DeleteAppInputSourceRequest;
+      class DeleteAppVersionAppComponentRequest;
+      class DeleteAppVersionResourceRequest;
       class DeleteRecommendationTemplateRequest;
       class DeleteResiliencyPolicyRequest;
       class DescribeAppRequest;
       class DescribeAppAssessmentRequest;
+      class DescribeAppVersionRequest;
+      class DescribeAppVersionAppComponentRequest;
+      class DescribeAppVersionResourceRequest;
       class DescribeAppVersionResourcesResolutionStatusRequest;
       class DescribeAppVersionTemplateRequest;
       class DescribeDraftAppVersionResourcesImportStatusRequest;
@@ -116,6 +137,8 @@ namespace Aws
       class ListAppAssessmentsRequest;
       class ListAppComponentCompliancesRequest;
       class ListAppComponentRecommendationsRequest;
+      class ListAppInputSourcesRequest;
+      class ListAppVersionAppComponentsRequest;
       class ListAppVersionResourceMappingsRequest;
       class ListAppVersionResourcesRequest;
       class ListAppVersionsRequest;
@@ -135,20 +158,31 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAppRequest;
+      class UpdateAppVersionRequest;
+      class UpdateAppVersionAppComponentRequest;
+      class UpdateAppVersionResourceRequest;
       class UpdateResiliencyPolicyRequest;
       /* End of service model forward declarations required in ResilienceHubClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AddDraftAppVersionResourceMappingsResult, ResilienceHubError> AddDraftAppVersionResourceMappingsOutcome;
       typedef Aws::Utils::Outcome<CreateAppResult, ResilienceHubError> CreateAppOutcome;
+      typedef Aws::Utils::Outcome<CreateAppVersionAppComponentResult, ResilienceHubError> CreateAppVersionAppComponentOutcome;
+      typedef Aws::Utils::Outcome<CreateAppVersionResourceResult, ResilienceHubError> CreateAppVersionResourceOutcome;
       typedef Aws::Utils::Outcome<CreateRecommendationTemplateResult, ResilienceHubError> CreateRecommendationTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateResiliencyPolicyResult, ResilienceHubError> CreateResiliencyPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteAppResult, ResilienceHubError> DeleteAppOutcome;
       typedef Aws::Utils::Outcome<DeleteAppAssessmentResult, ResilienceHubError> DeleteAppAssessmentOutcome;
+      typedef Aws::Utils::Outcome<DeleteAppInputSourceResult, ResilienceHubError> DeleteAppInputSourceOutcome;
+      typedef Aws::Utils::Outcome<DeleteAppVersionAppComponentResult, ResilienceHubError> DeleteAppVersionAppComponentOutcome;
+      typedef Aws::Utils::Outcome<DeleteAppVersionResourceResult, ResilienceHubError> DeleteAppVersionResourceOutcome;
       typedef Aws::Utils::Outcome<DeleteRecommendationTemplateResult, ResilienceHubError> DeleteRecommendationTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteResiliencyPolicyResult, ResilienceHubError> DeleteResiliencyPolicyOutcome;
       typedef Aws::Utils::Outcome<DescribeAppResult, ResilienceHubError> DescribeAppOutcome;
       typedef Aws::Utils::Outcome<DescribeAppAssessmentResult, ResilienceHubError> DescribeAppAssessmentOutcome;
+      typedef Aws::Utils::Outcome<DescribeAppVersionResult, ResilienceHubError> DescribeAppVersionOutcome;
+      typedef Aws::Utils::Outcome<DescribeAppVersionAppComponentResult, ResilienceHubError> DescribeAppVersionAppComponentOutcome;
+      typedef Aws::Utils::Outcome<DescribeAppVersionResourceResult, ResilienceHubError> DescribeAppVersionResourceOutcome;
       typedef Aws::Utils::Outcome<DescribeAppVersionResourcesResolutionStatusResult, ResilienceHubError> DescribeAppVersionResourcesResolutionStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeAppVersionTemplateResult, ResilienceHubError> DescribeAppVersionTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeDraftAppVersionResourcesImportStatusResult, ResilienceHubError> DescribeDraftAppVersionResourcesImportStatusOutcome;
@@ -158,6 +192,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAppAssessmentsResult, ResilienceHubError> ListAppAssessmentsOutcome;
       typedef Aws::Utils::Outcome<ListAppComponentCompliancesResult, ResilienceHubError> ListAppComponentCompliancesOutcome;
       typedef Aws::Utils::Outcome<ListAppComponentRecommendationsResult, ResilienceHubError> ListAppComponentRecommendationsOutcome;
+      typedef Aws::Utils::Outcome<ListAppInputSourcesResult, ResilienceHubError> ListAppInputSourcesOutcome;
+      typedef Aws::Utils::Outcome<ListAppVersionAppComponentsResult, ResilienceHubError> ListAppVersionAppComponentsOutcome;
       typedef Aws::Utils::Outcome<ListAppVersionResourceMappingsResult, ResilienceHubError> ListAppVersionResourceMappingsOutcome;
       typedef Aws::Utils::Outcome<ListAppVersionResourcesResult, ResilienceHubError> ListAppVersionResourcesOutcome;
       typedef Aws::Utils::Outcome<ListAppVersionsResult, ResilienceHubError> ListAppVersionsOutcome;
@@ -177,20 +213,31 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, ResilienceHubError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ResilienceHubError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAppResult, ResilienceHubError> UpdateAppOutcome;
+      typedef Aws::Utils::Outcome<UpdateAppVersionResult, ResilienceHubError> UpdateAppVersionOutcome;
+      typedef Aws::Utils::Outcome<UpdateAppVersionAppComponentResult, ResilienceHubError> UpdateAppVersionAppComponentOutcome;
+      typedef Aws::Utils::Outcome<UpdateAppVersionResourceResult, ResilienceHubError> UpdateAppVersionResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateResiliencyPolicyResult, ResilienceHubError> UpdateResiliencyPolicyOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<AddDraftAppVersionResourceMappingsOutcome> AddDraftAppVersionResourceMappingsOutcomeCallable;
       typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+      typedef std::future<CreateAppVersionAppComponentOutcome> CreateAppVersionAppComponentOutcomeCallable;
+      typedef std::future<CreateAppVersionResourceOutcome> CreateAppVersionResourceOutcomeCallable;
       typedef std::future<CreateRecommendationTemplateOutcome> CreateRecommendationTemplateOutcomeCallable;
       typedef std::future<CreateResiliencyPolicyOutcome> CreateResiliencyPolicyOutcomeCallable;
       typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
       typedef std::future<DeleteAppAssessmentOutcome> DeleteAppAssessmentOutcomeCallable;
+      typedef std::future<DeleteAppInputSourceOutcome> DeleteAppInputSourceOutcomeCallable;
+      typedef std::future<DeleteAppVersionAppComponentOutcome> DeleteAppVersionAppComponentOutcomeCallable;
+      typedef std::future<DeleteAppVersionResourceOutcome> DeleteAppVersionResourceOutcomeCallable;
       typedef std::future<DeleteRecommendationTemplateOutcome> DeleteRecommendationTemplateOutcomeCallable;
       typedef std::future<DeleteResiliencyPolicyOutcome> DeleteResiliencyPolicyOutcomeCallable;
       typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
       typedef std::future<DescribeAppAssessmentOutcome> DescribeAppAssessmentOutcomeCallable;
+      typedef std::future<DescribeAppVersionOutcome> DescribeAppVersionOutcomeCallable;
+      typedef std::future<DescribeAppVersionAppComponentOutcome> DescribeAppVersionAppComponentOutcomeCallable;
+      typedef std::future<DescribeAppVersionResourceOutcome> DescribeAppVersionResourceOutcomeCallable;
       typedef std::future<DescribeAppVersionResourcesResolutionStatusOutcome> DescribeAppVersionResourcesResolutionStatusOutcomeCallable;
       typedef std::future<DescribeAppVersionTemplateOutcome> DescribeAppVersionTemplateOutcomeCallable;
       typedef std::future<DescribeDraftAppVersionResourcesImportStatusOutcome> DescribeDraftAppVersionResourcesImportStatusOutcomeCallable;
@@ -200,6 +247,8 @@ namespace Aws
       typedef std::future<ListAppAssessmentsOutcome> ListAppAssessmentsOutcomeCallable;
       typedef std::future<ListAppComponentCompliancesOutcome> ListAppComponentCompliancesOutcomeCallable;
       typedef std::future<ListAppComponentRecommendationsOutcome> ListAppComponentRecommendationsOutcomeCallable;
+      typedef std::future<ListAppInputSourcesOutcome> ListAppInputSourcesOutcomeCallable;
+      typedef std::future<ListAppVersionAppComponentsOutcome> ListAppVersionAppComponentsOutcomeCallable;
       typedef std::future<ListAppVersionResourceMappingsOutcome> ListAppVersionResourceMappingsOutcomeCallable;
       typedef std::future<ListAppVersionResourcesOutcome> ListAppVersionResourcesOutcomeCallable;
       typedef std::future<ListAppVersionsOutcome> ListAppVersionsOutcomeCallable;
@@ -219,6 +268,9 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAppOutcome> UpdateAppOutcomeCallable;
+      typedef std::future<UpdateAppVersionOutcome> UpdateAppVersionOutcomeCallable;
+      typedef std::future<UpdateAppVersionAppComponentOutcome> UpdateAppVersionAppComponentOutcomeCallable;
+      typedef std::future<UpdateAppVersionResourceOutcome> UpdateAppVersionResourceOutcomeCallable;
       typedef std::future<UpdateResiliencyPolicyOutcome> UpdateResiliencyPolicyOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -228,14 +280,22 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const ResilienceHubClient*, const Model::AddDraftAppVersionResourceMappingsRequest&, const Model::AddDraftAppVersionResourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddDraftAppVersionResourceMappingsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::CreateAppVersionAppComponentRequest&, const Model::CreateAppVersionAppComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppVersionAppComponentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::CreateAppVersionResourceRequest&, const Model::CreateAppVersionResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppVersionResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::CreateRecommendationTemplateRequest&, const Model::CreateRecommendationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecommendationTemplateResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::CreateResiliencyPolicyRequest&, const Model::CreateResiliencyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResiliencyPolicyResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DeleteAppAssessmentRequest&, const Model::DeleteAppAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppAssessmentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DeleteAppInputSourceRequest&, const Model::DeleteAppInputSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInputSourceResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DeleteAppVersionAppComponentRequest&, const Model::DeleteAppVersionAppComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppVersionAppComponentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DeleteAppVersionResourceRequest&, const Model::DeleteAppVersionResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppVersionResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DeleteRecommendationTemplateRequest&, const Model::DeleteRecommendationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommendationTemplateResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DeleteResiliencyPolicyRequest&, const Model::DeleteResiliencyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResiliencyPolicyResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppAssessmentRequest&, const Model::DescribeAppAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppAssessmentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionRequest&, const Model::DescribeAppVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionAppComponentRequest&, const Model::DescribeAppVersionAppComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionAppComponentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionResourceRequest&, const Model::DescribeAppVersionResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionResourcesResolutionStatusRequest&, const Model::DescribeAppVersionResourcesResolutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionResourcesResolutionStatusResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeAppVersionTemplateRequest&, const Model::DescribeAppVersionTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppVersionTemplateResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::DescribeDraftAppVersionResourcesImportStatusRequest&, const Model::DescribeDraftAppVersionResourcesImportStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDraftAppVersionResourcesImportStatusResponseReceivedHandler;
@@ -245,6 +305,8 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppAssessmentsRequest&, const Model::ListAppAssessmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppAssessmentsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppComponentCompliancesRequest&, const Model::ListAppComponentCompliancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppComponentCompliancesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppComponentRecommendationsRequest&, const Model::ListAppComponentRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppComponentRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::ListAppInputSourcesRequest&, const Model::ListAppInputSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInputSourcesResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::ListAppVersionAppComponentsRequest&, const Model::ListAppVersionAppComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppVersionAppComponentsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppVersionResourceMappingsRequest&, const Model::ListAppVersionResourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppVersionResourceMappingsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppVersionResourcesRequest&, const Model::ListAppVersionResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppVersionResourcesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppVersionsRequest&, const Model::ListAppVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppVersionsResponseReceivedHandler;
@@ -264,6 +326,9 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::UpdateAppVersionRequest&, const Model::UpdateAppVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppVersionResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::UpdateAppVersionAppComponentRequest&, const Model::UpdateAppVersionAppComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppVersionAppComponentResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::UpdateAppVersionResourceRequest&, const Model::UpdateAppVersionResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppVersionResourceResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::UpdateResiliencyPolicyRequest&, const Model::UpdateResiliencyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResiliencyPolicyResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ResilienceHub

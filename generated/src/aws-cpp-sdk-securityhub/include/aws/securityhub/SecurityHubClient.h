@@ -956,10 +956,10 @@ namespace SecurityHub
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the following standards.</p> <ul> <li> <p>CIS Amazon Web
-         * Services Foundations</p> </li> <li> <p>Amazon Web Services Foundational Security
-         * Best Practices</p> </li> </ul> <p>You do not enable the Payment Card Industry
-         * Data Security Standard (PCI DSS) standard. </p> <p>To not enable the
+         * automatically enable the following standards:</p> <ul> <li> <p>Center for
+         * Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0</p>
+         * </li> <li> <p>Amazon Web Services Foundational Security Best Practices</p> </li>
+         * </ul> <p>Other standards are not automatically enabled. </p> <p>To opt out of
          * automatically enabled standards, set <code>EnableDefaultStandards</code> to
          * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
          * use the <code>BatchEnableStandards</code> operation. To disable a standard, use

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines recommendations for a Resilience Hub application component, returned
-   * as an object. This object contains component names, configuration
+   * <p>Defines recommendations for an AWS Resilience Hub Application Component,
+   * returned as an object. This object contains component names, configuration
    * recommendations, and recommendation statuses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ComponentRecommendation">AWS
    * API Reference</a></p>
@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline ComponentRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline ComponentRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application component.</p>
+     * <p>The name of the Application Component.</p>
      */
     inline ComponentRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
 

@@ -322,98 +322,162 @@ namespace Model
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::String& GetFirstSeen() const{ return m_firstSeen; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool FirstSeenHasBeenSet() const { return m_firstSeenHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetFirstSeen(const Aws::String& value) { m_firstSeenHasBeenSet = true; m_firstSeen = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetFirstSeen(Aws::String&& value) { m_firstSeenHasBeenSet = true; m_firstSeen = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetFirstSeen(const char* value) { m_firstSeenHasBeenSet = true; m_firstSeen.assign(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithFirstSeen(const Aws::String& value) { SetFirstSeen(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithFirstSeen(Aws::String&& value) { SetFirstSeen(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was first
-     * observed.</p>
+     * observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithFirstSeen(const char* value) { SetFirstSeen(value); return *this;}
 
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline const Aws::String& GetLastSeen() const{ return m_lastSeen; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline bool LastSeenHasBeenSet() const { return m_lastSeenHasBeenSet; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetLastSeen(const Aws::String& value) { m_lastSeenHasBeenSet = true; m_lastSeen = value; }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetLastSeen(Aws::String&& value) { m_lastSeenHasBeenSet = true; m_lastSeen = std::move(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline void SetLastSeen(const char* value) { m_lastSeenHasBeenSet = true; m_lastSeen.assign(value); }
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithLastSeen(const Aws::String& value) { SetLastSeen(value); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithLastSeen(Aws::String&& value) { SetLastSeen(std::move(value)); return *this;}
 
     /**
      * <p>An ISO8601-formatted timestamp that indicates when the API call was most
-     * recently observed.</p>
+     * recently observed.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
      */
     inline AwsApiCallAction& WithLastSeen(const char* value) { SetLastSeen(value); return *this;}
 

@@ -241,7 +241,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetOperationStartTime() const{ return m_operationStartTime; }
@@ -250,7 +251,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool OperationStartTimeHasBeenSet() const { return m_operationStartTimeHasBeenSet; }
@@ -259,7 +261,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationStartTime(const Aws::String& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = value; }
@@ -268,7 +271,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationStartTime(Aws::String&& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = std::move(value); }
@@ -277,7 +281,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationStartTime(const char* value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime.assign(value); }
@@ -286,7 +291,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationStartTime(const Aws::String& value) { SetOperationStartTime(value); return *this;}
@@ -295,7 +301,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationStartTime(Aws::String&& value) { SetOperationStartTime(std::move(value)); return *this;}
@@ -304,7 +311,8 @@ namespace Model
      * <p>Indicates when the operation started.</p> <p>Uses the <code>date-time</code>
      * format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationStartTime(const char* value) { SetOperationStartTime(value); return *this;}
@@ -314,7 +322,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetOperationEndTime() const{ return m_operationEndTime; }
@@ -323,7 +332,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool OperationEndTimeHasBeenSet() const { return m_operationEndTimeHasBeenSet; }
@@ -332,7 +342,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationEndTime(const Aws::String& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = value; }
@@ -341,7 +352,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationEndTime(Aws::String&& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = std::move(value); }
@@ -350,7 +362,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetOperationEndTime(const char* value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime.assign(value); }
@@ -359,7 +372,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationEndTime(const Aws::String& value) { SetOperationEndTime(value); return *this;}
@@ -368,7 +382,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationEndTime(Aws::String&& value) { SetOperationEndTime(std::move(value)); return *this;}
@@ -377,7 +392,8 @@ namespace Model
      * <p>Indicates when the operation completed.</p> <p>Uses the
      * <code>date-time</code> format specified in <a
      * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * Internet Date/Time Format</a>. The value cannot contain spaces, and date and
+     * time should be separated by <code>T</code>. For example,
      * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline PatchSummary& WithOperationEndTime(const char* value) { SetOperationEndTime(value); return *this;}

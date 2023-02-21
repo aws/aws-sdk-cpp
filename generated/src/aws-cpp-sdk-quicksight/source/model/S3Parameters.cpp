@@ -19,12 +19,14 @@ namespace Model
 {
 
 S3Parameters::S3Parameters() : 
-    m_manifestFileLocationHasBeenSet(false)
+    m_manifestFileLocationHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
 S3Parameters::S3Parameters(JsonView jsonValue) : 
-    m_manifestFileLocationHasBeenSet(false)
+    m_manifestFileLocationHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ S3Parameters& S3Parameters::operator =(JsonView jsonValue)
     m_manifestFileLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue S3Parameters::Jsonize() const
   if(m_manifestFileLocationHasBeenSet)
   {
    payload.WithObject("ManifestFileLocation", m_manifestFileLocation.Jsonize());
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("RoleArn", m_roleArn);
 
   }
 

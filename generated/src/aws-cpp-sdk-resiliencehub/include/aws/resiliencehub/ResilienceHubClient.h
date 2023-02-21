@@ -80,7 +80,8 @@ namespace ResilienceHub
         virtual ~ResilienceHubClient();
 
         /**
-         * <p>Adds the resource mapping for the draft application version.</p><p><h3>See
+         * <p>Adds the resource mapping for the draft application version. You can also
+         * update an existing resource mapping to a new physical resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AddDraftAppVersionResourceMappings">AWS
          * API Reference</a></p>
@@ -106,17 +107,17 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates a Resilience Hub application. A Resilience Hub application is a
-         * collection of Amazon Web Services resources structured to prevent and recover
-         * Amazon Web Services application disruptions. To describe a Resilience Hub
-         * application, you provide an application name, resources from one or more–up to
-         * five–CloudFormation stacks, and an appropriate resiliency policy.</p> <p>After
-         * you create a Resilience Hub application, you publish it so that you can run a
-         * resiliency assessment on it. You can then use recommendations from the
-         * assessment to improve resiliency by running another assessment, comparing
-         * results, and then iterating the process until you achieve your goals for
-         * recovery time objective (RTO) and recovery point objective (RPO).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an AWS Resilience Hub application. An AWS Resilience Hub application
+         * is a collection of Amazon Web Services resources structured to prevent and
+         * recover Amazon Web Services application disruptions. To describe a AWS
+         * Resilience Hub application, you provide an application name, resources from one
+         * or more–up to five–CloudFormation stacks, and an appropriate resiliency
+         * policy.</p> <p>After you create an AWS Resilience Hub application, you publish
+         * it so that you can run a resiliency assessment on it. You can then use
+         * recommendations from the assessment to improve resiliency by running another
+         * assessment, comparing results, and then iterating the process until you achieve
+         * your goals for recovery time objective (RTO) and recovery point objective
+         * (RPO).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -141,7 +142,72 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates a new recommendation template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Application Component in the AWS Resilience Hub
+         * application.</p>  <p>This API updates the AWS Resilience Hub application
+         * draft version. To use this Application Component for running assessments, you
+         * must publish the AWS Resilience Hub application using the
+         * <code>PublishAppVersion</code> API.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppVersionAppComponentOutcome CreateAppVersionAppComponent(const Model::CreateAppVersionAppComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAppVersionAppComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAppVersionAppComponentRequestT = Model::CreateAppVersionAppComponentRequest>
+        Model::CreateAppVersionAppComponentOutcomeCallable CreateAppVersionAppComponentCallable(const CreateAppVersionAppComponentRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::CreateAppVersionAppComponent, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAppVersionAppComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAppVersionAppComponentRequestT = Model::CreateAppVersionAppComponentRequest>
+        void CreateAppVersionAppComponentAsync(const CreateAppVersionAppComponentRequestT& request, const CreateAppVersionAppComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::CreateAppVersionAppComponent, request, handler, context);
+        }
+
+        /**
+         * <p>Adds a resource to the AWS Resilience Hub applicationand assigns it to the
+         * specified Application Components. If you specify a new Application Component,
+         * AWS Resilience Hub will automatically create the Application Component.</p>
+         *  <ul> <li> <p>This action has no effect outside AWS Resilience Hub.</p>
+         * </li> <li> <p>This API updates the AWS Resilience Hub application draft version.
+         * To use this resource for running resiliency assessments, you must publish the
+         * AWS Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
+         * </li> <li> <p>To update application version with new
+         * <code>physicalResourceID</code>, you must call
+         * <code>ResolveAppVersionResources</code> API.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppVersionResourceOutcome CreateAppVersionResource(const Model::CreateAppVersionResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAppVersionResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAppVersionResourceRequestT = Model::CreateAppVersionResourceRequest>
+        Model::CreateAppVersionResourceOutcomeCallable CreateAppVersionResourceCallable(const CreateAppVersionResourceRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::CreateAppVersionResource, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAppVersionResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAppVersionResourceRequestT = Model::CreateAppVersionResourceRequest>
+        void CreateAppVersionResourceAsync(const CreateAppVersionResourceRequestT& request, const CreateAppVersionResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::CreateAppVersionResource, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new recommendation template for the AWS Resilience Hub
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateRecommendationTemplate">AWS
          * API Reference</a></p>
          */
@@ -240,6 +306,95 @@ namespace ResilienceHub
         void DeleteAppAssessmentAsync(const DeleteAppAssessmentRequestT& request, const DeleteAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::DeleteAppAssessment, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the input source and all of its imported resources from the AWS
+         * Resilience Hub application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInputSourceOutcome DeleteAppInputSource(const Model::DeleteAppInputSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAppInputSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAppInputSourceRequestT = Model::DeleteAppInputSourceRequest>
+        Model::DeleteAppInputSourceOutcomeCallable DeleteAppInputSourceCallable(const DeleteAppInputSourceRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DeleteAppInputSource, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAppInputSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAppInputSourceRequestT = Model::DeleteAppInputSourceRequest>
+        void DeleteAppInputSourceAsync(const DeleteAppInputSourceRequestT& request, const DeleteAppInputSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DeleteAppInputSource, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Application Component from the AWS Resilience Hub application.</p>
+         *  <ul> <li> <p>This API updates the AWS Resilience Hub application draft
+         * version. To use this Application Component for running assessments, you must
+         * publish the AWS Resilience Hub application using the
+         * <code>PublishAppVersion</code> API.</p> </li> <li> <p>You will not be able to
+         * delete an Application Component if it has resources associated with it.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppVersionAppComponentOutcome DeleteAppVersionAppComponent(const Model::DeleteAppVersionAppComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAppVersionAppComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAppVersionAppComponentRequestT = Model::DeleteAppVersionAppComponentRequest>
+        Model::DeleteAppVersionAppComponentOutcomeCallable DeleteAppVersionAppComponentCallable(const DeleteAppVersionAppComponentRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DeleteAppVersionAppComponent, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAppVersionAppComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAppVersionAppComponentRequestT = Model::DeleteAppVersionAppComponentRequest>
+        void DeleteAppVersionAppComponentAsync(const DeleteAppVersionAppComponentRequestT& request, const DeleteAppVersionAppComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DeleteAppVersionAppComponent, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a resource from the AWS Resilience Hub application.</p>  <ul>
+         * <li> <p>You can only delete a manually added resource. To exclude non-manually
+         * added resources, use the <code>UpdateAppVersionResource</code> API.</p> </li>
+         * <li> <p>This action has no effect outside AWS Resilience Hub.</p> </li> <li>
+         * <p>This API updates the AWS Resilience Hub application draft version. To use
+         * this resource for running resiliency assessments, you must publish the AWS
+         * Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppVersionResourceOutcome DeleteAppVersionResource(const Model::DeleteAppVersionResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAppVersionResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAppVersionResourceRequestT = Model::DeleteAppVersionResourceRequest>
+        Model::DeleteAppVersionResourceOutcomeCallable DeleteAppVersionResourceCallable(const DeleteAppVersionResourceRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DeleteAppVersionResource, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAppVersionResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAppVersionResourceRequestT = Model::DeleteAppVersionResourceRequest>
+        void DeleteAppVersionResourceAsync(const DeleteAppVersionResourceRequestT& request, const DeleteAppVersionResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DeleteAppVersionResource, request, handler, context);
         }
 
         /**
@@ -346,6 +501,89 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Describes the AWS Resilience Hub application version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppVersionOutcome DescribeAppVersion(const Model::DescribeAppVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppVersionRequestT = Model::DescribeAppVersionRequest>
+        Model::DescribeAppVersionOutcomeCallable DescribeAppVersionCallable(const DescribeAppVersionRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DescribeAppVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppVersionRequestT = Model::DescribeAppVersionRequest>
+        void DescribeAppVersionAsync(const DescribeAppVersionRequestT& request, const DescribeAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DescribeAppVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Describes an Application Component in the AWS Resilience Hub
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppVersionAppComponentOutcome DescribeAppVersionAppComponent(const Model::DescribeAppVersionAppComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppVersionAppComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppVersionAppComponentRequestT = Model::DescribeAppVersionAppComponentRequest>
+        Model::DescribeAppVersionAppComponentOutcomeCallable DescribeAppVersionAppComponentCallable(const DescribeAppVersionAppComponentRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DescribeAppVersionAppComponent, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppVersionAppComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppVersionAppComponentRequestT = Model::DescribeAppVersionAppComponentRequest>
+        void DescribeAppVersionAppComponentAsync(const DescribeAppVersionAppComponentRequestT& request, const DescribeAppVersionAppComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DescribeAppVersionAppComponent, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a resource of the AWS Resilience Hub application.</p> 
+         * <p>This API accepts only one of the following parameters to descibe the
+         * resource:</p> <ul> <li> <p> <code>resourceName</code> </p> </li> <li> <p>
+         * <code>logicalResourceId</code> </p> </li> <li> <p>
+         * <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you
+         * can also provide <code>awsAccountId</code>, and <code>awsRegion</code>)</p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppVersionResourceOutcome DescribeAppVersionResource(const Model::DescribeAppVersionResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppVersionResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppVersionResourceRequestT = Model::DescribeAppVersionResourceRequest>
+        Model::DescribeAppVersionResourceOutcomeCallable DescribeAppVersionResourceCallable(const DescribeAppVersionResourceRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DescribeAppVersionResource, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppVersionResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppVersionResourceRequestT = Model::DescribeAppVersionResourceRequest>
+        void DescribeAppVersionResourceAsync(const DescribeAppVersionResourceRequestT& request, const DescribeAppVersionResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DescribeAppVersionResource, request, handler, context);
+        }
+
+        /**
          * <p>Returns the resolution status for the specified resolution identifier for an
          * application version. If <code>resolutionId</code> is not specified, the current
          * resolution status is returned.</p><p><h3>See Also:</h3>   <a
@@ -373,7 +611,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes details about an AWS Resilience Hub </p><p><h3>See Also:</h3>   <a
+         * <p>Describes details about an AWS Resilience Hub application.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate">AWS
          * API Reference</a></p>
          */
@@ -398,8 +637,12 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes the status of importing resources to an application
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the status of importing resources to an application version.</p>
+         *  <p>If you get a 404 error with
+         * <code>ResourceImportStatusNotFoundAppMetadataException</code>, you must call
+         * <code>importResourcesToDraftAppVersion</code> after creating the application and
+         * before calling <code>describeDraftAppVersionResourcesImportStatus</code> to
+         * obtain the status.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeDraftAppVersionResourcesImportStatus">AWS
          * API Reference</a></p>
          */
@@ -452,9 +695,12 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Imports resources from sources such as a CloudFormation stack,
-         * resource-groups, or application registry app to a draft application
-         * version.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports resources to AWS Resilience Hub application draft version from
+         * different input sources. For more information about the input sources supported
+         * by AWS Resilience Hub, see <a
+         * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+         * the structure and describe your Resilience Hub application</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ImportResourcesToDraftAppVersion">AWS
          * API Reference</a></p>
          */
@@ -479,7 +725,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the alarm recommendations for a AWS Resilience Hub
+         * <p>Lists the alarm recommendations for an AWS Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAlarmRecommendations">AWS
          * API Reference</a></p>
@@ -532,8 +778,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the compliances for an AWS Resilience Hub component.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the compliances for an AWS Resilience Hub Application
+         * Component.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentCompliances">AWS
          * API Reference</a></p>
          */
@@ -558,8 +804,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the recommendations for an AWS Resilience Hub component.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the recommendations for an AWS Resilience Hub Application
+         * Component.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentRecommendations">AWS
          * API Reference</a></p>
          */
@@ -581,6 +827,61 @@ namespace ResilienceHub
         void ListAppComponentRecommendationsAsync(const ListAppComponentRecommendationsRequestT& request, const ListAppComponentRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::ListAppComponentRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the input sources of the AWS Resilience Hub application. For more
+         * information about the input sources supported by AWS Resilience Hub, see <a
+         * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+         * the structure and describe your Resilience Hub application</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppInputSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInputSourcesOutcome ListAppInputSources(const Model::ListAppInputSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAppInputSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAppInputSourcesRequestT = Model::ListAppInputSourcesRequest>
+        Model::ListAppInputSourcesOutcomeCallable ListAppInputSourcesCallable(const ListAppInputSourcesRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListAppInputSources, request);
+        }
+
+        /**
+         * An Async wrapper for ListAppInputSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAppInputSourcesRequestT = Model::ListAppInputSourcesRequest>
+        void ListAppInputSourcesAsync(const ListAppInputSourcesRequestT& request, const ListAppInputSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListAppInputSources, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the Application Components in the AWS Resilience Hub
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppVersionAppComponentsOutcome ListAppVersionAppComponents(const Model::ListAppVersionAppComponentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAppVersionAppComponents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAppVersionAppComponentsRequestT = Model::ListAppVersionAppComponentsRequest>
+        Model::ListAppVersionAppComponentsOutcomeCallable ListAppVersionAppComponentsCallable(const ListAppVersionAppComponentsRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListAppVersionAppComponents, request);
+        }
+
+        /**
+         * An Async wrapper for ListAppVersionAppComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAppVersionAppComponentsRequestT = Model::ListAppVersionAppComponentsRequest>
+        void ListAppVersionAppComponentsAsync(const ListAppVersionAppComponentsRequestT& request, const ListAppVersionAppComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListAppVersionAppComponents, request, handler, context);
         }
 
         /**
@@ -611,8 +912,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists all the resources in an application version.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all the resources in an AWS Resilience Hub application.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResources">AWS
          * API Reference</a></p>
          */
@@ -637,7 +938,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the different versions for the Resilience Hub
+         * <p>Lists the different versions for the AWS Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersions">AWS
          * API Reference</a></p>
@@ -663,7 +964,12 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists your Resilience Hub applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your AWS Resilience Hub applications.</p>  <p>You can filter
+         * applications using only one filter at a time or without using any filter. If you
+         * try to filter applications using multiple filters, you will get the following
+         * error:</p> <p> <code>An error occurred (ValidationException) when calling the
+         * ListApps operation: Only one filter is supported for this operation.</code> </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListApps">AWS
          * API Reference</a></p>
          */
@@ -688,7 +994,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the recommendation templates for the Resilience Hub
+         * <p>Lists the recommendation templates for the AWS Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">AWS
          * API Reference</a></p>
@@ -714,7 +1020,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the resiliency policies for the Resilience Hub
+         * <p>Lists the resiliency policies for the AWS Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">AWS
          * API Reference</a></p>
@@ -740,7 +1046,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the standard operating procedure (SOP) recommendations for the
+         * <p>Lists the standard operating procedure (SOP) recommendations for the AWS
          * Resilience Hub applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">AWS
          * API Reference</a></p>
@@ -766,7 +1072,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the suggested resiliency policies for the Resilience Hub
+         * <p>Lists the suggested resiliency policies for the AWS Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">AWS
          * API Reference</a></p>
@@ -792,7 +1098,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the tags for your resources in your Resilience Hub
+         * <p>Lists the tags for your resources in your AWS Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -818,7 +1124,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the test recommendations for the Resilience Hub
+         * <p>Lists the test recommendations for the AWS Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTestRecommendations">AWS
          * API Reference</a></p>
@@ -846,8 +1152,8 @@ namespace ResilienceHub
         /**
          * <p>Lists the resources that are not currently supported in AWS Resilience Hub.
          * An unsupported resource is a resource that exists in the object that was used to
-         * create an app, but is not supported by Resilience Hub.</p><p><h3>See Also:</h3> 
-         * <a
+         * create an app, but is not supported by AWS Resilience Hub.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListUnsupportedAppVersionResources">AWS
          * API Reference</a></p>
          */
@@ -872,7 +1178,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Publishes a new version of a specific Resilience Hub
+         * <p>Publishes a new version of a specific AWS Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PublishAppVersion">AWS
          * API Reference</a></p>
@@ -898,8 +1204,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Adds or updates the app template for a draft version of a Resilience Hub
-         * app.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates the app template for an AWS Resilience Hub application draft
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PutDraftAppVersionTemplate">AWS
          * API Reference</a></p>
          */
@@ -1074,6 +1380,97 @@ namespace ResilienceHub
         void UpdateAppAsync(const UpdateAppRequestT& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::UpdateApp, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the AWS Resilience Hub application version.</p>  <p>This API
+         * updates the AWS Resilience Hub application draft version. To use this
+         * information for running resiliency assessments, you must publish the AWS
+         * Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppVersionOutcome UpdateAppVersion(const Model::UpdateAppVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAppVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAppVersionRequestT = Model::UpdateAppVersionRequest>
+        Model::UpdateAppVersionOutcomeCallable UpdateAppVersionCallable(const UpdateAppVersionRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::UpdateAppVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAppVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAppVersionRequestT = Model::UpdateAppVersionRequest>
+        void UpdateAppVersionAsync(const UpdateAppVersionRequestT& request, const UpdateAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::UpdateAppVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing Application Component in the AWS Resilience Hub
+         * application.</p>  <p>This API updates the AWS Resilience Hub application
+         * draft version. To use this Application Component for running assessments, you
+         * must publish the AWS Resilience Hub application using the
+         * <code>PublishAppVersion</code> API.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppVersionAppComponentOutcome UpdateAppVersionAppComponent(const Model::UpdateAppVersionAppComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAppVersionAppComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAppVersionAppComponentRequestT = Model::UpdateAppVersionAppComponentRequest>
+        Model::UpdateAppVersionAppComponentOutcomeCallable UpdateAppVersionAppComponentCallable(const UpdateAppVersionAppComponentRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::UpdateAppVersionAppComponent, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAppVersionAppComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAppVersionAppComponentRequestT = Model::UpdateAppVersionAppComponentRequest>
+        void UpdateAppVersionAppComponentAsync(const UpdateAppVersionAppComponentRequestT& request, const UpdateAppVersionAppComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::UpdateAppVersionAppComponent, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the resource details in the AWS Resilience Hub application.</p>
+         *  <ul> <li> <p>This action has no effect outside AWS Resilience Hub.</p>
+         * </li> <li> <p>This API updates the AWS Resilience Hub application draft version.
+         * To use this resource for running resiliency assessments, you must publish the
+         * AWS Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
+         * </li> <li> <p>To update application version with new
+         * <code>physicalResourceID</code>, you must call
+         * <code>ResolveAppVersionResources</code> API.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppVersionResourceOutcome UpdateAppVersionResource(const Model::UpdateAppVersionResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAppVersionResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAppVersionResourceRequestT = Model::UpdateAppVersionResourceRequest>
+        Model::UpdateAppVersionResourceOutcomeCallable UpdateAppVersionResourceCallable(const UpdateAppVersionResourceRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::UpdateAppVersionResource, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAppVersionResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAppVersionResourceRequestT = Model::UpdateAppVersionResourceRequest>
+        void UpdateAppVersionResourceAsync(const UpdateAppVersionResourceRequestT& request, const UpdateAppVersionResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::UpdateAppVersionResource, request, handler, context);
         }
 
         /**
