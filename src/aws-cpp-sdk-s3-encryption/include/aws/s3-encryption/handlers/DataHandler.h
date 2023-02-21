@@ -48,7 +48,7 @@ namespace Aws
                 virtual Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) = 0;
 
                 /*
-                Function to json serialize a map contianing pairs of strings.
+                Function to json serialize a map containing pairs of strings.
                 */
                 const Aws::String SerializeMap(const Aws::Map<Aws::String, Aws::String>& currentMap);
 

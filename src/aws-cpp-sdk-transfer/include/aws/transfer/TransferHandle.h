@@ -105,11 +105,11 @@ namespace Aws
             IN_PROGRESS,
             //Operation was canceled. A Canceled operation can still be retried
             CANCELED,
-            //Operation failed, A failed operaton can still be retried.
+            //Operation failed, A failed operation can still be retried.
             FAILED,
             //Operation was successful
             COMPLETED,
-            //Operation either failed or was canceled and a user deleted the multi-part upload from S3.
+            //Operation either failed or was canceled and a user deleted the multipart upload from S3.
             ABORTED
         };
 
@@ -215,7 +215,7 @@ namespace Aws
              */
             void ChangePartToFailed(const PartPointer& partState);
             /**
-             * Get the parts transactionally, mostly for internal purposes.
+             * Get all parts using transactions, mostly for internal purposes.
              */
             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
                     PartStateMap& failedParts, PartStateMap& completedParts);
@@ -234,7 +234,7 @@ namespace Aws
             void Cancel();
 
             /**
-             * Reset the cancellation status for a retry. This will be done automatically by Transfermanager.
+             * Reset the cancellation status for a retry. This will be done automatically by Transfer Manager.
              */
             void Restart();
             /**
@@ -266,8 +266,8 @@ namespace Aws
             inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize.store(value); }
 
             /**
-             * Gets the total size of contigious bytes from the file begining that is already transferred, and available to users.
-             * For multiple-part downloads, it's guaranteed that these bytes are commited to the underlying stream already.
+             * Gets the total bytes that is already transferred and available to users starting from the beginning of the file.
+             * For multiple-part downloads, it's guaranteed that these bytes are committed to the underlying stream already.
              * For single-part downloads, it's also true since we write() directly to the underlying stream.
              * A potential use case is to poll and stream bytes to users as we are still doing multi-part downloading.
              */
@@ -404,7 +404,7 @@ namespace Aws
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;
-            /* in case cutomer stream is not based off 0 */
+            /* in case customer stream is not based off 0 */
             uint64_t m_downloadStreamBaseOffset;
 
             mutable std::mutex m_downloadStreamLock;

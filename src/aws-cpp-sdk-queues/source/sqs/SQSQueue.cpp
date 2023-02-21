@@ -257,7 +257,7 @@ void SQSQueue::OnGetQueueAttributesOutcomeReceived(const SQSClient*, const GetQu
     }
     else
     {
-        AWS_LOGSTREAM_TRACE(CLASS_TAG, "GetQueueAttribute successfull.");
+        AWS_LOGSTREAM_TRACE(CLASS_TAG, "GetQueueAttribute successful.");
         auto& queueAttributeSuccessHandler = GetQueueAttributeSuccessEventHandler();
 
         if (queueAttributeSuccessHandler)
