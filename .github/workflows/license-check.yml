@@ -17,7 +17,7 @@ jobs:
           path: sdkmain
           ref: ${{ github.base_ref }}
       - name: Checkout this ref
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: new-ref
           fetch-depth: 0
@@ -30,7 +30,7 @@ jobs:
           path: scancode-toolkit
           fetch-depth: 1
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       # ScanCode
