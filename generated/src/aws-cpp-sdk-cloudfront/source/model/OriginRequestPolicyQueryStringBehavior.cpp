@@ -23,6 +23,7 @@ namespace Aws
         static const int none_HASH = HashingUtils::HashString("none");
         static const int whitelist_HASH = HashingUtils::HashString("whitelist");
         static const int all_HASH = HashingUtils::HashString("all");
+        static const int allExcept_HASH = HashingUtils::HashString("allExcept");
 
 
         OriginRequestPolicyQueryStringBehavior GetOriginRequestPolicyQueryStringBehaviorForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == all_HASH)
           {
             return OriginRequestPolicyQueryStringBehavior::all;
+          }
+          else if (hashCode == allExcept_HASH)
+          {
+            return OriginRequestPolicyQueryStringBehavior::allExcept;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "whitelist";
           case OriginRequestPolicyQueryStringBehavior::all:
             return "all";
+          case OriginRequestPolicyQueryStringBehavior::allExcept:
+            return "allExcept";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

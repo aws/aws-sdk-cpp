@@ -280,42 +280,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline Session& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline Session& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user that started the session.</p>
      */
     inline Session& WithOwner(const char* value) { SetOwner(value); return *this;}
 

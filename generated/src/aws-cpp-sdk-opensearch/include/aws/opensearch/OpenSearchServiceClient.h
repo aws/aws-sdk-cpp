@@ -1075,6 +1075,36 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Retrieves a list of configuration changes that are scheduled for a domain.
+         * These changes can be <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+         * software updates</a> or <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green
+         * Auto-Tune enhancements</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListScheduledActionsOutcome ListScheduledActions(const Model::ListScheduledActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListScheduledActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
+        Model::ListScheduledActionsOutcomeCallable ListScheduledActionsCallable(const ListScheduledActionsRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::ListScheduledActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListScheduledActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
+        void ListScheduledActionsAsync(const ListScheduledActionsRequestT& request, const ListScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::ListScheduledActions, request, handler, context);
+        }
+
+        /**
          * <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
@@ -1393,6 +1423,36 @@ namespace OpenSearchService
         void UpdatePackageAsync(const UpdatePackageRequestT& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::UpdatePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Reschedules a planned domain configuration change for a later time. This
+         * change can be a scheduled <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+         * software update</a> or a <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green
+         * Auto-Tune enhancement</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateScheduledActionOutcome UpdateScheduledAction(const Model::UpdateScheduledActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateScheduledActionRequestT = Model::UpdateScheduledActionRequest>
+        Model::UpdateScheduledActionOutcomeCallable UpdateScheduledActionCallable(const UpdateScheduledActionRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::UpdateScheduledAction, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateScheduledActionRequestT = Model::UpdateScheduledActionRequest>
+        void UpdateScheduledActionAsync(const UpdateScheduledActionRequestT& request, const UpdateScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::UpdateScheduledAction, request, handler, context);
         }
 
         /**

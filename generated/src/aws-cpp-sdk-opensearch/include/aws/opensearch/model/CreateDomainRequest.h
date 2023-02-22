@@ -19,6 +19,8 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/model/AutoTuneOptionsInput.h>
+#include <aws/opensearch/model/OffPeakWindowOptions.h>
+#include <aws/opensearch/model/SoftwareUpdateOptions.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <aws/opensearch/model/Tag.h>
@@ -1013,6 +1015,92 @@ namespace Model
      */
     inline CreateDomainRequest& WithAutoTuneOptions(AutoTuneOptionsInput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline const OffPeakWindowOptions& GetOffPeakWindowOptions() const{ return m_offPeakWindowOptions; }
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline bool OffPeakWindowOptionsHasBeenSet() const { return m_offPeakWindowOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline void SetOffPeakWindowOptions(const OffPeakWindowOptions& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = value; }
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline void SetOffPeakWindowOptions(OffPeakWindowOptions&& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = std::move(value); }
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline CreateDomainRequest& WithOffPeakWindowOptions(const OffPeakWindowOptions& value) { SetOffPeakWindowOptions(value); return *this;}
+
+    /**
+     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
+     * perform configuration changes on the domain, including service software updates
+     * and Auto-Tune enhancements that require a blue/green deployment. If no options
+     * are specified, the default start time of 10:00 P.M. local time (for the Region
+     * that the domain is created in) is used.</p>
+     */
+    inline CreateDomainRequest& WithOffPeakWindowOptions(OffPeakWindowOptions&& value) { SetOffPeakWindowOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline const SoftwareUpdateOptions& GetSoftwareUpdateOptions() const{ return m_softwareUpdateOptions; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline bool SoftwareUpdateOptionsHasBeenSet() const { return m_softwareUpdateOptionsHasBeenSet; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = value; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = std::move(value); }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline CreateDomainRequest& WithSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { SetSoftwareUpdateOptions(value); return *this;}
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline CreateDomainRequest& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -1062,6 +1150,12 @@ namespace Model
 
     AutoTuneOptionsInput m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet = false;
+
+    OffPeakWindowOptions m_offPeakWindowOptions;
+    bool m_offPeakWindowOptionsHasBeenSet = false;
+
+    SoftwareUpdateOptions m_softwareUpdateOptions;
+    bool m_softwareUpdateOptionsHasBeenSet = false;
   };
 
 } // namespace Model

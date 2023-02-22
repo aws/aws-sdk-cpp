@@ -110,6 +110,31 @@ namespace Model
      */
     inline AutoTuneOptionsOutput& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes
+     * rather than a maintenance schedule.</p>
+     */
+    inline bool GetUseOffPeakWindow() const{ return m_useOffPeakWindow; }
+
+    /**
+     * <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes
+     * rather than a maintenance schedule.</p>
+     */
+    inline bool UseOffPeakWindowHasBeenSet() const { return m_useOffPeakWindowHasBeenSet; }
+
+    /**
+     * <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes
+     * rather than a maintenance schedule.</p>
+     */
+    inline void SetUseOffPeakWindow(bool value) { m_useOffPeakWindowHasBeenSet = true; m_useOffPeakWindow = value; }
+
+    /**
+     * <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes
+     * rather than a maintenance schedule.</p>
+     */
+    inline AutoTuneOptionsOutput& WithUseOffPeakWindow(bool value) { SetUseOffPeakWindow(value); return *this;}
+
   private:
 
     AutoTuneState m_state;
@@ -117,6 +142,9 @@ namespace Model
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
+
+    bool m_useOffPeakWindow;
+    bool m_useOffPeakWindowHasBeenSet = false;
   };
 
 } // namespace Model

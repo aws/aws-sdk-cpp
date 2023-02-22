@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     none,
     whitelist,
-    all
+    all,
+    allExcept
   };
 
 namespace OriginRequestPolicyQueryStringBehaviorMapper

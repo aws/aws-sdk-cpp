@@ -24,6 +24,7 @@ namespace Aws
         static const int whitelist_HASH = HashingUtils::HashString("whitelist");
         static const int allViewer_HASH = HashingUtils::HashString("allViewer");
         static const int allViewerAndWhitelistCloudFront_HASH = HashingUtils::HashString("allViewerAndWhitelistCloudFront");
+        static const int allExcept_HASH = HashingUtils::HashString("allExcept");
 
 
         OriginRequestPolicyHeaderBehavior GetOriginRequestPolicyHeaderBehaviorForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == allViewerAndWhitelistCloudFront_HASH)
           {
             return OriginRequestPolicyHeaderBehavior::allViewerAndWhitelistCloudFront;
+          }
+          else if (hashCode == allExcept_HASH)
+          {
+            return OriginRequestPolicyHeaderBehavior::allExcept;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "allViewer";
           case OriginRequestPolicyHeaderBehavior::allViewerAndWhitelistCloudFront:
             return "allViewerAndWhitelistCloudFront";
+          case OriginRequestPolicyHeaderBehavior::allExcept:
+            return "allExcept";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,14 +21,18 @@ namespace Model
 AutoTuneOptionsOutput::AutoTuneOptionsOutput() : 
     m_state(AutoTuneState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_useOffPeakWindow(false),
+    m_useOffPeakWindowHasBeenSet(false)
 {
 }
 
 AutoTuneOptionsOutput::AutoTuneOptionsOutput(JsonView jsonValue) : 
     m_state(AutoTuneState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_useOffPeakWindow(false),
+    m_useOffPeakWindowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ AutoTuneOptionsOutput& AutoTuneOptionsOutput::operator =(JsonView jsonValue)
     m_errorMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseOffPeakWindow"))
+  {
+    m_useOffPeakWindow = jsonValue.GetBool("UseOffPeakWindow");
+
+    m_useOffPeakWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,12 @@ JsonValue AutoTuneOptionsOutput::Jsonize() const
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("ErrorMessage", m_errorMessage);
+
+  }
+
+  if(m_useOffPeakWindowHasBeenSet)
+  {
+   payload.WithBool("UseOffPeakWindow", m_useOffPeakWindow);
 
   }
 

@@ -324,6 +324,63 @@ namespace Model
 
 
     /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline MetricDefinition& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline MetricDefinition& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>If this metric definition is for a custom metric instead of an extended
+     * metric, this field displays the metric namespace that the custom metric is
+     * published to.</p>
+     */
+    inline MetricDefinition& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
+
+    /**
      * <p>Use this field only if you are sending this metric to CloudWatch. It defines
      * the CloudWatch metric unit that this metric is measured in. </p>
      */
@@ -425,6 +482,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_unitLabel;
     bool m_unitLabelHasBeenSet = false;

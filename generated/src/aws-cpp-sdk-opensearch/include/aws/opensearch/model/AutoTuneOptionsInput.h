@@ -28,7 +28,7 @@ namespace Model
   /**
    * <p>Options for configuring Auto-Tune. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
-   * for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
+   * for Amazon OpenSearch Service</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneOptionsInput">AWS
    * API Reference</a></p>
    */
@@ -74,83 +74,92 @@ namespace Model
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline const Aws::Vector<AutoTuneMaintenanceSchedule>& GetMaintenanceSchedules() const{ return m_maintenanceSchedules; }
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline bool MaintenanceSchedulesHasBeenSet() const { return m_maintenanceSchedulesHasBeenSet; }
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline void SetMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = value; }
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline void SetMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = std::move(value); }
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline AutoTuneOptionsInput& WithMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { SetMaintenanceSchedules(value); return *this;}
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline AutoTuneOptionsInput& WithMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { SetMaintenanceSchedules(std::move(value)); return *this;}
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline AutoTuneOptionsInput& AddMaintenanceSchedules(const AutoTuneMaintenanceSchedule& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(value); return *this; }
 
     /**
      * <p>A list of maintenance schedules during which Auto-Tune can deploy changes.
-     * Maintenance schedules are overwrite, not append. If your request includes no
-     * schedules, the request deletes all existing schedules. To preserve existing
-     * schedules, make a call to <code>DescribeDomainConfig</code> first and use the
-     * <code>MaintenanceSchedules</code> portion of the response as the basis for this
-     * section.</p>
+     * Maintenance windows are deprecated and have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * windows</a>.</p>
      */
     inline AutoTuneOptionsInput& AddMaintenanceSchedules(AutoTuneMaintenanceSchedule&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Whether to schedule Auto-Tune optimizations that require blue/green
+     * deployments during the domain's configured daily off-peak window.</p>
+     */
+    inline bool GetUseOffPeakWindow() const{ return m_useOffPeakWindow; }
+
+    /**
+     * <p>Whether to schedule Auto-Tune optimizations that require blue/green
+     * deployments during the domain's configured daily off-peak window.</p>
+     */
+    inline bool UseOffPeakWindowHasBeenSet() const { return m_useOffPeakWindowHasBeenSet; }
+
+    /**
+     * <p>Whether to schedule Auto-Tune optimizations that require blue/green
+     * deployments during the domain's configured daily off-peak window.</p>
+     */
+    inline void SetUseOffPeakWindow(bool value) { m_useOffPeakWindowHasBeenSet = true; m_useOffPeakWindow = value; }
+
+    /**
+     * <p>Whether to schedule Auto-Tune optimizations that require blue/green
+     * deployments during the domain's configured daily off-peak window.</p>
+     */
+    inline AutoTuneOptionsInput& WithUseOffPeakWindow(bool value) { SetUseOffPeakWindow(value); return *this;}
 
   private:
 
@@ -159,6 +168,9 @@ namespace Model
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
     bool m_maintenanceSchedulesHasBeenSet = false;
+
+    bool m_useOffPeakWindow;
+    bool m_useOffPeakWindowHasBeenSet = false;
   };
 
 } // namespace Model

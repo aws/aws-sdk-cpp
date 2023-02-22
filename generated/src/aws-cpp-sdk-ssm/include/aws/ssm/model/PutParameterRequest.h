@@ -460,121 +460,89 @@ namespace Model
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your Amazon Web
-     * Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
-     * system uses the default key associated with your Amazon Web Services
-     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
-     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
-     * ID</code> when you create the parameter. The system automatically populates
-     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
-     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
-     * ID</code> parameter.</p> </li> </ul>
+     * parameter. Use a custom key for better security. Required for parameters that
+     * use the <code>SecureString</code> data type.</p> <p>If you don't specify a key
+     * ID, the system uses the default key associated with your Amazon Web Services
+     * account which is not as secure as using a custom key.</p> <ul> <li> <p>To use a
+     * custom KMS key, choose the <code>SecureString</code> data type with the
+     * <code>Key ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -1265,10 +1233,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
@@ -1281,10 +1262,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
@@ -1297,10 +1291,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -1313,10 +1320,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
@@ -1329,10 +1349,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
@@ -1345,10 +1378,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
@@ -1361,10 +1407,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
 
@@ -1377,10 +1436,23 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your Amazon Web Services account. For more information, see <a
+     * is available in your Amazon Web Services account.</p>  <p>If the action is
+     * successful, the service sends back an HTTP 200 response which indicates a
+     * successful <code>PutParameter</code> call for all cases except for data type
+     * <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with
+     * <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The
+     * <code>aws:ec2:image</code> value is validated asynchronously, and the
+     * <code>PutParameter</code> call returns before the validation is complete. If you
+     * submit an invalid AMI value, the PutParameter operation will return success, but
+     * the asynchronous validation will fail and the parameter will not be created or
+     * updated. To monitor whether your <code>aws:ec2:image</code> parameters are
+     * created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+     * up notifications or trigger actions based on Parameter Store events</a>. For
+     * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(const char* value) { SetDataType(value); return *this;}
 

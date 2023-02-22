@@ -47,9 +47,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -63,9 +64,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -79,9 +81,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -95,9 +98,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -111,9 +115,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -127,9 +132,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -143,9 +149,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -159,9 +166,10 @@ namespace Model
      * <p>The name of the SSM Command document or Automation runbook that contains the
      * configuration information for the managed node.</p> <p>You can specify Amazon
      * Web Services-predefined documents, documents you created, or a document that is
-     * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other Amazon Web Services accounts, you
-     * must specify the complete SSM document ARN, in the following format:</p> <p>
+     * shared with you from another Amazon Web Services account.</p> <p>For Systems
+     * Manager documents (SSM documents) that are shared with you from other Amazon Web
+     * Services accounts, you must specify the complete SSM document ARN, in the
+     * following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>

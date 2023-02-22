@@ -22,6 +22,7 @@ MetricDefinitionRequest::MetricDefinitionRequest() :
     m_dimensionKeysHasBeenSet(false),
     m_eventPatternHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_unitLabelHasBeenSet(false),
     m_valueKeyHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ MetricDefinitionRequest::MetricDefinitionRequest(JsonView jsonValue) :
     m_dimensionKeysHasBeenSet(false),
     m_eventPatternHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
     m_unitLabelHasBeenSet(false),
     m_valueKeyHasBeenSet(false)
 {
@@ -61,6 +63,13 @@ MetricDefinitionRequest& MetricDefinitionRequest::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Namespace"))
+  {
+    m_namespace = jsonValue.GetString("Namespace");
+
+    m_namespaceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UnitLabel"))
@@ -104,6 +113,12 @@ JsonValue MetricDefinitionRequest::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("Namespace", m_namespace);
 
   }
 

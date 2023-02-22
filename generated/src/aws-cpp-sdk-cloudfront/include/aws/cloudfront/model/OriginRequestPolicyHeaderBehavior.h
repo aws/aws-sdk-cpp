@@ -19,7 +19,8 @@ namespace Model
     none,
     whitelist,
     allViewer,
-    allViewerAndWhitelistCloudFront
+    allViewerAndWhitelistCloudFront,
+    allExcept
   };
 
 namespace OriginRequestPolicyHeaderBehaviorMapper

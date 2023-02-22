@@ -54,7 +54,8 @@ enum class OpenSearchServiceErrors
   INVALID_PAGINATION_TOKEN,
   INVALID_TYPE,
   LIMIT_EXCEEDED,
-  RESOURCE_ALREADY_EXISTS
+  RESOURCE_ALREADY_EXISTS,
+  SLOT_NOT_AVAILABLE
 };
 
 class AWS_OPENSEARCHSERVICE_API OpenSearchServiceError : public Aws::Client::AWSError<OpenSearchServiceErrors>

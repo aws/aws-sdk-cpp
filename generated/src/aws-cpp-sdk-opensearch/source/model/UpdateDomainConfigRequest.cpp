@@ -30,7 +30,9 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_dryRunMode(DryRunMode::NOT_SET),
-    m_dryRunModeHasBeenSet(false)
+    m_dryRunModeHasBeenSet(false),
+    m_offPeakWindowOptionsHasBeenSet(false),
+    m_softwareUpdateOptionsHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,18 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const
   if(m_dryRunModeHasBeenSet)
   {
    payload.WithString("DryRunMode", DryRunModeMapper::GetNameForDryRunMode(m_dryRunMode));
+  }
+
+  if(m_offPeakWindowOptionsHasBeenSet)
+  {
+   payload.WithObject("OffPeakWindowOptions", m_offPeakWindowOptions.Jsonize());
+
+  }
+
+  if(m_softwareUpdateOptionsHasBeenSet)
+  {
+   payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -129,52 +129,101 @@ namespace Model
 
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline const Aws::Vector<AutoTuneMaintenanceSchedule>& GetMaintenanceSchedules() const{ return m_maintenanceSchedules; }
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline bool MaintenanceSchedulesHasBeenSet() const { return m_maintenanceSchedulesHasBeenSet; }
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline void SetMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = value; }
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline void SetMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = std::move(value); }
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline AutoTuneOptions& WithMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { SetMaintenanceSchedules(value); return *this;}
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline AutoTuneOptions& WithMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { SetMaintenanceSchedules(std::move(value)); return *this;}
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline AutoTuneOptions& AddMaintenanceSchedules(const AutoTuneMaintenanceSchedule& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(value); return *this; }
 
     /**
-     * <p>A list of maintenance schedules during which Auto-Tune can deploy
-     * changes.</p>
+     * <p>DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     * window</a> instead.</p> <p>A list of maintenance schedules during which
+     * Auto-Tune can deploy changes.</p>
      */
     inline AutoTuneOptions& AddMaintenanceSchedules(AutoTuneMaintenanceSchedule&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a
+     * maintenance schedule.</p>
+     */
+    inline bool GetUseOffPeakWindow() const{ return m_useOffPeakWindow; }
+
+    /**
+     * <p>Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a
+     * maintenance schedule.</p>
+     */
+    inline bool UseOffPeakWindowHasBeenSet() const { return m_useOffPeakWindowHasBeenSet; }
+
+    /**
+     * <p>Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a
+     * maintenance schedule.</p>
+     */
+    inline void SetUseOffPeakWindow(bool value) { m_useOffPeakWindowHasBeenSet = true; m_useOffPeakWindow = value; }
+
+    /**
+     * <p>Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a
+     * maintenance schedule.</p>
+     */
+    inline AutoTuneOptions& WithUseOffPeakWindow(bool value) { SetUseOffPeakWindow(value); return *this;}
 
   private:
 
@@ -186,6 +235,9 @@ namespace Model
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
     bool m_maintenanceSchedulesHasBeenSet = false;
+
+    bool m_useOffPeakWindow;
+    bool m_useOffPeakWindowHasBeenSet = false;
   };
 
 } // namespace Model

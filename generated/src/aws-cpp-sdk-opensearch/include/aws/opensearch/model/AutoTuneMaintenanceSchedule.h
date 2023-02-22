@@ -26,7 +26,13 @@ namespace Model
 {
 
   /**
-   * <p>The Auto-Tune maintenance schedule. For more information, see <a
+   *  <p>This object is deprecated. Use the domain's <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+   * window</a> to schedule Auto-Tune optimizations. For migration instructions, see
+   * <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-migrate">Migrating
+   * from Auto-Tune maintenance windows</a>.</p>  <p>The Auto-Tune maintenance
+   * schedule. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
    * for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneMaintenanceSchedule">AWS
