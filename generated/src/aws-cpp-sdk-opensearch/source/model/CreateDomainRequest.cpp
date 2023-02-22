@@ -28,7 +28,9 @@ CreateDomainRequest::CreateDomainRequest() :
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_offPeakWindowOptionsHasBeenSet(false),
+    m_softwareUpdateOptionsHasBeenSet(false)
 {
 }
 
@@ -144,6 +146,18 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_autoTuneOptionsHasBeenSet)
   {
    payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_offPeakWindowOptionsHasBeenSet)
+  {
+   payload.WithObject("OffPeakWindowOptions", m_offPeakWindowOptions.Jsonize());
+
+  }
+
+  if(m_softwareUpdateOptionsHasBeenSet)
+  {
+   payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
 
   }
 

@@ -42,10 +42,26 @@ namespace Model
     
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
 
+
+    
+    inline bool GetEnableMediaMetricLogs() const{ return m_enableMediaMetricLogs; }
+
+    
+    inline bool EnableMediaMetricLogsHasBeenSet() const { return m_enableMediaMetricLogsHasBeenSet; }
+
+    
+    inline void SetEnableMediaMetricLogs(bool value) { m_enableMediaMetricLogsHasBeenSet = true; m_enableMediaMetricLogs = value; }
+
+    
+    inline LoggingConfiguration& WithEnableMediaMetricLogs(bool value) { SetEnableMediaMetricLogs(value); return *this;}
+
   private:
 
     bool m_enableSIPLogs;
     bool m_enableSIPLogsHasBeenSet = false;
+
+    bool m_enableMediaMetricLogs;
+    bool m_enableMediaMetricLogsHasBeenSet = false;
   };
 
 } // namespace Model

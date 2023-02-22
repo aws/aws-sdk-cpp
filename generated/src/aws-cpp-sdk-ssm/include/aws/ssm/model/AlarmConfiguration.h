@@ -40,30 +40,38 @@ namespace Model
 
 
     /**
-     * <p>If you specify <code>true</code> for this value, your automation or command
-     * continue to run even if we can't gather information about the state of your
-     * CloudWatch alarm. The default value is <code>false</code>.</p>
+     * <p>When this value is <i>true</i>, your automation or command continues to run
+     * in cases where we can’t retrieve alarm status information from CloudWatch. In
+     * cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA,
+     * the automation or command continues to run, regardless of this value. Default is
+     * <i>false</i>.</p>
      */
     inline bool GetIgnorePollAlarmFailure() const{ return m_ignorePollAlarmFailure; }
 
     /**
-     * <p>If you specify <code>true</code> for this value, your automation or command
-     * continue to run even if we can't gather information about the state of your
-     * CloudWatch alarm. The default value is <code>false</code>.</p>
+     * <p>When this value is <i>true</i>, your automation or command continues to run
+     * in cases where we can’t retrieve alarm status information from CloudWatch. In
+     * cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA,
+     * the automation or command continues to run, regardless of this value. Default is
+     * <i>false</i>.</p>
      */
     inline bool IgnorePollAlarmFailureHasBeenSet() const { return m_ignorePollAlarmFailureHasBeenSet; }
 
     /**
-     * <p>If you specify <code>true</code> for this value, your automation or command
-     * continue to run even if we can't gather information about the state of your
-     * CloudWatch alarm. The default value is <code>false</code>.</p>
+     * <p>When this value is <i>true</i>, your automation or command continues to run
+     * in cases where we can’t retrieve alarm status information from CloudWatch. In
+     * cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA,
+     * the automation or command continues to run, regardless of this value. Default is
+     * <i>false</i>.</p>
      */
     inline void SetIgnorePollAlarmFailure(bool value) { m_ignorePollAlarmFailureHasBeenSet = true; m_ignorePollAlarmFailure = value; }
 
     /**
-     * <p>If you specify <code>true</code> for this value, your automation or command
-     * continue to run even if we can't gather information about the state of your
-     * CloudWatch alarm. The default value is <code>false</code>.</p>
+     * <p>When this value is <i>true</i>, your automation or command continues to run
+     * in cases where we can’t retrieve alarm status information from CloudWatch. In
+     * cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA,
+     * the automation or command continues to run, regardless of this value. Default is
+     * <i>false</i>.</p>
      */
     inline AlarmConfiguration& WithIgnorePollAlarmFailure(bool value) { SetIgnorePollAlarmFailure(value); return *this;}
 

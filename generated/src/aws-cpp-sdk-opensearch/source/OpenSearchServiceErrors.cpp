@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/opensearch/OpenSearchServiceErrors.h>
+#include <aws/opensearch/model/SlotNotAvailableException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::OpenSearchService;
+using namespace Aws::OpenSearchService::Model;
 
 namespace Aws
 {
 namespace OpenSearchService
 {
+template<> AWS_OPENSEARCHSERVICE_API SlotNotAvailableException OpenSearchServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == OpenSearchServiceErrors::SLOT_NOT_AVAILABLE);
+  return SlotNotAvailableException(this->GetJsonPayload().View());
+}
+
 namespace OpenSearchServiceErrorMapper
 {
 
@@ -25,6 +33,7 @@ static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Resour
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeException");
+static const int SLOT_NOT_AVAILABLE_HASH = HashingUtils::HashString("SlotNotAvailableException");
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 
 
@@ -59,6 +68,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INVALID_TYPE), false);
+  }
+  else if (hashCode == SLOT_NOT_AVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::SLOT_NOT_AVAILABLE), false);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {

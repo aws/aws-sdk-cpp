@@ -3079,9 +3079,9 @@ namespace SSM
         /**
          * <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly
          * or privately. If you share a document privately, you must specify the Amazon Web
-         * Services user account IDs for those people who can use the document. If you
-         * share a document publicly, you must specify <i>All</i> as the account
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * Services user IDs for those people who can use the document. If you share a
+         * document publicly, you must specify <i>All</i> as the account ID.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          */
@@ -3688,14 +3688,14 @@ namespace SSM
          * we recommend that you call the <a>DescribeAssociation</a> API operation and make
          * a note of all optional parameters required for your
          * <code>UpdateAssociation</code> call.</p> <p>In order to call this API operation,
-         * your Identity and Access Management (IAM) user account, group, or role must be
-         * configured with permission to call the <a>DescribeAssociation</a> API operation.
-         * If you don't have permission to call <code>DescribeAssociation</code>, then you
-         * receive the following error: <code>An error occurred (AccessDeniedException)
-         * when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't
-         * authorized to perform: ssm:DescribeAssociation on resource:
-         * &lt;resource_arn&gt;</code> </p>  <p>When you update an association,
-         * the association immediately runs against the specified targets. You can add the
+         * a user, group, or role must be granted permission to call the
+         * <a>DescribeAssociation</a> API operation. If you don't have permission to call
+         * <code>DescribeAssociation</code>, then you receive the following error: <code>An
+         * error occurred (AccessDeniedException) when calling the UpdateAssociation
+         * operation: User: &lt;user_arn&gt; isn't authorized to perform:
+         * ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
+         *  <p>When you update an association, the association immediately runs
+         * against the specified targets. You can add the
          * <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the
          * next schedule run.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS

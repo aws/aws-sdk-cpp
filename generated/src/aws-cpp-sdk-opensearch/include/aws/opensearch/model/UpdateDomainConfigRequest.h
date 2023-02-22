@@ -19,6 +19,8 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptions.h>
 #include <aws/opensearch/model/DryRunMode.h>
+#include <aws/opensearch/model/OffPeakWindowOptions.h>
+#include <aws/opensearch/model/SoftwareUpdateOptions.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <utility>
@@ -658,52 +660,52 @@ namespace Model
 
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Options to publish OpenSearch lots to Amazon CloudWatch Logs.</p>
+     * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline UpdateDomainConfigRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -777,32 +779,32 @@ namespace Model
 
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline const NodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline UpdateDomainConfigRequest& WithNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
 
     /**
-     * <p>Node-To-Node Encryption options for the domain.</p>
+     * <p>Node-to-node encryption options for the domain.</p>
      */
     inline UpdateDomainConfigRequest& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
 
@@ -962,6 +964,68 @@ namespace Model
      */
     inline UpdateDomainConfigRequest& WithDryRunMode(DryRunMode&& value) { SetDryRunMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline const OffPeakWindowOptions& GetOffPeakWindowOptions() const{ return m_offPeakWindowOptions; }
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline bool OffPeakWindowOptionsHasBeenSet() const { return m_offPeakWindowOptionsHasBeenSet; }
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(const OffPeakWindowOptions& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = value; }
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(OffPeakWindowOptions&& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = std::move(value); }
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithOffPeakWindowOptions(const OffPeakWindowOptions& value) { SetOffPeakWindowOptions(value); return *this;}
+
+    /**
+     * <p>Off-peak window options for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithOffPeakWindowOptions(OffPeakWindowOptions&& value) { SetOffPeakWindowOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline const SoftwareUpdateOptions& GetSoftwareUpdateOptions() const{ return m_softwareUpdateOptions; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline bool SoftwareUpdateOptionsHasBeenSet() const { return m_softwareUpdateOptionsHasBeenSet; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = value; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = std::move(value); }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { SetSoftwareUpdateOptions(value); return *this;}
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -1011,6 +1075,12 @@ namespace Model
 
     DryRunMode m_dryRunMode;
     bool m_dryRunModeHasBeenSet = false;
+
+    OffPeakWindowOptions m_offPeakWindowOptions;
+    bool m_offPeakWindowOptionsHasBeenSet = false;
+
+    SoftwareUpdateOptions m_softwareUpdateOptions;
+    bool m_softwareUpdateOptionsHasBeenSet = false;
   };
 
 } // namespace Model

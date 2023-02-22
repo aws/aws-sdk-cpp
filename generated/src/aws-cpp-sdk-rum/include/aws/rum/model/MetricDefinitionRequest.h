@@ -25,17 +25,22 @@ namespace Model
 {
 
   /**
-   * <p>Use this structure to define one extended metric that RUM will send to
-   * CloudWatch or CloudWatch Evidently. For more information, see <a
+   * <p>Use this structure to define one extended metric or custom metric that RUM
+   * will send to CloudWatch or CloudWatch Evidently. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
    * Additional metrics that you can send to CloudWatch and CloudWatch
-   * Evidently</a>.</p> <p>Only certain combinations of values for <code>Name</code>,
-   * <code>ValueKey</code>, and <code>EventPattern</code> are valid. In addition to
-   * what is displayed in the list below, the <code>EventPattern</code> can also
-   * include information used by the <code>DimensionKeys</code> field.</p> <ul> <li>
-   * <p>If <code>Name</code> is <code>PerformanceNavigationDuration</code>, then
-   * <code>ValueKey</code>must be <code>event_details.duration</code> and the
-   * <code>EventPattern</code> must include
+   * Evidently</a>.</p> <p>This structure is validated differently for extended
+   * metrics and custom metrics. For extended metrics that are sent to the
+   * <code>AWS/RUM</code> namespace, the following validations apply:</p> <ul> <li>
+   * <p>The <code>Namespace</code> parameter must be omitted or set to
+   * <code>AWS/RUM</code>.</p> </li> <li> <p>Only certain combinations of values for
+   * <code>Name</code>, <code>ValueKey</code>, and <code>EventPattern</code> are
+   * valid. In addition to what is displayed in the list below, the
+   * <code>EventPattern</code> can also include information used by the
+   * <code>DimensionKeys</code> field.</p> <ul> <li> <p>If <code>Name</code> is
+   * <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must be
+   * <code>event_details.duration</code> and the <code>EventPattern</code> must
+   * include
    * <code>{"event_type":["com.amazon.rum.performance_navigation_event"]}</code> </p>
    * </li> <li> <p>If <code>Name</code> is <code>PerformanceResourceDuration</code>,
    * then <code>ValueKey</code>must be <code>event_details.duration</code> and the
@@ -76,6 +81,38 @@ namespace Model
    * <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must
    * be null and the <code>EventPattern</code> must include
    * <code>{"event_type":["com.amazon.rum.session_start_event"]}</code> </p> </li>
+   * </ul> </li> </ul> <p>For custom metrics, the following validation rules
+   * apply:</p> <ul> <li> <p>The namespace can't be omitted and can't be
+   * <code>AWS/RUM</code>. You can use the <code>AWS/RUM</code> namespace only for
+   * extended metrics.</p> </li> <li> <p>All dimensions listed in the
+   * <code>DimensionKeys</code> field must be present in the value of
+   * <code>EventPattern</code>.</p> </li> <li> <p>The values that you specify for
+   * <code>ValueKey</code>, <code>EventPattern</code>, and <code>DimensionKeys</code>
+   * must be fields in RUM events, so all first-level keys in these fields must be
+   * one of the keys in the list later in this section.</p> </li> <li> <p>If you set
+   * a value for <code>EventPattern</code>, it must be a JSON object.</p> </li> <li>
+   * <p>For every non-empty <code>event_details</code>, there must be a non-empty
+   * <code>event_type</code>.</p> </li> <li> <p>If <code>EventPattern</code> contains
+   * an <code>event_details</code> field, it must also contain an
+   * <code>event_type</code>. For every built-in <code>event_type</code> that you
+   * use, you must use a value for <code>event_details</code> that corresponds to
+   * that <code>event_type</code>. For information about event details that
+   * correspond to event types, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails">
+   * RUM event details</a>.</p> </li> <li> <p>In <code>EventPattern</code>, any JSON
+   * array must contain only one value.</p> </li> </ul> <p>Valid key values for
+   * first-level keys in the <code>ValueKey</code>, <code>EventPattern</code>, and
+   * <code>DimensionKeys</code> fields:</p> <ul> <li> <p> <code>account_id</code>
+   * </p> </li> <li> <p> <code>application_Id</code> </p> </li> <li> <p>
+   * <code>application_version</code> </p> </li> <li> <p>
+   * <code>application_name</code> </p> </li> <li> <p> <code>batch_id</code> </p>
+   * </li> <li> <p> <code>event_details</code> </p> </li> <li> <p>
+   * <code>event_id</code> </p> </li> <li> <p> <code>event_interaction</code> </p>
+   * </li> <li> <p> <code>event_timestamp</code> </p> </li> <li> <p>
+   * <code>event_type</code> </p> </li> <li> <p> <code>event_version</code> </p>
+   * </li> <li> <p> <code>log_stream</code> </p> </li> <li> <p> <code>metadata</code>
+   * </p> </li> <li> <p> <code>sessionId</code> </p> </li> <li> <p>
+   * <code>user_details</code> </p> </li> <li> <p> <code>userId</code> </p> </li>
    * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/MetricDefinitionRequest">AWS
    * API Reference</a></p>
@@ -92,195 +129,208 @@ namespace Model
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDimensionKeys() const{ return m_dimensionKeys; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline bool DimensionKeysHasBeenSet() const { return m_dimensionKeysHasBeenSet; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline void SetDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = value; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline void SetDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = std::move(value); }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& WithDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensionKeys(value); return *this;}
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& WithDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensionKeys(std::move(value)); return *this;}
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const char* key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Use this field only if you are sending the metric to CloudWatch.</p> <p>This
      * field is a map of field paths to dimension names. It defines the dimensions to
-     * associate with this metric in CloudWatch. Valid values for the entries in this
-     * field are the following:</p> <ul> <li> <p> <code>"metadata.pageId":
-     * "PageId"</code> </p> </li> <li> <p> <code>"metadata.browserName":
-     * "BrowserName"</code> </p> </li> <li> <p> <code>"metadata.deviceType":
-     * "DeviceType"</code> </p> </li> <li> <p> <code>"metadata.osName": "OSName"</code>
-     * </p> </li> <li> <p> <code>"metadata.countryCode": "CountryCode"</code> </p>
-     * </li> <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
-     * </ul> <p> All dimensions listed in this field must also be included in
-     * <code>EventPattern</code>.</p>
+     * associate with this metric in CloudWatch. For extended metrics, valid values for
+     * the entries in this field are the following:</p> <ul> <li> <p>
+     * <code>"metadata.pageId": "PageId"</code> </p> </li> <li> <p>
+     * <code>"metadata.browserName": "BrowserName"</code> </p> </li> <li> <p>
+     * <code>"metadata.deviceType": "DeviceType"</code> </p> </li> <li> <p>
+     * <code>"metadata.osName": "OSName"</code> </p> </li> <li> <p>
+     * <code>"metadata.countryCode": "CountryCode"</code> </p> </li> <li> <p>
+     * <code>"event_details.fileType": "FileType"</code> </p> </li> </ul> <p> For both
+     * extended metrics and custom metrics, all dimensions listed in this field must
+     * also be included in <code>EventPattern</code>.</p>
      */
     inline MetricDefinitionRequest& AddDimensionKeys(const char* key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
 
@@ -455,9 +505,11 @@ namespace Model
 
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -470,9 +522,11 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -485,9 +539,11 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -500,9 +556,11 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -515,9 +573,11 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -530,9 +590,11 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -545,9 +607,11 @@ namespace Model
     inline MetricDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -560,9 +624,11 @@ namespace Model
     inline MetricDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the metric that is defined in this structure. Valid values are
-     * the following:</p> <ul> <li> <p> <code>PerformanceNavigationDuration</code> </p>
-     * </li> <li> <p> <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
+     * <p>The name for the metric that is defined in this structure. For custom
+     * metrics, you can specify any name that you like. For extended metrics, valid
+     * values are the following:</p> <ul> <li> <p>
+     * <code>PerformanceNavigationDuration</code> </p> </li> <li> <p>
+     * <code>PerformanceResourceDuration </code> </p> </li> <li> <p>
      * <code>NavigationSatisfiedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationToleratedTransaction</code> </p> </li> <li> <p>
      * <code>NavigationFrustratedTransaction</code> </p> </li> <li> <p>
@@ -573,6 +639,71 @@ namespace Model
      * </li> <li> <p> <code>SessionCount</code> </p> </li> </ul>
      */
     inline MetricDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline MetricDefinitionRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline MetricDefinitionRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>If this structure is for a custom metric instead of an extended metrics, use
+     * this parameter to define the metric namespace for that custom metric. Do not
+     * specify this parameter if this structure is for an extended metric.</p> <p>You
+     * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
+     */
+    inline MetricDefinitionRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
 
     /**
@@ -714,6 +845,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_unitLabel;
     bool m_unitLabelHasBeenSet = false;

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameters specified in a System Manager document that run on the server when
-   * the command is run. </p><p><h3>See Also:</h3>   <a
+   * <p>Parameters specified in a Systems Manager document that run on the server
+   * when the command is run. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentParameter">AWS
    * API Reference</a></p>
    */

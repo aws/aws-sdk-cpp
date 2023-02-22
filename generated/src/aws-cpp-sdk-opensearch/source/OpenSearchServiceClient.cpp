@@ -57,6 +57,7 @@
 #include <aws/opensearch/model/ListDomainsForPackageRequest.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsRequest.h>
 #include <aws/opensearch/model/ListPackagesForDomainRequest.h>
+#include <aws/opensearch/model/ListScheduledActionsRequest.h>
 #include <aws/opensearch/model/ListTagsRequest.h>
 #include <aws/opensearch/model/ListVersionsRequest.h>
 #include <aws/opensearch/model/ListVpcEndpointAccessRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
 #include <aws/opensearch/model/UpdatePackageRequest.h>
+#include <aws/opensearch/model/UpdateScheduledActionRequest.h>
 #include <aws/opensearch/model/UpdateVpcEndpointRequest.h>
 #include <aws/opensearch/model/UpgradeDomainRequest.h>
 
@@ -678,6 +680,22 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
   return ListPackagesForDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const ListScheduledActionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListScheduledActions", "Required field: DomainName, is not set");
+    return ListScheduledActionsOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/scheduledActions");
+  return ListScheduledActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -824,6 +842,22 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/packages/update");
   return UpdatePackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(const UpdateScheduledActionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateScheduledAction", "Required field: DomainName, is not set");
+    return UpdateScheduledActionOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/scheduledAction/update");
+  return UpdateScheduledActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const

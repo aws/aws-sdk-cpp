@@ -21,14 +21,18 @@ namespace Model
 AutoTuneOptionsInput::AutoTuneOptionsInput() : 
     m_desiredState(AutoTuneDesiredState::NOT_SET),
     m_desiredStateHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false)
+    m_maintenanceSchedulesHasBeenSet(false),
+    m_useOffPeakWindow(false),
+    m_useOffPeakWindowHasBeenSet(false)
 {
 }
 
 AutoTuneOptionsInput::AutoTuneOptionsInput(JsonView jsonValue) : 
     m_desiredState(AutoTuneDesiredState::NOT_SET),
     m_desiredStateHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false)
+    m_maintenanceSchedulesHasBeenSet(false),
+    m_useOffPeakWindow(false),
+    m_useOffPeakWindowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +56,13 @@ AutoTuneOptionsInput& AutoTuneOptionsInput::operator =(JsonView jsonValue)
     m_maintenanceSchedulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseOffPeakWindow"))
+  {
+    m_useOffPeakWindow = jsonValue.GetBool("UseOffPeakWindow");
+
+    m_useOffPeakWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,6 +83,12 @@ JsonValue AutoTuneOptionsInput::Jsonize() const
      maintenanceSchedulesJsonList[maintenanceSchedulesIndex].AsObject(m_maintenanceSchedules[maintenanceSchedulesIndex].Jsonize());
    }
    payload.WithArray("MaintenanceSchedules", std::move(maintenanceSchedulesJsonList));
+
+  }
+
+  if(m_useOffPeakWindowHasBeenSet)
+  {
+   payload.WithBool("UseOffPeakWindow", m_useOffPeakWindow);
 
   }
 

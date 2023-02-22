@@ -53,6 +53,7 @@
 #include <aws/opensearch/model/ListDomainsForPackageResult.h>
 #include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
 #include <aws/opensearch/model/ListPackagesForDomainResult.h>
+#include <aws/opensearch/model/ListScheduledActionsResult.h>
 #include <aws/opensearch/model/ListTagsResult.h>
 #include <aws/opensearch/model/ListVersionsResult.h>
 #include <aws/opensearch/model/ListVpcEndpointAccessResult.h>
@@ -64,6 +65,7 @@
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/UpdateDomainConfigResult.h>
 #include <aws/opensearch/model/UpdatePackageResult.h>
+#include <aws/opensearch/model/UpdateScheduledActionResult.h>
 #include <aws/opensearch/model/UpdateVpcEndpointResult.h>
 #include <aws/opensearch/model/UpgradeDomainResult.h>
 #include <aws/core/NoResult.h>
@@ -143,6 +145,7 @@ namespace Aws
       class ListDomainsForPackageRequest;
       class ListInstanceTypeDetailsRequest;
       class ListPackagesForDomainRequest;
+      class ListScheduledActionsRequest;
       class ListTagsRequest;
       class ListVersionsRequest;
       class ListVpcEndpointAccessRequest;
@@ -155,6 +158,7 @@ namespace Aws
       class StartServiceSoftwareUpdateRequest;
       class UpdateDomainConfigRequest;
       class UpdatePackageRequest;
+      class UpdateScheduledActionRequest;
       class UpdateVpcEndpointRequest;
       class UpgradeDomainRequest;
       /* End of service model forward declarations required in OpenSearchServiceClient header */
@@ -196,6 +200,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDomainsForPackageResult, OpenSearchServiceError> ListDomainsForPackageOutcome;
       typedef Aws::Utils::Outcome<ListInstanceTypeDetailsResult, OpenSearchServiceError> ListInstanceTypeDetailsOutcome;
       typedef Aws::Utils::Outcome<ListPackagesForDomainResult, OpenSearchServiceError> ListPackagesForDomainOutcome;
+      typedef Aws::Utils::Outcome<ListScheduledActionsResult, OpenSearchServiceError> ListScheduledActionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsResult, OpenSearchServiceError> ListTagsOutcome;
       typedef Aws::Utils::Outcome<ListVersionsResult, OpenSearchServiceError> ListVersionsOutcome;
       typedef Aws::Utils::Outcome<ListVpcEndpointAccessResult, OpenSearchServiceError> ListVpcEndpointAccessOutcome;
@@ -208,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainConfigResult, OpenSearchServiceError> UpdateDomainConfigOutcome;
       typedef Aws::Utils::Outcome<UpdatePackageResult, OpenSearchServiceError> UpdatePackageOutcome;
+      typedef Aws::Utils::Outcome<UpdateScheduledActionResult, OpenSearchServiceError> UpdateScheduledActionOutcome;
       typedef Aws::Utils::Outcome<UpdateVpcEndpointResult, OpenSearchServiceError> UpdateVpcEndpointOutcome;
       typedef Aws::Utils::Outcome<UpgradeDomainResult, OpenSearchServiceError> UpgradeDomainOutcome;
       /* End of service model Outcome class definitions */
@@ -249,6 +255,7 @@ namespace Aws
       typedef std::future<ListDomainsForPackageOutcome> ListDomainsForPackageOutcomeCallable;
       typedef std::future<ListInstanceTypeDetailsOutcome> ListInstanceTypeDetailsOutcomeCallable;
       typedef std::future<ListPackagesForDomainOutcome> ListPackagesForDomainOutcomeCallable;
+      typedef std::future<ListScheduledActionsOutcome> ListScheduledActionsOutcomeCallable;
       typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
       typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
       typedef std::future<ListVpcEndpointAccessOutcome> ListVpcEndpointAccessOutcomeCallable;
@@ -261,6 +268,7 @@ namespace Aws
       typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
       typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
       typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
+      typedef std::future<UpdateScheduledActionOutcome> UpdateScheduledActionOutcomeCallable;
       typedef std::future<UpdateVpcEndpointOutcome> UpdateVpcEndpointOutcomeCallable;
       typedef std::future<UpgradeDomainOutcome> UpgradeDomainOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -305,6 +313,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainsForPackageRequest&, const Model::ListDomainsForPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsForPackageResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInstanceTypeDetailsRequest&, const Model::ListInstanceTypeDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceTypeDetailsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListPackagesForDomainRequest&, const Model::ListPackagesForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackagesForDomainResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListScheduledActionsRequest&, const Model::ListScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScheduledActionsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::ListVpcEndpointAccessRequest&, const Model::ListVpcEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVpcEndpointAccessResponseReceivedHandler;
@@ -317,6 +326,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServiceClient*, const Model::StartServiceSoftwareUpdateRequest&, const Model::StartServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServiceSoftwareUpdateResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateDomainConfigRequest&, const Model::UpdateDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdatePackageRequest&, const Model::UpdatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateScheduledActionRequest&, const Model::UpdateScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScheduledActionResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateVpcEndpointRequest&, const Model::UpdateVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::UpgradeDomainRequest&, const Model::UpgradeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeDomainResponseReceivedHandler;
     /* End of service model async handlers definitions */

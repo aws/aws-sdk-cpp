@@ -33,7 +33,9 @@ DomainConfig::DomainConfig() :
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
-    m_changeProgressDetailsHasBeenSet(false)
+    m_changeProgressDetailsHasBeenSet(false),
+    m_offPeakWindowOptionsHasBeenSet(false),
+    m_softwareUpdateOptionsHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ DomainConfig::DomainConfig(JsonView jsonValue) :
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
-    m_changeProgressDetailsHasBeenSet(false)
+    m_changeProgressDetailsHasBeenSet(false),
+    m_offPeakWindowOptionsHasBeenSet(false),
+    m_softwareUpdateOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +168,20 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_changeProgressDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OffPeakWindowOptions"))
+  {
+    m_offPeakWindowOptions = jsonValue.GetObject("OffPeakWindowOptions");
+
+    m_offPeakWindowOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SoftwareUpdateOptions"))
+  {
+    m_softwareUpdateOptions = jsonValue.GetObject("SoftwareUpdateOptions");
+
+    m_softwareUpdateOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +276,18 @@ JsonValue DomainConfig::Jsonize() const
   if(m_changeProgressDetailsHasBeenSet)
   {
    payload.WithObject("ChangeProgressDetails", m_changeProgressDetails.Jsonize());
+
+  }
+
+  if(m_offPeakWindowOptionsHasBeenSet)
+  {
+   payload.WithObject("OffPeakWindowOptions", m_offPeakWindowOptions.Jsonize());
+
+  }
+
+  if(m_softwareUpdateOptionsHasBeenSet)
+  {
+   payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
 
   }
 

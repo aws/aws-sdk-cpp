@@ -19,6 +19,8 @@
 #include <aws/opensearch/model/AdvancedSecurityOptions.h>
 #include <aws/opensearch/model/AutoTuneOptionsOutput.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
+#include <aws/opensearch/model/OffPeakWindowOptions.h>
+#include <aws/opensearch/model/SoftwareUpdateOptions.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
 #include <utility>
@@ -1061,6 +1063,74 @@ namespace Model
      */
     inline DomainStatus& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline const OffPeakWindowOptions& GetOffPeakWindowOptions() const{ return m_offPeakWindowOptions; }
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline bool OffPeakWindowOptionsHasBeenSet() const { return m_offPeakWindowOptionsHasBeenSet; }
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(const OffPeakWindowOptions& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = value; }
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(OffPeakWindowOptions&& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = std::move(value); }
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline DomainStatus& WithOffPeakWindowOptions(const OffPeakWindowOptions& value) { SetOffPeakWindowOptions(value); return *this;}
+
+    /**
+     * <p>Options that specify a custom 10-hour window during which OpenSearch Service
+     * can perform configuration changes on the domain.</p>
+     */
+    inline DomainStatus& WithOffPeakWindowOptions(OffPeakWindowOptions&& value) { SetOffPeakWindowOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline const SoftwareUpdateOptions& GetSoftwareUpdateOptions() const{ return m_softwareUpdateOptions; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline bool SoftwareUpdateOptionsHasBeenSet() const { return m_softwareUpdateOptionsHasBeenSet; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = value; }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = std::move(value); }
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline DomainStatus& WithSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { SetSoftwareUpdateOptions(value); return *this;}
+
+    /**
+     * <p>Service software update options for the domain.</p>
+     */
+    inline DomainStatus& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -1137,6 +1207,12 @@ namespace Model
 
     ChangeProgressDetails m_changeProgressDetails;
     bool m_changeProgressDetailsHasBeenSet = false;
+
+    OffPeakWindowOptions m_offPeakWindowOptions;
+    bool m_offPeakWindowOptionsHasBeenSet = false;
+
+    SoftwareUpdateOptions m_softwareUpdateOptions;
+    bool m_softwareUpdateOptionsHasBeenSet = false;
   };
 
 } // namespace Model

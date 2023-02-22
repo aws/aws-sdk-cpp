@@ -31,7 +31,7 @@ namespace Model
    * to the viewer.</p> </li> <li> <p>The default, minimum, and maximum time to live
    * (TTL) values that you want objects to stay in the CloudFront cache.</p> </li>
    * </ul> <p>The headers, cookies, and query strings that are included in the cache
-   * key are automatically included in requests that CloudFront sends to the origin.
+   * key are also included in requests that CloudFront sends to the origin.
    * CloudFront sends a request when it can't find a valid object in its cache that
    * matches the request's cache key. If you want to send values to the origin but
    * <i>not</i> include them in the cache key, use
@@ -304,42 +304,42 @@ namespace Model
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline const ParametersInCacheKeyAndForwardedToOrigin& GetParametersInCacheKeyAndForwardedToOrigin() const{ return m_parametersInCacheKeyAndForwardedToOrigin; }
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline bool ParametersInCacheKeyAndForwardedToOriginHasBeenSet() const { return m_parametersInCacheKeyAndForwardedToOriginHasBeenSet; }
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline void SetParametersInCacheKeyAndForwardedToOrigin(const ParametersInCacheKeyAndForwardedToOrigin& value) { m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true; m_parametersInCacheKeyAndForwardedToOrigin = value; }
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline void SetParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOrigin&& value) { m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true; m_parametersInCacheKeyAndForwardedToOrigin = std::move(value); }
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline CachePolicyConfig& WithParametersInCacheKeyAndForwardedToOrigin(const ParametersInCacheKeyAndForwardedToOrigin& value) { SetParametersInCacheKeyAndForwardedToOrigin(value); return *this;}
 
     /**
      * <p>The HTTP headers, cookies, and URL query strings to include in the cache key.
-     * The values included in the cache key are automatically included in requests that
+     * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
     inline CachePolicyConfig& WithParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOrigin&& value) { SetParametersInCacheKeyAndForwardedToOrigin(std::move(value)); return *this;}

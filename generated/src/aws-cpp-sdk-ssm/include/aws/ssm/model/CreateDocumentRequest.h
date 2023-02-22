@@ -41,11 +41,12 @@ namespace Model
 
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -56,11 +57,12 @@ namespace Model
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -71,11 +73,12 @@ namespace Model
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -86,11 +89,12 @@ namespace Model
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -101,11 +105,12 @@ namespace Model
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -116,11 +121,12 @@ namespace Model
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -131,11 +137,12 @@ namespace Model
     inline CreateDocumentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
@@ -146,11 +153,12 @@ namespace Model
     inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content for the new SSM document in JSON or YAML format. We recommend
-     * storing the contents for your new document in an external JSON or YAML file and
-     * referencing the file in a command.</p> <p>For examples, see the following topics
-     * in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <ul> <li> <p>
-     * <a
+     * <p>The content for the new SSM document in JSON or YAML format. The content of
+     * the document must not exceed 64KB. This quota also includes the content
+     * specified for input parameters at runtime. We recommend storing the contents for
+     * your new document in an external JSON or YAML file and referencing the file in a
+     * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
      * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create

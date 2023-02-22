@@ -20,6 +20,8 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/opensearch/model/AutoTuneOptionsStatus.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
+#include <aws/opensearch/model/OffPeakWindowOptionsStatus.h>
+#include <aws/opensearch/model/SoftwareUpdateOptionsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -115,32 +117,32 @@ namespace Model
 
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline const EBSOptionsStatus& GetEBSOptions() const{ return m_eBSOptions; }
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline bool EBSOptionsHasBeenSet() const { return m_eBSOptionsHasBeenSet; }
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline void SetEBSOptions(const EBSOptionsStatus& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline void SetEBSOptions(EBSOptionsStatus&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = std::move(value); }
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline DomainConfig& WithEBSOptions(const EBSOptionsStatus& value) { SetEBSOptions(value); return *this;}
 
     /**
-     * <p>Container for EBS options configured for an OpenSearch Service domain.</p>
+     * <p>Container for EBS options configured for the domain.</p>
      */
     inline DomainConfig& WithEBSOptions(EBSOptionsStatus&& value) { SetEBSOptions(std::move(value)); return *this;}
 
@@ -558,6 +560,68 @@ namespace Model
      */
     inline DomainConfig& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline const OffPeakWindowOptionsStatus& GetOffPeakWindowOptions() const{ return m_offPeakWindowOptions; }
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline bool OffPeakWindowOptionsHasBeenSet() const { return m_offPeakWindowOptionsHasBeenSet; }
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(const OffPeakWindowOptionsStatus& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = value; }
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline void SetOffPeakWindowOptions(OffPeakWindowOptionsStatus&& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = std::move(value); }
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline DomainConfig& WithOffPeakWindowOptions(const OffPeakWindowOptionsStatus& value) { SetOffPeakWindowOptions(value); return *this;}
+
+    /**
+     * <p>Container for off-peak window options for the domain.</p>
+     */
+    inline DomainConfig& WithOffPeakWindowOptions(OffPeakWindowOptionsStatus&& value) { SetOffPeakWindowOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline const SoftwareUpdateOptionsStatus& GetSoftwareUpdateOptions() const{ return m_softwareUpdateOptions; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline bool SoftwareUpdateOptionsHasBeenSet() const { return m_softwareUpdateOptionsHasBeenSet; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(const SoftwareUpdateOptionsStatus& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = value; }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline void SetSoftwareUpdateOptions(SoftwareUpdateOptionsStatus&& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = std::move(value); }
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline DomainConfig& WithSoftwareUpdateOptions(const SoftwareUpdateOptionsStatus& value) { SetSoftwareUpdateOptions(value); return *this;}
+
+    /**
+     * <p>Software update options for the domain.</p>
+     */
+    inline DomainConfig& WithSoftwareUpdateOptions(SoftwareUpdateOptionsStatus&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
+
   private:
 
     VersionStatus m_engineVersion;
@@ -604,6 +668,12 @@ namespace Model
 
     ChangeProgressDetails m_changeProgressDetails;
     bool m_changeProgressDetailsHasBeenSet = false;
+
+    OffPeakWindowOptionsStatus m_offPeakWindowOptions;
+    bool m_offPeakWindowOptionsHasBeenSet = false;
+
+    SoftwareUpdateOptionsStatus m_softwareUpdateOptions;
+    bool m_softwareUpdateOptionsHasBeenSet = false;
   };
 
 } // namespace Model
