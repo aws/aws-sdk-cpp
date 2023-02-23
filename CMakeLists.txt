@@ -59,7 +59,7 @@ if (LEGACY_BUILD)
                                 You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode." ON)
     option(REGENERATE_DEFAULTS "If set to ON, defaults mode configuration will be regenerated from the JSON definitions, this option involves some setup of python, java 8+, and maven" OFF)
     option(ENABLE_ZLIB_REQUEST_COMPRESSION "For services that support it, request content will be compressed. On by default if dependency available" ON)
-
+    option(DISABLE_INTERNAL_IMDSV1_CALLS "Disables IMDSv1 internal client calls" OFF)
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
@@ -69,6 +69,9 @@ if (LEGACY_BUILD)
     get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
     if (NOT ${is_multi_config})
         set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
+    endif ()
+    if (DISABLE_INTERNAL_IMDSV1_CALLS)
+        add_definitions(-DDISABLE_IMDSV1)
     endif ()
 
     #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
