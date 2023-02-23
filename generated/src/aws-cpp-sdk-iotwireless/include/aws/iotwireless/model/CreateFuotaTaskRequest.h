@@ -204,6 +204,45 @@ namespace Model
     
     inline CreateFuotaTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline int GetRedundancyPercent() const{ return m_redundancyPercent; }
+
+    
+    inline bool RedundancyPercentHasBeenSet() const { return m_redundancyPercentHasBeenSet; }
+
+    
+    inline void SetRedundancyPercent(int value) { m_redundancyPercentHasBeenSet = true; m_redundancyPercent = value; }
+
+    
+    inline CreateFuotaTaskRequest& WithRedundancyPercent(int value) { SetRedundancyPercent(value); return *this;}
+
+
+    
+    inline int GetFragmentSizeBytes() const{ return m_fragmentSizeBytes; }
+
+    
+    inline bool FragmentSizeBytesHasBeenSet() const { return m_fragmentSizeBytesHasBeenSet; }
+
+    
+    inline void SetFragmentSizeBytes(int value) { m_fragmentSizeBytesHasBeenSet = true; m_fragmentSizeBytes = value; }
+
+    
+    inline CreateFuotaTaskRequest& WithFragmentSizeBytes(int value) { SetFragmentSizeBytes(value); return *this;}
+
+
+    
+    inline int GetFragmentIntervalMS() const{ return m_fragmentIntervalMS; }
+
+    
+    inline bool FragmentIntervalMSHasBeenSet() const { return m_fragmentIntervalMSHasBeenSet; }
+
+    
+    inline void SetFragmentIntervalMS(int value) { m_fragmentIntervalMSHasBeenSet = true; m_fragmentIntervalMS = value; }
+
+    
+    inline CreateFuotaTaskRequest& WithFragmentIntervalMS(int value) { SetFragmentIntervalMS(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -226,6 +265,15 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    int m_redundancyPercent;
+    bool m_redundancyPercentHasBeenSet = false;
+
+    int m_fragmentSizeBytes;
+    bool m_fragmentSizeBytesHasBeenSet = false;
+
+    int m_fragmentIntervalMS;
+    bool m_fragmentIntervalMSHasBeenSet = false;
   };
 
 } // namespace Model

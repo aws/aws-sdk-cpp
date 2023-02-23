@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    INACTIVE
+    INACTIVE,
+    DELETE_IN_PROGRESS
   };
 
 namespace TaskDefinitionStatusMapper

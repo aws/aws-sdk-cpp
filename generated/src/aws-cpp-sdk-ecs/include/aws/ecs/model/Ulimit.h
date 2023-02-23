@@ -29,8 +29,9 @@ namespace Model
    * operating system with the exception of the <code>nofile</code> resource limit
    * parameter which Fargate overrides. The <code>nofile</code> resource limit sets a
    * restriction on the number of open files that a container can use. The default
-   * <code>nofile</code> soft limit is <code>1024</code> and hard limit is
-   * <code>4096</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit
+   * is <code>4096</code>.</p> <p>You can specify the <code>ulimit</code> settings
+   * for a container in a task definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Ulimit">AWS API
    * Reference</a></p>
    */

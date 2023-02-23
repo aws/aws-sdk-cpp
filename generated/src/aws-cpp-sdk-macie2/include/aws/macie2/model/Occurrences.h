@@ -109,11 +109,11 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -122,11 +122,11 @@ namespace Model
     inline const Aws::Vector<Range>& GetLineRanges() const{ return m_lineRanges; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -135,11 +135,11 @@ namespace Model
     inline bool LineRangesHasBeenSet() const { return m_lineRangesHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -148,11 +148,11 @@ namespace Model
     inline void SetLineRanges(const Aws::Vector<Range>& value) { m_lineRangesHasBeenSet = true; m_lineRanges = value; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -161,11 +161,11 @@ namespace Model
     inline void SetLineRanges(Aws::Vector<Range>&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -174,11 +174,11 @@ namespace Model
     inline Occurrences& WithLineRanges(const Aws::Vector<Range>& value) { SetLineRanges(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -187,11 +187,11 @@ namespace Model
     inline Occurrences& WithLineRanges(Aws::Vector<Range>&& value) { SetLineRanges(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
@@ -200,11 +200,11 @@ namespace Model
     inline Occurrences& AddLineRanges(const Range& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a
-     * non-binary text file, such as an HTML, TXT, or XML file. Each Range object
-     * specifies a line or inclusive range of lines that contains the sensitive data,
-     * and the position of the data on the specified line or lines.</p> <p>This value
-     * is often null for file types that are supported by Cell, Page, or Record
+     * <p>An array of objects, one for each occurrence of sensitive data in an email
+     * message or a non-binary text file such as an HTML, TXT, or XML file. Each Range
+     * object specifies a line or inclusive range of lines that contains the sensitive
+     * data, and the position of the data on the specified line or lines.</p> <p>This
+     * value is often null for file types that are supported by Cell, Page, or Record
      * objects. Exceptions are the location of sensitive data in: unstructured sections
      * of an otherwise structured file, such as a comment in a file; a malformed file
      * that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any

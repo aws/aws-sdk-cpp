@@ -125,58 +125,74 @@ namespace Model
 
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline UpdateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline UpdateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as hyphen, period, colon, underscore,
+     * parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward
+     * slash, horizontal tab, vertical tab, newline, form feed, return, and
+     * whitespace.</p>
      */
     inline UpdateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

@@ -35,7 +35,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -43,7 +44,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -51,7 +53,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -59,7 +62,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -67,7 +71,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -75,7 +80,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
@@ -83,7 +89,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
-     * when you specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
+     * <p>Format example:
      * <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */

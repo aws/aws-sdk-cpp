@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline const Aws::String& GetGuardDutyFindingId() const{ return m_guardDutyFindingId; }
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline bool GuardDutyFindingIdHasBeenSet() const { return m_guardDutyFindingIdHasBeenSet; }
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline void SetGuardDutyFindingId(const Aws::String& value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId = value; }
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline void SetGuardDutyFindingId(Aws::String&& value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId = std::move(value); }
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline void SetGuardDutyFindingId(const char* value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId.assign(value); }
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline TriggerDetails& WithGuardDutyFindingId(const Aws::String& value) { SetGuardDutyFindingId(value); return *this;}
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline TriggerDetails& WithGuardDutyFindingId(Aws::String&& value) { SetGuardDutyFindingId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+     * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
     inline TriggerDetails& WithGuardDutyFindingId(const char* value) { SetGuardDutyFindingId(value); return *this;}
 

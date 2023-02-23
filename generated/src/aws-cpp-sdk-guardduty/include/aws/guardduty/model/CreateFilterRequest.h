@@ -143,58 +143,74 @@ namespace Model
 
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline CreateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline CreateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the filter. Valid special characters include period (.),
-     * underscore (_), dash (-), and whitespace. The new line character is considered
-     * to be an invalid input for description.</p>
+     * <p>The description of the filter. Valid characters include alphanumeric
+     * characters, and special characters such as <code>-</code>, <code>.</code>,
+     * <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>,
+     * <code>\f</code>, <code>\r</code>, <code>_</code>, and whitespace.</p>
      */
     inline CreateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -264,9 +280,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -316,10 +332,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
@@ -330,9 +343,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -382,10 +395,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
@@ -396,9 +406,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -448,10 +458,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
@@ -462,9 +469,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -514,10 +521,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
@@ -528,9 +532,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -580,10 +584,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
@@ -594,9 +595,9 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      * <p>You can only use the following attributes to query findings:</p> <ul> <li>
-     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
-     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
-     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>id</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
@@ -646,10 +647,7 @@ namespace Model
      * <p>resource.s3BucketDetails.name</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
      * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
-     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
-     * this attribute is set to TRUE, only archived findings are listed. When it's set
-     * to FALSE, only unarchived findings are listed. When this attribute is not set,
-     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.resourceRole</p>
      * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
      * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
      * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>

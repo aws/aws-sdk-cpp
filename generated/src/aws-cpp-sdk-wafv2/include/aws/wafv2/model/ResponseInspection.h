@@ -34,13 +34,8 @@ namespace Model
    * session. Using this information, the rule group labels and mitigates requests
    * from client sessions and IP addresses that submit too many failed login attempts
    * in a short amount of time. </p>  <p>Response inspection is available only
-   * in web ACLs that protect Amazon CloudFront distributions.</p>  
-   * <p>For regional web ACLs in Region US East (N. Virginia) us-east-1, it's
-   * possible to configure response inspection through the APIs, but ATP response
-   * inspection will not be enabled. You can only use the response inspection
-   * capabilities of the ATP managed rule group in web ACLs that protect CloudFront
-   * distributions.</p>  <p>This is part of the
-   * <code>AWSManagedRulesATPRuleSet</code> configuration in
+   * in web ACLs that protect Amazon CloudFront distributions.</p>  <p>This is
+   * part of the <code>AWSManagedRulesATPRuleSet</code> configuration in
    * <code>ManagedRuleGroupConfig</code>.</p> <p>Enable login response inspection by
    * configuring exactly one component of the response to inspect. You can't
    * configure more than one. If you don't configure any of the response inspection
@@ -120,63 +115,75 @@ namespace Model
 
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline const ResponseInspectionBodyContains& GetBodyContains() const{ return m_bodyContains; }
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline bool BodyContainsHasBeenSet() const { return m_bodyContainsHasBeenSet; }
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline void SetBodyContains(const ResponseInspectionBodyContains& value) { m_bodyContainsHasBeenSet = true; m_bodyContains = value; }
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline void SetBodyContains(ResponseInspectionBodyContains&& value) { m_bodyContainsHasBeenSet = true; m_bodyContains = std::move(value); }
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline ResponseInspection& WithBodyContains(const ResponseInspectionBodyContains& value) { SetBodyContains(value); return *this;}
 
     /**
-     * <p>Configures inspection of the response body. </p>
+     * <p>Configures inspection of the response body. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response body. </p>
      */
     inline ResponseInspection& WithBodyContains(ResponseInspectionBodyContains&& value) { SetBodyContains(std::move(value)); return *this;}
 
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline const ResponseInspectionJson& GetJson() const{ return m_json; }
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline void SetJson(const ResponseInspectionJson& value) { m_jsonHasBeenSet = true; m_json = value; }
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline void SetJson(ResponseInspectionJson&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline ResponseInspection& WithJson(const ResponseInspectionJson& value) { SetJson(value); return *this;}
 
     /**
-     * <p>Configures inspection of the response JSON. </p>
+     * <p>Configures inspection of the response JSON. WAF can inspect the first 65,536
+     * bytes (64 KB) of the response JSON. </p>
      */
     inline ResponseInspection& WithJson(ResponseInspectionJson&& value) { SetJson(std::move(value)); return *this;}
 

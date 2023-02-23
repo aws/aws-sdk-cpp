@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the network configuration for a task or
-   * service.</p><p><h3>See Also:</h3>   <a
+   * <p>The network configuration for a task or service.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkConfiguration">AWS
    * API Reference</a></p>
    */

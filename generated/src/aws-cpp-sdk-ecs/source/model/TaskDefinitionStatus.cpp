@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
 
 
         TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INACTIVE_HASH)
           {
             return TaskDefinitionStatus::INACTIVE;
+          }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
+          {
+            return TaskDefinitionStatus::DELETE_IN_PROGRESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ACTIVE";
           case TaskDefinitionStatus::INACTIVE:
             return "INACTIVE";
+          case TaskDefinitionStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

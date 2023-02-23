@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline const Aws::Vector<ListMapsResponseEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline void SetEntries(const Aws::Vector<ListMapsResponseEntry>& value) { m_entries = value; }
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline void SetEntries(Aws::Vector<ListMapsResponseEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline ListMapsResult& WithEntries(const Aws::Vector<ListMapsResponseEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline ListMapsResult& WithEntries(Aws::Vector<ListMapsResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline ListMapsResult& AddEntries(const ListMapsResponseEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>Contains a list of maps in your AWS account</p>
+     * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
     inline ListMapsResult& AddEntries(ListMapsResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

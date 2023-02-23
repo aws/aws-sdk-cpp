@@ -58,9 +58,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -90,9 +90,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -122,9 +122,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -154,9 +154,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -186,9 +186,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -218,9 +218,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -250,9 +250,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
@@ -282,9 +282,9 @@ namespace Model
      * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional information ,
-     * see <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> for Amazon Location Service.</p>  </li> </ul> <p>For
+     * additional information , see <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
      * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */

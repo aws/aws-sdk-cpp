@@ -530,7 +530,8 @@ namespace ManagedGrafana
          * authenticates users from, using SAML. You can also map SAML assertion attributes
          * to workspace user information and define which groups in the assertion attribute
          * are to have the <code>Admin</code> and <code>Editor</code> roles in the
-         * workspace.</p><p><h3>See Also:</h3>   <a
+         * workspace.</p>  <p>Changes to the authentication method for a workspace
+         * may take a few minutes to take effect.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceAuthentication">AWS
          * API Reference</a></p>
          */

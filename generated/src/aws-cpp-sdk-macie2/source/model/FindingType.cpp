@@ -30,6 +30,7 @@ namespace Aws
         static const int Policy_IAMUser_S3BucketReplicatedExternally_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketReplicatedExternally");
         static const int Policy_IAMUser_S3BucketEncryptionDisabled_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketEncryptionDisabled");
         static const int Policy_IAMUser_S3BlockPublicAccessDisabled_HASH = HashingUtils::HashString("Policy:IAMUser/S3BlockPublicAccessDisabled");
+        static const int Policy_IAMUser_S3BucketSharedWithCloudFront_HASH = HashingUtils::HashString("Policy:IAMUser/S3BucketSharedWithCloudFront");
 
 
         FindingType GetFindingTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return FindingType::Policy_IAMUser_S3BlockPublicAccessDisabled;
           }
+          else if (hashCode == Policy_IAMUser_S3BucketSharedWithCloudFront_HASH)
+          {
+            return FindingType::Policy_IAMUser_S3BucketSharedWithCloudFront;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "Policy:IAMUser/S3BucketEncryptionDisabled";
           case FindingType::Policy_IAMUser_S3BlockPublicAccessDisabled:
             return "Policy:IAMUser/S3BlockPublicAccessDisabled";
+          case FindingType::Policy_IAMUser_S3BucketSharedWithCloudFront:
+            return "Policy:IAMUser/S3BucketSharedWithCloudFront";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

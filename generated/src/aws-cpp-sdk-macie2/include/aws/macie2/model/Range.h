@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the location of an occurrence of sensitive data in a non-binary
-   * text file, such as an HTML, TXT, or XML file.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the location of an occurrence of sensitive data in an email message
+   * or a non-binary text file such as an HTML, TXT, or XML file.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range">AWS API
    * Reference</a></p>
    */

@@ -690,49 +690,49 @@ namespace Model
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline Cluster& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline Cluster& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline Cluster& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
     /**
      * <p>The settings for the cluster. This parameter indicates whether CloudWatch
-     * Container Insights is enabled or disabled for a cluster.</p>
+     * Container Insights is on or off for a cluster.</p>
      */
     inline Cluster& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
 

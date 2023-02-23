@@ -49,38 +49,38 @@ namespace Model
 
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline const AccessKeyDetails& GetAccessKeyDetails() const{ return m_accessKeyDetails; }
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline bool AccessKeyDetailsHasBeenSet() const { return m_accessKeyDetailsHasBeenSet; }
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline void SetAccessKeyDetails(const AccessKeyDetails& value) { m_accessKeyDetailsHasBeenSet = true; m_accessKeyDetails = value; }
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline void SetAccessKeyDetails(AccessKeyDetails&& value) { m_accessKeyDetailsHasBeenSet = true; m_accessKeyDetails = std::move(value); }
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline Resource& WithAccessKeyDetails(const AccessKeyDetails& value) { SetAccessKeyDetails(value); return *this;}
 
     /**
-     * <p>The IAM access key details (IAM user information) of a user that engaged in
-     * the activity that prompted GuardDuty to generate a finding.</p>
+     * <p>The IAM access key details (user information) of a user that engaged in the
+     * activity that prompted GuardDuty to generate a finding.</p>
      */
     inline Resource& WithAccessKeyDetails(AccessKeyDetails&& value) { SetAccessKeyDetails(std::move(value)); return *this;}
 

@@ -34,8 +34,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -43,8 +43,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -52,8 +52,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -61,8 +61,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -70,8 +70,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -79,8 +79,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all
-     * AWS.</p> <ul> <li> <p>Format example:
+     * to tracker resource. Used when you need to specify a resource across all Amazon
+     * Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */

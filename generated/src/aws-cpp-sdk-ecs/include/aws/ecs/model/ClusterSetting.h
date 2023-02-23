@@ -80,10 +80,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -91,10 +93,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -102,10 +106,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -113,10 +119,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -124,10 +132,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -135,10 +145,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline ClusterSetting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -146,10 +158,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline ClusterSetting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -157,10 +171,12 @@ namespace Model
      * <p>The value to set for the cluster setting. The supported values are
      * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
      * specified, CloudWatch Container Insights will be enabled for the cluster,
-     * otherwise it will be disabled unless the <code>containerInsights</code> account
-     * setting is enabled. If a cluster value is specified, it will override the
-     * <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.</p>
+     * otherwise it will be off unless the <code>containerInsights</code> account
+     * setting is turned on. If a cluster value is specified, it will override the
+     * <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
     inline ClusterSetting& WithValue(const char* value) { SetValue(value); return *this;}
 

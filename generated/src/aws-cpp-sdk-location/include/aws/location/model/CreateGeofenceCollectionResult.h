@@ -35,8 +35,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -44,8 +44,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -53,8 +53,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -62,8 +62,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -71,8 +71,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -80,8 +80,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -89,8 +89,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
-     * example:
+     * when you need to specify a resource across all Amazon Web Services. </p> <ul>
+     * <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */

@@ -185,37 +185,49 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline S3Bucket& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket, relative to when the finding was
+     * created or last updated.</p>
      */
     inline S3Bucket& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

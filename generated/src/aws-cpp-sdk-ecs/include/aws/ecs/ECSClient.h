@@ -126,8 +126,8 @@ namespace ECS
          * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS
          * service-linked role for your account. This is so that it can manage required
          * resources in other Amazon Web Services services on your behalf. However, if the
-         * IAM user that makes the call doesn't have permissions to create the
-         * service-linked role, it isn't created. For more information, see <a
+         * user that makes the call doesn't have permissions to create the service-linked
+         * role, it isn't created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -295,8 +295,8 @@ namespace ECS
         }
 
         /**
-         * <p>Disables an account setting for a specified IAM user, IAM role, or the root
-         * user for an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an account setting for a specified user, role, or the root user for
+         * an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">AWS
          * API Reference</a></p>
          */
@@ -462,6 +462,45 @@ namespace ECS
         }
 
         /**
+         * <p>Deletes one or more task definitions.</p> <p>You must deregister a task
+         * definition revision before you delete it. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html">DeregisterTaskDefinition</a>.</p>
+         * <p>When you delete a task definition revision, it is immediately transitions
+         * from the <code>INACTIVE</code> to <code>DELETE_IN_PROGRESS</code>. Existing
+         * tasks and services that reference a <code>DELETE_IN_PROGRESS</code> task
+         * definition revision continue to run without disruption. Existing services that
+         * reference a <code>DELETE_IN_PROGRESS</code> task definition revision can still
+         * scale up or down by modifying the service's desired count.</p> <p>You can't use
+         * a <code>DELETE_IN_PROGRESS</code> task definition revision to run new tasks or
+         * create new services. You also can't update an existing service to reference a
+         * <code>DELETE_IN_PROGRESS</code> task definition revision.</p> <p> A task
+         * definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until
+         * all the associated tasks and services have been terminated.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTaskDefinitionsOutcome DeleteTaskDefinitions(const Model::DeleteTaskDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTaskDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTaskDefinitionsRequestT = Model::DeleteTaskDefinitionsRequest>
+        Model::DeleteTaskDefinitionsOutcomeCallable DeleteTaskDefinitionsCallable(const DeleteTaskDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&ECSClient::DeleteTaskDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTaskDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTaskDefinitionsRequestT = Model::DeleteTaskDefinitionsRequest>
+        void DeleteTaskDefinitionsAsync(const DeleteTaskDefinitionsRequestT& request, const DeleteTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECSClient::DeleteTaskDefinitions, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a specified task set within a service. This is used when a service
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
@@ -533,16 +572,20 @@ namespace ECS
          * tasks and services that reference an <code>INACTIVE</code> task definition
          * continue to run without disruption. Existing services that reference an
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
-         * the service's desired count.</p> <p>You can't use an <code>INACTIVE</code> task
-         * definition to run new tasks or create new services, and you can't update an
-         * existing service to reference an <code>INACTIVE</code> task definition. However,
-         * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect.</p>  <p>At this time,
-         * <code>INACTIVE</code> task definitions remain discoverable in your account
-         * indefinitely. However, this behavior is subject to change in the future. We
-         * don't recommend that you rely on <code>INACTIVE</code> task definitions
-         * persisting beyond the lifecycle of any associated tasks and services.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the service's desired count. If you want to delete a task definition revision,
+         * you must first deregister the task definition revision.</p> <p>You can't use an
+         * <code>INACTIVE</code> task definition to run new tasks or create new services,
+         * and you can't update an existing service to reference an <code>INACTIVE</code>
+         * task definition. However, there may be up to a 10-minute window following
+         * deregistration where these restrictions have not yet taken effect.</p> 
+         * <p>At this time, <code>INACTIVE</code> task definitions remain discoverable in
+         * your account indefinitely. However, this behavior is subject to change in the
+         * future. We don't recommend that you rely on <code>INACTIVE</code> task
+         * definitions persisting beyond the lifecycle of any associated tasks and
+         * services.</p>  <p>You must deregister a task definition revision before
+         * you delete it. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html">DeleteTaskDefinitions</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
          * API Reference</a></p>
          */
@@ -1129,19 +1172,19 @@ namespace ECS
         /**
          * <p>Modifies an account setting. Account settings are set on a per-Region
          * basis.</p> <p>If you change the account setting for the root user, the default
-         * settings for all of the IAM users and roles that no individual account setting
-         * was specified are reset for. For more information, see <a
+         * settings for all of the users and roles that no individual account setting was
+         * specified are reset for. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
          * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource
-         * Name (ARN) and resource ID format of the resource type for a specified IAM user,
-         * IAM role, or the root user for an account is affected. The opt-in and opt-out
+         * Name (ARN) and resource ID format of the resource type for a specified user,
+         * role, or the root user for an account is affected. The opt-in and opt-out
          * account setting must be set for each Amazon ECS resource separately. The ARN and
-         * resource ID format of a resource is defined by the opt-in status of the IAM user
-         * or role that created the resource. You must turn on this setting to use Amazon
-         * ECS features such as resource tagging.</p> <p>When <code>awsvpcTrunking</code>
-         * is specified, the elastic network interface (ENI) limit for any new container
+         * resource ID format of a resource is defined by the opt-in status of the user or
+         * role that created the resource. You must turn on this setting to use Amazon ECS
+         * features such as resource tagging.</p> <p>When <code>awsvpcTrunking</code> is
+         * specified, the elastic network interface (ENI) limit for any new container
          * instances that support the feature is changed. If <code>awsvpcTrunking</code> is
          * enabled, any new container instances that support the feature are launched have
          * the increased ENI limits available to them. For more information, see <a
@@ -1179,7 +1222,7 @@ namespace ECS
         }
 
         /**
-         * <p>Modifies an account setting for all IAM users on an account for whom no
+         * <p>Modifies an account setting for all users on an account for whom no
          * individual account setting has been specified. Account settings are set on a
          * per-Region basis.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
@@ -1309,11 +1352,11 @@ namespace ECS
          * task definition parameters and defaults, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p> <p>You can specify an IAM role for your task with the
-         * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
+         * Guide</i>.</p> <p>You can specify a role for your task with the
+         * <code>taskRoleArn</code> parameter. When you specify a role for a task, its
          * containers can then use the latest versions of the CLI or SDKs to make API
-         * requests to the Amazon Web Services services that are specified in the IAM
-         * policy that's associated with the role. For more information, see <a
+         * requests to the Amazon Web Services services that are specified in the policy
+         * that's associated with the role. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
@@ -1867,8 +1910,8 @@ namespace ECS
          * Zone (based on the previous steps), favoring container instances with the
          * largest number of running tasks for this service.</p> </li> </ul>  <p>You
          * must have a service-linked role when you update any of the following service
-         * properties. If you specified a custom IAM role when you created the service,
-         * Amazon ECS automatically replaces the <a
+         * properties. If you specified a custom role when you created the service, Amazon
+         * ECS automatically replaces the <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
          * associated with the service with the ARN of your service-linked role. For more
          * information, see <a

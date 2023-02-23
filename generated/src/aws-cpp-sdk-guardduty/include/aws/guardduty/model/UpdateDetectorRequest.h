@@ -134,32 +134,62 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline UpdateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>Describes which data sources will be updated.</p> <p>There might be regional
+     * differences because some data sources might not be available in all the Amazon
+     * Web Services Regions where GuardDuty is presently supported. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+     * and endpoints</a>.</p>
      */
     inline UpdateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
 

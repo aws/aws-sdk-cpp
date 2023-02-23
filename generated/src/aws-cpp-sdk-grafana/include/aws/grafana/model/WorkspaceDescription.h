@@ -176,56 +176,72 @@ namespace Model
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline const Aws::Vector<DataSourceType>& GetDataSources() const{ return m_dataSources; }
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetDataSources(const Aws::Vector<DataSourceType>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetDataSources(Aws::Vector<DataSourceType>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline WorkspaceDescription& WithDataSources(const Aws::Vector<DataSourceType>& value) { SetDataSources(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline WorkspaceDescription& WithDataSources(Aws::Vector<DataSourceType>&& value) { SetDataSources(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline WorkspaceDescription& AddDataSources(const DataSourceType& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
 
     /**
      * <p>Specifies the Amazon Web Services data sources that have been configured to
      * have IAM roles and permissions created to allow Amazon Managed Grafana to read
-     * data from these sources.</p>
+     * data from these sources.</p> <p>This list is only used when the workspace was
+     * created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline WorkspaceDescription& AddDataSources(DataSourceType&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
 
@@ -812,15 +828,21 @@ namespace Model
 
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>
@@ -828,15 +850,21 @@ namespace Model
     inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>
@@ -844,15 +872,21 @@ namespace Model
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>
@@ -860,15 +894,21 @@ namespace Model
     inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>
@@ -876,15 +916,21 @@ namespace Model
     inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>
@@ -892,15 +938,21 @@ namespace Model
     inline WorkspaceDescription& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
 
     /**
-     * <p>If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically
-     * creates the IAM roles and provisions the permissions that the workspace needs to
-     * use Amazon Web Services data sources and notification channels.</p> <p>If this
-     * is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions
-     * yourself. If you are creating this workspace in a member account of an
-     * organization and that account is not a delegated administrator account, and you
-     * want the workspace to access data sources in other Amazon Web Services accounts
-     * in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For
-     * more information, see <a
+     * <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created
+     * through the Amazon Managed Grafana console, then Amazon Managed Grafana
+     * automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification
+     * channels.</p> <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those
+     * roles and permissions yourself.</p> <p>If you are working with a workspace in a
+     * member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in
+     * other Amazon Web Services accounts in the organization, this parameter must be
+     * set to <code>CUSTOMER_MANAGED</code>.</p> <p>For more information about
+     * converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information
+     * about the roles and permissions that must be managed for customer managed
+     * workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a> </p>

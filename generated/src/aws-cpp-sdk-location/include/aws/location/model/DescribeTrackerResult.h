@@ -109,50 +109,57 @@ namespace Model
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline DescribeTrackerResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline DescribeTrackerResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a> assigned to the Amazon Location resource.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location
+     * resource.</p>
      */
     inline DescribeTrackerResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -246,57 +253,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetTrackerArn() const{ return m_trackerArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline void SetTrackerArn(const Aws::String& value) { m_trackerArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline void SetTrackerArn(Aws::String&& value) { m_trackerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline void SetTrackerArn(const char* value) { m_trackerArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(const Aws::String& value) { SetTrackerArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(Aws::String&& value) { SetTrackerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need
-     * to specify a resource across all AWS.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
-     * </ul>
+     * to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format
+     * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
+     * </li> </ul>
      */
     inline DescribeTrackerResult& WithTrackerArn(const char* value) { SetTrackerArn(value); return *this;}
 

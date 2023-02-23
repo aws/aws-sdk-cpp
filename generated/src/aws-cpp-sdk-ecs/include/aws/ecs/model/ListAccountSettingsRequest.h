@@ -116,64 +116,64 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline ListAccountSettingsRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
     inline ListAccountSettingsRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the account settings are listed only for the
+     * <p>The ARN of the principal, which can be a user, role, or the root user. If
+     * this field is omitted, the account settings are listed only for the
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */

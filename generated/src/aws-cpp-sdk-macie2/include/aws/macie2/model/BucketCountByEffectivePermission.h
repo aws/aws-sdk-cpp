@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Provides information about the number of S3 buckets that are publicly
-   * accessible based on a combination of permissions settings for each
+   * accessible due to a combination of permissions settings for each
    * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission">AWS
    * API Reference</a></p>

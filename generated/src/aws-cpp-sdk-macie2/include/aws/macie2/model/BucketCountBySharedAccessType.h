@@ -23,7 +23,11 @@ namespace Model
 
   /**
    * <p>Provides information about the number of S3 buckets that are or aren't shared
-   * with other Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
+   * with other Amazon Web Services accounts, Amazon CloudFront origin access
+   * identities (OAIs), or CloudFront origin access controls (OACs). In this data, an
+   * <i>Amazon Macie organization</i> is defined as a set of Macie accounts that are
+   * centrally managed as a group of related accounts through Organizations or by
+   * Macie invitation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType">AWS
    * API Reference</a></p>
    */
@@ -37,76 +41,88 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that isn't part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more of the following
+     * or any combination of the following: an Amazon Web Services account that isn't
+     * in the same Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront
+     * OAC.</p>
      */
     inline long long GetExternal() const{ return m_external; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that isn't part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more of the following
+     * or any combination of the following: an Amazon Web Services account that isn't
+     * in the same Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront
+     * OAC.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that isn't part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more of the following
+     * or any combination of the following: an Amazon Web Services account that isn't
+     * in the same Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront
+     * OAC.</p>
      */
     inline void SetExternal(long long value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that isn't part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more of the following
+     * or any combination of the following: an Amazon Web Services account that isn't
+     * in the same Amazon Macie organization, an Amazon CloudFront OAI, or a CloudFront
+     * OAC.</p>
      */
     inline BucketCountBySharedAccessType& WithExternal(long long value) { SetExternal(value); return *this;}
 
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that's part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more Amazon Web
+     * Services accounts in the same Amazon Macie organization. These buckets aren't
+     * shared with Amazon CloudFront OAIs or OACs.</p>
      */
     inline long long GetInternal() const{ return m_internal; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that's part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more Amazon Web
+     * Services accounts in the same Amazon Macie organization. These buckets aren't
+     * shared with Amazon CloudFront OAIs or OACs.</p>
      */
     inline bool InternalHasBeenSet() const { return m_internalHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that's part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more Amazon Web
+     * Services accounts in the same Amazon Macie organization. These buckets aren't
+     * shared with Amazon CloudFront OAIs or OACs.</p>
      */
     inline void SetInternal(long long value) { m_internalHasBeenSet = true; m_internal = value; }
 
     /**
-     * <p>The total number of buckets that are shared with an Amazon Web Services
-     * account that's part of the same Amazon Macie organization.</p>
+     * <p>The total number of buckets that are shared with one or more Amazon Web
+     * Services accounts in the same Amazon Macie organization. These buckets aren't
+     * shared with Amazon CloudFront OAIs or OACs.</p>
      */
     inline BucketCountBySharedAccessType& WithInternal(long long value) { SetInternal(value); return *this;}
 
 
     /**
      * <p>The total number of buckets that aren't shared with other Amazon Web Services
-     * accounts.</p>
+     * accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
      */
     inline long long GetNotShared() const{ return m_notShared; }
 
     /**
      * <p>The total number of buckets that aren't shared with other Amazon Web Services
-     * accounts.</p>
+     * accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
      */
     inline bool NotSharedHasBeenSet() const { return m_notSharedHasBeenSet; }
 
     /**
      * <p>The total number of buckets that aren't shared with other Amazon Web Services
-     * accounts.</p>
+     * accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
      */
     inline void SetNotShared(long long value) { m_notSharedHasBeenSet = true; m_notShared = value; }
 
     /**
      * <p>The total number of buckets that aren't shared with other Amazon Web Services
-     * accounts.</p>
+     * accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
      */
     inline BucketCountBySharedAccessType& WithNotShared(long long value) { SetNotShared(value); return *this;}
 
@@ -114,28 +130,32 @@ namespace Model
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
      * access settings for. Macie can't determine whether these buckets are shared with
-     * other Amazon Web Services accounts.</p>
+     * other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
+     * OACs.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
 
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
      * access settings for. Macie can't determine whether these buckets are shared with
-     * other Amazon Web Services accounts.</p>
+     * other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
+     * OACs.</p>
      */
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
 
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
      * access settings for. Macie can't determine whether these buckets are shared with
-     * other Amazon Web Services accounts.</p>
+     * other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
+     * OACs.</p>
      */
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
 
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
      * access settings for. Macie can't determine whether these buckets are shared with
-     * other Amazon Web Services accounts.</p>
+     * other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
+     * OACs.</p>
      */
     inline BucketCountBySharedAccessType& WithUnknown(long long value) { SetUnknown(value); return *this;}
 

@@ -31,16 +31,19 @@
 #include <aws/location/model/CalculateRouteRequest.h>
 #include <aws/location/model/CalculateRouteMatrixRequest.h>
 #include <aws/location/model/CreateGeofenceCollectionRequest.h>
+#include <aws/location/model/CreateKeyRequest.h>
 #include <aws/location/model/CreateMapRequest.h>
 #include <aws/location/model/CreatePlaceIndexRequest.h>
 #include <aws/location/model/CreateRouteCalculatorRequest.h>
 #include <aws/location/model/CreateTrackerRequest.h>
 #include <aws/location/model/DeleteGeofenceCollectionRequest.h>
+#include <aws/location/model/DeleteKeyRequest.h>
 #include <aws/location/model/DeleteMapRequest.h>
 #include <aws/location/model/DeletePlaceIndexRequest.h>
 #include <aws/location/model/DeleteRouteCalculatorRequest.h>
 #include <aws/location/model/DeleteTrackerRequest.h>
 #include <aws/location/model/DescribeGeofenceCollectionRequest.h>
+#include <aws/location/model/DescribeKeyRequest.h>
 #include <aws/location/model/DescribeMapRequest.h>
 #include <aws/location/model/DescribePlaceIndexRequest.h>
 #include <aws/location/model/DescribeRouteCalculatorRequest.h>
@@ -57,6 +60,7 @@
 #include <aws/location/model/ListDevicePositionsRequest.h>
 #include <aws/location/model/ListGeofenceCollectionsRequest.h>
 #include <aws/location/model/ListGeofencesRequest.h>
+#include <aws/location/model/ListKeysRequest.h>
 #include <aws/location/model/ListMapsRequest.h>
 #include <aws/location/model/ListPlaceIndexesRequest.h>
 #include <aws/location/model/ListRouteCalculatorsRequest.h>
@@ -70,6 +74,7 @@
 #include <aws/location/model/TagResourceRequest.h>
 #include <aws/location/model/UntagResourceRequest.h>
 #include <aws/location/model/UpdateGeofenceCollectionRequest.h>
+#include <aws/location/model/UpdateKeyRequest.h>
 #include <aws/location/model/UpdateMapRequest.h>
 #include <aws/location/model/UpdatePlaceIndexRequest.h>
 #include <aws/location/model/UpdateRouteCalculatorRequest.h>
@@ -375,6 +380,17 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
   return CreateGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateKeyOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys");
+  return CreateKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -434,6 +450,23 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
   endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   return DeleteGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.KeyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKey", "Required field: KeyName, is not set");
+    return DeleteKeyOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteKeyOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
+  return DeleteKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& request) const
@@ -519,6 +552,23 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
   endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   return DescribeGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.KeyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeKey", "Required field: KeyName, is not set");
+    return DescribeKeyOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeKeyOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
+  return DescribeKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& request) const
@@ -866,6 +916,17 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
   return ListGeofencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListKeysOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/list-keys");
+  return ListKeysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1077,6 +1138,23 @@ UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(
   endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   return UpdateGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.KeyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateKey", "Required field: KeyName, is not set");
+    return UpdateKeyOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("metadata.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateKeyOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
+  return UpdateKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A route calculator resource listed in your AWS account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A route calculator resource listed in your Amazon Web Services
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculatorsResponseEntry">AWS
    * API Reference</a></p>
    */

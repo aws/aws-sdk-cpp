@@ -17,12 +17,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetFuotaTaskResult::GetFuotaTaskResult() : 
-    m_status(FuotaTaskStatus::NOT_SET)
+    m_status(FuotaTaskStatus::NOT_SET),
+    m_redundancyPercent(0),
+    m_fragmentSizeBytes(0),
+    m_fragmentIntervalMS(0)
 {
 }
 
 GetFuotaTaskResult::GetFuotaTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(FuotaTaskStatus::NOT_SET)
+    m_status(FuotaTaskStatus::NOT_SET),
+    m_redundancyPercent(0),
+    m_fragmentSizeBytes(0),
+    m_fragmentIntervalMS(0)
 {
   *this = result;
 }
@@ -81,6 +87,24 @@ GetFuotaTaskResult& GetFuotaTaskResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("RedundancyPercent"))
+  {
+    m_redundancyPercent = jsonValue.GetInteger("RedundancyPercent");
+
+  }
+
+  if(jsonValue.ValueExists("FragmentSizeBytes"))
+  {
+    m_fragmentSizeBytes = jsonValue.GetInteger("FragmentSizeBytes");
+
+  }
+
+  if(jsonValue.ValueExists("FragmentIntervalMS"))
+  {
+    m_fragmentIntervalMS = jsonValue.GetInteger("FragmentIntervalMS");
 
   }
 

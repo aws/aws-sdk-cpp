@@ -83,26 +83,26 @@ namespace Model
 
 
     /**
-     * <p>The protection status of the task. If scale-in protection is enabled for a
-     * task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+     * <p>The protection status of the task. If scale-in protection is on for a task,
+     * the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
      */
     inline bool GetProtectionEnabled() const{ return m_protectionEnabled; }
 
     /**
-     * <p>The protection status of the task. If scale-in protection is enabled for a
-     * task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+     * <p>The protection status of the task. If scale-in protection is on for a task,
+     * the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
      */
     inline bool ProtectionEnabledHasBeenSet() const { return m_protectionEnabledHasBeenSet; }
 
     /**
-     * <p>The protection status of the task. If scale-in protection is enabled for a
-     * task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+     * <p>The protection status of the task. If scale-in protection is on for a task,
+     * the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
      */
     inline void SetProtectionEnabled(bool value) { m_protectionEnabledHasBeenSet = true; m_protectionEnabled = value; }
 
     /**
-     * <p>The protection status of the task. If scale-in protection is enabled for a
-     * task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
+     * <p>The protection status of the task. If scale-in protection is on for a task,
+     * the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
      */
     inline ProtectedTask& WithProtectionEnabled(bool value) { SetProtectionEnabled(value); return *this;}
 

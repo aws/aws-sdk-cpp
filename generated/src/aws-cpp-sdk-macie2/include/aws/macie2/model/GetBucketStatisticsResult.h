@@ -55,32 +55,32 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline const BucketCountByEffectivePermission& GetBucketCountByEffectivePermission() const{ return m_bucketCountByEffectivePermission; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline void SetBucketCountByEffectivePermission(const BucketCountByEffectivePermission& value) { m_bucketCountByEffectivePermission = value; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline void SetBucketCountByEffectivePermission(BucketCountByEffectivePermission&& value) { m_bucketCountByEffectivePermission = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEffectivePermission(const BucketCountByEffectivePermission& value) { SetBucketCountByEffectivePermission(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEffectivePermission(BucketCountByEffectivePermission&& value) { SetBucketCountByEffectivePermission(std::move(value)); return *this;}
 
@@ -153,32 +153,37 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another Amazon Web
-     * Services account.</p>
+     * <p>The total number of buckets that are or aren't shared with other Amazon Web
+     * Services accounts, Amazon CloudFront origin access identities (OAIs), or
+     * CloudFront origin access controls (OACs).</p>
      */
     inline const BucketCountBySharedAccessType& GetBucketCountBySharedAccessType() const{ return m_bucketCountBySharedAccessType; }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another Amazon Web
-     * Services account.</p>
+     * <p>The total number of buckets that are or aren't shared with other Amazon Web
+     * Services accounts, Amazon CloudFront origin access identities (OAIs), or
+     * CloudFront origin access controls (OACs).</p>
      */
     inline void SetBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { m_bucketCountBySharedAccessType = value; }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another Amazon Web
-     * Services account.</p>
+     * <p>The total number of buckets that are or aren't shared with other Amazon Web
+     * Services accounts, Amazon CloudFront origin access identities (OAIs), or
+     * CloudFront origin access controls (OACs).</p>
      */
     inline void SetBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { m_bucketCountBySharedAccessType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another Amazon Web
-     * Services account.</p>
+     * <p>The total number of buckets that are or aren't shared with other Amazon Web
+     * Services accounts, Amazon CloudFront origin access identities (OAIs), or
+     * CloudFront origin access controls (OACs).</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { SetBucketCountBySharedAccessType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another Amazon Web
-     * Services account.</p>
+     * <p>The total number of buckets that are or aren't shared with other Amazon Web
+     * Services accounts, Amazon CloudFront origin access identities (OAIs), or
+     * CloudFront origin access controls (OACs).</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { SetBucketCountBySharedAccessType(std::move(value)); return *this;}
 
@@ -274,35 +279,35 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * buckets.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * buckets.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * buckets.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * buckets.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * buckets.</p>
      */
     inline GetBucketStatisticsResult& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}

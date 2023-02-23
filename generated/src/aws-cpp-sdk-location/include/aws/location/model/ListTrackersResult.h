@@ -35,51 +35,51 @@ namespace Model
 
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline const Aws::Vector<ListTrackersResponseEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline void SetEntries(const Aws::Vector<ListTrackersResponseEntry>& value) { m_entries = value; }
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline void SetEntries(Aws::Vector<ListTrackersResponseEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline ListTrackersResult& WithEntries(const Aws::Vector<ListTrackersResponseEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline ListTrackersResult& WithEntries(Aws::Vector<ListTrackersResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline ListTrackersResult& AddEntries(const ListTrackersResponseEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>Contains tracker resources in your AWS account. Details include tracker name,
-     * description and timestamps for when the tracker was created and last
-     * updated.</p>
+     * <p>Contains tracker resources in your Amazon Web Services account. Details
+     * include tracker name, description and timestamps for when the tracker was
+     * created and last updated.</p>
      */
     inline ListTrackersResult& AddEntries(ListTrackersResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

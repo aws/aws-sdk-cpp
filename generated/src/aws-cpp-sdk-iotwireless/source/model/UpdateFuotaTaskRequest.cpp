@@ -18,7 +18,13 @@ UpdateFuotaTaskRequest::UpdateFuotaTaskRequest() :
     m_descriptionHasBeenSet(false),
     m_loRaWANHasBeenSet(false),
     m_firmwareUpdateImageHasBeenSet(false),
-    m_firmwareUpdateRoleHasBeenSet(false)
+    m_firmwareUpdateRoleHasBeenSet(false),
+    m_redundancyPercent(0),
+    m_redundancyPercentHasBeenSet(false),
+    m_fragmentSizeBytes(0),
+    m_fragmentSizeBytesHasBeenSet(false),
+    m_fragmentIntervalMS(0),
+    m_fragmentIntervalMSHasBeenSet(false)
 {
 }
 
@@ -53,6 +59,24 @@ Aws::String UpdateFuotaTaskRequest::SerializePayload() const
   if(m_firmwareUpdateRoleHasBeenSet)
   {
    payload.WithString("FirmwareUpdateRole", m_firmwareUpdateRole);
+
+  }
+
+  if(m_redundancyPercentHasBeenSet)
+  {
+   payload.WithInteger("RedundancyPercent", m_redundancyPercent);
+
+  }
+
+  if(m_fragmentSizeBytesHasBeenSet)
+  {
+   payload.WithInteger("FragmentSizeBytes", m_fragmentSizeBytes);
+
+  }
+
+  if(m_fragmentIntervalMSHasBeenSet)
+  {
+   payload.WithInteger("FragmentIntervalMS", m_fragmentIntervalMS);
 
   }
 

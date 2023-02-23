@@ -152,7 +152,11 @@ namespace GuardDuty
          * represents the GuardDuty service. To start using GuardDuty, you must create a
          * detector in each Region where you enable the service. You can have only one
          * detector per account per Region. All data sources are enabled in a new detector
-         * by default.</p><p><h3>See Also:</h3>   <a
+         * by default.</p> <p>There might be regional differences because some data sources
+         * might not be available in all the Amazon Web Services Regions where GuardDuty is
+         * presently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          */
@@ -240,10 +244,10 @@ namespace GuardDuty
          * organizations delegated administrator this action will enable GuardDuty in the
          * added member accounts, with the exception of the organization delegated
          * administrator account, which must enable GuardDuty prior to being added as a
-         * member.</p> <p>If you are adding accounts by invitation use this action after
-         * GuardDuty has been enabled in potential member accounts and before using <a
-         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-         * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
+         * member.</p> <p>If you are adding accounts by invitation, use this action after
+         * GuardDuty has bee enabled in potential member accounts and before using <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -295,8 +299,8 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Generates example findings of types specified by the list of finding types.
-         * If 'NULL' is specified for <code>findingTypes</code>, the API generates example
+         * <p>Generates sample findings of types specified by the list of finding types. If
+         * 'NULL' is specified for <code>findingTypes</code>, the API generates sample
          * findings of all supported finding types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">AWS
          * API Reference</a></p>
@@ -559,7 +563,11 @@ namespace GuardDuty
         /**
          * <p>Returns a list of malware scans. Each member account can view the malware
          * scans for their own accounts. An administrator can view the malware scans for
-         * all the member accounts.</p><p><h3>See Also:</h3>   <a
+         * all the member accounts.</p> <p>There might be regional differences because some
+         * data sources might not be available in all the Amazon Web Services Regions where
+         * GuardDuty is presently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">AWS
          * API Reference</a></p>
          */
@@ -585,7 +593,11 @@ namespace GuardDuty
 
         /**
          * <p>Returns information about the account selected as the delegated administrator
-         * for GuardDuty.</p><p><h3>See Also:</h3>   <a
+         * for GuardDuty.</p> <p>There might be regional differences because some data
+         * sources might not be available in all the Amazon Web Services Regions where
+         * GuardDuty is presently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -766,8 +778,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Retrieves an Amazon GuardDuty detector specified by the
-         * detectorId.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
+         * <p>There might be regional differences because some data sources might not be
+         * available in all the Amazon Web Services Regions where GuardDuty is presently
+         * supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">AWS
          * API Reference</a></p>
          */
@@ -923,8 +939,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Returns the details of the malware scan settings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the details of the malware scan settings.</p> <p>There might be
+         * regional differences because some data sources might not be available in all the
+         * Amazon Web Services Regions where GuardDuty is presently supported. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">AWS
          * API Reference</a></p>
          */
@@ -950,7 +970,11 @@ namespace GuardDuty
 
         /**
          * <p>Describes which data sources are enabled for the member account's
-         * detector.</p><p><h3>See Also:</h3>   <a
+         * detector.</p> <p>There might be regional differences because some data sources
+         * might not be available in all the Amazon Web Services Regions where GuardDuty is
+         * presently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors">AWS
          * API Reference</a></p>
          */
@@ -1508,8 +1532,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Updates the Amazon GuardDuty detector specified by the
-         * detectorId.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>
+         * <p>There might be regional differences because some data sources might not be
+         * available in all the Amazon Web Services Regions where GuardDuty is presently
+         * supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">AWS
          * API Reference</a></p>
          */
@@ -1611,7 +1639,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Updates the malware scan settings.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the malware scan settings.</p> <p>There might be regional differences
+         * because some data sources might not be available in all the Amazon Web Services
+         * Regions where GuardDuty is presently supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">AWS
          * API Reference</a></p>
          */
@@ -1636,8 +1668,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Contains information on member accounts to be updated.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Contains information on member accounts to be updated.</p> <p>There might be
+         * regional differences because some data sources might not be available in all the
+         * Amazon Web Services Regions where GuardDuty is presently supported. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors">AWS
          * API Reference</a></p>
          */
@@ -1662,8 +1698,12 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Updates the delegated administrator account with the values
-         * provided.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the delegated administrator account with the values provided.</p>
+         * <p>There might be regional differences because some data sources might not be
+         * available in all the Amazon Web Services Regions where GuardDuty is presently
+         * supported. For more information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+         * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          */

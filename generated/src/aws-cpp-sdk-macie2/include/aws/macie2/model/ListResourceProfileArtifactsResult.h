@@ -35,44 +35,79 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline const Aws::Vector<ResourceProfileArtifact>& GetArtifacts() const{ return m_artifacts; }
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline void SetArtifacts(const Aws::Vector<ResourceProfileArtifact>& value) { m_artifacts = value; }
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline void SetArtifacts(Aws::Vector<ResourceProfileArtifact>&& value) { m_artifacts = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline ListResourceProfileArtifactsResult& WithArtifacts(const Aws::Vector<ResourceProfileArtifact>& value) { SetArtifacts(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline ListResourceProfileArtifactsResult& WithArtifacts(Aws::Vector<ResourceProfileArtifact>&& value) { SetArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline ListResourceProfileArtifactsResult& AddArtifacts(const ResourceProfileArtifact& value) { m_artifacts.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each S3 object that Amazon Macie selected for
-     * analysis.</p>
+     * <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie
+     * selected for analysis.</p> <p>If Macie has analyzed more than 100 objects in the
+     * bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive),
+     * followed by false (not sensitive). Macie then populates any remaining items in
+     * the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
     inline ListResourceProfileArtifactsResult& AddArtifacts(ResourceProfileArtifact&& value) { m_artifacts.push_back(std::move(value)); return *this; }
 
