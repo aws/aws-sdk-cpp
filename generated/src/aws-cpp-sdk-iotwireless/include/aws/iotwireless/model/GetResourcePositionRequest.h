@@ -41,56 +41,56 @@ namespace Model
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline GetResourcePositionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline GetResourcePositionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource for which position information is retrieved.
-     * It can be the wireless device ID or the wireless gateway ID depending on the
+     * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
     inline GetResourcePositionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}

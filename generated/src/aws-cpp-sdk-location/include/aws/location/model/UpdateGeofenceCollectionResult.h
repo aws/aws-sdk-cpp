@@ -35,7 +35,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -59,7 +59,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to
-     * specify a resource across AWS.</p> <ul> <li> <p>Format example:
+     * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
      * </p> </li> </ul>
      */

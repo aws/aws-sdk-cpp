@@ -21,14 +21,18 @@ namespace Model
 SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties() : 
     m_instanceUrlHasBeenSet(false),
     m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false)
+    m_isSandboxEnvironmentHasBeenSet(false),
+    m_usePrivateLinkForMetadataAndAuthorization(false),
+    m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet(false)
 {
 }
 
 SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue) : 
     m_instanceUrlHasBeenSet(false),
     m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false)
+    m_isSandboxEnvironmentHasBeenSet(false),
+    m_usePrivateLinkForMetadataAndAuthorization(false),
+    m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ SalesforceConnectorProfileProperties& SalesforceConnectorProfileProperties::oper
     m_isSandboxEnvironmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("usePrivateLinkForMetadataAndAuthorization"))
+  {
+    m_usePrivateLinkForMetadataAndAuthorization = jsonValue.GetBool("usePrivateLinkForMetadataAndAuthorization");
+
+    m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,12 @@ JsonValue SalesforceConnectorProfileProperties::Jsonize() const
   if(m_isSandboxEnvironmentHasBeenSet)
   {
    payload.WithBool("isSandboxEnvironment", m_isSandboxEnvironment);
+
+  }
+
+  if(m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet)
+  {
+   payload.WithBool("usePrivateLinkForMetadataAndAuthorization", m_usePrivateLinkForMetadataAndAuthorization);
 
   }
 

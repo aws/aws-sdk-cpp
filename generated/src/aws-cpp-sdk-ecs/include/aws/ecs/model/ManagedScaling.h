@@ -32,8 +32,8 @@ namespace Model
    * metric. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
    * managed scaling</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the
-   * scaling of the Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <p>If managed scaling is off, the user must manage the scaling of
+   * the Auto Scaling group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedScaling">AWS
    * API Reference</a></p>
    */

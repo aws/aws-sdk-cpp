@@ -214,6 +214,36 @@ namespace Model
     
     inline GetFuotaTaskResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    
+    inline int GetRedundancyPercent() const{ return m_redundancyPercent; }
+
+    
+    inline void SetRedundancyPercent(int value) { m_redundancyPercent = value; }
+
+    
+    inline GetFuotaTaskResult& WithRedundancyPercent(int value) { SetRedundancyPercent(value); return *this;}
+
+
+    
+    inline int GetFragmentSizeBytes() const{ return m_fragmentSizeBytes; }
+
+    
+    inline void SetFragmentSizeBytes(int value) { m_fragmentSizeBytes = value; }
+
+    
+    inline GetFuotaTaskResult& WithFragmentSizeBytes(int value) { SetFragmentSizeBytes(value); return *this;}
+
+
+    
+    inline int GetFragmentIntervalMS() const{ return m_fragmentIntervalMS; }
+
+    
+    inline void SetFragmentIntervalMS(int value) { m_fragmentIntervalMS = value; }
+
+    
+    inline GetFuotaTaskResult& WithFragmentIntervalMS(int value) { SetFragmentIntervalMS(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -233,6 +263,12 @@ namespace Model
     Aws::String m_firmwareUpdateRole;
 
     Aws::Utils::DateTime m_createdAt;
+
+    int m_redundancyPercent;
+
+    int m_fragmentSizeBytes;
+
+    int m_fragmentIntervalMS;
   };
 
 } // namespace Model

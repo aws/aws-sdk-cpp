@@ -427,13 +427,44 @@ namespace LocationService
         }
 
         /**
-         * <p>Creates a map resource in your AWS account, which provides map tiles of
-         * different styles sourced from global location data providers.</p>  <p>If
-         * your application is tracking or routing assets you use in your business, such as
-         * delivery vehicles or employees, you must not use Esri as your geolocation
-         * provider. See section 82 of the <a
-         * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
-         * details.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates an API key resource in your Amazon Web Services account, which lets
+         * you grant <code>geo:GetMap*</code> actions for Amazon Location Map resources to
+         * the API key bearer.</p>  <p>The API keys feature is in preview. We
+         * may add, change, or remove features before announcing general availability. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKeyRequestT = Model::CreateKeyRequest>
+        Model::CreateKeyOutcomeCallable CreateKeyCallable(const CreateKeyRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::CreateKey, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKeyRequestT = Model::CreateKeyRequest>
+        void CreateKeyAsync(const CreateKeyRequestT& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::CreateKey, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a map resource in your Amazon Web Services account, which provides
+         * map tiles of different styles sourced from global location data providers.</p>
+         *  <p>If your application is tracking or routing assets you use in your
+         * business, such as delivery vehicles or employees, you must not use Esri as your
+         * geolocation provider. See section 82 of the <a
+         * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a>
+         * for more details.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateMap">AWS
          * API Reference</a></p>
          */
@@ -458,16 +489,16 @@ namespace LocationService
         }
 
         /**
-         * <p>Creates a place index resource in your AWS account. Use a place index
-         * resource to geocode addresses and other text queries by using the
+         * <p>Creates a place index resource in your Amazon Web Services account. Use a
+         * place index resource to geocode addresses and other text queries by using the
          * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
          * by using the <code>SearchPlaceIndexForPosition</code> operation, and enable
          * autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
          * operation.</p>  <p>If your application is tracking or routing assets you
          * use in your business, such as delivery vehicles or employees, you must not use
          * Esri as your geolocation provider. See section 82 of the <a
-         * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
-         * details.</p> <p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a>
+         * for more details.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
          */
@@ -492,14 +523,15 @@ namespace LocationService
         }
 
         /**
-         * <p>Creates a route calculator resource in your AWS account.</p> <p>You can send
-         * requests to a route calculator resource to estimate travel time, distance, and
-         * get directions. A route calculator sources traffic and road network data from
-         * your chosen data provider.</p>  <p>If your application is tracking or
-         * routing assets you use in your business, such as delivery vehicles or employees,
-         * you must not use Esri as your geolocation provider. See section 82 of the <a
-         * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more
-         * details.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a route calculator resource in your Amazon Web Services account.</p>
+         * <p>You can send requests to a route calculator resource to estimate travel time,
+         * distance, and get directions. A route calculator sources traffic and road
+         * network data from your chosen data provider.</p>  <p>If your application
+         * is tracking or routing assets you use in your business, such as delivery
+         * vehicles or employees, you must not use Esri as your geolocation provider. See
+         * section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web
+         * Services service terms</a> for more details.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">AWS
          * API Reference</a></p>
          */
@@ -524,8 +556,9 @@ namespace LocationService
         }
 
         /**
-         * <p>Creates a tracker resource in your AWS account, which lets you retrieve
-         * current and historical location of devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a tracker resource in your Amazon Web Services account, which lets
+         * you retrieve current and historical location of devices.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateTracker">AWS
          * API Reference</a></p>
          */
@@ -550,10 +583,10 @@ namespace LocationService
         }
 
         /**
-         * <p>Deletes a geofence collection from your AWS account.</p>  <p>This
-         * operation deletes the resource permanently. If the geofence collection is the
-         * target of a tracker resource, the devices will no longer be monitored.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Deletes a geofence collection from your Amazon Web Services account.</p>
+         *  <p>This operation deletes the resource permanently. If the geofence
+         * collection is the target of a tracker resource, the devices will no longer be
+         * monitored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteGeofenceCollection">AWS
          * API Reference</a></p>
          */
@@ -578,9 +611,35 @@ namespace LocationService
         }
 
         /**
-         * <p>Deletes a map resource from your AWS account.</p>  <p>This operation
-         * deletes the resource permanently. If the map is being used in an application,
-         * the map may not render.</p> <p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified API key. The API key must have been deactivated more
+         * than 90 days previously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKeyOutcome DeleteKey(const Model::DeleteKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKeyRequestT = Model::DeleteKeyRequest>
+        Model::DeleteKeyOutcomeCallable DeleteKeyCallable(const DeleteKeyRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::DeleteKey, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKeyRequestT = Model::DeleteKeyRequest>
+        void DeleteKeyAsync(const DeleteKeyRequestT& request, const DeleteKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::DeleteKey, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a map resource from your Amazon Web Services account.</p> 
+         * <p>This operation deletes the resource permanently. If the map is being used in
+         * an application, the map may not render.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteMap">AWS
          * API Reference</a></p>
          */
@@ -605,9 +664,9 @@ namespace LocationService
         }
 
         /**
-         * <p>Deletes a place index resource from your AWS account.</p>  <p>This
-         * operation deletes the resource permanently.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a place index resource from your Amazon Web Services account.</p>
+         *  <p>This operation deletes the resource permanently.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeletePlaceIndex">AWS
          * API Reference</a></p>
          */
@@ -632,9 +691,9 @@ namespace LocationService
         }
 
         /**
-         * <p>Deletes a route calculator resource from your AWS account.</p>  <p>This
-         * operation deletes the resource permanently.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a route calculator resource from your Amazon Web Services
+         * account.</p>  <p>This operation deletes the resource permanently.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator">AWS
          * API Reference</a></p>
          */
@@ -659,9 +718,9 @@ namespace LocationService
         }
 
         /**
-         * <p>Deletes a tracker resource from your AWS account.</p>  <p>This
-         * operation deletes the resource permanently. If the tracker resource is in use,
-         * you may encounter an error. Make sure that the target resource isn't a
+         * <p>Deletes a tracker resource from your Amazon Web Services account.</p> 
+         * <p>This operation deletes the resource permanently. If the tracker resource is
+         * in use, you may encounter an error. Make sure that the target resource isn't a
          * dependency for your applications.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteTracker">AWS
          * API Reference</a></p>
@@ -709,6 +768,35 @@ namespace LocationService
         void DescribeGeofenceCollectionAsync(const DescribeGeofenceCollectionRequestT& request, const DescribeGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LocationServiceClient::DescribeGeofenceCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the API key resource details.</p>  <p>The API keys
+         * feature is in preview. We may add, change, or remove features before announcing
+         * general availability. For more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKeyOutcome DescribeKey(const Model::DescribeKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeKeyRequestT = Model::DescribeKeyRequest>
+        Model::DescribeKeyOutcomeCallable DescribeKeyCallable(const DescribeKeyRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::DescribeKey, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeKeyRequestT = Model::DescribeKeyRequest>
+        void DescribeKeyAsync(const DescribeKeyRequestT& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::DescribeKey, request, handler, context);
         }
 
         /**
@@ -1037,9 +1125,10 @@ namespace LocationService
          * <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other
          * search operations.</p>  <p>A PlaceId is valid only if all of the following
          * are the same in the original search request and the call to
-         * <code>GetPlace</code>.</p> <ul> <li> <p>Customer AWS account</p> </li> <li>
-         * <p>AWS Region</p> </li> <li> <p>Data provider specified in the place index
-         * resource</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * <code>GetPlace</code>.</p> <ul> <li> <p>Customer Amazon Web Services account</p>
+         * </li> <li> <p>Amazon Web Services Region</p> </li> <li> <p>Data provider
+         * specified in the place index resource</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">AWS
          * API Reference</a></p>
          */
@@ -1090,7 +1179,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists geofence collections in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists geofence collections in your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceCollections">AWS
          * API Reference</a></p>
          */
@@ -1141,7 +1231,37 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists map resources in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists API key resources in your Amazon Web Services account.</p> 
+         * <p>The API keys feature is in preview. We may add, change, or remove features
+         * before announcing general availability. For more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKeys that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKeysRequestT = Model::ListKeysRequest>
+        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::ListKeys, request);
+        }
+
+        /**
+         * An Async wrapper for ListKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKeysRequestT = Model::ListKeysRequest>
+        void ListKeysAsync(const ListKeysRequestT& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::ListKeys, request, handler, context);
+        }
+
+        /**
+         * <p>Lists map resources in your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListMaps">AWS
          * API Reference</a></p>
          */
@@ -1166,8 +1286,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists place index resources in your AWS account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists place index resources in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexes">AWS
          * API Reference</a></p>
          */
@@ -1192,8 +1312,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists route calculator resources in your AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists route calculator resources in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">AWS
          * API Reference</a></p>
          */
@@ -1270,7 +1390,8 @@ namespace LocationService
         }
 
         /**
-         * <p>Lists tracker resources in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists tracker resources in your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTrackers">AWS
          * API Reference</a></p>
          */
@@ -1498,6 +1619,35 @@ namespace LocationService
         void UpdateGeofenceCollectionAsync(const UpdateGeofenceCollectionRequestT& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LocationServiceClient::UpdateGeofenceCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the specified properties of a given API key resource.</p> 
+         * <p>The API keys feature is in preview. We may add, change, or remove features
+         * before announcing general availability. For more information, see <a
+         * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+         * API keys</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKeyOutcome UpdateKey(const Model::UpdateKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKeyRequestT = Model::UpdateKeyRequest>
+        Model::UpdateKeyOutcomeCallable UpdateKeyCallable(const UpdateKeyRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::UpdateKey, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKeyRequestT = Model::UpdateKeyRequest>
+        void UpdateKeyAsync(const UpdateKeyRequestT& request, const UpdateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::UpdateKey, request, handler, context);
         }
 
         /**

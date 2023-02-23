@@ -92,42 +92,42 @@ namespace Model
 
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline StopTaskRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline StopTaskRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
-     * <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
+     * <p>The task ID of the task to stop.</p>
      */
     inline StopTaskRequest& WithTask(const char* value) { SetTask(value); return *this;}
 

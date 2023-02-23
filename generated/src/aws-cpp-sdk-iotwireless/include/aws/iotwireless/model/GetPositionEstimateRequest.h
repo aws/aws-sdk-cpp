@@ -217,42 +217,42 @@ namespace Model
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline GetPositionEstimateRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>Optional information that specifies the time when the position information
-     * will be resolved. It uses the UNIX timestamp format. If not specified, the time
+     * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
     inline GetPositionEstimateRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}

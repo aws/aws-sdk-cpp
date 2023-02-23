@@ -206,7 +206,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -238,7 +238,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -246,7 +246,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
@@ -254,7 +254,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
-     * a resource across AWS. </p> <ul> <li> <p>Format example:
+     * a resource across Amazon Web Services. </p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */

@@ -30,11 +30,16 @@ namespace Model
 
   /**
    * <p>Provides statistical data and other information about an S3 bucket that
-   * Amazon Macie monitors and analyzes for your account. If an error occurs when
-   * Macie attempts to retrieve and process information about the bucket or the
-   * bucket's objects, the value for most of these properties is null. Key exceptions
-   * are accountId and bucketName. To identify the cause of the error, refer to the
-   * errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
+   * Amazon Macie monitors and analyzes for your account. By default, object count
+   * and storage size values include data for object parts that are the result of
+   * incomplete multipart uploads. For more information, see <a
+   * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How
+   * Macie monitors Amazon S3 data security</a> in the <i>Amazon Macie User
+   * Guide</i>.</p> <p>If an error occurs when Macie attempts to retrieve and process
+   * information about the bucket or the bucket's objects, the value for most of
+   * these properties is null. Key exceptions are accountId and bucketName. To
+   * identify the cause of the error, refer to the errorCode and errorMessage
+   * values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingBucket">AWS
    * API Reference</a></p>
    */
@@ -212,62 +217,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline void SetErrorCode(const BucketMetadataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline void SetErrorCode(BucketMetadataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline MatchingBucket& WithErrorCode(const BucketMetadataErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline MatchingBucket& WithErrorCode(BucketMetadataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
@@ -382,49 +387,49 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline void SetLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline void SetLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline MatchingBucket& WithLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastAutomatedDiscoveryTime(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline MatchingBucket& WithLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastAutomatedDiscoveryTime(std::move(value)); return *this;}
 
@@ -494,30 +499,30 @@ namespace Model
 
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). This value is null if automated sensitive
-     * data discovery is currently disabled for your account.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). This value is null if automated sensitive
-     * data discovery is currently disabled for your account.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). This value is null if automated sensitive
-     * data discovery is currently disabled for your account.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). This value is null if automated sensitive
-     * data discovery is currently disabled for your account.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline MatchingBucket& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
 

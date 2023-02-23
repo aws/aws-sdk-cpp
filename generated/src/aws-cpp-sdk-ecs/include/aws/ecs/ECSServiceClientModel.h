@@ -27,6 +27,7 @@
 #include <aws/ecs/model/DeleteCapacityProviderResult.h>
 #include <aws/ecs/model/DeleteClusterResult.h>
 #include <aws/ecs/model/DeleteServiceResult.h>
+#include <aws/ecs/model/DeleteTaskDefinitionsResult.h>
 #include <aws/ecs/model/DeleteTaskSetResult.h>
 #include <aws/ecs/model/DeregisterContainerInstanceResult.h>
 #include <aws/ecs/model/DeregisterTaskDefinitionResult.h>
@@ -122,6 +123,7 @@ namespace Aws
       class DeleteCapacityProviderRequest;
       class DeleteClusterRequest;
       class DeleteServiceRequest;
+      class DeleteTaskDefinitionsRequest;
       class DeleteTaskSetRequest;
       class DeregisterContainerInstanceRequest;
       class DeregisterTaskDefinitionRequest;
@@ -180,6 +182,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, ECSError> DeleteCapacityProviderOutcome;
       typedef Aws::Utils::Outcome<DeleteClusterResult, ECSError> DeleteClusterOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceResult, ECSError> DeleteServiceOutcome;
+      typedef Aws::Utils::Outcome<DeleteTaskDefinitionsResult, ECSError> DeleteTaskDefinitionsOutcome;
       typedef Aws::Utils::Outcome<DeleteTaskSetResult, ECSError> DeleteTaskSetOutcome;
       typedef Aws::Utils::Outcome<DeregisterContainerInstanceResult, ECSError> DeregisterContainerInstanceOutcome;
       typedef Aws::Utils::Outcome<DeregisterTaskDefinitionResult, ECSError> DeregisterTaskDefinitionOutcome;
@@ -238,6 +241,7 @@ namespace Aws
       typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
       typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
       typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+      typedef std::future<DeleteTaskDefinitionsOutcome> DeleteTaskDefinitionsOutcomeCallable;
       typedef std::future<DeleteTaskSetOutcome> DeleteTaskSetOutcomeCallable;
       typedef std::future<DeregisterContainerInstanceOutcome> DeregisterContainerInstanceOutcomeCallable;
       typedef std::future<DeregisterTaskDefinitionOutcome> DeregisterTaskDefinitionOutcomeCallable;
@@ -299,6 +303,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::DeleteCapacityProviderRequest&, const Model::DeleteCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCapacityProviderResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DeleteTaskDefinitionsRequest&, const Model::DeleteTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskDefinitionsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteTaskSetRequest&, const Model::DeleteTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskSetResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeregisterContainerInstanceRequest&, const Model::DeregisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterContainerInstanceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeregisterTaskDefinitionRequest&, const Model::DeregisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTaskDefinitionResponseReceivedHandler;

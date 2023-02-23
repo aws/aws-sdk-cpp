@@ -70,99 +70,99 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Determines whether the account setting is enabled or disabled for the
-     * specified resource.</p>
+     * <p>Determines whether the account setting is on or off for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
-     * If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
+     * field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 

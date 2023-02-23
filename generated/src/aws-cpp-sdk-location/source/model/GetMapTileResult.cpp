@@ -22,6 +22,7 @@ GetMapTileResult::GetMapTileResult()
 
 GetMapTileResult::GetMapTileResult(GetMapTileResult&& toMove) : 
     m_blob(std::move(toMove.m_blob)),
+    m_cacheControl(std::move(toMove.m_cacheControl)),
     m_contentType(std::move(toMove.m_contentType))
 {
 }
@@ -34,6 +35,7 @@ GetMapTileResult& GetMapTileResult::operator=(GetMapTileResult&& toMove)
    }
 
    m_blob = std::move(toMove.m_blob);
+   m_cacheControl = std::move(toMove.m_cacheControl);
    m_contentType = std::move(toMove.m_contentType);
 
    return *this;
@@ -49,6 +51,12 @@ GetMapTileResult& GetMapTileResult::operator =(Aws::AmazonWebServiceResult<Respo
   m_blob = result.TakeOwnershipOfPayload();
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& cacheControlIter = headers.find("cache-control");
+  if(cacheControlIter != headers.end())
+  {
+    m_cacheControl = cacheControlIter->second;
+  }
+
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {

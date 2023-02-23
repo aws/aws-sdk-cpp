@@ -82,26 +82,26 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline long long GetPubliclyAccessibleCount() const{ return m_publiclyAccessibleCount; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline bool PubliclyAccessibleCountHasBeenSet() const { return m_publiclyAccessibleCountHasBeenSet; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline void SetPubliclyAccessibleCount(long long value) { m_publiclyAccessibleCountHasBeenSet = true; m_publiclyAccessibleCount = value; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible based on a
-     * combination of permissions settings for each bucket.</p>
+     * <p>The total number of buckets that are publicly accessible due to a combination
+     * of permissions settings for each bucket.</p>
      */
     inline SensitivityAggregations& WithPubliclyAccessibleCount(long long value) { SetPubliclyAccessibleCount(value); return *this;}
 

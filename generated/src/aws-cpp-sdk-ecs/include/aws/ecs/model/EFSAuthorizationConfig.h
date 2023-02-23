@@ -137,7 +137,7 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -149,7 +149,7 @@ namespace Model
     inline const EFSAuthorizationConfigIAM& GetIam() const{ return m_iam; }
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -161,7 +161,7 @@ namespace Model
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -173,7 +173,7 @@ namespace Model
     inline void SetIam(const EFSAuthorizationConfigIAM& value) { m_iamHasBeenSet = true; m_iam = value; }
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -185,7 +185,7 @@ namespace Model
     inline void SetIam(EFSAuthorizationConfigIAM&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -197,7 +197,7 @@ namespace Model
     inline EFSAuthorizationConfig& WithIam(const EFSAuthorizationConfigIAM& value) { SetIam(value); return *this;}
 
     /**
-     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For

@@ -38,14 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The blob's content type.</p>
+     * <p>The glyph, as binary blob.</p>
      */
     inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
 
     /**
-     * <p>The blob's content type.</p>
+     * <p>The glyph, as binary blob.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_blob = Aws::Utils::Stream::ResponseStream(body); }
+
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(const Aws::String& value) { m_cacheControl = value; }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(const char* value) { m_cacheControl.assign(value); }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapGlyphsResult& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapGlyphsResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapGlyphsResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
 
     /**
@@ -93,6 +129,8 @@ namespace Model
   private:
 
     Aws::Utils::Stream::ResponseStream m_blob;
+
+    Aws::String m_cacheControl;
 
     Aws::String m_contentType;
   };

@@ -28,16 +28,19 @@
 #include <aws/location/model/CalculateRouteResult.h>
 #include <aws/location/model/CalculateRouteMatrixResult.h>
 #include <aws/location/model/CreateGeofenceCollectionResult.h>
+#include <aws/location/model/CreateKeyResult.h>
 #include <aws/location/model/CreateMapResult.h>
 #include <aws/location/model/CreatePlaceIndexResult.h>
 #include <aws/location/model/CreateRouteCalculatorResult.h>
 #include <aws/location/model/CreateTrackerResult.h>
 #include <aws/location/model/DeleteGeofenceCollectionResult.h>
+#include <aws/location/model/DeleteKeyResult.h>
 #include <aws/location/model/DeleteMapResult.h>
 #include <aws/location/model/DeletePlaceIndexResult.h>
 #include <aws/location/model/DeleteRouteCalculatorResult.h>
 #include <aws/location/model/DeleteTrackerResult.h>
 #include <aws/location/model/DescribeGeofenceCollectionResult.h>
+#include <aws/location/model/DescribeKeyResult.h>
 #include <aws/location/model/DescribeMapResult.h>
 #include <aws/location/model/DescribePlaceIndexResult.h>
 #include <aws/location/model/DescribeRouteCalculatorResult.h>
@@ -54,6 +57,7 @@
 #include <aws/location/model/ListDevicePositionsResult.h>
 #include <aws/location/model/ListGeofenceCollectionsResult.h>
 #include <aws/location/model/ListGeofencesResult.h>
+#include <aws/location/model/ListKeysResult.h>
 #include <aws/location/model/ListMapsResult.h>
 #include <aws/location/model/ListPlaceIndexesResult.h>
 #include <aws/location/model/ListRouteCalculatorsResult.h>
@@ -67,6 +71,7 @@
 #include <aws/location/model/TagResourceResult.h>
 #include <aws/location/model/UntagResourceResult.h>
 #include <aws/location/model/UpdateGeofenceCollectionResult.h>
+#include <aws/location/model/UpdateKeyResult.h>
 #include <aws/location/model/UpdateMapResult.h>
 #include <aws/location/model/UpdatePlaceIndexResult.h>
 #include <aws/location/model/UpdateRouteCalculatorResult.h>
@@ -121,16 +126,19 @@ namespace Aws
       class CalculateRouteRequest;
       class CalculateRouteMatrixRequest;
       class CreateGeofenceCollectionRequest;
+      class CreateKeyRequest;
       class CreateMapRequest;
       class CreatePlaceIndexRequest;
       class CreateRouteCalculatorRequest;
       class CreateTrackerRequest;
       class DeleteGeofenceCollectionRequest;
+      class DeleteKeyRequest;
       class DeleteMapRequest;
       class DeletePlaceIndexRequest;
       class DeleteRouteCalculatorRequest;
       class DeleteTrackerRequest;
       class DescribeGeofenceCollectionRequest;
+      class DescribeKeyRequest;
       class DescribeMapRequest;
       class DescribePlaceIndexRequest;
       class DescribeRouteCalculatorRequest;
@@ -147,6 +155,7 @@ namespace Aws
       class ListDevicePositionsRequest;
       class ListGeofenceCollectionsRequest;
       class ListGeofencesRequest;
+      class ListKeysRequest;
       class ListMapsRequest;
       class ListPlaceIndexesRequest;
       class ListRouteCalculatorsRequest;
@@ -160,6 +169,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateGeofenceCollectionRequest;
+      class UpdateKeyRequest;
       class UpdateMapRequest;
       class UpdatePlaceIndexRequest;
       class UpdateRouteCalculatorRequest;
@@ -177,16 +187,19 @@ namespace Aws
       typedef Aws::Utils::Outcome<CalculateRouteResult, LocationServiceError> CalculateRouteOutcome;
       typedef Aws::Utils::Outcome<CalculateRouteMatrixResult, LocationServiceError> CalculateRouteMatrixOutcome;
       typedef Aws::Utils::Outcome<CreateGeofenceCollectionResult, LocationServiceError> CreateGeofenceCollectionOutcome;
+      typedef Aws::Utils::Outcome<CreateKeyResult, LocationServiceError> CreateKeyOutcome;
       typedef Aws::Utils::Outcome<CreateMapResult, LocationServiceError> CreateMapOutcome;
       typedef Aws::Utils::Outcome<CreatePlaceIndexResult, LocationServiceError> CreatePlaceIndexOutcome;
       typedef Aws::Utils::Outcome<CreateRouteCalculatorResult, LocationServiceError> CreateRouteCalculatorOutcome;
       typedef Aws::Utils::Outcome<CreateTrackerResult, LocationServiceError> CreateTrackerOutcome;
       typedef Aws::Utils::Outcome<DeleteGeofenceCollectionResult, LocationServiceError> DeleteGeofenceCollectionOutcome;
+      typedef Aws::Utils::Outcome<DeleteKeyResult, LocationServiceError> DeleteKeyOutcome;
       typedef Aws::Utils::Outcome<DeleteMapResult, LocationServiceError> DeleteMapOutcome;
       typedef Aws::Utils::Outcome<DeletePlaceIndexResult, LocationServiceError> DeletePlaceIndexOutcome;
       typedef Aws::Utils::Outcome<DeleteRouteCalculatorResult, LocationServiceError> DeleteRouteCalculatorOutcome;
       typedef Aws::Utils::Outcome<DeleteTrackerResult, LocationServiceError> DeleteTrackerOutcome;
       typedef Aws::Utils::Outcome<DescribeGeofenceCollectionResult, LocationServiceError> DescribeGeofenceCollectionOutcome;
+      typedef Aws::Utils::Outcome<DescribeKeyResult, LocationServiceError> DescribeKeyOutcome;
       typedef Aws::Utils::Outcome<DescribeMapResult, LocationServiceError> DescribeMapOutcome;
       typedef Aws::Utils::Outcome<DescribePlaceIndexResult, LocationServiceError> DescribePlaceIndexOutcome;
       typedef Aws::Utils::Outcome<DescribeRouteCalculatorResult, LocationServiceError> DescribeRouteCalculatorOutcome;
@@ -203,6 +216,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDevicePositionsResult, LocationServiceError> ListDevicePositionsOutcome;
       typedef Aws::Utils::Outcome<ListGeofenceCollectionsResult, LocationServiceError> ListGeofenceCollectionsOutcome;
       typedef Aws::Utils::Outcome<ListGeofencesResult, LocationServiceError> ListGeofencesOutcome;
+      typedef Aws::Utils::Outcome<ListKeysResult, LocationServiceError> ListKeysOutcome;
       typedef Aws::Utils::Outcome<ListMapsResult, LocationServiceError> ListMapsOutcome;
       typedef Aws::Utils::Outcome<ListPlaceIndexesResult, LocationServiceError> ListPlaceIndexesOutcome;
       typedef Aws::Utils::Outcome<ListRouteCalculatorsResult, LocationServiceError> ListRouteCalculatorsOutcome;
@@ -216,6 +230,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, LocationServiceError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, LocationServiceError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateGeofenceCollectionResult, LocationServiceError> UpdateGeofenceCollectionOutcome;
+      typedef Aws::Utils::Outcome<UpdateKeyResult, LocationServiceError> UpdateKeyOutcome;
       typedef Aws::Utils::Outcome<UpdateMapResult, LocationServiceError> UpdateMapOutcome;
       typedef Aws::Utils::Outcome<UpdatePlaceIndexResult, LocationServiceError> UpdatePlaceIndexOutcome;
       typedef Aws::Utils::Outcome<UpdateRouteCalculatorResult, LocationServiceError> UpdateRouteCalculatorOutcome;
@@ -233,16 +248,19 @@ namespace Aws
       typedef std::future<CalculateRouteOutcome> CalculateRouteOutcomeCallable;
       typedef std::future<CalculateRouteMatrixOutcome> CalculateRouteMatrixOutcomeCallable;
       typedef std::future<CreateGeofenceCollectionOutcome> CreateGeofenceCollectionOutcomeCallable;
+      typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
       typedef std::future<CreateMapOutcome> CreateMapOutcomeCallable;
       typedef std::future<CreatePlaceIndexOutcome> CreatePlaceIndexOutcomeCallable;
       typedef std::future<CreateRouteCalculatorOutcome> CreateRouteCalculatorOutcomeCallable;
       typedef std::future<CreateTrackerOutcome> CreateTrackerOutcomeCallable;
       typedef std::future<DeleteGeofenceCollectionOutcome> DeleteGeofenceCollectionOutcomeCallable;
+      typedef std::future<DeleteKeyOutcome> DeleteKeyOutcomeCallable;
       typedef std::future<DeleteMapOutcome> DeleteMapOutcomeCallable;
       typedef std::future<DeletePlaceIndexOutcome> DeletePlaceIndexOutcomeCallable;
       typedef std::future<DeleteRouteCalculatorOutcome> DeleteRouteCalculatorOutcomeCallable;
       typedef std::future<DeleteTrackerOutcome> DeleteTrackerOutcomeCallable;
       typedef std::future<DescribeGeofenceCollectionOutcome> DescribeGeofenceCollectionOutcomeCallable;
+      typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
       typedef std::future<DescribeMapOutcome> DescribeMapOutcomeCallable;
       typedef std::future<DescribePlaceIndexOutcome> DescribePlaceIndexOutcomeCallable;
       typedef std::future<DescribeRouteCalculatorOutcome> DescribeRouteCalculatorOutcomeCallable;
@@ -259,6 +277,7 @@ namespace Aws
       typedef std::future<ListDevicePositionsOutcome> ListDevicePositionsOutcomeCallable;
       typedef std::future<ListGeofenceCollectionsOutcome> ListGeofenceCollectionsOutcomeCallable;
       typedef std::future<ListGeofencesOutcome> ListGeofencesOutcomeCallable;
+      typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
       typedef std::future<ListMapsOutcome> ListMapsOutcomeCallable;
       typedef std::future<ListPlaceIndexesOutcome> ListPlaceIndexesOutcomeCallable;
       typedef std::future<ListRouteCalculatorsOutcome> ListRouteCalculatorsOutcomeCallable;
@@ -272,6 +291,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateGeofenceCollectionOutcome> UpdateGeofenceCollectionOutcomeCallable;
+      typedef std::future<UpdateKeyOutcome> UpdateKeyOutcomeCallable;
       typedef std::future<UpdateMapOutcome> UpdateMapOutcomeCallable;
       typedef std::future<UpdatePlaceIndexOutcome> UpdatePlaceIndexOutcomeCallable;
       typedef std::future<UpdateRouteCalculatorOutcome> UpdateRouteCalculatorOutcomeCallable;
@@ -292,16 +312,19 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::CalculateRouteRequest&, const Model::CalculateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CalculateRouteResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CalculateRouteMatrixRequest&, const Model::CalculateRouteMatrixOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CalculateRouteMatrixResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CreateGeofenceCollectionRequest&, const Model::CreateGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGeofenceCollectionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::CreateKeyRequest&, const Model::CreateKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CreateMapRequest&, const Model::CreateMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMapResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CreatePlaceIndexRequest&, const Model::CreatePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlaceIndexResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CreateRouteCalculatorRequest&, const Model::CreateRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteCalculatorResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::CreateTrackerRequest&, const Model::CreateTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrackerResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DeleteGeofenceCollectionRequest&, const Model::DeleteGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGeofenceCollectionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::DeleteKeyRequest&, const Model::DeleteKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DeleteMapRequest&, const Model::DeleteMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMapResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DeletePlaceIndexRequest&, const Model::DeletePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaceIndexResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DeleteRouteCalculatorRequest&, const Model::DeleteRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteCalculatorResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DeleteTrackerRequest&, const Model::DeleteTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrackerResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DescribeGeofenceCollectionRequest&, const Model::DescribeGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGeofenceCollectionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::DescribeKeyRequest&, const Model::DescribeKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DescribeMapRequest&, const Model::DescribeMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMapResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DescribePlaceIndexRequest&, const Model::DescribePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlaceIndexResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::DescribeRouteCalculatorRequest&, const Model::DescribeRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRouteCalculatorResponseReceivedHandler;
@@ -318,6 +341,7 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::ListDevicePositionsRequest&, const Model::ListDevicePositionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicePositionsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListGeofenceCollectionsRequest&, const Model::ListGeofenceCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeofenceCollectionsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListGeofencesRequest&, const Model::ListGeofencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeofencesResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::ListKeysRequest&, const Model::ListKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeysResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListMapsRequest&, const Model::ListMapsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMapsResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListPlaceIndexesRequest&, const Model::ListPlaceIndexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaceIndexesResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::ListRouteCalculatorsRequest&, const Model::ListRouteCalculatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRouteCalculatorsResponseReceivedHandler;
@@ -331,6 +355,7 @@ namespace Aws
     typedef std::function<void(const LocationServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateGeofenceCollectionRequest&, const Model::UpdateGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeofenceCollectionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdateKeyRequest&, const Model::UpdateKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateMapRequest&, const Model::UpdateMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMapResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdatePlaceIndexRequest&, const Model::UpdatePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePlaceIndexResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UpdateRouteCalculatorRequest&, const Model::UpdateRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRouteCalculatorResponseReceivedHandler;

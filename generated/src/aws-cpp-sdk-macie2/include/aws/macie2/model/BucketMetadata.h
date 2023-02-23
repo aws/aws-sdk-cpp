@@ -37,13 +37,17 @@ namespace Model
 
   /**
    * <p>Provides statistical data and other information about an S3 bucket that
-   * Amazon Macie monitors and analyzes for your account. If an error occurs when
-   * Macie attempts to retrieve and process metadata from Amazon S3 for the bucket
-   * and the bucket's objects, the value for the versioning property is false and the
-   * value for most other properties is null. Key exceptions are accountId,
-   * bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the
-   * cause of the error, refer to the errorCode and errorMessage
-   * values.</p><p><h3>See Also:</h3>   <a
+   * Amazon Macie monitors and analyzes for your account. By default, object count
+   * and storage size values include data for object parts that are the result of
+   * incomplete multipart uploads. For more information, see <a
+   * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How
+   * Macie monitors Amazon S3 data security</a> in the <i>Amazon Macie User
+   * Guide</i>.</p> <p>If an error occurs when Macie attempts to retrieve and process
+   * metadata from Amazon S3 for the bucket or the bucket's objects, the value for
+   * the versioning property is false and the value for most other properties is
+   * null. Key exceptions are accountId, bucketArn, bucketCreatedAt, bucketName,
+   * lastUpdated, and region. To identify the cause of the error, refer to the
+   * errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */
@@ -245,43 +249,43 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline const Aws::Utils::DateTime& GetBucketCreatedAt() const{ return m_bucketCreatedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline bool BucketCreatedAtHasBeenSet() const { return m_bucketCreatedAtHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline void SetBucketCreatedAt(const Aws::Utils::DateTime& value) { m_bucketCreatedAtHasBeenSet = true; m_bucketCreatedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline void SetBucketCreatedAt(Aws::Utils::DateTime&& value) { m_bucketCreatedAtHasBeenSet = true; m_bucketCreatedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline BucketMetadata& WithBucketCreatedAt(const Aws::Utils::DateTime& value) { SetBucketCreatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created, or changes such as edits to the bucket's policy were most recently made
-     * to the bucket.</p>
+     * created. This value can also indicate when changes such as edits to the bucket's
+     * policy were most recently made to the bucket.</p>
      */
     inline BucketMetadata& WithBucketCreatedAt(Aws::Utils::DateTime&& value) { SetBucketCreatedAt(std::move(value)); return *this;}
 
@@ -402,62 +406,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline void SetErrorCode(const BucketMetadataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline void SetErrorCode(BucketMetadataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline BucketMetadata& WithErrorCode(const BucketMetadataErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>Specifies the error code for an error that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
-     * information. For example, the bucket has a restrictive bucket policy and Amazon
-     * S3 denied the request. If this value is null, Macie was able to retrieve and
-     * process the information.</p>
+     * <p>The error code for an error that prevented Amazon Macie from retrieving and
+     * processing information about the bucket and the bucket's objects. If this value
+     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
+     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     * request. If this value is null, Macie was able to retrieve and process the
+     * information.</p>
      */
     inline BucketMetadata& WithErrorCode(BucketMetadataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
@@ -572,91 +576,91 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline void SetLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline void SetLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline BucketMetadata& WithLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastAutomatedDiscoveryTime(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently performed automated sensitive data discovery for the bucket. This
-     * value is null if automated sensitive data discovery is currently disabled for
-     * your account.</p>
+     * most recently analyzed data in the bucket while performing automated sensitive
+     * data discovery for your account. This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
      */
     inline BucketMetadata& WithLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastAutomatedDiscoveryTime(std::move(value)); return *this;}
 
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently retrieved both bucket and object metadata from Amazon S3 for the
+     * most recently retrieved bucket or object metadata from Amazon S3 for the
      * bucket.</p>
      */
     inline BucketMetadata& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
@@ -684,44 +688,44 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline const ObjectCountByEncryptionType& GetObjectCountByEncryptionType() const{ return m_objectCountByEncryptionType; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline bool ObjectCountByEncryptionTypeHasBeenSet() const { return m_objectCountByEncryptionTypeHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = value; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = std::move(value); }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline BucketMetadata& WithObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { SetObjectCountByEncryptionType(value); return *this;}
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline BucketMetadata& WithObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { SetObjectCountByEncryptionType(std::move(value)); return *this;}
 
@@ -854,30 +858,30 @@ namespace Model
 
 
     /**
-     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
+     * to 100 (sensitive). This value is null if automated sensitive data discovery is
+     * currently disabled for your account.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }
 
     /**
-     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
+     * to 100 (sensitive). This value is null if automated sensitive data discovery is
+     * currently disabled for your account.</p>
      */
     inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
 
     /**
-     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
+     * to 100 (sensitive). This value is null if automated sensitive data discovery is
+     * currently disabled for your account.</p>
      */
     inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
 
     /**
-     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
-     * error) to 100 (sensitive). This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
+     * to 100 (sensitive). This value is null if automated sensitive data discovery is
+     * currently disabled for your account.</p>
      */
     inline BucketMetadata& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
 
@@ -921,73 +925,109 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline const SharedAccess& GetSharedAccess() const{ return m_sharedAccess; }
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline bool SharedAccessHasBeenSet() const { return m_sharedAccessHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline void SetSharedAccess(const SharedAccess& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = value; }
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline void SetSharedAccess(SharedAccess&& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = std::move(value); }
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline BucketMetadata& WithSharedAccess(const SharedAccess& value) { SetSharedAccess(value); return *this;}
 
     /**
      * <p>Specifies whether the bucket is shared with another Amazon Web Services
-     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
-     * with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
-     * Services account that's part of the same Amazon Macie organization.</p></li>
-     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
-     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
-     * shared access settings for the bucket.</p></li></ul>
+     * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
+     * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
+     * bucket is shared with one or more of the following or any combination of the
+     * following: an Amazon Web Services account that isn't part of your Amazon Macie
+     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * The bucket is shared with one or more Amazon Web Services accounts that are part
+     * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
+     * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
+     * Web Services account, a CloudFront OAI, or a CloudFront OAC.</p></li>
+     * <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings
+     * for the bucket.</p></li></ul> <p>An <i>Amazon Macie organization</i> is a set of
+     * Macie accounts that are centrally managed as a group of related accounts through
+     * Organizations or by Macie invitation.</p>
      */
     inline BucketMetadata& WithSharedAccess(SharedAccess&& value) { SetSharedAccess(std::move(value)); return *this;}
 

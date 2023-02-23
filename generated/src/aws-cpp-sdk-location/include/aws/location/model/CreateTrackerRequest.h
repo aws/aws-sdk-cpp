@@ -77,65 +77,65 @@ namespace Model
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline CreateTrackerRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline CreateTrackerRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-     * KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias
-     * ARN.</p>
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN.</p>
      */
     inline CreateTrackerRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

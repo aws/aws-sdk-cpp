@@ -86,49 +86,49 @@ namespace Model
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
-     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+     * alphanumeric, whitespace, dash (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(const char* value) { SetName(value); return *this;}
 

@@ -144,49 +144,49 @@ namespace Model
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline const Aws::Vector<double>& GetAssistPosition() const{ return m_assistPosition; }
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline bool AssistPositionHasBeenSet() const { return m_assistPositionHasBeenSet; }
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline void SetAssistPosition(const Aws::Vector<double>& value) { m_assistPositionHasBeenSet = true; m_assistPosition = value; }
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline void SetAssistPosition(Aws::Vector<double>&& value) { m_assistPositionHasBeenSet = true; m_assistPosition = std::move(value); }
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline Gnss& WithAssistPosition(const Aws::Vector<double>& value) { SetAssistPosition(value); return *this;}
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline Gnss& WithAssistPosition(Aws::Vector<double>&& value) { SetAssistPosition(std::move(value)); return *this;}
 
     /**
      * <p>Optional assistance position information, specified using latitude and
-     * longitude values in degrees. The co-ordinates are inside the WGS84 reference
+     * longitude values in degrees. The coordinates are inside the WGS84 reference
      * frame.</p>
      */
     inline Gnss& AddAssistPosition(double value) { m_assistPositionHasBeenSet = true; m_assistPosition.push_back(value); return *this; }

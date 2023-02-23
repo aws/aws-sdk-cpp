@@ -24,6 +24,7 @@ namespace Aws
         static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
         static const int APPSYNC_HASH = HashingUtils::HashString("APPSYNC");
         static const int COGNITO_USER_POOL_HASH = HashingUtils::HashString("COGNITO_USER_POOL");
+        static const int APP_RUNNER_SERVICE_HASH = HashingUtils::HashString("APP_RUNNER_SERVICE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == COGNITO_USER_POOL_HASH)
           {
             return ResourceType::COGNITO_USER_POOL;
+          }
+          else if (hashCode == APP_RUNNER_SERVICE_HASH)
+          {
+            return ResourceType::APP_RUNNER_SERVICE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "APPSYNC";
           case ResourceType::COGNITO_USER_POOL:
             return "COGNITO_USER_POOL";
+          case ResourceType::APP_RUNNER_SERVICE:
+            return "APP_RUNNER_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

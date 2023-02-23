@@ -19,7 +19,8 @@ namespace Model
     APPLICATION_LOAD_BALANCER,
     API_GATEWAY,
     APPSYNC,
-    COGNITO_USER_POOL
+    COGNITO_USER_POOL,
+    APP_RUNNER_SERVICE
   };
 
 namespace ResourceTypeMapper

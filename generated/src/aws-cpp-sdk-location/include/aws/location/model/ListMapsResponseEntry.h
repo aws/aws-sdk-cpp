@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details of an existing map resource in your AWS
+   * <p>Contains details of an existing map resource in your Amazon Web Services
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListMapsResponseEntry">AWS
    * API Reference</a></p>

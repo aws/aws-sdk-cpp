@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline SortCriteria& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline SortCriteria& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>Represents the finding attribute (for example, accountId) to sort findings
-     * by.</p>
+     * <p>Represents the finding attribute, such as <code>accountId</code>, that sorts
+     * the findings.</p>
      */
     inline SortCriteria& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

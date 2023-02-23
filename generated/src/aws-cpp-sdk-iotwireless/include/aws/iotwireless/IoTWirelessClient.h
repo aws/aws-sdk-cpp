@@ -1314,7 +1314,7 @@ namespace IoTWireless
 
         /**
          * <p>Get the position information for a given wireless device or a wireless
-         * gateway resource. The postion information uses the <a
+         * gateway resource. The position information uses the <a
          * href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
          * System (WGS84)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">AWS
@@ -2476,7 +2476,7 @@ namespace IoTWireless
 
         /**
          * <p>Update the position information of a given wireless device or a wireless
-         * gateway resource. The postion coordinates are based on the <a
+         * gateway resource. The position coordinates are based on the <a
          * href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
          * System (WGS84)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">AWS

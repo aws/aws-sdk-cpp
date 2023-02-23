@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline UpdateSensitivityInspectionTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline UpdateSensitivityInspectionTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A custom description of the template.</p>
+     * <p>A custom description of the template. The description can contain as many as
+     * 200 characters.</p>
      */
     inline UpdateSensitivityInspectionTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

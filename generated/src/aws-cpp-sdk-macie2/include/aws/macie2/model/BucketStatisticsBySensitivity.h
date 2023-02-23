@@ -116,37 +116,37 @@ namespace Model
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline const SensitivityAggregations& GetNotSensitive() const{ return m_notSensitive; }
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline bool NotSensitiveHasBeenSet() const { return m_notSensitiveHasBeenSet; }
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline void SetNotSensitive(const SensitivityAggregations& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = value; }
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline void SetNotSensitive(SensitivityAggregations&& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = std::move(value); }
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline BucketStatisticsBySensitivity& WithNotSensitive(const SensitivityAggregations& value) { SetNotSensitive(value); return *this;}
 
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 0-49.</p>
+     * of 1-49.</p>
      */
     inline BucketStatisticsBySensitivity& WithNotSensitive(SensitivityAggregations&& value) { SetNotSensitive(std::move(value)); return *this;}
 

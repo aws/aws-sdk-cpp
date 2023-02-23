@@ -44,11 +44,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline const DeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const{ return m_deploymentCircuitBreaker; }
 
@@ -56,11 +58,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }
 
@@ -68,11 +72,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline void SetDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = value; }
 
@@ -80,11 +86,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline void SetDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::move(value); }
 
@@ -92,11 +100,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline DeploymentConfiguration& WithDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { SetDeploymentCircuitBreaker(value); return *this;}
 
@@ -104,11 +114,13 @@ namespace Model
      *  <p>The deployment circuit breaker can only be used for services using the
      * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
      * <b>deployment circuit breaker</b> determines whether a service deployment will
-     * fail if the service can't reach a steady state. If deployment circuit breaker is
-     * enabled, a service deployment will transition to a failed state and stop
-     * launching new tasks. If rollback is enabled, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
+     * fail if the service can't reach a steady state. If you use the deployment
+     * circuit breaker, a service deployment will transition to a failed state and stop
+     * launching new tasks. If you use the rollback option, when a service deployment
+     * fails, the service is rolled back to the last deployment that completed
+     * successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
     inline DeploymentConfiguration& WithDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { SetDeploymentCircuitBreaker(std::move(value)); return *this;}
 

@@ -75,26 +75,26 @@ namespace Model
 
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). By default, this score is calculated
-     * automatically based on the amount of data that Amazon Macie has analyzed in the
-     * bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). By default, this score is calculated automatically
+     * based on the amount of data that Amazon Macie has analyzed in the bucket and the
+     * amount of sensitive data that Macie has found in the bucket.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). By default, this score is calculated
-     * automatically based on the amount of data that Amazon Macie has analyzed in the
-     * bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). By default, this score is calculated automatically
+     * based on the amount of data that Amazon Macie has analyzed in the bucket and the
+     * amount of sensitive data that Macie has found in the bucket.</p>
      */
     inline void SetSensitivityScore(int value) { m_sensitivityScore = value; }
 
     /**
-     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
-     * due to an error) to 100 (sensitive). By default, this score is calculated
-     * automatically based on the amount of data that Amazon Macie has analyzed in the
-     * bucket and the amount of sensitive data that Macie has found in the bucket.</p>
+     * <p>The current sensitivity score for the bucket, ranging from -1 (classification
+     * error) to 100 (sensitive). By default, this score is calculated automatically
+     * based on the amount of data that Amazon Macie has analyzed in the bucket and the
+     * amount of sensitive data that Macie has found in the bucket.</p>
      */
     inline GetResourceProfileResult& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
 

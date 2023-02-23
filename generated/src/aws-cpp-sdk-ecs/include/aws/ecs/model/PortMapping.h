@@ -498,7 +498,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -534,7 +534,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -570,7 +570,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -606,7 +606,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -642,7 +642,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -678,7 +678,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -714,7 +714,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch
@@ -750,7 +750,7 @@ namespace Model
 
     /**
      * <p>The port number range on the container that's bound to the dynamically mapped
-     * host port range.</p> <p>The following rules apply when you specify a
+     * host port range. </p> <p>The following rules apply when you specify a
      * <code>containerPortRange</code>:</p> <ul> <li> <p>You must use either the
      * <code>bridge</code> network mode or the <code>awsvpc</code> network mode.</p>
      * </li> <li> <p>This parameter is available for both the EC2 and Fargate launch

@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline const Aws::Vector<ListPlaceIndexesResponseEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline void SetEntries(const Aws::Vector<ListPlaceIndexesResponseEntry>& value) { m_entries = value; }
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline void SetEntries(Aws::Vector<ListPlaceIndexesResponseEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline ListPlaceIndexesResult& WithEntries(const Aws::Vector<ListPlaceIndexesResponseEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline ListPlaceIndexesResult& WithEntries(Aws::Vector<ListPlaceIndexesResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline ListPlaceIndexesResult& AddEntries(const ListPlaceIndexesResponseEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>Lists the place index resources that exist in your AWS account</p>
+     * <p>Lists the place index resources that exist in your Amazon Web Services
+     * account</p>
      */
     inline ListPlaceIndexesResult& AddEntries(ListPlaceIndexesResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

@@ -25,7 +25,8 @@ namespace Model
     Policy_IAMUser_S3BucketSharedExternally,
     Policy_IAMUser_S3BucketReplicatedExternally,
     Policy_IAMUser_S3BucketEncryptionDisabled,
-    Policy_IAMUser_S3BlockPublicAccessDisabled
+    Policy_IAMUser_S3BlockPublicAccessDisabled,
+    Policy_IAMUser_S3BucketSharedWithCloudFront
   };
 
 namespace FindingTypeMapper

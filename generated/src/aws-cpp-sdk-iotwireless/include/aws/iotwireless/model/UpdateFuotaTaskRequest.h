@@ -176,6 +176,45 @@ namespace Model
     
     inline UpdateFuotaTaskRequest& WithFirmwareUpdateRole(const char* value) { SetFirmwareUpdateRole(value); return *this;}
 
+
+    
+    inline int GetRedundancyPercent() const{ return m_redundancyPercent; }
+
+    
+    inline bool RedundancyPercentHasBeenSet() const { return m_redundancyPercentHasBeenSet; }
+
+    
+    inline void SetRedundancyPercent(int value) { m_redundancyPercentHasBeenSet = true; m_redundancyPercent = value; }
+
+    
+    inline UpdateFuotaTaskRequest& WithRedundancyPercent(int value) { SetRedundancyPercent(value); return *this;}
+
+
+    
+    inline int GetFragmentSizeBytes() const{ return m_fragmentSizeBytes; }
+
+    
+    inline bool FragmentSizeBytesHasBeenSet() const { return m_fragmentSizeBytesHasBeenSet; }
+
+    
+    inline void SetFragmentSizeBytes(int value) { m_fragmentSizeBytesHasBeenSet = true; m_fragmentSizeBytes = value; }
+
+    
+    inline UpdateFuotaTaskRequest& WithFragmentSizeBytes(int value) { SetFragmentSizeBytes(value); return *this;}
+
+
+    
+    inline int GetFragmentIntervalMS() const{ return m_fragmentIntervalMS; }
+
+    
+    inline bool FragmentIntervalMSHasBeenSet() const { return m_fragmentIntervalMSHasBeenSet; }
+
+    
+    inline void SetFragmentIntervalMS(int value) { m_fragmentIntervalMSHasBeenSet = true; m_fragmentIntervalMS = value; }
+
+    
+    inline UpdateFuotaTaskRequest& WithFragmentIntervalMS(int value) { SetFragmentIntervalMS(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -195,6 +234,15 @@ namespace Model
 
     Aws::String m_firmwareUpdateRole;
     bool m_firmwareUpdateRoleHasBeenSet = false;
+
+    int m_redundancyPercent;
+    bool m_redundancyPercentHasBeenSet = false;
+
+    int m_fragmentSizeBytes;
+    bool m_fragmentSizeBytesHasBeenSet = false;
+
+    int m_fragmentIntervalMS;
+    bool m_fragmentIntervalMSHasBeenSet = false;
   };
 
 } // namespace Model

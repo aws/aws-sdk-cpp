@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<ListGeofenceCollectionsResponseEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline void SetEntries(const Aws::Vector<ListGeofenceCollectionsResponseEntry>& value) { m_entries = value; }
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline void SetEntries(Aws::Vector<ListGeofenceCollectionsResponseEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline ListGeofenceCollectionsResult& WithEntries(const Aws::Vector<ListGeofenceCollectionsResponseEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline ListGeofenceCollectionsResult& WithEntries(Aws::Vector<ListGeofenceCollectionsResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline ListGeofenceCollectionsResult& AddEntries(const ListGeofenceCollectionsResponseEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>Lists the geofence collections that exist in your AWS account.</p>
+     * <p>Lists the geofence collections that exist in your Amazon Web Services
+     * account.</p>
      */
     inline ListGeofenceCollectionsResult& AddEntries(ListGeofenceCollectionsResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

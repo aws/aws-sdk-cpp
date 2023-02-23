@@ -201,22 +201,22 @@ namespace Model
 
 
     /**
-     * <p>CDMA base station longtitude in degrees.</p>
+     * <p>CDMA base station longitude in degrees.</p>
      */
     inline double GetBaseLng() const{ return m_baseLng; }
 
     /**
-     * <p>CDMA base station longtitude in degrees.</p>
+     * <p>CDMA base station longitude in degrees.</p>
      */
     inline bool BaseLngHasBeenSet() const { return m_baseLngHasBeenSet; }
 
     /**
-     * <p>CDMA base station longtitude in degrees.</p>
+     * <p>CDMA base station longitude in degrees.</p>
      */
     inline void SetBaseLng(double value) { m_baseLngHasBeenSet = true; m_baseLng = value; }
 
     /**
-     * <p>CDMA base station longtitude in degrees.</p>
+     * <p>CDMA base station longitude in degrees.</p>
      */
     inline CdmaObj& WithBaseLng(double value) { SetBaseLng(value); return *this;}
 

@@ -144,73 +144,80 @@ namespace Model
 
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_email = value; }
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_email = std::move(value); }
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline void SetEmail(const char* value) { m_email.assign(value); }
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline GetMemberResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline GetMemberResult& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The email address for the account.</p>
+     * <p>The email address for the account. This value is null if the account is
+     * associated with the administrator account through Organizations.</p>
      */
     inline GetMemberResult& WithEmail(const char* value) { SetEmail(value); return *this;}
 
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if an
-     * invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if a
+     * Macie membership invitation hasn't been sent to the account.</p>
      */
     inline const Aws::Utils::DateTime& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if an
-     * invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if a
+     * Macie membership invitation hasn't been sent to the account.</p>
      */
     inline void SetInvitedAt(const Aws::Utils::DateTime& value) { m_invitedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if an
-     * invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if a
+     * Macie membership invitation hasn't been sent to the account.</p>
      */
     inline void SetInvitedAt(Aws::Utils::DateTime&& value) { m_invitedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if an
-     * invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if a
+     * Macie membership invitation hasn't been sent to the account.</p>
      */
     inline GetMemberResult& WithInvitedAt(const Aws::Utils::DateTime& value) { SetInvitedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if an
-     * invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if a
+     * Macie membership invitation hasn't been sent to the account.</p>
      */
     inline GetMemberResult& WithInvitedAt(Aws::Utils::DateTime&& value) { SetInvitedAt(std::move(value)); return *this;}
 

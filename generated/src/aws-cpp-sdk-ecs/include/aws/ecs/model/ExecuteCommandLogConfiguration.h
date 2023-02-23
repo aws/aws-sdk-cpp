@@ -90,25 +90,25 @@ namespace Model
 
     /**
      * <p>Determines whether to use encryption on the CloudWatch logs. If not
-     * specified, encryption will be disabled.</p>
+     * specified, encryption will be off.</p>
      */
     inline bool GetCloudWatchEncryptionEnabled() const{ return m_cloudWatchEncryptionEnabled; }
 
     /**
      * <p>Determines whether to use encryption on the CloudWatch logs. If not
-     * specified, encryption will be disabled.</p>
+     * specified, encryption will be off.</p>
      */
     inline bool CloudWatchEncryptionEnabledHasBeenSet() const { return m_cloudWatchEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>Determines whether to use encryption on the CloudWatch logs. If not
-     * specified, encryption will be disabled.</p>
+     * specified, encryption will be off.</p>
      */
     inline void SetCloudWatchEncryptionEnabled(bool value) { m_cloudWatchEncryptionEnabledHasBeenSet = true; m_cloudWatchEncryptionEnabled = value; }
 
     /**
      * <p>Determines whether to use encryption on the CloudWatch logs. If not
-     * specified, encryption will be disabled.</p>
+     * specified, encryption will be off.</p>
      */
     inline ExecuteCommandLogConfiguration& WithCloudWatchEncryptionEnabled(bool value) { SetCloudWatchEncryptionEnabled(value); return *this;}
 
