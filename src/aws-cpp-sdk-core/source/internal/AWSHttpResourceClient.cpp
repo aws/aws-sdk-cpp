@@ -170,14 +170,23 @@ namespace Aws
             }
         }
 
-        EC2MetadataClient::EC2MetadataClient(const char* endpoint)
-            : AWSHttpResourceClient(EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint), m_tokenRequired(true)
+        EC2MetadataClient::EC2MetadataClient(const char *endpoint) :
+            AWSHttpResourceClient(EC2_METADATA_CLIENT_LOG_TAG),
+            m_endpoint(endpoint),
+            m_disableIMDS(false),
+            m_tokenRequired(true)
         {
+
         }
 
-        EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration &clientConfiguration, const char *endpoint)
-            : AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint), m_tokenRequired(true)
+        EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration &clientConfiguration,
+            const char *endpoint) :
+            AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG),
+            m_endpoint(endpoint),
+            m_disableIMDS(clientConfiguration.disableIMDS),
+            m_tokenRequired(true)
         {
+
         }
 
         EC2MetadataClient::~EC2MetadataClient()
@@ -190,8 +199,13 @@ namespace Aws
             return GetResource(m_endpoint.c_str(), resourcePath, nullptr/*authToken*/);
         }
 
+#if !defined(DISABLE_IMDSV1)
         Aws::String EC2MetadataClient::GetDefaultCredentials() const
         {
+            if (m_disableIMDS) {
+                AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Skipping call to IMDS Service");
+                return {};
+            }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
             if (m_tokenRequired)
             {
@@ -232,14 +246,20 @@ namespace Aws
             AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " << ss.str());
             return GetResource(ss.str().c_str());
         }
+#endif
 
         Aws::String EC2MetadataClient::GetDefaultCredentialsSecurely() const
         {
+            if (m_disableIMDS) {
+                AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Skipping call to IMDS Service");
+                return {};
+            }
             std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
-            if (!m_tokenRequired)
-            {
+#if !defined(DISABLE_IMDSV1)
+            if (!m_tokenRequired) {
                 return GetDefaultCredentials();
             }
+#endif
 
             Aws::StringStream ss;
             ss << m_endpoint << EC2_IMDS_TOKEN_RESOURCE;
@@ -257,12 +277,14 @@ namespace Aws
             {
                 return {};
             }
+#if !defined(DISABLE_IMDSV1)
             else if (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty())
             {
                 m_tokenRequired = false;
                 AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token failed, falling back to less secure way.");
                 return GetDefaultCredentials();
             }
+#endif
             m_token = trimmedTokenString;
             locker.unlock();
             ss.str("");
@@ -278,7 +300,7 @@ namespace Aws
 
             AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
                                                     << " with token returned profile string " << trimmedProfileString);
-            if (securityCredentials.size() == 0)
+            if (securityCredentials.empty())
             {
                 AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Calling EC2Metadataservice to get profiles failed");
                 return {};
@@ -296,6 +318,10 @@ namespace Aws
 
         Aws::String EC2MetadataClient::GetCurrentRegion() const
         {
+            if (m_disableIMDS) {
+                AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Skipping call to IMDS Service");
+                return {};
+            }
             if (!m_region.empty())
             {
                 return m_region;

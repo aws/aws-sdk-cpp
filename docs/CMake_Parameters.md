@@ -114,3 +114,6 @@ An override path for where the build system should find the Android NDK.  By def
 
 ### ANDROID_NATIVE_API_LEVEL
 (Default varies by STL choice) Controls what API level the SDK will be built against.  If you use gnustl, you have complete freedom with the choice of API level.  If you use libc++, you must use an API level of at least 21.
+
+### DISABLE_INTERNAL_IMDSV1_CALLS
+(Defaults to OFF) Set to disable all internal calls to the V1 api of the [Instance Metadata Service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)

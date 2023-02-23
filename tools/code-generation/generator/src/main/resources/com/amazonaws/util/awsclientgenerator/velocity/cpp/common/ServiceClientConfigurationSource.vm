@@ -69,14 +69,14 @@ ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}Clien
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName)
-: BaseClientConfigClass(inputProfileName)
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName, bool disableIMDS)
+: BaseClientConfigClass(inputProfileName, disableIMDS)
 {
   Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode)
-: BaseClientConfigClass(useSmartDefaults, defaultMode)
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool disableIMDS)
+: BaseClientConfigClass(useSmartDefaults, defaultMode, disableIMDS)
 {
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }

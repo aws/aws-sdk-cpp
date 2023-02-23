@@ -32,14 +32,14 @@ S3ControlClientConfiguration::S3ControlClientConfiguration()
   LoadS3ControlSpecificConfig(this->profileName);
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration(const char* inputProfileName)
-: BaseClientConfigClass(inputProfileName)
+S3ControlClientConfiguration::S3ControlClientConfiguration(const char* inputProfileName, bool disableIMDS)
+: BaseClientConfigClass(inputProfileName, disableIMDS)
 {
   LoadS3ControlSpecificConfig(Aws::String(inputProfileName));
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration(bool useSmartDefaults, const char* defaultMode)
-: BaseClientConfigClass(useSmartDefaults, defaultMode)
+S3ControlClientConfiguration::S3ControlClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool disableIMDS)
+: BaseClientConfigClass(useSmartDefaults, defaultMode, disableIMDS)
 {
   LoadS3ControlSpecificConfig(this->profileName);
 }
