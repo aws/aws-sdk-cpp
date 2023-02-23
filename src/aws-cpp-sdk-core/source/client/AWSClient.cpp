@@ -13,6 +13,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/RequestCompression.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
@@ -124,7 +125,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_customizedUserAgent(!m_userAgent.empty()),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
-    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
+    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
+    m_requestCompressionConfig(configuration.requestCompressionConfig)
 {
     AWSClient::SetServiceClientName("AWSBaseClient");
 }
@@ -143,7 +145,8 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_customizedUserAgent(!m_userAgent.empty()),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
-    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
+    m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
+    m_requestCompressionConfig(configuration.requestCompressionConfig)
 {
     AWSClient::SetServiceClientName("AWSBaseClient");
 }
@@ -696,6 +699,20 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     AddCommonHeaders(*httpRequest);
 }
 
+void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<HttpRequest> &httpRequest, const String header, const String value) const
+{
+    if (!httpRequest->HasHeader(header.c_str()))
+    {
+        httpRequest->SetHeaderValue(header, value);
+    }
+    else
+    {
+        Aws::String contentEncoding = httpRequest->GetHeaderValue(header.c_str());
+        contentEncoding.append(",").append(value);
+        httpRequest->SetHeaderValue(header, contentEncoding);
+    }
+}
+
 void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::AmazonWebServiceRequest& request) const
 {
@@ -704,8 +721,8 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
     // Request checksums
     if (!checksumAlgorithmName.empty())
     {
-        // For non streaming payload, the resolved checksum location is always header.
-        // For streaming payload, the resolved checksum location depends on whether it's unsigned payload, we let AwsAuthSigner decide it.
+        // For non-streaming payload, the resolved checksum location is always header.
+        // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
         if (checksumAlgorithmName == "crc32")
         {
             if (request.IsStreaming())
@@ -874,14 +891,11 @@ Aws::String Aws::Client::GetAuthorizationHeader(const Aws::Http::HttpRequest& ht
     return authHeader.substr(signaturePosition + strlen(Aws::Auth::SIGNATURE) + 1);
 }
 
-void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
-    const std::shared_ptr<HttpRequest>& httpRequest) const
+void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<HttpRequest>& httpRequest) const
 {
-    //do headers first since the request likely will set content-length as it's own header.
+    //do headers first since the request likely will set content-length as its own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
     AddHeadersToRequest(httpRequest, request.GetAdditionalCustomHeaders());
-
-    AddChecksumToRequest(httpRequest, request);
 
     if (request.IsEventStreamRequest())
     {
@@ -889,9 +903,31 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
     }
     else
     {
-        AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
+        //Check if compression is required
+        CompressionAlgorithm selectedCompressionAlgorithm =
+            request.GetSelectedCompressionAlgorithm(m_requestCompressionConfig);
+        if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
+            Aws::Client::RequestCompression rc;
+            auto compressOutcome = rc.compress(request.GetBody(), selectedCompressionAlgorithm);
+
+            if (compressOutcome.IsSuccess()) {
+                Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
+                AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
+                AddContentBodyToRequest(
+                    httpRequest, compressOutcome.GetResult(),
+                    request.ShouldComputeContentMd5(),
+                    request.IsStreaming() && request.IsChunked() &&
+                        m_httpClient->SupportsChunkedTransferEncoding());
+            } else {
+                AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Failed to compress request, submitting uncompressed");
+                AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
+            }
+        } else {
+            AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
+        }
     }
 
+    AddChecksumToRequest(httpRequest, request);
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
     httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());

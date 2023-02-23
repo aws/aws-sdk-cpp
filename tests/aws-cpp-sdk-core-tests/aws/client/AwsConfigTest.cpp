@@ -131,7 +131,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigSetsUseRequestCompressionToTrue){
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.requestCompressionConfig.useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -149,7 +149,7 @@ TEST_F(AWSConfigTestSuite, TestEnvToFalseAndNoConfigSetsUseRequestCompressionToF
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -169,7 +169,7 @@ TEST_F(AWSConfigTestSuite, TestEnvToTrueAndConfigSetToFalseSetsUseRequestCompres
 
   Aws::Client::ClientConfiguration config("Dijkstra");
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.requestCompressionConfig.useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -187,7 +187,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());

@@ -342,6 +342,10 @@ namespace Aws
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
             Aws::String m_serviceName;
+            Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
+            void AppendHeaderValueToRequest(
+                const std::shared_ptr<Http::HttpRequest> &request, String header,
+                String value) const;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);
