@@ -118,12 +118,13 @@ namespace Aws
             */
             virtual Aws::String GetResource(const char* resourcePath) const;
 
+#if !defined(DISABLE_IMDSV1)
             /**
              * Connects to the Amazon EC2 Instance Metadata Service to retrieve the
              * default credential information (if any).
              */
             virtual Aws::String GetDefaultCredentials() const;
-
+#endif
             /**
              * Connects to the Amazon EC2 Instance Metadata Service to retrieve the
              * credential information (if any) in a more secure way.
@@ -148,6 +149,7 @@ namespace Aws
 
         private:
             Aws::String m_endpoint;
+            bool m_disableIMDS;
             mutable std::recursive_mutex m_tokenMutex;
             mutable Aws::String m_token;
             mutable bool m_tokenRequired;

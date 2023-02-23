@@ -123,10 +123,12 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 
 ClientConfiguration::ClientConfiguration()
 {
+    this->disableIMDS = false;
     setLegacyClientConfigurationParameters(*this);
     retryStrategy = InitRetryStrategy();
 
-    if (region.empty() &&
+    if (!this->disableIMDS &&
+        region.empty() &&
         Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
     {
         auto client = Aws::Internal::GetEC2MetadataClient();
@@ -142,12 +144,15 @@ ClientConfiguration::ClientConfiguration()
     region = Aws::String(Aws::Region::US_EAST_1);
 }
 
-ClientConfiguration::ClientConfiguration(const char* profile) {
+ClientConfiguration::ClientConfiguration(const char* profile, bool disableIMDS)
+{
+    this->disableIMDS = disableIMDS;
     setLegacyClientConfigurationParameters(*this);
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
     bool hasEc2MetadataRegion = false;
-    if (region.empty() &&
+    if (!this->disableIMDS &&
+        region.empty() &&
         Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true") {
         auto client = Aws::Internal::GetEC2MetadataClient();
         if (client)
@@ -185,14 +190,16 @@ ClientConfiguration::ClientConfiguration(const char* profile) {
     AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");
 }
 
-ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode)
+ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool disableIMDS)
 {
+    this->disableIMDS = disableIMDS;
     setLegacyClientConfigurationParameters(*this);
 
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
     bool hasEc2MetadataRegion = false;
-    if (region.empty() &&
+    if (!this->disableIMDS &&
+        region.empty() &&
         Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
     {
         auto client = Aws::Internal::GetEC2MetadataClient();

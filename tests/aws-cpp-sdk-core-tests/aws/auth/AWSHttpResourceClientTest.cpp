@@ -642,6 +642,16 @@ namespace
         ASSERT_EQ("", cred);
     }
 
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientSkipsCallForConfiguration) {
+        clientConfig.disableIMDS = true;
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
+
+        ASSERT_EQ("", ec2MetadataClient->GetDefaultCredentialsSecurely());
+        ASSERT_EQ("", ec2MetadataClient->GetDefaultCredentials());
+        ASSERT_EQ("", ec2MetadataClient->GetCurrentRegion());
+    }
+
+#if !defined(DISABLE_IMDSV1)
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientFailedGettingCredentialsFromSecureServerWithRetries)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
@@ -801,6 +811,7 @@ namespace
         ASSERT_EQ("http://169.254.169.254/latest/meta-data/iam/security-credentials", mockRequests[3].GetURIString());
         ASSERT_EQ("", cred);
     }
+#endif
 
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithNullResponse)
     {
