@@ -12,6 +12,12 @@ elseif(NOT PLATFORM_WINDOWS AND NOT PLATFORM_CUSTOM)
     endif()
 endif()
 
+# Request Compression dependencies
+if (ENABLE_ZLIB_REQUEST_COMPRESSION)
+    find_package(ZLIB REQUIRED)
+endif()
+
+
 # Encryption control
 if(NOT NO_ENCRYPTION)
     if(PLATFORM_WINDOWS)

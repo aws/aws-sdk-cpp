@@ -7,15 +7,16 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/http/HttpTypes.h>
-#include <aws/core/http/HttpRequest.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/client/RequestCompression.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/endpoint/EndpointParameter.h>
+#include <aws/core/http/HttpRequest.h>
+#include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/stream/ResponseStream.h>
 
 namespace Aws
 {
@@ -180,6 +181,9 @@ namespace Aws
 
         using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
         virtual EndpointParameters GetEndpointContextParams() const;
+
+        virtual Aws::Client::CompressionAlgorithm
+        GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig) const { return Aws::Client::CompressionAlgorithm::NONE; }
 
     protected:
         /**

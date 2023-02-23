@@ -54,6 +54,11 @@ namespace Aws
           ENABLE,
         };
 
+        struct RequestCompressionConfig {
+          UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
+          size_t requestMinCompressionSizeBytes = 10240;
+        };
+
         /**
          * This mutable structure is used to configure any of the AWS clients.
          * Default values can only be overwritten prior to passing to the client constructors.
@@ -277,11 +282,11 @@ namespace Aws
             Aws::String profileName;
 
             /**
-             * Use request compression when available.
+             * Request compression configuration
              * To use this feature, the service needs to provide the support, and the compression
              * algorithms needs to be available at SDK build time.
              */
-            Aws::Client::UseRequestCompression useRequestCompression;
+            Aws::Client::RequestCompressionConfig requestCompressionConfig;
 
             /**
              * Disable all internal IMDS Calls
