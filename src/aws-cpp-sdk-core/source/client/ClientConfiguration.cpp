@@ -30,6 +30,8 @@ namespace Client
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
 static const char* USE_REQUEST_COMPRESSION_ENV_VAR = "USE_REQUEST_COMPRESSION";
 static const char* USE_REQUEST_COMPRESSION_CONFIG_VAR = "use_request_compression";
+static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR = "REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_compression_size_bytes";
 
 Aws::String ComputeUserAgentString()
 {
@@ -81,11 +83,27 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
         );
 
     if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "disable") {
-      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
+      clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
+      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression disabled");
     } else {
       //Using default to true for forward compatibility in case new config is added but SDK is not updated.
-      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
+      clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
+      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression enabled");
     }
+
+    // Getting min request compression length
+    Aws::String minRequestCompressionString = Aws::Environment::GetEnv(REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR);
+    if (minRequestCompressionString.empty())
+    {
+      minRequestCompressionString = Aws::Config::GetCachedConfigValue(REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR);
+    }
+    if (!minRequestCompressionString.empty()) {
+      clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(minRequestCompressionString.c_str()));
+      if (clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes > 10485760) {
+        AWS_LOGSTREAM_ERROR(CLIENT_CONFIG_TAG, "ClientConfiguration for MinReqCompression is unsupported, received: " << clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes);
+      }
+    }
+    AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use MinReqCompression: " << clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes);
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 

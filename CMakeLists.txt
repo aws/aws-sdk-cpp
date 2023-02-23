@@ -156,11 +156,19 @@ if (LEGACY_BUILD)
     find_package(PythonInterp)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
-    # Find zlib (gzip) and use it if available
-    find_package(ZLIB QUIET)
-    if ( NOT ZLIB_FOUND)
-        set(ENABLE_ZLIB_REQUEST_COMPRESSION OFF)
-        message(WARNING "ZLIB is not available, it will not be used to compress requests")
+    # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
+    if(ENABLE_ZLIB_REQUEST_COMPRESSION)
+        find_package(ZLIB QUIET)
+        if ( NOT ZLIB_FOUND)
+            set(ENABLE_ZLIB_REQUEST_COMPRESSION
+                    OFF CACHE BOOL
+                    "For services that support it, request content will be compressed. On by default if dependency available"
+                    FORCE)
+            message(WARNING "ZLIB is not available, it will not be used to compress requests")
+        else()
+            #Passing the information that we want zlib request compression support to C++
+            add_definitions("-DENABLED_ZLIB_REQUEST_COMPRESSION" "-DENABLED_REQUEST_COMPRESSION")
+        endif()
     endif()
 
     if (UNIX AND NOT APPLE)

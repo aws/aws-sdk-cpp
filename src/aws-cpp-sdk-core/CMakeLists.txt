@@ -541,6 +541,10 @@ aws_use_package(aws-crt-cpp)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_AWS_LIBS})
 
+if (ENABLE_ZLIB_REQUEST_COMPRESSION)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ZLIB::ZLIB)
+endif()
+
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
 
