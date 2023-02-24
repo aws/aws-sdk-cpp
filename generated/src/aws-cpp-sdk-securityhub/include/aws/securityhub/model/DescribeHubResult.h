@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/ControlFindingGenerator.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,77 @@ namespace Model
      */
     inline DescribeHubResult& WithAutoEnableControls(bool value) { SetAutoEnableControls(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the calling account has consolidated control findings
+     * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
+     * Security Hub generates a single finding for a control check even when the check
+     * applies to multiple enabled standards.</p> <p>If the value for this field is set
+     * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
+     * control check when the check applies to multiple enabled standards.</p> <p>The
+     * value for this field in a member account matches the value in the administrator
+     * account. For accounts that aren't part of an organization, the default value of
+     * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
+     * after February 9, 2023.</p>
+     */
+    inline const ControlFindingGenerator& GetControlFindingGenerator() const{ return m_controlFindingGenerator; }
+
+    /**
+     * <p>Specifies whether the calling account has consolidated control findings
+     * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
+     * Security Hub generates a single finding for a control check even when the check
+     * applies to multiple enabled standards.</p> <p>If the value for this field is set
+     * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
+     * control check when the check applies to multiple enabled standards.</p> <p>The
+     * value for this field in a member account matches the value in the administrator
+     * account. For accounts that aren't part of an organization, the default value of
+     * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
+     * after February 9, 2023.</p>
+     */
+    inline void SetControlFindingGenerator(const ControlFindingGenerator& value) { m_controlFindingGenerator = value; }
+
+    /**
+     * <p>Specifies whether the calling account has consolidated control findings
+     * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
+     * Security Hub generates a single finding for a control check even when the check
+     * applies to multiple enabled standards.</p> <p>If the value for this field is set
+     * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
+     * control check when the check applies to multiple enabled standards.</p> <p>The
+     * value for this field in a member account matches the value in the administrator
+     * account. For accounts that aren't part of an organization, the default value of
+     * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
+     * after February 9, 2023.</p>
+     */
+    inline void SetControlFindingGenerator(ControlFindingGenerator&& value) { m_controlFindingGenerator = std::move(value); }
+
+    /**
+     * <p>Specifies whether the calling account has consolidated control findings
+     * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
+     * Security Hub generates a single finding for a control check even when the check
+     * applies to multiple enabled standards.</p> <p>If the value for this field is set
+     * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
+     * control check when the check applies to multiple enabled standards.</p> <p>The
+     * value for this field in a member account matches the value in the administrator
+     * account. For accounts that aren't part of an organization, the default value of
+     * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
+     * after February 9, 2023.</p>
+     */
+    inline DescribeHubResult& WithControlFindingGenerator(const ControlFindingGenerator& value) { SetControlFindingGenerator(value); return *this;}
+
+    /**
+     * <p>Specifies whether the calling account has consolidated control findings
+     * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
+     * Security Hub generates a single finding for a control check even when the check
+     * applies to multiple enabled standards.</p> <p>If the value for this field is set
+     * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
+     * control check when the check applies to multiple enabled standards.</p> <p>The
+     * value for this field in a member account matches the value in the administrator
+     * account. For accounts that aren't part of an organization, the default value of
+     * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
+     * after February 9, 2023.</p>
+     */
+    inline DescribeHubResult& WithControlFindingGenerator(ControlFindingGenerator&& value) { SetControlFindingGenerator(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hubArn;
@@ -135,6 +207,8 @@ namespace Model
     Aws::String m_subscribedAt;
 
     bool m_autoEnableControls;
+
+    ControlFindingGenerator m_controlFindingGenerator;
   };
 
 } // namespace Model

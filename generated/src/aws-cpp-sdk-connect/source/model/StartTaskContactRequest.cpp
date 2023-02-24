@@ -24,7 +24,8 @@ StartTaskContactRequest::StartTaskContactRequest() :
     m_clientTokenHasBeenSet(true),
     m_scheduledTimeHasBeenSet(false),
     m_taskTemplateIdHasBeenSet(false),
-    m_quickConnectIdHasBeenSet(false)
+    m_quickConnectIdHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String StartTaskContactRequest::SerializePayload() const
   if(m_quickConnectIdHasBeenSet)
   {
    payload.WithString("QuickConnectId", m_quickConnectId);
+
+  }
+
+  if(m_relatedContactIdHasBeenSet)
+  {
+   payload.WithString("RelatedContactId", m_relatedContactId);
 
   }
 

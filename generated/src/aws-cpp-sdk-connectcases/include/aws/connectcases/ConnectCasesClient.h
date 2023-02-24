@@ -16,14 +16,13 @@ namespace Aws
 namespace ConnectCases
 {
   /**
-   * <p>Welcome to the Amazon Connect Cases API Reference. This guide provides
-   * information about the Amazon Connect Cases API, which you can use to create,
-   * update, get, and list Cases domains, fields, field options, layouts, templates,
-   * cases, related items, and tags.</p> <pre><code> &lt;p&gt;For more information
-   * about Amazon Connect Cases, see &lt;a
-   * href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon
-   * Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator
-   * Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>
+   * <p>With Amazon Connect Cases, your agents can track and manage customer issues
+   * that require multiple interactions, follow-up tasks, and teams in your contact
+   * center. A case represents a customer issue. It records the issue, the steps and
+   * interactions taken to resolve the issue, and the outcome. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon
+   * Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    */
   class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>
   {
@@ -134,9 +133,14 @@ namespace ConnectCases
 
         /**
          * <p>Creates a case in the specified Cases domain. Case system and custom fields
-         * are taken as an array id/value pairs with a declared data types.</p>  <p>
-         * <code>customer_id</code> is a required field when creating a case.</p>
-         * <p><h3>See Also:</h3>   <a
+         * are taken as an array id/value pairs with a declared data types.</p> 
+         * <p>The following fields are required when creating a case:</p> <pre><code>
+         * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must
+         * provide the full customer profile ARN in this format:
+         * &lt;code&gt;arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles
+         * domain name/profiles/profile ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+         * &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
+         * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -166,7 +170,10 @@ namespace ConnectCases
          * with only one Cases domain.</p>  <p>This will not associate your
          * connect instance to Cases domain. Instead, use the Amazon Connect <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * API. You need specific IAM permissions to successfully associate the Cases
+         * domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
+         * to Cases</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -307,6 +314,31 @@ namespace ConnectCases
         void CreateTemplateAsync(const CreateTemplateRequestT& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectCasesClient::CreateTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDomainRequestT = Model::DeleteDomainRequest>
+        Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const DeleteDomainRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::DeleteDomain, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDomainRequestT = Model::DeleteDomainRequest>
+        void DeleteDomainAsync(const DeleteDomainRequestT& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::DeleteDomain, request, handler, context);
         }
 
         /**
@@ -645,8 +677,11 @@ namespace ConnectCases
 
         /**
          * <p>Searches for cases within their associated Cases domain. Search results are
-         * returned as a paginated list of abridged case documents.</p><p><h3>See
-         * Also:</h3>   <a
+         * returned as a paginated list of abridged case documents.</p>  <p>For
+         * <code>customer_id</code> you must provide the full customer profile ARN in this
+         * format: <code> arn:aws:profile:your AWS Region:your AWS account
+         * ID:domains/profiles domain name/profiles/profile ID</code>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchCases">AWS
          * API Reference</a></p>
          */

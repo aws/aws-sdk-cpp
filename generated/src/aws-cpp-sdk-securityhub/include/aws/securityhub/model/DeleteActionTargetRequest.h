@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline const Aws::String& GetActionTargetArn() const{ return m_actionTargetArn; }
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline bool ActionTargetArnHasBeenSet() const { return m_actionTargetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline void SetActionTargetArn(const Aws::String& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = value; }
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline void SetActionTargetArn(Aws::String&& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline void SetActionTargetArn(const char* value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline DeleteActionTargetRequest& WithActionTargetArn(const Aws::String& value) { SetActionTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline DeleteActionTargetRequest& WithActionTargetArn(Aws::String&& value) { SetActionTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom action target to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
     inline DeleteActionTargetRequest& WithActionTargetArn(const char* value) { SetActionTargetArn(value); return *this;}
 

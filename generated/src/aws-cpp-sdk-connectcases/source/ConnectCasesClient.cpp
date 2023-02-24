@@ -29,6 +29,7 @@
 #include <aws/connectcases/model/CreateLayoutRequest.h>
 #include <aws/connectcases/model/CreateRelatedItemRequest.h>
 #include <aws/connectcases/model/CreateTemplateRequest.h>
+#include <aws/connectcases/model/DeleteDomainRequest.h>
 #include <aws/connectcases/model/GetCaseRequest.h>
 #include <aws/connectcases/model/GetCaseEventConfigurationRequest.h>
 #include <aws/connectcases/model/GetDomainRequest.h>
@@ -311,6 +312,21 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   return CreateTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDomainOutcome ConnectCasesClient::DeleteDomain(const DeleteDomainRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomain", "Required field: DomainId, is not set");
+    return DeleteDomainOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+  return DeleteDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const

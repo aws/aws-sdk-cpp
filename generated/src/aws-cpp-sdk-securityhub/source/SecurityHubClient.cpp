@@ -24,8 +24,11 @@
 #include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/securityhub/model/BatchDisableStandardsRequest.h>
 #include <aws/securityhub/model/BatchEnableStandardsRequest.h>
+#include <aws/securityhub/model/BatchGetSecurityControlsRequest.h>
+#include <aws/securityhub/model/BatchGetStandardsControlAssociationsRequest.h>
 #include <aws/securityhub/model/BatchImportFindingsRequest.h>
 #include <aws/securityhub/model/BatchUpdateFindingsRequest.h>
+#include <aws/securityhub/model/BatchUpdateStandardsControlAssociationsRequest.h>
 #include <aws/securityhub/model/CreateActionTargetRequest.h>
 #include <aws/securityhub/model/CreateFindingAggregatorRequest.h>
 #include <aws/securityhub/model/CreateInsightRequest.h>
@@ -64,6 +67,8 @@
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/securityhub/model/ListSecurityControlDefinitionsRequest.h>
+#include <aws/securityhub/model/ListStandardsControlAssociationsRequest.h>
 #include <aws/securityhub/model/ListTagsForResourceRequest.h>
 #include <aws/securityhub/model/TagResourceRequest.h>
 #include <aws/securityhub/model/UntagResourceRequest.h>
@@ -229,6 +234,24 @@ BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchE
   return BatchEnableStandardsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+BatchGetSecurityControlsOutcome SecurityHubClient::BatchGetSecurityControls(const BatchGetSecurityControlsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetSecurityControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetSecurityControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/securityControls/batchGet");
+  return BatchGetSecurityControlsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetStandardsControlAssociationsOutcome SecurityHubClient::BatchGetStandardsControlAssociations(const BatchGetStandardsControlAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/associations/batchGet");
+  return BatchGetStandardsControlAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchImportFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -245,6 +268,15 @@ BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpd
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/findings/batchupdate");
   return BatchUpdateFindingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchUpdateStandardsControlAssociationsOutcome SecurityHubClient::BatchUpdateStandardsControlAssociations(const BatchUpdateStandardsControlAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  return BatchUpdateStandardsControlAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const
@@ -629,6 +661,29 @@ ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAcc
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationAdminAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/organization/admin");
   return ListOrganizationAdminAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSecurityControlDefinitionsOutcome SecurityHubClient::ListSecurityControlDefinitions(const ListSecurityControlDefinitionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityControlDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityControlDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/securityControls/definitions");
+  return ListSecurityControlDefinitionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStandardsControlAssociationsOutcome SecurityHubClient::ListStandardsControlAssociations(const ListStandardsControlAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SecurityControlIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListStandardsControlAssociations", "Required field: SecurityControlId, is not set");
+    return ListStandardsControlAssociationsOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityControlId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStandardsControlAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  return ListStandardsControlAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

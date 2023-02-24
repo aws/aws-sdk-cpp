@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 EnableSecurityHubRequest::EnableSecurityHubRequest() : 
     m_tagsHasBeenSet(false),
     m_enableDefaultStandards(false),
-    m_enableDefaultStandardsHasBeenSet(false)
+    m_enableDefaultStandardsHasBeenSet(false),
+    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET),
+    m_controlFindingGeneratorHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,11 @@ Aws::String EnableSecurityHubRequest::SerializePayload() const
   {
    payload.WithBool("EnableDefaultStandards", m_enableDefaultStandards);
 
+  }
+
+  if(m_controlFindingGeneratorHasBeenSet)
+  {
+   payload.WithString("ControlFindingGenerator", ControlFindingGeneratorMapper::GetNameForControlFindingGenerator(m_controlFindingGenerator));
   }
 
   return payload.View().WriteReadable();
