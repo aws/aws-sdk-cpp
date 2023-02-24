@@ -33,6 +33,11 @@ namespace Model
 
     AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+    virtual Aws::Client::CompressionAlgorithm
+    GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
+#endif
+
   protected:
     AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
