@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateSecurityHubConfigurationRequest::UpdateSecurityHubConfigurationRequest() : 
     m_autoEnableControls(false),
-    m_autoEnableControlsHasBeenSet(false)
+    m_autoEnableControlsHasBeenSet(false),
+    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET),
+    m_controlFindingGeneratorHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,11 @@ Aws::String UpdateSecurityHubConfigurationRequest::SerializePayload() const
   {
    payload.WithBool("AutoEnableControls", m_autoEnableControls);
 
+  }
+
+  if(m_controlFindingGeneratorHasBeenSet)
+  {
+   payload.WithString("ControlFindingGenerator", ControlFindingGeneratorMapper::GetNameForControlFindingGenerator(m_controlFindingGenerator));
   }
 
   return payload.View().WriteReadable();

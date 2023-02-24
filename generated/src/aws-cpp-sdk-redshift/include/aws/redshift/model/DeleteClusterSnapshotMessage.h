@@ -106,65 +106,65 @@ namespace Model
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline DeleteClusterSnapshotMessage& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline DeleteClusterSnapshotMessage& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints: Must be the name of valid cluster.</p>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline DeleteClusterSnapshotMessage& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 

@@ -131,57 +131,57 @@ namespace Model
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * is required if your IAM user or role has a policy containing a snapshot resource
+     * element that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 

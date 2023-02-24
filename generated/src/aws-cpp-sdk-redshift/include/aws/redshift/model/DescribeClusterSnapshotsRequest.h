@@ -342,7 +342,7 @@ namespace Model
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
-     * maximum 100.</p>
+     * maximum 500.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -352,7 +352,7 @@ namespace Model
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
-     * maximum 100.</p>
+     * maximum 500.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -362,7 +362,7 @@ namespace Model
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
-     * maximum 100.</p>
+     * maximum 500.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -372,7 +372,7 @@ namespace Model
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
-     * maximum 100.</p>
+     * maximum 500.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

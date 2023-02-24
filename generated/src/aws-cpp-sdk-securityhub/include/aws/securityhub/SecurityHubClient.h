@@ -23,21 +23,21 @@ namespace SecurityHub
    * accounts, services, and integrated third-party products and helps you analyze
    * security trends in your environment to identify the highest priority security
    * issues. For more information about Security Hub, see the <a
-   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
-   * <i>Security HubUser Guide</i> </a>.</p> <p>When you use operations in the
-   * Security Hub API, the requests are executed only in the Amazon Web Services
-   * Region that is currently active or in the specific Amazon Web Services Region
-   * that you specify in your request. Any configuration or settings change that
-   * results from the operation is applied only to that Region. To make the same
-   * change in other Regions, execute the same command for each Region to apply the
-   * change to.</p> <p>For example, if your Region is set to <code>us-west-2</code>,
-   * when you use <code>CreateMembers</code> to add a member account to Security Hub,
-   * the association of the member account with the administrator account is created
-   * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the
+   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security
+   * HubUser Guide</a>.</p> <p>When you use operations in the Security Hub API, the
+   * requests are executed only in the Amazon Web Services Region that is currently
+   * active or in the specific Amazon Web Services Region that you specify in your
+   * request. Any configuration or settings change that results from the operation is
+   * applied only to that Region. To make the same change in other Regions, run the
+   * same command for each Region in which you want to apply the change.</p> <p>For
+   * example, if your Region is set to <code>us-west-2</code>, when you use
+   * <code>CreateMembers</code> to add a member account to Security Hub, the
+   * association of the member account with the administrator account is created only
+   * in the <code>us-west-2</code> Region. Security Hub must be enabled for the
    * member account in the same Region that the invitation was sent from.</p> <p>The
    * following throttling limits apply to using Security Hub API operations.</p> <ul>
    * <li> <p> <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request
-   * per second, <code>BurstLimit</code> of 1 request per second.</p> </li> <li> <p>
+   * per second. <code>BurstLimit</code> of 1 request per second.</p> </li> <li> <p>
    * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second.
    * <code>BurstLimit</code> of 6 requests per second.</p> </li> <li> <p>
    * <code>BatchImportFindings</code> - <code>RateLimit</code> of 10 requests per
@@ -45,7 +45,7 @@ namespace SecurityHub
    * <code>BatchUpdateFindings</code> - <code>RateLimit</code> of 10 requests per
    * second. <code>BurstLimit</code> of 30 requests per second.</p> </li> <li> <p>
    * <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per
-   * second, <code>BurstLimit</code> of 5 requests per second.</p> </li> <li> <p>All
+   * second. <code>BurstLimit</code> of 5 requests per second.</p> </li> <li> <p>All
    * other operations - <code>RateLimit</code> of 10 requests per second.
    * <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
    */
@@ -194,6 +194,60 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Provides details about a batch of security controls for the current Amazon
+         * Web Services account and Amazon Web Services Region. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetSecurityControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetSecurityControlsOutcome BatchGetSecurityControls(const Model::BatchGetSecurityControlsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetSecurityControls that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetSecurityControlsRequestT = Model::BatchGetSecurityControlsRequest>
+        Model::BatchGetSecurityControlsOutcomeCallable BatchGetSecurityControlsCallable(const BatchGetSecurityControlsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchGetSecurityControls, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetSecurityControls that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetSecurityControlsRequestT = Model::BatchGetSecurityControlsRequest>
+        void BatchGetSecurityControlsAsync(const BatchGetSecurityControlsRequestT& request, const BatchGetSecurityControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchGetSecurityControls, request, handler, context);
+        }
+
+        /**
+         * <p> For a batch of security controls and standards, identifies whether each
+         * control is currently enabled or disabled in a standard. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetStandardsControlAssociationsOutcome BatchGetStandardsControlAssociations(const Model::BatchGetStandardsControlAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetStandardsControlAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetStandardsControlAssociationsRequestT = Model::BatchGetStandardsControlAssociationsRequest>
+        Model::BatchGetStandardsControlAssociationsOutcomeCallable BatchGetStandardsControlAssociationsCallable(const BatchGetStandardsControlAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchGetStandardsControlAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetStandardsControlAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetStandardsControlAssociationsRequestT = Model::BatchGetStandardsControlAssociationsRequest>
+        void BatchGetStandardsControlAssociationsAsync(const BatchGetStandardsControlAssociationsRequestT& request, const BatchGetStandardsControlAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchGetStandardsControlAssociations, request, handler, context);
+        }
+
+        /**
          * <p>Imports security findings generated by a finding provider into Security Hub.
          * This action is requested by the finding provider to import its findings into
          * Security Hub.</p> <p> <code>BatchImportFindings</code> must be called by one of
@@ -285,6 +339,32 @@ namespace SecurityHub
         void BatchUpdateFindingsAsync(const BatchUpdateFindingsRequestT& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::BatchUpdateFindings, request, handler, context);
+        }
+
+        /**
+         * <p> For a batch of security controls and standards, this operation updates the
+         * enablement status of a control in a standard. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateStandardsControlAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateStandardsControlAssociationsOutcome BatchUpdateStandardsControlAssociations(const Model::BatchUpdateStandardsControlAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateStandardsControlAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateStandardsControlAssociationsRequestT = Model::BatchUpdateStandardsControlAssociationsRequest>
+        Model::BatchUpdateStandardsControlAssociationsOutcomeCallable BatchUpdateStandardsControlAssociationsCallable(const BatchUpdateStandardsControlAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchUpdateStandardsControlAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateStandardsControlAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateStandardsControlAssociationsRequestT = Model::BatchUpdateStandardsControlAssociationsRequest>
+        void BatchUpdateStandardsControlAssociationsAsync(const BatchUpdateStandardsControlAssociationsRequestT& request, const BatchUpdateStandardsControlAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchUpdateStandardsControlAssociations, request, handler, context);
         }
 
         /**
@@ -1375,6 +1455,58 @@ namespace SecurityHub
         void ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequestT& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::ListOrganizationAdminAccounts, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all of the security controls that apply to a specified standard.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListSecurityControlDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSecurityControlDefinitionsOutcome ListSecurityControlDefinitions(const Model::ListSecurityControlDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSecurityControlDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSecurityControlDefinitionsRequestT = Model::ListSecurityControlDefinitionsRequest>
+        Model::ListSecurityControlDefinitionsOutcomeCallable ListSecurityControlDefinitionsCallable(const ListSecurityControlDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListSecurityControlDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for ListSecurityControlDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSecurityControlDefinitionsRequestT = Model::ListSecurityControlDefinitionsRequest>
+        void ListSecurityControlDefinitionsAsync(const ListSecurityControlDefinitionsRequestT& request, const ListSecurityControlDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListSecurityControlDefinitions, request, handler, context);
+        }
+
+        /**
+         * <p> Specifies whether a control is currently enabled or disabled in each enabled
+         * standard in the calling account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListStandardsControlAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStandardsControlAssociationsOutcome ListStandardsControlAssociations(const Model::ListStandardsControlAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStandardsControlAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStandardsControlAssociationsRequestT = Model::ListStandardsControlAssociationsRequest>
+        Model::ListStandardsControlAssociationsOutcomeCallable ListStandardsControlAssociationsCallable(const ListStandardsControlAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListStandardsControlAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListStandardsControlAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStandardsControlAssociationsRequestT = Model::ListStandardsControlAssociationsRequest>
+        void ListStandardsControlAssociationsAsync(const ListStandardsControlAssociationsRequestT& request, const ListStandardsControlAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListStandardsControlAssociations, request, handler, context);
         }
 
         /**

@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeHubResult::DescribeHubResult() : 
-    m_autoEnableControls(false)
+    m_autoEnableControls(false),
+    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET)
 {
 }
 
 DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoEnableControls(false)
+    m_autoEnableControls(false),
+    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +47,12 @@ DescribeHubResult& DescribeHubResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("AutoEnableControls"))
   {
     m_autoEnableControls = jsonValue.GetBool("AutoEnableControls");
+
+  }
+
+  if(jsonValue.ValueExists("ControlFindingGenerator"))
+  {
+    m_controlFindingGenerator = ControlFindingGeneratorMapper::GetControlFindingGeneratorForName(jsonValue.GetString("ControlFindingGenerator"));
 
   }
 

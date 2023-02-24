@@ -926,7 +926,10 @@ namespace ServiceCatalog
         }
 
         /**
-         * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified product.</p>  <p> Running this
+         * operation with administrator access results in a failure.
+         * <a>DescribeProductAsAdmin</a> should be used instead. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
          * API Reference</a></p>
          */
@@ -1550,18 +1553,22 @@ namespace ServiceCatalog
         }
 
         /**
-         * <p>Requests the import of a resource as an Service Catalog provisioned product
+         * <p> Requests the import of a resource as an Service Catalog provisioned product
          * that is associated to an Service Catalog product and provisioning artifact. Once
-         * imported, all supported Service Catalog governance actions are supported on the
-         * provisioned product.</p> <p>Resource import only supports CloudFormation stack
-         * ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
-         * <p>The CloudFormation stack must have one of the following statuses to be
-         * imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>,
-         * <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
-         * <code>IMPORT_ROLLBACK_COMPLETE</code>.</p> <p>Import of the resource requires
+         * imported, all supported governance actions are supported on the provisioned
+         * product. </p> <p> Resource import only supports CloudFormation stack ARNs.
+         * CloudFormation StackSets, and non-root nested stacks are not supported. </p> <p>
+         * The CloudFormation stack must have one of the following statuses to be imported:
+         * <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>,
+         * <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and
+         * <code>IMPORT_ROLLBACK_COMPLETE</code>. </p> <p> Import of the resource requires
          * that the CloudFormation stack template matches the associated Service Catalog
-         * product provisioning artifact. </p> <p>The user or role that performs this
-         * operation must have the <code>cloudformation:GetTemplate</code> and
+         * product provisioning artifact. </p>  <p> When you import an existing
+         * CloudFormation stack into a portfolio, constraints that are associated with the
+         * product aren't applied during the import process. The constraints are applied
+         * after you call <code>UpdateProvisionedProduct</code> for the provisioned
+         * product. </p>  <p> The user or role that performs this operation must
+         * have the <code>cloudformation:GetTemplate</code> and
          * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
@@ -1668,10 +1675,15 @@ namespace ServiceCatalog
         }
 
         /**
-         * <p>Lists the paths to the specified product. A path is how the user has access
-         * to a specified product, and is necessary when provisioning a product. A path
-         * also determines the constraints put on the product.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Lists the paths to the specified product. A path describes how the user gets
+         * access to a specified product and is necessary when provisioning a product. A
+         * path also determines the constraints that are put on a product. A path is
+         * dependent on a specific product, porfolio, and principal. </p>  <p> When
+         * provisioning a product that's been added to a portfolio, you must grant your
+         * user, group, or role access to the portfolio. For more information, see <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+         * users access</a> in the <i>Service Catalog User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
          * API Reference</a></p>
          */
@@ -2065,15 +2077,19 @@ namespace ServiceCatalog
         }
 
         /**
-         * <p>Provisions the specified product.</p> <p>A provisioned product is a resourced
-         * instance of a product. For example, provisioning a product based on a
-         * CloudFormation template launches a CloudFormation stack and its underlying
-         * resources. You can check the status of this request using
-         * <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty
-         * list of values, there is a tag conflict for that key. Do not include conflicted
-         * keys as tags, or this causes the error "Parameter validation failed: Missing
-         * required parameter in Tags[<i>N</i>]:<i>Value</i>".</p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Provisions the specified product. </p> <p> A provisioned product is a
+         * resourced instance of a product. For example, provisioning a product that's
+         * based on an CloudFormation template launches an CloudFormation stack and its
+         * underlying resources. You can check the status of this request using
+         * <a>DescribeRecord</a>. </p> <p> If the request contains a tag key with an empty
+         * list of values, there's a tag conflict for that key. Don't include conflicted
+         * keys as tags, or this will cause the error "Parameter validation failed: Missing
+         * required parameter in Tags[<i>N</i>]:<i>Value</i>". </p>  <p> When
+         * provisioning a product that's been added to a portfolio, you must grant your
+         * user, group, or role access to the portfolio. For more information, see <a
+         * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting
+         * users access</a> in the <i>Service Catalog User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
          * API Reference</a></p>
          */
@@ -2204,11 +2220,7 @@ namespace ServiceCatalog
 
         /**
          * <p>Gets information about the provisioned products that meet the specified
-         * criteria.</p>  <p>To ensure a complete list of provisioned products and
-         * remove duplicate products, use <code>sort-by createdTime</code>. </p> <p>Here is
-         * a CLI example: <code> </code> </p> <p> <code>aws servicecatalog
-         * search-provisioned-products --sort-by createdTime </code> </p> <p><h3>See
-         * Also:</h3>   <a
+         * criteria.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">AWS
          * API Reference</a></p>
          */

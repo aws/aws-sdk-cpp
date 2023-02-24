@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a cross-Region snapshot copy.</p><p><h3>See Also:</h3>   <a
+   * <p>You can configure Amazon Redshift to copy snapshots for a cluster to another
+   * Amazon Web Services Region. This parameter provides information about a
+   * cross-Region snapshot copy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterClusterSnapshotCopyStatus">AWS
    * API Reference</a></p>
    */
@@ -88,7 +90,7 @@ namespace Model
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is
+     * Region after they are copied from a source Region.</p> <p>If the value is
      * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
      * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
@@ -96,7 +98,7 @@ namespace Model
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is
+     * Region after they are copied from a source Region.</p> <p>If the value is
      * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
      * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
@@ -104,7 +106,7 @@ namespace Model
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is
+     * Region after they are copied from a source Region.</p> <p>If the value is
      * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
      * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
@@ -112,7 +114,7 @@ namespace Model
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is
+     * Region after they are copied from a source Region.</p> <p>If the value is
      * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
      * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */

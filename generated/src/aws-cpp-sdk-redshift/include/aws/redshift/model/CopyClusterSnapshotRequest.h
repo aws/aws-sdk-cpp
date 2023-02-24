@@ -98,73 +98,73 @@ namespace Model
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceSnapshotClusterIdentifier() const{ return m_sourceSnapshotClusterIdentifier; }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline bool SourceSnapshotClusterIdentifierHasBeenSet() const { return m_sourceSnapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline void SetSourceSnapshotClusterIdentifier(const Aws::String& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = value; }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline void SetSourceSnapshotClusterIdentifier(Aws::String&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline void SetSourceSnapshotClusterIdentifier(const char* value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const Aws::String& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(Aws::String&& value) { SetSourceSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
-     * parameter is required if your IAM user has a policy containing a snapshot
-     * resource element that specifies anything other than * for the cluster name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
-     * </li> </ul>
+     * parameter is required if your IAM user or role has a policy containing a
+     * snapshot resource element that specifies anything other than * for the cluster
+     * name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid
+     * cluster.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const char* value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
 
