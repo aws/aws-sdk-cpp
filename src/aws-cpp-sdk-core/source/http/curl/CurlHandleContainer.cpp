@@ -43,7 +43,7 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
     }
 
     CURL* handle = m_handleContainer.Acquire();
-    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
+    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
     return handle;
 }
