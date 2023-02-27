@@ -76,15 +76,15 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
         USE_REQUEST_COMPRESSION_ENV_VAR,
         Aws::Auth::GetConfigProfileName(),
         USE_REQUEST_COMPRESSION_CONFIG_VAR,
-        {"TRUE", "FALSE", "true", "false"},
-        "TRUE"
+        {"ENABLE", "DISABLE", "enable", "disable"},
+        "ENABLE"
         );
 
-    if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "false") {
-      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::FALSE;
+    if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "disable") {
+      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
     } else {
       //Using default to true for forward compatibility in case new config is added but SDK is not updated.
-      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::TRUE;
+      clientConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
     }
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");

@@ -50,8 +50,8 @@ namespace Aws
          */
         enum class UseRequestCompression
         {
-          FALSE,
-          TRUE,
+          DISABLE,
+          ENABLE,
         };
 
         /**
