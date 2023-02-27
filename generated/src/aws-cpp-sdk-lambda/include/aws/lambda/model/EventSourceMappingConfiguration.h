@@ -15,6 +15,7 @@
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/ScalingConfig.h>
+#include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -1133,6 +1134,37 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline const DocumentDBEventSourceConfig& GetDocumentDBEventSourceConfig() const{ return m_documentDBEventSourceConfig; }
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline bool DocumentDBEventSourceConfigHasBeenSet() const { return m_documentDBEventSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline void SetDocumentDBEventSourceConfig(const DocumentDBEventSourceConfig& value) { m_documentDBEventSourceConfigHasBeenSet = true; m_documentDBEventSourceConfig = value; }
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline void SetDocumentDBEventSourceConfig(DocumentDBEventSourceConfig&& value) { m_documentDBEventSourceConfigHasBeenSet = true; m_documentDBEventSourceConfig = std::move(value); }
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithDocumentDBEventSourceConfig(const DocumentDBEventSourceConfig& value) { SetDocumentDBEventSourceConfig(value); return *this;}
+
+    /**
+     * <p>Specific configuration settings for a DocumentDB event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithDocumentDBEventSourceConfig(DocumentDBEventSourceConfig&& value) { SetDocumentDBEventSourceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
@@ -1212,6 +1244,9 @@ namespace Model
 
     ScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet = false;
+
+    DocumentDBEventSourceConfig m_documentDBEventSourceConfig;
+    bool m_documentDBEventSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

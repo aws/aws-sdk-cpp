@@ -36,11 +36,11 @@ namespace Model
    * will indicate the current record’s version. To force an update, you can resend
    * the request with a version for the record set to a value greater than the
    * <code>ExistingVersion</code>.</p> </li> <li> <p> Records with timestamps that
-   * lie outside the retention duration of the memory store </p> </li> <li> <p>
+   * lie outside the retention duration of the memory store. </p> </li> <li> <p>
    * Records with dimensions or measures that exceed the Timestream defined limits.
    * </p> </li> </ul> <p> For more information, see <a
    * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a>
-   * in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+   * in the Amazon Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RejectedRecordsException">AWS
    * API Reference</a></p>
    */
@@ -78,28 +78,44 @@ namespace Model
     inline RejectedRecordsException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p> </p>
+     */
     inline const Aws::Vector<RejectedRecord>& GetRejectedRecords() const{ return m_rejectedRecords; }
 
-    
+    /**
+     * <p> </p>
+     */
     inline bool RejectedRecordsHasBeenSet() const { return m_rejectedRecordsHasBeenSet; }
 
-    
+    /**
+     * <p> </p>
+     */
     inline void SetRejectedRecords(const Aws::Vector<RejectedRecord>& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = value; }
 
-    
+    /**
+     * <p> </p>
+     */
     inline void SetRejectedRecords(Aws::Vector<RejectedRecord>&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = std::move(value); }
 
-    
+    /**
+     * <p> </p>
+     */
     inline RejectedRecordsException& WithRejectedRecords(const Aws::Vector<RejectedRecord>& value) { SetRejectedRecords(value); return *this;}
 
-    
+    /**
+     * <p> </p>
+     */
     inline RejectedRecordsException& WithRejectedRecords(Aws::Vector<RejectedRecord>&& value) { SetRejectedRecords(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> </p>
+     */
     inline RejectedRecordsException& AddRejectedRecords(const RejectedRecord& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(value); return *this; }
 
-    
+    /**
+     * <p> </p>
+     */
     inline RejectedRecordsException& AddRejectedRecords(RejectedRecord&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(std::move(value)); return *this; }
 
   private:

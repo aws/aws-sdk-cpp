@@ -108,11 +108,49 @@ namespace Model
      */
     inline GetRuntimeManagementConfigResult& WithRuntimeVersionArn(const char* value) { SetRuntimeVersionArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline void SetFunctionArn(const Aws::String& value) { m_functionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline void SetFunctionArn(Aws::String&& value) { m_functionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline void SetFunctionArn(const char* value) { m_functionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline GetRuntimeManagementConfigResult& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline GetRuntimeManagementConfigResult& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of your function.</p>
+     */
+    inline GetRuntimeManagementConfigResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+
   private:
 
     UpdateRuntimeOn m_updateRuntimeOn;
 
     Aws::String m_runtimeVersionArn;
+
+    Aws::String m_functionArn;
   };
 
 } // namespace Model

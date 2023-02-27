@@ -257,6 +257,47 @@ namespace Model
      */
     inline RecoveryInstanceDataReplicationInfo& AddReplicatedDisks(RecoveryInstanceDataReplicationInfoReplicatedDisk&& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline const Aws::String& GetStagingAvailabilityZone() const{ return m_stagingAvailabilityZone; }
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline bool StagingAvailabilityZoneHasBeenSet() const { return m_stagingAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline void SetStagingAvailabilityZone(const Aws::String& value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone = value; }
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline void SetStagingAvailabilityZone(Aws::String&& value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone = std::move(value); }
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline void SetStagingAvailabilityZone(const char* value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone.assign(value); }
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(const Aws::String& value) { SetStagingAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(Aws::String&& value) { SetStagingAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS Availability zone into which data is being replicated.</p>
+     */
+    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(const char* value) { SetStagingAvailabilityZone(value); return *this;}
+
   private:
 
     RecoveryInstanceDataReplicationError m_dataReplicationError;
@@ -276,6 +317,9 @@ namespace Model
 
     Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk> m_replicatedDisks;
     bool m_replicatedDisksHasBeenSet = false;
+
+    Aws::String m_stagingAvailabilityZone;
+    bool m_stagingAvailabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

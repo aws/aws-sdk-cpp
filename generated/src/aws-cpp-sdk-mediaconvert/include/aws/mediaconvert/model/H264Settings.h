@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/H264AdaptiveQuantization.h>
+#include <aws/mediaconvert/model/BandwidthReductionFilter.h>
 #include <aws/mediaconvert/model/H264CodecLevel.h>
 #include <aws/mediaconvert/model/H264CodecProfile.h>
 #include <aws/mediaconvert/model/H264DynamicSubGop.h>
@@ -145,6 +146,79 @@ namespace Model
      * H264TemporalAdaptiveQuantization.
      */
     inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline const BandwidthReductionFilter& GetBandwidthReductionFilter() const{ return m_bandwidthReductionFilter; }
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline bool BandwidthReductionFilterHasBeenSet() const { return m_bandwidthReductionFilterHasBeenSet; }
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline void SetBandwidthReductionFilter(const BandwidthReductionFilter& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = value; }
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline void SetBandwidthReductionFilter(BandwidthReductionFilter&& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = std::move(value); }
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline H264Settings& WithBandwidthReductionFilter(const BandwidthReductionFilter& value) { SetBandwidthReductionFilter(value); return *this;}
+
+    /**
+     * The Bandwidth reduction filter increases the video quality of your output
+     * relative to its bitrate. Use to lower the bitrate of your constant quality QVBR
+     * output, with little or no perceptual decrease in quality. Or, use to increase
+     * the video quality of outputs with other rate control modes relative to the
+     * bitrate that you specify. Bandwidth reduction increases further when your input
+     * is low quality or noisy.Outputs that use this feature incur pro-tier
+     * pricing.When you include Bandwidth reduction filter, you cannot include the
+     * Noise reducer preprocessor.
+     */
+    inline H264Settings& WithBandwidthReductionFilter(BandwidthReductionFilter&& value) { SetBandwidthReductionFilter(std::move(value)); return *this;}
 
 
     /**
@@ -2388,6 +2462,9 @@ namespace Model
 
     H264AdaptiveQuantization m_adaptiveQuantization;
     bool m_adaptiveQuantizationHasBeenSet = false;
+
+    BandwidthReductionFilter m_bandwidthReductionFilter;
+    bool m_bandwidthReductionFilterHasBeenSet = false;
 
     int m_bitrate;
     bool m_bitrateHasBeenSet = false;

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A top level container for a table. Databases and tables are the fundamental
+   * <p>A top-level container for a table. Databases and tables are the fundamental
    * management concepts in Amazon Timestream. All tables in a database are encrypted
    * with the same KMS key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Database">AWS

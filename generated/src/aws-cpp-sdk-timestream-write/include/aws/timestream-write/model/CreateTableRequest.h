@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline const RetentionProperties& GetRetentionProperties() const{ return m_retentionProperties; }
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline bool RetentionPropertiesHasBeenSet() const { return m_retentionPropertiesHasBeenSet; }
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline void SetRetentionProperties(const RetentionProperties& value) { m_retentionPropertiesHasBeenSet = true; m_retentionProperties = value; }
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline void SetRetentionProperties(RetentionProperties&& value) { m_retentionPropertiesHasBeenSet = true; m_retentionProperties = std::move(value); }
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline CreateTableRequest& WithRetentionProperties(const RetentionProperties& value) { SetRetentionProperties(value); return *this;}
 
     /**
-     * <p>The duration for which your time series data must be stored in the memory
+     * <p>The duration for which your time-series data must be stored in the memory
      * store and the magnetic store.</p>
      */
     inline CreateTableRequest& WithRetentionProperties(RetentionProperties&& value) { SetRetentionProperties(std::move(value)); return *this;}

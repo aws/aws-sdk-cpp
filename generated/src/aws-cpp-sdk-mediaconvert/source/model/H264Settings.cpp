@@ -21,6 +21,7 @@ namespace Model
 H264Settings::H264Settings() : 
     m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bandwidthReductionFilterHasBeenSet(false),
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_codecLevel(H264CodecLevel::NOT_SET),
@@ -106,6 +107,7 @@ H264Settings::H264Settings() :
 H264Settings::H264Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bandwidthReductionFilterHasBeenSet(false),
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_codecLevel(H264CodecLevel::NOT_SET),
@@ -196,6 +198,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_adaptiveQuantization = H264AdaptiveQuantizationMapper::GetH264AdaptiveQuantizationForName(jsonValue.GetString("adaptiveQuantization"));
 
     m_adaptiveQuantizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bandwidthReductionFilter"))
+  {
+    m_bandwidthReductionFilter = jsonValue.GetObject("bandwidthReductionFilter");
+
+    m_bandwidthReductionFilterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bitrate"))
@@ -488,6 +497,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_adaptiveQuantizationHasBeenSet)
   {
    payload.WithString("adaptiveQuantization", H264AdaptiveQuantizationMapper::GetNameForH264AdaptiveQuantization(m_adaptiveQuantization));
+  }
+
+  if(m_bandwidthReductionFilterHasBeenSet)
+  {
+   payload.WithObject("bandwidthReductionFilter", m_bandwidthReductionFilter.Jsonize());
+
   }
 
   if(m_bitrateHasBeenSet)

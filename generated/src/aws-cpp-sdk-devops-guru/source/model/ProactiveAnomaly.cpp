@@ -34,7 +34,8 @@ ProactiveAnomaly::ProactiveAnomaly() :
     m_limit(0.0),
     m_limitHasBeenSet(false),
     m_sourceMetadataHasBeenSet(false),
-    m_anomalyResourcesHasBeenSet(false)
+    m_anomalyResourcesHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ ProactiveAnomaly::ProactiveAnomaly(JsonView jsonValue) :
     m_limit(0.0),
     m_limitHasBeenSet(false),
     m_sourceMetadataHasBeenSet(false),
-    m_anomalyResourcesHasBeenSet(false)
+    m_anomalyResourcesHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,13 @@ ProactiveAnomaly& ProactiveAnomaly::operator =(JsonView jsonValue)
     m_anomalyResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -239,6 +248,12 @@ JsonValue ProactiveAnomaly::Jsonize() const
      anomalyResourcesJsonList[anomalyResourcesIndex].AsObject(m_anomalyResources[anomalyResourcesIndex].Jsonize());
    }
    payload.WithArray("AnomalyResources", std::move(anomalyResourcesJsonList));
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

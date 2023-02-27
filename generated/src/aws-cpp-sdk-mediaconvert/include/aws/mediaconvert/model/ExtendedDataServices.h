@@ -43,44 +43,44 @@ namespace Model
 
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline const CopyProtectionAction& GetCopyProtectionAction() const{ return m_copyProtectionAction; }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline bool CopyProtectionActionHasBeenSet() const { return m_copyProtectionActionHasBeenSet; }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline void SetCopyProtectionAction(const CopyProtectionAction& value) { m_copyProtectionActionHasBeenSet = true; m_copyProtectionAction = value; }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline void SetCopyProtectionAction(CopyProtectionAction&& value) { m_copyProtectionActionHasBeenSet = true; m_copyProtectionAction = std::move(value); }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline ExtendedDataServices& WithCopyProtectionAction(const CopyProtectionAction& value) { SetCopyProtectionAction(value); return *this;}
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH,
-     * packets will not be changed. If you select STRIP, any packets will be removed in
-     * output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select
+     * PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will
+     * be removed in output captions.
      */
     inline ExtendedDataServices& WithCopyProtectionAction(CopyProtectionAction&& value) { SetCopyProtectionAction(std::move(value)); return *this;}
 

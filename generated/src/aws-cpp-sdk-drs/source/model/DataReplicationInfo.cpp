@@ -25,7 +25,8 @@ DataReplicationInfo::DataReplicationInfo() :
     m_dataReplicationStateHasBeenSet(false),
     m_etaDateTimeHasBeenSet(false),
     m_lagDurationHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false)
+    m_replicatedDisksHasBeenSet(false),
+    m_stagingAvailabilityZoneHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ DataReplicationInfo::DataReplicationInfo(JsonView jsonValue) :
     m_dataReplicationStateHasBeenSet(false),
     m_etaDateTimeHasBeenSet(false),
     m_lagDurationHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false)
+    m_replicatedDisksHasBeenSet(false),
+    m_stagingAvailabilityZoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,13 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
     m_replicatedDisksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stagingAvailabilityZone"))
+  {
+    m_stagingAvailabilityZone = jsonValue.GetString("stagingAvailabilityZone");
+
+    m_stagingAvailabilityZoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +141,12 @@ JsonValue DataReplicationInfo::Jsonize() const
      replicatedDisksJsonList[replicatedDisksIndex].AsObject(m_replicatedDisks[replicatedDisksIndex].Jsonize());
    }
    payload.WithArray("replicatedDisks", std::move(replicatedDisksJsonList));
+
+  }
+
+  if(m_stagingAvailabilityZoneHasBeenSet)
+  {
+   payload.WithString("stagingAvailabilityZone", m_stagingAvailabilityZone);
 
   }
 

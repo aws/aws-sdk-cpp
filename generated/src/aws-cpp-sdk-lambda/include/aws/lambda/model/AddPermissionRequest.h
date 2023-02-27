@@ -643,9 +643,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
@@ -653,9 +653,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
@@ -663,9 +663,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
@@ -673,9 +673,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
@@ -683,9 +683,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
@@ -693,9 +693,9 @@ namespace Model
 
     /**
      * <p>The type of authentication that your function URL uses. Set to
-     * <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users
-     * only. Set to <code>NONE</code> if you want to bypass IAM authentication to
-     * create a public endpoint. For more information, see <a
+     * <code>AWS_IAM</code> if you want to restrict access to authenticated users only.
+     * Set to <code>NONE</code> if you want to bypass IAM authentication to create a
+     * public endpoint. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */

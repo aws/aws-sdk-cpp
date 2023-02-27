@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Retention properties contain the duration for which your time series data
+   * <p>Retention properties contain the duration for which your time-series data
    * must be stored in the magnetic store and the memory store. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RetentionProperties">AWS

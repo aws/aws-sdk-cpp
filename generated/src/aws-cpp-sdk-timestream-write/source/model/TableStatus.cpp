@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
 
 
         TableStatus GetTableStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return TableStatus::DELETING;
+          }
+          else if (hashCode == RESTORING_HASH)
+          {
+            return TableStatus::RESTORING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ACTIVE";
           case TableStatus::DELETING:
             return "DELETING";
+          case TableStatus::RESTORING:
+            return "RESTORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

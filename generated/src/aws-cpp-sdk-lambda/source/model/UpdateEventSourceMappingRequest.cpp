@@ -35,7 +35,8 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
     m_functionResponseTypesHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false)
+    m_scalingConfigHasBeenSet(false),
+    m_documentDBEventSourceConfigHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,12 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_scalingConfigHasBeenSet)
   {
    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
+
+  }
+
+  if(m_documentDBEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
 
   }
 

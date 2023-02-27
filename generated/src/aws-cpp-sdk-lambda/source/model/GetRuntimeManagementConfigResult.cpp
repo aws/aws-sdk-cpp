@@ -42,6 +42,12 @@ GetRuntimeManagementConfigResult& GetRuntimeManagementConfigResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("FunctionArn"))
+  {
+    m_functionArn = jsonValue.GetString("FunctionArn");
+
+  }
+
 
 
   return *this;

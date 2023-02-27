@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/drs/model/LifeCycleLastLaunchInitiated.h>
+#include <aws/drs/model/LaunchStatus.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,44 @@ namespace Model
      */
     inline LifeCycleLastLaunch& WithInitiated(LifeCycleLastLaunchInitiated&& value) { SetInitiated(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline const LaunchStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline void SetStatus(const LaunchStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline void SetStatus(LaunchStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline LifeCycleLastLaunch& WithStatus(const LaunchStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Status of Source Server's last launch.</p>
+     */
+    inline LifeCycleLastLaunch& WithStatus(LaunchStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     LifeCycleLastLaunchInitiated m_initiated;
     bool m_initiatedHasBeenSet = false;
+
+    LaunchStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

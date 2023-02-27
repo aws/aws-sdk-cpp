@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Table represents a database table in Timestream. Tables contain one or more
-   * related time series. You can modify the retention duration of the memory store
-   * and the magnetic store for a table. </p><p><h3>See Also:</h3>   <a
+   * <p>Represents a database table in Timestream. Tables contain one or more related
+   * time series. You can modify the retention duration of the memory store and the
+   * magnetic store for a table. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Table">AWS
    * API Reference</a></p>
    */

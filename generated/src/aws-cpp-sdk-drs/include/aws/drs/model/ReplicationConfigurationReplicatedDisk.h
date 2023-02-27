@@ -123,44 +123,38 @@ namespace Model
 
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetOptimizedStagingDiskType() const{ return m_optimizedStagingDiskType; }
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline bool OptimizedStagingDiskTypeHasBeenSet() const { return m_optimizedStagingDiskTypeHasBeenSet; }
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline void SetOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = value; }
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline void SetOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = std::move(value); }
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { SetOptimizedStagingDiskType(value); return *this;}
 
     /**
-     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
-     * current staging disk EBS volume type as it is constantly updated by the service.
-     * This is a read-only field.</p>
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
      */
     inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { SetOptimizedStagingDiskType(std::move(value)); return *this;}
 

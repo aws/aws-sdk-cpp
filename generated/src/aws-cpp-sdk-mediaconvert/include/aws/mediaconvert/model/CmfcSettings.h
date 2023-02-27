@@ -1022,7 +1022,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1031,7 +1031,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1040,7 +1040,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1049,7 +1049,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1058,7 +1058,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1067,7 +1067,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1076,7 +1076,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1085,7 +1085,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
-     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * metadata in your output. For more information, see ISO/IEC 23009-1:2022 section
      * 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
      * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
@@ -1095,7 +1095,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1103,7 +1103,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1111,7 +1111,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1119,7 +1119,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1127,7 +1127,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1135,7 +1135,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1143,7 +1143,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1151,7 +1151,7 @@ When you specify Version
 
     /**
      * Specify the event message box (eMSG) value for ID3 timed metadata in your
-     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata (timedMetadata) to Passthrough.
      */

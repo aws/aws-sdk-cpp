@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/ClipLimits.h>
 #include <aws/mediaconvert/model/ColorSpaceConversion.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
+#include <aws/mediaconvert/model/HDRToSDRToneMapper.h>
 #include <aws/mediaconvert/model/SampleRangeConversion.h>
 #include <utility>
 
@@ -296,6 +297,97 @@ namespace Model
 
 
     /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline const HDRToSDRToneMapper& GetHdrToSdrToneMapper() const{ return m_hdrToSdrToneMapper; }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline bool HdrToSdrToneMapperHasBeenSet() const { return m_hdrToSdrToneMapperHasBeenSet; }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline void SetHdrToSdrToneMapper(const HDRToSDRToneMapper& value) { m_hdrToSdrToneMapperHasBeenSet = true; m_hdrToSdrToneMapper = value; }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline void SetHdrToSdrToneMapper(HDRToSDRToneMapper&& value) { m_hdrToSdrToneMapperHasBeenSet = true; m_hdrToSdrToneMapper = std::move(value); }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline ColorCorrector& WithHdrToSdrToneMapper(const HDRToSDRToneMapper& value) { SetHdrToSdrToneMapper(value); return *this;}
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your
+     * SDR output. The mode that you select represents a creative choice, with
+     * different tradeoffs in the details and tones of your output. To maintain details
+     * in bright or saturated areas of your output: Choose Preserve details. For some
+     * sources, your SDR output may look less bright and less saturated when compared
+     * to your HDR source. MediaConvert automatically applies this mode for HLG
+     * sources, regardless of your choice. For a bright and saturated output: Choose
+     * Vibrant. We recommend that you choose this mode when any of your source content
+     * is HDR10, and for the best results when it is mastered for 1000 nits. You may
+     * notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    inline ColorCorrector& WithHdrToSdrToneMapper(HDRToSDRToneMapper&& value) { SetHdrToSdrToneMapper(std::move(value)); return *this;}
+
+
+    /**
      * Hue in degrees.
      */
     inline int GetHue() const{ return m_hue; }
@@ -510,6 +602,9 @@ namespace Model
 
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet = false;
+
+    HDRToSDRToneMapper m_hdrToSdrToneMapper;
+    bool m_hdrToSdrToneMapperHasBeenSet = false;
 
     int m_hue;
     bool m_hueHasBeenSet = false;

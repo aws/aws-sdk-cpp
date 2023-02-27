@@ -79,73 +79,73 @@ namespace Model
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline CreateDatabaseRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline CreateDatabaseRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key for the database. If the KMS key is not specified, the database
-     * will be encrypted with a Timestream managed KMS key located in your account.
-     * Refer to <a
+     * will be encrypted with a Timestream managed KMS key located in your account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-     * Web Services managed KMS keys</a> for more info.</p>
+     * Web Services managed keys</a>.</p>
      */
     inline CreateDatabaseRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

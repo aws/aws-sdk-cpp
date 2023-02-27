@@ -43,7 +43,8 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_functionResponseTypesHasBeenSet(false),
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
     m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false)
+    m_scalingConfigHasBeenSet(false),
+    m_documentDBEventSourceConfigHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_scalingConfigHasBeenSet)
   {
    payload.WithObject("ScalingConfig", m_scalingConfig.Jsonize());
+
+  }
+
+  if(m_documentDBEventSourceConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentDBEventSourceConfig", m_documentDBEventSourceConfig.Jsonize());
 
   }
 

@@ -28,6 +28,7 @@ RecoveryInstance::RecoveryInstance() :
     m_isDrill(false),
     m_isDrillHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_originAvailabilityZoneHasBeenSet(false),
     m_originEnvironment(OriginEnvironment::NOT_SET),
     m_originEnvironmentHasBeenSet(false),
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
@@ -48,6 +49,7 @@ RecoveryInstance::RecoveryInstance(JsonView jsonValue) :
     m_isDrill(false),
     m_isDrillHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_originAvailabilityZoneHasBeenSet(false),
     m_originEnvironment(OriginEnvironment::NOT_SET),
     m_originEnvironmentHasBeenSet(false),
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
@@ -108,6 +110,13 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
     m_jobID = jsonValue.GetString("jobID");
 
     m_jobIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("originAvailabilityZone"))
+  {
+    m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
+
+    m_originAvailabilityZoneHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("originEnvironment"))
@@ -200,6 +209,12 @@ JsonValue RecoveryInstance::Jsonize() const
   if(m_jobIDHasBeenSet)
   {
    payload.WithString("jobID", m_jobID);
+
+  }
+
+  if(m_originAvailabilityZoneHasBeenSet)
+  {
+   payload.WithString("originAvailabilityZone", m_originAvailabilityZone);
 
   }
 
