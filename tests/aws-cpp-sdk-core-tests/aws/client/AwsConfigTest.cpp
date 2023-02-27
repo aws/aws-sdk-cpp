@@ -161,7 +161,7 @@ TEST_F(AWSConfigTestSuite, TestEnvToTrueAndConfigSetToFalseSetsUseRequestCompres
   // create an empty config file
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
   configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
-  configFileNew << "use_request_compression = false" << std::endl;
+  configFileNew << "use_request_compression = enable" << std::endl;
 
   configFileNew.flush();
   configFileNew.close();
@@ -179,7 +179,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
   // create an empty config file
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
   configFileNew << "[profile default]" << std::endl;  // profile keyword is mandatory per specification
-  configFileNew << "use_request_compression = false" << std::endl;
+  configFileNew << "use_request_compression = disable" << std::endl;
 
   configFileNew.flush();
   configFileNew.close();
