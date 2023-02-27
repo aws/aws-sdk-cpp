@@ -238,44 +238,56 @@ namespace Model
 
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline const NoiseReducer& GetNoiseReducer() const{ return m_noiseReducer; }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline bool NoiseReducerHasBeenSet() const { return m_noiseReducerHasBeenSet; }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline void SetNoiseReducer(const NoiseReducer& value) { m_noiseReducerHasBeenSet = true; m_noiseReducer = value; }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline void SetNoiseReducer(NoiseReducer&& value) { m_noiseReducerHasBeenSet = true; m_noiseReducer = std::move(value); }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline VideoPreprocessor& WithNoiseReducer(const NoiseReducer& value) { SetNoiseReducer(value); return *this;}
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
-     * output if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if
+     * necessary. Enable or disable this feature for each output individually. This
+     * setting is disabled by default. When you enable Noise reducer, you must also
+     * select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     * reducer, you cannot include the Bandwidth reduction filter.
      */
     inline VideoPreprocessor& WithNoiseReducer(NoiseReducer&& value) { SetNoiseReducer(std::move(value)); return *this;}
 

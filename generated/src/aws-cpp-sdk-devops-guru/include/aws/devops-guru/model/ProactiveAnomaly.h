@@ -489,6 +489,47 @@ namespace Model
      */
     inline ProactiveAnomaly& AddAnomalyResources(AnomalyResource&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline ProactiveAnomaly& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline ProactiveAnomaly& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p> A description of the proactive anomaly. </p>
+     */
+    inline ProactiveAnomaly& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -529,6 +570,9 @@ namespace Model
 
     Aws::Vector<AnomalyResource> m_anomalyResources;
     bool m_anomalyResourcesHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

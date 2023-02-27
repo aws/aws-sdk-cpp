@@ -212,6 +212,12 @@ CreateEventSourceMappingResult& CreateEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("DocumentDBEventSourceConfig"))
+  {
+    m_documentDBEventSourceConfig = jsonValue.GetObject("DocumentDBEventSourceConfig");
+
+  }
+
 
 
   return *this;

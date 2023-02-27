@@ -19,12 +19,16 @@ namespace Model
 {
 
 LifeCycleLastLaunch::LifeCycleLastLaunch() : 
-    m_initiatedHasBeenSet(false)
+    m_initiatedHasBeenSet(false),
+    m_status(LaunchStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
 LifeCycleLastLaunch::LifeCycleLastLaunch(JsonView jsonValue) : 
-    m_initiatedHasBeenSet(false)
+    m_initiatedHasBeenSet(false),
+    m_status(LaunchStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ LifeCycleLastLaunch& LifeCycleLastLaunch::operator =(JsonView jsonValue)
     m_initiatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue LifeCycleLastLaunch::Jsonize() const
   {
    payload.WithObject("initiated", m_initiated.Jsonize());
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", LaunchStatusMapper::GetNameForLaunchStatus(m_status));
   }
 
   return payload;

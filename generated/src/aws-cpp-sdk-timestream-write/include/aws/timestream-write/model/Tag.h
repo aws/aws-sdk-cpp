@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p> A tag is a label that you assign to a Timestream database and/or table. Each
-   * tag consists of a key and an optional value, both of which you define. Tags
-   * enable you to categorize databases and/or tables, for example, by purpose,
+   * tag consists of a key and an optional value, both of which you define. With
+   * tags, you can categorize databases and/or tables, for example, by purpose,
    * owner, or environment. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Tag">AWS
    * API Reference</a></p>

@@ -603,50 +603,90 @@ namespace Model
 
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is returned only if you've configured a customer managed key.</p>
+     * <p>The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt the function's
+     * snapshot. This key is returned only if you've configured a customer managed
+     * key.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 

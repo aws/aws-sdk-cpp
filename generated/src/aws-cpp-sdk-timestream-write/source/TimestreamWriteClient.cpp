@@ -22,16 +22,20 @@
 #include <aws/timestream-write/TimestreamWriteClient.h>
 #include <aws/timestream-write/TimestreamWriteErrorMarshaller.h>
 #include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
+#include <aws/timestream-write/model/CreateBatchLoadTaskRequest.h>
 #include <aws/timestream-write/model/CreateDatabaseRequest.h>
 #include <aws/timestream-write/model/CreateTableRequest.h>
 #include <aws/timestream-write/model/DeleteDatabaseRequest.h>
 #include <aws/timestream-write/model/DeleteTableRequest.h>
+#include <aws/timestream-write/model/DescribeBatchLoadTaskRequest.h>
 #include <aws/timestream-write/model/DescribeDatabaseRequest.h>
 #include <aws/timestream-write/model/DescribeEndpointsRequest.h>
 #include <aws/timestream-write/model/DescribeTableRequest.h>
+#include <aws/timestream-write/model/ListBatchLoadTasksRequest.h>
 #include <aws/timestream-write/model/ListDatabasesRequest.h>
 #include <aws/timestream-write/model/ListTablesRequest.h>
 #include <aws/timestream-write/model/ListTagsForResourceRequest.h>
+#include <aws/timestream-write/model/ResumeBatchLoadTaskRequest.h>
 #include <aws/timestream-write/model/TagResourceRequest.h>
 #include <aws/timestream-write/model/UntagResourceRequest.h>
 #include <aws/timestream-write/model/UpdateDatabaseRequest.h>
@@ -163,6 +167,56 @@ void TimestreamWriteClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const CreateBatchLoadTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+  if (enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("CreateBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("CreateBatchLoadTask", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("CreateBatchLoadTask", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("CreateBatchLoadTask", "Failed to discover endpoints " << endpointOutcome.GetError());
+        return CreateBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+      }
+    }
+  }
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "CreateBatchLoadTask" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return CreateBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+  if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateBatchLoadTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabaseRequest& request) const
@@ -365,6 +419,56 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
   return DeleteTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const DescribeBatchLoadTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+  if (enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("DescribeBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("DescribeBatchLoadTask", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("DescribeBatchLoadTask", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("DescribeBatchLoadTask", "Failed to discover endpoints " << endpointOutcome.GetError());
+        return DescribeBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+      }
+    }
+  }
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "DescribeBatchLoadTask" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return DescribeBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+  if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeBatchLoadTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDatabaseRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -471,6 +575,56 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBatchLoadTasksRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBatchLoadTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+  if (enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("ListBatchLoadTasks", "Making request to cached endpoint: " << endpoint);
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("ListBatchLoadTasks", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("ListBatchLoadTasks", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("ListBatchLoadTasks", "Failed to discover endpoints " << endpointOutcome.GetError());
+        return ListBatchLoadTasksOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+      }
+    }
+  }
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "ListBatchLoadTasks" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ListBatchLoadTasksOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+  if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBatchLoadTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListBatchLoadTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesRequest& request) const
@@ -621,6 +775,56 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
   }
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const ResumeBatchLoadTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+  if (enableEndpointDiscovery)
+  {
+    Aws::String endpointKey = "Shared";
+    Aws::String endpoint;
+    if (m_endpointsCache.Get(endpointKey, endpoint))
+    {
+      AWS_LOGSTREAM_TRACE("ResumeBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
+    }
+    else
+    {
+      AWS_LOGSTREAM_TRACE("ResumeBatchLoadTask", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+      DescribeEndpointsRequest endpointRequest;
+      auto endpointOutcome = DescribeEndpoints(endpointRequest);
+      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+      {
+        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+        AWS_LOGSTREAM_TRACE("ResumeBatchLoadTask", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
+      }
+      else
+      {
+        AWS_LOGSTREAM_ERROR("ResumeBatchLoadTask", "Failed to discover endpoints " << endpointOutcome.GetError());
+        return ResumeBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+      }
+    }
+  }
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "ResumeBatchLoadTask" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ResumeBatchLoadTaskOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
+  if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ResumeBatchLoadTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& request) const

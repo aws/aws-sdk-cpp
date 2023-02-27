@@ -223,7 +223,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -254,7 +254,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -285,7 +285,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -316,7 +316,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -347,7 +347,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -378,7 +378,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
@@ -409,7 +409,7 @@ namespace Model
      * For example, you can assign the same tag to an Amazon DynamoDB table resource
      * that you assign to an Lambda function. For more information about using tags,
      * see the <a
-     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
      * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
      * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag

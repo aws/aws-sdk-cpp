@@ -146,42 +146,60 @@ namespace Model
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-     * Runtime is required if the deployment package is a .zip file archive. </p>
+     * Runtime is required if the deployment package is a .zip file archive.</p> <p>The
+     * following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.</p>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -666,57 +684,97 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Key Management Service (KMS) key that's used to encrypt your
-     * function's environment variables. If it's not provided, Lambda uses a default
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+     * variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+     * SnapStart</a> is activated, this key is also used to encrypt your function's
+     * snapshot. If you don't provide a customer managed key, Lambda uses a default
      * service key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}

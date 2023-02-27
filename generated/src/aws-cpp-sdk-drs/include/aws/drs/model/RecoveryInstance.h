@@ -292,38 +292,79 @@ namespace Model
 
 
     /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline const Aws::String& GetOriginAvailabilityZone() const{ return m_originAvailabilityZone; }
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline bool OriginAvailabilityZoneHasBeenSet() const { return m_originAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline void SetOriginAvailabilityZone(const Aws::String& value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone = value; }
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline void SetOriginAvailabilityZone(Aws::String&& value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone = std::move(value); }
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline void SetOriginAvailabilityZone(const char* value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone.assign(value); }
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline RecoveryInstance& WithOriginAvailabilityZone(const Aws::String& value) { SetOriginAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline RecoveryInstance& WithOriginAvailabilityZone(Aws::String&& value) { SetOriginAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS availability zone associated with the recovery instance.</p>
+     */
+    inline RecoveryInstance& WithOriginAvailabilityZone(const char* value) { SetOriginAvailabilityZone(value); return *this;}
+
+
+    /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline const OriginEnvironment& GetOriginEnvironment() const{ return m_originEnvironment; }
 
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline bool OriginEnvironmentHasBeenSet() const { return m_originEnvironmentHasBeenSet; }
 
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline void SetOriginEnvironment(const OriginEnvironment& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = value; }
 
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline void SetOriginEnvironment(OriginEnvironment&& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = std::move(value); }
 
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline RecoveryInstance& WithOriginEnvironment(const OriginEnvironment& value) { SetOriginEnvironment(value); return *this;}
 
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from. </p>
+     * originated from.</p>
      */
     inline RecoveryInstance& WithOriginEnvironment(OriginEnvironment&& value) { SetOriginEnvironment(std::move(value)); return *this;}
 
@@ -577,6 +618,9 @@ namespace Model
 
     Aws::String m_jobID;
     bool m_jobIDHasBeenSet = false;
+
+    Aws::String m_originAvailabilityZone;
+    bool m_originAvailabilityZoneHasBeenSet = false;
 
     OriginEnvironment m_originEnvironment;
     bool m_originEnvironmentHasBeenSet = false;

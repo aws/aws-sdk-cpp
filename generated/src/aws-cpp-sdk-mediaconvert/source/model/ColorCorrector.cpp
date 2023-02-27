@@ -27,6 +27,8 @@ ColorCorrector::ColorCorrector() :
     m_contrast(0),
     m_contrastHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_hdrToSdrToneMapper(HDRToSDRToneMapper::NOT_SET),
+    m_hdrToSdrToneMapperHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
@@ -47,6 +49,8 @@ ColorCorrector::ColorCorrector(JsonView jsonValue) :
     m_contrast(0),
     m_contrastHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_hdrToSdrToneMapper(HDRToSDRToneMapper::NOT_SET),
+    m_hdrToSdrToneMapperHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
@@ -94,6 +98,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_hdr10Metadata = jsonValue.GetObject("hdr10Metadata");
 
     m_hdr10MetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hdrToSdrToneMapper"))
+  {
+    m_hdrToSdrToneMapper = HDRToSDRToneMapperMapper::GetHDRToSDRToneMapperForName(jsonValue.GetString("hdrToSdrToneMapper"));
+
+    m_hdrToSdrToneMapperHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hue"))
@@ -158,6 +169,11 @@ JsonValue ColorCorrector::Jsonize() const
   {
    payload.WithObject("hdr10Metadata", m_hdr10Metadata.Jsonize());
 
+  }
+
+  if(m_hdrToSdrToneMapperHasBeenSet)
+  {
+   payload.WithString("hdrToSdrToneMapper", HDRToSDRToneMapperMapper::GetNameForHDRToSDRToneMapper(m_hdrToSdrToneMapper));
   }
 
   if(m_hueHasBeenSet)
