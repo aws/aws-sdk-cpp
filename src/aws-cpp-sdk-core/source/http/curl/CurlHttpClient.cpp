@@ -162,6 +162,21 @@ struct CurlReadCallbackContext
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
 
+static int64_t GetContentLengthFromHeader(CURL* connectionHandle,
+                                          bool& hasContentLength) {
+#if LIBCURL_VERSION_NUM >= 0x073700  // 7.55.0
+  curl_off_t contentLength = {};
+  CURLcode res = curl_easy_getinfo(
+      connectionHandle, CURLINFO_CONTENT_LENGTH_DOWNLOAD_T, &contentLength);
+#else
+  double contentLength = {};
+  CURLcode res = curl_easy_getinfo(
+      connectionHandle, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &contentLength);
+#endif
+  hasContentLength = (res == CURLE_OK) && (contentLength != -1);
+  return hasContentLength ? static_cast<int64_t>(contentLength) : -1;
+}
+
 static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
@@ -643,6 +658,9 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_CAINFO, m_caFile.c_str());
         }
 
+        // enable the cookie engine without reading any initial cookies.
+        curl_easy_setopt(connectionHandle, CURLOPT_COOKIEFILE, "");
+
 	// only set by android test builds because the emulator is missing a cert needed for aws services
 #ifdef TEST_CERT_PATH
 	curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, TEST_CERT_PATH);
@@ -771,15 +789,18 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
                 AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned content type " << contentType);
             }
 
+            bool hasContentLength = false;
+            int64_t contentLength =
+                GetContentLengthFromHeader(connectionHandle, hasContentLength);
+
             if (request->GetMethod() != HttpMethod::HTTP_HEAD &&
                 writeContext.m_client->IsRequestProcessingEnabled() &&
-                response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+                hasContentLength)
             {
-                const Aws::String& contentLength = response->GetHeader(Aws::Http::CONTENT_LENGTH_HEADER);
                 int64_t numBytesResponseReceived = writeContext.m_numBytesResponseReceived;
                 AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Response content-length header: " << contentLength);
                 AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Response body length: " << numBytesResponseReceived);
-                if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
+                if (contentLength != numBytesResponseReceived)
                 {
                     response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
                     response->SetClientErrorMessage("Response body length doesn't match the content-length header.");
