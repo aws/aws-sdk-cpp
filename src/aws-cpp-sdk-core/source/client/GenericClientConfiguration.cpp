@@ -53,8 +53,8 @@ GenericClientConfiguration<true>::GenericClientConfiguration()
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputProfileName, bool disableIMDS)
-    : ClientConfiguration(inputProfileName, disableIMDS),
+GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
+    : ClientConfiguration(inputProfileName, shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {
@@ -62,8 +62,8 @@ GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputPr
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* inputDefaultMode, bool disableIMDS)
-    : ClientConfiguration(useSmartDefaults, inputDefaultMode, disableIMDS),
+GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* inputDefaultMode, bool shouldDisableIMDS)
+    : ClientConfiguration(useSmartDefaults, inputDefaultMode, shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {

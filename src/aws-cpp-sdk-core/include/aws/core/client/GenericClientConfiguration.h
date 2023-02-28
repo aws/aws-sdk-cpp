@@ -28,20 +28,20 @@ namespace Aws
              * Create a configuration based on settings in the aws configuration file for the given profile name.
              * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
              * @param profileName the aws profile name.
-             * @param disableIMDS whether or not to disable IMDS calls.
+             * @param shouldDisableIMDS whether or not to disable IMDS calls.
              */
-            GenericClientConfiguration(const char* inputProfileName, bool disableIMDS = false)
-              : ClientConfiguration(inputProfileName, disableIMDS)
+            GenericClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS = false)
+              : ClientConfiguration(inputProfileName, shouldDisableIMDS)
             {}
 
             /**
              * Create a configuration with a predefined smart defaults
              * @param useSmartDefaults, required to differentiate c-tors
              * @param defaultMode, default mode to use
-             * @param disableIMDS whether or not to disable IMDS calls.
+             * @param shouldDisableIMDS whether or not to disable IMDS calls.
              */
-            explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool disableIMDS = false)
-              : ClientConfiguration(useSmartDefaults, defaultMode, disableIMDS)
+            explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false)
+              : ClientConfiguration(useSmartDefaults, defaultMode, shouldDisableIMDS)
             {}
 
             GenericClientConfiguration(const ClientConfiguration& config)
@@ -57,8 +57,8 @@ namespace Aws
             static const bool EndpointDiscoverySupported = true;
 
             GenericClientConfiguration();
-            GenericClientConfiguration(const char* profileName, bool disableIMDSV1 = false);
-            explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool disableIMDSV1 = false);
+            GenericClientConfiguration(const char* profileName, bool shouldDisableIMDS = false);
+            explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
             GenericClientConfiguration(const ClientConfiguration& config);
             GenericClientConfiguration(const GenericClientConfiguration&);
             GenericClientConfiguration& operator=(const GenericClientConfiguration&);

@@ -66,17 +66,17 @@ namespace Aws
              * Create a configuration based on settings in the aws configuration file for the given profile name.
              * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
              * @param profileName the aws profile name.
-             * @param disableIMDS whether or not to disable IMDS calls.
+             * @param shouldDisableIMDS whether or not to disable IMDS calls.
              */
-            ClientConfiguration(const char* profileName, bool disableIMDS = false);
+            ClientConfiguration(const char* profileName, bool shouldDisableIMDS = false);
 
             /**
              * Create a configuration with a predefined smart defaults
              * @param useSmartDefaults, required to differentiate c-tors
              * @param defaultMode, default mode to use
-             * @param disableIMDS whether or not to disable IMDS calls.
+             * @param shouldDisableIMDS whether or not to disable IMDS calls.
              */
-            explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool disableIMDS = false);
+            explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
