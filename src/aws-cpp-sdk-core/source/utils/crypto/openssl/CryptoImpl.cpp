@@ -425,8 +425,8 @@ namespace Aws
 #elif OPENSSL_VERSION_LESS_3_0
                     m_ctx = HMAC_CTX_new();
 #else
-                    mac = EVP_MAC_fetch(NULL, "HMAC", NULL);
-                    m_ctx = EVP_MAC_CTX_new(mac);
+                    m_mac = EVP_MAC_fetch(NULL, "HMAC", NULL);
+                    m_ctx = EVP_MAC_CTX_new(m_mac);
 #endif
                     assert(m_ctx != nullptr);
                 }
@@ -437,6 +437,7 @@ namespace Aws
 #elif OPENSSL_VERSION_LESS_3_0
                     HMAC_CTX_free(m_ctx);
 #else
+                    EVP_MAC_free(m_mac);
                     EVP_MAC_CTX_free(m_ctx);
 #endif
                     m_ctx = nullptr;
@@ -453,7 +454,7 @@ namespace Aws
 #if OPENSSL_VERSION_LESS_3_0
                 HMAC_CTX *m_ctx;
 #else
-                EVP_MAC *mac;
+                EVP_MAC *m_mac;
                 EVP_MAC_CTX *m_ctx;
 #endif
             };
