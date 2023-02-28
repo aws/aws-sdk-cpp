@@ -55,8 +55,8 @@ def main():
         test_exe = os.path.join(arguments["testDir"], testName if test_has_parent_dir else "", testName) + exe_extension
         # when build with BUILD_ONLY, not all test binaries will be generated.
         if not os.path.isfile(test_exe):
-            print("Test: \"{}\" doesn't exist, skipped.".format(test_exe))
-            continue
+            print("Test: \"{}\" doesn't exist, failing test run.".format(test_exe))
+            exit(1)
         prefix = "--aws_resource_prefix=" + ''.join(
             random.choice(string.ascii_lowercase + string.digits) for _ in range(8))
         print("testExe = " + test_exe)
