@@ -32,4 +32,4 @@ export AWS_PROFILE=$profile
 export DYLD_LIBRARY_PATH=$CATAPULT_WORKSPACE_DIR/mac-install/lib
 cd "${PREFIX_DIR}/mac-build"
 if [ -f "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt" ]; then export LSAN_OPTIONS=suppressions="${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/suppressions.txt"; fi
-python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir .
+python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./tests
