@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/BlueprintType.h>
 #include <aws/lightsail/model/InstancePlatform.h>
+#include <aws/lightsail/model/AppCategory.h>
 #include <utility>
 
 namespace Aws
@@ -521,6 +522,49 @@ namespace Model
      */
     inline Blueprint& WithPlatform(InstancePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline const AppCategory& GetAppCategory() const{ return m_appCategory; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline bool AppCategoryHasBeenSet() const { return m_appCategoryHasBeenSet; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline void SetAppCategory(const AppCategory& value) { m_appCategoryHasBeenSet = true; m_appCategory = value; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline void SetAppCategory(AppCategory&& value) { m_appCategoryHasBeenSet = true; m_appCategory = std::move(value); }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Blueprint& WithAppCategory(const AppCategory& value) { SetAppCategory(value); return *this;}
+
+    /**
+     * <p>Virtual computer blueprints that are supported by Lightsail for Research.</p>
+     *  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Blueprint& WithAppCategory(AppCategory&& value) { SetAppCategory(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_blueprintId;
@@ -558,6 +602,9 @@ namespace Model
 
     InstancePlatform m_platform;
     bool m_platformHasBeenSet = false;
+
+    AppCategory m_appCategory;
+    bool m_appCategoryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1429,7 +1429,8 @@ namespace Omics
         }
 
         /**
-         * <p>Starts a read set activation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Activates an archived read set. To reduce storage charges, Amazon Omics
+         * archives unused read sets after 30 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetActivationJob">AWS
          * API Reference</a></p>
          */
@@ -1454,7 +1455,7 @@ namespace Omics
         }
 
         /**
-         * <p>Starts a read set export job.</p><p><h3>See Also:</h3>   <a
+         * <p>Exports a read set to Amazon S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetExportJob">AWS
          * API Reference</a></p>
          */

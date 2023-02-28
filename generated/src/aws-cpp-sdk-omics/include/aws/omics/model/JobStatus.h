@@ -20,7 +20,8 @@ namespace Model
     IN_PROGRESS,
     CANCELLED,
     COMPLETED,
-    FAILED
+    FAILED,
+    COMPLETED_WITH_FAILURES
   };
 
 namespace JobStatusMapper

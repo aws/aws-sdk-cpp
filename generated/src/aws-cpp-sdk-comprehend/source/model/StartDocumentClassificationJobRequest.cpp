@@ -22,7 +22,8 @@ StartDocumentClassificationJobRequest::StartDocumentClassificationJobRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,12 @@ Aws::String StartDocumentClassificationJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

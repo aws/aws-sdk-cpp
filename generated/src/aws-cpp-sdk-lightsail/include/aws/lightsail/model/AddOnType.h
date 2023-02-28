@@ -16,7 +16,8 @@ namespace Model
   enum class AddOnType
   {
     NOT_SET,
-    AutoSnapshot
+    AutoSnapshot,
+    StopInstanceOnIdle
   };
 
 namespace AddOnTypeMapper

@@ -136,27 +136,32 @@ namespace Model
 
 
     /**
-     * <p>The store's genome reference.</p>
+     * <p>The store's genome reference. Required for all stores except TSV format with
+     * generic annotations.</p>
      */
     inline const ReferenceItem& GetReference() const{ return m_reference; }
 
     /**
-     * <p>The store's genome reference.</p>
+     * <p>The store's genome reference. Required for all stores except TSV format with
+     * generic annotations.</p>
      */
     inline void SetReference(const ReferenceItem& value) { m_reference = value; }
 
     /**
-     * <p>The store's genome reference.</p>
+     * <p>The store's genome reference. Required for all stores except TSV format with
+     * generic annotations.</p>
      */
     inline void SetReference(ReferenceItem&& value) { m_reference = std::move(value); }
 
     /**
-     * <p>The store's genome reference.</p>
+     * <p>The store's genome reference. Required for all stores except TSV format with
+     * generic annotations.</p>
      */
     inline CreateAnnotationStoreResult& WithReference(const ReferenceItem& value) { SetReference(value); return *this;}
 
     /**
-     * <p>The store's genome reference.</p>
+     * <p>The store's genome reference. Required for all stores except TSV format with
+     * generic annotations.</p>
      */
     inline CreateAnnotationStoreResult& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
 

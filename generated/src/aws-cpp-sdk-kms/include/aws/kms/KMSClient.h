@@ -44,12 +44,12 @@ namespace KMS
    * Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic
    * Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and
    * later support these modes.</p> <p> <b>Signing Requests</b> </p> <p>Requests must
-   * be signed by using an access key ID and a secret access key. We strongly
-   * recommend that you <i>do not</i> use your Amazon Web Services account (root)
-   * access key ID and secret access key for everyday work with KMS. Instead, use the
-   * access key ID and secret access key for an IAM user. You can also use the Amazon
-   * Web Services Security Token Service to generate temporary security credentials
-   * that you can use to sign requests.</p> <p>All KMS operations require <a
+   * be signed using an access key ID and a secret access key. We strongly recommend
+   * that you do not use your Amazon Web Services account root access key ID and
+   * secret access key for everyday work. You can use the access key ID and secret
+   * access key for an IAM user or you can use the Security Token Service (STS) to
+   * generate temporary security credentials and use those to sign requests. </p>
+   * <p>All KMS requests must be signed with <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4</a>.</p> <p> <b>Logging API Requests</b> </p> <p>KMS supports
    * CloudTrail, a service that logs Amazon Web Services API calls and related events
@@ -689,12 +689,12 @@ namespace KMS
          * encrypted under a different KMS key, the <code>Decrypt</code> operation fails.
          * This practice ensures that you use the KMS key that you intend.</p> <p>Whenever
          * possible, use key policies to give users permission to call the
-         * <code>Decrypt</code> operation on a particular KMS key, instead of using IAM
-         * policies. Otherwise, you might create an IAM user policy that gives the user
-         * <code>Decrypt</code> permission on all KMS keys. This user could decrypt
-         * ciphertext that was encrypted by KMS keys in other accounts if the key policy
-         * for the cross-account KMS key permits it. If you must use an IAM policy for
-         * <code>Decrypt</code> permissions, limit the user to particular KMS keys or
+         * <code>Decrypt</code> operation on a particular KMS key, instead of using
+         * &amp;IAM; policies. Otherwise, you might create an &amp;IAM; policy that gives
+         * the user <code>Decrypt</code> permission on all KMS keys. This user could
+         * decrypt ciphertext that was encrypted by KMS keys in other accounts if the key
+         * policy for the cross-account KMS key permits it. If you must use an IAM policy
+         * for <code>Decrypt</code> permissions, limit the user to particular KMS keys or
          * particular trusted accounts. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
          * practices for IAM policies</a> in the <i>Key Management Service Developer
@@ -709,10 +709,9 @@ namespace KMS
          * in a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-         * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a
-         * different Amazon Web Services account, specify the key ARN or alias ARN in the
-         * value of the <code>KeyId</code> parameter. </p> <p> <b>Required permissions</b>:
-         * <a
+         * <p> <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter
+         * to identify a KMS key in a different Amazon Web Services account, specify the
+         * key ARN or the alias ARN of the KMS key.</p> <p> <b>Required permissions</b>: <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Decrypt</a>
          * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
          * <a>Encrypt</a> </p> </li> <li> <p> <a>GenerateDataKey</a> </p> </li> <li> <p>
@@ -1380,9 +1379,9 @@ namespace KMS
          * KMS key, use the <a>DescribeKey</a> operation.</p> <p>You must also specify the
          * length of the data key. Use either the <code>KeySpec</code> or
          * <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit
-         * data keys, use the <code>KeySpec</code> parameter.</p> <p>To generate an SM4
-         * data key (China Regions only), specify a <code>KeySpec</code> value of
-         * <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>.
+         * data keys, use the <code>KeySpec</code> parameter.</p> <p>To generate a 128-bit
+         * SM4 data key (China Regions only), specify a <code>KeySpec</code> value of
+         * <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>.
          * The symmetric encryption key used in China Regions to encrypt your data key is
          * an SM4 encryption key.</p> <p>To get only an encrypted copy of the data key, use
          * <a>GenerateDataKeyWithoutPlaintext</a>. To generate an asymmetric data key pair,
@@ -3209,21 +3208,23 @@ namespace KMS
          * verified by using the public key in the same asymmetric KMS key. For information
          * about asymmetric KMS keys, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-         * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>To
-         * verify a digital signature, you can use the <code>Verify</code> operation.
-         * Specify the same asymmetric KMS key, message, and signing algorithm that were
-         * used to produce the signature.</p> <p>You can also verify the digital signature
-         * by using the public key of the KMS key outside of KMS. Use the
-         * <a>GetPublicKey</a> operation to download the public key in the asymmetric KMS
-         * key and then use the public key to verify the signature outside of KMS. The
-         * advantage of using the <code>Verify</code> operation is that it is performed
-         * within KMS. As a result, it's easy to call, the operation is performed within
-         * the FIPS boundary, it is logged in CloudTrail, and you can use key policy and
-         * IAM policy to determine who is authorized to use the KMS key to verify
-         * signatures.</p> <p>To verify a signature outside of KMS with an SM2 public key
-         * (China Regions only), you must specify the distinguishing ID. By default, KMS
-         * uses <code>1234567812345678</code> as the distinguishing ID. For more
-         * information, see <a
+         * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>To use
+         * the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+         * and signing algorithm that were used to produce the signature. The message type
+         * does not need to be the same as the one used for signing, but it must indicate
+         * whether the value of the <code>Message</code> parameter should be hashed as part
+         * of the verification process.</p> <p>You can also verify the digital signature by
+         * using the public key of the KMS key outside of KMS. Use the <a>GetPublicKey</a>
+         * operation to download the public key in the asymmetric KMS key and then use the
+         * public key to verify the signature outside of KMS. The advantage of using the
+         * <code>Verify</code> operation is that it is performed within KMS. As a result,
+         * it's easy to call, the operation is performed within the FIPS boundary, it is
+         * logged in CloudTrail, and you can use key policy and IAM policy to determine who
+         * is authorized to use the KMS key to verify signatures.</p> <p>To verify a
+         * signature outside of KMS with an SM2 public key (China Regions only), you must
+         * specify the distinguishing ID. By default, KMS uses
+         * <code>1234567812345678</code> as the distinguishing ID. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
          * verification with SM2 key pairs</a>.</p> <p>The KMS key that you use for this
          * operation must be in a compatible key state. For details, see <a

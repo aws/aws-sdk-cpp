@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the entity recognizer submitted with an entity
-   * recognizer.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the entity list submitted with an entity recognizer.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerEntityList">AWS
    * API Reference</a></p>
    */

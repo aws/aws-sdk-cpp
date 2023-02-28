@@ -39,7 +39,8 @@ DocumentClassifierProperties::DocumentClassifierProperties() :
     m_modeHasBeenSet(false),
     m_modelKmsKeyIdHasBeenSet(false),
     m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false)
+    m_sourceModelArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) :
     m_modeHasBeenSet(false),
     m_modelKmsKeyIdHasBeenSet(false),
     m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false)
+    m_sourceModelArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +199,13 @@ DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView 
     m_sourceModelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlywheelArn"))
+  {
+    m_flywheelArn = jsonValue.GetString("FlywheelArn");
+
+    m_flywheelArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -302,6 +311,12 @@ JsonValue DocumentClassifierProperties::Jsonize() const
   if(m_sourceModelArnHasBeenSet)
   {
    payload.WithString("SourceModelArn", m_sourceModelArn);
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

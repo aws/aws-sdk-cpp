@@ -207,42 +207,42 @@ namespace Model
 
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline const Aws::Vector<ExportReadSet>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(const Aws::Vector<ExportReadSet>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(Aws::Vector<ExportReadSet>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetExportJobRequest& WithSources(const Aws::Vector<ExportReadSet>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetExportJobRequest& WithSources(Aws::Vector<ExportReadSet>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetExportJobRequest& AddSources(const ExportReadSet& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * <p>Sources for the job.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetExportJobRequest& AddSources(ExportReadSet&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

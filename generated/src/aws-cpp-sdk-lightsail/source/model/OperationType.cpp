@@ -100,6 +100,8 @@ namespace Aws
         static const int UpdateBucket_HASH = HashingUtils::HashString("UpdateBucket");
         static const int SetResourceAccessForBucket_HASH = HashingUtils::HashString("SetResourceAccessForBucket");
         static const int UpdateInstanceMetadataOptions_HASH = HashingUtils::HashString("UpdateInstanceMetadataOptions");
+        static const int StartGUISession_HASH = HashingUtils::HashString("StartGUISession");
+        static const int StopGUISession_HASH = HashingUtils::HashString("StopGUISession");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -425,6 +427,14 @@ namespace Aws
           {
             return OperationType::UpdateInstanceMetadataOptions;
           }
+          else if (hashCode == StartGUISession_HASH)
+          {
+            return OperationType::StartGUISession;
+          }
+          else if (hashCode == StopGUISession_HASH)
+          {
+            return OperationType::StopGUISession;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -599,6 +609,10 @@ namespace Aws
             return "SetResourceAccessForBucket";
           case OperationType::UpdateInstanceMetadataOptions:
             return "UpdateInstanceMetadataOptions";
+          case OperationType::StartGUISession:
+            return "StartGUISession";
+          case OperationType::StopGUISession:
+            return "StopGUISession";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

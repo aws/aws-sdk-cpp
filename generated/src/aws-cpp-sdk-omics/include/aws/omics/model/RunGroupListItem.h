@@ -173,22 +173,22 @@ namespace Model
 
 
     /**
-     * <p>The group's maximum duration setting.</p>
+     * <p>The group's maximum duration setting in minutes.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
 
     /**
-     * <p>The group's maximum duration setting.</p>
+     * <p>The group's maximum duration setting in minutes.</p>
      */
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
 
     /**
-     * <p>The group's maximum duration setting.</p>
+     * <p>The group's maximum duration setting in minutes.</p>
      */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
-     * <p>The group's maximum duration setting.</p>
+     * <p>The group's maximum duration setting in minutes.</p>
      */
     inline RunGroupListItem& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
 

@@ -92,22 +92,22 @@ namespace Model
 
 
     /**
-     * <p>The task's memory.</p>
+     * <p>The task's memory use in gigabyes.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The task's memory.</p>
+     * <p>The task's memory use in gigabyes.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>The task's memory.</p>
+     * <p>The task's memory use in gigabyes.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>The task's memory.</p>
+     * <p>The task's memory use in gigabyes.</p>
      */
     inline TaskListItem& WithMemory(int value) { SetMemory(value); return *this;}
 

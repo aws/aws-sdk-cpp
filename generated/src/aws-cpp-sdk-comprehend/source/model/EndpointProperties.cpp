@@ -32,7 +32,8 @@ EndpointProperties::EndpointProperties() :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
-    m_desiredDataAccessRoleArnHasBeenSet(false)
+    m_desiredDataAccessRoleArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ EndpointProperties::EndpointProperties(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
-    m_desiredDataAccessRoleArnHasBeenSet(false)
+    m_desiredDataAccessRoleArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,13 @@ EndpointProperties& EndpointProperties::operator =(JsonView jsonValue)
     m_desiredDataAccessRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlywheelArn"))
+  {
+    m_flywheelArn = jsonValue.GetString("FlywheelArn");
+
+    m_flywheelArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +210,12 @@ JsonValue EndpointProperties::Jsonize() const
   if(m_desiredDataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DesiredDataAccessRoleArn", m_desiredDataAccessRoleArn);
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

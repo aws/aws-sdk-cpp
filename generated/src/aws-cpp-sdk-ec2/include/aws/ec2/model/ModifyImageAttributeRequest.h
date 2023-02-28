@@ -46,49 +46,57 @@ namespace Model
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute to modify.</p> <p>Valid values:
-     * <code>description</code> | <code>launchPermission</code> </p>
+     * <code>description</code> | <code>imdsSupport</code> |
+     * <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
 
@@ -391,49 +399,57 @@ namespace Model
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute being modified. This parameter can be used only
-     * when the <code>Attribute</code> parameter is <code>description</code>.</p>
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>imdsSupport</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
@@ -598,6 +614,97 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& AddOrganizationalUnitArns(const char* value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline const AttributeValue& GetImdsSupport() const{ return m_imdsSupport; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline bool ImdsSupportHasBeenSet() const { return m_imdsSupportHasBeenSet; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline void SetImdsSupport(const AttributeValue& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline void SetImdsSupport(AttributeValue&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::move(value); }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline ModifyImageAttributeRequest& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>Do not use
+     * this parameter unless your AMI software supports IMDSv2. After you set the value
+     * to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI is to
+     * create a new AMI from the underlying snapshot.</p> 
+     */
+    inline ModifyImageAttributeRequest& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_attribute;
@@ -635,6 +742,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_organizationalUnitArns;
     bool m_organizationalUnitArnsHasBeenSet = false;
+
+    AttributeValue m_imdsSupport;
+    bool m_imdsSupportHasBeenSet = false;
   };
 
 } // namespace Model

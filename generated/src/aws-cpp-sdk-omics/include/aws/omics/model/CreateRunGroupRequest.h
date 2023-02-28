@@ -56,22 +56,22 @@ namespace Model
 
 
     /**
-     * <p>A max duration for the group.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
 
     /**
-     * <p>A max duration for the group.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
 
     /**
-     * <p>A max duration for the group.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
-     * <p>A max duration for the group.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline CreateRunGroupRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
 
@@ -139,42 +139,50 @@ namespace Model
 
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateRunGroupRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateRunGroupRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>A request ID for the group.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateRunGroupRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

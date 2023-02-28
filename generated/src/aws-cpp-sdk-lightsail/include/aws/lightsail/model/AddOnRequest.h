@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/AddOnType.h>
 #include <aws/lightsail/model/AutoSnapshotAddOnRequest.h>
+#include <aws/lightsail/model/StopInstanceOnIdleRequest.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +110,49 @@ namespace Model
      */
     inline AddOnRequest& WithAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequest&& value) { SetAutoSnapshotAddOnRequest(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline const StopInstanceOnIdleRequest& GetStopInstanceOnIdleRequest() const{ return m_stopInstanceOnIdleRequest; }
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline bool StopInstanceOnIdleRequestHasBeenSet() const { return m_stopInstanceOnIdleRequestHasBeenSet; }
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetStopInstanceOnIdleRequest(const StopInstanceOnIdleRequest& value) { m_stopInstanceOnIdleRequestHasBeenSet = true; m_stopInstanceOnIdleRequest = value; }
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetStopInstanceOnIdleRequest(StopInstanceOnIdleRequest&& value) { m_stopInstanceOnIdleRequestHasBeenSet = true; m_stopInstanceOnIdleRequest = std::move(value); }
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline AddOnRequest& WithStopInstanceOnIdleRequest(const StopInstanceOnIdleRequest& value) { SetStopInstanceOnIdleRequest(value); return *this;}
+
+    /**
+     * <p>An object that represents additional parameters when enabling or modifying
+     * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline AddOnRequest& WithStopInstanceOnIdleRequest(StopInstanceOnIdleRequest&& value) { SetStopInstanceOnIdleRequest(std::move(value)); return *this;}
+
   private:
 
     AddOnType m_addOnType;
@@ -116,6 +160,9 @@ namespace Model
 
     AutoSnapshotAddOnRequest m_autoSnapshotAddOnRequest;
     bool m_autoSnapshotAddOnRequestHasBeenSet = false;
+
+    StopInstanceOnIdleRequest m_stopInstanceOnIdleRequest;
+    bool m_stopInstanceOnIdleRequestHasBeenSet = false;
   };
 
 } // namespace Model

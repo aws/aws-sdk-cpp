@@ -95,7 +95,9 @@ namespace Model
     UpdateBucketBundle,
     UpdateBucket,
     SetResourceAccessForBucket,
-    UpdateInstanceMetadataOptions
+    UpdateInstanceMetadataOptions,
+    StartGUISession,
+    StopGUISession
   };
 
 namespace OperationTypeMapper

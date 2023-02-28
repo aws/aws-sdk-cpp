@@ -109,6 +109,47 @@ namespace Model
      */
     inline VariantImportItemDetail& WithSource(const char* value) { SetSource(value); return *this;}
 
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline VariantImportItemDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline VariantImportItemDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p> A message that provides additional context about a job </p>
+     */
+    inline VariantImportItemDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
   private:
 
     JobStatus m_jobStatus;
@@ -116,6 +157,9 @@ namespace Model
 
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

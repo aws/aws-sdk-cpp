@@ -133,13 +133,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
 
@@ -148,13 +146,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
 
@@ -163,13 +159,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
@@ -178,13 +172,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
 
@@ -193,13 +185,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
 
@@ -208,13 +198,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
 
@@ -223,13 +211,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
 
@@ -238,13 +224,11 @@ namespace Model
      * Amazon Web Services account.</p> <p>To specify the retiring principal, use the
      * <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web
-     * Services principals include Amazon Web Services accounts (root), IAM users,
-     * federated users, and assumed role users. For examples of the ARN syntax for
-     * specifying a principal, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
-     * Web Services Identity and Access Management (IAM)</a> in the Example ARNs
-     * section of the <i>Amazon Web Services General Reference</i>.</p>
+     * Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals
+     * include Amazon Web Services accounts, IAM users, IAM roles, federated users, and
+     * assumed role users. For help with the ARN syntax for a principal, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 

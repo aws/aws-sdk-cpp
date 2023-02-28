@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 GetBlueprintsRequest::GetBlueprintsRequest() : 
     m_includeInactive(false),
     m_includeInactiveHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
+    m_pageTokenHasBeenSet(false),
+    m_appCategory(AppCategory::NOT_SET),
+    m_appCategoryHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,11 @@ Aws::String GetBlueprintsRequest::SerializePayload() const
   {
    payload.WithString("pageToken", m_pageToken);
 
+  }
+
+  if(m_appCategoryHasBeenSet)
+  {
+   payload.WithString("appCategory", AppCategoryMapper::GetNameForAppCategory(m_appCategory));
   }
 
   return payload.View().WriteReadable();

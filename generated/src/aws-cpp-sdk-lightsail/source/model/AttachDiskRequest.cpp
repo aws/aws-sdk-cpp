@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 AttachDiskRequest::AttachDiskRequest() : 
     m_diskNameHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_diskPathHasBeenSet(false)
+    m_diskPathHasBeenSet(false),
+    m_autoMounting(false),
+    m_autoMountingHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,12 @@ Aws::String AttachDiskRequest::SerializePayload() const
   if(m_diskPathHasBeenSet)
   {
    payload.WithString("diskPath", m_diskPath);
+
+  }
+
+  if(m_autoMountingHasBeenSet)
+  {
+   payload.WithBool("autoMounting", m_autoMounting);
 
   }
 

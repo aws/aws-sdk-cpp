@@ -34,7 +34,9 @@ Blueprint::Blueprint() :
     m_productUrlHasBeenSet(false),
     m_licenseUrlHasBeenSet(false),
     m_platform(InstancePlatform::NOT_SET),
-    m_platformHasBeenSet(false)
+    m_platformHasBeenSet(false),
+    m_appCategory(AppCategory::NOT_SET),
+    m_appCategoryHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ Blueprint::Blueprint(JsonView jsonValue) :
     m_productUrlHasBeenSet(false),
     m_licenseUrlHasBeenSet(false),
     m_platform(InstancePlatform::NOT_SET),
-    m_platformHasBeenSet(false)
+    m_platformHasBeenSet(false),
+    m_appCategory(AppCategory::NOT_SET),
+    m_appCategoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +149,13 @@ Blueprint& Blueprint::operator =(JsonView jsonValue)
     m_platformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("appCategory"))
+  {
+    m_appCategory = AppCategoryMapper::GetAppCategoryForName(jsonValue.GetString("appCategory"));
+
+    m_appCategoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +231,11 @@ JsonValue Blueprint::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", InstancePlatformMapper::GetNameForInstancePlatform(m_platform));
+  }
+
+  if(m_appCategoryHasBeenSet)
+  {
+   payload.WithString("appCategory", AppCategoryMapper::GetNameForAppCategory(m_appCategory));
   }
 
   return payload;

@@ -307,6 +307,35 @@ namespace Comprehend
         }
 
         /**
+         * <p>Creates a dataset to upload training or test data for a model associated with
+         * a flywheel. For more information about datasets, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+        Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const CreateDatasetRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::CreateDataset, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+        void CreateDatasetAsync(const CreateDatasetRequestT& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::CreateDataset, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new document classifier that you can use to categorize documents.
          * To create a classifier, you provide a set of training documents that labeled
          * with the categories that you want to use. After the classifier is trained you
@@ -369,7 +398,8 @@ namespace Comprehend
         /**
          * <p>Creates an entity recognizer using submitted files. After your
          * <code>CreateEntityRecognizer</code> request is submitted, you can check job
-         * status using the API. </p><p><h3>See Also:</h3>   <a
+         * status using the <code>DescribeEntityRecognizer</code> API. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">AWS
          * API Reference</a></p>
          */
@@ -391,6 +421,44 @@ namespace Comprehend
         void CreateEntityRecognizerAsync(const CreateEntityRecognizerRequestT& request, const CreateEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComprehendClient::CreateEntityRecognizer, request, handler, context);
+        }
+
+        /**
+         * <p>A flywheel is an AWS resource that orchestrates the ongoing training of a
+         * model for custom classification or custom entity recognition. You can create a
+         * flywheel to start with an existing trained model, or Comprehend can create and
+         * train a new model.</p> <p>When you create the flywheel, Comprehend creates a
+         * data lake in your account. The data lake holds the training data and test data
+         * for all versions of the model.</p> <p>To use a flywheel with an existing trained
+         * model, you specify the active model version. Comprehend copies the model's
+         * training data and test data into the flywheel's data lake.</p> <p>To use the
+         * flywheel with a new model, you need to provide a dataset for training data (and
+         * optional test data) when you create the flywheel.</p> <p>For more information
+         * about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFlywheelOutcome CreateFlywheel(const Model::CreateFlywheelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFlywheel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFlywheelRequestT = Model::CreateFlywheelRequest>
+        Model::CreateFlywheelOutcomeCallable CreateFlywheelCallable(const CreateFlywheelRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::CreateFlywheel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFlywheel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFlywheelRequestT = Model::CreateFlywheelRequest>
+        void CreateFlywheelAsync(const CreateFlywheelRequestT& request, const CreateFlywheelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::CreateFlywheel, request, handler, context);
         }
 
         /**
@@ -485,6 +553,36 @@ namespace Comprehend
         }
 
         /**
+         * <p>Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not
+         * delete the data lake or the model associated with the flywheel.</p> <p>For more
+         * information about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFlywheelOutcome DeleteFlywheel(const Model::DeleteFlywheelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFlywheel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFlywheelRequestT = Model::DeleteFlywheelRequest>
+        Model::DeleteFlywheelOutcomeCallable DeleteFlywheelCallable(const DeleteFlywheelRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::DeleteFlywheel, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFlywheel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFlywheelRequestT = Model::DeleteFlywheelRequest>
+        void DeleteFlywheelAsync(const DeleteFlywheelRequestT& request, const DeleteFlywheelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::DeleteFlywheel, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a resource-based policy that is attached to a custom
          * model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy">AWS
@@ -508,6 +606,35 @@ namespace Comprehend
         void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComprehendClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about the dataset that you specify. For more information
+         * about datasets, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDatasetRequestT = Model::DescribeDatasetRequest>
+        Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const DescribeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::DescribeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDatasetRequestT = Model::DescribeDatasetRequest>
+        void DescribeDatasetAsync(const DescribeDatasetRequestT& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::DescribeDataset, request, handler, context);
         }
 
         /**
@@ -695,6 +822,64 @@ namespace Comprehend
         void DescribeEventsDetectionJobAsync(const DescribeEventsDetectionJobRequestT& request, const DescribeEventsDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComprehendClient::DescribeEventsDetectionJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides configuration information about the flywheel. For more information
+         * about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlywheelOutcome DescribeFlywheel(const Model::DescribeFlywheelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFlywheel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFlywheelRequestT = Model::DescribeFlywheelRequest>
+        Model::DescribeFlywheelOutcomeCallable DescribeFlywheelCallable(const DescribeFlywheelRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::DescribeFlywheel, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFlywheel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFlywheelRequestT = Model::DescribeFlywheelRequest>
+        void DescribeFlywheelAsync(const DescribeFlywheelRequestT& request, const DescribeFlywheelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::DescribeFlywheel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve the configuration properties of a flywheel iteration. For more
+         * information about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlywheelIterationOutcome DescribeFlywheelIteration(const Model::DescribeFlywheelIterationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFlywheelIteration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFlywheelIterationRequestT = Model::DescribeFlywheelIterationRequest>
+        Model::DescribeFlywheelIterationOutcomeCallable DescribeFlywheelIterationCallable(const DescribeFlywheelIterationRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::DescribeFlywheelIteration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFlywheelIteration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFlywheelIterationRequestT = Model::DescribeFlywheelIterationRequest>
+        void DescribeFlywheelIterationAsync(const DescribeFlywheelIterationRequestT& request, const DescribeFlywheelIterationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::DescribeFlywheelIteration, request, handler, context);
         }
 
         /**
@@ -1090,6 +1275,35 @@ namespace Comprehend
         }
 
         /**
+         * <p>List the datasets that you have configured in this region. For more
+         * information about datasets, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::ListDatasets, request);
+        }
+
+        /**
+         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::ListDatasets, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of the documentation classification jobs that you have
          * submitted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">AWS
@@ -1331,6 +1545,61 @@ namespace Comprehend
         }
 
         /**
+         * <p>Information about the history of a flywheel iteration. For more information
+         * about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlywheelIterationHistoryOutcome ListFlywheelIterationHistory(const Model::ListFlywheelIterationHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlywheelIterationHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlywheelIterationHistoryRequestT = Model::ListFlywheelIterationHistoryRequest>
+        Model::ListFlywheelIterationHistoryOutcomeCallable ListFlywheelIterationHistoryCallable(const ListFlywheelIterationHistoryRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::ListFlywheelIterationHistory, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlywheelIterationHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlywheelIterationHistoryRequestT = Model::ListFlywheelIterationHistoryRequest>
+        void ListFlywheelIterationHistoryAsync(const ListFlywheelIterationHistoryRequestT& request, const ListFlywheelIterationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::ListFlywheelIterationHistory, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a list of the flywheels that you have created.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlywheelsOutcome ListFlywheels(const Model::ListFlywheelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlywheels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlywheelsRequestT = Model::ListFlywheelsRequest>
+        Model::ListFlywheelsOutcomeCallable ListFlywheelsCallable(const ListFlywheelsRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::ListFlywheels, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlywheels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlywheelsRequestT = Model::ListFlywheelsRequest>
+        void ListFlywheelsAsync(const ListFlywheelsRequestT& request, const ListFlywheelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::ListFlywheels, request, handler, context);
+        }
+
+        /**
          * <p>Get a list of key phrase detection jobs that you have
          * submitted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">AWS
@@ -1515,8 +1784,9 @@ namespace Comprehend
         }
 
         /**
-         * <p>Starts an asynchronous document classification job. Use the operation to
-         * track the progress of the job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an asynchronous document classification job. Use the
+         * <code>DescribeDocumentClassificationJob</code> operation to track the progress
+         * of the job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">AWS
          * API Reference</a></p>
          */
@@ -1624,6 +1894,35 @@ namespace Comprehend
         }
 
         /**
+         * <p>Start the flywheel iteration.This operation uses any new datasets to train a
+         * new model version. For more information about flywheels, see <a
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+         * Flywheel overview</a> in the <i>Amazon Comprehend Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartFlywheelIterationOutcome StartFlywheelIteration(const Model::StartFlywheelIterationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartFlywheelIteration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartFlywheelIterationRequestT = Model::StartFlywheelIterationRequest>
+        Model::StartFlywheelIterationOutcomeCallable StartFlywheelIterationCallable(const StartFlywheelIterationRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::StartFlywheelIteration, request);
+        }
+
+        /**
+         * An Async wrapper for StartFlywheelIteration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartFlywheelIterationRequestT = Model::StartFlywheelIterationRequest>
+        void StartFlywheelIterationAsync(const StartFlywheelIterationRequestT& request, const StartFlywheelIterationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::StartFlywheelIteration, request, handler, context);
+        }
+
+        /**
          * <p>Starts an asynchronous key phrase detection job for a collection of
          * documents. Use the operation to track the status of a job.</p><p><h3>See
          * Also:</h3>   <a
@@ -1704,8 +2003,8 @@ namespace Comprehend
 
         /**
          * <p>Starts an asynchronous targeted sentiment detection job for a collection of
-         * documents. Use the operation to track the status of a job.</p><p><h3>See
-         * Also:</h3>   <a
+         * documents. Use the <code>DescribeTargetedSentimentDetectionJob</code> operation
+         * to track the status of a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">AWS
          * API Reference</a></p>
          */
@@ -2118,6 +2417,32 @@ namespace Comprehend
         void UpdateEndpointAsync(const UpdateEndpointRequestT& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComprehendClient::UpdateEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Update the configuration information for an existing flywheel.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFlywheelOutcome UpdateFlywheel(const Model::UpdateFlywheelRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFlywheel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFlywheelRequestT = Model::UpdateFlywheelRequest>
+        Model::UpdateFlywheelOutcomeCallable UpdateFlywheelCallable(const UpdateFlywheelRequestT& request) const
+        {
+            return SubmitCallable(&ComprehendClient::UpdateFlywheel, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFlywheel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFlywheelRequestT = Model::UpdateFlywheelRequest>
+        void UpdateFlywheelAsync(const UpdateFlywheelRequestT& request, const UpdateFlywheelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComprehendClient::UpdateFlywheel, request, handler, context);
         }
 
 

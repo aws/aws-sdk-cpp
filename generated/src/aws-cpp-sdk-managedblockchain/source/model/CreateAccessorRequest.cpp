@@ -16,7 +16,8 @@ CreateAccessorRequest::CreateAccessorRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_accessorType(AccessorType::NOT_SET),
-    m_accessorTypeHasBeenSet(false)
+    m_accessorTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,17 @@ Aws::String CreateAccessorRequest::SerializePayload() const
   if(m_accessorTypeHasBeenSet)
   {
    payload.WithString("AccessorType", AccessorTypeMapper::GetNameForAccessorType(m_accessorType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

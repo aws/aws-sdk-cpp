@@ -281,121 +281,121 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that allows Amazon Comprehend to use Amazon Key Management Service (KMS) to
-     * encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
+     * Service (KMS) to encrypt or decrypt the custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline ImportModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline ImportModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */
     inline ImportModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be associated with the custom model that is created by this import. A
-     * tag is a key-value pair that adds as a metadata to a resource used by Amazon
+     * <p>Tags to associate with the custom model that is created by this import. A tag
+     * is a key-value pair that adds as a metadata to a resource used by Amazon
      * Comprehend. For example, a tag with "Sales" as the key might be added to a
      * resource to indicate its use by the sales department.</p>
      */

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/InstancePlatform.h>
+#include <aws/lightsail/model/AppCategory.h>
 #include <utility>
 
 namespace Aws
@@ -390,6 +391,63 @@ namespace Model
      */
     inline Bundle& AddSupportedPlatforms(InstancePlatform&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline const Aws::Vector<AppCategory>& GetSupportedAppCategories() const{ return m_supportedAppCategories; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline bool SupportedAppCategoriesHasBeenSet() const { return m_supportedAppCategoriesHasBeenSet; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline void SetSupportedAppCategories(const Aws::Vector<AppCategory>& value) { m_supportedAppCategoriesHasBeenSet = true; m_supportedAppCategories = value; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline void SetSupportedAppCategories(Aws::Vector<AppCategory>&& value) { m_supportedAppCategoriesHasBeenSet = true; m_supportedAppCategories = std::move(value); }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Bundle& WithSupportedAppCategories(const Aws::Vector<AppCategory>& value) { SetSupportedAppCategories(value); return *this;}
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Bundle& WithSupportedAppCategories(Aws::Vector<AppCategory>&& value) { SetSupportedAppCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Bundle& AddSupportedAppCategories(const AppCategory& value) { m_supportedAppCategoriesHasBeenSet = true; m_supportedAppCategories.push_back(value); return *this; }
+
+    /**
+     * <p>Virtual computer blueprints that are supported by a Lightsail for Research
+     * bundle.</p>  <p>This parameter only applies to Lightsail for Research
+     * resources.</p> 
+     */
+    inline Bundle& AddSupportedAppCategories(AppCategory&& value) { m_supportedAppCategoriesHasBeenSet = true; m_supportedAppCategories.push_back(std::move(value)); return *this; }
+
   private:
 
     double m_price;
@@ -424,6 +482,9 @@ namespace Model
 
     Aws::Vector<InstancePlatform> m_supportedPlatforms;
     bool m_supportedPlatformsHasBeenSet = false;
+
+    Aws::Vector<AppCategory> m_supportedAppCategories;
+    bool m_supportedAppCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

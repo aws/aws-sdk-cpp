@@ -24,7 +24,8 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_organizationArnsHasBeenSet(false),
-    m_organizationalUnitArnsHasBeenSet(false)
+    m_organizationalUnitArnsHasBeenSet(false),
+    m_imdsSupportHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,11 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       organizationalUnitArnsCount++;
     }
+  }
+
+  if(m_imdsSupportHasBeenSet)
+  {
+    m_imdsSupport.OutputToStream(ss, "ImdsSupport");
   }
 
   ss << "Version=2016-11-15";

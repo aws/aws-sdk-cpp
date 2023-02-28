@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int AutoSnapshot_HASH = HashingUtils::HashString("AutoSnapshot");
+        static const int StopInstanceOnIdle_HASH = HashingUtils::HashString("StopInstanceOnIdle");
 
 
         AddOnType GetAddOnTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == AutoSnapshot_HASH)
           {
             return AddOnType::AutoSnapshot;
+          }
+          else if (hashCode == StopInstanceOnIdle_HASH)
+          {
+            return AddOnType::StopInstanceOnIdle;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case AddOnType::AutoSnapshot:
             return "AutoSnapshot";
+          case AddOnType::StopInstanceOnIdle:
+            return "StopInstanceOnIdle";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

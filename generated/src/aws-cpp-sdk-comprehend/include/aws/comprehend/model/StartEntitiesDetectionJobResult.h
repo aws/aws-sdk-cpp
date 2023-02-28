@@ -214,6 +214,42 @@ namespace Model
      */
     inline StartEntitiesDetectionJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline const Aws::String& GetEntityRecognizerArn() const{ return m_entityRecognizerArn; }
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline void SetEntityRecognizerArn(const Aws::String& value) { m_entityRecognizerArn = value; }
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline void SetEntityRecognizerArn(Aws::String&& value) { m_entityRecognizerArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline void SetEntityRecognizerArn(const char* value) { m_entityRecognizerArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline StartEntitiesDetectionJobResult& WithEntityRecognizerArn(const Aws::String& value) { SetEntityRecognizerArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline StartEntitiesDetectionJobResult& WithEntityRecognizerArn(Aws::String&& value) { SetEntityRecognizerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the custom entity recognition model.</p>
+     */
+    inline StartEntitiesDetectionJobResult& WithEntityRecognizerArn(const char* value) { SetEntityRecognizerArn(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -221,6 +257,8 @@ namespace Model
     Aws::String m_jobArn;
 
     JobStatus m_jobStatus;
+
+    Aws::String m_entityRecognizerArn;
   };
 
 } // namespace Model

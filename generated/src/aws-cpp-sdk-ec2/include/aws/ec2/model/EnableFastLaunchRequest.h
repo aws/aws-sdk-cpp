@@ -223,26 +223,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating resources.
-     * Value must be <code>6</code> or greater. </p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching. Value must be
+     * <code>6</code> or greater.</p>
      */
     inline int GetMaxParallelLaunches() const{ return m_maxParallelLaunches; }
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating resources.
-     * Value must be <code>6</code> or greater. </p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching. Value must be
+     * <code>6</code> or greater.</p>
      */
     inline bool MaxParallelLaunchesHasBeenSet() const { return m_maxParallelLaunchesHasBeenSet; }
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating resources.
-     * Value must be <code>6</code> or greater. </p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching. Value must be
+     * <code>6</code> or greater.</p>
      */
     inline void SetMaxParallelLaunches(int value) { m_maxParallelLaunchesHasBeenSet = true; m_maxParallelLaunches = value; }
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating resources.
-     * Value must be <code>6</code> or greater. </p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching. Value must be
+     * <code>6</code> or greater.</p>
      */
     inline EnableFastLaunchRequest& WithMaxParallelLaunches(int value) { SetMaxParallelLaunches(value); return *this;}
 

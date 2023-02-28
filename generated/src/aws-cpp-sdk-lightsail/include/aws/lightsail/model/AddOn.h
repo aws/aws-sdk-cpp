@@ -249,6 +249,112 @@ namespace Model
      */
     inline AddOn& WithNextSnapshotTimeOfDay(const char* value) { SetNextSnapshotTimeOfDay(value); return *this;}
 
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline const Aws::String& GetThreshold() const{ return m_threshold; }
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetThreshold(const Aws::String& value) { m_thresholdHasBeenSet = true; m_threshold = value; }
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetThreshold(Aws::String&& value) { m_thresholdHasBeenSet = true; m_threshold = std::move(value); }
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetThreshold(const char* value) { m_thresholdHasBeenSet = true; m_threshold.assign(value); }
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline AddOn& WithThreshold(const Aws::String& value) { SetThreshold(value); return *this;}
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline AddOn& WithThreshold(Aws::String&& value) { SetThreshold(std::move(value)); return *this;}
+
+    /**
+     * <p>The trigger threshold of the action.</p>  <p>This add-on only
+     * applies to Lightsail for Research resources.</p> 
+     */
+    inline AddOn& WithThreshold(const char* value) { SetThreshold(value); return *this;}
+
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline const Aws::String& GetDuration() const{ return m_duration; }
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline AddOn& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline AddOn& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
+
+    /**
+     * <p>The amount of idle time in minutes after which your virtual computer will
+     * automatically stop.</p>  <p>This add-on only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline AddOn& WithDuration(const char* value) { SetDuration(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -262,6 +368,12 @@ namespace Model
 
     Aws::String m_nextSnapshotTimeOfDay;
     bool m_nextSnapshotTimeOfDayHasBeenSet = false;
+
+    Aws::String m_threshold;
+    bool m_thresholdHasBeenSet = false;
+
+    Aws::String m_duration;
+    bool m_durationHasBeenSet = false;
   };
 
 } // namespace Model

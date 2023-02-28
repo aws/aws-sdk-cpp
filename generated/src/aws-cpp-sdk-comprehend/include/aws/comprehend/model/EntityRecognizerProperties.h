@@ -12,6 +12,7 @@
 #include <aws/comprehend/model/EntityRecognizerInputDataConfig.h>
 #include <aws/comprehend/model/EntityRecognizerMetadata.h>
 #include <aws/comprehend/model/VpcConfig.h>
+#include <aws/comprehend/model/EntityRecognizerOutputDataConfig.h>
 #include <utility>
 
 namespace Aws
@@ -381,50 +382,50 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline EntityRecognizerProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline EntityRecognizerProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline EntityRecognizerProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -584,7 +585,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -595,7 +596,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -606,7 +607,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -617,7 +618,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -628,7 +629,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -639,7 +640,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -650,7 +651,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -661,7 +662,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -767,6 +768,78 @@ namespace Model
      */
     inline EntityRecognizerProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline EntityRecognizerProperties& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline EntityRecognizerProperties& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline EntityRecognizerProperties& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline const EntityRecognizerOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline void SetOutputDataConfig(const EntityRecognizerOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline void SetOutputDataConfig(EntityRecognizerOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline EntityRecognizerProperties& WithOutputDataConfig(const EntityRecognizerOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
+
+    /**
+     * <p>Output data configuration.</p>
+     */
+    inline EntityRecognizerProperties& WithOutputDataConfig(EntityRecognizerOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_entityRecognizerArn;
@@ -816,6 +889,12 @@ namespace Model
 
     Aws::String m_sourceModelArn;
     bool m_sourceModelArnHasBeenSet = false;
+
+    Aws::String m_flywheelArn;
+    bool m_flywheelArnHasBeenSet = false;
+
+    EntityRecognizerOutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

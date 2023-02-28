@@ -177,37 +177,41 @@ namespace Model
 
     /**
      * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. You cannot specify this parameter and the instance
-     * IDs parameter in the same call. For more information, see <a
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>You cannot specify this parameter and the instance IDs parameter in the same
+     * call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. You cannot specify this parameter and the instance
-     * IDs parameter in the same call. For more information, see <a
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>You cannot specify this parameter and the instance IDs parameter in the same
+     * call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. You cannot specify this parameter and the instance
-     * IDs parameter in the same call. For more information, see <a
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>You cannot specify this parameter and the instance IDs parameter in the same
+     * call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. This value
-     * can be between 5 and 1000. You cannot specify this parameter and the instance
-     * IDs parameter in the same call. For more information, see <a
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>You cannot specify this parameter and the instance IDs parameter in the same
+     * call.</p>
      */
     inline DescribeInstanceCreditSpecificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

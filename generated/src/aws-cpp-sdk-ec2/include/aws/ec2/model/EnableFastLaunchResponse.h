@@ -113,42 +113,37 @@ namespace Model
 
 
     /**
-     * <p>The configuration settings that were defined for creating and managing the
-     * pre-provisioned snapshots for faster launching of the Windows AMI. This property
-     * is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.</p>
+     * <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2
+     * uses for faster launches from the Windows AMI. This property is returned when
+     * the associated <code>resourceType</code> is <code>snapshot</code>.</p>
      */
     inline const FastLaunchSnapshotConfigurationResponse& GetSnapshotConfiguration() const{ return m_snapshotConfiguration; }
 
     /**
-     * <p>The configuration settings that were defined for creating and managing the
-     * pre-provisioned snapshots for faster launching of the Windows AMI. This property
-     * is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.</p>
+     * <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2
+     * uses for faster launches from the Windows AMI. This property is returned when
+     * the associated <code>resourceType</code> is <code>snapshot</code>.</p>
      */
     inline void SetSnapshotConfiguration(const FastLaunchSnapshotConfigurationResponse& value) { m_snapshotConfiguration = value; }
 
     /**
-     * <p>The configuration settings that were defined for creating and managing the
-     * pre-provisioned snapshots for faster launching of the Windows AMI. This property
-     * is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.</p>
+     * <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2
+     * uses for faster launches from the Windows AMI. This property is returned when
+     * the associated <code>resourceType</code> is <code>snapshot</code>.</p>
      */
     inline void SetSnapshotConfiguration(FastLaunchSnapshotConfigurationResponse&& value) { m_snapshotConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration settings that were defined for creating and managing the
-     * pre-provisioned snapshots for faster launching of the Windows AMI. This property
-     * is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.</p>
+     * <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2
+     * uses for faster launches from the Windows AMI. This property is returned when
+     * the associated <code>resourceType</code> is <code>snapshot</code>.</p>
      */
     inline EnableFastLaunchResponse& WithSnapshotConfiguration(const FastLaunchSnapshotConfigurationResponse& value) { SetSnapshotConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration settings that were defined for creating and managing the
-     * pre-provisioned snapshots for faster launching of the Windows AMI. This property
-     * is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.</p>
+     * <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2
+     * uses for faster launches from the Windows AMI. This property is returned when
+     * the associated <code>resourceType</code> is <code>snapshot</code>.</p>
      */
     inline EnableFastLaunchResponse& WithSnapshotConfiguration(FastLaunchSnapshotConfigurationResponse&& value) { SetSnapshotConfiguration(std::move(value)); return *this;}
 
@@ -185,20 +180,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline int GetMaxParallelLaunches() const{ return m_maxParallelLaunches; }
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline void SetMaxParallelLaunches(int value) { m_maxParallelLaunches = value; }
 
     /**
-     * <p>The maximum number of parallel instances to launch for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline EnableFastLaunchResponse& WithMaxParallelLaunches(int value) { SetMaxParallelLaunches(value); return *this;}
 

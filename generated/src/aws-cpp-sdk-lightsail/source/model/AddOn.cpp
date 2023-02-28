@@ -22,7 +22,9 @@ AddOn::AddOn() :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_snapshotTimeOfDayHasBeenSet(false),
-    m_nextSnapshotTimeOfDayHasBeenSet(false)
+    m_nextSnapshotTimeOfDayHasBeenSet(false),
+    m_thresholdHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ AddOn::AddOn(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_snapshotTimeOfDayHasBeenSet(false),
-    m_nextSnapshotTimeOfDayHasBeenSet(false)
+    m_nextSnapshotTimeOfDayHasBeenSet(false),
+    m_thresholdHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,20 @@ AddOn& AddOn::operator =(JsonView jsonValue)
     m_nextSnapshotTimeOfDayHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("threshold"))
+  {
+    m_threshold = jsonValue.GetString("threshold");
+
+    m_thresholdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("duration"))
+  {
+    m_duration = jsonValue.GetString("duration");
+
+    m_durationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +111,18 @@ JsonValue AddOn::Jsonize() const
   if(m_nextSnapshotTimeOfDayHasBeenSet)
   {
    payload.WithString("nextSnapshotTimeOfDay", m_nextSnapshotTimeOfDay);
+
+  }
+
+  if(m_thresholdHasBeenSet)
+  {
+   payload.WithString("threshold", m_threshold);
+
+  }
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithString("duration", m_duration);
 
   }
 
