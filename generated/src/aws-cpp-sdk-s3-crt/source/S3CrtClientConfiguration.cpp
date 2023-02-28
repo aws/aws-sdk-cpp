@@ -60,14 +60,14 @@ S3CrtClientConfiguration::S3CrtClientConfiguration()
   LoadS3CrtSpecificConfig(this->profileName);
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(const char* inputProfileName, bool disableIMDS)
-: BaseClientConfigClass(inputProfileName, disableIMDS)
+S3CrtClientConfiguration::S3CrtClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
+: BaseClientConfigClass(inputProfileName, shouldDisableIMDS)
 {
   LoadS3CrtSpecificConfig(Aws::String(inputProfileName));
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool disableIMDS)
-: BaseClientConfigClass(useSmartDefaults, defaultMode, disableIMDS)
+S3CrtClientConfiguration::S3CrtClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
+: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)
 {
   LoadS3CrtSpecificConfig(this->profileName);
 }
