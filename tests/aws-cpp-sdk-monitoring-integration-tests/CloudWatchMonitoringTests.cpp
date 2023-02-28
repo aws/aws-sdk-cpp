@@ -81,9 +81,9 @@ TEST_F(CloudWatchMonitoringOperationTest, PutLargeMetricDataTest) {
   // Preparing request
   Aws::CloudWatch::Model::PutMetricDataRequest request;
   request.SetNamespace("TestingMetrics");
-  // Adding the datum 10 thousand times to inflate the request size above
-  // request compression threshold if enabled
-  for (int i = 0; i < 10000; i++) {
+  // Adding the datum 200 times, each about a 100bytes to inflate the request
+  // size above request compression threshold if enabled
+  for (int i = 0; i < 200; i++) {
     request.AddMetricData(datum);
   }
   // Submit request
