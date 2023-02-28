@@ -31,17 +31,17 @@ namespace Aws
             * Create a configuration based on settings in the aws configuration file for the given profile name.
             * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
             * @param profileName the aws profile name.
-            * @param disableIMDS whether or not to disable IMDS calls.
+            * @param shouldDisableIMDS whether or not to disable IMDS calls.
             */
-            S3CrtClientConfiguration(const char* profileName, bool disableIMDS = false);
+            S3CrtClientConfiguration(const char* profileName, bool shouldDisableIMDS = false);
 
             /**
             * Create a configuration with a predefined smart defaults
             * @param useSmartDefaults, required to differentiate c-tors
             * @param defaultMode, default mode to use
-            * @param disableIMDS whether or not to disable IMDS calls.
+            * @param shouldDisableIMDS whether or not to disable IMDS calls.
             */
-            S3CrtClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool disableIMDS = false);
+            S3CrtClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
             /**
             * Converting constructors for compatibility with a legacy code

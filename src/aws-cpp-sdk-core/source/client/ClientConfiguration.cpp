@@ -144,9 +144,9 @@ ClientConfiguration::ClientConfiguration()
     region = Aws::String(Aws::Region::US_EAST_1);
 }
 
-ClientConfiguration::ClientConfiguration(const char* profile, bool disableIMDS)
+ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
 {
-    this->disableIMDS = disableIMDS;
+    this->disableIMDS = shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
@@ -190,9 +190,9 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool disableIMDS)
     AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");
 }
 
-ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool disableIMDS)
+ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool shouldDisableIMDS)
 {
-    this->disableIMDS = disableIMDS;
+    this->disableIMDS = shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
 
     // Call EC2 Instance Metadata service only once
