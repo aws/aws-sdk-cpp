@@ -16,7 +16,8 @@ namespace Model
   enum class WorkflowType
   {
     NOT_SET,
-    PRIVATE_
+    PRIVATE_,
+    SERVICE
   };
 
 namespace WorkflowTypeMapper

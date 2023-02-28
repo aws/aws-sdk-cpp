@@ -163,115 +163,115 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline CreateEntityRecognizerRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline CreateEntityRecognizerRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline CreateEntityRecognizerRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline CreateEntityRecognizerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline CreateEntityRecognizerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline CreateEntityRecognizerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be associated with the entity recognizer being created. A tag is a
-     * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department. </p>
+     * <p>Tags to associate with the entity recognizer. A tag is a key-value pair that
+     * adds as a metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department. </p>
      */
     inline CreateEntityRecognizerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -578,7 +578,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -589,7 +589,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -600,7 +600,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -611,7 +611,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -622,7 +622,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -633,7 +633,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -644,7 +644,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -655,7 +655,7 @@ namespace Model
     /**
      * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
      * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats</p> <ul> <li> <p>KMS Key ID:
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>

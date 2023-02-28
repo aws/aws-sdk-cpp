@@ -48,6 +48,12 @@ StartEntitiesDetectionJobResult& StartEntitiesDetectionJobResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("EntityRecognizerArn"))
+  {
+    m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");
+
+  }
+
 
 
   return *this;

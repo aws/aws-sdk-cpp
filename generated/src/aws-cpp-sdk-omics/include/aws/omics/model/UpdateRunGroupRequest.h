@@ -95,22 +95,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount of time to run.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
 
     /**
-     * <p>The maximum amount of time to run.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time to run.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
-     * <p>The maximum amount of time to run.</p>
+     * <p>A maximum run time for the group in minutes.</p>
      */
     inline UpdateRunGroupRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
 

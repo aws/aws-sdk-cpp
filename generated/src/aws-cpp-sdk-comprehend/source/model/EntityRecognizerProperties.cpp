@@ -36,7 +36,9 @@ EntityRecognizerProperties::EntityRecognizerProperties() :
     m_vpcConfigHasBeenSet(false),
     m_modelKmsKeyIdHasBeenSet(false),
     m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false)
+    m_sourceModelArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue) :
     m_vpcConfigHasBeenSet(false),
     m_modelKmsKeyIdHasBeenSet(false),
     m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false)
+    m_sourceModelArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +181,20 @@ EntityRecognizerProperties& EntityRecognizerProperties::operator =(JsonView json
     m_sourceModelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlywheelArn"))
+  {
+    m_flywheelArn = jsonValue.GetString("FlywheelArn");
+
+    m_flywheelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputDataConfig"))
+  {
+    m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
+
+    m_outputDataConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +289,18 @@ JsonValue EntityRecognizerProperties::Jsonize() const
   if(m_sourceModelArnHasBeenSet)
   {
    payload.WithString("SourceModelArn", m_sourceModelArn);
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
 
   }
 

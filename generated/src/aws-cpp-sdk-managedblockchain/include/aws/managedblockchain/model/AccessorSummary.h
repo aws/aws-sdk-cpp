@@ -27,10 +27,7 @@ namespace Model
 {
 
   /**
-   *  <p>The token based access feature is in preview release for Ethereum
-   * on Amazon Managed Blockchain and is subject to change. We recommend that you use
-   * this feature only with test scenarios, and not in production environments.</p>
-   *  <p>A summary of accessor properties.</p><p><h3>See Also:</h3>   <a
+   * <p>A summary of accessor properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/AccessorSummary">AWS
    * API Reference</a></p>
    */

@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/DiskState.h>
+#include <aws/lightsail/model/AutoMountStatus.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOn.h>
 #include <utility>
@@ -582,6 +583,49 @@ namespace Model
      */
     inline Disk& WithIsAttached(bool value) { SetIsAttached(value); return *this;}
 
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline const AutoMountStatus& GetAutoMountStatus() const{ return m_autoMountStatus; }
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline bool AutoMountStatusHasBeenSet() const { return m_autoMountStatusHasBeenSet; }
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline void SetAutoMountStatus(const AutoMountStatus& value) { m_autoMountStatusHasBeenSet = true; m_autoMountStatus = value; }
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline void SetAutoMountStatus(AutoMountStatus&& value) { m_autoMountStatusHasBeenSet = true; m_autoMountStatus = std::move(value); }
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline Disk& WithAutoMountStatus(const AutoMountStatus& value) { SetAutoMountStatus(value); return *this;}
+
+    /**
+     * <p>The status of automatically mounting a storage disk to a virtual
+     * computer.</p>  <p>This parameter only applies to Lightsail for
+     * Research resources.</p> 
+     */
+    inline Disk& WithAutoMountStatus(AutoMountStatus&& value) { SetAutoMountStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -628,6 +672,9 @@ namespace Model
 
     bool m_isAttached;
     bool m_isAttachedHasBeenSet = false;
+
+    AutoMountStatus m_autoMountStatus;
+    bool m_autoMountStatusHasBeenSet = false;
   };
 
 } // namespace Model

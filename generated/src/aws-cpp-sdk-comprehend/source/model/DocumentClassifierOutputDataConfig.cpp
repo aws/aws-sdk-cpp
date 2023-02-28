@@ -20,13 +20,15 @@ namespace Model
 
 DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig() : 
     m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_flywheelStatsS3PrefixHasBeenSet(false)
 {
 }
 
 DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_flywheelStatsS3PrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DocumentClassifierOutputDataConfig& DocumentClassifierOutputDataConfig::operator
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlywheelStatsS3Prefix"))
+  {
+    m_flywheelStatsS3Prefix = jsonValue.GetString("FlywheelStatsS3Prefix");
+
+    m_flywheelStatsS3PrefixHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DocumentClassifierOutputDataConfig::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_flywheelStatsS3PrefixHasBeenSet)
+  {
+   payload.WithString("FlywheelStatsS3Prefix", m_flywheelStatsS3Prefix);
 
   }
 

@@ -200,26 +200,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of parallel instances that are launched for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline int GetMaxParallelLaunches() const{ return m_maxParallelLaunches; }
 
     /**
-     * <p>The maximum number of parallel instances that are launched for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline bool MaxParallelLaunchesHasBeenSet() const { return m_maxParallelLaunchesHasBeenSet; }
 
     /**
-     * <p>The maximum number of parallel instances that are launched for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline void SetMaxParallelLaunches(int value) { m_maxParallelLaunchesHasBeenSet = true; m_maxParallelLaunches = value; }
 
     /**
-     * <p>The maximum number of parallel instances that are launched for creating
-     * resources.</p>
+     * <p>The maximum number of instances that Amazon EC2 can launch at the same time
+     * to create pre-provisioned snapshots for Windows faster launching.</p>
      */
     inline DescribeFastLaunchImagesSuccessItem& WithMaxParallelLaunches(int value) { SetMaxParallelLaunches(value); return *this;}
 

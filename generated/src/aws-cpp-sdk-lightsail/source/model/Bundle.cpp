@@ -36,7 +36,8 @@ Bundle::Bundle() :
     m_ramSizeInGbHasBeenSet(false),
     m_transferPerMonthInGb(0),
     m_transferPerMonthInGbHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false)
+    m_supportedPlatformsHasBeenSet(false),
+    m_supportedAppCategoriesHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Bundle::Bundle(JsonView jsonValue) :
     m_ramSizeInGbHasBeenSet(false),
     m_transferPerMonthInGb(0),
     m_transferPerMonthInGbHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false)
+    m_supportedPlatformsHasBeenSet(false),
+    m_supportedAppCategoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +147,16 @@ Bundle& Bundle::operator =(JsonView jsonValue)
     m_supportedPlatformsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportedAppCategories"))
+  {
+    Aws::Utils::Array<JsonView> supportedAppCategoriesJsonList = jsonValue.GetArray("supportedAppCategories");
+    for(unsigned supportedAppCategoriesIndex = 0; supportedAppCategoriesIndex < supportedAppCategoriesJsonList.GetLength(); ++supportedAppCategoriesIndex)
+    {
+      m_supportedAppCategories.push_back(AppCategoryMapper::GetAppCategoryForName(supportedAppCategoriesJsonList[supportedAppCategoriesIndex].AsString()));
+    }
+    m_supportedAppCategoriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +232,17 @@ JsonValue Bundle::Jsonize() const
      supportedPlatformsJsonList[supportedPlatformsIndex].AsString(InstancePlatformMapper::GetNameForInstancePlatform(m_supportedPlatforms[supportedPlatformsIndex]));
    }
    payload.WithArray("supportedPlatforms", std::move(supportedPlatformsJsonList));
+
+  }
+
+  if(m_supportedAppCategoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedAppCategoriesJsonList(m_supportedAppCategories.size());
+   for(unsigned supportedAppCategoriesIndex = 0; supportedAppCategoriesIndex < supportedAppCategoriesJsonList.GetLength(); ++supportedAppCategoriesIndex)
+   {
+     supportedAppCategoriesJsonList[supportedAppCategoriesIndex].AsString(AppCategoryMapper::GetNameForAppCategory(m_supportedAppCategories[supportedAppCategoriesIndex]));
+   }
+   payload.WithArray("supportedAppCategories", std::move(supportedAppCategoriesJsonList));
 
   }
 

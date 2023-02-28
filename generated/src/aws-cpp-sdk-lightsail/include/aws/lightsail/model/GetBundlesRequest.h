@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/AppCategory.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,49 @@ namespace Model
      */
     inline GetBundlesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline const AppCategory& GetAppCategory() const{ return m_appCategory; }
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline bool AppCategoryHasBeenSet() const { return m_appCategoryHasBeenSet; }
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline void SetAppCategory(const AppCategory& value) { m_appCategoryHasBeenSet = true; m_appCategory = value; }
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline void SetAppCategory(AppCategory&& value) { m_appCategoryHasBeenSet = true; m_appCategory = std::move(value); }
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline GetBundlesRequest& WithAppCategory(const AppCategory& value) { SetAppCategory(value); return *this;}
+
+    /**
+     * <p>Returns a list of bundles that are specific to Lightsail for Research.</p>
+     *  <p>You must use this parameter to view Lightsail for Research
+     * bundles.</p> 
+     */
+    inline GetBundlesRequest& WithAppCategory(AppCategory&& value) { SetAppCategory(std::move(value)); return *this;}
+
   private:
 
     bool m_includeInactive;
@@ -130,6 +174,9 @@ namespace Model
 
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet = false;
+
+    AppCategory m_appCategory;
+    bool m_appCategoryHasBeenSet = false;
   };
 
 } // namespace Model

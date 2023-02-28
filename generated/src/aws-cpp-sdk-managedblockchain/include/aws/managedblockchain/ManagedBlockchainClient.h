@@ -85,12 +85,9 @@ namespace ManagedBlockchain
         virtual ~ManagedBlockchainClient();
 
         /**
-         *  <p>The token based access feature is in preview release for Ethereum
-         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
-         * this feature only with test scenarios, and not in production environments.</p>
-         *  <p>Creates a new accessor for use with Managed Blockchain Ethereum
-         * nodes. An accessor object is a container that has the information required for
-         * token based access to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An
+         * accessor contains information required for token based access to your Ethereum
+         * nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">AWS
          * API Reference</a></p>
          */
@@ -221,13 +218,10 @@ namespace ManagedBlockchain
         }
 
         /**
-         *  <p>The token based access feature is in preview release for Ethereum
-         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
-         * this feature only with test scenarios, and not in production environments.</p>
-         *  <p>Deletes an accessor that your Amazon Web Services account owns.
-         * An accessor object is a container that has the information required for token
-         * based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
-         * After an accessor is deleted, the status of the accessor changes from
+         * <p>Deletes an accessor that your Amazon Web Services account owns. An accessor
+         * object is a container that has the information required for token based access
+         * to your Ethereum nodes including, the <code>BILLING_TOKEN</code>. After an
+         * accessor is deleted, the status of the accessor changes from
          * <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the
          * <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or
          * HTTP requests. However, WebSocket connections that were initiated while the
@@ -317,12 +311,9 @@ namespace ManagedBlockchain
         }
 
         /**
-         *  <p>The token based access feature is in preview release for Ethereum
-         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
-         * this feature only with test scenarios, and not in production environments.</p>
-         *  <p>Returns detailed information about an accessor. An accessor
-         * object is a container that has the information required for token based access
-         * to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed information about an accessor. An accessor object is a
+         * container that has the information required for token based access to your
+         * Ethereum nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">AWS
          * API Reference</a></p>
          */
@@ -451,12 +442,9 @@ namespace ManagedBlockchain
         }
 
         /**
-         *  <p>The token based access feature is in preview release for Ethereum
-         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
-         * this feature only with test scenarios, and not in production environments.</p>
-         *  <p>Returns a list of the accessors and their properties. Accessor
-         * objects are containers that have the information required for token based access
-         * to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the accessors and their properties. Accessor objects are
+         * containers that have the information required for token based access to your
+         * Ethereum nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">AWS
          * API Reference</a></p>
          */

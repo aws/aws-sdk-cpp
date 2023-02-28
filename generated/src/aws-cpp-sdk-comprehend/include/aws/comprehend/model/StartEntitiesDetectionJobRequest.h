@@ -517,68 +517,117 @@ namespace Model
 
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline StartEntitiesDetectionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline StartEntitiesDetectionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline StartEntitiesDetectionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be associated with the entities detection job. A tag is a key-value
-     * pair that adds metadata to a resource used by Amazon Comprehend. For example, a
-     * tag with "Sales" as the key might be added to a resource to indicate its use by
-     * the sales department.</p>
+     * <p>Tags to associate with the entities detection job. A tag is a key-value pair
+     * that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+     * with "Sales" as the key might be added to a resource to indicate its use by the
+     * sales department.</p>
      */
     inline StartEntitiesDetectionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel associated with the model to
+     * use.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
 
   private:
 
@@ -611,6 +660,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_flywheelArn;
+    bool m_flywheelArnHasBeenSet = false;
   };
 
 } // namespace Model

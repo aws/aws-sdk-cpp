@@ -20,7 +20,8 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

@@ -543,54 +543,48 @@ namespace Model
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const HostMaintenance& GetHostMaintenance() const{ return m_hostMaintenance; }
 
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool HostMaintenanceHasBeenSet() const { return m_hostMaintenanceHasBeenSet; }
 
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetHostMaintenance(const HostMaintenance& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = value; }
 
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetHostMaintenance(HostMaintenance&& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = std::move(value); }
 
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline AllocateHostsRequest& WithHostMaintenance(const HostMaintenance& value) { SetHostMaintenance(value); return *this;}
 
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>on</code> </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline AllocateHostsRequest& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
 

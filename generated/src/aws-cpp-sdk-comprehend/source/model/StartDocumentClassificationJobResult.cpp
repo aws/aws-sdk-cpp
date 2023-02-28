@@ -48,6 +48,12 @@ StartDocumentClassificationJobResult& StartDocumentClassificationJobResult::oper
 
   }
 
+  if(jsonValue.ValueExists("DocumentClassifierArn"))
+  {
+    m_documentClassifierArn = jsonValue.GetString("DocumentClassifierArn");
+
+  }
+
 
 
   return *this;

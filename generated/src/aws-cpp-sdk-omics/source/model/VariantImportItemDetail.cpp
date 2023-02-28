@@ -21,14 +21,16 @@ namespace Model
 VariantImportItemDetail::VariantImportItemDetail() : 
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
 }
 
 VariantImportItemDetail::VariantImportItemDetail(JsonView jsonValue) : 
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ VariantImportItemDetail& VariantImportItemDetail::operator =(JsonView jsonValue)
     m_sourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue VariantImportItemDetail::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithString("source", m_source);
+
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("statusMessage", m_statusMessage);
 
   }
 

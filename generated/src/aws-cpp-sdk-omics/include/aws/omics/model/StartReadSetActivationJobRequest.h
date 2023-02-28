@@ -125,42 +125,42 @@ namespace Model
 
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline const Aws::Vector<StartReadSetActivationJobSourceItem>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(const Aws::Vector<StartReadSetActivationJobSourceItem>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(Aws::Vector<StartReadSetActivationJobSourceItem>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetActivationJobRequest& WithSources(const Aws::Vector<StartReadSetActivationJobSourceItem>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetActivationJobRequest& WithSources(Aws::Vector<StartReadSetActivationJobSourceItem>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetActivationJobRequest& AddSources(const StartReadSetActivationJobSourceItem& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetActivationJobRequest& AddSources(StartReadSetActivationJobSourceItem&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

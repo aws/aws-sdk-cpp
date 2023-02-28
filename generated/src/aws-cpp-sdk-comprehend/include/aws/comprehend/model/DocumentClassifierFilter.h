@@ -28,7 +28,7 @@ namespace Model
   /**
    * <p>Provides information for filtering a list of document classifiers. You can
    * only specify one filtering parameter in a request. For more information, see the
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <code>ListDocumentClassifiers</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierFilter">AWS
    * API Reference</a></p>
    */

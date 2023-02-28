@@ -464,8 +464,11 @@ namespace Model
 
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -473,8 +476,11 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -482,8 +488,11 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -491,8 +500,11 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -500,8 +512,11 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -509,8 +524,11 @@ namespace Model
     inline Member& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -518,8 +536,11 @@ namespace Model
     inline Member& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -527,8 +548,11 @@ namespace Model
     inline Member& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -536,8 +560,11 @@ namespace Model
     inline Member& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -545,8 +572,11 @@ namespace Model
     inline Member& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -554,8 +584,11 @@ namespace Model
     inline Member& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -563,8 +596,11 @@ namespace Model
     inline Member& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
@@ -572,8 +608,11 @@ namespace Model
     inline Member& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags assigned to the member. Tags consist of a key and optional value. For
-     * more information about tags, see <a
+     * <p>Tags assigned to the member. Tags consist of a key and optional value.</p>
+     * <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>

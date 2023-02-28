@@ -40,6 +40,7 @@
 #include <aws/lightsail/model/CreateDistributionResult.h>
 #include <aws/lightsail/model/CreateDomainResult.h>
 #include <aws/lightsail/model/CreateDomainEntryResult.h>
+#include <aws/lightsail/model/CreateGUISessionAccessDetailsResult.h>
 #include <aws/lightsail/model/CreateInstanceSnapshotResult.h>
 #include <aws/lightsail/model/CreateInstancesResult.h>
 #include <aws/lightsail/model/CreateInstancesFromSnapshotResult.h>
@@ -97,6 +98,7 @@
 #include <aws/lightsail/model/GetContainerServiceMetricDataResult.h>
 #include <aws/lightsail/model/GetContainerServicePowersResult.h>
 #include <aws/lightsail/model/GetContainerServicesResult.h>
+#include <aws/lightsail/model/GetCostEstimateResult.h>
 #include <aws/lightsail/model/GetDiskResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotsResult.h>
@@ -155,8 +157,10 @@
 #include <aws/lightsail/model/SendContactMethodVerificationResult.h>
 #include <aws/lightsail/model/SetIpAddressTypeResult.h>
 #include <aws/lightsail/model/SetResourceAccessForBucketResult.h>
+#include <aws/lightsail/model/StartGUISessionResult.h>
 #include <aws/lightsail/model/StartInstanceResult.h>
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
+#include <aws/lightsail/model/StopGUISessionResult.h>
 #include <aws/lightsail/model/StopInstanceResult.h>
 #include <aws/lightsail/model/StopRelationalDatabaseResult.h>
 #include <aws/lightsail/model/TagResourceResult.h>
@@ -235,6 +239,7 @@ namespace Aws
       class CreateDistributionRequest;
       class CreateDomainRequest;
       class CreateDomainEntryRequest;
+      class CreateGUISessionAccessDetailsRequest;
       class CreateInstanceSnapshotRequest;
       class CreateInstancesRequest;
       class CreateInstancesFromSnapshotRequest;
@@ -292,6 +297,7 @@ namespace Aws
       class GetContainerServiceMetricDataRequest;
       class GetContainerServicePowersRequest;
       class GetContainerServicesRequest;
+      class GetCostEstimateRequest;
       class GetDiskRequest;
       class GetDiskSnapshotRequest;
       class GetDiskSnapshotsRequest;
@@ -350,8 +356,10 @@ namespace Aws
       class SendContactMethodVerificationRequest;
       class SetIpAddressTypeRequest;
       class SetResourceAccessForBucketRequest;
+      class StartGUISessionRequest;
       class StartInstanceRequest;
       class StartRelationalDatabaseRequest;
+      class StopGUISessionRequest;
       class StopInstanceRequest;
       class StopRelationalDatabaseRequest;
       class TagResourceRequest;
@@ -393,6 +401,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDistributionResult, LightsailError> CreateDistributionOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, LightsailError> CreateDomainOutcome;
       typedef Aws::Utils::Outcome<CreateDomainEntryResult, LightsailError> CreateDomainEntryOutcome;
+      typedef Aws::Utils::Outcome<CreateGUISessionAccessDetailsResult, LightsailError> CreateGUISessionAccessDetailsOutcome;
       typedef Aws::Utils::Outcome<CreateInstanceSnapshotResult, LightsailError> CreateInstanceSnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateInstancesResult, LightsailError> CreateInstancesOutcome;
       typedef Aws::Utils::Outcome<CreateInstancesFromSnapshotResult, LightsailError> CreateInstancesFromSnapshotOutcome;
@@ -450,6 +459,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetContainerServiceMetricDataResult, LightsailError> GetContainerServiceMetricDataOutcome;
       typedef Aws::Utils::Outcome<GetContainerServicePowersResult, LightsailError> GetContainerServicePowersOutcome;
       typedef Aws::Utils::Outcome<GetContainerServicesResult, LightsailError> GetContainerServicesOutcome;
+      typedef Aws::Utils::Outcome<GetCostEstimateResult, LightsailError> GetCostEstimateOutcome;
       typedef Aws::Utils::Outcome<GetDiskResult, LightsailError> GetDiskOutcome;
       typedef Aws::Utils::Outcome<GetDiskSnapshotResult, LightsailError> GetDiskSnapshotOutcome;
       typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, LightsailError> GetDiskSnapshotsOutcome;
@@ -508,8 +518,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, LightsailError> SendContactMethodVerificationOutcome;
       typedef Aws::Utils::Outcome<SetIpAddressTypeResult, LightsailError> SetIpAddressTypeOutcome;
       typedef Aws::Utils::Outcome<SetResourceAccessForBucketResult, LightsailError> SetResourceAccessForBucketOutcome;
+      typedef Aws::Utils::Outcome<StartGUISessionResult, LightsailError> StartGUISessionOutcome;
       typedef Aws::Utils::Outcome<StartInstanceResult, LightsailError> StartInstanceOutcome;
       typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, LightsailError> StartRelationalDatabaseOutcome;
+      typedef Aws::Utils::Outcome<StopGUISessionResult, LightsailError> StopGUISessionOutcome;
       typedef Aws::Utils::Outcome<StopInstanceResult, LightsailError> StopInstanceOutcome;
       typedef Aws::Utils::Outcome<StopRelationalDatabaseResult, LightsailError> StopRelationalDatabaseOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, LightsailError> TagResourceOutcome;
@@ -551,6 +563,7 @@ namespace Aws
       typedef std::future<CreateDistributionOutcome> CreateDistributionOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
       typedef std::future<CreateDomainEntryOutcome> CreateDomainEntryOutcomeCallable;
+      typedef std::future<CreateGUISessionAccessDetailsOutcome> CreateGUISessionAccessDetailsOutcomeCallable;
       typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
       typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
       typedef std::future<CreateInstancesFromSnapshotOutcome> CreateInstancesFromSnapshotOutcomeCallable;
@@ -608,6 +621,7 @@ namespace Aws
       typedef std::future<GetContainerServiceMetricDataOutcome> GetContainerServiceMetricDataOutcomeCallable;
       typedef std::future<GetContainerServicePowersOutcome> GetContainerServicePowersOutcomeCallable;
       typedef std::future<GetContainerServicesOutcome> GetContainerServicesOutcomeCallable;
+      typedef std::future<GetCostEstimateOutcome> GetCostEstimateOutcomeCallable;
       typedef std::future<GetDiskOutcome> GetDiskOutcomeCallable;
       typedef std::future<GetDiskSnapshotOutcome> GetDiskSnapshotOutcomeCallable;
       typedef std::future<GetDiskSnapshotsOutcome> GetDiskSnapshotsOutcomeCallable;
@@ -666,8 +680,10 @@ namespace Aws
       typedef std::future<SendContactMethodVerificationOutcome> SendContactMethodVerificationOutcomeCallable;
       typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
       typedef std::future<SetResourceAccessForBucketOutcome> SetResourceAccessForBucketOutcomeCallable;
+      typedef std::future<StartGUISessionOutcome> StartGUISessionOutcomeCallable;
       typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
       typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
+      typedef std::future<StopGUISessionOutcome> StopGUISessionOutcomeCallable;
       typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
       typedef std::future<StopRelationalDatabaseOutcome> StopRelationalDatabaseOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -712,6 +728,7 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::CreateDistributionRequest&, const Model::CreateDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDomainEntryRequest&, const Model::CreateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainEntryResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateGUISessionAccessDetailsRequest&, const Model::CreateGUISessionAccessDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGUISessionAccessDetailsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstanceSnapshotRequest&, const Model::CreateInstanceSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstancesRequest&, const Model::CreateInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstancesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateInstancesFromSnapshotRequest&, const Model::CreateInstancesFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstancesFromSnapshotResponseReceivedHandler;
@@ -769,6 +786,7 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::GetContainerServiceMetricDataRequest&, const Model::GetContainerServiceMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServiceMetricDataResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetContainerServicePowersRequest&, const Model::GetContainerServicePowersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServicePowersResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetContainerServicesRequest&, const Model::GetContainerServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerServicesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetCostEstimateRequest&, const Model::GetCostEstimateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostEstimateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskRequest&, const Model::GetDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotRequest&, const Model::GetDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotsRequest&, const Model::GetDiskSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotsResponseReceivedHandler;
@@ -827,8 +845,10 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::SendContactMethodVerificationRequest&, const Model::SendContactMethodVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendContactMethodVerificationResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SetResourceAccessForBucketRequest&, const Model::SetResourceAccessForBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetResourceAccessForBucketResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::StartGUISessionRequest&, const Model::StartGUISessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGUISessionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::StopGUISessionRequest&, const Model::StopGUISessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopGUISessionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopRelationalDatabaseRequest&, const Model::StopRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

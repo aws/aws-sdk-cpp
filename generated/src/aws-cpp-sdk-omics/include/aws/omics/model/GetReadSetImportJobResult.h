@@ -197,37 +197,37 @@ namespace Model
 
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline const Aws::Vector<ImportReadSetSourceItem>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(const Aws::Vector<ImportReadSetSourceItem>& value) { m_sources = value; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(Aws::Vector<ImportReadSetSourceItem>&& value) { m_sources = std::move(value); }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReadSetImportJobResult& WithSources(const Aws::Vector<ImportReadSetSourceItem>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReadSetImportJobResult& WithSources(Aws::Vector<ImportReadSetSourceItem>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReadSetImportJobResult& AddSources(const ImportReadSetSourceItem& value) { m_sources.push_back(value); return *this; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReadSetImportJobResult& AddSources(ImportReadSetSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
 

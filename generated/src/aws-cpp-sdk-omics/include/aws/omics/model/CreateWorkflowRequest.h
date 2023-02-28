@@ -325,63 +325,71 @@ namespace Model
 
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateWorkflowRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateWorkflowRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>A request ID for the workflow.</p>
+     * <p>To ensure that requests don't run multiple times, specify a unique ID for
+     * each request.</p>
      */
     inline CreateWorkflowRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p>A storage capacity for the workflow.</p>
+     * <p>A storage capacity for the workflow in gigabytes.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>A storage capacity for the workflow.</p>
+     * <p>A storage capacity for the workflow in gigabytes.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>A storage capacity for the workflow.</p>
+     * <p>A storage capacity for the workflow in gigabytes.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>A storage capacity for the workflow.</p>
+     * <p>A storage capacity for the workflow in gigabytes.</p>
      */
     inline CreateWorkflowRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

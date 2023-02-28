@@ -668,17 +668,17 @@ namespace Model
 
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gigabytes.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gigabytes.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gigabytes.</p>
      */
     inline GetRunResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

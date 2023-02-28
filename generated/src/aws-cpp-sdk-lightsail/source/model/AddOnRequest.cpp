@@ -21,14 +21,16 @@ namespace Model
 AddOnRequest::AddOnRequest() : 
     m_addOnType(AddOnType::NOT_SET),
     m_addOnTypeHasBeenSet(false),
-    m_autoSnapshotAddOnRequestHasBeenSet(false)
+    m_autoSnapshotAddOnRequestHasBeenSet(false),
+    m_stopInstanceOnIdleRequestHasBeenSet(false)
 {
 }
 
 AddOnRequest::AddOnRequest(JsonView jsonValue) : 
     m_addOnType(AddOnType::NOT_SET),
     m_addOnTypeHasBeenSet(false),
-    m_autoSnapshotAddOnRequestHasBeenSet(false)
+    m_autoSnapshotAddOnRequestHasBeenSet(false),
+    m_stopInstanceOnIdleRequestHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ AddOnRequest& AddOnRequest::operator =(JsonView jsonValue)
     m_autoSnapshotAddOnRequestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stopInstanceOnIdleRequest"))
+  {
+    m_stopInstanceOnIdleRequest = jsonValue.GetObject("stopInstanceOnIdleRequest");
+
+    m_stopInstanceOnIdleRequestHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue AddOnRequest::Jsonize() const
   if(m_autoSnapshotAddOnRequestHasBeenSet)
   {
    payload.WithObject("autoSnapshotAddOnRequest", m_autoSnapshotAddOnRequest.Jsonize());
+
+  }
+
+  if(m_stopInstanceOnIdleRequestHasBeenSet)
+  {
+   payload.WithObject("stopInstanceOnIdleRequest", m_stopInstanceOnIdleRequest.Jsonize());
 
   }
 

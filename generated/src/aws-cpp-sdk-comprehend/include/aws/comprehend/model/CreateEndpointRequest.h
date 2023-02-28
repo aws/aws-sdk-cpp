@@ -222,117 +222,166 @@ namespace Model
 
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline CreateEndpointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline CreateEndpointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline CreateEndpointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags associated with the endpoint being created. A tag is a key-value pair
-     * that adds metadata to the endpoint. For example, a tag with "Sales" as the key
-     * might be added to an endpoint to indicate its use by the sales department. </p>
+     * <p>Tags to associate with the endpoint. A tag is a key-value pair that adds
+     * metadata to the endpoint. For example, a tag with "Sales" as the key might be
+     * added to an endpoint to indicate its use by the sales department. </p>
      */
     inline CreateEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline CreateEndpointRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline CreateEndpointRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that grants Amazon Comprehend read access to trained custom models
      * encrypted with a customer managed key (ModelKmsKeyId).</p>
      */
     inline CreateEndpointRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline CreateEndpointRequest& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline CreateEndpointRequest& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+     * be attached.</p>
+     */
+    inline CreateEndpointRequest& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
 
   private:
 
@@ -353,6 +402,9 @@ namespace Model
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet = false;
+
+    Aws::String m_flywheelArn;
+    bool m_flywheelArnHasBeenSet = false;
   };
 
 } // namespace Model

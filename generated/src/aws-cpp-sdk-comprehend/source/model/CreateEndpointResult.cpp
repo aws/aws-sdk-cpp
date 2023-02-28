@@ -34,6 +34,12 @@ CreateEndpointResult& CreateEndpointResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("ModelArn"))
+  {
+    m_modelArn = jsonValue.GetString("ModelArn");
+
+  }
+
 
 
   return *this;

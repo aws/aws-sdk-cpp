@@ -818,6 +818,35 @@ namespace Lightsail
         }
 
         /**
+         * <p>Creates two URLs that are used to access a virtual computer’s graphical user
+         * interface (GUI) session. The primary URL initiates a web-based NICE DCV session
+         * to the virtual computer's application. The secondary URL initiates a web-based
+         * NICE DCV session to the virtual computer's operating session. </p> <p>Use
+         * <code>StartGUISession</code> to open the session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGUISessionAccessDetailsOutcome CreateGUISessionAccessDetails(const Model::CreateGUISessionAccessDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGUISessionAccessDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateGUISessionAccessDetailsRequestT = Model::CreateGUISessionAccessDetailsRequest>
+        Model::CreateGUISessionAccessDetailsOutcomeCallable CreateGUISessionAccessDetailsCallable(const CreateGUISessionAccessDetailsRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::CreateGUISessionAccessDetails, request);
+        }
+
+        /**
+         * An Async wrapper for CreateGUISessionAccessDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateGUISessionAccessDetailsRequestT = Model::CreateGUISessionAccessDetailsRequest>
+        void CreateGUISessionAccessDetailsAsync(const CreateGUISessionAccessDetailsRequestT& request, const CreateGUISessionAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::CreateGUISessionAccessDetails, request, handler, context);
+        }
+
+        /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
          * snapshot.</p> <p>The <code>create instance snapshot</code> operation supports
@@ -2542,6 +2571,33 @@ namespace Lightsail
         }
 
         /**
+         * <p>Retrieves information about the cost estimate for a specified resource. A
+         * cost estimate will not generate for a resource that has been
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostEstimateOutcome GetCostEstimate(const Model::GetCostEstimateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCostEstimate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCostEstimateRequestT = Model::GetCostEstimateRequest>
+        Model::GetCostEstimateOutcomeCallable GetCostEstimateCallable(const GetCostEstimateRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::GetCostEstimate, request);
+        }
+
+        /**
+         * An Async wrapper for GetCostEstimate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCostEstimateRequestT = Model::GetCostEstimateRequest>
+        void GetCostEstimateAsync(const GetCostEstimateRequestT& request, const GetCostEstimateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::GetCostEstimate, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a specific block storage disk.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">AWS
@@ -4151,6 +4207,34 @@ namespace Lightsail
         }
 
         /**
+         * <p>Initiates a graphical user interface (GUI) session that’s used to access a
+         * virtual computer’s operating system and application. The session will be active
+         * for 1 hour. Use this action to resume the session after it expires.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartGUISessionOutcome StartGUISession(const Model::StartGUISessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartGUISession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartGUISessionRequestT = Model::StartGUISessionRequest>
+        Model::StartGUISessionOutcomeCallable StartGUISessionCallable(const StartGUISessionRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::StartGUISession, request);
+        }
+
+        /**
+         * An Async wrapper for StartGUISession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartGUISessionRequestT = Model::StartGUISessionRequest>
+        void StartGUISessionAsync(const StartGUISessionRequestT& request, const StartGUISessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::StartGUISession, request, handler, context);
+        }
+
+        /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
          * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
@@ -4216,6 +4300,33 @@ namespace Lightsail
         void StartRelationalDatabaseAsync(const StartRelationalDatabaseRequestT& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LightsailClient::StartRelationalDatabase, request, handler, context);
+        }
+
+        /**
+         * <p>Terminates a web-based NICE DCV session that’s used to access a virtual
+         * computer’s operating system or application. The session will close and any
+         * unsaved data will be lost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopGUISessionOutcome StopGUISession(const Model::StopGUISessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopGUISession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopGUISessionRequestT = Model::StopGUISessionRequest>
+        Model::StopGUISessionOutcomeCallable StopGUISessionCallable(const StopGUISessionRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::StopGUISession, request);
+        }
+
+        /**
+         * An Async wrapper for StopGUISession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopGUISessionRequestT = Model::StopGUISessionRequest>
+        void StopGUISessionAsync(const StopGUISessionRequestT& request, const StopGUISessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::StopGUISession, request, handler, context);
         }
 
         /**

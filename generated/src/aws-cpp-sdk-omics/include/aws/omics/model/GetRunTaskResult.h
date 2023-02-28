@@ -113,17 +113,17 @@ namespace Model
 
 
     /**
-     * <p>The task's memory setting.</p>
+     * <p>The task's memory use in gigabytes.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The task's memory setting.</p>
+     * <p>The task's memory use in gigabytes.</p>
      */
     inline void SetMemory(int value) { m_memory = value; }
 
     /**
-     * <p>The task's memory setting.</p>
+     * <p>The task's memory use in gigabytes.</p>
      */
     inline GetRunTaskResult& WithMemory(int value) { SetMemory(value); return *this;}
 

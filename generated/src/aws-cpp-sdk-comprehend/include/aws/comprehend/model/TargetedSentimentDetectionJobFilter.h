@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides information for filtering a list of dominant language detection
-   * jobs. For more information, see the operation.</p><p><h3>See Also:</h3>   <a
+   * jobs. For more information, see the
+   * <code>ListTargetedSentimentDetectionJobs</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TargetedSentimentDetectionJobFilter">AWS
    * API Reference</a></p>
    */

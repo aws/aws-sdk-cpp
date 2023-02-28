@@ -27,7 +27,13 @@ UpdateEndpointResult::UpdateEndpointResult(const Aws::AmazonWebServiceResult<Jso
 
 UpdateEndpointResult& UpdateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("DesiredModelArn"))
+  {
+    m_desiredModelArn = jsonValue.GetString("DesiredModelArn");
+
+  }
+
 
 
   return *this;

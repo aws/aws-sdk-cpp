@@ -149,17 +149,17 @@ namespace Model
 
 
     /**
-     * <p>The group's maximum run duration.</p>
+     * <p>The group's maximum run time in minutes.</p>
      */
     inline int GetMaxDuration() const{ return m_maxDuration; }
 
     /**
-     * <p>The group's maximum run duration.</p>
+     * <p>The group's maximum run time in minutes.</p>
      */
     inline void SetMaxDuration(int value) { m_maxDuration = value; }
 
     /**
-     * <p>The group's maximum run duration.</p>
+     * <p>The group's maximum run time in minutes.</p>
      */
     inline GetRunGroupResult& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
 

@@ -39,7 +39,9 @@ Disk::Disk() :
     m_stateHasBeenSet(false),
     m_attachedToHasBeenSet(false),
     m_isAttached(false),
-    m_isAttachedHasBeenSet(false)
+    m_isAttachedHasBeenSet(false),
+    m_autoMountStatus(AutoMountStatus::NOT_SET),
+    m_autoMountStatusHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ Disk::Disk(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_attachedToHasBeenSet(false),
     m_isAttached(false),
-    m_isAttachedHasBeenSet(false)
+    m_isAttachedHasBeenSet(false),
+    m_autoMountStatus(AutoMountStatus::NOT_SET),
+    m_autoMountStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +186,13 @@ Disk& Disk::operator =(JsonView jsonValue)
     m_isAttachedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoMountStatus"))
+  {
+    m_autoMountStatus = AutoMountStatusMapper::GetAutoMountStatusForName(jsonValue.GetString("autoMountStatus"));
+
+    m_autoMountStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -284,6 +295,11 @@ JsonValue Disk::Jsonize() const
   {
    payload.WithBool("isAttached", m_isAttached);
 
+  }
+
+  if(m_autoMountStatusHasBeenSet)
+  {
+   payload.WithString("autoMountStatus", AutoMountStatusMapper::GetNameForAutoMountStatus(m_autoMountStatus));
   }
 
   return payload;

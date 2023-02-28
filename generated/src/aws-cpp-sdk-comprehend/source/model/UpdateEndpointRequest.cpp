@@ -17,7 +17,8 @@ UpdateEndpointRequest::UpdateEndpointRequest() :
     m_desiredModelArnHasBeenSet(false),
     m_desiredInferenceUnits(0),
     m_desiredInferenceUnitsHasBeenSet(false),
-    m_desiredDataAccessRoleArnHasBeenSet(false)
+    m_desiredDataAccessRoleArnHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
   if(m_desiredDataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DesiredDataAccessRoleArn", m_desiredDataAccessRoleArn);
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

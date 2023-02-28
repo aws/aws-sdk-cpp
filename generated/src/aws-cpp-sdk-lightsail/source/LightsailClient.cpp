@@ -43,6 +43,7 @@
 #include <aws/lightsail/model/CreateDistributionRequest.h>
 #include <aws/lightsail/model/CreateDomainRequest.h>
 #include <aws/lightsail/model/CreateDomainEntryRequest.h>
+#include <aws/lightsail/model/CreateGUISessionAccessDetailsRequest.h>
 #include <aws/lightsail/model/CreateInstanceSnapshotRequest.h>
 #include <aws/lightsail/model/CreateInstancesRequest.h>
 #include <aws/lightsail/model/CreateInstancesFromSnapshotRequest.h>
@@ -100,6 +101,7 @@
 #include <aws/lightsail/model/GetContainerServiceMetricDataRequest.h>
 #include <aws/lightsail/model/GetContainerServicePowersRequest.h>
 #include <aws/lightsail/model/GetContainerServicesRequest.h>
+#include <aws/lightsail/model/GetCostEstimateRequest.h>
 #include <aws/lightsail/model/GetDiskRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotsRequest.h>
@@ -158,8 +160,10 @@
 #include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
 #include <aws/lightsail/model/SetIpAddressTypeRequest.h>
 #include <aws/lightsail/model/SetResourceAccessForBucketRequest.h>
+#include <aws/lightsail/model/StartGUISessionRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
 #include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/StopGUISessionRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
 #include <aws/lightsail/model/StopRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/TagResourceRequest.h>
@@ -478,6 +482,14 @@ CreateDomainEntryOutcome LightsailClient::CreateDomainEntry(const CreateDomainEn
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainEntry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateDomainEntryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateGUISessionAccessDetailsOutcome LightsailClient::CreateGUISessionAccessDetails(const CreateGUISessionAccessDetailsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGUISessionAccessDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGUISessionAccessDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateGUISessionAccessDetailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInstanceSnapshotOutcome LightsailClient::CreateInstanceSnapshot(const CreateInstanceSnapshotRequest& request) const
@@ -934,6 +946,14 @@ GetContainerServicesOutcome LightsailClient::GetContainerServices(const GetConta
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContainerServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetContainerServicesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCostEstimateOutcome LightsailClient::GetCostEstimate(const GetCostEstimateRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCostEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCostEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCostEstimateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiskOutcome LightsailClient::GetDisk(const GetDiskRequest& request) const
@@ -1400,6 +1420,14 @@ SetResourceAccessForBucketOutcome LightsailClient::SetResourceAccessForBucket(co
   return SetResourceAccessForBucketOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+StartGUISessionOutcome LightsailClient::StartGUISession(const StartGUISessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartGUISession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartGUISession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartGUISessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1414,6 +1442,14 @@ StartRelationalDatabaseOutcome LightsailClient::StartRelationalDatabase(const St
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartRelationalDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return StartRelationalDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopGUISessionOutcome LightsailClient::StopGUISession(const StopGUISessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopGUISession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopGUISession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopGUISessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopInstanceOutcome LightsailClient::StopInstance(const StopInstanceRequest& request) const

@@ -164,6 +164,35 @@ namespace Model
      */
     inline AttachDiskRequest& WithDiskPath(const char* value) { SetDiskPath(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value used to determine the automatic mounting of a storage volume
+     * to a virtual computer. The default value is <code>False</code>.</p> 
+     * <p>This value only applies to Lightsail for Research resources.</p> 
+     */
+    inline bool GetAutoMounting() const{ return m_autoMounting; }
+
+    /**
+     * <p>A Boolean value used to determine the automatic mounting of a storage volume
+     * to a virtual computer. The default value is <code>False</code>.</p> 
+     * <p>This value only applies to Lightsail for Research resources.</p> 
+     */
+    inline bool AutoMountingHasBeenSet() const { return m_autoMountingHasBeenSet; }
+
+    /**
+     * <p>A Boolean value used to determine the automatic mounting of a storage volume
+     * to a virtual computer. The default value is <code>False</code>.</p> 
+     * <p>This value only applies to Lightsail for Research resources.</p> 
+     */
+    inline void SetAutoMounting(bool value) { m_autoMountingHasBeenSet = true; m_autoMounting = value; }
+
+    /**
+     * <p>A Boolean value used to determine the automatic mounting of a storage volume
+     * to a virtual computer. The default value is <code>False</code>.</p> 
+     * <p>This value only applies to Lightsail for Research resources.</p> 
+     */
+    inline AttachDiskRequest& WithAutoMounting(bool value) { SetAutoMounting(value); return *this;}
+
   private:
 
     Aws::String m_diskName;
@@ -174,6 +203,9 @@ namespace Model
 
     Aws::String m_diskPath;
     bool m_diskPathHasBeenSet = false;
+
+    bool m_autoMounting;
+    bool m_autoMountingHasBeenSet = false;
   };
 
 } // namespace Model

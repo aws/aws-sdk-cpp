@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline const Aws::Vector<StartReadSetImportJobSourceItem>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(const Aws::Vector<StartReadSetImportJobSourceItem>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(Aws::Vector<StartReadSetImportJobSourceItem>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetImportJobRequest& WithSources(const Aws::Vector<StartReadSetImportJobSourceItem>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetImportJobRequest& WithSources(Aws::Vector<StartReadSetImportJobSourceItem>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetImportJobRequest& AddSources(const StartReadSetImportJobSourceItem& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * <p>Source files to import.</p>
+     * <p>The job's source files.</p>
      */
     inline StartReadSetImportJobRequest& AddSources(StartReadSetImportJobSourceItem&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

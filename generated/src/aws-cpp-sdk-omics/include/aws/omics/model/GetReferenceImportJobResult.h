@@ -197,37 +197,37 @@ namespace Model
 
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline const Aws::Vector<ImportReferenceSourceItem>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(const Aws::Vector<ImportReferenceSourceItem>& value) { m_sources = value; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline void SetSources(Aws::Vector<ImportReferenceSourceItem>&& value) { m_sources = std::move(value); }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReferenceImportJobResult& WithSources(const Aws::Vector<ImportReferenceSourceItem>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReferenceImportJobResult& WithSources(Aws::Vector<ImportReferenceSourceItem>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReferenceImportJobResult& AddSources(const ImportReferenceSourceItem& value) { m_sources.push_back(value); return *this; }
 
     /**
-     * <p>The job's sources.</p>
+     * <p>The job's source files.</p>
      */
     inline GetReferenceImportJobResult& AddSources(ImportReferenceSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
 

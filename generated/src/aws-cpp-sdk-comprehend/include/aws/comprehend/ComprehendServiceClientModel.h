@@ -26,13 +26,17 @@
 #include <aws/comprehend/model/BatchDetectTargetedSentimentResult.h>
 #include <aws/comprehend/model/ClassifyDocumentResult.h>
 #include <aws/comprehend/model/ContainsPiiEntitiesResult.h>
+#include <aws/comprehend/model/CreateDatasetResult.h>
 #include <aws/comprehend/model/CreateDocumentClassifierResult.h>
 #include <aws/comprehend/model/CreateEndpointResult.h>
 #include <aws/comprehend/model/CreateEntityRecognizerResult.h>
+#include <aws/comprehend/model/CreateFlywheelResult.h>
 #include <aws/comprehend/model/DeleteDocumentClassifierResult.h>
 #include <aws/comprehend/model/DeleteEndpointResult.h>
 #include <aws/comprehend/model/DeleteEntityRecognizerResult.h>
+#include <aws/comprehend/model/DeleteFlywheelResult.h>
 #include <aws/comprehend/model/DeleteResourcePolicyResult.h>
+#include <aws/comprehend/model/DescribeDatasetResult.h>
 #include <aws/comprehend/model/DescribeDocumentClassificationJobResult.h>
 #include <aws/comprehend/model/DescribeDocumentClassifierResult.h>
 #include <aws/comprehend/model/DescribeDominantLanguageDetectionJobResult.h>
@@ -40,6 +44,8 @@
 #include <aws/comprehend/model/DescribeEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeEntityRecognizerResult.h>
 #include <aws/comprehend/model/DescribeEventsDetectionJobResult.h>
+#include <aws/comprehend/model/DescribeFlywheelResult.h>
+#include <aws/comprehend/model/DescribeFlywheelIterationResult.h>
 #include <aws/comprehend/model/DescribeKeyPhrasesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribePiiEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/DescribeResourcePolicyResult.h>
@@ -54,6 +60,7 @@
 #include <aws/comprehend/model/DetectSyntaxResult.h>
 #include <aws/comprehend/model/DetectTargetedSentimentResult.h>
 #include <aws/comprehend/model/ImportModelResult.h>
+#include <aws/comprehend/model/ListDatasetsResult.h>
 #include <aws/comprehend/model/ListDocumentClassificationJobsResult.h>
 #include <aws/comprehend/model/ListDocumentClassifierSummariesResult.h>
 #include <aws/comprehend/model/ListDocumentClassifiersResult.h>
@@ -63,6 +70,8 @@
 #include <aws/comprehend/model/ListEntityRecognizerSummariesResult.h>
 #include <aws/comprehend/model/ListEntityRecognizersResult.h>
 #include <aws/comprehend/model/ListEventsDetectionJobsResult.h>
+#include <aws/comprehend/model/ListFlywheelIterationHistoryResult.h>
+#include <aws/comprehend/model/ListFlywheelsResult.h>
 #include <aws/comprehend/model/ListKeyPhrasesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListPiiEntitiesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListSentimentDetectionJobsResult.h>
@@ -74,6 +83,7 @@
 #include <aws/comprehend/model/StartDominantLanguageDetectionJobResult.h>
 #include <aws/comprehend/model/StartEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/StartEventsDetectionJobResult.h>
+#include <aws/comprehend/model/StartFlywheelIterationResult.h>
 #include <aws/comprehend/model/StartKeyPhrasesDetectionJobResult.h>
 #include <aws/comprehend/model/StartPiiEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/StartSentimentDetectionJobResult.h>
@@ -91,6 +101,7 @@
 #include <aws/comprehend/model/TagResourceResult.h>
 #include <aws/comprehend/model/UntagResourceResult.h>
 #include <aws/comprehend/model/UpdateEndpointResult.h>
+#include <aws/comprehend/model/UpdateFlywheelResult.h>
 /* End of service model headers required in ComprehendClient header */
 
 namespace Aws
@@ -139,13 +150,17 @@ namespace Aws
       class BatchDetectTargetedSentimentRequest;
       class ClassifyDocumentRequest;
       class ContainsPiiEntitiesRequest;
+      class CreateDatasetRequest;
       class CreateDocumentClassifierRequest;
       class CreateEndpointRequest;
       class CreateEntityRecognizerRequest;
+      class CreateFlywheelRequest;
       class DeleteDocumentClassifierRequest;
       class DeleteEndpointRequest;
       class DeleteEntityRecognizerRequest;
+      class DeleteFlywheelRequest;
       class DeleteResourcePolicyRequest;
+      class DescribeDatasetRequest;
       class DescribeDocumentClassificationJobRequest;
       class DescribeDocumentClassifierRequest;
       class DescribeDominantLanguageDetectionJobRequest;
@@ -153,6 +168,8 @@ namespace Aws
       class DescribeEntitiesDetectionJobRequest;
       class DescribeEntityRecognizerRequest;
       class DescribeEventsDetectionJobRequest;
+      class DescribeFlywheelRequest;
+      class DescribeFlywheelIterationRequest;
       class DescribeKeyPhrasesDetectionJobRequest;
       class DescribePiiEntitiesDetectionJobRequest;
       class DescribeResourcePolicyRequest;
@@ -167,6 +184,7 @@ namespace Aws
       class DetectSyntaxRequest;
       class DetectTargetedSentimentRequest;
       class ImportModelRequest;
+      class ListDatasetsRequest;
       class ListDocumentClassificationJobsRequest;
       class ListDocumentClassifierSummariesRequest;
       class ListDocumentClassifiersRequest;
@@ -176,6 +194,8 @@ namespace Aws
       class ListEntityRecognizerSummariesRequest;
       class ListEntityRecognizersRequest;
       class ListEventsDetectionJobsRequest;
+      class ListFlywheelIterationHistoryRequest;
+      class ListFlywheelsRequest;
       class ListKeyPhrasesDetectionJobsRequest;
       class ListPiiEntitiesDetectionJobsRequest;
       class ListSentimentDetectionJobsRequest;
@@ -187,6 +207,7 @@ namespace Aws
       class StartDominantLanguageDetectionJobRequest;
       class StartEntitiesDetectionJobRequest;
       class StartEventsDetectionJobRequest;
+      class StartFlywheelIterationRequest;
       class StartKeyPhrasesDetectionJobRequest;
       class StartPiiEntitiesDetectionJobRequest;
       class StartSentimentDetectionJobRequest;
@@ -204,6 +225,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateEndpointRequest;
+      class UpdateFlywheelRequest;
       /* End of service model forward declarations required in ComprehendClient header */
 
       /* Service model Outcome class definitions */
@@ -215,13 +237,17 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchDetectTargetedSentimentResult, ComprehendError> BatchDetectTargetedSentimentOutcome;
       typedef Aws::Utils::Outcome<ClassifyDocumentResult, ComprehendError> ClassifyDocumentOutcome;
       typedef Aws::Utils::Outcome<ContainsPiiEntitiesResult, ComprehendError> ContainsPiiEntitiesOutcome;
+      typedef Aws::Utils::Outcome<CreateDatasetResult, ComprehendError> CreateDatasetOutcome;
       typedef Aws::Utils::Outcome<CreateDocumentClassifierResult, ComprehendError> CreateDocumentClassifierOutcome;
       typedef Aws::Utils::Outcome<CreateEndpointResult, ComprehendError> CreateEndpointOutcome;
       typedef Aws::Utils::Outcome<CreateEntityRecognizerResult, ComprehendError> CreateEntityRecognizerOutcome;
+      typedef Aws::Utils::Outcome<CreateFlywheelResult, ComprehendError> CreateFlywheelOutcome;
       typedef Aws::Utils::Outcome<DeleteDocumentClassifierResult, ComprehendError> DeleteDocumentClassifierOutcome;
       typedef Aws::Utils::Outcome<DeleteEndpointResult, ComprehendError> DeleteEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteEntityRecognizerResult, ComprehendError> DeleteEntityRecognizerOutcome;
+      typedef Aws::Utils::Outcome<DeleteFlywheelResult, ComprehendError> DeleteFlywheelOutcome;
       typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, ComprehendError> DeleteResourcePolicyOutcome;
+      typedef Aws::Utils::Outcome<DescribeDatasetResult, ComprehendError> DescribeDatasetOutcome;
       typedef Aws::Utils::Outcome<DescribeDocumentClassificationJobResult, ComprehendError> DescribeDocumentClassificationJobOutcome;
       typedef Aws::Utils::Outcome<DescribeDocumentClassifierResult, ComprehendError> DescribeDocumentClassifierOutcome;
       typedef Aws::Utils::Outcome<DescribeDominantLanguageDetectionJobResult, ComprehendError> DescribeDominantLanguageDetectionJobOutcome;
@@ -229,6 +255,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEntitiesDetectionJobResult, ComprehendError> DescribeEntitiesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<DescribeEntityRecognizerResult, ComprehendError> DescribeEntityRecognizerOutcome;
       typedef Aws::Utils::Outcome<DescribeEventsDetectionJobResult, ComprehendError> DescribeEventsDetectionJobOutcome;
+      typedef Aws::Utils::Outcome<DescribeFlywheelResult, ComprehendError> DescribeFlywheelOutcome;
+      typedef Aws::Utils::Outcome<DescribeFlywheelIterationResult, ComprehendError> DescribeFlywheelIterationOutcome;
       typedef Aws::Utils::Outcome<DescribeKeyPhrasesDetectionJobResult, ComprehendError> DescribeKeyPhrasesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<DescribePiiEntitiesDetectionJobResult, ComprehendError> DescribePiiEntitiesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, ComprehendError> DescribeResourcePolicyOutcome;
@@ -243,6 +271,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetectSyntaxResult, ComprehendError> DetectSyntaxOutcome;
       typedef Aws::Utils::Outcome<DetectTargetedSentimentResult, ComprehendError> DetectTargetedSentimentOutcome;
       typedef Aws::Utils::Outcome<ImportModelResult, ComprehendError> ImportModelOutcome;
+      typedef Aws::Utils::Outcome<ListDatasetsResult, ComprehendError> ListDatasetsOutcome;
       typedef Aws::Utils::Outcome<ListDocumentClassificationJobsResult, ComprehendError> ListDocumentClassificationJobsOutcome;
       typedef Aws::Utils::Outcome<ListDocumentClassifierSummariesResult, ComprehendError> ListDocumentClassifierSummariesOutcome;
       typedef Aws::Utils::Outcome<ListDocumentClassifiersResult, ComprehendError> ListDocumentClassifiersOutcome;
@@ -252,6 +281,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEntityRecognizerSummariesResult, ComprehendError> ListEntityRecognizerSummariesOutcome;
       typedef Aws::Utils::Outcome<ListEntityRecognizersResult, ComprehendError> ListEntityRecognizersOutcome;
       typedef Aws::Utils::Outcome<ListEventsDetectionJobsResult, ComprehendError> ListEventsDetectionJobsOutcome;
+      typedef Aws::Utils::Outcome<ListFlywheelIterationHistoryResult, ComprehendError> ListFlywheelIterationHistoryOutcome;
+      typedef Aws::Utils::Outcome<ListFlywheelsResult, ComprehendError> ListFlywheelsOutcome;
       typedef Aws::Utils::Outcome<ListKeyPhrasesDetectionJobsResult, ComprehendError> ListKeyPhrasesDetectionJobsOutcome;
       typedef Aws::Utils::Outcome<ListPiiEntitiesDetectionJobsResult, ComprehendError> ListPiiEntitiesDetectionJobsOutcome;
       typedef Aws::Utils::Outcome<ListSentimentDetectionJobsResult, ComprehendError> ListSentimentDetectionJobsOutcome;
@@ -263,6 +294,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartDominantLanguageDetectionJobResult, ComprehendError> StartDominantLanguageDetectionJobOutcome;
       typedef Aws::Utils::Outcome<StartEntitiesDetectionJobResult, ComprehendError> StartEntitiesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<StartEventsDetectionJobResult, ComprehendError> StartEventsDetectionJobOutcome;
+      typedef Aws::Utils::Outcome<StartFlywheelIterationResult, ComprehendError> StartFlywheelIterationOutcome;
       typedef Aws::Utils::Outcome<StartKeyPhrasesDetectionJobResult, ComprehendError> StartKeyPhrasesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<StartPiiEntitiesDetectionJobResult, ComprehendError> StartPiiEntitiesDetectionJobOutcome;
       typedef Aws::Utils::Outcome<StartSentimentDetectionJobResult, ComprehendError> StartSentimentDetectionJobOutcome;
@@ -280,6 +312,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, ComprehendError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ComprehendError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateEndpointResult, ComprehendError> UpdateEndpointOutcome;
+      typedef Aws::Utils::Outcome<UpdateFlywheelResult, ComprehendError> UpdateFlywheelOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -291,13 +324,17 @@ namespace Aws
       typedef std::future<BatchDetectTargetedSentimentOutcome> BatchDetectTargetedSentimentOutcomeCallable;
       typedef std::future<ClassifyDocumentOutcome> ClassifyDocumentOutcomeCallable;
       typedef std::future<ContainsPiiEntitiesOutcome> ContainsPiiEntitiesOutcomeCallable;
+      typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
       typedef std::future<CreateDocumentClassifierOutcome> CreateDocumentClassifierOutcomeCallable;
       typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
       typedef std::future<CreateEntityRecognizerOutcome> CreateEntityRecognizerOutcomeCallable;
+      typedef std::future<CreateFlywheelOutcome> CreateFlywheelOutcomeCallable;
       typedef std::future<DeleteDocumentClassifierOutcome> DeleteDocumentClassifierOutcomeCallable;
       typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
       typedef std::future<DeleteEntityRecognizerOutcome> DeleteEntityRecognizerOutcomeCallable;
+      typedef std::future<DeleteFlywheelOutcome> DeleteFlywheelOutcomeCallable;
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
+      typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
       typedef std::future<DescribeDocumentClassificationJobOutcome> DescribeDocumentClassificationJobOutcomeCallable;
       typedef std::future<DescribeDocumentClassifierOutcome> DescribeDocumentClassifierOutcomeCallable;
       typedef std::future<DescribeDominantLanguageDetectionJobOutcome> DescribeDominantLanguageDetectionJobOutcomeCallable;
@@ -305,6 +342,8 @@ namespace Aws
       typedef std::future<DescribeEntitiesDetectionJobOutcome> DescribeEntitiesDetectionJobOutcomeCallable;
       typedef std::future<DescribeEntityRecognizerOutcome> DescribeEntityRecognizerOutcomeCallable;
       typedef std::future<DescribeEventsDetectionJobOutcome> DescribeEventsDetectionJobOutcomeCallable;
+      typedef std::future<DescribeFlywheelOutcome> DescribeFlywheelOutcomeCallable;
+      typedef std::future<DescribeFlywheelIterationOutcome> DescribeFlywheelIterationOutcomeCallable;
       typedef std::future<DescribeKeyPhrasesDetectionJobOutcome> DescribeKeyPhrasesDetectionJobOutcomeCallable;
       typedef std::future<DescribePiiEntitiesDetectionJobOutcome> DescribePiiEntitiesDetectionJobOutcomeCallable;
       typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
@@ -319,6 +358,7 @@ namespace Aws
       typedef std::future<DetectSyntaxOutcome> DetectSyntaxOutcomeCallable;
       typedef std::future<DetectTargetedSentimentOutcome> DetectTargetedSentimentOutcomeCallable;
       typedef std::future<ImportModelOutcome> ImportModelOutcomeCallable;
+      typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
       typedef std::future<ListDocumentClassificationJobsOutcome> ListDocumentClassificationJobsOutcomeCallable;
       typedef std::future<ListDocumentClassifierSummariesOutcome> ListDocumentClassifierSummariesOutcomeCallable;
       typedef std::future<ListDocumentClassifiersOutcome> ListDocumentClassifiersOutcomeCallable;
@@ -328,6 +368,8 @@ namespace Aws
       typedef std::future<ListEntityRecognizerSummariesOutcome> ListEntityRecognizerSummariesOutcomeCallable;
       typedef std::future<ListEntityRecognizersOutcome> ListEntityRecognizersOutcomeCallable;
       typedef std::future<ListEventsDetectionJobsOutcome> ListEventsDetectionJobsOutcomeCallable;
+      typedef std::future<ListFlywheelIterationHistoryOutcome> ListFlywheelIterationHistoryOutcomeCallable;
+      typedef std::future<ListFlywheelsOutcome> ListFlywheelsOutcomeCallable;
       typedef std::future<ListKeyPhrasesDetectionJobsOutcome> ListKeyPhrasesDetectionJobsOutcomeCallable;
       typedef std::future<ListPiiEntitiesDetectionJobsOutcome> ListPiiEntitiesDetectionJobsOutcomeCallable;
       typedef std::future<ListSentimentDetectionJobsOutcome> ListSentimentDetectionJobsOutcomeCallable;
@@ -339,6 +381,7 @@ namespace Aws
       typedef std::future<StartDominantLanguageDetectionJobOutcome> StartDominantLanguageDetectionJobOutcomeCallable;
       typedef std::future<StartEntitiesDetectionJobOutcome> StartEntitiesDetectionJobOutcomeCallable;
       typedef std::future<StartEventsDetectionJobOutcome> StartEventsDetectionJobOutcomeCallable;
+      typedef std::future<StartFlywheelIterationOutcome> StartFlywheelIterationOutcomeCallable;
       typedef std::future<StartKeyPhrasesDetectionJobOutcome> StartKeyPhrasesDetectionJobOutcomeCallable;
       typedef std::future<StartPiiEntitiesDetectionJobOutcome> StartPiiEntitiesDetectionJobOutcomeCallable;
       typedef std::future<StartSentimentDetectionJobOutcome> StartSentimentDetectionJobOutcomeCallable;
@@ -356,6 +399,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
+      typedef std::future<UpdateFlywheelOutcome> UpdateFlywheelOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -370,13 +414,17 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::BatchDetectTargetedSentimentRequest&, const Model::BatchDetectTargetedSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDetectTargetedSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ClassifyDocumentRequest&, const Model::ClassifyDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClassifyDocumentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ContainsPiiEntitiesRequest&, const Model::ContainsPiiEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContainsPiiEntitiesResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::CreateDocumentClassifierRequest&, const Model::CreateDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentClassifierResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::CreateEntityRecognizerRequest&, const Model::CreateEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEntityRecognizerResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::CreateFlywheelRequest&, const Model::CreateFlywheelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlywheelResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DeleteDocumentClassifierRequest&, const Model::DeleteDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentClassifierResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DeleteEntityRecognizerRequest&, const Model::DeleteEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntityRecognizerResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DeleteFlywheelRequest&, const Model::DeleteFlywheelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlywheelResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeDocumentClassificationJobRequest&, const Model::DescribeDocumentClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentClassificationJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeDocumentClassifierRequest&, const Model::DescribeDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDocumentClassifierResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeDominantLanguageDetectionJobRequest&, const Model::DescribeDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDominantLanguageDetectionJobResponseReceivedHandler;
@@ -384,6 +432,8 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEntitiesDetectionJobRequest&, const Model::DescribeEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEntityRecognizerRequest&, const Model::DescribeEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntityRecognizerResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeEventsDetectionJobRequest&, const Model::DescribeEventsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DescribeFlywheelRequest&, const Model::DescribeFlywheelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlywheelResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::DescribeFlywheelIterationRequest&, const Model::DescribeFlywheelIterationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlywheelIterationResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeKeyPhrasesDetectionJobRequest&, const Model::DescribeKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPhrasesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribePiiEntitiesDetectionJobRequest&, const Model::DescribePiiEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePiiEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
@@ -398,6 +448,7 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::DetectSyntaxRequest&, const Model::DetectSyntaxOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectSyntaxResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::DetectTargetedSentimentRequest&, const Model::DetectTargetedSentimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTargetedSentimentResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ImportModelRequest&, const Model::ImportModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportModelResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassificationJobsRequest&, const Model::ListDocumentClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassificationJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassifierSummariesRequest&, const Model::ListDocumentClassifierSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassifierSummariesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListDocumentClassifiersRequest&, const Model::ListDocumentClassifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentClassifiersResponseReceivedHandler;
@@ -407,6 +458,8 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::ListEntityRecognizerSummariesRequest&, const Model::ListEntityRecognizerSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityRecognizerSummariesResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListEntityRecognizersRequest&, const Model::ListEntityRecognizersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityRecognizersResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListEventsDetectionJobsRequest&, const Model::ListEventsDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventsDetectionJobsResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListFlywheelIterationHistoryRequest&, const Model::ListFlywheelIterationHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlywheelIterationHistoryResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListFlywheelsRequest&, const Model::ListFlywheelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlywheelsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListKeyPhrasesDetectionJobsRequest&, const Model::ListKeyPhrasesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPhrasesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListPiiEntitiesDetectionJobsRequest&, const Model::ListPiiEntitiesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPiiEntitiesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListSentimentDetectionJobsRequest&, const Model::ListSentimentDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSentimentDetectionJobsResponseReceivedHandler;
@@ -418,6 +471,7 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::StartDominantLanguageDetectionJobRequest&, const Model::StartDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDominantLanguageDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartEntitiesDetectionJobRequest&, const Model::StartEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartEventsDetectionJobRequest&, const Model::StartEventsDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEventsDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StartFlywheelIterationRequest&, const Model::StartFlywheelIterationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFlywheelIterationResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartKeyPhrasesDetectionJobRequest&, const Model::StartKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartKeyPhrasesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartPiiEntitiesDetectionJobRequest&, const Model::StartPiiEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPiiEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartSentimentDetectionJobRequest&, const Model::StartSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSentimentDetectionJobResponseReceivedHandler;
@@ -435,6 +489,7 @@ namespace Aws
     typedef std::function<void(const ComprehendClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::UpdateFlywheelRequest&, const Model::UpdateFlywheelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlywheelResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Comprehend
 } // namespace Aws

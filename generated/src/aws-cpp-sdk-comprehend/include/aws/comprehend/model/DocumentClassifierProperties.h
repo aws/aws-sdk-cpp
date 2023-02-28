@@ -486,50 +486,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-     * that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -921,6 +921,47 @@ namespace Model
      */
     inline DocumentClassifierProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline DocumentClassifierProperties& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline DocumentClassifierProperties& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
+     */
+    inline DocumentClassifierProperties& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+
   private:
 
     Aws::String m_documentClassifierArn;
@@ -976,6 +1017,9 @@ namespace Model
 
     Aws::String m_sourceModelArn;
     bool m_sourceModelArnHasBeenSet = false;
+
+    Aws::String m_flywheelArn;
+    bool m_flywheelArnHasBeenSet = false;
   };
 
 } // namespace Model

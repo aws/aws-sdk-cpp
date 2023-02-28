@@ -82,7 +82,7 @@ namespace Model
      * <p>The last date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more results, this value is not present.</p>
+     * there are more items, this value is not present.</p>
      */
     inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const{ return m_lastEvaluatedTime; }
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>The last date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more results, this value is not present.</p>
+     * there are more items, this value is not present.</p>
      */
     inline void SetLastEvaluatedTime(const Aws::Utils::DateTime& value) { m_lastEvaluatedTime = value; }
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>The last date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more results, this value is not present.</p>
+     * there are more items, this value is not present.</p>
      */
     inline void SetLastEvaluatedTime(Aws::Utils::DateTime&& value) { m_lastEvaluatedTime = std::move(value); }
 
@@ -106,7 +106,7 @@ namespace Model
      * <p>The last date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more results, this value is not present.</p>
+     * there are more items, this value is not present.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(const Aws::Utils::DateTime& value) { SetLastEvaluatedTime(value); return *this;}
 
@@ -114,50 +114,50 @@ namespace Model
      * <p>The last date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
-     * there are more results, this value is not present.</p>
+     * there are more items, this value is not present.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(Aws::Utils::DateTime&& value) { SetLastEvaluatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token required to retrieve the next set of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

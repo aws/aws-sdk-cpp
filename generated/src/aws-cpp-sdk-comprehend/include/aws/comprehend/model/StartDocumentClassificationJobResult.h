@@ -35,43 +35,50 @@ namespace Model
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline StartDocumentClassificationJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline StartDocumentClassificationJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier generated for the job. To get the status of the job, use this
-     * identifier with the operation.</p>
+     * identifier with the <code>DescribeDocumentClassificationJob</code>
+     * operation.</p>
      */
     inline StartDocumentClassificationJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
@@ -159,10 +166,11 @@ namespace Model
      * and queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon Comprehend is
      * processing the job.</p> </li> <li> <p>COMPLETED - The job was successfully
      * completed and the output is available.</p> </li> <li> <p>FAILED - The job did
-     * not complete. For details, use the operation.</p> </li> <li> <p>STOP_REQUESTED -
-     * Amazon Comprehend has received a stop request for the job and is processing the
-     * request.</p> </li> <li> <p>STOPPED - The job was successfully stopped without
-     * completing.</p> </li> </ul>
+     * not complete. For details, use the
+     * <code>DescribeDocumentClassificationJob</code> operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
@@ -171,10 +179,11 @@ namespace Model
      * and queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon Comprehend is
      * processing the job.</p> </li> <li> <p>COMPLETED - The job was successfully
      * completed and the output is available.</p> </li> <li> <p>FAILED - The job did
-     * not complete. For details, use the operation.</p> </li> <li> <p>STOP_REQUESTED -
-     * Amazon Comprehend has received a stop request for the job and is processing the
-     * request.</p> </li> <li> <p>STOPPED - The job was successfully stopped without
-     * completing.</p> </li> </ul>
+     * not complete. For details, use the
+     * <code>DescribeDocumentClassificationJob</code> operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
@@ -183,10 +192,11 @@ namespace Model
      * and queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon Comprehend is
      * processing the job.</p> </li> <li> <p>COMPLETED - The job was successfully
      * completed and the output is available.</p> </li> <li> <p>FAILED - The job did
-     * not complete. For details, use the operation.</p> </li> <li> <p>STOP_REQUESTED -
-     * Amazon Comprehend has received a stop request for the job and is processing the
-     * request.</p> </li> <li> <p>STOPPED - The job was successfully stopped without
-     * completing.</p> </li> </ul>
+     * not complete. For details, use the
+     * <code>DescribeDocumentClassificationJob</code> operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
@@ -195,10 +205,11 @@ namespace Model
      * and queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon Comprehend is
      * processing the job.</p> </li> <li> <p>COMPLETED - The job was successfully
      * completed and the output is available.</p> </li> <li> <p>FAILED - The job did
-     * not complete. For details, use the operation.</p> </li> <li> <p>STOP_REQUESTED -
-     * Amazon Comprehend has received a stop request for the job and is processing the
-     * request.</p> </li> <li> <p>STOPPED - The job was successfully stopped without
-     * completing.</p> </li> </ul>
+     * not complete. For details, use the
+     * <code>DescribeDocumentClassificationJob</code> operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline StartDocumentClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
@@ -207,12 +218,49 @@ namespace Model
      * and queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon Comprehend is
      * processing the job.</p> </li> <li> <p>COMPLETED - The job was successfully
      * completed and the output is available.</p> </li> <li> <p>FAILED - The job did
-     * not complete. For details, use the operation.</p> </li> <li> <p>STOP_REQUESTED -
-     * Amazon Comprehend has received a stop request for the job and is processing the
-     * request.</p> </li> <li> <p>STOPPED - The job was successfully stopped without
-     * completing.</p> </li> </ul>
+     * not complete. For details, use the
+     * <code>DescribeDocumentClassificationJob</code> operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline StartDocumentClassificationJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArn = value; }
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline StartDocumentClassificationJobResult& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline StartDocumentClassificationJobResult& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the custom classification model.</p>
+     */
+    inline StartDocumentClassificationJobResult& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
 
   private:
 
@@ -221,6 +269,8 @@ namespace Model
     Aws::String m_jobArn;
 
     JobStatus m_jobStatus;
+
+    Aws::String m_documentClassifierArn;
   };
 
 } // namespace Model
