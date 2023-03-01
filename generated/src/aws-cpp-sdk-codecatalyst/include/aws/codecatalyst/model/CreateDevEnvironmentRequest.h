@@ -400,50 +400,62 @@ namespace Model
 
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline const PersistentStorageConfiguration& GetPersistentStorage() const{ return m_persistentStorage; }
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline bool PersistentStorageHasBeenSet() const { return m_persistentStorageHasBeenSet; }
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline void SetPersistentStorage(const PersistentStorageConfiguration& value) { m_persistentStorageHasBeenSet = true; m_persistentStorage = value; }
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline void SetPersistentStorage(PersistentStorageConfiguration&& value) { m_persistentStorageHasBeenSet = true; m_persistentStorage = std::move(value); }
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline CreateDevEnvironmentRequest& WithPersistentStorage(const PersistentStorageConfiguration& value) { SetPersistentStorage(value); return *this;}
 
     /**
-     * <p>Information about the amount of storage allocated to the Dev Environment. By
-     * default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-     *  <p>Valid values for persistent storage are based on memory sizes in 16GB
-     * increments. Valid values are 16, 32, and 64.</p> 
+     * <p>Information about the amount of storage allocated to the Dev Environment.
+     * </p>  <p>By default, a Dev Environment is configured to have 16GB of
+     * persistent storage when created from the Amazon CodeCatalyst console, but there
+     * is no default when programmatically creating a Dev Environment. Valid values for
+     * persistent storage are based on memory sizes in 16GB increments. Valid values
+     * are 16, 32, and 64.</p> 
      */
     inline CreateDevEnvironmentRequest& WithPersistentStorage(PersistentStorageConfiguration&& value) { SetPersistentStorage(std::move(value)); return *this;}
 

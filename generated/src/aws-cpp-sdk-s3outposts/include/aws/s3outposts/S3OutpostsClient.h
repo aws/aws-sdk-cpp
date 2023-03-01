@@ -166,6 +166,34 @@ namespace S3Outposts
         }
 
         /**
+         * <p>Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services
+         * account. Includes S3 on Outposts that you have access to as the Outposts owner,
+         * or as a shared user from Resource Access Manager (RAM). </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOutpostsWithS3Outcome ListOutpostsWithS3(const Model::ListOutpostsWithS3Request& request) const;
+
+        /**
+         * A Callable wrapper for ListOutpostsWithS3 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOutpostsWithS3RequestT = Model::ListOutpostsWithS3Request>
+        Model::ListOutpostsWithS3OutcomeCallable ListOutpostsWithS3Callable(const ListOutpostsWithS3RequestT& request) const
+        {
+            return SubmitCallable(&S3OutpostsClient::ListOutpostsWithS3, request);
+        }
+
+        /**
+         * An Async wrapper for ListOutpostsWithS3 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOutpostsWithS3RequestT = Model::ListOutpostsWithS3Request>
+        void ListOutpostsWithS3Async(const ListOutpostsWithS3RequestT& request, const ListOutpostsWithS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3OutpostsClient::ListOutpostsWithS3, request, handler, context);
+        }
+
+        /**
          * <p>Lists all endpoints associated with an Outpost that has been shared by Amazon
          * Web Services Resource Access Manager (RAM).</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a

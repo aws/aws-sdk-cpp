@@ -145,6 +145,42 @@ namespace Model
      */
     inline CreateAccessTokenResult& WithExpiresTime(Aws::Utils::DateTime&& value) { SetExpiresTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline const Aws::String& GetAccessTokenId() const{ return m_accessTokenId; }
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline void SetAccessTokenId(const Aws::String& value) { m_accessTokenId = value; }
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline void SetAccessTokenId(Aws::String&& value) { m_accessTokenId = std::move(value); }
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline void SetAccessTokenId(const char* value) { m_accessTokenId.assign(value); }
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline CreateAccessTokenResult& WithAccessTokenId(const Aws::String& value) { SetAccessTokenId(value); return *this;}
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline CreateAccessTokenResult& WithAccessTokenId(Aws::String&& value) { SetAccessTokenId(std::move(value)); return *this;}
+
+    /**
+     * <p>The system-generated unique ID of the access token.</p>
+     */
+    inline CreateAccessTokenResult& WithAccessTokenId(const char* value) { SetAccessTokenId(value); return *this;}
+
   private:
 
     Aws::String m_secret;
@@ -152,6 +188,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::Utils::DateTime m_expiresTime;
+
+    Aws::String m_accessTokenId;
   };
 
 } // namespace Model

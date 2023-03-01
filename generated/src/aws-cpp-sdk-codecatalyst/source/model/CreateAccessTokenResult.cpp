@@ -46,6 +46,12 @@ CreateAccessTokenResult& CreateAccessTokenResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("accessTokenId"))
+  {
+    m_accessTokenId = jsonValue.GetString("accessTokenId");
+
+  }
+
 
 
   return *this;

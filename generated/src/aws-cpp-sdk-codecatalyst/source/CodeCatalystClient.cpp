@@ -44,6 +44,7 @@
 #include <aws/codecatalyst/model/StartDevEnvironmentRequest.h>
 #include <aws/codecatalyst/model/StartDevEnvironmentSessionRequest.h>
 #include <aws/codecatalyst/model/StopDevEnvironmentRequest.h>
+#include <aws/codecatalyst/model/StopDevEnvironmentSessionRequest.h>
 #include <aws/codecatalyst/model/UpdateDevEnvironmentRequest.h>
 
 using namespace Aws;
@@ -566,6 +567,42 @@ StopDevEnvironmentOutcome CodeCatalystClient::StopDevEnvironment(const StopDevEn
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   return StopDevEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::BEARER_SIGNER));
+}
+
+StopDevEnvironmentSessionOutcome CodeCatalystClient::StopDevEnvironmentSession(const StopDevEnvironmentSessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDevEnvironmentSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopDevEnvironmentSession", "Required field: SpaceName, is not set");
+    return StopDevEnvironmentSessionOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceName]", false));
+  }
+  if (!request.ProjectNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopDevEnvironmentSession", "Required field: ProjectName, is not set");
+    return StopDevEnvironmentSessionOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopDevEnvironmentSession", "Required field: Id, is not set");
+    return StopDevEnvironmentSessionOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.SessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopDevEnvironmentSession", "Required field: SessionId, is not set");
+    return StopDevEnvironmentSessionOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopDevEnvironmentSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/spaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/devEnvironments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/session/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  return StopDevEnvironmentSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::BEARER_SIGNER));
 }
 
 UpdateDevEnvironmentOutcome CodeCatalystClient::UpdateDevEnvironment(const UpdateDevEnvironmentRequest& request) const

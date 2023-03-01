@@ -180,72 +180,72 @@ namespace Model
 
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The service code or attribute value that you want to filter by. If you are
+     * <p>The service code or attribute value that you want to filter by. If you're
      * filtering by service code this is the actual service code, such as
-     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * <code>AmazonEC2</code>. If you're filtering by attribute name, this is the
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */

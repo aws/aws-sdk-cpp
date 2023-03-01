@@ -155,6 +155,40 @@ namespace Pricing
         }
 
         /**
+         * <p> <i> <b>This feature is in preview release and is subject to change. Your use
+         * of Amazon Web Services Price List API is subject to the Beta Service
+         * Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+         * Terms</a> (Section 1.10).</b> </i> </p> <p>This returns the URL that you can
+         * retrieve your Price List file from. This URL is based on the
+         * <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve from the
+         * <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
+         * <code>ListPriceLists</code> </a> response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPriceListFileUrlOutcome GetPriceListFileUrl(const Model::GetPriceListFileUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPriceListFileUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPriceListFileUrlRequestT = Model::GetPriceListFileUrlRequest>
+        Model::GetPriceListFileUrlOutcomeCallable GetPriceListFileUrlCallable(const GetPriceListFileUrlRequestT& request) const
+        {
+            return SubmitCallable(&PricingClient::GetPriceListFileUrl, request);
+        }
+
+        /**
+         * An Async wrapper for GetPriceListFileUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPriceListFileUrlRequestT = Model::GetPriceListFileUrlRequest>
+        void GetPriceListFileUrlAsync(const GetPriceListFileUrlRequestT& request, const GetPriceListFileUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PricingClient::GetPriceListFileUrl, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all products that match the filter criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">AWS
@@ -178,6 +212,45 @@ namespace Pricing
         void GetProductsAsync(const GetProductsRequestT& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PricingClient::GetProducts, request, handler, context);
+        }
+
+        /**
+         * <p> <i> <b>This feature is in preview release and is subject to change. Your use
+         * of Amazon Web Services Price List API is subject to the Beta Service
+         * Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+         * Terms</a> (Section 1.10).</b> </i> </p> <p>This returns a list of Price List
+         * references that the requester if authorized to view, given a
+         * <code>ServiceCode</code>, <code>CurrencyCode</code>, and an
+         * <code>EffectiveDate</code>. Use without a <code>RegionCode</code> filter to list
+         * Price List references from all available Amazon Web Services Regions. Use with a
+         * <code>RegionCode</code> filter to get the Price List reference that's specific
+         * to a specific Amazon Web Services Region. You can use the
+         * <code>PriceListArn</code> from the response to get your preferred Price List
+         * files through the <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
+         * <code>GetPriceListFileUrl</code> </a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPriceListsOutcome ListPriceLists(const Model::ListPriceListsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPriceLists that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPriceListsRequestT = Model::ListPriceListsRequest>
+        Model::ListPriceListsOutcomeCallable ListPriceListsCallable(const ListPriceListsRequestT& request) const
+        {
+            return SubmitCallable(&PricingClient::ListPriceLists, request);
+        }
+
+        /**
+         * An Async wrapper for ListPriceLists that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPriceListsRequestT = Model::ListPriceListsRequest>
+        void ListPriceListsAsync(const ListPriceListsRequestT& request, const ListPriceListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PricingClient::ListPriceLists, request, handler, context);
         }
 
 
