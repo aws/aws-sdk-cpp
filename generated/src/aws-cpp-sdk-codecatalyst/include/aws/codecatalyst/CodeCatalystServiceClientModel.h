@@ -40,6 +40,7 @@
 #include <aws/codecatalyst/model/StartDevEnvironmentResult.h>
 #include <aws/codecatalyst/model/StartDevEnvironmentSessionResult.h>
 #include <aws/codecatalyst/model/StopDevEnvironmentResult.h>
+#include <aws/codecatalyst/model/StopDevEnvironmentSessionResult.h>
 #include <aws/codecatalyst/model/UpdateDevEnvironmentResult.h>
 #include <aws/codecatalyst/model/VerifySessionResult.h>
 /* End of service model headers required in CodeCatalystClient header */
@@ -103,6 +104,7 @@ namespace Aws
       class StartDevEnvironmentRequest;
       class StartDevEnvironmentSessionRequest;
       class StopDevEnvironmentRequest;
+      class StopDevEnvironmentSessionRequest;
       class UpdateDevEnvironmentRequest;
       /* End of service model forward declarations required in CodeCatalystClient header */
 
@@ -129,6 +131,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartDevEnvironmentResult, CodeCatalystError> StartDevEnvironmentOutcome;
       typedef Aws::Utils::Outcome<StartDevEnvironmentSessionResult, CodeCatalystError> StartDevEnvironmentSessionOutcome;
       typedef Aws::Utils::Outcome<StopDevEnvironmentResult, CodeCatalystError> StopDevEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<StopDevEnvironmentSessionResult, CodeCatalystError> StopDevEnvironmentSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateDevEnvironmentResult, CodeCatalystError> UpdateDevEnvironmentOutcome;
       typedef Aws::Utils::Outcome<VerifySessionResult, CodeCatalystError> VerifySessionOutcome;
       /* End of service model Outcome class definitions */
@@ -156,6 +159,7 @@ namespace Aws
       typedef std::future<StartDevEnvironmentOutcome> StartDevEnvironmentOutcomeCallable;
       typedef std::future<StartDevEnvironmentSessionOutcome> StartDevEnvironmentSessionOutcomeCallable;
       typedef std::future<StopDevEnvironmentOutcome> StopDevEnvironmentOutcomeCallable;
+      typedef std::future<StopDevEnvironmentSessionOutcome> StopDevEnvironmentSessionOutcomeCallable;
       typedef std::future<UpdateDevEnvironmentOutcome> UpdateDevEnvironmentOutcomeCallable;
       typedef std::future<VerifySessionOutcome> VerifySessionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -186,6 +190,7 @@ namespace Aws
     typedef std::function<void(const CodeCatalystClient*, const Model::StartDevEnvironmentRequest&, const Model::StartDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::StartDevEnvironmentSessionRequest&, const Model::StartDevEnvironmentSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDevEnvironmentSessionResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::StopDevEnvironmentRequest&, const Model::StopDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDevEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::StopDevEnvironmentSessionRequest&, const Model::StopDevEnvironmentSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDevEnvironmentSessionResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::UpdateDevEnvironmentRequest&, const Model::UpdateDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::VerifySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySessionResponseReceivedHandler;
     /* End of service model async handlers definitions */

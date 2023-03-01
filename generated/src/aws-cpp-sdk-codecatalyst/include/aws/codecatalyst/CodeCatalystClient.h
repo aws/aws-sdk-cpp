@@ -48,16 +48,17 @@ namespace CodeCatalyst
    * <a>StartDevEnvironmentSession</a>, which starts a session to a specified Dev
    * Environment.</p> </li> <li> <p> <a>StopDevEnvironment</a>, which stops a
    * specified Dev Environment and puts it into an stopped state.</p> </li> <li> <p>
-   * <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev
-   * Environment.</p> </li> <li> <p> <a>VerifySession</a>, which verifies whether the
-   * calling user has a valid Amazon CodeCatalyst login and session.</p> </li> </ul>
-   * <p>Security, activity, and resource management in Amazon CodeCatalyst, by
-   * calling the following:</p> <ul> <li> <p> <a>DeleteAccessToken</a>, which deletes
-   * a specified personal access token (PAT).</p> </li> <li> <p>
-   * <a>ListAccessTokens</a>, which lists all personal access tokens (PATs)
-   * associated with a user.</p> </li> <li> <p> <a>ListEventLogs</a>, which retrieves
-   * a list of events that occurred during a specified time period in a space.</p>
-   * </li> </ul>
+   * <a>StopDevEnvironmentSession</a>, which stops a session for a specified Dev
+   * Environment.</p> </li> <li> <p> <a>UpdateDevEnvironment</a>, which changes one
+   * or more values for a Dev Environment.</p> </li> <li> <p> <a>VerifySession</a>,
+   * which verifies whether the calling user has a valid Amazon CodeCatalyst login
+   * and session.</p> </li> </ul> <p>Security, activity, and resource management in
+   * Amazon CodeCatalyst, by calling the following:</p> <ul> <li> <p>
+   * <a>DeleteAccessToken</a>, which deletes a specified personal access token
+   * (PAT).</p> </li> <li> <p> <a>ListAccessTokens</a>, which lists all personal
+   * access tokens (PATs) associated with a user.</p> </li> <li> <p>
+   * <a>ListEventLogs</a>, which retrieves a list of events that occurred during a
+   * specified time period in a space.</p> </li> </ul>
    */
   class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>
   {
@@ -118,9 +119,11 @@ namespace CodeCatalyst
         /**
          * <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development
          * Dev Environment that you can use to quickly work on the code stored in the
-         * source repositories of your project. By default, a Dev Environment is configured
-         * to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage.
-         * </p><p><h3>See Also:</h3>   <a
+         * source repositories of your project. </p>  <p>When created in the Amazon
+         * CodeCatalyst console, by default a Dev Environment is configured to have a 2
+         * core processor, 4GB of RAM, and 16GB of persistent storage. None of these
+         * defaults apply to a Dev Environment created programmatically.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateDevEnvironment">AWS
          * API Reference</a></p>
          */
@@ -661,6 +664,32 @@ namespace CodeCatalyst
         void StopDevEnvironmentAsync(const StopDevEnvironmentRequestT& request, const StopDevEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCatalystClient::StopDevEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a session for a specified Dev Environment.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDevEnvironmentSessionOutcome StopDevEnvironmentSession(const Model::StopDevEnvironmentSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopDevEnvironmentSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopDevEnvironmentSessionRequestT = Model::StopDevEnvironmentSessionRequest>
+        Model::StopDevEnvironmentSessionOutcomeCallable StopDevEnvironmentSessionCallable(const StopDevEnvironmentSessionRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::StopDevEnvironmentSession, request);
+        }
+
+        /**
+         * An Async wrapper for StopDevEnvironmentSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopDevEnvironmentSessionRequestT = Model::StopDevEnvironmentSessionRequest>
+        void StopDevEnvironmentSessionAsync(const StopDevEnvironmentSessionRequestT& request, const StopDevEnvironmentSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::StopDevEnvironmentSession, request, handler, context);
         }
 
         /**

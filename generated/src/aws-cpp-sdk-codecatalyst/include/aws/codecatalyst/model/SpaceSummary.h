@@ -38,50 +38,42 @@ namespace Model
 
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline SpaceSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline SpaceSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> <i>We need to know what this is and the basic usage information so that
-     * third-party developers know how to use this data type.</i> </p>
+     * <p>The name of the space.</p>
      */
     inline SpaceSummary& WithName(const char* value) { SetName(value); return *this;}
 

@@ -20,6 +20,7 @@
 /* Service model headers required in S3OutpostsClient header */
 #include <aws/s3outposts/model/CreateEndpointResult.h>
 #include <aws/s3outposts/model/ListEndpointsResult.h>
+#include <aws/s3outposts/model/ListOutpostsWithS3Result.h>
 #include <aws/s3outposts/model/ListSharedEndpointsResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in S3OutpostsClient header */
@@ -65,6 +66,7 @@ namespace Aws
       class CreateEndpointRequest;
       class DeleteEndpointRequest;
       class ListEndpointsRequest;
+      class ListOutpostsWithS3Request;
       class ListSharedEndpointsRequest;
       /* End of service model forward declarations required in S3OutpostsClient header */
 
@@ -72,6 +74,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateEndpointResult, S3OutpostsError> CreateEndpointOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3OutpostsError> DeleteEndpointOutcome;
       typedef Aws::Utils::Outcome<ListEndpointsResult, S3OutpostsError> ListEndpointsOutcome;
+      typedef Aws::Utils::Outcome<ListOutpostsWithS3Result, S3OutpostsError> ListOutpostsWithS3Outcome;
       typedef Aws::Utils::Outcome<ListSharedEndpointsResult, S3OutpostsError> ListSharedEndpointsOutcome;
       /* End of service model Outcome class definitions */
 
@@ -79,6 +82,7 @@ namespace Aws
       typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
       typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
       typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
+      typedef std::future<ListOutpostsWithS3Outcome> ListOutpostsWithS3OutcomeCallable;
       typedef std::future<ListSharedEndpointsOutcome> ListSharedEndpointsOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -89,6 +93,7 @@ namespace Aws
     typedef std::function<void(const S3OutpostsClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const S3OutpostsClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const S3OutpostsClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
+    typedef std::function<void(const S3OutpostsClient*, const Model::ListOutpostsWithS3Request&, const Model::ListOutpostsWithS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutpostsWithS3ResponseReceivedHandler;
     typedef std::function<void(const S3OutpostsClient*, const Model::ListSharedEndpointsRequest&, const Model::ListSharedEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedEndpointsResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace S3Outposts
