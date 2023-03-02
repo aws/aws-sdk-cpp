@@ -12,6 +12,8 @@
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
 #include <aws/iot/model/JobExecutionsRetryConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/MaintenanceWindow.h>
 #include <utility>
 
 namespace Aws
@@ -338,6 +340,49 @@ namespace Model
      */
     inline DescribeJobTemplateResult& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline const Aws::Vector<MaintenanceWindow>& GetMaintenanceWindows() const{ return m_maintenanceWindows; }
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline void SetMaintenanceWindows(const Aws::Vector<MaintenanceWindow>& value) { m_maintenanceWindows = value; }
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline void SetMaintenanceWindows(Aws::Vector<MaintenanceWindow>&& value) { m_maintenanceWindows = std::move(value); }
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline DescribeJobTemplateResult& WithMaintenanceWindows(const Aws::Vector<MaintenanceWindow>& value) { SetMaintenanceWindows(value); return *this;}
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline DescribeJobTemplateResult& WithMaintenanceWindows(Aws::Vector<MaintenanceWindow>&& value) { SetMaintenanceWindows(std::move(value)); return *this;}
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline DescribeJobTemplateResult& AddMaintenanceWindows(const MaintenanceWindow& value) { m_maintenanceWindows.push_back(value); return *this; }
+
+    /**
+     * <p>Allows you to configure an optional maintenance window for the rollout of a
+     * job document to all devices in the target group for a job.</p>
+     */
+    inline DescribeJobTemplateResult& AddMaintenanceWindows(MaintenanceWindow&& value) { m_maintenanceWindows.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobTemplateArn;
@@ -361,6 +406,8 @@ namespace Model
     TimeoutConfig m_timeoutConfig;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+
+    Aws::Vector<MaintenanceWindow> m_maintenanceWindows;
   };
 
 } // namespace Model

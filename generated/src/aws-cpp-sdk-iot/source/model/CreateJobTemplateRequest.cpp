@@ -23,7 +23,8 @@ CreateJobTemplateRequest::CreateJobTemplateRequest() :
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_jobExecutionsRetryConfigHasBeenSet(false)
+    m_jobExecutionsRetryConfigHasBeenSet(false),
+    m_maintenanceWindowsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,17 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
   if(m_jobExecutionsRetryConfigHasBeenSet)
   {
    payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> maintenanceWindowsJsonList(m_maintenanceWindows.size());
+   for(unsigned maintenanceWindowsIndex = 0; maintenanceWindowsIndex < maintenanceWindowsJsonList.GetLength(); ++maintenanceWindowsIndex)
+   {
+     maintenanceWindowsJsonList[maintenanceWindowsIndex].AsObject(m_maintenanceWindows[maintenanceWindowsIndex].Jsonize());
+   }
+   payload.WithArray("maintenanceWindows", std::move(maintenanceWindowsJsonList));
 
   }
 

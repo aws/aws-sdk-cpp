@@ -43,9 +43,12 @@ namespace Model
    * a member account from your organization</a> in the <i>Organizations User
    * Guide.</i> </p> </li> <li> <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You
    * attempted to exceed the number of accounts that you can create in one day.</p>
-   * </li> <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit
-   * on the number of accounts in an organization. If you need more accounts, contact
-   * <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services
+   * </li> <li> <p>ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete
+   * or your account isn't fully active. You must complete the account setup before
+   * you create an organization.</p> </li> <li> <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You
+   * attempted to exceed the limit on the number of accounts in an organization. If
+   * you need more accounts, contact <a
+   * href="https://docs.aws.amazon.com/support/home#/">Amazon Web Services
    * Support</a> to request an increase in your limit. </p> <p>Or the number of
    * invitations that you tried to send would cause you to exceed the limit of
    * accounts in your organization. Send fewer invitations or contact Amazon Web

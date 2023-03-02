@@ -28,8 +28,8 @@ namespace Model
    * <p>A conditional statement for a search expression that includes a resource
    * property, a Boolean operator, and a value. Resources that match the statement
    * are returned in the results from the <a>Search</a> API.</p> <p>If you specify a
-   * <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the
-   * equals operator.</p> <p>In search, there are several property types:</p> <dl>
+   * <code>Value</code>, but not an <code>Operator</code>, SageMaker uses the equals
+   * operator.</p> <p>In search, there are several property types:</p> <dl>
    * <dt>Metrics</dt> <dd> <p>To define a metric filter, enter a value using the form
    * <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric
    * name. For example, the following filter searches for training jobs with an

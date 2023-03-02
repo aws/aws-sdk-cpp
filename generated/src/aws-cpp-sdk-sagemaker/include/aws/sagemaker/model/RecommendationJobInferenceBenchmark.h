@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/EndpointOutputConfiguration.h>
 #include <aws/sagemaker/model/ModelConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/InferenceMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,25 @@ namespace Model
      */
     inline RecommendationJobInferenceBenchmark& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    
+    inline const InferenceMetrics& GetEndpointMetrics() const{ return m_endpointMetrics; }
+
+    
+    inline bool EndpointMetricsHasBeenSet() const { return m_endpointMetricsHasBeenSet; }
+
+    
+    inline void SetEndpointMetrics(const InferenceMetrics& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = value; }
+
+    
+    inline void SetEndpointMetrics(InferenceMetrics&& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = std::move(value); }
+
+    
+    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(const InferenceMetrics& value) { SetEndpointMetrics(value); return *this;}
+
+    
+    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(InferenceMetrics&& value) { SetEndpointMetrics(std::move(value)); return *this;}
+
   private:
 
     RecommendationMetrics m_metrics;
@@ -151,6 +171,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    InferenceMetrics m_endpointMetrics;
+    bool m_endpointMetricsHasBeenSet = false;
   };
 
 } // namespace Model

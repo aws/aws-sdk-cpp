@@ -16,7 +16,8 @@ namespace Model
   enum class GroupName
   {
     NOT_SET,
-    ExternalId
+    ExternalId,
+    ExternalSourceType
   };
 
 namespace GroupNameMapper

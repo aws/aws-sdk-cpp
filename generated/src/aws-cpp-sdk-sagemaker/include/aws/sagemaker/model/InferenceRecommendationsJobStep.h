@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>A returned array object for the <code>Steps</code> response field in the <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InferenceRecommendationsJobStep.html">ListInferenceRecommendationsJobSteps</a>
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobSteps.html">ListInferenceRecommendationsJobSteps</a>
    * API command.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceRecommendationsJobStep">AWS
    * API Reference</a></p>

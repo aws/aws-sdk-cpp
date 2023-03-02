@@ -22,7 +22,8 @@ SchedulingConfig::SchedulingConfig() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_endBehavior(JobEndBehavior::NOT_SET),
-    m_endBehaviorHasBeenSet(false)
+    m_endBehaviorHasBeenSet(false),
+    m_maintenanceWindowsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ SchedulingConfig::SchedulingConfig(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_endBehavior(JobEndBehavior::NOT_SET),
-    m_endBehaviorHasBeenSet(false)
+    m_endBehaviorHasBeenSet(false),
+    m_maintenanceWindowsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,16 @@ SchedulingConfig& SchedulingConfig::operator =(JsonView jsonValue)
     m_endBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenanceWindows"))
+  {
+    Aws::Utils::Array<JsonView> maintenanceWindowsJsonList = jsonValue.GetArray("maintenanceWindows");
+    for(unsigned maintenanceWindowsIndex = 0; maintenanceWindowsIndex < maintenanceWindowsJsonList.GetLength(); ++maintenanceWindowsIndex)
+    {
+      m_maintenanceWindows.push_back(maintenanceWindowsJsonList[maintenanceWindowsIndex].AsObject());
+    }
+    m_maintenanceWindowsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +92,17 @@ JsonValue SchedulingConfig::Jsonize() const
   if(m_endBehaviorHasBeenSet)
   {
    payload.WithString("endBehavior", JobEndBehaviorMapper::GetNameForJobEndBehavior(m_endBehavior));
+  }
+
+  if(m_maintenanceWindowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> maintenanceWindowsJsonList(m_maintenanceWindows.size());
+   for(unsigned maintenanceWindowsIndex = 0; maintenanceWindowsIndex < maintenanceWindowsJsonList.GetLength(); ++maintenanceWindowsIndex)
+   {
+     maintenanceWindowsJsonList[maintenanceWindowsIndex].AsObject(m_maintenanceWindows[maintenanceWindowsIndex].Jsonize());
+   }
+   payload.WithArray("maintenanceWindows", std::move(maintenanceWindowsJsonList));
+
   }
 
   return payload;

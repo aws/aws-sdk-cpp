@@ -185,8 +185,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -204,8 +204,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -223,8 +223,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -242,8 +242,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -261,8 +261,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -280,8 +280,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -299,8 +299,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -318,8 +318,8 @@ namespace Model
      * and the tags are actually attached to the account. That means that if the tag
      * policy changes between the invitation and the acceptance, then that tags could
      * potentially be non-compliant.</p>   <p>If any one of the tags
-     * is invalid or if you exceed the allowed number of tags for an account, then the
-     * entire request fails and invitations are not sent.</p> 
+     * is not valid or if you exceed the allowed number of tags for an account, then
+     * the entire request fails and invitations are not sent.</p> 
      */
     inline InviteAccountToOrganizationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

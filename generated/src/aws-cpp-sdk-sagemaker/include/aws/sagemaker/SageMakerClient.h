@@ -1425,7 +1425,7 @@ namespace SageMaker
 
         /**
          * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
-         * monitor the data captured for an Amazon SageMaker Endoint.</p><p><h3>See
+         * monitor the data captured for an Amazon SageMaker Endpoint.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -4950,9 +4950,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>An auto-complete API for the search functionality in the Amazon SageMaker
-         * console. It returns suggestions of possible matches for the property name to use
-         * in <code>Search</code> queries. Provides suggestions for
+         * <p>An auto-complete API for the search functionality in the SageMaker console.
+         * It returns suggestions of possible matches for the property name to use in
+         * <code>Search</code> queries. Provides suggestions for
          * <code>HyperParameters</code>, <code>Tags</code>, and
          * <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">AWS
@@ -6999,11 +6999,15 @@ namespace SageMaker
         }
 
         /**
-         * <p>Finds Amazon SageMaker resources that match a search query. Matching
-         * resources are returned as a list of <code>SearchRecord</code> objects in the
-         * response. You can sort the search results by any resource property in a
-         * ascending or descending order.</p> <p>You can query against the following value
-         * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
+         * <p>Finds SageMaker resources that match a search query. Matching resources are
+         * returned as a list of <code>SearchRecord</code> objects in the response. You can
+         * sort the search results by any resource property in a ascending or descending
+         * order.</p> <p>You can query against the following value types: numeric, text,
+         * Boolean, and timestamp.</p>  <p>The Search API may provide access to
+         * otherwise restricted data. See <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon
+         * SageMaker API Permissions: Actions, Permissions, and Resources Reference</a> for
+         * more information.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
          * API Reference</a></p>
          */

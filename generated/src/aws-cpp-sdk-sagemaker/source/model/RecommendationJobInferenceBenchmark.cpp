@@ -22,7 +22,8 @@ RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark() :
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_endpointMetricsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark(JsonVie
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_endpointMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ RecommendationJobInferenceBenchmark& RecommendationJobInferenceBenchmark::operat
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndpointMetrics"))
+  {
+    m_endpointMetrics = jsonValue.GetObject("EndpointMetrics");
+
+    m_endpointMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue RecommendationJobInferenceBenchmark::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("FailureReason", m_failureReason);
+
+  }
+
+  if(m_endpointMetricsHasBeenSet)
+  {
+   payload.WithObject("EndpointMetrics", m_endpointMetrics.Jsonize());
 
   }
 

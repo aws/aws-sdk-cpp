@@ -7,6 +7,8 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/JobEndBehavior.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/MaintenanceWindow.h>
 #include <utility>
 
 namespace Aws
@@ -45,7 +47,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
@@ -53,7 +56,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
@@ -61,7 +65,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
@@ -69,7 +74,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
@@ -77,7 +83,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
@@ -85,7 +92,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline SchedulingConfig& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
@@ -93,7 +101,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline SchedulingConfig& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -101,7 +110,8 @@ namespace Model
      * <p>The time a job will begin rollout of the job document to all devices in the
      * target group for a job. The <code>startTime</code> can be scheduled up to a year
      * in advance and must be scheduled a minimum of thirty minutes from the current
-     * time.</p>
+     * time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for
+     * the date and HH:MM for the time.</p>
      */
     inline SchedulingConfig& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
@@ -112,7 +122,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
@@ -122,7 +134,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
@@ -132,7 +146,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
@@ -142,7 +158,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
@@ -152,7 +170,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
 
@@ -162,7 +182,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline SchedulingConfig& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
 
@@ -172,7 +194,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline SchedulingConfig& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -182,7 +206,9 @@ namespace Model
      * two years from the current time and be scheduled a minimum of thirty minutes
      * from the current time. The minimum duration between <code>startTime</code> and
      * <code>endTime</code> is thirty minutes. The maximum duration between
-     * <code>startTime</code> and <code>endTime</code> is two years. </p>
+     * <code>startTime</code> and <code>endTime</code> is two years. The date and time
+     * format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the
+     * time.</p>
      */
     inline SchedulingConfig& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
@@ -229,6 +255,63 @@ namespace Model
      */
     inline SchedulingConfig& WithEndBehavior(JobEndBehavior&& value) { SetEndBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline const Aws::Vector<MaintenanceWindow>& GetMaintenanceWindows() const{ return m_maintenanceWindows; }
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline bool MaintenanceWindowsHasBeenSet() const { return m_maintenanceWindowsHasBeenSet; }
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline void SetMaintenanceWindows(const Aws::Vector<MaintenanceWindow>& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows = value; }
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline void SetMaintenanceWindows(Aws::Vector<MaintenanceWindow>&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows = std::move(value); }
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline SchedulingConfig& WithMaintenanceWindows(const Aws::Vector<MaintenanceWindow>& value) { SetMaintenanceWindows(value); return *this;}
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline SchedulingConfig& WithMaintenanceWindows(Aws::Vector<MaintenanceWindow>&& value) { SetMaintenanceWindows(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline SchedulingConfig& AddMaintenanceWindows(const MaintenanceWindow& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows.push_back(value); return *this; }
+
+    /**
+     * <p>An optional configuration within the <code>SchedulingConfig</code> to setup a
+     * recurring maintenance window with a predetermined start time and duration for
+     * the rollout of a job document to all devices in a target group for a job.</p>
+     */
+    inline SchedulingConfig& AddMaintenanceWindows(MaintenanceWindow&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_startTime;
@@ -239,6 +322,9 @@ namespace Model
 
     JobEndBehavior m_endBehavior;
     bool m_endBehaviorHasBeenSet = false;
+
+    Aws::Vector<MaintenanceWindow> m_maintenanceWindows;
+    bool m_maintenanceWindowsHasBeenSet = false;
   };
 
 } // namespace Model

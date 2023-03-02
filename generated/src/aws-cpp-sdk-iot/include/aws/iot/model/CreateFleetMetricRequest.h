@@ -341,7 +341,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline const FleetMetricUnit& GetUnit() const{ return m_unit; }
@@ -349,7 +349,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
@@ -357,7 +357,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline void SetUnit(const FleetMetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
@@ -365,7 +365,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline void SetUnit(FleetMetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
@@ -373,7 +373,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline CreateFleetMetricRequest& WithUnit(const FleetMetricUnit& value) { SetUnit(value); return *this;}
@@ -381,7 +381,7 @@ namespace Model
     /**
      * <p>Used to support unit transformation such as milliseconds to seconds. The unit
      * must be supported by <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW
      * metric</a>. Default to null.</p>
      */
     inline CreateFleetMetricRequest& WithUnit(FleetMetricUnit&& value) { SetUnit(std::move(value)); return *this;}

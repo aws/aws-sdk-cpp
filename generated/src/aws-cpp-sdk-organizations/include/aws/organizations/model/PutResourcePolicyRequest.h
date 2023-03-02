@@ -110,112 +110,112 @@ namespace Model
 
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline PutResourcePolicyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline PutResourcePolicyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */
     inline PutResourcePolicyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Updates the list of tags that you want to attach to the newly-created
-     * resource policy. For each tag in the list, you must specify both a tag key and a
-     * value. You can set the value to an empty string, but you can't set it to
-     * <code>null</code>. For more information about tagging, see <a
+     * <p>A list of tags that you want to attach to the newly created resource policy.
+     * For each tag in the list, you must specify both a tag key and a value. You can
+     * set the value to an empty string, but you can't set it to <code>null</code>. For
+     * more information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>Calls
      * with tags apply to the initial creation of the resource policy, otherwise an
-     * exception is thrown. If any one of the tags is invalid or if you exceed the
+     * exception is thrown. If any one of the tags is not valid or if you exceed the
      * allowed number of tags for the resource policy, then the entire request fails
      * and the resource policy is not created. </p> 
      */

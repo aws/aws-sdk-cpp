@@ -23,7 +23,9 @@ GetResourceMetricsRequest::GetResourceMetricsRequest() :
     m_periodInSecondsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_periodAlignment(PeriodAlignment::NOT_SET),
+    m_periodAlignmentHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,11 @@ Aws::String GetResourceMetricsRequest::SerializePayload() const
   {
    payload.WithString("NextToken", m_nextToken);
 
+  }
+
+  if(m_periodAlignmentHasBeenSet)
+  {
+   payload.WithString("PeriodAlignment", PeriodAlignmentMapper::GetNameForPeriodAlignment(m_periodAlignment));
   }
 
   return payload.View().WriteReadable();
