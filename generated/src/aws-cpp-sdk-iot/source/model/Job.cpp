@@ -45,7 +45,8 @@ Job::Job() :
     m_documentParametersHasBeenSet(false),
     m_isConcurrent(false),
     m_isConcurrentHasBeenSet(false),
-    m_schedulingConfigHasBeenSet(false)
+    m_schedulingConfigHasBeenSet(false),
+    m_scheduledJobRolloutsHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ Job::Job(JsonView jsonValue) :
     m_documentParametersHasBeenSet(false),
     m_isConcurrent(false),
     m_isConcurrentHasBeenSet(false),
-    m_schedulingConfigHasBeenSet(false)
+    m_schedulingConfigHasBeenSet(false),
+    m_scheduledJobRolloutsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -250,6 +252,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_schedulingConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scheduledJobRollouts"))
+  {
+    Aws::Utils::Array<JsonView> scheduledJobRolloutsJsonList = jsonValue.GetArray("scheduledJobRollouts");
+    for(unsigned scheduledJobRolloutsIndex = 0; scheduledJobRolloutsIndex < scheduledJobRolloutsJsonList.GetLength(); ++scheduledJobRolloutsIndex)
+    {
+      m_scheduledJobRollouts.push_back(scheduledJobRolloutsJsonList[scheduledJobRolloutsIndex].AsObject());
+    }
+    m_scheduledJobRolloutsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -397,6 +409,17 @@ JsonValue Job::Jsonize() const
   if(m_schedulingConfigHasBeenSet)
   {
    payload.WithObject("schedulingConfig", m_schedulingConfig.Jsonize());
+
+  }
+
+  if(m_scheduledJobRolloutsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> scheduledJobRolloutsJsonList(m_scheduledJobRollouts.size());
+   for(unsigned scheduledJobRolloutsIndex = 0; scheduledJobRolloutsIndex < scheduledJobRolloutsJsonList.GetLength(); ++scheduledJobRolloutsIndex)
+   {
+     scheduledJobRolloutsJsonList[scheduledJobRolloutsIndex].AsObject(m_scheduledJobRollouts[scheduledJobRolloutsIndex].Jsonize());
+   }
+   payload.WithArray("scheduledJobRollouts", std::move(scheduledJobRolloutsJsonList));
 
   }
 

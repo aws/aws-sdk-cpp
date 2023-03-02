@@ -53,6 +53,7 @@ namespace Aws
         static const int CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
         static const int SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("SERVICE_ACCESS_NOT_ENABLED");
         static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
+        static const int ACCOUNT_CREATION_NOT_COMPLETE_HASH = HashingUtils::HashString("ACCOUNT_CREATION_NOT_COMPLETE");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -190,6 +191,10 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::INVALID_PAYMENT_INSTRUMENT;
           }
+          else if (hashCode == ACCOUNT_CREATION_NOT_COMPLETE_HASH)
+          {
+            return ConstraintViolationExceptionReason::ACCOUNT_CREATION_NOT_COMPLETE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -270,6 +275,8 @@ namespace Aws
             return "SERVICE_ACCESS_NOT_ENABLED";
           case ConstraintViolationExceptionReason::INVALID_PAYMENT_INSTRUMENT:
             return "INVALID_PAYMENT_INSTRUMENT";
+          case ConstraintViolationExceptionReason::ACCOUNT_CREATION_NOT_COMPLETE:
+            return "ACCOUNT_CREATION_NOT_COMPLETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

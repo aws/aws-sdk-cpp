@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ApplicationDiscoveryService_HASH = HashingUtils::HashString("ApplicationDiscoveryService");
         static const int MPA_HASH = HashingUtils::HashString("MPA");
+        static const int Import_HASH = HashingUtils::HashString("Import");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == MPA_HASH)
           {
             return DataSourceType::MPA;
+          }
+          else if (hashCode == Import_HASH)
+          {
+            return DataSourceType::Import;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ApplicationDiscoveryService";
           case DataSourceType::MPA:
             return "MPA";
+          case DataSourceType::Import:
+            return "Import";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

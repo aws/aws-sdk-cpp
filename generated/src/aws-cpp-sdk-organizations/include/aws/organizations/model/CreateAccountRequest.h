@@ -492,7 +492,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -505,7 +505,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -518,7 +518,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -531,7 +531,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -544,7 +544,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -557,7 +557,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -570,7 +570,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
@@ -583,7 +583,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the maximum allowed number of
+     * any one of the tags is not valid or if you exceed the maximum allowed number of
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */

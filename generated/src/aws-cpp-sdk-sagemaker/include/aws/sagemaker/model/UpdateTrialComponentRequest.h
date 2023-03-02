@@ -233,73 +233,97 @@ namespace Model
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline const Aws::Map<Aws::String, TrialComponentParameterValue>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, TrialComponentParameterValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, TrialComponentParameterValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& WithParameters(const Aws::Map<Aws::String, TrialComponentParameterValue>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& WithParameters(Aws::Map<Aws::String, TrialComponentParameterValue>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(const Aws::String& key, const TrialComponentParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(Aws::String&& key, const TrialComponentParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(const Aws::String& key, TrialComponentParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(Aws::String&& key, TrialComponentParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(const char* key, TrialComponentParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Replaces all of the component's hyperparameters with the specified
-     * hyperparameters.</p>
+     * hyperparameters or add new hyperparameters. Existing hyperparameters are
+     * replaced if the trial component is updated with an identical hyperparameter
+     * key.</p>
      */
     inline UpdateTrialComponentRequest& AddParameters(const char* key, const TrialComponentParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -351,74 +375,86 @@ namespace Model
 
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline const Aws::Map<Aws::String, TrialComponentArtifact>& GetInputArtifacts() const{ return m_inputArtifacts; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline void SetInputArtifacts(const Aws::Map<Aws::String, TrialComponentArtifact>& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = value; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline void SetInputArtifacts(Aws::Map<Aws::String, TrialComponentArtifact>&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = std::move(value); }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& WithInputArtifacts(const Aws::Map<Aws::String, TrialComponentArtifact>& value) { SetInputArtifacts(value); return *this;}
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& WithInputArtifacts(Aws::Map<Aws::String, TrialComponentArtifact>&& value) { SetInputArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(const Aws::String& key, const TrialComponentArtifact& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(key, value); return *this; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(Aws::String&& key, const TrialComponentArtifact& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(const Aws::String& key, TrialComponentArtifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(Aws::String&& key, TrialComponentArtifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(const char* key, TrialComponentArtifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's input artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's input artifacts with the specified artifacts
+     * or adds new input artifacts. Existing input artifacts are replaced if the trial
+     * component is updated with an identical input artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddInputArtifacts(const char* key, const TrialComponentArtifact& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace(key, value); return *this; }
 
@@ -470,74 +506,86 @@ namespace Model
 
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline const Aws::Map<Aws::String, TrialComponentArtifact>& GetOutputArtifacts() const{ return m_outputArtifacts; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline void SetOutputArtifacts(const Aws::Map<Aws::String, TrialComponentArtifact>& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = value; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline void SetOutputArtifacts(Aws::Map<Aws::String, TrialComponentArtifact>&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::move(value); }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& WithOutputArtifacts(const Aws::Map<Aws::String, TrialComponentArtifact>& value) { SetOutputArtifacts(value); return *this;}
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& WithOutputArtifacts(Aws::Map<Aws::String, TrialComponentArtifact>&& value) { SetOutputArtifacts(std::move(value)); return *this;}
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(const Aws::String& key, const TrialComponentArtifact& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(key, value); return *this; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(Aws::String&& key, const TrialComponentArtifact& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(const Aws::String& key, TrialComponentArtifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(Aws::String&& key, TrialComponentArtifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(const char* key, TrialComponentArtifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Replaces all of the component's output artifacts with the specified
-     * artifacts.</p>
+     * <p>Replaces all of the component's output artifacts with the specified artifacts
+     * or adds new output artifacts. Existing output artifacts are replaced if the
+     * trial component is updated with an identical output artifact key.</p>
      */
     inline UpdateTrialComponentRequest& AddOutputArtifacts(const char* key, const TrialComponentArtifact& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace(key, value); return *this; }
 

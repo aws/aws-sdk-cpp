@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/GroupName.h>
+#include <aws/pi/model/PeriodAlignment.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace MigrationHubStrategyRecommendations
+  namespace PI
   {
     namespace Model
     {
-      namespace GroupNameMapper
+      namespace PeriodAlignmentMapper
       {
 
-        static const int ExternalId_HASH = HashingUtils::HashString("ExternalId");
-        static const int ExternalSourceType_HASH = HashingUtils::HashString("ExternalSourceType");
+        static const int END_TIME_HASH = HashingUtils::HashString("END_TIME");
+        static const int START_TIME_HASH = HashingUtils::HashString("START_TIME");
 
 
-        GroupName GetGroupNameForName(const Aws::String& name)
+        PeriodAlignment GetPeriodAlignmentForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ExternalId_HASH)
+          if (hashCode == END_TIME_HASH)
           {
-            return GroupName::ExternalId;
+            return PeriodAlignment::END_TIME;
           }
-          else if (hashCode == ExternalSourceType_HASH)
+          else if (hashCode == START_TIME_HASH)
           {
-            return GroupName::ExternalSourceType;
+            return PeriodAlignment::START_TIME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<GroupName>(hashCode);
+            return static_cast<PeriodAlignment>(hashCode);
           }
 
-          return GroupName::NOT_SET;
+          return PeriodAlignment::NOT_SET;
         }
 
-        Aws::String GetNameForGroupName(GroupName enumValue)
+        Aws::String GetNameForPeriodAlignment(PeriodAlignment enumValue)
         {
           switch(enumValue)
           {
-          case GroupName::ExternalId:
-            return "ExternalId";
-          case GroupName::ExternalSourceType:
-            return "ExternalSourceType";
+          case PeriodAlignment::END_TIME:
+            return "END_TIME";
+          case PeriodAlignment::START_TIME:
+            return "START_TIME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace GroupNameMapper
+      } // namespace PeriodAlignmentMapper
     } // namespace Model
-  } // namespace MigrationHubStrategyRecommendations
+  } // namespace PI
 } // namespace Aws

@@ -336,10 +336,10 @@ namespace Pipes
          * updated atomically as one and override existing values. This is by design and
          * means that if you don't specify an optional field in one of these Parameters
          * objects, that field will be set to its system-default value after the
-         * update.</p> <pre><code> &lt;p&gt;For more information about pipes, see &lt;a
-         * href=&quot;https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html&quot;&gt;
-         * Amazon EventBridge Pipes&lt;/a&gt; in the Amazon EventBridge User
-         * Guide.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
+         * update.</p> <p>For more information about pipes, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">
+         * Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipe">AWS
          * API Reference</a></p>
          */

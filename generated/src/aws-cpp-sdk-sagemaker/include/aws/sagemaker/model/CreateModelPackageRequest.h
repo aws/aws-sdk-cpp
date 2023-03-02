@@ -855,57 +855,81 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline const Aws::String& GetSamplePayloadUrl() const{ return m_samplePayloadUrl; }
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline bool SamplePayloadUrlHasBeenSet() const { return m_samplePayloadUrlHasBeenSet; }
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline void SetSamplePayloadUrl(const Aws::String& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = value; }
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline void SetSamplePayloadUrl(Aws::String&& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = std::move(value); }
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline void SetSamplePayloadUrl(const char* value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl.assign(value); }
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline CreateModelPackageRequest& WithSamplePayloadUrl(const Aws::String& value) { SetSamplePayloadUrl(value); return *this;}
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline CreateModelPackageRequest& WithSamplePayloadUrl(Aws::String&& value) { SetSamplePayloadUrl(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
-     * are stored. This path must point to a single gzip compressed tar archive
-     * (.tar.gz suffix).</p>
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). This archive can hold multiple files that are all equally used in the
+     * load test. Each file in the archive must satisfy the size constraints of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+     * call.</p>
      */
     inline CreateModelPackageRequest& WithSamplePayloadUrl(const char* value) { SetSamplePayloadUrl(value); return *this;}
 

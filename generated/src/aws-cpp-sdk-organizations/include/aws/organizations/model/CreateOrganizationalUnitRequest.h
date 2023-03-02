@@ -189,7 +189,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -201,7 +201,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -213,7 +213,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -225,7 +225,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -237,7 +237,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline CreateOrganizationalUnitRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -249,7 +249,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline CreateOrganizationalUnitRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -261,7 +261,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline CreateOrganizationalUnitRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -273,7 +273,7 @@ namespace Model
      * information about tagging, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
      * Organizations resources</a> in the Organizations User Guide.</p>  <p>If
-     * any one of the tags is invalid or if you exceed the allowed number of tags for
+     * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
     inline CreateOrganizationalUnitRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

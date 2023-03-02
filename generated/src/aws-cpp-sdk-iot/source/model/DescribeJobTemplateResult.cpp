@@ -94,6 +94,15 @@ DescribeJobTemplateResult& DescribeJobTemplateResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("maintenanceWindows"))
+  {
+    Aws::Utils::Array<JsonView> maintenanceWindowsJsonList = jsonValue.GetArray("maintenanceWindows");
+    for(unsigned maintenanceWindowsIndex = 0; maintenanceWindowsIndex < maintenanceWindowsJsonList.GetLength(); ++maintenanceWindowsIndex)
+    {
+      m_maintenanceWindows.push_back(maintenanceWindowsJsonList[maintenanceWindowsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

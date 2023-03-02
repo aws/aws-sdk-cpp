@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ApplicationDiscoveryService,
-    MPA
+    MPA,
+    Import
   };
 
 namespace DataSourceTypeMapper

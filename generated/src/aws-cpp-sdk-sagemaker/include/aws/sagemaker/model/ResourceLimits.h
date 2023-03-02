@@ -87,26 +87,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum time in seconds that a training job launched by a hyperparameter
-     * tuning job can run.</p>
+     * <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
 
     /**
-     * <p>The maximum time in seconds that a training job launched by a hyperparameter
-     * tuning job can run.</p>
+     * <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
      */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time in seconds that a training job launched by a hyperparameter
-     * tuning job can run.</p>
+     * <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
      */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
 
     /**
-     * <p>The maximum time in seconds that a training job launched by a hyperparameter
-     * tuning job can run.</p>
+     * <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
      */
     inline ResourceLimits& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
 

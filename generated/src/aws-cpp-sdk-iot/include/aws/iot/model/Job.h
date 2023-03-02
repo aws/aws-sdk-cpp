@@ -18,6 +18,7 @@
 #include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/SchedulingConfig.h>
+#include <aws/iot/model/ScheduledJobRollout.h>
 #include <utility>
 
 namespace Aws
@@ -1085,6 +1086,55 @@ namespace Model
      */
     inline Job& WithSchedulingConfig(SchedulingConfig&& value) { SetSchedulingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline const Aws::Vector<ScheduledJobRollout>& GetScheduledJobRollouts() const{ return m_scheduledJobRollouts; }
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline bool ScheduledJobRolloutsHasBeenSet() const { return m_scheduledJobRolloutsHasBeenSet; }
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline void SetScheduledJobRollouts(const Aws::Vector<ScheduledJobRollout>& value) { m_scheduledJobRolloutsHasBeenSet = true; m_scheduledJobRollouts = value; }
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline void SetScheduledJobRollouts(Aws::Vector<ScheduledJobRollout>&& value) { m_scheduledJobRolloutsHasBeenSet = true; m_scheduledJobRollouts = std::move(value); }
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline Job& WithScheduledJobRollouts(const Aws::Vector<ScheduledJobRollout>& value) { SetScheduledJobRollouts(value); return *this;}
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline Job& WithScheduledJobRollouts(Aws::Vector<ScheduledJobRollout>&& value) { SetScheduledJobRollouts(std::move(value)); return *this;}
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline Job& AddScheduledJobRollouts(const ScheduledJobRollout& value) { m_scheduledJobRolloutsHasBeenSet = true; m_scheduledJobRollouts.push_back(value); return *this; }
+
+    /**
+     * <p>Displays the next seven maintenance window occurrences and their start
+     * times.</p>
+     */
+    inline Job& AddScheduledJobRollouts(ScheduledJobRollout&& value) { m_scheduledJobRolloutsHasBeenSet = true; m_scheduledJobRollouts.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobArn;
@@ -1155,6 +1205,9 @@ namespace Model
 
     SchedulingConfig m_schedulingConfig;
     bool m_schedulingConfigHasBeenSet = false;
+
+    Aws::Vector<ScheduledJobRollout> m_scheduledJobRollouts;
+    bool m_scheduledJobRolloutsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/pi/model/PeriodAlignment.h>
 #include <aws/pi/model/MetricQuery.h>
 #include <utility>
 
@@ -487,6 +488,43 @@ namespace Model
      */
     inline GetResourceMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline const PeriodAlignment& GetPeriodAlignment() const{ return m_periodAlignment; }
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline bool PeriodAlignmentHasBeenSet() const { return m_periodAlignmentHasBeenSet; }
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline void SetPeriodAlignment(const PeriodAlignment& value) { m_periodAlignmentHasBeenSet = true; m_periodAlignment = value; }
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline void SetPeriodAlignment(PeriodAlignment&& value) { m_periodAlignmentHasBeenSet = true; m_periodAlignment = std::move(value); }
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline GetResourceMetricsRequest& WithPeriodAlignment(const PeriodAlignment& value) { SetPeriodAlignment(value); return *this;}
+
+    /**
+     * <p>The returned timestamp which is the start or end time of the time periods.
+     * The default value is <code>END_TIME</code>.</p>
+     */
+    inline GetResourceMetricsRequest& WithPeriodAlignment(PeriodAlignment&& value) { SetPeriodAlignment(std::move(value)); return *this;}
+
   private:
 
     ServiceType m_serviceType;
@@ -512,6 +550,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    PeriodAlignment m_periodAlignment;
+    bool m_periodAlignmentHasBeenSet = false;
   };
 
 } // namespace Model
