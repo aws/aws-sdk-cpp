@@ -89,108 +89,108 @@ namespace Model
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
      * the primary key of the item to delete.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a simple primary key, you only
-     * need to provide a value for the partition key. For a composite primary key, you
-     * must provide values for both the partition key and the sort key.</p>
+     * provide all of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 

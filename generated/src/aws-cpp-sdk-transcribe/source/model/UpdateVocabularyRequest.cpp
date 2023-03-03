@@ -17,7 +17,8 @@ UpdateVocabularyRequest::UpdateVocabularyRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_phrasesHasBeenSet(false),
-    m_vocabularyFileUriHasBeenSet(false)
+    m_vocabularyFileUriHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String UpdateVocabularyRequest::SerializePayload() const
   if(m_vocabularyFileUriHasBeenSet)
   {
    payload.WithString("VocabularyFileUri", m_vocabularyFileUri);
+
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
 
   }
 

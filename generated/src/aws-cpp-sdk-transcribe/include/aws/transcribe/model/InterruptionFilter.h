@@ -33,8 +33,8 @@ namespace Model
    * </li> <li> <p>Either participant interrupting the other</p> </li> <li> <p>A lack
    * of interruptions</p> </li> </ul> <p>See <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
-   * criteria for batch categories</a> for usage examples.</p><p><h3>See Also:</h3>  
-   * <a
+   * criteria for post-call categories</a> for usage examples.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InterruptionFilter">AWS
    * API Reference</a></p>
    */

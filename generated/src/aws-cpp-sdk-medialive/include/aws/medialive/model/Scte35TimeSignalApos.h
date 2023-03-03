@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * Scte35 Time Signal Apos<p><h3>See Also:</h3>   <a
+   * Atypical configuration that applies segment breaks only on SCTE-35 time signal
+   * placement opportunities and breaks.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35TimeSignalApos">AWS
    * API Reference</a></p>
    */

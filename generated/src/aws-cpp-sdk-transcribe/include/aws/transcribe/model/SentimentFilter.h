@@ -39,8 +39,8 @@ namespace Model
    * absence of a mixed sentiment felt by the customer, the agent, or both at
    * specified points in the call</p> </li> </ul> <p>See <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
-   * criteria for batch categories</a> for usage examples.</p><p><h3>See Also:</h3>  
-   * <a
+   * criteria for post-call categories</a> for usage examples.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/SentimentFilter">AWS
    * API Reference</a></p>
    */

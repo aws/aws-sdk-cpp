@@ -441,121 +441,121 @@ namespace Model
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline bool ReturnValuesHasBeenSet() const { return m_returnValuesHasBeenSet; }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline UpdateItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
     /**
      * <p>Use <code>ReturnValues</code> if you want to get the item attributes as they
-     * appear before or after they are updated. For <code>UpdateItem</code>, the valid
-     * values are:</p> <ul> <li> <p> <code>NONE</code> - If <code>ReturnValues</code>
-     * is not specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
-     * <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as
-     * they appeared before the UpdateItem operation.</p> </li> <li> <p>
-     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-     * before the UpdateItem operation.</p> </li> <li> <p> <code>ALL_NEW</code> -
-     * Returns all of the attributes of the item, as they appear after the UpdateItem
-     * operation.</p> </li> <li> <p> <code>UPDATED_NEW</code> - Returns only the
-     * updated attributes, as they appear after the UpdateItem operation.</p> </li>
-     * </ul> <p>There is no additional cost associated with requesting a return value
-     * aside from the small network and processing overhead of receiving a larger
-     * response. No read capacity units are consumed.</p> <p>The values returned are
-     * strongly consistent.</p>
+     * appear before or after they are successfully updated. For
+     * <code>UpdateItem</code>, the valid values are:</p> <ul> <li> <p>
+     * <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
+     * value is <code>NONE</code>, then nothing is returned. (This setting is the
+     * default for <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code>
+     * - Returns all of the attributes of the item, as they appeared before the
+     * UpdateItem operation.</p> </li> <li> <p> <code>UPDATED_OLD</code> - Returns only
+     * the updated attributes, as they appeared before the UpdateItem operation.</p>
+     * </li> <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item,
+     * as they appear after the UpdateItem operation.</p> </li> <li> <p>
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
+     * after the UpdateItem operation.</p> </li> </ul> <p>There is no additional cost
+     * associated with requesting a return value aside from the small network and
+     * processing overhead of receiving a larger response. No read capacity units are
+     * consumed.</p> <p>The values returned are strongly consistent.</p>
      */
     inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 

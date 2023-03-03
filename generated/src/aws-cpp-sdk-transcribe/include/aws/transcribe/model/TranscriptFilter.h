@@ -37,7 +37,7 @@ namespace Model
    * either</p> </li> <li> <p>Custom words or phrases that occur at a specific time
    * frame</p> </li> </ul> <p>See <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
-   * criteria for batch categories</a> and <a
+   * criteria for post-call categories</a> and <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule
    * criteria for streaming categories</a> for usage examples.</p><p><h3>See
    * Also:</h3>   <a

@@ -88,7 +88,9 @@ Instance::Instance() :
     m_privateDnsNameOptionsHasBeenSet(false),
     m_ipv6AddressHasBeenSet(false),
     m_tpmSupportHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false)
+    m_maintenanceOptionsHasBeenSet(false),
+    m_currentInstanceBootMode(InstanceBootModeValues::NOT_SET),
+    m_currentInstanceBootModeHasBeenSet(false)
 {
 }
 
@@ -160,7 +162,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_privateDnsNameOptionsHasBeenSet(false),
     m_ipv6AddressHasBeenSet(false),
     m_tpmSupportHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false)
+    m_maintenanceOptionsHasBeenSet(false),
+    m_currentInstanceBootMode(InstanceBootModeValues::NOT_SET),
+    m_currentInstanceBootModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -555,6 +559,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_maintenanceOptions = maintenanceOptionsNode;
       m_maintenanceOptionsHasBeenSet = true;
     }
+    XmlNode currentInstanceBootModeNode = resultNode.FirstChild("currentInstanceBootMode");
+    if(!currentInstanceBootModeNode.IsNull())
+    {
+      m_currentInstanceBootMode = InstanceBootModeValuesMapper::GetInstanceBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentInstanceBootModeNode.GetText()).c_str()).c_str());
+      m_currentInstanceBootModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -914,6 +924,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_currentInstanceBootModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1213,6 +1228,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String maintenanceOptionsLocationAndMember(location);
       maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
       m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
+  }
+  if(m_currentInstanceBootModeHasBeenSet)
+  {
+      oStream << location << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
   }
 }
 

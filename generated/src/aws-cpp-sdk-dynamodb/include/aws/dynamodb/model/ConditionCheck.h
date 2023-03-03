@@ -157,176 +157,267 @@ namespace Model
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetConditionExpression() const{ return m_conditionExpression; }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ConditionExpressionHasBeenSet() const { return m_conditionExpressionHasBeenSet; }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(const Aws::String& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = value; }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(Aws::String&& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = std::move(value); }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(const char* value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression.assign(value); }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithConditionExpression(const Aws::String& value) { SetConditionExpression(value); return *this;}
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithConditionExpression(Aws::String&& value) { SetConditionExpression(std::move(value)); return *this;}
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
-     * succeed.</p>
+     * succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithConditionExpression(const char* value) { SetConditionExpression(value); return *this;}
 
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     * <p>One or more substitution tokens for attribute names in an expression. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html">Expression
+     * attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more values that can be substituted in an expression.</p>
+     * <p>One or more values that can be substituted in an expression. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">Condition
+     * expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ConditionCheck& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 

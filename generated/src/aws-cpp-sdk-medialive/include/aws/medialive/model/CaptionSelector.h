@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * Output groups for this Live Event. Output groups contain information about where
-   * streams should be distributed.<p><h3>See Also:</h3>   <a
+   * Caption Selector<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionSelector">AWS
    * API Reference</a></p>
    */

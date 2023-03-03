@@ -46,8 +46,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetAttributes() const{ return m_attributes; }
 
@@ -55,8 +56,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_attributes = value; }
 
@@ -64,8 +66,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_attributes = std::move(value); }
 
@@ -73,8 +76,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& WithAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetAttributes(value); return *this;}
 
@@ -82,8 +86,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& WithAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -91,8 +96,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(const Aws::String& key, const AttributeValue& value) { m_attributes.emplace(key, value); return *this; }
 
@@ -100,8 +106,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(Aws::String&& key, const AttributeValue& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -109,8 +116,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(const Aws::String& key, AttributeValue&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -118,8 +126,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(Aws::String&& key, AttributeValue&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -127,8 +136,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(const char* key, AttributeValue&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -136,8 +146,9 @@ namespace Model
      * <p>A map of attribute values as they appear before or after the
      * <code>UpdateItem</code> operation, as determined by the
      * <code>ReturnValues</code> parameter.</p> <p>The <code>Attributes</code> map is
-     * only present if <code>ReturnValues</code> was specified as something other than
-     * <code>NONE</code> in the request. Each element represents one attribute.</p>
+     * only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element
+     * represents one attribute.</p>
      */
     inline UpdateItemResult& AddAttributes(const char* key, const AttributeValue& value) { m_attributes.emplace(key, value); return *this; }
 
@@ -149,7 +160,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
@@ -161,7 +172,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
@@ -173,7 +184,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
@@ -185,7 +196,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
@@ -197,7 +208,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}

@@ -186,18 +186,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -207,18 +206,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -228,18 +226,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -249,18 +246,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -270,18 +266,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -291,18 +286,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline TransactWriteItemsRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -312,18 +306,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline TransactWriteItemsRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -333,18 +326,17 @@ namespace Model
      * calls have the same effect as one single call.</p> <p>Although multiple
      * identical calls using the same client request token produce the same result on
      * the server (no side effects), the responses to the calls might not be the same.
-     * If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the
-     * initial <code>TransactWriteItems</code> call returns the amount of write
-     * capacity units consumed in making the changes. Subsequent
-     * <code>TransactWriteItems</code> calls with the same client token return the
-     * number of read capacity units consumed in reading the item.</p> <p>A client
-     * request token is valid for 10 minutes after the first request that uses it is
-     * completed. After 10 minutes, any request with the same client token is treated
-     * as a new request. Do not resubmit the same request with the same client token
-     * for more than 10 minutes, or the result might not be idempotent.</p> <p>If you
-     * submit a request with the same client token but a change in other parameters
-     * within the 10-minute idempotency window, DynamoDB returns an
-     * <code>IdempotentParameterMismatch</code> exception.</p>
+     * If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial
+     * <code>TransactWriteItems</code> call returns the amount of write capacity units
+     * consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+     * with the same client token return the number of read capacity units consumed in
+     * reading the item.</p> <p>A client request token is valid for 10 minutes after
+     * the first request that uses it is completed. After 10 minutes, any request with
+     * the same client token is treated as a new request. Do not resubmit the same
+     * request with the same client token for more than 10 minutes, or the result might
+     * not be idempotent.</p> <p>If you submit a request with the same client token but
+     * a change in other parameters within the 10-minute idempotency window, DynamoDB
+     * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
     inline TransactWriteItemsRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

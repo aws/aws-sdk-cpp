@@ -299,23 +299,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the
@@ -339,23 +341,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the
@@ -379,23 +383,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the
@@ -419,23 +425,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the
@@ -459,23 +467,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the
@@ -499,23 +509,25 @@ namespace Model
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
      * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
-     * the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <code>ProjectionExpression</code>. This return value is equivalent to specifying
-     * <code>ProjectionExpression</code> without specifying any value for
-     * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation reads
-     * only the index and not the table. If any of the requested attributes are not
-     * projected into the local secondary index, DynamoDB fetches each of these
-     * attributes from the parent table. This extra fetching incurs additional
-     * throughput cost and latency.</p> <p>If you query or scan a global secondary
-     * index, you can only request attributes that are projected into the index. Global
-     * secondary index queries cannot fetch attributes from the parent table.</p> </li>
-     * </ul> <p>If neither <code>Select</code> nor <code>ProjectionExpression</code>
-     * are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
-     * table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You
-     * cannot use both <code>Select</code> and <code>ProjectionExpression</code>
-     * together in a single request, unless the value for <code>Select</code> is
+     * the matching items themselves. Note that this uses the same quantity of read
+     * capacity units as getting the items, and is subject to the same item size
+     * calculations.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only
+     * the attributes listed in <code>ProjectionExpression</code>. This return value is
+     * equivalent to specifying <code>ProjectionExpression</code> without specifying
+     * any value for <code>Select</code>.</p> <p>If you query or scan a local secondary
+     * index and request only attributes that are projected into that index, the
+     * operation reads only the index and not the table. If any of the requested
+     * attributes are not projected into the local secondary index, DynamoDB fetches
+     * each of these attributes from the parent table. This extra fetching incurs
+     * additional throughput cost and latency.</p> <p>If you query or scan a global
+     * secondary index, you can only request attributes that are projected into the
+     * index. Global secondary index queries cannot fetch attributes from the parent
+     * table.</p> </li> </ul> <p>If neither <code>Select</code> nor
+     * <code>ProjectionExpression</code> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code> when accessing a table, and
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use
+     * both <code>Select</code> and <code>ProjectionExpression</code> together in a
+     * single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>ProjectionExpression</code> without any value for
      * <code>Select</code>.)</p>  <p>If you use the

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateVocabularyFilterRequest::UpdateVocabularyFilterRequest() : 
     m_vocabularyFilterNameHasBeenSet(false),
     m_wordsHasBeenSet(false),
-    m_vocabularyFilterFileUriHasBeenSet(false)
+    m_vocabularyFilterFileUriHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateVocabularyFilterRequest::SerializePayload() const
   if(m_vocabularyFilterFileUriHasBeenSet)
   {
    payload.WithString("VocabularyFilterFileUri", m_vocabularyFilterFileUri);
+
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
 
   }
 

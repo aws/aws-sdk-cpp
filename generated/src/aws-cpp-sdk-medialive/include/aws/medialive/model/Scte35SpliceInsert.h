@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * Scte35 Splice Insert<p><h3>See Also:</h3>   <a
+   * Typical configuration that applies breaks on splice inserts in addition to time
+   * signal placement opportunities, breaks, and advertisements.<p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SpliceInsert">AWS
    * API Reference</a></p>
    */

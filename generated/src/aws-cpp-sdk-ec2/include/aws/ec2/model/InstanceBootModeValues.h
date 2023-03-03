@@ -13,20 +13,19 @@ namespace EC2
 {
 namespace Model
 {
-  enum class BootModeValues
+  enum class InstanceBootModeValues
   {
     NOT_SET,
     legacy_bios,
-    uefi,
-    uefi_preferred
+    uefi
   };
 
-namespace BootModeValuesMapper
+namespace InstanceBootModeValuesMapper
 {
-AWS_EC2_API BootModeValues GetBootModeValuesForName(const Aws::String& name);
+AWS_EC2_API InstanceBootModeValues GetInstanceBootModeValuesForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForBootModeValues(BootModeValues value);
-} // namespace BootModeValuesMapper
+AWS_EC2_API Aws::String GetNameForInstanceBootModeValues(InstanceBootModeValues value);
+} // namespace InstanceBootModeValuesMapper
 } // namespace Model
 } // namespace EC2
 } // namespace Aws

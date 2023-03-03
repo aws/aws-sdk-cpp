@@ -186,42 +186,42 @@ namespace Model
 
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline IamUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline IamUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the IAM user who performed the action.</p>
+     * <p>The username of the IAM user who performed the action.</p>
      */
     inline IamUser& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -32,9 +32,9 @@ namespace Model
    * include these parameters: , , , and .</p> <p>To learn more about Call Analytics
    * rules and categories, see <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-   * categories for batch transcriptions</a> and <a
+   * categories for post-call transcriptions</a> and <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-   * categories for streaming transcriptions</a>.</p> <p>To learn more about Call
+   * categories for real-time transcriptions</a>.</p> <p>To learn more about Call
    * Analytics, see <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
    * call center audio with Call Analytics</a>.</p><p><h3>See Also:</h3>   <a

@@ -781,7 +781,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
@@ -806,7 +806,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
@@ -831,7 +831,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
@@ -856,7 +856,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
@@ -881,7 +881,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
@@ -906,7 +906,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
@@ -931,7 +931,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
@@ -956,7 +956,7 @@ namespace Model
      * <p>If you don't specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
-     * <code>OutputLocation</code> parameter.</p> <p>Note that the user making the
+     * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}

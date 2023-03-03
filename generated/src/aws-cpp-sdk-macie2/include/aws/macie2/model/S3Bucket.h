@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -233,38 +233,32 @@ namespace Model
 
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline const ServerSideEncryption& GetDefaultServerSideEncryption() const{ return m_defaultServerSideEncryption; }
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline bool DefaultServerSideEncryptionHasBeenSet() const { return m_defaultServerSideEncryptionHasBeenSet; }
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline void SetDefaultServerSideEncryption(const ServerSideEncryption& value) { m_defaultServerSideEncryptionHasBeenSet = true; m_defaultServerSideEncryption = value; }
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline void SetDefaultServerSideEncryption(ServerSideEncryption&& value) { m_defaultServerSideEncryptionHasBeenSet = true; m_defaultServerSideEncryption = std::move(value); }
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline S3Bucket& WithDefaultServerSideEncryption(const ServerSideEncryption& value) { SetDefaultServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The type of server-side encryption that's used by default to encrypt objects
-     * in the bucket.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline S3Bucket& WithDefaultServerSideEncryption(ServerSideEncryption&& value) { SetDefaultServerSideEncryption(std::move(value)); return *this;}
 

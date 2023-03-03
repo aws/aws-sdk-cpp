@@ -104,11 +104,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
 
@@ -117,11 +124,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
 
@@ -130,11 +144,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
 
@@ -143,11 +164,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline void SetColorSpaceConversion(ColorSpaceConversion&& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = std::move(value); }
 
@@ -156,11 +184,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline ColorCorrector& WithColorSpaceConversion(const ColorSpaceConversion& value) { SetColorSpaceConversion(value); return *this;}
 
@@ -169,11 +204,18 @@ namespace Model
      * conversion between HDR formats, between SDR formats, from SDR to HDR, and from
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
-     * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
-     * P3D65 (SDR) to set the output color space metadata to the following: * Color
-     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
-     * coefficients: BT.709
+     * unconverted output. HDR to SDR conversion uses tone mapping to approximate the
+     * outcome of manually regrading from HDR to SDR. When you specify an output color
+     * space, MediaConvert uses the following color space metadata, which includes
+     * color primaries, transfer characteristics, and matrix coefficients:
+  * HDR 10:
+     * BT.2020, PQ, BT.2020 non-constant
+  * HLG 2020: BT.2020, HLG, BT.2020
+     * non-constant
+  * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709
+  * P3D65 (SDR):
+     * Display P3, sRGB, BT.709
+  * P3D65 (HDR): Display P3, PQ, BT.709
      */
     inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion&& value) { SetColorSpaceConversion(std::move(value)); return *this;}
 

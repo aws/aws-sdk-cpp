@@ -29,6 +29,7 @@
 #include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/InstanceMaintenanceOptions.h>
+#include <aws/ec2/model/InstanceBootModeValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -1936,42 +1937,72 @@ namespace Model
 
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Instance& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
 
     /**
-     * <p>The boot mode of the instance. For more information, see <a
+     * <p>The boot mode that was specified by the AMI. If the value is
+     * <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The
+     * <code>currentInstanceBootMode</code> parameter is the boot mode that is used to
+     * boot the instance at launch or start.</p>  <p>The operating system
+     * contained in the AMI must be configured to support the specified boot mode.</p>
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
@@ -2296,6 +2327,55 @@ namespace Model
      */
     inline Instance& WithMaintenanceOptions(InstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const InstanceBootModeValues& GetCurrentInstanceBootMode() const{ return m_currentInstanceBootMode; }
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool CurrentInstanceBootModeHasBeenSet() const { return m_currentInstanceBootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetCurrentInstanceBootMode(const InstanceBootModeValues& value) { m_currentInstanceBootModeHasBeenSet = true; m_currentInstanceBootMode = value; }
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetCurrentInstanceBootMode(InstanceBootModeValues&& value) { m_currentInstanceBootModeHasBeenSet = true; m_currentInstanceBootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithCurrentInstanceBootMode(const InstanceBootModeValues& value) { SetCurrentInstanceBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode that is used to boot the instance at launch or start. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline Instance& WithCurrentInstanceBootMode(InstanceBootModeValues&& value) { SetCurrentInstanceBootMode(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2465,6 +2545,9 @@ namespace Model
 
     InstanceMaintenanceOptions m_maintenanceOptions;
     bool m_maintenanceOptionsHasBeenSet = false;
+
+    InstanceBootModeValues m_currentInstanceBootMode;
+    bool m_currentInstanceBootModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,8 @@ CreateVocabularyFilterRequest::CreateVocabularyFilterRequest() :
     m_languageCodeHasBeenSet(false),
     m_wordsHasBeenSet(false),
     m_vocabularyFilterFileUriHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,12 @@ Aws::String CreateVocabularyFilterRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
 
   }
 

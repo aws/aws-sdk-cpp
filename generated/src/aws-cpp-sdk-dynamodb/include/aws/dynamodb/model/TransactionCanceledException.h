@@ -81,9 +81,9 @@ namespace Model
    * table as DynamoDB is automatically scaling the table.</p>  </li> <li>
    * <p>Throughput exceeds the current capacity for one or more global secondary
    * indexes. DynamoDB is automatically scaling your index so please try again
-   * shortly.</p>  <p>This message is returned when when writes get throttled
-   * on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
-   * </li> </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code:
+   * shortly.</p>  <p>This message is returned when writes get throttled on an
+   * On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>  </li>
+   * </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code:
    * <code>ValidationError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>One
    * or more parameter values were invalid.</p> </li> <li> <p>The update expression
    * attempted to update the secondary index key beyond allowed size limits.</p>

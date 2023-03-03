@@ -21,14 +21,18 @@ namespace Model
 NielsenNaesIiNw::NielsenNaesIiNw() : 
     m_checkDigitStringHasBeenSet(false),
     m_sid(0.0),
-    m_sidHasBeenSet(false)
+    m_sidHasBeenSet(false),
+    m_timezone(NielsenWatermarkTimezones::NOT_SET),
+    m_timezoneHasBeenSet(false)
 {
 }
 
 NielsenNaesIiNw::NielsenNaesIiNw(JsonView jsonValue) : 
     m_checkDigitStringHasBeenSet(false),
     m_sid(0.0),
-    m_sidHasBeenSet(false)
+    m_sidHasBeenSet(false),
+    m_timezone(NielsenWatermarkTimezones::NOT_SET),
+    m_timezoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ NielsenNaesIiNw& NielsenNaesIiNw::operator =(JsonView jsonValue)
     m_sidHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timezone"))
+  {
+    m_timezone = NielsenWatermarkTimezonesMapper::GetNielsenWatermarkTimezonesForName(jsonValue.GetString("timezone"));
+
+    m_timezoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +77,11 @@ JsonValue NielsenNaesIiNw::Jsonize() const
   {
    payload.WithDouble("sid", m_sid);
 
+  }
+
+  if(m_timezoneHasBeenSet)
+  {
+   payload.WithString("timezone", NielsenWatermarkTimezonesMapper::GetNameForNielsenWatermarkTimezones(m_timezone));
   }
 
   return payload;

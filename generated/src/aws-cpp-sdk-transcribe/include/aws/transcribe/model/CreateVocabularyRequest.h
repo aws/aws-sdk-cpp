@@ -487,6 +487,119 @@ namespace Model
      */
     inline CreateVocabularyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline CreateVocabularyRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline CreateVocabularyRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
+     * the Amazon S3 bucket that contains your input files (in this case, your custom
+     * vocabulary). If the role that you specify doesn’t have the appropriate
+     * permissions to access the specified Amazon S3 location, your request fails.</p>
+     * <p>IAM role ARNs have the format
+     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
+     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+     * ARNs</a>.</p>
+     */
+    inline CreateVocabularyRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -503,6 +616,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_dataAccessRoleArn;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

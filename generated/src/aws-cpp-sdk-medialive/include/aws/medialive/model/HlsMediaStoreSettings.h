@@ -122,25 +122,29 @@ namespace Model
 
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
-     * error state.
+     * error state. Applies only if the CDN destination URI begins with "s3" or
+     * "mediastore". For other URIs, the value is always 3.
      */
     inline int GetNumRetries() const{ return m_numRetries; }
 
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
-     * error state.
+     * error state. Applies only if the CDN destination URI begins with "s3" or
+     * "mediastore". For other URIs, the value is always 3.
      */
     inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
 
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
-     * error state.
+     * error state. Applies only if the CDN destination URI begins with "s3" or
+     * "mediastore". For other URIs, the value is always 3.
      */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
 
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
-     * error state.
+     * error state. Applies only if the CDN destination URI begins with "s3" or
+     * "mediastore". For other URIs, the value is always 3.
      */
     inline HlsMediaStoreSettings& WithNumRetries(int value) { SetNumRetries(value); return *this;}
 

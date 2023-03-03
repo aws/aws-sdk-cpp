@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/NielsenWatermarkTimezones.h>
 #include <utility>
 
 namespace Aws
@@ -98,6 +99,49 @@ namespace Model
      */
     inline NielsenNaesIiNw& WithSid(double value) { SetSid(value); return *this;}
 
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline const NielsenWatermarkTimezones& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline void SetTimezone(const NielsenWatermarkTimezones& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline void SetTimezone(NielsenWatermarkTimezones&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline NielsenNaesIiNw& WithTimezone(const NielsenWatermarkTimezones& value) { SetTimezone(value); return *this;}
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided,
+the
+     * timestamps will be in Coordinated Universal Time (UTC)
+     */
+    inline NielsenNaesIiNw& WithTimezone(NielsenWatermarkTimezones&& value) { SetTimezone(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_checkDigitString;
@@ -105,6 +149,9 @@ namespace Model
 
     double m_sid;
     bool m_sidHasBeenSet = false;
+
+    NielsenWatermarkTimezones m_timezone;
+    bool m_timezoneHasBeenSet = false;
   };
 
 } // namespace Model

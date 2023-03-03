@@ -794,42 +794,60 @@ namespace Model
 
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
 
     /**
-     * <p>The boot mode of the AMI. For more information, see <a
+     * <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates
+     * that the AMI supports both UEFI and Legacy BIOS.</p>  <p>The operating
+     * system contained in the AMI must be configured to support the specified boot
+     * mode.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
