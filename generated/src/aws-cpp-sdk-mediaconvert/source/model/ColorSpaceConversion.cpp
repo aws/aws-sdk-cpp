@@ -27,6 +27,7 @@ namespace Aws
         static const int FORCE_HLG_2020_HASH = HashingUtils::HashString("FORCE_HLG_2020");
         static const int FORCE_P3DCI_HASH = HashingUtils::HashString("FORCE_P3DCI");
         static const int FORCE_P3D65_SDR_HASH = HashingUtils::HashString("FORCE_P3D65_SDR");
+        static const int FORCE_P3D65_HDR_HASH = HashingUtils::HashString("FORCE_P3D65_HDR");
 
 
         ColorSpaceConversion GetColorSpaceConversionForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ColorSpaceConversion::FORCE_P3D65_SDR;
           }
+          else if (hashCode == FORCE_P3D65_HDR_HASH)
+          {
+            return ColorSpaceConversion::FORCE_P3D65_HDR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "FORCE_P3DCI";
           case ColorSpaceConversion::FORCE_P3D65_SDR:
             return "FORCE_P3D65_SDR";
+          case ColorSpaceConversion::FORCE_P3D65_HDR:
+            return "FORCE_P3D65_HDR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

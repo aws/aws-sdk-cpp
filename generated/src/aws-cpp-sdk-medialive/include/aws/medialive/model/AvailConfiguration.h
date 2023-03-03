@@ -38,32 +38,50 @@ namespace Model
 
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline const AvailSettings& GetAvailSettings() const{ return m_availSettings; }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline bool AvailSettingsHasBeenSet() const { return m_availSettingsHasBeenSet; }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline void SetAvailSettings(const AvailSettings& value) { m_availSettingsHasBeenSet = true; m_availSettings = value; }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline void SetAvailSettings(AvailSettings&& value) { m_availSettingsHasBeenSet = true; m_availSettings = std::move(value); }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline AvailConfiguration& WithAvailSettings(const AvailSettings& value) { SetAvailSettings(value); return *this;}
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all
+     * segmentation signals traditionally. With Time Signal APOS mode only Time Signal
+     * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
+     * signals are forwarded to an ESAM server for possible update.
      */
     inline AvailConfiguration& WithAvailSettings(AvailSettings&& value) { SetAvailSettings(std::move(value)); return *this;}
 

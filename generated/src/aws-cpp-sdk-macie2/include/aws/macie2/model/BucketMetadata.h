@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -143,7 +143,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
-     * encryption of objects when objects are uploaded to the bucket. Possible values
+     * encryption of objects when objects are added to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
      * new objects. PutObject requests must include a valid server-side encryption
      * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
@@ -887,38 +887,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline const BucketServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline void SetServerSideEncryption(const BucketServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline void SetServerSideEncryption(BucketServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline BucketMetadata& WithServerSideEncryption(const BucketServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket encrypts new objects by default and, if so, the
-     * type of server-side encryption that's used.</p>
+     * <p>The default server-side encryption settings for the bucket.</p>
      */
     inline BucketMetadata& WithServerSideEncryption(BucketServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -928,8 +922,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
@@ -946,8 +940,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
@@ -964,8 +958,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
@@ -982,8 +976,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
@@ -1000,8 +994,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon
@@ -1018,8 +1012,8 @@ namespace Model
      * account, an Amazon CloudFront origin access identity (OAI), or a CloudFront
      * origin access control (OAC). Possible values are:</p> <ul><li><p>EXTERNAL - The
      * bucket is shared with one or more of the following or any combination of the
-     * following: an Amazon Web Services account that isn't part of your Amazon Macie
-     * organization, a CloudFront OAI, or a CloudFront OAC.</p></li> <li><p>INTERNAL -
+     * following: a CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account
+     * that isn't part of your Amazon Macie organization.</p></li> <li><p>INTERNAL -
      * The bucket is shared with one or more Amazon Web Services accounts that are part
      * of your Amazon Macie organization. It isn't shared with a CloudFront OAI or
      * OAC.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with another Amazon

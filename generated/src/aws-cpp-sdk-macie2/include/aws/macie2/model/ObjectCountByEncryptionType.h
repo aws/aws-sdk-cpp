@@ -117,26 +117,26 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that aren't encrypted or use client-side
-     * encryption.</p>
+     * <p>The total number of objects that use client-side encryption or aren't
+     * encrypted.</p>
      */
     inline long long GetUnencrypted() const{ return m_unencrypted; }
 
     /**
-     * <p>The total number of objects that aren't encrypted or use client-side
-     * encryption.</p>
+     * <p>The total number of objects that use client-side encryption or aren't
+     * encrypted.</p>
      */
     inline bool UnencryptedHasBeenSet() const { return m_unencryptedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that aren't encrypted or use client-side
-     * encryption.</p>
+     * <p>The total number of objects that use client-side encryption or aren't
+     * encrypted.</p>
      */
     inline void SetUnencrypted(long long value) { m_unencryptedHasBeenSet = true; m_unencrypted = value; }
 
     /**
-     * <p>The total number of objects that aren't encrypted or use client-side
-     * encryption.</p>
+     * <p>The total number of objects that use client-side encryption or aren't
+     * encrypted.</p>
      */
     inline ObjectCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
 

@@ -50,9 +50,8 @@ namespace Model
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
      * set to <code>false</code> and the number of transcription job requests exceed
      * the concurrent request limit, you get a <code>LimitExceededException</code>
-     * error.</p> <p>Note that job queuing is enabled by default for Call Analytics
-     * jobs.</p> <p>If you include <code>AllowDeferredExecution</code> in your request,
-     * you must also include <code>DataAccessRoleArn</code>.</p>
+     * error.</p> <p>If you include <code>AllowDeferredExecution</code> in your
+     * request, you must also include <code>DataAccessRoleArn</code>.</p>
      */
     inline bool GetAllowDeferredExecution() const{ return m_allowDeferredExecution; }
 
@@ -63,9 +62,8 @@ namespace Model
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
      * set to <code>false</code> and the number of transcription job requests exceed
      * the concurrent request limit, you get a <code>LimitExceededException</code>
-     * error.</p> <p>Note that job queuing is enabled by default for Call Analytics
-     * jobs.</p> <p>If you include <code>AllowDeferredExecution</code> in your request,
-     * you must also include <code>DataAccessRoleArn</code>.</p>
+     * error.</p> <p>If you include <code>AllowDeferredExecution</code> in your
+     * request, you must also include <code>DataAccessRoleArn</code>.</p>
      */
     inline bool AllowDeferredExecutionHasBeenSet() const { return m_allowDeferredExecutionHasBeenSet; }
 
@@ -76,9 +74,8 @@ namespace Model
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
      * set to <code>false</code> and the number of transcription job requests exceed
      * the concurrent request limit, you get a <code>LimitExceededException</code>
-     * error.</p> <p>Note that job queuing is enabled by default for Call Analytics
-     * jobs.</p> <p>If you include <code>AllowDeferredExecution</code> in your request,
-     * you must also include <code>DataAccessRoleArn</code>.</p>
+     * error.</p> <p>If you include <code>AllowDeferredExecution</code> in your
+     * request, you must also include <code>DataAccessRoleArn</code>.</p>
      */
     inline void SetAllowDeferredExecution(bool value) { m_allowDeferredExecutionHasBeenSet = true; m_allowDeferredExecution = value; }
 
@@ -89,9 +86,8 @@ namespace Model
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
      * set to <code>false</code> and the number of transcription job requests exceed
      * the concurrent request limit, you get a <code>LimitExceededException</code>
-     * error.</p> <p>Note that job queuing is enabled by default for Call Analytics
-     * jobs.</p> <p>If you include <code>AllowDeferredExecution</code> in your request,
-     * you must also include <code>DataAccessRoleArn</code>.</p>
+     * error.</p> <p>If you include <code>AllowDeferredExecution</code> in your
+     * request, you must also include <code>DataAccessRoleArn</code>.</p>
      */
     inline JobExecutionSettings& WithAllowDeferredExecution(bool value) { SetAllowDeferredExecution(value); return *this;}
 

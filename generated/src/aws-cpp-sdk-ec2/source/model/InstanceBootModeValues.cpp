@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/BootModeValues.h>
+#include <aws/ec2/model/InstanceBootModeValues.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,49 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace BootModeValuesMapper
+      namespace InstanceBootModeValuesMapper
       {
 
         static const int legacy_bios_HASH = HashingUtils::HashString("legacy-bios");
         static const int uefi_HASH = HashingUtils::HashString("uefi");
-        static const int uefi_preferred_HASH = HashingUtils::HashString("uefi-preferred");
 
 
-        BootModeValues GetBootModeValuesForName(const Aws::String& name)
+        InstanceBootModeValues GetInstanceBootModeValuesForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == legacy_bios_HASH)
           {
-            return BootModeValues::legacy_bios;
+            return InstanceBootModeValues::legacy_bios;
           }
           else if (hashCode == uefi_HASH)
           {
-            return BootModeValues::uefi;
-          }
-          else if (hashCode == uefi_preferred_HASH)
-          {
-            return BootModeValues::uefi_preferred;
+            return InstanceBootModeValues::uefi;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BootModeValues>(hashCode);
+            return static_cast<InstanceBootModeValues>(hashCode);
           }
 
-          return BootModeValues::NOT_SET;
+          return InstanceBootModeValues::NOT_SET;
         }
 
-        Aws::String GetNameForBootModeValues(BootModeValues enumValue)
+        Aws::String GetNameForInstanceBootModeValues(InstanceBootModeValues enumValue)
         {
           switch(enumValue)
           {
-          case BootModeValues::legacy_bios:
+          case InstanceBootModeValues::legacy_bios:
             return "legacy-bios";
-          case BootModeValues::uefi:
+          case InstanceBootModeValues::uefi:
             return "uefi";
-          case BootModeValues::uefi_preferred:
-            return "uefi-preferred";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace BootModeValuesMapper
+      } // namespace InstanceBootModeValuesMapper
     } // namespace Model
   } // namespace EC2
 } // namespace Aws

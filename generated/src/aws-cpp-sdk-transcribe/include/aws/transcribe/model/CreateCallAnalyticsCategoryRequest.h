@@ -184,74 +184,74 @@ namespace Model
 
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline const InputType& GetInputType() const{ return m_inputType; }
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithInputType(const InputType& value) { SetInputType(value); return *this;}
 
     /**
-     * <p>Choose whether you want to create a streaming or a batch category for your
-     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
-     * your category to batch transcriptions; categories with this input type cannot be
-     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
-     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
-     * categories with this input type cannot be applied to batch (post-call)
+     * <p>Choose whether you want to create a real-time or a post-call category for
+     * your Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code>
+     * assigns your category to post-call transcriptions; categories with this input
+     * type cannot be applied to streaming (real-time) transcriptions.</p>
+     * <p>Specifying <code>REAL_TIME</code> assigns your category to streaming
+     * transcriptions; categories with this input type cannot be applied to post-call
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
-     * category is created as a batch category by default.</p>
+     * category is created as a post-call category by default.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
 

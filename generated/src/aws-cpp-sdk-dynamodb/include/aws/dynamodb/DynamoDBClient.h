@@ -326,30 +326,41 @@ namespace DynamoDB
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p>  <p>This operation only applies to <a
+         * name in the provided Regions. </p>  <p>This operation only applies to
+         * <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p>  <p>If you want to add a new replica
-         * table to a global table, each of the following conditions must be true:</p> <ul>
-         * <li> <p>The table must have the same primary key as all of the other
-         * replicas.</p> </li> <li> <p>The table must have the same name as all of the
-         * other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled,
-         * with the stream containing both the new and the old images of the item.</p>
-         * </li> <li> <p>None of the replica tables in the global table can contain any
-         * data.</p> </li> </ul> <p> If global secondary indexes are specified, then the
-         * following conditions must also be met: </p> <ul> <li> <p> The global secondary
-         * indexes must have the same name. </p> </li> <li> <p> The global secondary
-         * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
-         * <p> If local secondary indexes are specified, then the following conditions must
-         * also be met: </p> <ul> <li> <p> The local secondary indexes must have the same
-         * name. </p> </li> <li> <p> The local secondary indexes must have the same hash
-         * key and sort key (if present). </p> </li> </ul>  <p> Write capacity
-         * settings should be set consistently across your replica tables and secondary
-         * indexes. DynamoDB strongly recommends enabling auto scaling to manage the write
-         * capacity settings for all of your global tables replicas and indexes. </p> <p>
-         * If you prefer to manage write capacity settings manually, you should provision
-         * equal replicated write capacity units to your replica tables. You should also
-         * provision equal replicated write capacity units to matching secondary indexes
-         * across your global table. </p> <p><h3>See Also:</h3>   <a
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p>  <p>If you want to add a new
+         * replica table to a global table, each of the following conditions must be
+         * true:</p> <ul> <li> <p>The table must have the same primary key as all of the
+         * other replicas.</p> </li> <li> <p>The table must have the same name as all of
+         * the other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams
+         * enabled, with the stream containing both the new and the old images of the
+         * item.</p> </li> <li> <p>None of the replica tables in the global table can
+         * contain any data.</p> </li> </ul> <p> If global secondary indexes are specified,
+         * then the following conditions must also be met: </p> <ul> <li> <p> The global
+         * secondary indexes must have the same name. </p> </li> <li> <p> The global
+         * secondary indexes must have the same hash key and sort key (if present). </p>
+         * </li> </ul> <p> If local secondary indexes are specified, then the following
+         * conditions must also be met: </p> <ul> <li> <p> The local secondary indexes must
+         * have the same name. </p> </li> <li> <p> The local secondary indexes must have
+         * the same hash key and sort key (if present). </p> </li> </ul>  <p>
+         * Write capacity settings should be set consistently across your replica tables
+         * and secondary indexes. DynamoDB strongly recommends enabling auto scaling to
+         * manage the write capacity settings for all of your global tables replicas and
+         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
+         * should provision equal replicated write capacity units to your replica tables.
+         * You should also provision equal replicated write capacity units to matching
+         * secondary indexes across your global table. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -482,7 +493,10 @@ namespace DynamoDB
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
          * in the <code>DELETING</code> state, no error is returned. </p> 
-         * <p>DynamoDB might continue to accept data read and write operations, such as
+         * <p>This operation only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> of global tables. </p>   <p>DynamoDB
+         * might continue to accept data read and write operations, such as
          * <code>GetItem</code> and <code>PutItem</code>, on a table in the
          * <code>DELETING</code> state until the table deletion is complete.</p> 
          * <p>When you delete a table, any indexes on that table are also deleted.</p>
@@ -577,7 +591,7 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Returns information about contributor insights, for a given table or global
+         * <p>Returns information about contributor insights for a given table or global
          * secondary index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">AWS
          * API Reference</a></p>
@@ -603,7 +617,11 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Returns the regional endpoint information.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the regional endpoint information. This action must be included in
+         * your VPC endpoint policies, or access to the DescribeEndpoints API will be
+         * denied. For more information on policy permissions, please see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
+         * traffic privacy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
          * API Reference</a></p>
          */
@@ -656,11 +674,16 @@ namespace DynamoDB
          * <p>Returns information about the specified global table.</p>  <p>This
          * operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables. If you are using global tables <a
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> you can use <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
-         * instead.</p> <p><h3>See Also:</h3>   <a
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -685,10 +708,19 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p>  <p>This
-         * operation only applies to <a
+         * <p>Describes Region-specific settings for a global table.</p> 
+         * <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          */
@@ -832,8 +864,11 @@ namespace DynamoDB
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p>  <p>If you issue a <code>DescribeTable</code> request
-         * immediately after a <code>CreateTable</code> request, DynamoDB might return a
+         * table.</p>  <p>This operation only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> of global tables. </p>   <p>If you
+         * issue a <code>DescribeTable</code> request immediately after a
+         * <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
          * for your table might not be available at that moment. Wait for a few seconds,
@@ -866,7 +901,8 @@ namespace DynamoDB
          * <p>Describes auto scaling settings across replicas of the global table at
          * once.</p>  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
+         * 2019.11.21 (Current)</a> of global tables.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -982,7 +1018,8 @@ namespace DynamoDB
          * items (if using the Limit parameter) or a maximum of 1 MB of data (and then
          * apply any filtering to the results using <code>WHERE</code> clause). If
          * <code>LastEvaluatedKey</code> is present in the response, you need to paginate
-         * the result set.</p><p><h3>See Also:</h3>   <a
+         * the result set. If <code>NextToken</code> is present, you need to paginate the
+         * result set and include <code>NextToken</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -1210,7 +1247,16 @@ namespace DynamoDB
          * <p>Lists all global tables that have a replica in the specified Region.</p>
          *  <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables.</p> <p><h3>See Also:</h3>   <a
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
@@ -1602,7 +1648,7 @@ namespace DynamoDB
          * process of updating an item to be read.</p> </li> <li> <p>There is insufficient
          * provisioned capacity for the transaction to be completed.</p> </li> <li>
          * <p>There is a user error, such as an invalid data format.</p> </li> <li> <p>The
-         * aggregate size of the items in the transaction cannot exceed 4 MB.</p> </li>
+         * aggregate size of the items in the transaction exceeded 4 MB.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
          * API Reference</a></p>
@@ -1794,15 +1840,33 @@ namespace DynamoDB
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p>  <p>Although you can use
-         * <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single
-         * request, for simplicity we recommend that you issue separate requests for adding
-         * or removing replicas.</p>  <p> If global secondary indexes are specified,
-         * then the following conditions must also be met: </p> <ul> <li> <p> The global
-         * secondary indexes must have the same name. </p> </li> <li> <p> The global
-         * secondary indexes must have the same hash key and sort key (if present). </p>
-         * </li> <li> <p> The global secondary indexes must have the same provisioned and
-         * maximum write capacity units. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * capacity units.</p>  <p>This operation only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p>   <p> This operation only
+         * applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables. If you are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> you can use <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add
+         * replicas and remove replicas in a single request, for simplicity we recommend
+         * that you issue separate requests for adding or removing replicas. </p> 
+         * <p> If global secondary indexes are specified, then the following conditions
+         * must also be met: </p> <ul> <li> <p> The global secondary indexes must have the
+         * same name. </p> </li> <li> <p> The global secondary indexes must have the same
+         * hash key and sort key (if present). </p> </li> <li> <p> The global secondary
+         * indexes must have the same provisioned and maximum write capacity units. </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -1827,7 +1891,19 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Updates settings for a global table.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates settings for a global table.</p>  <p>This operation only
+         * applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
+         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
+         * (Legacy). To determine which version you are using, see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+         * the version</a>. To update existing global tables from version 2017.11.29
+         * (Legacy) to version 2019.11.21 (Current), see <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
+         * Updating global tables</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">AWS
          * API Reference</a></p>
          */
@@ -1884,11 +1960,14 @@ namespace DynamoDB
 
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
-         * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
-         * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
-         * throughput settings of the table.</p> </li> <li> <p>Remove a global secondary
-         * index from the table.</p> </li> <li> <p>Create a new global secondary index on
-         * the table. After the index begins backfilling, you can use
+         * DynamoDB Streams settings for a given table.</p>  <p>This operation
+         * only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21 (Current)</a> of global tables. </p>  <p>You can only
+         * perform one of the following operations at once:</p> <ul> <li> <p>Modify the
+         * provisioned throughput settings of the table.</p> </li> <li> <p>Remove a global
+         * secondary index from the table.</p> </li> <li> <p>Create a new global secondary
+         * index on the table. After the index begins backfilling, you can use
          * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
          * <code>UpdateTable</code> is an asynchronous operation; while it is executing,
          * the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>.
@@ -1923,7 +2002,8 @@ namespace DynamoDB
          * <p>Updates auto scaling settings on your global tables at once.</p> 
          * <p>This operation only applies to <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21</a> of global tables.</p> <p><h3>See Also:</h3>   <a
+         * 2019.11.21 (Current)</a> of global tables. </p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */

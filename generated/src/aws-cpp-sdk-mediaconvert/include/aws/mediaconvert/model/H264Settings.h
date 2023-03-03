@@ -154,9 +154,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline const BandwidthReductionFilter& GetBandwidthReductionFilter() const{ return m_bandwidthReductionFilter; }
 
@@ -166,9 +166,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline bool BandwidthReductionFilterHasBeenSet() const { return m_bandwidthReductionFilterHasBeenSet; }
 
@@ -178,9 +178,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline void SetBandwidthReductionFilter(const BandwidthReductionFilter& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = value; }
 
@@ -190,9 +190,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline void SetBandwidthReductionFilter(BandwidthReductionFilter&& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = std::move(value); }
 
@@ -202,9 +202,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline H264Settings& WithBandwidthReductionFilter(const BandwidthReductionFilter& value) { SetBandwidthReductionFilter(value); return *this;}
 
@@ -214,9 +214,9 @@ namespace Model
      * output, with little or no perceptual decrease in quality. Or, use to increase
      * the video quality of outputs with other rate control modes relative to the
      * bitrate that you specify. Bandwidth reduction increases further when your input
-     * is low quality or noisy.Outputs that use this feature incur pro-tier
-     * pricing.When you include Bandwidth reduction filter, you cannot include the
-     * Noise reducer preprocessor.
+     * is low quality or noisy. Outputs that use this feature incur pro-tier pricing.
+     * When you include Bandwidth reduction filter, you cannot include the Noise
+     * reducer preprocessor.
      */
     inline H264Settings& WithBandwidthReductionFilter(BandwidthReductionFilter&& value) { SetBandwidthReductionFilter(std::move(value)); return *this;}
 

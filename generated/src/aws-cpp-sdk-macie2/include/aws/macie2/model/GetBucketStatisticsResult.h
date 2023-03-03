@@ -86,68 +86,63 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that use certain types of server-side encryption
-     * to encrypt new objects by default. This object also reports the total number of
-     * buckets that don't encrypt new objects by default.</p>
+     * <p>The total number of buckets whose settings do or don't specify default
+     * server-side encryption behavior for objects that are added to the buckets.</p>
      */
     inline const BucketCountByEncryptionType& GetBucketCountByEncryptionType() const{ return m_bucketCountByEncryptionType; }
 
     /**
-     * <p>The total number of buckets that use certain types of server-side encryption
-     * to encrypt new objects by default. This object also reports the total number of
-     * buckets that don't encrypt new objects by default.</p>
+     * <p>The total number of buckets whose settings do or don't specify default
+     * server-side encryption behavior for objects that are added to the buckets.</p>
      */
     inline void SetBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { m_bucketCountByEncryptionType = value; }
 
     /**
-     * <p>The total number of buckets that use certain types of server-side encryption
-     * to encrypt new objects by default. This object also reports the total number of
-     * buckets that don't encrypt new objects by default.</p>
+     * <p>The total number of buckets whose settings do or don't specify default
+     * server-side encryption behavior for objects that are added to the buckets.</p>
      */
     inline void SetBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { m_bucketCountByEncryptionType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that use certain types of server-side encryption
-     * to encrypt new objects by default. This object also reports the total number of
-     * buckets that don't encrypt new objects by default.</p>
+     * <p>The total number of buckets whose settings do or don't specify default
+     * server-side encryption behavior for objects that are added to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { SetBucketCountByEncryptionType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that use certain types of server-side encryption
-     * to encrypt new objects by default. This object also reports the total number of
-     * buckets that don't encrypt new objects by default.</p>
+     * <p>The total number of buckets whose settings do or don't specify default
+     * server-side encryption behavior for objects that are added to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { SetBucketCountByEncryptionType(std::move(value)); return *this;}
 
 
     /**
      * <p>The total number of buckets whose bucket policies do or don't require
-     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     * server-side encryption of objects when objects are added to the buckets.</p>
      */
     inline const BucketCountPolicyAllowsUnencryptedObjectUploads& GetBucketCountByObjectEncryptionRequirement() const{ return m_bucketCountByObjectEncryptionRequirement; }
 
     /**
      * <p>The total number of buckets whose bucket policies do or don't require
-     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     * server-side encryption of objects when objects are added to the buckets.</p>
      */
     inline void SetBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { m_bucketCountByObjectEncryptionRequirement = value; }
 
     /**
      * <p>The total number of buckets whose bucket policies do or don't require
-     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     * server-side encryption of objects when objects are added to the buckets.</p>
      */
     inline void SetBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { m_bucketCountByObjectEncryptionRequirement = std::move(value); }
 
     /**
      * <p>The total number of buckets whose bucket policies do or don't require
-     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     * server-side encryption of objects when objects are added to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { SetBucketCountByObjectEncryptionRequirement(value); return *this;}
 
     /**
      * <p>The total number of buckets whose bucket policies do or don't require
-     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     * server-side encryption of objects when objects are added to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { SetBucketCountByObjectEncryptionRequirement(std::move(value)); return *this;}
 

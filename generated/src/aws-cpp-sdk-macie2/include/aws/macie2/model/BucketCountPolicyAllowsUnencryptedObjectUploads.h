@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Provides information about the number of S3 buckets whose bucket policies do
-   * or don't require server-side encryption of objects when objects are uploaded to
-   * the buckets.</p><p><h3>See Also:</h3>   <a
+   * or don't require server-side encryption of objects when objects are added to the
+   * buckets.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountPolicyAllowsUnencryptedObjectUploads">AWS
    * API Reference</a></p>
    */

@@ -88,19 +88,20 @@ namespace TranscribeService
          * to apply categories to your transcriptions, you must create them before
          * submitting your transcription request, as categories cannot be applied
          * retroactively.</p> <p>When creating a new category, you can use the
-         * <code>InputType</code> parameter to label the category as a batch category
-         * (<code>POST_CALL</code>) or a streaming category (<code>REAL_TIME</code>). Batch
-         * categories can only be applied to batch transcriptions and streaming categories
-         * can only be applied to streaming transcriptions. If you do not include
-         * <code>InputType</code>, your category is created as a batch category by
-         * default.</p> <p>Call Analytics categories are composed of rules. For each
-         * category, you must create between 1 and 20 rules. Rules can include these
-         * parameters: , , , and .</p> <p>To update an existing category, see .</p> <p>To
-         * learn more about Call Analytics categories, see <a
+         * <code>InputType</code> parameter to label the category as a
+         * <code>POST_CALL</code> or a <code>REAL_TIME</code> category.
+         * <code>POST_CALL</code> categories can only be applied to post-call
+         * transcriptions and <code>REAL_TIME</code> categories can only be applied to
+         * real-time transcriptions. If you do not include <code>InputType</code>, your
+         * category is created as a <code>POST_CALL</code> category by default.</p> <p>Call
+         * Analytics categories are composed of rules. For each category, you must create
+         * between 1 and 20 rules. Rules can include these parameters: , , , and .</p>
+         * <p>To update an existing category, see .</p> <p>To learn more about Call
+         * Analytics categories, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-         * categories for batch transcriptions</a> and <a
+         * categories for post-call transcriptions</a> and <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-         * categories for streaming transcriptions</a>.</p><p><h3>See Also:</h3>   <a
+         * categories for real-time transcriptions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">AWS
          * API Reference</a></p>
          */
@@ -157,13 +158,14 @@ namespace TranscribeService
 
         /**
          * <p>Creates a new custom medical vocabulary.</p> <p>Before creating a new custom
-         * medical vocabulary, you must first upload a text file that contains your new
-         * entries, phrases, and terms into an Amazon S3 bucket. Note that this differs
-         * from , where you can include a list of terms within your request using the
+         * medical vocabulary, you must first upload a text file that contains your
+         * vocabulary table into an Amazon S3 bucket. Note that this differs from , where
+         * you can include a list of terms within your request using the
          * <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-         * the <code>Phrases</code> flag.</p> <p>Each language has a character set that
-         * contains all allowed characters for that specific language. If you use
-         * unsupported characters, your custom vocabulary request fails. Refer to <a
+         * the <code>Phrases</code> flag and only accepts vocabularies in table format.</p>
+         * <p>Each language has a character set that contains all allowed characters for
+         * that specific language. If you use unsupported characters, your custom
+         * vocabulary request fails. Refer to <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
          * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
          * <p>For more information, see <a
@@ -996,12 +998,13 @@ namespace TranscribeService
          * a new category, use the operation. To learn more about Call Analytics
          * categories, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
-         * categories for batch transcriptions</a> and <a
+         * categories for post-call transcriptions</a> and <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
-         * categories for streaming transcriptions</a>.</p> <p>To make a
+         * categories for real-time transcriptions</a>.</p> <p>To make a
          * <code>StartCallAnalyticsJob</code> request, you must first upload your media
          * file into an Amazon S3 bucket; you can then specify the Amazon S3 location of
-         * the file using the <code>Media</code> parameter.</p> <p>You must include the
+         * the file using the <code>Media</code> parameter.</p> <p>Note that job queuing is
+         * enabled by default for Call Analytics jobs.</p> <p>You must include the
          * following parameters in your <code>StartCallAnalyticsJob</code> request:</p>
          * <ul> <li> <p> <code>region</code>: The Amazon Web Services Region where you are
          * making your request. For a list of Amazon Web Services Regions supported with

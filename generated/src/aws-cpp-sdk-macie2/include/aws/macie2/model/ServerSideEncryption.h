@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the server-side encryption settings for an S3
-   * bucket or S3 object.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the default server-side encryption settings for an
+   * S3 bucket or the encryption settings for an S3 object.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServerSideEncryption">AWS
    * API Reference</a></p>
    */
@@ -41,43 +42,49 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline ServerSideEncryption& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm that's used when storing data in the
-     * bucket or object. If default encryption is disabled for the bucket or the object
-     * isn't encrypted using server-side encryption, this value is NONE.</p>
+     * bucket or object. If default encryption settings aren't configured for the
+     * bucket or the object isn't encrypted using server-side encryption, this value is
+     * NONE.</p>
      */
     inline ServerSideEncryption& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

@@ -484,7 +484,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
 
@@ -492,7 +492,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
 
@@ -500,7 +500,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline void SetReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
 
@@ -508,7 +508,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline void SetReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
 
@@ -516,7 +516,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline UpdateTableRequest& WithReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { SetReplicaUpdates(value); return *this;}
 
@@ -524,7 +524,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline UpdateTableRequest& WithReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
 
@@ -532,7 +532,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline UpdateTableRequest& AddReplicaUpdates(const ReplicationGroupUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
 
@@ -540,7 +540,7 @@ namespace Model
      * <p>A list of replica update actions (create, delete, or update) for the
      * table.</p>  <p>This property only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.</p> 
+     * 2019.11.21 (Current)</a> of global tables. </p> 
      */
     inline UpdateTableRequest& AddReplicaUpdates(ReplicationGroupUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
 

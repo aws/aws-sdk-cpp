@@ -22,7 +22,8 @@ namespace Model
     HDR10,
     HLG_2020,
     P3DCI,
-    P3D65_SDR
+    P3D65_SDR,
+    P3D65_HDR
   };
 
 namespace ColorSpaceMapper
