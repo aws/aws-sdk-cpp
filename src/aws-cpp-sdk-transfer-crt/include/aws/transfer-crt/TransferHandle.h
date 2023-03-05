@@ -7,11 +7,12 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/transfer-crt/Metadata.h>
 #include <aws/s3-crt/S3CrtErrors.h>
+#include <aws/transfer-crt/Metadata.h>
 
 #include <atomic>
 #include <condition_variable>
