@@ -24,12 +24,12 @@ namespace TransferCrt {
 
 namespace {
 // Return the parent directory of @path, or an empty string if not possible.
-Aws::String parent_directory(const Aws::String &path) {
+Aws::String ParentPath(const Aws::String &path) {
   const size_t n = path.find_last_of(Aws::FileSystem::PATH_DELIM);
   return n == Aws::String::npos ? "" : path.substr(0, n);
-}    
+}
 } // namespace
- 
+
 /*
  * FileDescriptorBuf methods.
  */
@@ -71,14 +71,14 @@ DownloadStream::DownloadStream(const Aws::String &dstPath, ErrorCallback ec, boo
       dstPath_{dstPath},
       dstTempPath_{dstPath + ".partial.XXXXXX"},
       errorCallback_{ec} {
-    const Aws::String parent_path = parent_directory(dstPath_);
+    const Aws::String parent_path = ParentPath(dstPath_);
     Aws::StringStream ss;
 
     assert(!dstPath_.empty());
     assert(errorCallback_);
 
     // Generate any missing directory components.
-    if (!parent_path.empty() && Aws::FileSystem::CreateDirectoryIfNotExists(parent_path.c_str(), true)) {
+    if (!parent_path.empty() && !Aws::FileSystem::CreateDirectoryIfNotExists(parent_path.c_str(), true)) {
         ss << "Failed to create " << dstPath << " parent directories.";
         _error(ss.str());
         return;
@@ -86,6 +86,7 @@ DownloadStream::DownloadStream(const Aws::String &dstPath, ErrorCallback ec, boo
 
     // Produce unique temporary-file suffix. Use O_SYNC to ensure data gets written out to disk.
     fd_ = ::mkostemp(&dstTempPath_[0], sync_always ? O_SYNC : 0);
+   std::cerr << "fd " << fd_ << " " << dstTempPath_ <<" " << strerror(errno)<< "\n";
     if (fd_ < 0) {
         ss << "Failed to create " << dstTempPath_ << ": " << ::strerror(errno);
         _error(ss.str());
@@ -101,7 +102,7 @@ DownloadStream::DownloadStream(const Aws::String &dstPath, ErrorCallback ec, boo
 
     buf_ = Aws::MakeUnique<FileDescriptorBuf>("FdBuf", fd_, [this](Aws::String writeError) {
         Aws::StringStream ss;
-        ss << "Failed to write " << dstTempPath_ << ": " << std::move(writeError);    
+        ss << "Failed to write " << dstTempPath_ << ": " << std::move(writeError);
         _error(ss.str());
         return;
     });

@@ -11,7 +11,7 @@
 namespace Aws {
 namespace TransferCrt {
 
-namespace {    
+namespace {
 using KeyValue = std::pair<Aws::String, Aws::String>;
 
 Aws::String encode_query_string(const Aws::Map<Aws::String, Aws::String> &key_values) {
