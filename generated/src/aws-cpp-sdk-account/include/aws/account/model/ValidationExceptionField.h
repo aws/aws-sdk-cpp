@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The input failed to meet the constraints specified by the AWS service in a
-   * specified field.</p><p><h3>See Also:</h3>   <a
+   * <p>The input failed to meet the constraints specified by the Amazon Web Services
+   * service in a specified field.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ValidationExceptionField">AWS
    * API Reference</a></p>
    */

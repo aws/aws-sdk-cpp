@@ -227,81 +227,81 @@ namespace Model
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline DisableRegionRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline DisableRegionRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you disable a Region, AWS performs actions to
-     * deactivate that Region in your account, such as destroying IAM resources in the
-     * Region. This process takes a few minutes for most accounts, but this can take
-     * several hours. You cannot enable the Region until the disabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you disable a Region, Amazon Web Services
+     * performs actions to deactivate that Region in your account, such as destroying
+     * IAM resources in the Region. This process takes a few minutes for most accounts,
+     * but this can take several hours. You cannot enable the Region until the
+     * disabling process is fully completed.</p>
      */
     inline DisableRegionRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 

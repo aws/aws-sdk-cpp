@@ -200,32 +200,44 @@ namespace Model
 
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline const StreamState& GetState() const{ return m_state; }
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline void SetState(const StreamState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline void SetState(StreamState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline Stream& WithState(const StreamState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The stream’s state.</p>
+     * <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API
+     * may not return it; instead, a "NotBroadcasting" error will indicate that the
+     * stream is not live.</p>
      */
     inline Stream& WithState(StreamState&& value) { SetState(std::move(value)); return *this;}
 

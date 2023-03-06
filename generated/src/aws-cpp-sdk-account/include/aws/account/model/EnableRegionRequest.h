@@ -227,89 +227,89 @@ namespace Model
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline EnableRegionRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline EnableRegionRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Region-code for a given Region name (for example,
-     * <code>af-south-1</code>). When you enable a Region, AWS performs actions to
-     * prepare your account in that Region, such as distributing your IAM resources to
-     * the Region. This process takes a few minutes for most accounts, but it can take
-     * several hours. You cannot use the Region until this process is complete.
-     * Furthermore, you cannot disable the Region until the enabling process is fully
-     * completed.</p>
+     * <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs
+     * actions to prepare your account in that Region, such as distributing your IAM
+     * resources to the Region. This process takes a few minutes for most accounts, but
+     * it can take several hours. You cannot use the Region until this process is
+     * complete. Furthermore, you cannot disable the Region until the enabling process
+     * is fully completed.</p>
      */
     inline EnableRegionRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
