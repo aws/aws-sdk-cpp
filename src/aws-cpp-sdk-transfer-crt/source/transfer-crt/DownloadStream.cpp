@@ -86,7 +86,6 @@ DownloadStream::DownloadStream(const Aws::String &dstPath, ErrorCallback ec, boo
 
     // Produce unique temporary-file suffix. Use O_SYNC to ensure data gets written out to disk.
     fd_ = ::mkostemp(&dstTempPath_[0], sync_always ? O_SYNC : 0);
-   std::cerr << "fd " << fd_ << " " << dstTempPath_ <<" " << strerror(errno)<< "\n";
     if (fd_ < 0) {
         ss << "Failed to create " << dstTempPath_ << ": " << ::strerror(errno);
         _error(ss.str());

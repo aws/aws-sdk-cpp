@@ -61,15 +61,27 @@ bool StringEndsWith(const Aws::String& str, const Aws::String& suffix) {
 // Test fixture to help set up / tear down DownloadStream test cases.
 class DownloadStreamtest : public ::testing::Test {
  public:
-    DownloadStreamtest() : dst_{GetTestFilesDirectory() + "/test.file"} {}
+    static void SetUpTestCase() {
+        Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
+    }
+    static void TearDownTestCase() {
+        Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
+    }
 
+    DownloadStreamtest() : dst_{GetTestFilesDirectory() + "/test.file"} {}
+    ~DownloadStreamtest() { (void)UnlinkTestFile(); }
+
+    // Open up a file descriptor to @dst_, creating any missing directory components.
     int TestFile() {
         const Aws::String parent_path = ParentPath(dst_);
         Aws::FileSystem::CreateDirectoryIfNotExists(parent_path.c_str(), true);
-       std::cerr << dst_ << " " << parent_path << "\n"; // XXX
         return ::open(dst_.c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0600);
     }
 
+    // Remove @dst_ from the filesystem.
+    int UnlinkTestFile() { return ::unlink(dst_.c_str()); }
+
+    // Return the contents of @dst_.
     Aws::String TestFileContents() {
         Aws::StringStream ss;
         std::ifstream is{dst_};
@@ -77,8 +89,6 @@ class DownloadStreamtest : public ::testing::Test {
         is >> std::noskipws >> ss.rdbuf();
         return ss.str();
     }
-
-    int UnlinkTestFile() { return ::unlink(dst_.c_str()); }
 
     static Aws::String GetTestFilesDirectory() {
         Aws::String directory;
@@ -90,14 +100,6 @@ class DownloadStreamtest : public ::testing::Test {
 
         Aws::FileSystem::CreateDirectoryIfNotExists(directory.c_str());
         return directory;
-    }
-
-    static void SetUpTestCase() {
-        Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
-    }
-
-    static void TearDownTestCase() {
-        Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
     }
 
  protected:
@@ -121,7 +123,6 @@ TEST_F(DownloadStreamtest, FdSupportedMethods) {
     FileDescriptorBuf fdb(fd, [&errMsg](Aws::String e) { errMsg = std::move(e); });
     char alternateBuf[128] = {0};
 
-    std::cerr << "ERROR: "<< errMsg << "\n";; // XXX
     ASSERT_GT(fd, 2);
     ASSERT_EQ(fdb.pubsync(), 0);
     ASSERT_EQ(fdb.sputc('a'), 'a');
@@ -301,7 +302,6 @@ TEST_F(DownloadStreamtest, PermissionsError) {
     DownloadStream d{dst_, [&errMsg](Aws::String e) { errMsg = std::move(e); }};
 
     // ACTION
-
     // Change the directory permissions so that renaming the file will fail:
     ASSERT_EQ(::chmod(ParentPath(dst_).c_str(), 0), 0);
 
@@ -313,6 +313,9 @@ TEST_F(DownloadStreamtest, PermissionsError) {
 
     // VERIFICATION
     EXPECT_TRUE(StringEndsWith(errMsg, "Permission denied"));
+
+    // CLEAN-UP (need to restore directory permissions to enable deletion).
+    ASSERT_EQ(::chmod(ParentPath(dst_).c_str(), 755), 0);
 }
 
 }  // namespace
