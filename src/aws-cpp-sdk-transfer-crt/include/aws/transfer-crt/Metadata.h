@@ -20,12 +20,12 @@ namespace TransferCrt {
 // @metadata:         metadata key/value pairs.
 struct WriteMetadata {
     // Constructor for the default case - just create a blob at @uri.
-    explicit WriteMetadata(Aws::String uri) : WriteMetadata(uri, "", "") {}
+    explicit WriteMetadata(const Aws::String &uri) : WriteMetadata(uri, "", "") {}
 
-    WriteMetadata(Aws::String uri,
-                  Aws::String content_type,
-                  Aws::String content_encoding,
-                  Aws::Map<Aws::String, Aws::String> metadata = {})
+    WriteMetadata(const Aws::String &uri,
+                  const Aws::String &content_type,
+                  const Aws::String &content_encoding,
+                  const Aws::Map<Aws::String, Aws::String> &metadata = {})
         : uri{uri},
           content_type{content_type},
           content_encoding{content_encoding},
