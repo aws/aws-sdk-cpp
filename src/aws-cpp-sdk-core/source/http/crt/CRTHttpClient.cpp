@@ -7,6 +7,10 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
@@ -14,18 +18,18 @@
 static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
 
 // Adapts AWS SDK input streams and rate limiters to the CRT input stream reading model.
-class SDKAdaptingInputStream : public Crt::Io::StdIOStreamInputStream {
+class SDKAdaptingInputStream : public Aws::Crt::Io::StdIOStreamInputStream {
 public:
-    SDKAdaptingInputStream(const std::shared_ptr<Utils::RateLimits::RateLimiterInterface>& rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream,
-        const Http::HttpClient& client, const Http::HttpRequest& request, bool isStreaming,
-        Aws::Crt::Allocator *allocator = Crt::ApiAllocator()) noexcept : 
-        Crt::Io::StdIOStreamInputStream(std::move(stream), allocator), m_rateLimiter(rateLimiter), 
+    SDKAdaptingInputStream(const std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface>& rateLimiter, std::shared_ptr<Aws::Crt::Io::IStream> stream,
+        const Aws::Http::HttpClient& client, const Aws::Http::HttpRequest& request, bool isStreaming,
+        Aws::Crt::Allocator *allocator = Aws::Crt::ApiAllocator()) noexcept :
+        Aws::Crt::Io::StdIOStreamInputStream(std::move(stream), allocator), m_rateLimiter(rateLimiter),
         m_client(client), m_currentRequest(request), m_isStreaming(isStreaming), m_chunkEnd(false) 
     {
     }
 protected:
 
-    bool ReadImpl(Crt::ByteBuf &buffer) noexcept override
+    bool ReadImpl(Aws::Crt::ByteBuf &buffer) noexcept override
     {
         if (!m_client.ContinueRequest(m_currentRequest) || !m_client.IsRequestProcessingEnabled())
         {
@@ -52,13 +56,13 @@ protected:
 
             // now do the read. We may over read by an IO buffer size, but it's fine. The throttle will still
             // kick-in in plenty of time.
-            bool retValue = Crt::Io::StdIOStreamInputStream::ReadImpl(buffer);
+            bool retValue = Aws::Crt::Io::StdIOStreamInputStream::ReadImpl(buffer);
             size_t newPos = buffer.len;
             AWS_ASSERT(newPos >= currentPos && !"the buffer length should not have decreased in value.");
 
             if (retValue && m_isStreaming)
             {
-                Crt::Io::StreamStatus streamStatus;
+                Aws::Crt::Io::StreamStatus streamStatus;
                 GetStatus(streamStatus);
 
                 if (newPos == currentPos && !streamStatus.is_end_of_stream && streamStatus.is_valid)
@@ -98,7 +102,7 @@ protected:
                     if (m_currentRequest.GetRequestHash().second != nullptr)
                     {
                         chunkedTrailer << "x-amz-checksum-" << m_currentRequest.GetRequestHash().first << ":"
-                            << HashingUtils::Base64Encode(m_currentRequest.GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                            << Aws::Utils::HashingUtils::Base64Encode(m_currentRequest.GetRequestHash().second->GetHash().GetResult()) << "\r\n";
                     }
                     chunkedTrailer << "\r\n";
                     amountRead = chunkedTrailer.str().size();
@@ -126,9 +130,9 @@ protected:
     }
 
 private:
-    std::shared_ptr<Utils::RateLimits::RateLimiterInterface> m_rateLimiter;
-    const Http::HttpClient& m_client;
-    const Http::HttpRequest& m_currentRequest;
+    std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_rateLimiter;
+    const Aws::Http::HttpClient& m_client;
+    const Aws::Http::HttpRequest& m_currentRequest;
     bool m_isStreaming;
     bool m_chunkEnd;
 };
@@ -349,7 +353,7 @@ namespace Aws
 
             if (!shouldContinueRequest)
             {
-                response->SetClientErrorType(CoreErrors::USER_CANCELLED);
+                response->SetClientErrorType(Client::CoreErrors::USER_CANCELLED);
                 response->SetClientErrorMessage("Request cancelled by user's continuation handler");
                 waiter.Wakeup();
                 return;
@@ -393,7 +397,7 @@ namespace Aws
             if (!connectionManager)
             {
                 response->SetClientErrorMessage(aws_error_debug_str(aws_last_error()));
-                response->SetClientErrorType(CoreErrors::INVALID_PARAMETER_COMBINATION);
+                response->SetClientErrorType(Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
                 return response;
             }
             AddRequestMetadataToCrtRequest(request, crtRequest);

@@ -16,7 +16,9 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 
+#if AWS_SDK_USE_CRT_HTTP
 #include <aws/crt/Api.h>
+#endif
 
 namespace Aws
 {
