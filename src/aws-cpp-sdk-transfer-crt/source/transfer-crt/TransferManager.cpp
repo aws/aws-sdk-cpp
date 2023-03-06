@@ -85,7 +85,7 @@ void TransferManager::PutObject(const std::shared_ptr<Aws::IOStream> &streamToPu
                                 .WithKey(handle->GetKey())
                                 .WithContentLength(blobMetadata.size);
 
-    // Grant the bucket owner full control (see AV-48995).
+    // Grant the bucket owner full control.
     putObjectRequest.SetACL(Aws::S3Crt::Model::ObjectCannedACL::bucket_owner_full_control);
     putObjectRequest.SetContentType(blobMetadata.content_type);
     if (!blobMetadata.content_encoding.empty()) {
@@ -219,7 +219,7 @@ void TransferManager::GetObject(const std::shared_ptr<DownloadContext> &context,
                                                                    Aws::Http::HttpResponse *res,
                                                                    long long /*NOLINT*/ amount) {
         //
-        // Set the total size after the first chunk has been processed (AV-120158, AV-171186).
+        // Set the total size after the first chunk has been processed.
         //
         // The aws-c-s3 code populates the Content-Length header of the HttpResponse after the
         // first part of the ranged-Get has completed. Extract total-size information from this.
@@ -279,7 +279,7 @@ void TransferManager::HandleGetObjectResponse(
             if (outcome.IsSuccess()) {
                 // At this stage, the total size should have been filled in. This is done by the
                 // aws-c-s3 code, passing the Content-Length header via the headers_callback to
-                // the HttpResponse (see GetObject() above and AV-120158).
+                // the HttpResponse (see GetObject() above).
                 if (!handle->BytesTotalSizeHasBeenSet()) {
                     // In the special case of an empty file, the aws-c-s3 code does not use the
                     // body_callback and so the DataReceivedEventHandler is also not called.
@@ -370,7 +370,7 @@ void TransferManager::OnStatusChanged(const std::shared_ptr<TransferHandle> &han
 
 void TransferManager::OnUploadProgress(const std::shared_ptr<TransferHandle> &handle) {
     // The progress callbacks are only called while the transfer is in progress.
-    // If another transfer has failed in the meantime, cancel this and all other ones (AV-171186).
+    // If another transfer has failed in the meantime, cancel this and all other ones.
     if (cancel_on_first_failure_ && failure_occurred_) {
         handle->Cancel();
     }
