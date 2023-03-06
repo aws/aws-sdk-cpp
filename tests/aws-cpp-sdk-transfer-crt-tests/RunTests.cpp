@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
-    int exitCode = RUN_ALL_TESTS(); 
+    int exitCode = RUN_ALL_TESTS();
     Aws::ShutdownAPI(options);
 
     AWS_END_MEMORY_TEST_EX;
