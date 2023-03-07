@@ -1515,42 +1515,82 @@ namespace Model
 
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline OracleSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline OracleSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>Fully qualified domain name of the endpoint.</p> <p>For an Amazon RDS Oracle
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p>
      */
     inline OracleSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 

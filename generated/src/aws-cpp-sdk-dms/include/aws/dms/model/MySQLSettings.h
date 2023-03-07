@@ -105,34 +105,34 @@ namespace Model
 
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>.</p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline bool GetCleanSourceMetadataOnMismatch() const{ return m_cleanSourceMetadataOnMismatch; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>.</p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline bool CleanSourceMetadataOnMismatchHasBeenSet() const { return m_cleanSourceMetadataOnMismatchHasBeenSet; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>.</p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline void SetCleanSourceMetadataOnMismatch(bool value) { m_cleanSourceMetadataOnMismatchHasBeenSet = true; m_cleanSourceMetadataOnMismatch = value; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>.</p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline MySQLSettings& WithCleanSourceMetadataOnMismatch(bool value) { SetCleanSourceMetadataOnMismatch(value); return *this;}
 
@@ -443,42 +443,98 @@ namespace Model
 
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline MySQLSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline MySQLSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p>Fully qualified domain name of the endpoint.</p>
+     * <p>The host name of the endpoint database. </p> <p>For an Amazon RDS MySQL
+     * instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the <code> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.</p> <p>For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
+     * in the <code>Endpoint</code> field.</p>
      */
     inline MySQLSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 

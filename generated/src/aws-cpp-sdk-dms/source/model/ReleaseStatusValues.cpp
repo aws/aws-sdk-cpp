@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int beta_HASH = HashingUtils::HashString("beta");
+        static const int prod_HASH = HashingUtils::HashString("prod");
 
 
         ReleaseStatusValues GetReleaseStatusValuesForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == beta_HASH)
           {
             return ReleaseStatusValues::beta;
+          }
+          else if (hashCode == prod_HASH)
+          {
+            return ReleaseStatusValues::prod;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ReleaseStatusValues::beta:
             return "beta";
+          case ReleaseStatusValues::prod:
+            return "prod";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
