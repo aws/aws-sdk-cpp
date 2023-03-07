@@ -171,7 +171,7 @@ TEST_F(DownloadStreamtest, FdUnsupportedMethods) {
 }
 
 TEST_F(DownloadStreamtest, DownloadStreamHappyPath) {
-    // Document expected use case in ACTION/VERIFICATION blocks.
+    // Document expected use cases in ACTION/VERIFICATION blocks.
     Aws::String errMsg;
     DownloadStream d{dst_, [&errMsg](Aws::String e) { errMsg = std::move(e); }};
 

@@ -18,6 +18,7 @@ namespace TransferCrt {
 // @content_type:     MIME type of the @uri content.
 // @content_encoding: content encoding that was applied.
 // @metadata:         metadata key/value pairs.
+// @tags:             S3 object storage tagging key/value pairs.
 struct WriteMetadata {
     // Constructor for the default case - just create a blob at @uri.
     explicit WriteMetadata(const Aws::String &uri) : WriteMetadata(uri, "", "") {}

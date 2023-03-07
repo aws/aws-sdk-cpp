@@ -13,7 +13,7 @@ namespace TransferCrt {
 
 namespace {
 using KeyValue = std::pair<Aws::String, Aws::String>;
-
+// Encode @key_values as query-parameter string.
 Aws::String encode_query_string(const Aws::Map<Aws::String, Aws::String> &key_values) {
     return std::accumulate(key_values.begin(),
                            key_values.end(),
@@ -37,7 +37,7 @@ TransferHandle::TransferHandle(const WriteMetadata &md,
 TransferHandle::TransferHandle(const Aws::String &srcUri,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext> &ctx)
     : m_context{ctx}, rmd_{} {
-        rmd_.uri = srcUri;
+    rmd_.uri = srcUri;
 }
 
 Aws::String TransferHandle::GetBucket() const {

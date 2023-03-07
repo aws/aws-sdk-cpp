@@ -41,7 +41,7 @@ struct DownloadContext final : Aws::Client::AsyncCallerContext {
     std::streambuf *dstStreamBuf = nullptr;
 };
 
-// Minimal re-implementation of the S3 TransferManager for the S3CrtClient.
+// S3 TransferManager for the S3CrtClient.
 //
 // All public methods are non-blocking and return a pointer to an asynchronous TransferHandle.
 class TransferManager final : public std::enable_shared_from_this<TransferManager> {

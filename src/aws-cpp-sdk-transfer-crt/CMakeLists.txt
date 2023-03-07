@@ -48,6 +48,6 @@ set_compiler_warnings(${PROJECT_NAME})
 
 setup_install()
 
-install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transfer)
+install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transfer-crt)
 
 do_packaging()

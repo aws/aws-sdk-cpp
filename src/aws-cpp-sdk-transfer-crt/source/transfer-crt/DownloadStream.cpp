@@ -79,7 +79,7 @@ DownloadStream::DownloadStream(const Aws::String &dstPath, ErrorCallback ec, boo
 
     // Generate any missing directory components.
     if (!parent_path.empty() && !Aws::FileSystem::CreateDirectoryIfNotExists(parent_path.c_str(), true)) {
-        ss << "Failed to create " << dstPath << " parent directories.";
+        ss << "Failed to create " << dstPath << " parent directories";
         _error(ss.str());
         return;
     }
