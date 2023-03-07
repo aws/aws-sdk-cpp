@@ -85,7 +85,7 @@ namespace DatabaseMigrationService
 
         /**
          * <p>Adds metadata tags to an DMS resource, including replication instance,
-         * endpoint, security group, and migration task. These tags can also be used with
+         * endpoint, subnet group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
          * in a Condition statement in an IAM policy for DMS. For more information, see <a
          * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
@@ -137,6 +137,38 @@ namespace DatabaseMigrationService
         void ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequestT& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::ApplyPendingMaintenanceAction, request, handler, context);
+        }
+
+        /**
+         * <p>Starts the analysis of up to 20 source databases to recommend target engines
+         * for each source database. This is a batch version of <a
+         * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations</a>.</p>
+         * <p>The result of analysis of each source database is reported individually in
+         * the response. Because the batch request can result in a combination of
+         * successful and unsuccessful actions, you should check for batch errors even when
+         * the call returns an HTTP status code of <code>200</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/BatchStartRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchStartRecommendationsOutcome BatchStartRecommendations(const Model::BatchStartRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchStartRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchStartRecommendationsRequestT = Model::BatchStartRecommendationsRequest>
+        Model::BatchStartRecommendationsOutcomeCallable BatchStartRecommendationsCallable(const BatchStartRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::BatchStartRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for BatchStartRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchStartRecommendationsRequestT = Model::BatchStartRecommendationsRequest>
+        void BatchStartRecommendationsAsync(const BatchStartRecommendationsRequestT& request, const BatchStartRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::BatchStartRecommendations, request, handler, context);
         }
 
         /**
@@ -1086,6 +1118,58 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns a paginated list of limitations for recommendations of target Amazon
+         * Web Services engines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRecommendationLimitationsOutcome DescribeRecommendationLimitations(const Model::DescribeRecommendationLimitationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRecommendationLimitations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRecommendationLimitationsRequestT = Model::DescribeRecommendationLimitationsRequest>
+        Model::DescribeRecommendationLimitationsOutcomeCallable DescribeRecommendationLimitationsCallable(const DescribeRecommendationLimitationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeRecommendationLimitations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRecommendationLimitations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRecommendationLimitationsRequestT = Model::DescribeRecommendationLimitationsRequest>
+        void DescribeRecommendationLimitationsAsync(const DescribeRecommendationLimitationsRequestT& request, const DescribeRecommendationLimitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeRecommendationLimitations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of target engine recommendations for your source
+         * databases.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRecommendationsOutcome DescribeRecommendations(const Model::DescribeRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRecommendationsRequestT = Model::DescribeRecommendationsRequest>
+        Model::DescribeRecommendationsOutcomeCallable DescribeRecommendationsCallable(const DescribeRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRecommendationsRequestT = Model::DescribeRecommendationsRequest>
+        void DescribeRecommendationsAsync(const DescribeRecommendationsRequestT& request, const DescribeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns the status of the RefreshSchemas operation.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">AWS
@@ -1386,8 +1470,8 @@ namespace DatabaseMigrationService
 
         /**
          * <p>Lists all metadata tags attached to an DMS resource, including replication
-         * instance, endpoint, security group, and migration task. For more information,
-         * see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+         * instance, endpoint, subnet group, and migration task. For more information, see
+         * <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
          * <code>Tag</code> </a> data type description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1666,7 +1750,7 @@ namespace DatabaseMigrationService
 
         /**
          * <p>Removes metadata tags from an DMS resource, including replication instance,
-         * endpoint, security group, and migration task. For more information, see <a
+         * endpoint, subnet group, and migration task. For more information, see <a
          * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
          * <code>Tag</code> </a> data type description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">AWS
@@ -1717,6 +1801,35 @@ namespace DatabaseMigrationService
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, handler, context);
         }
+        /**
+         * <p>Starts the analysis of your source database to provide recommendations of
+         * target engines.</p> <p>You can create recommendations for multiple source
+         * databases using <a
+         * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html">BatchStartRecommendations</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartRecommendationsOutcome StartRecommendations(const Model::StartRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartRecommendationsRequestT = Model::StartRecommendationsRequest>
+        Model::StartRecommendationsOutcomeCallable StartRecommendationsCallable(const StartRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for StartRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartRecommendationsRequestT = Model::StartRecommendationsRequest>
+        void StartRecommendationsAsync(const StartRecommendationsRequestT& request, const StartRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartRecommendations, request, handler, context);
+        }
+
         /**
          * <p>Starts the replication task.</p> <p>For more information about DMS tasks, see
          * <a

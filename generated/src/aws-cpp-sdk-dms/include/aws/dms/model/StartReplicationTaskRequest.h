@@ -83,78 +83,96 @@ namespace Model
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
 
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
 
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
 
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
 
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
 
     /**
      * <p>The type of replication task to start.</p> <p>When the migration type is
      * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     * for the first run of the task is <code>start-replication</code>. You use
-     * <code>reload-target</code> to restart the task and
-     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
-     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
-     * restart the task, and <code>resume-processing</code> to resume the task.
-     * <code>reload-target</code> is not a valid value for a task with migration type
-     * of <code>cdc</code>.</p>
+     * for the first run of the task is <code>start-replication</code>. This option
+     * will start the migration.</p> <p>You can also use <a>ReloadTables</a> to reload
+     * specific tables that failed during migration instead of restarting the task.</p>
+     * <p>The <code>resume-processing</code> option isn't applicable for a full-load
+     * task, because you can't resume partially loaded tables during the full load
+     * phase.</p> <p>For a <code>full-load-and-cdc</code> task, DMS migrates table
+     * data, and then applies data changes that occur on the source. To load all the
+     * tables again, and start capturing source changes, use
+     * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
+     * replicate the changes from the last stop position.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
 
@@ -365,7 +383,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
 
@@ -373,7 +391,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
 
@@ -381,7 +399,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
 
@@ -389,7 +407,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
 
@@ -397,7 +415,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
 
@@ -405,7 +423,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
 
@@ -413,7 +431,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
 
@@ -421,7 +439,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
 

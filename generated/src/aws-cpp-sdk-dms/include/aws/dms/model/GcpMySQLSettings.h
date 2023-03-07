@@ -105,34 +105,34 @@ namespace Model
 
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>. </p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline bool GetCleanSourceMetadataOnMismatch() const{ return m_cleanSourceMetadataOnMismatch; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>. </p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline bool CleanSourceMetadataOnMismatchHasBeenSet() const { return m_cleanSourceMetadataOnMismatchHasBeenSet; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>. </p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline void SetCleanSourceMetadataOnMismatch(bool value) { m_cleanSourceMetadataOnMismatchHasBeenSet = true; m_cleanSourceMetadataOnMismatch = value; }
 
     /**
-     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
-     * that is hosted as part of an Always On availability group cluster. If you need
-     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
-     * this attribute to <code>false</code>. </p>
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. For example, in a situation where running an alter DDL
+     * on the table could result in different information about the table cached in the
+     * replication instance. </p>
      */
     inline GcpMySQLSettings& WithCleanSourceMetadataOnMismatch(bool value) { SetCleanSourceMetadataOnMismatch(value); return *this;}
 
@@ -410,63 +410,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Endpoint TCP port.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p/>
+     * <p>Endpoint TCP port.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Endpoint TCP port.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p/>
+     * <p>Endpoint TCP port.</p>
      */
     inline GcpMySQLSettings& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline GcpMySQLSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline GcpMySQLSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>The MySQL host name.</p>
      */
     inline GcpMySQLSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 

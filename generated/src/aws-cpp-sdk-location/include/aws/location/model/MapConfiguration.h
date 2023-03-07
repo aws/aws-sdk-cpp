@@ -98,16 +98,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline const Aws::String& GetStyle() const{ return m_style; }
 
@@ -171,16 +177,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
 
@@ -244,16 +256,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline void SetStyle(const Aws::String& value) { m_styleHasBeenSet = true; m_style = value; }
 
@@ -317,16 +335,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline void SetStyle(Aws::String&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
 
@@ -390,16 +414,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline void SetStyle(const char* value) { m_styleHasBeenSet = true; m_style.assign(value); }
 
@@ -463,16 +493,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(const Aws::String& value) { SetStyle(value); return *this;}
 
@@ -536,16 +572,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(Aws::String&& value) { SetStyle(std::move(value)); return *this;}
 
@@ -609,16 +651,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
      * countries and area covered</a>.</p>  <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
-     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
-     * (preview) map style provides a detailed basemap for the world suitable for
-     * website and mobile application use. The map includes highways major roads, minor
-     * roads, railways, water features, cities, parks, landmarks, building footprints,
-     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
-     * We may add, change, or remove features before announcing general availability.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-     * Data is in preview release</a>.</p>  </li> </ul>
+     * Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code>
+     * – The Open Data Standard Light map style provides a detailed basemap for the
+     * world suitable for website and mobile application use. The map includes highways
+     * major roads, minor roads, railways, water features, cities, parks, landmarks,
+     * building footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a
+     * dark-themed map style that provides a detailed basemap for the world suitable
+     * for website and mobile application use. The map includes highways major roads,
+     * minor roads, railways, water features, cities, parks, landmarks, building
+     * footprints, and administrative boundaries.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization
+     * Light map style is a light-themed style with muted colors and fewer features
+     * that aids in understanding overlaid data.</p> </li> <li> <p>
+     * <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark
+     * map style is a dark-themed style with muted colors and fewer features that aids
+     * in understanding overlaid data.</p> </li> </ul>
      */
     inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
 

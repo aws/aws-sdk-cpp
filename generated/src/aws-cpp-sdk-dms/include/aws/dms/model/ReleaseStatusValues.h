@@ -16,7 +16,8 @@ namespace Model
   enum class ReleaseStatusValues
   {
     NOT_SET,
-    beta
+    beta,
+    prod
   };
 
 namespace ReleaseStatusValuesMapper
