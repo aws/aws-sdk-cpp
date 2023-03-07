@@ -14,7 +14,7 @@ cd "${PREFIX_DIR}/aws-sdk-cpp/tools/CI/install-test"
 mkdir "${PREFIX_DIR}/sample-build"
 mkdir "${PREFIX_DIR}/sample-install"
 cd "${PREFIX_DIR}/sample-build"
-&'C:\\Program Files\\CMake\\bin\\cmake.exe' ../aws-sdk-cpp/tools/CI/install-test -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/win-install" -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/sample_install"
+&'C:\\Program Files\\CMake\\bin\\cmake.exe' ../aws-sdk-cpp/tools/CI/install-test -DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DCMAKE_PREFIX_PATH="${PREFIX_DIR}/win-install" -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/sample_install"
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build .
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build . --target install
 
@@ -28,4 +28,5 @@ aws configure set aws_secret_access_key (${sts}[2] -replace " " -replace "`"" -r
 aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -replace ",")
 aws configure list
 # Run tests
-&"${PREFIX_DIR}/sample_install/bin/app.exe"
+cd "${PREFIX_DIR}/sample_install/bin"
+app
