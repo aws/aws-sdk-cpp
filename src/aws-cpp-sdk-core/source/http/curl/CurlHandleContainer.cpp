@@ -52,6 +52,7 @@ void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
 {
     if (handle)
     {
+        curl_easy_setopt(handle, CURLOPT_COOKIEFILE, NULL); // workaround a mem leak on curl
         curl_easy_reset(handle);
         SetDefaultOptionsOnHandle(handle);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
