@@ -30,7 +30,8 @@ QueryExecution::QueryExecution() :
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_executionParametersHasBeenSet(false)
+    m_executionParametersHasBeenSet(false),
+    m_substatementTypeHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_executionParametersHasBeenSet(false)
+    m_executionParametersHasBeenSet(false),
+    m_substatementTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +135,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_executionParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubstatementType"))
+  {
+    m_substatementType = jsonValue.GetString("SubstatementType");
+
+    m_substatementTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +216,12 @@ JsonValue QueryExecution::Jsonize() const
      executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);
    }
    payload.WithArray("ExecutionParameters", std::move(executionParametersJsonList));
+
+  }
+
+  if(m_substatementTypeHasBeenSet)
+  {
+   payload.WithString("SubstatementType", m_substatementType);
 
   }
 

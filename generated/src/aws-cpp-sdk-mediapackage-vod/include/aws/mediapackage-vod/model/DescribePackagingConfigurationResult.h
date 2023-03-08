@@ -89,6 +89,42 @@ namespace Model
     inline DescribePackagingConfigurationResult& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline DescribePackagingConfigurationResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline DescribePackagingConfigurationResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline DescribePackagingConfigurationResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
 
@@ -250,6 +286,8 @@ namespace Model
     Aws::String m_arn;
 
     CmafPackage m_cmafPackage;
+
+    Aws::String m_createdAt;
 
     DashPackage m_dashPackage;
 

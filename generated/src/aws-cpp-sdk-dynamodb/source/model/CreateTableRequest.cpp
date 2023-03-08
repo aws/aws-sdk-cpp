@@ -25,7 +25,9 @@ CreateTableRequest::CreateTableRequest() :
     m_sSESpecificationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_tableClass(TableClass::NOT_SET),
-    m_tableClassHasBeenSet(false)
+    m_tableClassHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_tableClassHasBeenSet)
   {
    payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
+  }
+
+  if(m_deletionProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
   }
 
   return payload.View().WriteReadable();

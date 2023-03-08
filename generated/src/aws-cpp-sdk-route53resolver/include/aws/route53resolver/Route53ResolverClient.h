@@ -818,7 +818,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
          * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
          * API Reference</a></p>
@@ -1265,7 +1265,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
          * Resolver uses the configurations to manage DNS resolution behavior for your
          * VPCs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
@@ -1740,7 +1740,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
          * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
          * API Reference</a></p>
@@ -1792,8 +1792,9 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Updates the name of an inbound or an outbound Resolver endpoint.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name, or enpoint type for an inbound or an outbound Resolver
+         * endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type
+         * can't be updated to other type. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">AWS
          * API Reference</a></p>
          */

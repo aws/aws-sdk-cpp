@@ -634,7 +634,26 @@ namespace Model
     r6idn_12xlarge,
     r6idn_16xlarge,
     r6idn_24xlarge,
-    r6idn_32xlarge
+    r6idn_32xlarge,
+    c7g_metal,
+    m7g_medium,
+    m7g_large,
+    m7g_xlarge,
+    m7g_2xlarge,
+    m7g_4xlarge,
+    m7g_8xlarge,
+    m7g_12xlarge,
+    m7g_16xlarge,
+    m7g_metal,
+    r7g_medium,
+    r7g_large,
+    r7g_xlarge,
+    r7g_2xlarge,
+    r7g_4xlarge,
+    r7g_8xlarge,
+    r7g_12xlarge,
+    r7g_16xlarge,
+    r7g_metal
   };
 
 namespace InstanceTypeMapper

@@ -14,7 +14,10 @@ using namespace Aws::Utils;
 
 UpdateResolverEndpointRequest::UpdateResolverEndpointRequest() : 
     m_resolverEndpointIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
+    m_resolverEndpointTypeHasBeenSet(false),
+    m_updateIpAddressesHasBeenSet(false)
 {
 }
 
@@ -31,6 +34,22 @@ Aws::String UpdateResolverEndpointRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_resolverEndpointTypeHasBeenSet)
+  {
+   payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
+  }
+
+  if(m_updateIpAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> updateIpAddressesJsonList(m_updateIpAddresses.size());
+   for(unsigned updateIpAddressesIndex = 0; updateIpAddressesIndex < updateIpAddressesJsonList.GetLength(); ++updateIpAddressesIndex)
+   {
+     updateIpAddressesJsonList[updateIpAddressesIndex].AsObject(m_updateIpAddresses[updateIpAddressesIndex].Jsonize());
+   }
+   payload.WithArray("UpdateIpAddresses", std::move(updateIpAddressesJsonList));
 
   }
 

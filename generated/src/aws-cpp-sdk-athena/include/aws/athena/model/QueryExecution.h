@@ -509,6 +509,47 @@ namespace Model
      */
     inline QueryExecution& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline const Aws::String& GetSubstatementType() const{ return m_substatementType; }
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline bool SubstatementTypeHasBeenSet() const { return m_substatementTypeHasBeenSet; }
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline void SetSubstatementType(const Aws::String& value) { m_substatementTypeHasBeenSet = true; m_substatementType = value; }
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline void SetSubstatementType(Aws::String&& value) { m_substatementTypeHasBeenSet = true; m_substatementType = std::move(value); }
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline void SetSubstatementType(const char* value) { m_substatementTypeHasBeenSet = true; m_substatementType.assign(value); }
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline QueryExecution& WithSubstatementType(const Aws::String& value) { SetSubstatementType(value); return *this;}
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline QueryExecution& WithSubstatementType(Aws::String&& value) { SetSubstatementType(std::move(value)); return *this;}
+
+    /**
+     * <p>The kind of query statement that was run.</p>
+     */
+    inline QueryExecution& WithSubstatementType(const char* value) { SetSubstatementType(value); return *this;}
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -543,6 +584,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_executionParameters;
     bool m_executionParametersHasBeenSet = false;
+
+    Aws::String m_substatementType;
+    bool m_substatementTypeHasBeenSet = false;
   };
 
 } // namespace Model

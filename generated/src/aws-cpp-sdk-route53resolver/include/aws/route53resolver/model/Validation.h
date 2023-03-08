@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ENABLE,
-    DISABLE
+    DISABLE,
+    USE_LOCAL_RESOURCE_SETTING
   };
 
 namespace ValidationMapper

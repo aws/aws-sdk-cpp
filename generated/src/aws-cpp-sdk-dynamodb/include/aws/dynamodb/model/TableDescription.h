@@ -1759,6 +1759,31 @@ namespace Model
      */
     inline TableDescription& WithTableClassSummary(TableClassSummary&& value) { SetTableClassSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether deletion protection is enabled (true) or disabled (false)
+     * on the table.</p>
+     */
+    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+
+    /**
+     * <p>Indicates whether deletion protection is enabled (true) or disabled (false)
+     * on the table.</p>
+     */
+    inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether deletion protection is enabled (true) or disabled (false)
+     * on the table.</p>
+     */
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
+
+    /**
+     * <p>Indicates whether deletion protection is enabled (true) or disabled (false)
+     * on the table.</p>
+     */
+    inline TableDescription& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1826,6 +1851,9 @@ namespace Model
 
     TableClassSummary m_tableClassSummary;
     bool m_tableClassSummaryHasBeenSet = false;
+
+    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

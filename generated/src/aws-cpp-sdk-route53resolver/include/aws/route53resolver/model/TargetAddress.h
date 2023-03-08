@@ -41,50 +41,42 @@ namespace Model
 
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline TargetAddress& WithIp(const Aws::String& value) { SetIp(value); return *this;}
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline TargetAddress& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
 
     /**
-     * <p>One IP address that you want to forward DNS queries to. You can specify only
-     * IPv4 addresses.</p>
+     * <p>One IPv4 address that you want to forward DNS queries to.</p>
      */
     inline TargetAddress& WithIp(const char* value) { SetIp(value); return *this;}
 
@@ -109,6 +101,47 @@ namespace Model
      */
     inline TargetAddress& WithPort(int value) { SetPort(value); return *this;}
 
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline const Aws::String& GetIpv6() const{ return m_ipv6; }
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline bool Ipv6HasBeenSet() const { return m_ipv6HasBeenSet; }
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline void SetIpv6(const Aws::String& value) { m_ipv6HasBeenSet = true; m_ipv6 = value; }
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline void SetIpv6(Aws::String&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::move(value); }
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline void SetIpv6(const char* value) { m_ipv6HasBeenSet = true; m_ipv6.assign(value); }
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline TargetAddress& WithIpv6(const Aws::String& value) { SetIpv6(value); return *this;}
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline TargetAddress& WithIpv6(Aws::String&& value) { SetIpv6(std::move(value)); return *this;}
+
+    /**
+     * <p> One IPv6 address that you want to forward DNS queries to. </p>
+     */
+    inline TargetAddress& WithIpv6(const char* value) { SetIpv6(value); return *this;}
+
   private:
 
     Aws::String m_ip;
@@ -116,6 +149,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    Aws::String m_ipv6;
+    bool m_ipv6HasBeenSet = false;
   };
 
 } // namespace Model

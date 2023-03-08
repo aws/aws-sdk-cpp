@@ -997,8 +997,10 @@ namespace Athena
         }
 
         /**
-         * <p>Lists the data catalogs in the current Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the data catalogs in the current Amazon Web Services account.</p>
+         *  <p>In the Athena console, data catalogs are listed as "data sources" on
+         * the <b>Data sources</b> page under the <b>Data source name</b> column.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">AWS
          * API Reference</a></p>
          */

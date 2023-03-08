@@ -122,6 +122,47 @@ namespace Model
 
 
     /**
+     * The time the PackagingGroup was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline PackagingGroup& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline PackagingGroup& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The time the PackagingGroup was created.
+     */
+    inline PackagingGroup& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    /**
      * The fully qualified domain name for Assets in the PackagingGroup.
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
@@ -271,6 +312,9 @@ namespace Model
 
     Authorization m_authorization;
     bool m_authorizationHasBeenSet = false;
+
+    Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;

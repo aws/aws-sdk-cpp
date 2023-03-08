@@ -19,7 +19,9 @@ CreateResolverEndpointRequest::CreateResolverEndpointRequest() :
     m_direction(ResolverEndpointDirection::NOT_SET),
     m_directionHasBeenSet(false),
     m_ipAddressesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
+    m_resolverEndpointTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,11 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_resolverEndpointTypeHasBeenSet)
+  {
+   payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
   }
 
   return payload.View().WriteReadable();

@@ -33,6 +33,7 @@
 #include <aws/lakeformation/model/DescribeResourceResult.h>
 #include <aws/lakeformation/model/DescribeTransactionResult.h>
 #include <aws/lakeformation/model/ExtendTransactionResult.h>
+#include <aws/lakeformation/model/GetDataCellsFilterResult.h>
 #include <aws/lakeformation/model/GetDataLakeSettingsResult.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathResult.h>
 #include <aws/lakeformation/model/GetLFTagResult.h>
@@ -59,6 +60,7 @@
 #include <aws/lakeformation/model/SearchTablesByLFTagsResult.h>
 #include <aws/lakeformation/model/StartQueryPlanningResult.h>
 #include <aws/lakeformation/model/StartTransactionResult.h>
+#include <aws/lakeformation/model/UpdateDataCellsFilterResult.h>
 #include <aws/lakeformation/model/UpdateLFTagResult.h>
 #include <aws/lakeformation/model/UpdateResourceResult.h>
 #include <aws/lakeformation/model/UpdateTableObjectsResult.h>
@@ -118,6 +120,7 @@ namespace Aws
       class DescribeResourceRequest;
       class DescribeTransactionRequest;
       class ExtendTransactionRequest;
+      class GetDataCellsFilterRequest;
       class GetDataLakeSettingsRequest;
       class GetEffectivePermissionsForPathRequest;
       class GetLFTagRequest;
@@ -144,6 +147,7 @@ namespace Aws
       class SearchTablesByLFTagsRequest;
       class StartQueryPlanningRequest;
       class StartTransactionRequest;
+      class UpdateDataCellsFilterRequest;
       class UpdateLFTagRequest;
       class UpdateResourceRequest;
       class UpdateTableObjectsRequest;
@@ -166,6 +170,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeResourceResult, LakeFormationError> DescribeResourceOutcome;
       typedef Aws::Utils::Outcome<DescribeTransactionResult, LakeFormationError> DescribeTransactionOutcome;
       typedef Aws::Utils::Outcome<ExtendTransactionResult, LakeFormationError> ExtendTransactionOutcome;
+      typedef Aws::Utils::Outcome<GetDataCellsFilterResult, LakeFormationError> GetDataCellsFilterOutcome;
       typedef Aws::Utils::Outcome<GetDataLakeSettingsResult, LakeFormationError> GetDataLakeSettingsOutcome;
       typedef Aws::Utils::Outcome<GetEffectivePermissionsForPathResult, LakeFormationError> GetEffectivePermissionsForPathOutcome;
       typedef Aws::Utils::Outcome<GetLFTagResult, LakeFormationError> GetLFTagOutcome;
@@ -192,6 +197,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SearchTablesByLFTagsResult, LakeFormationError> SearchTablesByLFTagsOutcome;
       typedef Aws::Utils::Outcome<StartQueryPlanningResult, LakeFormationError> StartQueryPlanningOutcome;
       typedef Aws::Utils::Outcome<StartTransactionResult, LakeFormationError> StartTransactionOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataCellsFilterResult, LakeFormationError> UpdateDataCellsFilterOutcome;
       typedef Aws::Utils::Outcome<UpdateLFTagResult, LakeFormationError> UpdateLFTagOutcome;
       typedef Aws::Utils::Outcome<UpdateResourceResult, LakeFormationError> UpdateResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateTableObjectsResult, LakeFormationError> UpdateTableObjectsOutcome;
@@ -214,6 +220,7 @@ namespace Aws
       typedef std::future<DescribeResourceOutcome> DescribeResourceOutcomeCallable;
       typedef std::future<DescribeTransactionOutcome> DescribeTransactionOutcomeCallable;
       typedef std::future<ExtendTransactionOutcome> ExtendTransactionOutcomeCallable;
+      typedef std::future<GetDataCellsFilterOutcome> GetDataCellsFilterOutcomeCallable;
       typedef std::future<GetDataLakeSettingsOutcome> GetDataLakeSettingsOutcomeCallable;
       typedef std::future<GetEffectivePermissionsForPathOutcome> GetEffectivePermissionsForPathOutcomeCallable;
       typedef std::future<GetLFTagOutcome> GetLFTagOutcomeCallable;
@@ -240,6 +247,7 @@ namespace Aws
       typedef std::future<SearchTablesByLFTagsOutcome> SearchTablesByLFTagsOutcomeCallable;
       typedef std::future<StartQueryPlanningOutcome> StartQueryPlanningOutcomeCallable;
       typedef std::future<StartTransactionOutcome> StartTransactionOutcomeCallable;
+      typedef std::future<UpdateDataCellsFilterOutcome> UpdateDataCellsFilterOutcomeCallable;
       typedef std::future<UpdateLFTagOutcome> UpdateLFTagOutcomeCallable;
       typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
       typedef std::future<UpdateTableObjectsOutcome> UpdateTableObjectsOutcomeCallable;
@@ -265,6 +273,7 @@ namespace Aws
     typedef std::function<void(const LakeFormationClient*, const Model::DescribeResourceRequest&, const Model::DescribeResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::DescribeTransactionRequest&, const Model::DescribeTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::ExtendTransactionRequest&, const Model::ExtendTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExtendTransactionResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::GetDataCellsFilterRequest&, const Model::GetDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCellsFilterResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetDataLakeSettingsRequest&, const Model::GetDataLakeSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeSettingsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetEffectivePermissionsForPathRequest&, const Model::GetEffectivePermissionsForPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectivePermissionsForPathResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetLFTagRequest&, const Model::GetLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLFTagResponseReceivedHandler;
@@ -291,6 +300,7 @@ namespace Aws
     typedef std::function<void(const LakeFormationClient*, const Model::SearchTablesByLFTagsRequest&, const Model::SearchTablesByLFTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTablesByLFTagsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::StartQueryPlanningRequest&, const Model::StartQueryPlanningOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryPlanningResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::StartTransactionRequest&, const Model::StartTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTransactionResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::UpdateDataCellsFilterRequest&, const Model::UpdateDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataCellsFilterResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateLFTagRequest&, const Model::UpdateLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLFTagResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::UpdateTableObjectsRequest&, const Model::UpdateTableObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableObjectsResponseReceivedHandler;

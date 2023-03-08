@@ -43,7 +43,9 @@ TableDescription::TableDescription() :
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false),
     m_archivalSummaryHasBeenSet(false),
-    m_tableClassSummaryHasBeenSet(false)
+    m_tableClassSummaryHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false),
     m_archivalSummaryHasBeenSet(false),
-    m_tableClassSummaryHasBeenSet(false)
+    m_tableClassSummaryHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,6 +252,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_tableClassSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
+  {
+    m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
+
+    m_deletionProtectionEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -407,6 +418,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_tableClassSummaryHasBeenSet)
   {
    payload.WithObject("TableClassSummary", m_tableClassSummary.Jsonize());
+
+  }
+
+  if(m_deletionProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
 
   }
 

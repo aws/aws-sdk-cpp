@@ -25,7 +25,8 @@ DataCellsFilter::DataCellsFilter() :
     m_nameHasBeenSet(false),
     m_rowFilterHasBeenSet(false),
     m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false)
+    m_columnWildcardHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ DataCellsFilter::DataCellsFilter(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_rowFilterHasBeenSet(false),
     m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false)
+    m_columnWildcardHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ DataCellsFilter& DataCellsFilter::operator =(JsonView jsonValue)
     m_columnWildcardHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VersionId"))
+  {
+    m_versionId = jsonValue.GetString("VersionId");
+
+    m_versionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue DataCellsFilter::Jsonize() const
   if(m_columnWildcardHasBeenSet)
   {
    payload.WithObject("ColumnWildcard", m_columnWildcard.Jsonize());
+
+  }
+
+  if(m_versionIdHasBeenSet)
+  {
+   payload.WithString("VersionId", m_versionId);
 
   }
 

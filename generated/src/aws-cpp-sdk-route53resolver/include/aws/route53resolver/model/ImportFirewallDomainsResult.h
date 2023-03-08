@@ -106,27 +106,27 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p>Status of the import request.</p>
      */
     inline const FirewallDomainListStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> </p>
+     * <p>Status of the import request.</p>
      */
     inline void SetStatus(const FirewallDomainListStatus& value) { m_status = value; }
 
     /**
-     * <p> </p>
+     * <p>Status of the import request.</p>
      */
     inline void SetStatus(FirewallDomainListStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p>Status of the import request.</p>
      */
     inline ImportFirewallDomainsResult& WithStatus(const FirewallDomainListStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p>Status of the import request.</p>
      */
     inline ImportFirewallDomainsResult& WithStatus(FirewallDomainListStatus&& value) { SetStatus(std::move(value)); return *this;}
 

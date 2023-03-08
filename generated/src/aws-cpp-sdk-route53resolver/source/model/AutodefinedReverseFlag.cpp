@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLE_HASH = HashingUtils::HashString("ENABLE");
         static const int DISABLE_HASH = HashingUtils::HashString("DISABLE");
+        static const int USE_LOCAL_RESOURCE_SETTING_HASH = HashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
 
 
         AutodefinedReverseFlag GetAutodefinedReverseFlagForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLE_HASH)
           {
             return AutodefinedReverseFlag::DISABLE;
+          }
+          else if (hashCode == USE_LOCAL_RESOURCE_SETTING_HASH)
+          {
+            return AutodefinedReverseFlag::USE_LOCAL_RESOURCE_SETTING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ENABLE";
           case AutodefinedReverseFlag::DISABLE:
             return "DISABLE";
+          case AutodefinedReverseFlag::USE_LOCAL_RESOURCE_SETTING:
+            return "USE_LOCAL_RESOURCE_SETTING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

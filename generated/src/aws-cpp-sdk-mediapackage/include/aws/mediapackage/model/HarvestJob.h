@@ -138,49 +138,49 @@ namespace Model
 
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline HarvestJob& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline HarvestJob& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline HarvestJob& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}

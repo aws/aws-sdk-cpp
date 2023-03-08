@@ -21,14 +21,16 @@ namespace Model
 UserContext::UserContext() : 
     m_userProfileArnHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_iamIdentityHasBeenSet(false)
 {
 }
 
 UserContext::UserContext(JsonView jsonValue) : 
     m_userProfileArnHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_iamIdentityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ UserContext& UserContext::operator =(JsonView jsonValue)
     m_domainIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IamIdentity"))
+  {
+    m_iamIdentity = jsonValue.GetObject("IamIdentity");
+
+    m_iamIdentityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue UserContext::Jsonize() const
   if(m_domainIdHasBeenSet)
   {
    payload.WithString("DomainId", m_domainId);
+
+  }
+
+  if(m_iamIdentityHasBeenSet)
+  {
+   payload.WithObject("IamIdentity", m_iamIdentity.Jsonize());
 
   }
 

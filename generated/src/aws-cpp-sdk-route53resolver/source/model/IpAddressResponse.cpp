@@ -22,6 +22,7 @@ IpAddressResponse::IpAddressResponse() :
     m_ipIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_ipHasBeenSet(false),
+    m_ipv6HasBeenSet(false),
     m_status(IpAddressStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -34,6 +35,7 @@ IpAddressResponse::IpAddressResponse(JsonView jsonValue) :
     m_ipIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_ipHasBeenSet(false),
+    m_ipv6HasBeenSet(false),
     m_status(IpAddressStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -64,6 +66,13 @@ IpAddressResponse& IpAddressResponse::operator =(JsonView jsonValue)
     m_ip = jsonValue.GetString("Ip");
 
     m_ipHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Ipv6"))
+  {
+    m_ipv6 = jsonValue.GetString("Ipv6");
+
+    m_ipv6HasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -116,6 +125,12 @@ JsonValue IpAddressResponse::Jsonize() const
   if(m_ipHasBeenSet)
   {
    payload.WithString("Ip", m_ip);
+
+  }
+
+  if(m_ipv6HasBeenSet)
+  {
+   payload.WithString("Ipv6", m_ipv6);
 
   }
 

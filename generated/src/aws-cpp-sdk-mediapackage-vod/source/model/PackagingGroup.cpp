@@ -23,6 +23,7 @@ PackagingGroup::PackagingGroup() :
     m_approximateAssetCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_egressAccessLogsHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -35,6 +36,7 @@ PackagingGroup::PackagingGroup(JsonView jsonValue) :
     m_approximateAssetCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_egressAccessLogsHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -64,6 +66,13 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
     m_authorization = jsonValue.GetObject("authorization");
 
     m_authorizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("domainName"))
@@ -119,6 +128,12 @@ JsonValue PackagingGroup::Jsonize() const
   if(m_authorizationHasBeenSet)
   {
    payload.WithObject("authorization", m_authorization.Jsonize());
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt);
 
   }
 

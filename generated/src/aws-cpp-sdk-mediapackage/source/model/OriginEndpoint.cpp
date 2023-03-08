@@ -23,6 +23,7 @@ OriginEndpoint::OriginEndpoint() :
     m_authorizationHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -46,6 +47,7 @@ OriginEndpoint::OriginEndpoint(JsonView jsonValue) :
     m_authorizationHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -93,6 +95,13 @@ OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
     m_cmafPackage = jsonValue.GetObject("cmafPackage");
 
     m_cmafPackageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashPackage"))
@@ -213,6 +222,12 @@ JsonValue OriginEndpoint::Jsonize() const
   if(m_cmafPackageHasBeenSet)
   {
    payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt);
 
   }
 

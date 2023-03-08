@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53resolver/model/ResolverEndpointDirection.h>
+#include <aws/route53resolver/model/ResolverEndpointType.h>
 #include <aws/route53resolver/model/IpAddressRequest.h>
 #include <aws/route53resolver/model/Tag.h>
 #include <utility>
@@ -397,6 +398,49 @@ namespace Model
      */
     inline CreateResolverEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline CreateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
+
+    /**
+     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
+     * endpoint type is applied to all IP addresses. </p>
+     */
+    inline CreateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_creatorRequestId;
@@ -416,6 +460,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ResolverEndpointType m_resolverEndpointType;
+    bool m_resolverEndpointTypeHasBeenSet = false;
   };
 
 } // namespace Model
