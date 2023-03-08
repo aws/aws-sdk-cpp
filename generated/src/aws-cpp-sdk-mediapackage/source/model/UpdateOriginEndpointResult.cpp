@@ -58,6 +58,12 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
   if(jsonValue.ValueExists("dashPackage"))
   {
     m_dashPackage = jsonValue.GetObject("dashPackage");

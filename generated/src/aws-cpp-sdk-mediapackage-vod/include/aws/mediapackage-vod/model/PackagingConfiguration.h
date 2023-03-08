@@ -102,6 +102,47 @@ namespace Model
     inline PackagingConfiguration& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline PackagingConfiguration& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline PackagingConfiguration& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The time the PackagingConfiguration was created.
+     */
+    inline PackagingConfiguration& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
 
@@ -287,6 +328,9 @@ namespace Model
 
     CmafPackage m_cmafPackage;
     bool m_cmafPackageHasBeenSet = false;
+
+    Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     DashPackage m_dashPackage;
     bool m_dashPackageHasBeenSet = false;

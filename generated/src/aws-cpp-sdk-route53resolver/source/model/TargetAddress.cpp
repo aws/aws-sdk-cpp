@@ -21,14 +21,16 @@ namespace Model
 TargetAddress::TargetAddress() : 
     m_ipHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
 TargetAddress::TargetAddress(JsonView jsonValue) : 
     m_ipHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ TargetAddress& TargetAddress::operator =(JsonView jsonValue)
     m_portHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ipv6"))
+  {
+    m_ipv6 = jsonValue.GetString("Ipv6");
+
+    m_ipv6HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue TargetAddress::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("Port", m_port);
+
+  }
+
+  if(m_ipv6HasBeenSet)
+  {
+   payload.WithString("Ipv6", m_ipv6);
 
   }
 

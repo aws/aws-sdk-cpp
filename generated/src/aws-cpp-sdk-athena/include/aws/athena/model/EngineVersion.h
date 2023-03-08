@@ -40,57 +40,57 @@ namespace Model
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline const Aws::String& GetSelectedEngineVersion() const{ return m_selectedEngineVersion; }
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline bool SelectedEngineVersionHasBeenSet() const { return m_selectedEngineVersionHasBeenSet; }
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline void SetSelectedEngineVersion(const Aws::String& value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion = value; }
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline void SetSelectedEngineVersion(Aws::String&& value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion = std::move(value); }
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline void SetSelectedEngineVersion(const char* value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion.assign(value); }
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline EngineVersion& WithSelectedEngineVersion(const Aws::String& value) { SetSelectedEngineVersion(value); return *this;}
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline EngineVersion& WithSelectedEngineVersion(Aws::String&& value) { SetSelectedEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The engine version requested by the user. Possible values are determined by
-     * the output of <code>ListEngineVersions</code>, including Auto. The default is
-     * Auto.</p>
+     * the output of <code>ListEngineVersions</code>, including AUTO. The default is
+     * AUTO.</p>
      */
     inline EngineVersion& WithSelectedEngineVersion(const char* value) { SetSelectedEngineVersion(value); return *this;}
 

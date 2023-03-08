@@ -121,43 +121,43 @@ namespace Model
 
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline DescribeHarvestJobResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline DescribeHarvestJobResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
 
      */
     inline DescribeHarvestJobResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}

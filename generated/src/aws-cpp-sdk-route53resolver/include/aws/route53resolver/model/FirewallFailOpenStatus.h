@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ENABLED,
-    DISABLED
+    DISABLED,
+    USE_LOCAL_RESOURCE_SETTING
   };
 
 namespace FirewallFailOpenStatusMapper

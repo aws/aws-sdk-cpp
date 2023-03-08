@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int USE_LOCAL_RESOURCE_SETTING_HASH = HashingUtils::HashString("USE_LOCAL_RESOURCE_SETTING");
 
 
         FirewallFailOpenStatus GetFirewallFailOpenStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISABLED_HASH)
           {
             return FirewallFailOpenStatus::DISABLED;
+          }
+          else if (hashCode == USE_LOCAL_RESOURCE_SETTING_HASH)
+          {
+            return FirewallFailOpenStatus::USE_LOCAL_RESOURCE_SETTING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ENABLED";
           case FirewallFailOpenStatus::DISABLED:
             return "DISABLED";
+          case FirewallFailOpenStatus::USE_LOCAL_RESOURCE_SETTING:
+            return "USE_LOCAL_RESOURCE_SETTING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

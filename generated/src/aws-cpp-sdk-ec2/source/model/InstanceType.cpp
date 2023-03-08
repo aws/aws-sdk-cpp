@@ -639,6 +639,25 @@ namespace Aws
         static const int r6idn_16xlarge_HASH = HashingUtils::HashString("r6idn.16xlarge");
         static const int r6idn_24xlarge_HASH = HashingUtils::HashString("r6idn.24xlarge");
         static const int r6idn_32xlarge_HASH = HashingUtils::HashString("r6idn.32xlarge");
+        static const int c7g_metal_HASH = HashingUtils::HashString("c7g.metal");
+        static const int m7g_medium_HASH = HashingUtils::HashString("m7g.medium");
+        static const int m7g_large_HASH = HashingUtils::HashString("m7g.large");
+        static const int m7g_xlarge_HASH = HashingUtils::HashString("m7g.xlarge");
+        static const int m7g_2xlarge_HASH = HashingUtils::HashString("m7g.2xlarge");
+        static const int m7g_4xlarge_HASH = HashingUtils::HashString("m7g.4xlarge");
+        static const int m7g_8xlarge_HASH = HashingUtils::HashString("m7g.8xlarge");
+        static const int m7g_12xlarge_HASH = HashingUtils::HashString("m7g.12xlarge");
+        static const int m7g_16xlarge_HASH = HashingUtils::HashString("m7g.16xlarge");
+        static const int m7g_metal_HASH = HashingUtils::HashString("m7g.metal");
+        static const int r7g_medium_HASH = HashingUtils::HashString("r7g.medium");
+        static const int r7g_large_HASH = HashingUtils::HashString("r7g.large");
+        static const int r7g_xlarge_HASH = HashingUtils::HashString("r7g.xlarge");
+        static const int r7g_2xlarge_HASH = HashingUtils::HashString("r7g.2xlarge");
+        static const int r7g_4xlarge_HASH = HashingUtils::HashString("r7g.4xlarge");
+        static const int r7g_8xlarge_HASH = HashingUtils::HashString("r7g.8xlarge");
+        static const int r7g_12xlarge_HASH = HashingUtils::HashString("r7g.12xlarge");
+        static const int r7g_16xlarge_HASH = HashingUtils::HashString("r7g.16xlarge");
+        static const int r7g_metal_HASH = HashingUtils::HashString("r7g.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3762,6 +3781,101 @@ namespace Aws
             enumValue = InstanceType::r6idn_32xlarge;
             return true;
           }
+          else if (hashCode == c7g_metal_HASH)
+          {
+            enumValue = InstanceType::c7g_metal;
+            return true;
+          }
+          else if (hashCode == m7g_medium_HASH)
+          {
+            enumValue = InstanceType::m7g_medium;
+            return true;
+          }
+          else if (hashCode == m7g_large_HASH)
+          {
+            enumValue = InstanceType::m7g_large;
+            return true;
+          }
+          else if (hashCode == m7g_xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_2xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_4xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_4xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_8xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_8xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_12xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_12xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_16xlarge_HASH)
+          {
+            enumValue = InstanceType::m7g_16xlarge;
+            return true;
+          }
+          else if (hashCode == m7g_metal_HASH)
+          {
+            enumValue = InstanceType::m7g_metal;
+            return true;
+          }
+          else if (hashCode == r7g_medium_HASH)
+          {
+            enumValue = InstanceType::r7g_medium;
+            return true;
+          }
+          else if (hashCode == r7g_large_HASH)
+          {
+            enumValue = InstanceType::r7g_large;
+            return true;
+          }
+          else if (hashCode == r7g_xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_2xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_4xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_8xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_12xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r7g_16xlarge;
+            return true;
+          }
+          else if (hashCode == r7g_metal_HASH)
+          {
+            enumValue = InstanceType::r7g_metal;
+            return true;
+          }
           return false;
         }
 
@@ -5665,6 +5779,63 @@ namespace Aws
             return true;
           case InstanceType::r6idn_32xlarge:
             value = "r6idn.32xlarge";
+            return true;
+          case InstanceType::c7g_metal:
+            value = "c7g.metal";
+            return true;
+          case InstanceType::m7g_medium:
+            value = "m7g.medium";
+            return true;
+          case InstanceType::m7g_large:
+            value = "m7g.large";
+            return true;
+          case InstanceType::m7g_xlarge:
+            value = "m7g.xlarge";
+            return true;
+          case InstanceType::m7g_2xlarge:
+            value = "m7g.2xlarge";
+            return true;
+          case InstanceType::m7g_4xlarge:
+            value = "m7g.4xlarge";
+            return true;
+          case InstanceType::m7g_8xlarge:
+            value = "m7g.8xlarge";
+            return true;
+          case InstanceType::m7g_12xlarge:
+            value = "m7g.12xlarge";
+            return true;
+          case InstanceType::m7g_16xlarge:
+            value = "m7g.16xlarge";
+            return true;
+          case InstanceType::m7g_metal:
+            value = "m7g.metal";
+            return true;
+          case InstanceType::r7g_medium:
+            value = "r7g.medium";
+            return true;
+          case InstanceType::r7g_large:
+            value = "r7g.large";
+            return true;
+          case InstanceType::r7g_xlarge:
+            value = "r7g.xlarge";
+            return true;
+          case InstanceType::r7g_2xlarge:
+            value = "r7g.2xlarge";
+            return true;
+          case InstanceType::r7g_4xlarge:
+            value = "r7g.4xlarge";
+            return true;
+          case InstanceType::r7g_8xlarge:
+            value = "r7g.8xlarge";
+            return true;
+          case InstanceType::r7g_12xlarge:
+            value = "r7g.12xlarge";
+            return true;
+          case InstanceType::r7g_16xlarge:
+            value = "r7g.16xlarge";
+            return true;
+          case InstanceType::r7g_metal:
+            value = "r7g.metal";
             return true;
           default:
             return false;

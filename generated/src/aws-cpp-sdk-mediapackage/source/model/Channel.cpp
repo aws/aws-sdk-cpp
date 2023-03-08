@@ -20,6 +20,7 @@ namespace Model
 
 Channel::Channel() : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
@@ -31,6 +32,7 @@ Channel::Channel() :
 
 Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_egressAccessLogsHasBeenSet(false),
     m_hlsIngestHasBeenSet(false),
@@ -48,6 +50,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -105,6 +114,12 @@ JsonValue Channel::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt);
 
   }
 

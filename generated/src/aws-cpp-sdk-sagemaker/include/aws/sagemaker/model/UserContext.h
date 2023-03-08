@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/IamIdentity.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +162,49 @@ namespace Model
      */
     inline UserContext& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline const IamIdentity& GetIamIdentity() const{ return m_iamIdentity; }
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline bool IamIdentityHasBeenSet() const { return m_iamIdentityHasBeenSet; }
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline void SetIamIdentity(const IamIdentity& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = value; }
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline void SetIamIdentity(IamIdentity&& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = std::move(value); }
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline UserContext& WithIamIdentity(const IamIdentity& value) { SetIamIdentity(value); return *this;}
+
+    /**
+     * <p>The IAM Identity details associated with the user. These details are
+     * associated with model package groups, model packages, and project entities
+     * only.</p>
+     */
+    inline UserContext& WithIamIdentity(IamIdentity&& value) { SetIamIdentity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userProfileArn;
@@ -171,6 +215,9 @@ namespace Model
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    IamIdentity m_iamIdentity;
+    bool m_iamIdentityHasBeenSet = false;
   };
 
 } // namespace Model

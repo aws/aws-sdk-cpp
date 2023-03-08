@@ -34,6 +34,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");

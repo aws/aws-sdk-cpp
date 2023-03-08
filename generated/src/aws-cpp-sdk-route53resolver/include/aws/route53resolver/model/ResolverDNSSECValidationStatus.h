@@ -19,7 +19,9 @@ namespace Model
     ENABLING,
     ENABLED,
     DISABLING,
-    DISABLED
+    DISABLED,
+    UPDATING_TO_USE_LOCAL_RESOURCE_SETTING,
+    USE_LOCAL_RESOURCE_SETTING
   };
 
 namespace ResolverDNSSECValidationStatusMapper

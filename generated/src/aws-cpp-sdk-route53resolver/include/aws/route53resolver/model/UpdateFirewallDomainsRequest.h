@@ -139,7 +139,8 @@ namespace Model
 
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -150,7 +151,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -161,7 +163,8 @@ namespace Model
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -172,7 +175,8 @@ namespace Model
     inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -183,7 +187,8 @@ namespace Model
     inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -194,7 +199,8 @@ namespace Model
     inline UpdateFirewallDomainsRequest& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -205,7 +211,8 @@ namespace Model
     inline UpdateFirewallDomainsRequest& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -216,7 +223,8 @@ namespace Model
     inline UpdateFirewallDomainsRequest& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only
@@ -227,7 +235,8 @@ namespace Model
     inline UpdateFirewallDomainsRequest& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of domains to use in the update operation.</p> <p>Each domain
+     * <p>A list of domains to use in the update operation.</p>  <p>There is
+     * a limit of 1000 domains per request.</p>  <p>Each domain
      * specification in your domain list must satisfy the following requirements: </p>
      * <ul> <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
      * <li> <p>With the exception of the optional starting asterisk, it must only

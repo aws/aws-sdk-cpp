@@ -36,6 +36,7 @@
 #include <aws/lakeformation/model/DescribeResourceRequest.h>
 #include <aws/lakeformation/model/DescribeTransactionRequest.h>
 #include <aws/lakeformation/model/ExtendTransactionRequest.h>
+#include <aws/lakeformation/model/GetDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/GetDataLakeSettingsRequest.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathRequest.h>
 #include <aws/lakeformation/model/GetLFTagRequest.h>
@@ -62,6 +63,7 @@
 #include <aws/lakeformation/model/SearchTablesByLFTagsRequest.h>
 #include <aws/lakeformation/model/StartQueryPlanningRequest.h>
 #include <aws/lakeformation/model/StartTransactionRequest.h>
+#include <aws/lakeformation/model/UpdateDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/UpdateLFTagRequest.h>
 #include <aws/lakeformation/model/UpdateResourceRequest.h>
 #include <aws/lakeformation/model/UpdateTableObjectsRequest.h>
@@ -329,6 +331,15 @@ ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTran
   return ExtendTransactionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetDataCellsFilterOutcome LakeFormationClient::GetDataCellsFilter(const GetDataCellsFilterRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataCellsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataCellsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/GetDataCellsFilter");
+  return GetDataCellsFilterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDataLakeSettingsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataLakeSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -571,6 +582,15 @@ StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransac
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTransaction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/StartTransaction");
   return StartTransactionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDataCellsFilterOutcome LakeFormationClient::UpdateDataCellsFilter(const UpdateDataCellsFilterRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataCellsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataCellsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateDataCellsFilter");
+  return UpdateDataCellsFilterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& request) const

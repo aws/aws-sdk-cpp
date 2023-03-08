@@ -40,6 +40,12 @@ ConfigureLogsResult& ConfigureLogsResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");

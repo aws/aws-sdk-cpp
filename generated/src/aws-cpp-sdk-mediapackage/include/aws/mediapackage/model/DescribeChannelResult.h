@@ -73,6 +73,42 @@ namespace Model
 
 
     /**
+     * The date and time the Channel was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline DescribeChannelResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline DescribeChannelResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The date and time the Channel was created.
+     */
+    inline DescribeChannelResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    /**
      * A short text description of the Channel.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -231,6 +267,8 @@ namespace Model
   private:
 
     Aws::String m_arn;
+
+    Aws::String m_createdAt;
 
     Aws::String m_description;
 

@@ -318,6 +318,31 @@ namespace Model
      */
     inline DataCellsFilter& WithColumnWildcard(ColumnWildcard&& value) { SetColumnWildcard(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
+
+    
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
+
+    
+    inline DataCellsFilter& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline DataCellsFilter& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
+
+    
+    inline DataCellsFilter& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
   private:
 
     Aws::String m_tableCatalogId;
@@ -340,6 +365,9 @@ namespace Model
 
     ColumnWildcard m_columnWildcard;
     bool m_columnWildcardHasBeenSet = false;
+
+    Aws::String m_versionId;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

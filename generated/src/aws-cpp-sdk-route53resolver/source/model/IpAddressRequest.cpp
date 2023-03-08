@@ -20,13 +20,15 @@ namespace Model
 
 IpAddressRequest::IpAddressRequest() : 
     m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
 IpAddressRequest::IpAddressRequest(JsonView jsonValue) : 
     m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ IpAddressRequest& IpAddressRequest::operator =(JsonView jsonValue)
     m_ipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ipv6"))
+  {
+    m_ipv6 = jsonValue.GetString("Ipv6");
+
+    m_ipv6HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue IpAddressRequest::Jsonize() const
   if(m_ipHasBeenSet)
   {
    payload.WithString("Ip", m_ip);
+
+  }
+
+  if(m_ipv6HasBeenSet)
+  {
+   payload.WithString("Ipv6", m_ipv6);
 
   }
 

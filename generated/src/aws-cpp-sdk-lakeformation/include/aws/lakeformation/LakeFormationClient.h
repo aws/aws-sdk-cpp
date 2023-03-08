@@ -490,6 +490,31 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Returns a data cells filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataCellsFilterOutcome GetDataCellsFilter(const Model::GetDataCellsFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataCellsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataCellsFilterRequestT = Model::GetDataCellsFilterRequest>
+        Model::GetDataCellsFilterOutcomeCallable GetDataCellsFilterCallable(const GetDataCellsFilterRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::GetDataCellsFilter, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataCellsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataCellsFilterRequestT = Model::GetDataCellsFilterRequest>
+        void GetDataCellsFilterAsync(const GetDataCellsFilterRequestT& request, const GetDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::GetDataCellsFilter, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the list of the data lake administrators of a Lake
          * Formation-managed data lake. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">AWS
@@ -789,7 +814,7 @@ namespace LakeFormation
          * <p>Grants permissions to the principal to access metadata in the Data Catalog
          * and data organized in underlying data storage such as Amazon S3.</p> <p>For
          * information about permissions, see <a
-         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">AWS
          * API Reference</a></p>
@@ -1216,6 +1241,31 @@ namespace LakeFormation
         void StartTransactionAsync(const StartTransactionRequestT& request, const StartTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::StartTransaction, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a data cell filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataCellsFilterOutcome UpdateDataCellsFilter(const Model::UpdateDataCellsFilterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataCellsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataCellsFilterRequestT = Model::UpdateDataCellsFilterRequest>
+        Model::UpdateDataCellsFilterOutcomeCallable UpdateDataCellsFilterCallable(const UpdateDataCellsFilterRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::UpdateDataCellsFilter, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataCellsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataCellsFilterRequestT = Model::UpdateDataCellsFilterRequest>
+        void UpdateDataCellsFilterAsync(const UpdateDataCellsFilterRequestT& request, const UpdateDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::UpdateDataCellsFilter, request, handler, context);
         }
 
         /**

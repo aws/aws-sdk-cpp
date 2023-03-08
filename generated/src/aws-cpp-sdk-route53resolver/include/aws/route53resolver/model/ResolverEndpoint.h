@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53resolver/model/ResolverEndpointDirection.h>
 #include <aws/route53resolver/model/ResolverEndpointStatus.h>
+#include <aws/route53resolver/model/ResolverEndpointType.h>
 #include <utility>
 
 namespace Aws
@@ -33,9 +34,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html">DeleteResolverEndpoint</a>,
    * <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>,
-   * or <a
+   * Updates the name, or ResolverEndpointType for an endpoint, or <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
    * request, a complex type that contains settings for an existing inbound or
    * outbound Resolver endpoint.</p><p><h3>See Also:</h3>   <a
@@ -769,6 +768,37 @@ namespace Model
      */
     inline ResolverEndpoint& WithModificationTime(const char* value) { SetModificationTime(value); return *this;}
 
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline ResolverEndpoint& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
+
+    /**
+     * <p> The Resolver endpoint IP address type. </p>
+     */
+    inline ResolverEndpoint& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -806,6 +836,9 @@ namespace Model
 
     Aws::String m_modificationTime;
     bool m_modificationTimeHasBeenSet = false;
+
+    ResolverEndpointType m_resolverEndpointType;
+    bool m_resolverEndpointTypeHasBeenSet = false;
   };
 
 } // namespace Model

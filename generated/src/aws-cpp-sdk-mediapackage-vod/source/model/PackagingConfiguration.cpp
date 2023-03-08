@@ -21,6 +21,7 @@ namespace Model
 PackagingConfiguration::PackagingConfiguration() : 
     m_arnHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -33,6 +34,7 @@ PackagingConfiguration::PackagingConfiguration() :
 PackagingConfiguration::PackagingConfiguration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -57,6 +59,13 @@ PackagingConfiguration& PackagingConfiguration::operator =(JsonView jsonValue)
     m_cmafPackage = jsonValue.GetObject("cmafPackage");
 
     m_cmafPackageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashPackage"))
@@ -120,6 +129,12 @@ JsonValue PackagingConfiguration::Jsonize() const
   if(m_cmafPackageHasBeenSet)
   {
    payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt);
 
   }
 

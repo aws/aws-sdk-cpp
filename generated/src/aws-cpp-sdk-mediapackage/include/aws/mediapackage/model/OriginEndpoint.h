@@ -165,6 +165,47 @@ namespace Model
     inline OriginEndpoint& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline OriginEndpoint& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline OriginEndpoint& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline OriginEndpoint& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
 
@@ -632,6 +673,9 @@ If not
 
     CmafPackage m_cmafPackage;
     bool m_cmafPackageHasBeenSet = false;
+
+    Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     DashPackage m_dashPackage;
     bool m_dashPackageHasBeenSet = false;

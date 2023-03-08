@@ -144,6 +144,42 @@ namespace Model
     inline UpdateOriginEndpointResult& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline UpdateOriginEndpointResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline UpdateOriginEndpointResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     */
+    inline UpdateOriginEndpointResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
 
@@ -541,6 +577,8 @@ If not
     Aws::String m_channelId;
 
     CmafPackage m_cmafPackage;
+
+    Aws::String m_createdAt;
 
     DashPackage m_dashPackage;
 

@@ -196,60 +196,42 @@ namespace Model
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline const ScteMarkersSource& GetScteMarkersSource() const{ return m_scteMarkersSource; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline bool ScteMarkersSourceHasBeenSet() const { return m_scteMarkersSourceHasBeenSet; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline void SetScteMarkersSource(const ScteMarkersSource& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = value; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline void SetScteMarkersSource(ScteMarkersSource&& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = std::move(value); }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline DashManifest& WithScteMarkersSource(const ScteMarkersSource& value) { SetScteMarkersSource(value); return *this;}
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
-     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
-     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
-     * not supported with this option.
+     * scte markers are sourced from the manifest of the ingested content.
      */
     inline DashManifest& WithScteMarkersSource(ScteMarkersSource&& value) { SetScteMarkersSource(std::move(value)); return *this;}
 

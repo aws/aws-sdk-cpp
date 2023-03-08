@@ -7,6 +7,9 @@
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/model/ResolverEndpointType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53resolver/model/UpdateIpAddress.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +118,84 @@ namespace Model
      */
     inline UpdateResolverEndpointRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline UpdateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
+
+    /**
+     * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
+     * forward DNS queries. </p>
+     */
+    inline UpdateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline const Aws::Vector<UpdateIpAddress>& GetUpdateIpAddresses() const{ return m_updateIpAddresses; }
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline bool UpdateIpAddressesHasBeenSet() const { return m_updateIpAddressesHasBeenSet; }
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline void SetUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = value; }
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline void SetUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = std::move(value); }
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { SetUpdateIpAddresses(value); return *this;}
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { SetUpdateIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(const UpdateIpAddress& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     */
+    inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(UpdateIpAddress&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_resolverEndpointId;
@@ -122,6 +203,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ResolverEndpointType m_resolverEndpointType;
+    bool m_resolverEndpointTypeHasBeenSet = false;
+
+    Aws::Vector<UpdateIpAddress> m_updateIpAddresses;
+    bool m_updateIpAddressesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>Information about the behavior configuration of Route 53 Resolver behavior
+     * <p>Information about the behavior configuration of Route 53 Resolver behavior
      * for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
      */
     inline const ResolverConfig& GetResolverConfig() const{ return m_resolverConfig; }
 
     /**
-     * <p>Information about the behavior configuration of Route 53 Resolver behavior
+     * <p>Information about the behavior configuration of Route 53 Resolver behavior
      * for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
      */
     inline void SetResolverConfig(const ResolverConfig& value) { m_resolverConfig = value; }
 
     /**
-     * <p>Information about the behavior configuration of Route 53 Resolver behavior
+     * <p>Information about the behavior configuration of Route 53 Resolver behavior
      * for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
      */
     inline void SetResolverConfig(ResolverConfig&& value) { m_resolverConfig = std::move(value); }
 
     /**
-     * <p>Information about the behavior configuration of Route 53 Resolver behavior
+     * <p>Information about the behavior configuration of Route 53 Resolver behavior
      * for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
      */
     inline GetResolverConfigResult& WithResolverConfig(const ResolverConfig& value) { SetResolverConfig(value); return *this;}
 
     /**
-     * <p>Information about the behavior configuration of Route 53 Resolver behavior
+     * <p>Information about the behavior configuration of Route 53 Resolver behavior
      * for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
      */
     inline GetResolverConfigResult& WithResolverConfig(ResolverConfig&& value) { SetResolverConfig(std::move(value)); return *this;}

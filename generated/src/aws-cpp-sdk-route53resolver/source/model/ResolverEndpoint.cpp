@@ -33,7 +33,9 @@ ResolverEndpoint::ResolverEndpoint() :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+    m_modificationTimeHasBeenSet(false),
+    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
+    m_resolverEndpointTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ResolverEndpoint::ResolverEndpoint(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+    m_modificationTimeHasBeenSet(false),
+    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
+    m_resolverEndpointTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,13 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     m_modificationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResolverEndpointType"))
+  {
+    m_resolverEndpointType = ResolverEndpointTypeMapper::GetResolverEndpointTypeForName(jsonValue.GetString("ResolverEndpointType"));
+
+    m_resolverEndpointTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +237,11 @@ JsonValue ResolverEndpoint::Jsonize() const
   {
    payload.WithString("ModificationTime", m_modificationTime);
 
+  }
+
+  if(m_resolverEndpointTypeHasBeenSet)
+  {
+   payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
   }
 
   return payload;
