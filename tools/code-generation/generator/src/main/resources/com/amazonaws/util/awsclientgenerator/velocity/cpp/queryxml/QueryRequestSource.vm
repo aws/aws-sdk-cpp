@@ -201,3 +201,4 @@ void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")
