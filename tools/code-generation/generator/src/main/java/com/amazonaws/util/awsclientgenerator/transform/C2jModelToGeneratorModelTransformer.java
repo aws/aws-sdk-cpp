@@ -611,6 +611,23 @@ public class C2jModelToGeneratorModelTransformer {
             }
         }
 
+        //RequestCompression
+        if (c2jOperation.getRequestCompression() != null) {
+            C2jRequestCompression c2jRequestCompression = c2jOperation.getRequestCompression();
+            // Supporting only Gzip for now.
+            if (c2jRequestCompression.getEncodings().isEmpty()) {
+                throw new RuntimeException("When Request Compression is requested, at least 1 algorithm needs to be declared");
+            }
+            if (c2jRequestCompression.getEncodings().size() > 1 || !c2jRequestCompression.getEncodings().get(0).equals("gzip")) {
+                throw new RuntimeException("Request Compression only supports usage of gzip algorithm");
+            }
+            operation.setRequestCompressionRequired(true); //General support for RequestCompression should be emitted
+            operation.setRequestCompressionRequiredGzip(true); //GZip specific support for RequestCompression should be emitted
+            Shape operationShape = operation.getRequest().getShape();
+            operationShape.setRequestCompressionRequired(true);
+            operationShape.setRequestCompressionRequiredGzip(true);
+        }
+
         // errors
 
         List<Error> operationErrors = new ArrayList<>();

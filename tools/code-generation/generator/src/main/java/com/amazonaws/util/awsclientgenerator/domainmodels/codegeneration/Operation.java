@@ -71,4 +71,6 @@ public class Operation {
     private String requestAlgorithmMember;
     private String requestValidationModeMember;
     private List<String> responseAlgorithms;
+    private boolean requestCompressionRequired;
+    private boolean requestCompressionRequiredGzip;
 }

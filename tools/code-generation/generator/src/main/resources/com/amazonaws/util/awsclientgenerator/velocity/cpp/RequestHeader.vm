@@ -140,6 +140,17 @@ namespace Model
     inline ${operation.name}Request& WithEventStreamHandler(const ${operation.name}Handler& value) { SetEventStreamHandler(value); return *this; }
 
 #end
+#if($operation.requestCompressionRequired)
+#if($operation.requestCompressionRequiredGzip)
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+#end
+    virtual Aws::Client::CompressionAlgorithm
+    GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
+#if($operation.requestCompressionRequiredGzip)
+#endif
+#end
+
+#end
 #if($shape.supportsPresigning)
   protected:
     ${exportMacro} void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
