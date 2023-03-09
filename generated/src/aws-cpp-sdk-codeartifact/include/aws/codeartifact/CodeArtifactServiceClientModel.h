@@ -48,6 +48,7 @@
 #include <aws/codeartifact/model/ListRepositoriesResult.h>
 #include <aws/codeartifact/model/ListRepositoriesInDomainResult.h>
 #include <aws/codeartifact/model/ListTagsForResourceResult.h>
+#include <aws/codeartifact/model/PublishPackageVersionResult.h>
 #include <aws/codeartifact/model/PutDomainPermissionsPolicyResult.h>
 #include <aws/codeartifact/model/PutPackageOriginConfigurationResult.h>
 #include <aws/codeartifact/model/PutRepositoryPermissionsPolicyResult.h>
@@ -125,6 +126,7 @@ namespace Aws
       class ListRepositoriesRequest;
       class ListRepositoriesInDomainRequest;
       class ListTagsForResourceRequest;
+      class PublishPackageVersionRequest;
       class PutDomainPermissionsPolicyRequest;
       class PutPackageOriginConfigurationRequest;
       class PutRepositoryPermissionsPolicyRequest;
@@ -165,6 +167,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeArtifactError> ListRepositoriesOutcome;
       typedef Aws::Utils::Outcome<ListRepositoriesInDomainResult, CodeArtifactError> ListRepositoriesInDomainOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeArtifactError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PublishPackageVersionResult, CodeArtifactError> PublishPackageVersionOutcome;
       typedef Aws::Utils::Outcome<PutDomainPermissionsPolicyResult, CodeArtifactError> PutDomainPermissionsPolicyOutcome;
       typedef Aws::Utils::Outcome<PutPackageOriginConfigurationResult, CodeArtifactError> PutPackageOriginConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutRepositoryPermissionsPolicyResult, CodeArtifactError> PutRepositoryPermissionsPolicyOutcome;
@@ -205,6 +208,7 @@ namespace Aws
       typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
       typedef std::future<ListRepositoriesInDomainOutcome> ListRepositoriesInDomainOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PublishPackageVersionOutcome> PublishPackageVersionOutcomeCallable;
       typedef std::future<PutDomainPermissionsPolicyOutcome> PutDomainPermissionsPolicyOutcomeCallable;
       typedef std::future<PutPackageOriginConfigurationOutcome> PutPackageOriginConfigurationOutcomeCallable;
       typedef std::future<PutRepositoryPermissionsPolicyOutcome> PutRepositoryPermissionsPolicyOutcomeCallable;
@@ -248,6 +252,7 @@ namespace Aws
     typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::ListRepositoriesInDomainRequest&, const Model::ListRepositoriesInDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesInDomainResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeArtifactClient*, const Model::PublishPackageVersionRequest&, const Model::PublishPackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishPackageVersionResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutDomainPermissionsPolicyRequest&, const Model::PutDomainPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDomainPermissionsPolicyResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutPackageOriginConfigurationRequest&, const Model::PutPackageOriginConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPackageOriginConfigurationResponseReceivedHandler;
     typedef std::function<void(const CodeArtifactClient*, const Model::PutRepositoryPermissionsPolicyRequest&, const Model::PutRepositoryPermissionsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryPermissionsPolicyResponseReceivedHandler;

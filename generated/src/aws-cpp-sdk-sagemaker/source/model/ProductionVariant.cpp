@@ -36,7 +36,9 @@ ProductionVariant::ProductionVariant() :
     m_modelDataDownloadTimeoutInSeconds(0),
     m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
     m_containerStartupHealthCheckTimeoutInSeconds(0),
-    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
+    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false),
+    m_enableSSMAccess(false),
+    m_enableSSMAccessHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_modelDataDownloadTimeoutInSeconds(0),
     m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
     m_containerStartupHealthCheckTimeoutInSeconds(0),
-    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
+    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false),
+    m_enableSSMAccess(false),
+    m_enableSSMAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -142,6 +146,13 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableSSMAccess"))
+  {
+    m_enableSSMAccess = jsonValue.GetBool("EnableSSMAccess");
+
+    m_enableSSMAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,6 +221,12 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("ContainerStartupHealthCheckTimeoutInSeconds", m_containerStartupHealthCheckTimeoutInSeconds);
+
+  }
+
+  if(m_enableSSMAccessHasBeenSet)
+  {
+   payload.WithBool("EnableSSMAccess", m_enableSSMAccess);
 
   }
 

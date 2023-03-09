@@ -27,8 +27,8 @@ namespace Model
    * <p>You don't have access to this item. The provided credentials couldn't be
    * validated. You might not be authorized to carry out the request. Make sure that
    * your account is authorized to use the Amazon QuickSight service, that your
-   * policies have the correct permissions, and that you are using the correct access
-   * keys.</p><p><h3>See Also:</h3>   <a
+   * policies have the correct permissions, and that you are using the correct
+   * credentials.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccessDeniedException">AWS
    * API Reference</a></p>
    */

@@ -318,6 +318,55 @@ namespace Model
      */
     inline PivotTableOptions& WithRowAlternateColorOptions(RowAlternateColorOptions&& value) { SetRowAlternateColorOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline const Visibility& GetCollapsedRowDimensionsVisibility() const{ return m_collapsedRowDimensionsVisibility; }
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline bool CollapsedRowDimensionsVisibilityHasBeenSet() const { return m_collapsedRowDimensionsVisibilityHasBeenSet; }
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline void SetCollapsedRowDimensionsVisibility(const Visibility& value) { m_collapsedRowDimensionsVisibilityHasBeenSet = true; m_collapsedRowDimensionsVisibility = value; }
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline void SetCollapsedRowDimensionsVisibility(Visibility&& value) { m_collapsedRowDimensionsVisibilityHasBeenSet = true; m_collapsedRowDimensionsVisibility = std::move(value); }
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline PivotTableOptions& WithCollapsedRowDimensionsVisibility(const Visibility& value) { SetCollapsedRowDimensionsVisibility(value); return *this;}
+
+    /**
+     * <p>The visibility setting of a pivot table's collapsed row dimension fields. If
+     * the value of this structure is <code>HIDDEN</code>, all collapsed columns in a
+     * pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.</p>
+     */
+    inline PivotTableOptions& WithCollapsedRowDimensionsVisibility(Visibility&& value) { SetCollapsedRowDimensionsVisibility(std::move(value)); return *this;}
+
   private:
 
     PivotTableMetricPlacement m_metricPlacement;
@@ -346,6 +395,9 @@ namespace Model
 
     RowAlternateColorOptions m_rowAlternateColorOptions;
     bool m_rowAlternateColorOptionsHasBeenSet = false;
+
+    Visibility m_collapsedRowDimensionsVisibility;
+    bool m_collapsedRowDimensionsVisibilityHasBeenSet = false;
   };
 
 } // namespace Model

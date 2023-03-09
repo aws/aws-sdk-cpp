@@ -19,12 +19,14 @@ namespace Model
 {
 
 RegisteredUserDashboardEmbeddingConfiguration::RegisteredUserDashboardEmbeddingConfiguration() : 
-    m_initialDashboardIdHasBeenSet(false)
+    m_initialDashboardIdHasBeenSet(false),
+    m_featureConfigurationsHasBeenSet(false)
 {
 }
 
 RegisteredUserDashboardEmbeddingConfiguration::RegisteredUserDashboardEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialDashboardIdHasBeenSet(false)
+    m_initialDashboardIdHasBeenSet(false),
+    m_featureConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RegisteredUserDashboardEmbeddingConfiguration& RegisteredUserDashboardEmbeddingC
     m_initialDashboardIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeatureConfigurations"))
+  {
+    m_featureConfigurations = jsonValue.GetObject("FeatureConfigurations");
+
+    m_featureConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RegisteredUserDashboardEmbeddingConfiguration::Jsonize() const
   if(m_initialDashboardIdHasBeenSet)
   {
    payload.WithString("InitialDashboardId", m_initialDashboardId);
+
+  }
+
+  if(m_featureConfigurationsHasBeenSet)
+  {
+   payload.WithObject("FeatureConfigurations", m_featureConfigurations.Jsonize());
 
   }
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Shows the final value for the objective metric for a training job that was
-   * launched by a hyperparameter tuning job. You define the objective metric in the
+   * <p>Shows the latest objective metric emitted by a training job that was launched
+   * by a hyperparameter tuning job. You define the objective metric in the
    * <code>HyperParameterTuningJobObjective</code> parameter of
    * <a>HyperParameterTuningJobConfig</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FinalHyperParameterTuningJobObjectiveMetric">AWS
@@ -42,79 +42,127 @@ namespace Model
 
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline const HyperParameterTuningJobObjectiveType& GetType() const{ return m_type; }
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline void SetType(const HyperParameterTuningJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline void SetType(HyperParameterTuningJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline FinalHyperParameterTuningJobObjectiveMetric& WithType(const HyperParameterTuningJobObjectiveType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Whether to minimize or maximize the objective metric. Valid values are
-     * Minimize and Maximize.</p>
+     * <p>Select if you want to minimize or maximize the objective metric during
+     * hyperparameter tuning. </p>
      */
     inline FinalHyperParameterTuningJobObjectiveMetric& WithType(HyperParameterTuningJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline FinalHyperParameterTuningJobObjectiveMetric& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline FinalHyperParameterTuningJobObjectiveMetric& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the objective metric.</p>
+     * <p>The name of the objective metric. For SageMaker built-in algorithms, metrics
+     * are defined per algorithm. See the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics
+     * for XGBoost</a> as an example. You can also use a custom algorithm for training
+     * and define your own metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+     * metrics and environment variables</a>.</p>
      */
     inline FinalHyperParameterTuningJobObjectiveMetric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 

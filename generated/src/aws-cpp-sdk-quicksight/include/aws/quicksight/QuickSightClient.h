@@ -1065,9 +1065,8 @@ namespace QuickSight
 
         /**
          * <p>Deletes the Amazon QuickSight user that is associated with the identity of
-         * the Identity and Access Management (IAM) user or role that's making the call.
-         * The IAM user isn't deleted as a result of this call. </p><p><h3>See Also:</h3>  
-         * <a
+         * the IAM user or role that's making the call. The IAM user isn't deleted as a
+         * result of this call. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">AWS
          * API Reference</a></p>
          */

@@ -85,15 +85,17 @@ namespace CodeArtifact
    * </p> </li> <li> <p> <code>DeleteDomain</code>: Deletes a domain. You cannot
    * delete a domain that contains repositories. </p> </li> <li> <p>
    * <code>DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that is
-   * set on a domain.</p> </li> <li> <p> <code>DeletePackageVersions</code>: Deletes
-   * versions of a package. After a package has been deleted, it can be republished,
-   * but its assets and metadata cannot be restored because they have been
-   * permanently removed from storage.</p> </li> <li> <p>
-   * <code>DeleteRepository</code>: Deletes a repository. </p> </li> <li> <p>
-   * <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy that
-   * is set on a repository.</p> </li> <li> <p> <code>DescribeDomain</code>: Returns
-   * a <code>DomainDescription</code> object that contains information about the
-   * requested domain.</p> </li> <li> <p> <code>DescribePackage</code>: Returns a <a
+   * set on a domain.</p> </li> <li> <p> <code>DeletePackage</code>: Deletes a
+   * package and all associated package versions.</p> </li> <li> <p>
+   * <code>DeletePackageVersions</code>: Deletes versions of a package. After a
+   * package has been deleted, it can be republished, but its assets and metadata
+   * cannot be restored because they have been permanently removed from storage.</p>
+   * </li> <li> <p> <code>DeleteRepository</code>: Deletes a repository. </p> </li>
+   * <li> <p> <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource
+   * policy that is set on a repository.</p> </li> <li> <p>
+   * <code>DescribeDomain</code>: Returns a <code>DomainDescription</code> object
+   * that contains information about the requested domain.</p> </li> <li> <p>
+   * <code>DescribePackage</code>: Returns a <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
    * object that contains details about a package. </p> </li> <li> <p>
    * <code>DescribePackageVersion</code>: Returns a <a
@@ -134,11 +136,12 @@ namespace CodeArtifact
    * <code>ListRepositories</code>: Returns a list of repositories owned by the
    * Amazon Web Services account that called this method.</p> </li> <li> <p>
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
-   * domain.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>: Attaches a
-   * resource policy to a domain.</p> </li> <li> <p>
-   * <code>PutPackageOriginConfiguration</code>: Sets the package origin
-   * configuration for a package, which determine how new versions of the package can
-   * be added to a specific repository.</p> </li> <li> <p>
+   * domain.</p> </li> <li> <p> <code>PublishPackageVersion</code>: Creates a new
+   * package version containing one or more assets.</p> </li> <li> <p>
+   * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a
+   * domain.</p> </li> <li> <p> <code>PutPackageOriginConfiguration</code>: Sets the
+   * package origin configuration for a package, which determine how new versions of
+   * the package can be added to a specific repository.</p> </li> <li> <p>
    * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
    * repository that specifies permissions to access it. </p> </li> <li> <p>
    * <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more
@@ -400,7 +403,7 @@ namespace CodeArtifact
          * your repository and be able to restore it later, set its status to
          * <code>Archived</code>. Archived packages cannot be downloaded from a repository
          * and don't show up with list package APIs (for example, <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
          * but you can restore them using <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1067,6 +1070,42 @@ namespace CodeArtifact
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new package version containing one or more assets (or files).</p>
+         * <p>The <code>unfinished</code> flag can be used to keep the package version in
+         * the <code>Unfinished</code> state until all of it’s assets have been uploaded
+         * (see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+         * version status</a> in the <i>CodeArtifact user guide</i>). To set the package
+         * version’s status to <code>Published</code>, omit the <code>unfinished</code>
+         * flag when uploading the final asset, or set the status using <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+         * Once a package version’s status is set to <code>Published</code>, it cannot
+         * change back to <code>Unfinished</code>.</p>  <p>Only generic packages can
+         * be published using this API.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PublishPackageVersionOutcome PublishPackageVersion(const Model::PublishPackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PublishPackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PublishPackageVersionRequestT = Model::PublishPackageVersionRequest>
+        Model::PublishPackageVersionOutcomeCallable PublishPackageVersionCallable(const PublishPackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::PublishPackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for PublishPackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PublishPackageVersionRequestT = Model::PublishPackageVersionRequest>
+        void PublishPackageVersionAsync(const PublishPackageVersionRequestT& request, const PublishPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::PublishPackageVersion, request, handler, context);
         }
 
         /**

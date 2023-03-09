@@ -91,38 +91,38 @@ namespace Model
 
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline const RecommendationType& GetType() const{ return m_type; }
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline void SetType(const RecommendationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline void SetType(RecommendationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline Recommendation& WithType(const RecommendationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>
-     * or <code>DMARC</code>.</p>
+     * <p>The recommendation type, with values like <code>DKIM</code>,
+     * <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
      */
     inline Recommendation& WithType(RecommendationType&& value) { SetType(std::move(value)); return *this;}
 

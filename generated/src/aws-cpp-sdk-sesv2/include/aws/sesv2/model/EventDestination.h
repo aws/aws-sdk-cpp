@@ -128,49 +128,297 @@ namespace Model
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline EventDestination& WithMatchingEventTypes(const Aws::Vector<EventType>& value) { SetMatchingEventTypes(value); return *this;}
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline EventDestination& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline EventDestination& AddMatchingEventTypes(const EventType& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
 
     /**
      * <p>The types of events that Amazon SES sends to the specified event
-     * destinations.</p>
+     * destinations.</p> <ul> <li> <p> <code>SEND</code> - The send request was
+     * successful and SES will attempt to deliver the message to the recipient’s mail
+     * server. (If account-level or global suppression is being used, SES will still
+     * count it as a send, but delivery is suppressed.)</p> </li> <li> <p>
+     * <code>REJECT</code> - SES accepted the email, but determined that it contained a
+     * virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+     * <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server
+     * permanently rejected the email. (<i>Soft bounces</i> are only included when SES
+     * fails to deliver the email after retrying for a period of time.)</p> </li> <li>
+     * <p> <code>COMPLAINT</code> - The email was successfully delivered to the
+     * recipient’s mail server, but the recipient marked it as spam.</p> </li> <li> <p>
+     * <code>DELIVERY</code> - SES successfully delivered the email to the recipient's
+     * mail server.</p> </li> <li> <p> <code>OPEN</code> - The recipient received the
+     * message and opened it in their email client.</p> </li> <li> <p>
+     * <code>CLICK</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of
+     * a template rendering issue. This event type can occur when template data is
+     * missing, or when there is a mismatch between template parameters and data. (This
+     * event type only occurs when you send email using the <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
+     * <code>SendTemplatedEmail</code> </a> or <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+     * <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li> <li> <p>
+     * <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
+     * mail server because a temporary issue occurred. Delivery delays can occur, for
+     * example, when the recipient's inbox is full, or when the receiving email server
+     * experiences a transient issue.</p> </li> <li> <p> <code>SUBSCRIPTION</code> -
+     * The email was successfully delivered, but the recipient updated their
+     * subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+     * your <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+     * management</a>.</p> </li> </ul>
      */
     inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 
