@@ -7,6 +7,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <algorithm>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
 #include "zlib.h"
@@ -36,6 +37,46 @@ Aws::String Aws::Client::GetCompressionAlgorithmId(const CompressionAlgorithm &a
         return "";
     }
 }
+
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+static const char* ZlibMemTag = "zlib";
+static const size_t offset = sizeof(size_t); // to make space for size of the array
+//Define custom memory allocation for zlib
+// if fail to allocate, return Z_NULL
+void* aws_zalloc(void * /* opaque */, unsigned items, unsigned size)
+{
+    unsigned sizeToAllocate = items*size;
+    size_t sizeToAllocateWithOffset = sizeToAllocate + offset;
+    if ((size != 0 && sizeToAllocate / size != items)
+        || (sizeToAllocateWithOffset <= sizeToAllocate ))
+    {
+        return Z_NULL;
+    }
+    char* newMem = reinterpret_cast<char*>(Aws::Malloc(ZlibMemTag, sizeToAllocateWithOffset));
+    if (newMem != nullptr) {
+        std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(newMem);
+        *pointerToSize = size;
+        return reinterpret_cast<void*>(newMem + offset);
+    }
+    else
+    {
+        return Z_NULL;
+    }
+}
+
+void aws_zfree(void * /* opaque */, void * ptr)
+{
+    if(ptr)
+    {
+        char* shiftedMemory = reinterpret_cast<char*>(ptr);
+        Aws::Free(shiftedMemory - offset);
+    }
+}
+
+#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // ENABLED_ZLIB_REQUEST_COMPRESSION
+
 
 iostream_outcome Aws::Client::RequestCompression::compress(std::shared_ptr<Aws::IOStream> input,
                                                            const CompressionAlgorithm &algorithm) const
@@ -75,9 +116,14 @@ iostream_outcome Aws::Client::RequestCompression::compress(std::shared_ptr<Aws::
            return false;
         }
 
-        // Cleaning Zlib stream state flags
+        //Preparing allocators
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+        strm.zalloc = (void *(*)(void *, unsigned, unsigned)) aws_zalloc;
+        strm.zfree = (void (*)(void *, void *)) aws_zfree;
+#else
         strm.zalloc = Z_NULL;
         strm.zfree = Z_NULL;
+#endif
         strm.opaque = Z_NULL;
 
         const int MAX_WINDOW_GZIP = 31;
@@ -93,7 +139,7 @@ iostream_outcome Aws::Client::RequestCompression::compress(std::shared_ptr<Aws::
         size_t toRead;
         // Compress
         do {
-            toRead = (streamSize < ZLIB_CHUNK)?streamSize:ZLIB_CHUNK;
+            toRead = std::min(streamSize, ZLIB_CHUNK);
             // Fill the buffer
             if (! input->read(reinterpret_cast<char *>(in.get()), toRead))
             {
@@ -186,9 +232,15 @@ Aws::Client::RequestCompression::uncompress(std::shared_ptr<Aws::IOStream> input
             AWS_LOGSTREAM_ERROR(AWS_REQUEST_COMPRESSION_LOG_TAG, "Failed to allocate out buffer while uncompressing")
             return false;
         }
-        // Cleaning Zlib stream state flags
+
+        //preparing allocation
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+        strm.zalloc = (void *(*)(void *, unsigned, unsigned)) aws_zalloc;
+        strm.zfree = (void (*)(void *, void *)) aws_zfree;
+#else
         strm.zalloc = Z_NULL;
         strm.zfree = Z_NULL;
+#endif
         strm.opaque = Z_NULL;
         strm.avail_in = 0;
         strm.next_in = Z_NULL;
