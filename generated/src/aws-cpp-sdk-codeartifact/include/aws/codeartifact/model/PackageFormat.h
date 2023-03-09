@@ -19,7 +19,8 @@ namespace Model
     npm,
     pypi,
     maven,
-    nuget
+    nuget,
+    generic
   };
 
 namespace PackageFormatMapper

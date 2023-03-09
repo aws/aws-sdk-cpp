@@ -161,65 +161,121 @@ namespace Model
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDependencyType() const{ return m_dependencyType; }
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline bool DependencyTypeHasBeenSet() const { return m_dependencyTypeHasBeenSet; }
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline void SetDependencyType(const Aws::String& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = value; }
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline void SetDependencyType(Aws::String&& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = std::move(value); }
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline void SetDependencyType(const char* value) { m_dependencyTypeHasBeenSet = true; m_dependencyType.assign(value); }
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline PackageDependency& WithDependencyType(const Aws::String& value) { SetDependencyType(value); return *this;}
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline PackageDependency& WithDependencyType(Aws::String&& value) { SetDependencyType(std::move(value)); return *this;}
 
     /**
      * <p> The type of a package dependency. The possible values depend on the package
-     * type. Example types are <code>compile</code>, <code>runtime</code>, and
-     * <code>test</code> for Maven packages, and <code>dev</code>, <code>prod</code>,
-     * and <code>optional</code> for npm packages. </p>
+     * type.</p> <ul> <li> <p>npm: <code>regular</code>, <code>dev</code>,
+     * <code>peer</code>, <code>optional</code> </p> </li> <li> <p>maven:
+     * <code>optional</code>, <code>parent</code>, <code>compile</code>,
+     * <code>runtime</code>, <code>test</code>, <code>system</code>,
+     * <code>provided</code>.</p>  <p>Note that <code>parent</code> is not a
+     * regular Maven dependency type; instead this is extracted from the
+     * <code>&lt;parent&gt;</code> element if one is defined in the package version's
+     * POM file.</p>  </li> <li> <p>nuget: The <code>dependencyType</code> field
+     * is never set for NuGet packages.</p> </li> <li> <p>pypi:
+     * <code>Requires-Dist</code> </p> </li> </ul>
      */
     inline PackageDependency& WithDependencyType(const char* value) { SetDependencyType(value); return *this;}
 

@@ -621,37 +621,37 @@ namespace Model
 
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline void SetWorkgroupName(const Aws::String& value) { m_workgroupName = value; }
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline void SetWorkgroupName(Aws::String&& value) { m_workgroupName = std::move(value); }
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline void SetWorkgroupName(const char* value) { m_workgroupName.assign(value); }
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline DescribeStatementResult& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline DescribeStatementResult& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The serverless workgroup name.</p>
+     * <p>The serverless workgroup name or Amazon Resource Name (ARN).</p>
      */
     inline DescribeStatementResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 

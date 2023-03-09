@@ -162,7 +162,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEntityOverrides() const{ return m_entityOverrides; }
 
@@ -170,7 +172,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline bool EntityOverridesHasBeenSet() const { return m_entityOverridesHasBeenSet; }
 
@@ -178,7 +182,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline void SetEntityOverrides(const Aws::Map<Aws::String, Aws::String>& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides = value; }
 
@@ -186,7 +192,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline void SetEntityOverrides(Aws::Map<Aws::String, Aws::String>&& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides = std::move(value); }
 
@@ -194,7 +202,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& WithEntityOverrides(const Aws::Map<Aws::String, Aws::String>& value) { SetEntityOverrides(value); return *this;}
 
@@ -202,7 +212,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& WithEntityOverrides(Aws::Map<Aws::String, Aws::String>&& value) { SetEntityOverrides(std::move(value)); return *this;}
 
@@ -210,7 +222,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(const Aws::String& key, const Aws::String& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(key, value); return *this; }
 
@@ -218,7 +232,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(Aws::String&& key, const Aws::String& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(std::move(key), value); return *this; }
 
@@ -226,7 +242,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(const Aws::String& key, Aws::String&& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(key, std::move(value)); return *this; }
 
@@ -234,7 +252,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(Aws::String&& key, Aws::String&& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -242,7 +262,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(const char* key, Aws::String&& value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(key, std::move(value)); return *this; }
 
@@ -250,7 +272,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(Aws::String&& key, const char* value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(std::move(key), value); return *this; }
 
@@ -258,7 +282,9 @@ namespace Model
      * <p>Specify users that should always be served a specific variation of a feature.
      * Each user is specified by a key-value pair . For each key, specify a user by
      * entering their user ID, account ID, or some other identifier. For the value,
-     * specify the name of the variation that they are to be served.</p>
+     * specify the name of the variation that they are to be served.</p> <p>This
+     * parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit
+     * includes an overhead of 6 bytes per override.</p>
      */
     inline CreateFeatureRequest& AddEntityOverrides(const char* key, const char* value) { m_entityOverridesHasBeenSet = true; m_entityOverrides.emplace(key, value); return *this; }
 

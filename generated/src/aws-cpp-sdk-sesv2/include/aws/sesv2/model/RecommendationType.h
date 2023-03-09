@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     DKIM,
     DMARC,
-    SPF
+    SPF,
+    BIMI
   };
 
 namespace RecommendationTypeMapper

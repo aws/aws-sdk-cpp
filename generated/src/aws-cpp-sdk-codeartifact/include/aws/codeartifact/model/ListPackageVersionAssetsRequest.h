@@ -230,7 +230,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -241,7 +242,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
@@ -252,7 +254,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -263,7 +266,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
@@ -274,7 +278,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
@@ -285,7 +290,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackageVersionAssetsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -296,7 +302,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackageVersionAssetsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -307,7 +314,8 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python
      * and NuGet package versions do not contain a corresponding component, package
-     * versions of those formats do not have a namespace. </p> </li> </ul>
+     * versions of those formats do not have a namespace. </p> </li> <li> <p> The
+     * namespace of a generic package is it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackageVersionAssetsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

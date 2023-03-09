@@ -2193,6 +2193,43 @@ namespace Connect
         }
 
         /**
+         * <p>Gets metric data from the specified Amazon Connect instance. </p> <p>
+         * <code>GetMetricDataV2</code> offers more features than <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
+         * the previous version of this API. It has new metrics, offers filtering at a
+         * metric level, and offers the ability to filter and group data by channels,
+         * queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
+         * historical data for last the 14 days, in 24-hour intervals.</p> <p>For a
+         * description of the historical metrics that are supported by
+         * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+         * metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
+         * <p>This API is not available in the Amazon Web Services GovCloud (US)
+         * Regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricDataV2Outcome GetMetricDataV2(const Model::GetMetricDataV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetMetricDataV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMetricDataV2RequestT = Model::GetMetricDataV2Request>
+        Model::GetMetricDataV2OutcomeCallable GetMetricDataV2Callable(const GetMetricDataV2RequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetMetricDataV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetMetricDataV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMetricDataV2RequestT = Model::GetMetricDataV2Request>
+        void GetMetricDataV2Async(const GetMetricDataV2RequestT& request, const GetMetricDataV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetMetricDataV2, request, handler, context);
+        }
+
+        /**
          * <p>Gets details about a specific task template in the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">AWS

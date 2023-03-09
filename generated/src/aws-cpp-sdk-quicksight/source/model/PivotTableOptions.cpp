@@ -31,7 +31,9 @@ PivotTableOptions::PivotTableOptions() :
     m_rowHeaderStyleHasBeenSet(false),
     m_cellStyleHasBeenSet(false),
     m_rowFieldNamesStyleHasBeenSet(false),
-    m_rowAlternateColorOptionsHasBeenSet(false)
+    m_rowAlternateColorOptionsHasBeenSet(false),
+    m_collapsedRowDimensionsVisibility(Visibility::NOT_SET),
+    m_collapsedRowDimensionsVisibilityHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ PivotTableOptions::PivotTableOptions(JsonView jsonValue) :
     m_rowHeaderStyleHasBeenSet(false),
     m_cellStyleHasBeenSet(false),
     m_rowFieldNamesStyleHasBeenSet(false),
-    m_rowAlternateColorOptionsHasBeenSet(false)
+    m_rowAlternateColorOptionsHasBeenSet(false),
+    m_collapsedRowDimensionsVisibility(Visibility::NOT_SET),
+    m_collapsedRowDimensionsVisibilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +122,13 @@ PivotTableOptions& PivotTableOptions::operator =(JsonView jsonValue)
     m_rowAlternateColorOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CollapsedRowDimensionsVisibility"))
+  {
+    m_collapsedRowDimensionsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("CollapsedRowDimensionsVisibility"));
+
+    m_collapsedRowDimensionsVisibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +184,11 @@ JsonValue PivotTableOptions::Jsonize() const
   {
    payload.WithObject("RowAlternateColorOptions", m_rowAlternateColorOptions.Jsonize());
 
+  }
+
+  if(m_collapsedRowDimensionsVisibilityHasBeenSet)
+  {
+   payload.WithString("CollapsedRowDimensionsVisibility", VisibilityMapper::GetNameForVisibility(m_collapsedRowDimensionsVisibility));
   }
 
   return payload;

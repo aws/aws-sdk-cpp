@@ -28,10 +28,12 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a model that you want to host and the resources chosen to deploy
+   * <p> Identifies a model that you want to host and the resources chosen to deploy
    * for hosting it. If you are deploying multiple models, tell SageMaker how to
-   * distribute traffic among the models by specifying variant weights.
-   * </p><p><h3>See Also:</h3>   <a
+   * distribute traffic among the models by specifying variant weights. For more
+   * information on production variants, check <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">
+   * Production variants</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant">AWS
    * API Reference</a></p>
    */
@@ -442,6 +444,47 @@ namespace Model
      */
     inline ProductionVariant& WithContainerStartupHealthCheckTimeoutInSeconds(int value) { SetContainerStartupHealthCheckTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p> You can use this parameter to turn on native Amazon Web Services Systems
+     * Manager (SSM) access for a production variant behind an endpoint. By default,
+     * SSM access is disabled for all production variants behind an endpoints. You can
+     * turn on or turn off SSM access for a production variant behind an existing
+     * endpoint by creating a new endpoint configuration and calling
+     * <code>UpdateEndpoint</code>. </p>
+     */
+    inline bool GetEnableSSMAccess() const{ return m_enableSSMAccess; }
+
+    /**
+     * <p> You can use this parameter to turn on native Amazon Web Services Systems
+     * Manager (SSM) access for a production variant behind an endpoint. By default,
+     * SSM access is disabled for all production variants behind an endpoints. You can
+     * turn on or turn off SSM access for a production variant behind an existing
+     * endpoint by creating a new endpoint configuration and calling
+     * <code>UpdateEndpoint</code>. </p>
+     */
+    inline bool EnableSSMAccessHasBeenSet() const { return m_enableSSMAccessHasBeenSet; }
+
+    /**
+     * <p> You can use this parameter to turn on native Amazon Web Services Systems
+     * Manager (SSM) access for a production variant behind an endpoint. By default,
+     * SSM access is disabled for all production variants behind an endpoints. You can
+     * turn on or turn off SSM access for a production variant behind an existing
+     * endpoint by creating a new endpoint configuration and calling
+     * <code>UpdateEndpoint</code>. </p>
+     */
+    inline void SetEnableSSMAccess(bool value) { m_enableSSMAccessHasBeenSet = true; m_enableSSMAccess = value; }
+
+    /**
+     * <p> You can use this parameter to turn on native Amazon Web Services Systems
+     * Manager (SSM) access for a production variant behind an endpoint. By default,
+     * SSM access is disabled for all production variants behind an endpoints. You can
+     * turn on or turn off SSM access for a production variant behind an existing
+     * endpoint by creating a new endpoint configuration and calling
+     * <code>UpdateEndpoint</code>. </p>
+     */
+    inline ProductionVariant& WithEnableSSMAccess(bool value) { SetEnableSSMAccess(value); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -476,6 +519,9 @@ namespace Model
 
     int m_containerStartupHealthCheckTimeoutInSeconds;
     bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
+
+    bool m_enableSSMAccess;
+    bool m_enableSSMAccessHasBeenSet = false;
   };
 
 } // namespace Model

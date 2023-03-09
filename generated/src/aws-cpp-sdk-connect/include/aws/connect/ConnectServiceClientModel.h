@@ -69,6 +69,7 @@
 #include <aws/connect/model/GetCurrentUserDataResult.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
 #include <aws/connect/model/GetMetricDataResult.h>
+#include <aws/connect/model/GetMetricDataV2Result.h>
 #include <aws/connect/model/GetTaskTemplateResult.h>
 #include <aws/connect/model/GetTrafficDistributionResult.h>
 #include <aws/connect/model/ListAgentStatusesResult.h>
@@ -252,6 +253,7 @@ namespace Aws
       class GetCurrentUserDataRequest;
       class GetFederationTokenRequest;
       class GetMetricDataRequest;
+      class GetMetricDataV2Request;
       class GetTaskTemplateRequest;
       class GetTrafficDistributionRequest;
       class ListAgentStatusesRequest;
@@ -424,6 +426,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
       typedef Aws::Utils::Outcome<GetFederationTokenResult, ConnectError> GetFederationTokenOutcome;
       typedef Aws::Utils::Outcome<GetMetricDataResult, ConnectError> GetMetricDataOutcome;
+      typedef Aws::Utils::Outcome<GetMetricDataV2Result, ConnectError> GetMetricDataV2Outcome;
       typedef Aws::Utils::Outcome<GetTaskTemplateResult, ConnectError> GetTaskTemplateOutcome;
       typedef Aws::Utils::Outcome<GetTrafficDistributionResult, ConnectError> GetTrafficDistributionOutcome;
       typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
@@ -596,6 +599,7 @@ namespace Aws
       typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
       typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
       typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
+      typedef std::future<GetMetricDataV2Outcome> GetMetricDataV2OutcomeCallable;
       typedef std::future<GetTaskTemplateOutcome> GetTaskTemplateOutcomeCallable;
       typedef std::future<GetTrafficDistributionOutcome> GetTrafficDistributionOutcomeCallable;
       typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
@@ -771,6 +775,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentUserDataRequest&, const Model::GetCurrentUserDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentUserDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::GetMetricDataV2Request&, const Model::GetMetricDataV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataV2ResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetTaskTemplateRequest&, const Model::GetTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTaskTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetTrafficDistributionRequest&, const Model::GetTrafficDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficDistributionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;

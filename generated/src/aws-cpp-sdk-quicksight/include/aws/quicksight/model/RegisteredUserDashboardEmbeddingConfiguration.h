@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/RegisteredUserDashboardFeatureConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -110,10 +111,44 @@ namespace Model
      */
     inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(const char* value) { SetInitialDashboardId(value); return *this;}
 
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline const RegisteredUserDashboardFeatureConfigurations& GetFeatureConfigurations() const{ return m_featureConfigurations; }
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline bool FeatureConfigurationsHasBeenSet() const { return m_featureConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline void SetFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = value; }
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline void SetFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = std::move(value); }
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { SetFeatureConfigurations(value); return *this;}
+
+    /**
+     * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
+     */
+    inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { SetFeatureConfigurations(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_initialDashboardId;
     bool m_initialDashboardIdHasBeenSet = false;
+
+    RegisteredUserDashboardFeatureConfigurations m_featureConfigurations;
+    bool m_featureConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

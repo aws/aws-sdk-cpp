@@ -19,12 +19,14 @@ namespace Model
 {
 
 RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration() : 
-    m_initialPathHasBeenSet(false)
+    m_initialPathHasBeenSet(false),
+    m_featureConfigurationsHasBeenSet(false)
 {
 }
 
 RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration(JsonView jsonValue) : 
-    m_initialPathHasBeenSet(false)
+    m_initialPathHasBeenSet(false),
+    m_featureConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RegisteredUserQuickSightConsoleEmbeddingConfiguration& RegisteredUserQuickSightC
     m_initialPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeatureConfigurations"))
+  {
+    m_featureConfigurations = jsonValue.GetObject("FeatureConfigurations");
+
+    m_featureConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RegisteredUserQuickSightConsoleEmbeddingConfiguration::Jsonize() const
   if(m_initialPathHasBeenSet)
   {
    payload.WithString("InitialPath", m_initialPath);
+
+  }
+
+  if(m_featureConfigurationsHasBeenSet)
+  {
+   payload.WithObject("FeatureConfigurations", m_featureConfigurations.Jsonize());
 
   }
 

@@ -218,90 +218,114 @@ namespace Model
 
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackagesRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackagesRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace used to filter requested packages. Only packages with the
-     * provided namespace will be returned. The package component that specifies its
-     * namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a
+     * <p>The namespace prefix used to filter requested packages. Only packages with a
+     * namespace that starts with the provided string value are returned. Note that
+     * although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each
+     * package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a
      * Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of
      * an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet
      * packages do not contain a corresponding component, packages of those formats do
-     * not have a namespace. </p> </li> </ul>
+     * not have a namespace. </p> </li> <li> <p> The namespace of a generic package is
+     * it’s <code>namespace</code>. </p> </li> </ul>
      */
     inline ListPackagesRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

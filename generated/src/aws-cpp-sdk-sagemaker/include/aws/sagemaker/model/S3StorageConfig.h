@@ -96,7 +96,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -106,7 +106,7 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -116,7 +116,7 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -126,7 +126,7 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -136,7 +136,7 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -146,7 +146,7 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -156,7 +156,7 @@ namespace Model
     inline S3StorageConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the
@@ -166,7 +166,7 @@ namespace Model
     inline S3StorageConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used
+     * <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used
      * to encrypt any objects written into the <code>OfflineStore</code> S3
      * location.</p> <p>The IAM <code>roleARN</code> that is passed as a parameter to
      * <code>CreateFeatureGroup</code> must have below permissions to the

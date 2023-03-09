@@ -305,28 +305,28 @@ namespace Model
 
 
     /**
-     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * <p>The active status of user. When you create an Amazon QuickSight user that's
      * not an IAM user or an Active Directory user, that user is inactive until they
      * sign in and provide a password.</p>
      */
     inline bool GetActive() const{ return m_active; }
 
     /**
-     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * <p>The active status of user. When you create an Amazon QuickSight user that's
      * not an IAM user or an Active Directory user, that user is inactive until they
      * sign in and provide a password.</p>
      */
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
-     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * <p>The active status of user. When you create an Amazon QuickSight user that's
      * not an IAM user or an Active Directory user, that user is inactive until they
      * sign in and provide a password.</p>
      */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
 
     /**
-     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * <p>The active status of user. When you create an Amazon QuickSight user that's
      * not an IAM user or an Active Directory user, that user is inactive until they
      * sign in and provide a password.</p>
      */
