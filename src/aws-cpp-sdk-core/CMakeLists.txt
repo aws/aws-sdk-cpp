@@ -39,8 +39,6 @@ endif()
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
                "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h")
 
-# Pretty sure we can use a regex here...
-# Go ahead and glob every directory so we can work around Visual Studio's crap.
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
 file(GLOB AWS_AUTH_HEADERS "include/aws/core/auth/*.h")
 file(GLOB AWS_AUTH_SIGNER_HEADERS "include/aws/core/auth/signer/*.h")
