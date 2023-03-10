@@ -49,7 +49,7 @@ namespace Aws
         };
 
         /**
-         * Wrapper for all the weird crap we need to do with timestamps.
+         * Wrapper for timestamp functionality.
          */
         class AWS_CORE_API DateTime
         {
