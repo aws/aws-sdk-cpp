@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline const Aws::String& GetFirstExecutionFrom() const{ return m_firstExecutionFrom; }
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline bool FirstExecutionFromHasBeenSet() const { return m_firstExecutionFromHasBeenSet; }
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline void SetFirstExecutionFrom(const Aws::String& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = value; }
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline void SetFirstExecutionFrom(Aws::String&& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = std::move(value); }
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline void SetFirstExecutionFrom(const char* value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom.assign(value); }
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline ScheduleConfiguration& WithFirstExecutionFrom(const Aws::String& value) { SetFirstExecutionFrom(value); return *this;}
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline ScheduleConfiguration& WithFirstExecutionFrom(Aws::String&& value) { SetFirstExecutionFrom(std::move(value)); return *this;}
 
     /**
-     * <p>The start date for objects to import in the first flow run.</p>
+     * <p>The start date for objects to import in the first flow run as an Unix/epoch
+     * timestamp in milliseconds or in ISO-8601 format.</p>
      */
     inline ScheduleConfiguration& WithFirstExecutionFrom(const char* value) { SetFirstExecutionFrom(value); return *this;}
 

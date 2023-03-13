@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
@@ -198,7 +198,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
@@ -222,7 +222,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }

@@ -35,10 +35,11 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for a PUT Copy object operation. S3
-   * Batch Operations passes every object to the underlying PUT Copy object API. For
-   * more information about the parameters for this operation, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
-   * Object - Copy</a>.</p><p><h3>See Also:</h3>   <a
+   * Batch Operations passes every object to the underlying <code>CopyObject</code>
+   * API operation. For more information about the parameters for this operation, see
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">CopyObject</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3CopyObjectOperation">AWS
    * API Reference</a></p>
    */
@@ -53,65 +54,65 @@ namespace Model
 
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
-     * the <code>TargetResource</code> property to
+     * <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch
+     * copy operation. For example, to copy objects to a bucket named
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
      * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}
@@ -517,58 +518,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline const Aws::String& GetTargetKeyPrefix() const{ return m_targetKeyPrefix; }
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline bool TargetKeyPrefixHasBeenSet() const { return m_targetKeyPrefixHasBeenSet; }
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const Aws::String& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = value; }
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(Aws::String&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::move(value); }
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline void SetTargetKeyPrefix(const char* value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix.assign(value); }
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const Aws::String& value) { SetTargetKeyPrefix(value); return *this;}
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(Aws::String&& value) { SetTargetKeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the folder prefix into which you would like the objects to be
-     * copied. For example, to copy objects into a folder named <code>Folder1</code> in
-     * the destination bucket, set the TargetKeyPrefix to <code>Folder1</code>.</p>
+     * <p>Specifies the folder prefix that you want the objects to be copied into. For
+     * example, to copy objects into a folder named <code>Folder1</code> in the
+     * destination bucket, set the <code>TargetKeyPrefix</code> property to
+     * <code>Folder1</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const char* value) { SetTargetKeyPrefix(value); return *this;}
 
@@ -726,48 +735,48 @@ namespace Model
 
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const S3ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetChecksumAlgorithm(const S3ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetChecksumAlgorithm(S3ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline S3CopyObjectOperation& WithChecksumAlgorithm(const S3ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum. For
-     * more information see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the
+     * checksum. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */

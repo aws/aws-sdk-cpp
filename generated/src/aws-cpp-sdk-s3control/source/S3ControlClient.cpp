@@ -34,6 +34,7 @@
 #include <aws/s3control/model/DeleteBucketRequest.h>
 #include <aws/s3control/model/DeleteBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/DeleteBucketPolicyRequest.h>
+#include <aws/s3control/model/DeleteBucketReplicationRequest.h>
 #include <aws/s3control/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3control/model/DeleteJobTaggingRequest.h>
 #include <aws/s3control/model/DeleteMultiRegionAccessPointRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/s3control/model/GetBucketRequest.h>
 #include <aws/s3control/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/GetBucketPolicyRequest.h>
+#include <aws/s3control/model/GetBucketReplicationRequest.h>
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
 #include <aws/s3control/model/GetBucketVersioningRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/s3control/model/PutAccessPointPolicyForObjectLambdaRequest.h>
 #include <aws/s3control/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
+#include <aws/s3control/model/PutBucketReplicationRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/model/PutBucketVersioningRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
@@ -481,6 +484,29 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   return DeleteBucketPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketReplication", "Required field: Bucket, is not set");
+    return DeleteBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketReplication", "HostPrefix required field: AccountId has invalid value");
+    return DeleteBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteBucketReplicationOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+  return DeleteBucketReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
@@ -910,6 +936,29 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   return GetBucketPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucketReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketReplication", "Required field: Bucket, is not set");
+    return GetBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketReplication", "HostPrefix required field: AccountId has invalid value");
+    return GetBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetBucketReplicationOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+  return GetBucketReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTaggingRequest& request) const
@@ -1392,6 +1441,29 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
   endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   return PutBucketPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucketReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketReplication", "Required field: Bucket, is not set");
+    return PutBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketReplication", "HostPrefix required field: AccountId has invalid value");
+    return PutBucketReplicationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PutBucketReplicationOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+  return PutBucketReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTaggingRequest& request) const

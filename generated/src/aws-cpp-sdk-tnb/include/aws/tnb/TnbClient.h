@@ -115,7 +115,7 @@ namespace tnb
          * AWS TNB. This request creates an empty container with an ID. The next step is to
          * upload the actual CSAR zip file into that empty container. To upload function
          * package content, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolFunctionPackage">AWS
          * API Reference</a></p>
@@ -150,7 +150,7 @@ namespace tnb
          * instances</a> in the <i>Amazon Web Services Telco Network Builder User
          * Guide</i>.</p> <p>Once you create a network instance, you can instantiate it. To
          * instantiate a network, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_InstantiateSolNetworkInstance.html">InstantiateSolNetworkInstance</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkInstance">AWS
          * API Reference</a></p>
@@ -189,7 +189,7 @@ namespace tnb
          * should run in certain VPCs, subnets, or EKS clusters.</p> <p>This request
          * creates an empty network package container with an ID. Once you create a network
          * package, you can upload the network package content using <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkPackage">AWS
          * API Reference</a></p>
@@ -221,7 +221,7 @@ namespace tnb
          * uses the TOSCA standard to describe how the network functions should run on your
          * network.</p> <p>To delete a function package, the package must be in a disabled
          * state. To disable a function package, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_UpdateSolFunctionPackage.html">UpdateSolFunctionPackage</a>.
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolFunctionPackage.html">UpdateSolFunctionPackage</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolFunctionPackage">AWS
          * API Reference</a></p>
@@ -252,7 +252,7 @@ namespace tnb
          * operations (like terminate, update, and delete) can be performed.</p> <p>To
          * delete a network instance, the instance must be in a stopped or terminated
          * state. To terminate a network instance, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_TerminateSolNetworkInstance.html">TerminateSolNetworkInstance</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkInstance">AWS
          * API Reference</a></p>
@@ -283,7 +283,7 @@ namespace tnb
          * and the Amazon Web Services infrastructure you want to deploy them on.</p> <p>To
          * delete a network package, the package must be in a disable state. To disable a
          * network package, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkPackage">AWS
          * API Reference</a></p>
@@ -574,7 +574,7 @@ namespace tnb
          * life-cycle operations (like terminate, update, and delete) can be performed.</p>
          * <p>Before you can instantiate a network instance, you have to create a network
          * instance. For more information, see <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_CreateSolNetworkInstance.html">CreateSolNetworkInstance</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolNetworkInstance.html">CreateSolNetworkInstance</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/InstantiateSolNetworkInstance">AWS
          * API Reference</a></p>
@@ -996,7 +996,7 @@ namespace tnb
         /**
          * <p>Validates function package content. This can be used as a dry run before
          * uploading function package content with <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p>
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p>
          * <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that
          * contains a network function (an ETSI standard telecommunication application) and
          * function package descriptor that uses the TOSCA standard to describe how the
@@ -1027,7 +1027,7 @@ namespace tnb
         /**
          * <p>Validates network package content. This can be used as a dry run before
          * uploading network package content with <a
-         * href="https://docs.aws.amazon.com/TNB/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p>
+         * href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p>
          * <p>A network package is a .zip file in CSAR (Cloud Service Archive) format
          * defines the function packages you want to deploy and the Amazon Web Services
          * infrastructure you want to deploy them on.</p><p><h3>See Also:</h3>   <a

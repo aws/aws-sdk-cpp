@@ -8,6 +8,7 @@
 #include <aws/tnb/TnbRequest.h>
 #include <aws/tnb/model/UpdateSolNetworkModify.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/tnb/model/UpdateSolNetworkType.h>
 #include <utility>
 
@@ -113,6 +114,111 @@ namespace Model
 
 
     /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * consists of a key and an optional value. When you use this API, the tags are
+     * transferred to the network operation that is created. Use tags to search and
+     * filter your resources or track your Amazon Web Services costs.</p>
+     */
+    inline UpdateSolNetworkInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The type of update.</p>
      */
     inline const UpdateSolNetworkType& GetUpdateType() const{ return m_updateType; }
@@ -149,6 +255,9 @@ namespace Model
 
     Aws::String m_nsInstanceId;
     bool m_nsInstanceIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     UpdateSolNetworkType m_updateType;
     bool m_updateTypeHasBeenSet = false;

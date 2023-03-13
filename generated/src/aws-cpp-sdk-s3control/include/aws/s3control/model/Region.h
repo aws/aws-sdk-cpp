@@ -78,10 +78,62 @@ namespace Model
      */
     inline Region& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline Region& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline Region& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
+     * associated with this Multi-Region Access Point.</p>
+     */
+    inline Region& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+
   private:
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet = false;
+
+    Aws::String m_bucketAccountId;
+    bool m_bucketAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

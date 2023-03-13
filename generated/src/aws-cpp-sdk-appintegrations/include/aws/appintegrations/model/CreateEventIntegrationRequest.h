@@ -191,115 +191,152 @@ namespace Model
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateEventIntegrationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateEventIntegrationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateEventIntegrationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateEventIntegrationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

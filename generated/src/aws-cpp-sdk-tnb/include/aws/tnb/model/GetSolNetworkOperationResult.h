@@ -76,27 +76,27 @@ namespace Model
 
 
     /**
-     * <p>Error related to this specific network operation occurence.</p>
+     * <p>Error related to this specific network operation occurrence.</p>
      */
     inline const ProblemDetails& GetError() const{ return m_error; }
 
     /**
-     * <p>Error related to this specific network operation occurence.</p>
+     * <p>Error related to this specific network operation occurrence.</p>
      */
     inline void SetError(const ProblemDetails& value) { m_error = value; }
 
     /**
-     * <p>Error related to this specific network operation occurence.</p>
+     * <p>Error related to this specific network operation occurrence.</p>
      */
     inline void SetError(ProblemDetails&& value) { m_error = std::move(value); }
 
     /**
-     * <p>Error related to this specific network operation occurence.</p>
+     * <p>Error related to this specific network operation occurrence.</p>
      */
     inline GetSolNetworkOperationResult& WithError(const ProblemDetails& value) { SetError(value); return *this;}
 
     /**
-     * <p>Error related to this specific network operation occurence.</p>
+     * <p>Error related to this specific network operation occurrence.</p>
      */
     inline GetSolNetworkOperationResult& WithError(ProblemDetails&& value) { SetError(std::move(value)); return *this;}
 

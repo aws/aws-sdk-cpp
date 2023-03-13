@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Metadata related to a network operation occurence.</p> <p>A network operation
-   * is any operation that is done to your network, such as network instance
-   * instantiation or termination.</p><p><h3>See Also:</h3>   <a
+   * <p>Metadata related to a network operation occurrence.</p> <p>A network
+   * operation is any operation that is done to your network, such as network
+   * instance instantiation or termination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkOperationMetadata">AWS
    * API Reference</a></p>
    */
