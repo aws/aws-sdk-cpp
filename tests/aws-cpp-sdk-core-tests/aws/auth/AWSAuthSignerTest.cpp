@@ -50,6 +50,11 @@ static std::shared_ptr<Aws::Auth::AWSCredentialsProvider> MakeStaticCredentialsP
     return Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>(ALLOC_TAG, "AKIDEXAMPLE", "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY");
 }
 
+static std::shared_ptr<Aws::Auth::AWSCredentialsProvider> MakeStaticFailingCredentialsProvider()
+{
+    return Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>(ALLOC_TAG, "", "");
+}
+
 static DateTime ParseTestFileDateTime(const char* dateStr)
 {
     Aws::StringStream ss;
@@ -464,6 +469,27 @@ TEST(AWSAuthSignerTest, HeadersWithEmptyValues)
 
     ASSERT_TRUE(signer.SignRequest(request, false/*signPayload*/));
     ASSERT_STREQ(UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
+}
+
+TEST(AWSAuthSignerTest, SignWithoutCredentials)
+{
+    //Load request from get-vanilla test case with valid request params.
+    Aws::String requestFileName = MakeSigV4ResourceFilePath("get-vanilla", "req");
+    Aws::FStream requestFile(requestFileName.c_str(), std::ios::in);
+    ASSERT_TRUE(requestFile.good());
+
+    Aws::String expectedSignatureFileName = MakeSigV4ResourceFilePath("get-vanilla", "sigv4.authz");
+    Aws::FStream signatureFile(expectedSignatureFileName.c_str(), std::ios::in);
+    ASSERT_TRUE(signatureFile.good());
+
+    DateTime timestampForSigner;
+    auto request = ParseHttpRequest(requestFile, timestampForSigner, Scheme::HTTP);
+
+    //Credentials provider that will fail to create valid credentials.
+    auto credProvider = MakeStaticFailingCredentialsProvider();
+
+    AWSAuthV4Signer signer(credProvider, "service", "us-east-1", AWSAuthV4Signer::PayloadSigningPolicy::Never, false);
+    ASSERT_FALSE(signer.SignRequest(request, false/*signPayload*/));
 }
 
 TEST(AWSAuthSignerTest, PayloadSigningPolicyNever)

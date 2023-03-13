@@ -195,7 +195,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
     {
-        return true;
+        return false;
     }
 
     request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
