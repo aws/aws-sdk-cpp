@@ -185,7 +185,7 @@ namespace Model
      * and so on) to the formerly active Region will continue to run to until a final
      * success or failure status is reached.</p> <p>If all Regions in the routing
      * configuration are designated as passive, you'll receive an
-     * <code>InvalidRequest</code> error. </p>
+     * <code>InvalidRequest</code> error.</p>
      */
     inline int GetTrafficDialPercentage() const{ return m_trafficDialPercentage; }
 
@@ -199,7 +199,7 @@ namespace Model
      * and so on) to the formerly active Region will continue to run to until a final
      * success or failure status is reached.</p> <p>If all Regions in the routing
      * configuration are designated as passive, you'll receive an
-     * <code>InvalidRequest</code> error. </p>
+     * <code>InvalidRequest</code> error.</p>
      */
     inline bool TrafficDialPercentageHasBeenSet() const { return m_trafficDialPercentageHasBeenSet; }
 
@@ -213,7 +213,7 @@ namespace Model
      * and so on) to the formerly active Region will continue to run to until a final
      * success or failure status is reached.</p> <p>If all Regions in the routing
      * configuration are designated as passive, you'll receive an
-     * <code>InvalidRequest</code> error. </p>
+     * <code>InvalidRequest</code> error.</p>
      */
     inline void SetTrafficDialPercentage(int value) { m_trafficDialPercentageHasBeenSet = true; m_trafficDialPercentage = value; }
 
@@ -227,7 +227,7 @@ namespace Model
      * and so on) to the formerly active Region will continue to run to until a final
      * success or failure status is reached.</p> <p>If all Regions in the routing
      * configuration are designated as passive, you'll receive an
-     * <code>InvalidRequest</code> error. </p>
+     * <code>InvalidRequest</code> error.</p>
      */
     inline MultiRegionAccessPointRoute& WithTrafficDialPercentage(int value) { SetTrafficDialPercentage(value); return *this;}
 

@@ -40,128 +40,136 @@ namespace Model
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline const Aws::String& GetTemplateUri() const{ return m_templateUri; }
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline bool TemplateUriHasBeenSet() const { return m_templateUriHasBeenSet; }
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline void SetTemplateUri(const Aws::String& value) { m_templateUriHasBeenSet = true; m_templateUri = value; }
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline void SetTemplateUri(Aws::String&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::move(value); }
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline void SetTemplateUri(const char* value) { m_templateUriHasBeenSet = true; m_templateUri.assign(value); }
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline RenderingConfiguration& WithTemplateUri(const Aws::String& value) { SetTemplateUri(value); return *this;}
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline RenderingConfiguration& WithTemplateUri(Aws::String&& value) { SetTemplateUri(std::move(value)); return *this;}
 
     /**
      * <p>A URI template containing exactly one variable in <code>${variableName}
      * </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases.
-     * For Salesforce and ServiceNow, the variable must be one of the following:</p>
-     * <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>,
-     * <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or
-     * <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>,
-     * <code>short_description</code>, <code>sys_mod_count</code>,
-     * <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code>
-     * &lt;p&gt;The variable is replaced with the actual value for a piece of content
-     * when calling &lt;a
-     * href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-     * &lt;/p&gt; </code></pre>
+     * For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:</p> <ul> <li> <p>Salesforce: <code>Id</code>,
+     * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+     * <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li>
+     * <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+     * <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+     * </p> </li> <li> <p>Zendesk: <code>id</code>, <code>title</code>,
+     * <code>updated_at</code>, or <code>draft</code> </p> </li> </ul> <p>The variable
+     * is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     inline RenderingConfiguration& WithTemplateUri(const char* value) { SetTemplateUri(value); return *this;}
 

@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appintegrations/model/ScheduleConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appintegrations/model/FileConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -277,64 +279,158 @@ namespace Model
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline GetDataIntegrationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline const FileConfiguration& GetFileConfiguration() const{ return m_fileConfiguration; }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline void SetFileConfiguration(const FileConfiguration& value) { m_fileConfiguration = value; }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline void SetFileConfiguration(FileConfiguration&& value) { m_fileConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& WithFileConfiguration(const FileConfiguration& value) { SetFileConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& WithFileConfiguration(FileConfiguration&& value) { SetFileConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetObjectConfiguration() const{ return m_objectConfiguration; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline void SetObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_objectConfiguration = value; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline void SetObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_objectConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& WithObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetObjectConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& WithObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetObjectConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfiguration.emplace(key, value); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfiguration.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfiguration.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfiguration.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline GetDataIntegrationResult& AddObjectConfiguration(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfiguration.emplace(key, value); return *this; }
 
   private:
 
@@ -353,6 +449,10 @@ namespace Model
     ScheduleConfiguration m_scheduleConfiguration;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    FileConfiguration m_fileConfiguration;
+
+    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_objectConfiguration;
   };
 
 } // namespace Model

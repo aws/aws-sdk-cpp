@@ -13,13 +13,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 TerminateSolNetworkInstanceRequest::TerminateSolNetworkInstanceRequest() : 
-    m_nsInstanceIdHasBeenSet(false)
+    m_nsInstanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 Aws::String TerminateSolNetworkInstanceRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

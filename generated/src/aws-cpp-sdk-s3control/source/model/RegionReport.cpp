@@ -22,13 +22,15 @@ namespace Model
 
 RegionReport::RegionReport() : 
     m_bucketHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
 }
 
 RegionReport::RegionReport(const XmlNode& xmlNode) : 
     m_bucketHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ RegionReport& RegionReport::operator =(const XmlNode& xmlNode)
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
     }
+    XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
+    if(!bucketAccountIdNode.IsNull())
+    {
+      m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
+      m_bucketAccountIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,6 +77,12 @@ void RegionReport::AddToNode(XmlNode& parentNode) const
   {
    XmlNode regionNode = parentNode.CreateChildElement("Region");
    regionNode.SetText(m_region);
+  }
+
+  if(m_bucketAccountIdHasBeenSet)
+  {
+   XmlNode bucketAccountIdNode = parentNode.CreateChildElement("BucketAccountId");
+   bucketAccountIdNode.SetText(m_bucketAccountId);
   }
 
 }

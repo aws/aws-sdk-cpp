@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateSolNetworkInstanceRequest::UpdateSolNetworkInstanceRequest() : 
     m_modifyVnfInfoDataHasBeenSet(false),
     m_nsInstanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_updateType(UpdateSolNetworkType::NOT_SET),
     m_updateTypeHasBeenSet(false)
 {
@@ -27,6 +28,17 @@ Aws::String UpdateSolNetworkInstanceRequest::SerializePayload() const
   if(m_modifyVnfInfoDataHasBeenSet)
   {
    payload.WithObject("modifyVnfInfoData", m_modifyVnfInfoData.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

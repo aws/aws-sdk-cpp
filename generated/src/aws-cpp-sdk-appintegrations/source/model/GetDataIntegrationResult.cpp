@@ -79,6 +79,34 @@ GetDataIntegrationResult& GetDataIntegrationResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("FileConfiguration"))
+  {
+    m_fileConfiguration = jsonValue.GetObject("FileConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ObjectConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonView> objectConfigurationJsonMap = jsonValue.GetObject("ObjectConfiguration").GetAllObjects();
+    for(auto& objectConfigurationItem : objectConfigurationJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> fieldsMapJsonMap = objectConfigurationItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::Vector<Aws::String>> fieldsMapMap;
+      for(auto& fieldsMapItem : fieldsMapJsonMap)
+      {
+        Aws::Utils::Array<JsonView> fieldsListJsonList = fieldsMapItem.second.AsArray();
+        Aws::Vector<Aws::String> fieldsListList;
+        fieldsListList.reserve((size_t)fieldsListJsonList.GetLength());
+        for(unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex)
+        {
+          fieldsListList.push_back(fieldsListJsonList[fieldsListIndex].AsString());
+        }
+        fieldsMapMap[fieldsMapItem.first] = std::move(fieldsListList);
+      }
+      m_objectConfiguration[objectConfigurationItem.first] = std::move(fieldsMapMap);
+    }
+  }
+
 
 
   return *this;

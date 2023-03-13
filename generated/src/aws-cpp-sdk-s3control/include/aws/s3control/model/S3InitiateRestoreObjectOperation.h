@@ -23,9 +23,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the configuration parameters for an S3 Initiate Restore Object job.
-   * S3 Batch Operations passes every object to the underlying POST Object restore
-   * API. For more information about the parameters for this operation, see <a
+   * <p>Contains the configuration parameters for a POST Object restore job. S3 Batch
+   * Operations passes every object to the underlying <code>RestoreObject</code> API
+   * operation. For more information about the parameters for this operation, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3InitiateRestoreObjectOperation">AWS

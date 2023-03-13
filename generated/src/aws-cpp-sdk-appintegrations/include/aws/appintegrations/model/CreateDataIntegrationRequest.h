@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appintegrations/model/ScheduleConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appintegrations/model/FileConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -231,118 +233,247 @@ namespace Model
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateDataIntegrationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateDataIntegrationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateDataIntegrationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline CreateDataIntegrationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline const FileConfiguration& GetFileConfiguration() const{ return m_fileConfiguration; }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline bool FileConfigurationHasBeenSet() const { return m_fileConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline void SetFileConfiguration(const FileConfiguration& value) { m_fileConfigurationHasBeenSet = true; m_fileConfiguration = value; }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline void SetFileConfiguration(FileConfiguration&& value) { m_fileConfigurationHasBeenSet = true; m_fileConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& WithFileConfiguration(const FileConfiguration& value) { SetFileConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for what files should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& WithFileConfiguration(FileConfiguration&& value) { SetFileConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetObjectConfiguration() const{ return m_objectConfiguration; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline bool ObjectConfigurationHasBeenSet() const { return m_objectConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline void SetObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration = value; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline void SetObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& WithObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetObjectConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& WithObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetObjectConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, value); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration for what data should be pulled from the source.</p>
+     */
+    inline CreateDataIntegrationRequest& AddObjectConfiguration(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, value); return *this; }
 
   private:
 
@@ -366,6 +497,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    FileConfiguration m_fileConfiguration;
+    bool m_fileConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_objectConfiguration;
+    bool m_objectConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

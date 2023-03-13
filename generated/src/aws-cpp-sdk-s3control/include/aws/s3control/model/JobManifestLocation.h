@@ -39,74 +39,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline const Aws::String& GetObjectArn() const{ return m_objectArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline bool ObjectArnHasBeenSet() const { return m_objectArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetObjectArn(const Aws::String& value) { m_objectArnHasBeenSet = true; m_objectArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetObjectArn(Aws::String&& value) { m_objectArnHasBeenSet = true; m_objectArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetObjectArn(const char* value) { m_objectArnHasBeenSet = true; m_objectArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline JobManifestLocation& WithObjectArn(const Aws::String& value) { SetObjectArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline JobManifestLocation& WithObjectArn(Aws::String&& value) { SetObjectArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a manifest object.</p> 
-     * <p>Replacement must be made for object keys containing special characters (such
-     * as carriage returns) when using XML requests. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) for a manifest object.</p>  <p>When
+     * you're using XML requests, you must replace special characters (such as carriage
+     * returns) in object keys with their equivalent XML entity codes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-     * XML related object key constraints</a>.</p> 
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline JobManifestLocation& WithObjectArn(const char* value) { SetObjectArn(value); return *this;}
 

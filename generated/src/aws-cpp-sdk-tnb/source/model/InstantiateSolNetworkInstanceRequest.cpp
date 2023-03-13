@@ -19,7 +19,8 @@ InstantiateSolNetworkInstanceRequest::InstantiateSolNetworkInstanceRequest() :
     m_additionalParamsForNsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false)
+    m_nsInstanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,17 @@ Aws::String InstantiateSolNetworkInstanceRequest::SerializePayload() const
     {
        payload.WithObject("additionalParamsForNs", JsonValue(m_additionalParamsForNs.View()));
     }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

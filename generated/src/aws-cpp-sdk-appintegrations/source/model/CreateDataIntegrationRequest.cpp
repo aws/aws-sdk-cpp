@@ -20,7 +20,9 @@ CreateDataIntegrationRequest::CreateDataIntegrationRequest() :
     m_scheduleConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_fileConfigurationHasBeenSet(false),
+    m_objectConfigurationHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,33 @@ Aws::String CreateDataIntegrationRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_fileConfigurationHasBeenSet)
+  {
+   payload.WithObject("FileConfiguration", m_fileConfiguration.Jsonize());
+
+  }
+
+  if(m_objectConfigurationHasBeenSet)
+  {
+   JsonValue objectConfigurationJsonMap;
+   for(auto& objectConfigurationItem : m_objectConfiguration)
+   {
+     JsonValue fieldsMapJsonMap;
+     for(auto& fieldsMapItem : objectConfigurationItem.second)
+     {
+       Aws::Utils::Array<JsonValue> fieldsListJsonList(fieldsMapItem.second.size());
+       for(unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex)
+       {
+         fieldsListJsonList[fieldsListIndex].AsString(fieldsMapItem.second[fieldsListIndex]);
+       }
+       fieldsMapJsonMap.WithArray(fieldsMapItem.first, std::move(fieldsListJsonList));
+     }
+     objectConfigurationJsonMap.WithObject(objectConfigurationItem.first, std::move(fieldsMapJsonMap));
+   }
+   payload.WithObject("ObjectConfiguration", std::move(objectConfigurationJsonMap));
 
   }
 
