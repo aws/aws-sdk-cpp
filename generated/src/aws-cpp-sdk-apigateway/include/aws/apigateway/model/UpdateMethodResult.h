@@ -669,6 +669,28 @@ namespace Model
      */
     inline UpdateMethodResult& AddAuthorizationScopes(const char* value) { m_authorizationScopes.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateMethodResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateMethodResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateMethodResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_httpMethod;
@@ -692,6 +714,8 @@ namespace Model
     Integration m_methodIntegration;
 
     Aws::Vector<Aws::String> m_authorizationScopes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

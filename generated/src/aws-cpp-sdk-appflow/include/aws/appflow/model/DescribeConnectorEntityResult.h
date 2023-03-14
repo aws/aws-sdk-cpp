@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/ConnectorEntityField.h>
 #include <utility>
 
@@ -82,9 +83,33 @@ namespace Model
      */
     inline DescribeConnectorEntityResult& AddConnectorEntityFields(ConnectorEntityField&& value) { m_connectorEntityFields.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeConnectorEntityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeConnectorEntityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeConnectorEntityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ConnectorEntityField> m_connectorEntityFields;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

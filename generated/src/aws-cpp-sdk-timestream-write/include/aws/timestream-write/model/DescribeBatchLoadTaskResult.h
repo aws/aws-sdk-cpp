@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/timestream-write/model/BatchLoadTaskDescription.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribeBatchLoadTaskResult& WithBatchLoadTaskDescription(BatchLoadTaskDescription&& value) { SetBatchLoadTaskDescription(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeBatchLoadTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeBatchLoadTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeBatchLoadTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BatchLoadTaskDescription m_batchLoadTaskDescription;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

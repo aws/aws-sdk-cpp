@@ -123,11 +123,35 @@ namespace Model
      */
     inline GetTagKeysResult& AddTagKeys(const char* value) { m_tagKeys.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetTagKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetTagKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetTagKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_paginationToken;
 
     Aws::Vector<Aws::String> m_tagKeys;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

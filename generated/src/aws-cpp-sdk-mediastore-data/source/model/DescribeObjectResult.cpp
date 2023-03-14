@@ -63,6 +63,12 @@ DescribeObjectResult& DescribeObjectResult::operator =(const Aws::AmazonWebServi
     m_lastModified = DateTime(lastModifiedIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
 
   return *this;
 }

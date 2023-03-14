@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,6 +30,13 @@ CreateVirtualGatewayResult& CreateVirtualGatewayResult::operator =(const Aws::Am
 {
   JsonView jsonValue = result.GetPayload().View();
   m_virtualGateway = jsonValue;
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
 
   return *this;

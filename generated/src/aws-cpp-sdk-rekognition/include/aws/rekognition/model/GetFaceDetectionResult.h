@@ -233,6 +233,28 @@ namespace Model
      */
     inline GetFaceDetectionResult& AddFaces(FaceDetection&& value) { m_faces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetFaceDetectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetFaceDetectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetFaceDetectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -244,6 +266,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<FaceDetection> m_faces;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

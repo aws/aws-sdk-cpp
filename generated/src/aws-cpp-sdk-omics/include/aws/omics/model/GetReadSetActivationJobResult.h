@@ -257,6 +257,28 @@ namespace Model
      */
     inline GetReadSetActivationJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetReadSetActivationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetReadSetActivationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetReadSetActivationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_completionTime;
@@ -272,6 +294,8 @@ namespace Model
     ReadSetActivationJobStatus m_status;
 
     Aws::String m_statusMessage;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

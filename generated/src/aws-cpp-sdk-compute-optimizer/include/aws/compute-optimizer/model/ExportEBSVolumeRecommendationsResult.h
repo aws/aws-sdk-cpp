@@ -98,11 +98,35 @@ namespace Model
     
     inline ExportEBSVolumeRecommendationsResult& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ExportEBSVolumeRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ExportEBSVolumeRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ExportEBSVolumeRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
 
     S3Destination m_s3Destination;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

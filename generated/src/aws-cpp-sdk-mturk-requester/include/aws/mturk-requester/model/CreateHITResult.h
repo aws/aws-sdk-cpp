@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/HIT.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,33 @@ namespace Model
      */
     inline CreateHITResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateHITResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateHITResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateHITResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     HIT m_hIT;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

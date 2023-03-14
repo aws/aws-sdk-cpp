@@ -170,6 +170,28 @@ namespace Model
      */
     inline SearchFacesByImageResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SearchFacesByImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SearchFacesByImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SearchFacesByImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BoundingBox m_searchedFaceBoundingBox;
@@ -179,6 +201,8 @@ namespace Model
     Aws::Vector<FaceMatch> m_faceMatches;
 
     Aws::String m_faceModelVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

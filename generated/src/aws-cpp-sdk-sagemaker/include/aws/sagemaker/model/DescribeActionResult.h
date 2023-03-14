@@ -430,6 +430,28 @@ namespace Model
      */
     inline DescribeActionResult& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_actionName;
@@ -457,6 +479,8 @@ namespace Model
     MetadataProperties m_metadataProperties;
 
     Aws::String m_lineageGroupArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

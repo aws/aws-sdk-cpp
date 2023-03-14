@@ -260,6 +260,28 @@ namespace Model
      */
     inline CreateExtensionAssociationResult& WithExtensionVersionNumber(int value) { SetExtensionVersionNumber(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateExtensionAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateExtensionAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateExtensionAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -273,6 +295,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_parameters;
 
     int m_extensionVersionNumber;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

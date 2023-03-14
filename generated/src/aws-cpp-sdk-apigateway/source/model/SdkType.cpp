@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/SdkType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -22,7 +23,8 @@ SdkType::SdkType() :
     m_idHasBeenSet(false),
     m_friendlyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_configurationPropertiesHasBeenSet(false)
+    m_configurationPropertiesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,8 @@ SdkType::SdkType(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_friendlyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_configurationPropertiesHasBeenSet(false)
+    m_configurationPropertiesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

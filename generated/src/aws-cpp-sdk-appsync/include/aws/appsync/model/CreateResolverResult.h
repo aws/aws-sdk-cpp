@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/model/Resolver.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline CreateResolverResult& WithResolver(Resolver&& value) { SetResolver(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateResolverResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateResolverResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateResolverResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Resolver m_resolver;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

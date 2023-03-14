@@ -33,7 +33,8 @@ PutSessionResult::PutSessionResult(PutSessionResult&& toMove) :
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_audioStream(std::move(toMove.m_audioStream)),
     m_sessionId(std::move(toMove.m_sessionId)),
-    m_activeContexts(std::move(toMove.m_activeContexts))
+    m_activeContexts(std::move(toMove.m_activeContexts)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -55,6 +56,7 @@ PutSessionResult& PutSessionResult::operator=(PutSessionResult&& toMove)
    m_audioStream = std::move(toMove.m_audioStream);
    m_sessionId = std::move(toMove.m_sessionId);
    m_activeContexts = std::move(toMove.m_activeContexts);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -129,6 +131,12 @@ PutSessionResult& PutSessionResult::operator =(Aws::AmazonWebServiceResult<Respo
   if(activeContextsIter != headers.end())
   {
     m_activeContexts = activeContextsIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

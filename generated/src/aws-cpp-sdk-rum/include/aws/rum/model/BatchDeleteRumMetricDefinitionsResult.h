@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rum/model/BatchDeleteRumMetricDefinitionsError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rum/model/BatchDeleteRumMetricDefinitionsError.h>
 #include <utility>
 
 namespace Aws
@@ -110,11 +110,35 @@ namespace Model
      */
     inline BatchDeleteRumMetricDefinitionsResult& AddMetricDefinitionIds(const char* value) { m_metricDefinitionIds.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchDeleteRumMetricDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchDeleteRumMetricDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchDeleteRumMetricDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<BatchDeleteRumMetricDefinitionsError> m_errors;
 
     Aws::Vector<Aws::String> m_metricDefinitionIds;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/glue/model/Job.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/Job.h>
 #include <utility>
 
 namespace Aws
@@ -110,11 +110,35 @@ namespace Model
      */
     inline BatchGetJobsResult& AddJobsNotFound(const char* value) { m_jobsNotFound.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Job> m_jobs;
 
     Aws::Vector<Aws::String> m_jobsNotFound;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

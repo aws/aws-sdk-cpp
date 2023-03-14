@@ -5,6 +5,7 @@
 
 #include <aws/lambda/model/AliasConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ AliasConfiguration::AliasConfiguration() :
     m_functionVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,8 @@ AliasConfiguration::AliasConfiguration(JsonView jsonValue) :
     m_functionVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

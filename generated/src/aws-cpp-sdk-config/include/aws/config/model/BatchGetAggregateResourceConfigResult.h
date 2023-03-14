@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/BaseConfigurationItem.h>
 #include <aws/config/model/AggregateResourceIdentifier.h>
 #include <utility>
@@ -112,11 +113,35 @@ namespace Model
      */
     inline BatchGetAggregateResourceConfigResult& AddUnprocessedResourceIdentifiers(AggregateResourceIdentifier&& value) { m_unprocessedResourceIdentifiers.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetAggregateResourceConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetAggregateResourceConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetAggregateResourceConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
 
     Aws::Vector<AggregateResourceIdentifier> m_unprocessedResourceIdentifiers;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

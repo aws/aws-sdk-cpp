@@ -22,7 +22,8 @@ GetMediaResult::GetMediaResult()
 
 GetMediaResult::GetMediaResult(GetMediaResult&& toMove) : 
     m_contentType(std::move(toMove.m_contentType)),
-    m_payload(std::move(toMove.m_payload))
+    m_payload(std::move(toMove.m_payload)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -35,6 +36,7 @@ GetMediaResult& GetMediaResult::operator=(GetMediaResult&& toMove)
 
    m_contentType = std::move(toMove.m_contentType);
    m_payload = std::move(toMove.m_payload);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -53,6 +55,12 @@ GetMediaResult& GetMediaResult::operator =(Aws::AmazonWebServiceResult<ResponseS
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

@@ -578,6 +578,31 @@ namespace Model
      */
     inline LaunchConfigurationTemplate& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod&& value) { SetTargetInstanceTypeRightSizingMethod(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    
+    inline LaunchConfigurationTemplate& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline LaunchConfigurationTemplate& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline LaunchConfigurationTemplate& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -630,6 +655,9 @@ namespace Model
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
     bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

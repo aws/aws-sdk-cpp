@@ -5,6 +5,7 @@
 
 #include <aws/appconfig/model/Application.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,16 @@ namespace Model
 Application::Application() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 Application::Application(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

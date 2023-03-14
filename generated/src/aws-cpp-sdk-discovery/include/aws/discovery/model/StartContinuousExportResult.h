@@ -248,6 +248,28 @@ namespace Model
      */
     inline StartContinuousExportResult& AddSchemaStorageConfig(const char* key, const char* value) { m_schemaStorageConfig.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartContinuousExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartContinuousExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartContinuousExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_exportId;
@@ -259,6 +281,8 @@ namespace Model
     DataSource m_dataSource;
 
     Aws::Map<Aws::String, Aws::String> m_schemaStorageConfig;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

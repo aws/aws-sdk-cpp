@@ -175,6 +175,28 @@ namespace Model
      */
     inline CreateApiMappingResult& WithStage(const char* value) { SetStage(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateApiMappingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateApiMappingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateApiMappingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -184,6 +206,8 @@ namespace Model
     Aws::String m_apiMappingKey;
 
     Aws::String m_stage;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

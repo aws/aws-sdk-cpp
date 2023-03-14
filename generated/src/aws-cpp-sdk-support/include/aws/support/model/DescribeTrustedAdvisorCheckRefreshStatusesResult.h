@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/support/model/TrustedAdvisorCheckRefreshStatus.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

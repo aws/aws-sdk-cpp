@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/UsagePlan.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -26,7 +27,8 @@ UsagePlan::UsagePlan() :
     m_throttleHasBeenSet(false),
     m_quotaHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,8 @@ UsagePlan::UsagePlan(JsonView jsonValue) :
     m_throttleHasBeenSet(false),
     m_quotaHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

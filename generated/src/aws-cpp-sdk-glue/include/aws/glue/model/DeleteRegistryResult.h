@@ -135,6 +135,28 @@ namespace Model
      */
     inline DeleteRegistryResult& WithStatus(RegistryStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteRegistryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteRegistryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteRegistryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_registryName;
@@ -142,6 +164,8 @@ namespace Model
     Aws::String m_registryArn;
 
     RegistryStatus m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

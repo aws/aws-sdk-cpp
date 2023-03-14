@@ -386,6 +386,28 @@ namespace Model
      */
     inline DescribeContextResult& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeContextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeContextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeContextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_contextName;
@@ -409,6 +431,8 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     Aws::String m_lineageGroupArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

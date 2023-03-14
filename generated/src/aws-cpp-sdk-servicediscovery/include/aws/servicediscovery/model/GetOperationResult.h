@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/Operation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetOperationResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Operation m_operation;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

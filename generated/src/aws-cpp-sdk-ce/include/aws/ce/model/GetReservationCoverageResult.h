@@ -146,6 +146,28 @@ namespace Model
      */
     inline GetReservationCoverageResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetReservationCoverageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetReservationCoverageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetReservationCoverageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<CoverageByTime> m_coveragesByTime;
@@ -153,6 +175,8 @@ namespace Model
     Coverage m_total;
 
     Aws::String m_nextPageToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

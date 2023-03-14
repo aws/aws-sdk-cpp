@@ -8,6 +8,7 @@
 #include <aws/s3/model/Owner.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/RequestCharged.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Grant.h>
 #include <utility>
 
@@ -112,6 +113,28 @@ namespace Model
     
     inline GetObjectAclResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetObjectAclResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetObjectAclResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetObjectAclResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Owner m_owner;
@@ -119,6 +142,8 @@ namespace Model
     Aws::Vector<Grant> m_grants;
 
     RequestCharged m_requestCharged;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

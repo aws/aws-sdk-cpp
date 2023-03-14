@@ -7,6 +7,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/EventBridgeConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/TopicConfiguration.h>
 #include <aws/s3/model/QueueConfiguration.h>
 #include <aws/s3/model/LambdaFunctionConfiguration.h>
@@ -220,6 +221,31 @@ namespace Model
      */
     inline NotificationConfiguration& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    
+    inline NotificationConfiguration& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline NotificationConfiguration& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline NotificationConfiguration& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
@@ -233,6 +259,9 @@ namespace Model
 
     EventBridgeConfiguration m_eventBridgeConfiguration;
     bool m_eventBridgeConfigurationHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

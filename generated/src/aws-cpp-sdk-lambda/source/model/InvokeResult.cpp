@@ -26,7 +26,8 @@ InvokeResult::InvokeResult(InvokeResult&& toMove) :
     m_functionError(std::move(toMove.m_functionError)),
     m_logResult(std::move(toMove.m_logResult)),
     m_payload(std::move(toMove.m_payload)),
-    m_executedVersion(std::move(toMove.m_executedVersion))
+    m_executedVersion(std::move(toMove.m_executedVersion)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -42,6 +43,7 @@ InvokeResult& InvokeResult::operator=(InvokeResult&& toMove)
    m_logResult = std::move(toMove.m_logResult);
    m_payload = std::move(toMove.m_payload);
    m_executedVersion = std::move(toMove.m_executedVersion);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -73,6 +75,12 @@ InvokeResult& InvokeResult::operator =(Aws::AmazonWebServiceResult<ResponseStrea
   if(executedVersionIter != headers.end())
   {
     m_executedVersion = executedVersionIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
   m_statusCode = static_cast<int>(result.GetResponseCode());

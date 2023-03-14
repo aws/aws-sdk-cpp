@@ -194,6 +194,28 @@ namespace Model
      */
     inline InvokeResult& WithExecutedVersion(const char* value) { SetExecutedVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline InvokeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline InvokeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline InvokeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_statusCode;
@@ -205,6 +227,8 @@ namespace Model
     Aws::Utils::Stream::ResponseStream m_payload;
 
     Aws::String m_executedVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

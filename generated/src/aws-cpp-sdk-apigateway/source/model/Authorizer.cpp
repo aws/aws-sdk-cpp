@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Authorizer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -30,7 +31,8 @@ Authorizer::Authorizer() :
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
     m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false)
+    m_authorizerResultTtlInSecondsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,8 @@ Authorizer::Authorizer(JsonView jsonValue) :
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
     m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false)
+    m_authorizerResultTtlInSecondsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/emr-containers/model/VirtualCluster.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribeVirtualClusterResult& WithVirtualCluster(VirtualCluster&& value) { SetVirtualCluster(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeVirtualClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeVirtualClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeVirtualClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     VirtualCluster m_virtualCluster;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

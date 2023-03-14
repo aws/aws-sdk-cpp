@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/FileCacheCreating.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline CreateFileCacheResult& WithFileCache(FileCacheCreating&& value) { SetFileCache(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateFileCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateFileCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateFileCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     FileCacheCreating m_fileCache;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

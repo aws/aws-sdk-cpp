@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/chime-sdk-identity/model/AppInstanceAdmin.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,33 @@ namespace Model
      */
     inline DescribeAppInstanceAdminResult& WithAppInstanceAdmin(AppInstanceAdmin&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAppInstanceAdminResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAppInstanceAdminResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAppInstanceAdminResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     AppInstanceAdmin m_appInstanceAdmin;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

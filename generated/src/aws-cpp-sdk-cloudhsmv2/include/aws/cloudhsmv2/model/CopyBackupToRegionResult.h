@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/model/DestinationBackup.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -82,9 +83,33 @@ namespace Model
      */
     inline CopyBackupToRegionResult& WithDestinationBackup(DestinationBackup&& value) { SetDestinationBackup(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CopyBackupToRegionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CopyBackupToRegionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CopyBackupToRegionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DestinationBackup m_destinationBackup;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

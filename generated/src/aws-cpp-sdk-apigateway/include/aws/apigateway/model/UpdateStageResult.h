@@ -731,6 +731,28 @@ namespace Model
      */
     inline UpdateStageResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateStageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateStageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateStageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_deploymentId;
@@ -766,6 +788,8 @@ namespace Model
     Aws::Utils::DateTime m_createdDate;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

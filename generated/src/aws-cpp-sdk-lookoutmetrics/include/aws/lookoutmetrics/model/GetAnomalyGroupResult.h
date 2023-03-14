@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/lookoutmetrics/model/AnomalyGroup.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetAnomalyGroupResult& WithAnomalyGroup(AnomalyGroup&& value) { SetAnomalyGroup(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAnomalyGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAnomalyGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAnomalyGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     AnomalyGroup m_anomalyGroup;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

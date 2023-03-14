@@ -164,6 +164,28 @@ namespace Model
      */
     inline BatchCreateTableRowsResult& AddFailedBatchItems(FailedBatchItem&& value) { m_failedBatchItems.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchCreateTableRowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchCreateTableRowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchCreateTableRowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     long long m_workbookCursor;
@@ -171,6 +193,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_createdRows;
 
     Aws::Vector<FailedBatchItem> m_failedBatchItems;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

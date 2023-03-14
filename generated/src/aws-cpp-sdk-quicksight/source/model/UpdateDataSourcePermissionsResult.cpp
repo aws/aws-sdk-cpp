@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -42,12 +43,13 @@ UpdateDataSourcePermissionsResult& UpdateDataSourcePermissionsResult::operator =
 
   }
 
-  if(jsonValue.ValueExists("RequestId"))
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
   {
-    m_requestId = jsonValue.GetString("RequestId");
-
+    m_requestId = requestIdIter->second;
   }
-
 
 
   m_status = static_cast<int>(result.GetResponseCode());

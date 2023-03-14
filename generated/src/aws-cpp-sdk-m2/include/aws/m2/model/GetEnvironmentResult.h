@@ -827,6 +827,28 @@ namespace Model
      */
     inline GetEnvironmentResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_actualCapacity;
@@ -872,6 +894,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_vpcId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

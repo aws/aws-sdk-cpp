@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/route53resolver/model/ResolverRule.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline UpdateResolverRuleResult& WithResolverRule(ResolverRule&& value) { SetResolverRule(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateResolverRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateResolverRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateResolverRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ResolverRule m_resolverRule;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

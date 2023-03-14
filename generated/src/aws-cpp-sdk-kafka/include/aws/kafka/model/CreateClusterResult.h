@@ -178,6 +178,28 @@ namespace Model
      */
     inline CreateClusterResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_clusterArn;
@@ -185,6 +207,8 @@ namespace Model
     Aws::String m_clusterName;
 
     ClusterState m_state;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

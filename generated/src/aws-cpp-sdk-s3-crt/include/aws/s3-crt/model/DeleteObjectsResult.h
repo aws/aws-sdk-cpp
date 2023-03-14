@@ -7,6 +7,7 @@
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/model/RequestCharged.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/DeletedObject.h>
 #include <aws/s3-crt/model/Error.h>
 #include <utility>
@@ -136,6 +137,28 @@ namespace Model
      */
     inline DeleteObjectsResult& AddErrors(Error&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteObjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteObjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteObjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<DeletedObject> m_deleted;
@@ -143,6 +166,8 @@ namespace Model
     RequestCharged m_requestCharged;
 
     Aws::Vector<Error> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

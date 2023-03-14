@@ -119,11 +119,35 @@ namespace Model
      */
     inline ListExplainabilityExportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListExplainabilityExportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListExplainabilityExportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListExplainabilityExportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ExplainabilityExportSummary> m_explainabilityExports;
 
     Aws::String m_nextToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

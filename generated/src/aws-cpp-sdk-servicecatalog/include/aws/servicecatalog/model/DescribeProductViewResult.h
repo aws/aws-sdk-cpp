@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProductViewSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifact.h>
 #include <utility>
 
@@ -95,11 +96,35 @@ namespace Model
      */
     inline DescribeProductViewResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProductViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProductViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProductViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProductViewSummary m_productViewSummary;
 
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

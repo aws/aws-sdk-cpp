@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/FargateProfile.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline CreateFargateProfileResult& WithFargateProfile(FargateProfile&& value) { SetFargateProfile(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateFargateProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateFargateProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateFargateProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     FargateProfile m_fargateProfile;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

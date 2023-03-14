@@ -23,7 +23,8 @@ GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult() :
 
 GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(GetSolNetworkPackageContentResult&& toMove) : 
     m_contentType(toMove.m_contentType),
-    m_nsdContent(std::move(toMove.m_nsdContent))
+    m_nsdContent(std::move(toMove.m_nsdContent)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -36,6 +37,7 @@ GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator=(
 
    m_contentType = toMove.m_contentType;
    m_nsdContent = std::move(toMove.m_nsdContent);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -55,6 +57,12 @@ GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator =
   if(contentTypeIter != headers.end())
   {
     m_contentType = PackageContentTypeMapper::GetPackageContentTypeForName(contentTypeIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

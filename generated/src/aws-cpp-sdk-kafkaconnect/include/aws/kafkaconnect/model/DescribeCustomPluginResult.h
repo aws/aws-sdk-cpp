@@ -252,6 +252,28 @@ namespace Model
      */
     inline DescribeCustomPluginResult& WithStateDescription(StateDescription&& value) { SetStateDescription(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeCustomPluginResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeCustomPluginResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeCustomPluginResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -267,6 +289,8 @@ namespace Model
     Aws::String m_name;
 
     StateDescription m_stateDescription;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

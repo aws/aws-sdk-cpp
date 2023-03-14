@@ -41,8 +41,7 @@ Snapshot::Snapshot() :
     m_tagsHasBeenSet(false),
     m_storageTier(StorageTier::NOT_SET),
     m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_restoreExpiryTimeHasBeenSet(false)
 {
 }
 
@@ -67,8 +66,7 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_storageTier(StorageTier::NOT_SET),
     m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_restoreExpiryTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -285,13 +283,9 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -370,12 +364,9 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

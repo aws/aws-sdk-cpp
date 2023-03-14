@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/Volume.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline CreateVolumeResult& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Volume m_volume;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

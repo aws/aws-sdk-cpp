@@ -5,6 +5,7 @@
 
 #include <aws/mgn/model/SourceServerActionDocument.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -31,7 +32,8 @@ SourceServerActionDocument::SourceServerActionDocument() :
     m_orderHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
+    m_timeoutSecondsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,8 @@ SourceServerActionDocument::SourceServerActionDocument(JsonView jsonValue) :
     m_orderHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
+    m_timeoutSecondsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

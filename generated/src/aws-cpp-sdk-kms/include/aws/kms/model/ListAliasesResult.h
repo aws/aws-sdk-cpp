@@ -137,6 +137,28 @@ namespace Model
      */
     inline ListAliasesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<AliasListEntry> m_aliases;
@@ -144,6 +166,8 @@ namespace Model
     Aws::String m_nextMarker;
 
     bool m_truncated;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

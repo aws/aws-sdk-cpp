@@ -119,11 +119,35 @@ namespace Model
      */
     inline ListSecurityConfigsResult& AddSecurityConfigSummaries(SecurityConfigSummary&& value) { m_securityConfigSummaries.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListSecurityConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListSecurityConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListSecurityConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<SecurityConfigSummary> m_securityConfigSummaries;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

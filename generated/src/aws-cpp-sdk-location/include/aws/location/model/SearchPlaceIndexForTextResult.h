@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/model/SearchPlaceIndexForTextSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/SearchForTextResult.h>
 #include <utility>
 
@@ -141,11 +142,35 @@ namespace Model
      */
     inline SearchPlaceIndexForTextResult& WithSummary(SearchPlaceIndexForTextSummary&& value) { SetSummary(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SearchPlaceIndexForTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SearchPlaceIndexForTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SearchPlaceIndexForTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<SearchForTextResult> m_results;
 
     SearchPlaceIndexForTextSummary m_summary;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

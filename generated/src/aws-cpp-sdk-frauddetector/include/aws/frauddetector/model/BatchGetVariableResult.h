@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/Variable.h>
 #include <aws/frauddetector/model/BatchGetVariableError.h>
 #include <utility>
@@ -105,11 +106,35 @@ namespace Model
      */
     inline BatchGetVariableResult& AddErrors(BatchGetVariableError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetVariableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetVariableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetVariableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Variable> m_variables;
 
     Aws::Vector<BatchGetVariableError> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

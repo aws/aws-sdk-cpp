@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/DataRepositoryAssociation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline UpdateDataRepositoryAssociationResult& WithAssociation(DataRepositoryAssociation&& value) { SetAssociation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateDataRepositoryAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateDataRepositoryAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateDataRepositoryAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DataRepositoryAssociation m_association;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

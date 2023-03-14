@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/PushNotificationTemplateResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline GetPushTemplateResult& WithPushNotificationTemplateResponse(PushNotificationTemplateResponse&& value) { SetPushNotificationTemplateResponse(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPushTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPushTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPushTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     PushNotificationTemplateResponse m_pushNotificationTemplateResponse;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -457,6 +457,28 @@ namespace Model
      */
     inline DescribeAssetResult& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_assetId;
@@ -480,6 +502,8 @@ namespace Model
     AssetStatus m_assetStatus;
 
     Aws::String m_assetDescription;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

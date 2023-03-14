@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/PipelineObject.h>
 #include <aws/datapipeline/model/ParameterObject.h>
 #include <aws/datapipeline/model/ParameterValue.h>
@@ -147,6 +148,28 @@ namespace Model
      */
     inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPipelineDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPipelineDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPipelineDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<PipelineObject> m_pipelineObjects;
@@ -154,6 +177,8 @@ namespace Model
     Aws::Vector<ParameterObject> m_parameterObjects;
 
     Aws::Vector<ParameterValue> m_parameterValues;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

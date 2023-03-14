@@ -133,11 +133,35 @@ namespace Model
      */
     inline ListRepositoryAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListRepositoryAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListRepositoryAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListRepositoryAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<RepositoryAssociationSummary> m_repositoryAssociationSummaries;
 
     Aws::String m_nextToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

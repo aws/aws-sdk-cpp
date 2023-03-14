@@ -23,7 +23,8 @@ GetProfileResult::GetProfileResult()
 GetProfileResult::GetProfileResult(GetProfileResult&& toMove) : 
     m_contentEncoding(std::move(toMove.m_contentEncoding)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_profile(std::move(toMove.m_profile))
+    m_profile(std::move(toMove.m_profile)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -37,6 +38,7 @@ GetProfileResult& GetProfileResult::operator=(GetProfileResult&& toMove)
    m_contentEncoding = std::move(toMove.m_contentEncoding);
    m_contentType = std::move(toMove.m_contentType);
    m_profile = std::move(toMove.m_profile);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -61,6 +63,12 @@ GetProfileResult& GetProfileResult::operator =(Aws::AmazonWebServiceResult<Respo
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

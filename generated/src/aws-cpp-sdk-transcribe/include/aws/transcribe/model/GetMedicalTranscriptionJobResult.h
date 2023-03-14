@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/MedicalTranscriptionJob.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { SetMedicalTranscriptionJob(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMedicalTranscriptionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMedicalTranscriptionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMedicalTranscriptionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     MedicalTranscriptionJob m_medicalTranscriptionJob;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

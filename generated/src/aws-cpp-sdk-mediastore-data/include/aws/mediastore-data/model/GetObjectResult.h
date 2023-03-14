@@ -284,6 +284,28 @@ namespace Model
      */
     inline GetObjectResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;
@@ -301,6 +323,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModified;
 
     int m_statusCode;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

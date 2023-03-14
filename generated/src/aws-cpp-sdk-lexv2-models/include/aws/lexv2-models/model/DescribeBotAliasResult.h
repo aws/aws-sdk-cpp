@@ -485,6 +485,28 @@ namespace Model
      */
     inline DescribeBotAliasResult& AddParentBotNetworks(ParentBotNetwork&& value) { m_parentBotNetworks.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeBotAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeBotAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeBotAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_botAliasId;
@@ -512,6 +534,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedDateTime;
 
     Aws::Vector<ParentBotNetwork> m_parentBotNetworks;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

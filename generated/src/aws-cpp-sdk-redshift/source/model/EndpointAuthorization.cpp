@@ -32,8 +32,7 @@ EndpointAuthorization::EndpointAuthorization() :
     m_allowedAllVPCsHasBeenSet(false),
     m_allowedVPCsHasBeenSet(false),
     m_endpointCount(0),
-    m_endpointCountHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_endpointCountHasBeenSet(false)
 {
 }
 
@@ -49,8 +48,7 @@ EndpointAuthorization::EndpointAuthorization(const XmlNode& xmlNode) :
     m_allowedAllVPCsHasBeenSet(false),
     m_allowedVPCsHasBeenSet(false),
     m_endpointCount(0),
-    m_endpointCountHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_endpointCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -177,13 +175,9 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".EndpointCount=" << m_endpointCount << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -228,12 +222,9 @@ void EndpointAuthorization::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << ".EndpointCount=" << m_endpointCount << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

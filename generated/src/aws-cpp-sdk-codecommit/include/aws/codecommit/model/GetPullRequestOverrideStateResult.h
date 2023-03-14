@@ -93,11 +93,35 @@ namespace Model
      */
     inline GetPullRequestOverrideStateResult& WithOverrider(const char* value) { SetOverrider(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPullRequestOverrideStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPullRequestOverrideStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPullRequestOverrideStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_overridden;
 
     Aws::String m_overrider;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

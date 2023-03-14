@@ -157,11 +157,35 @@ namespace Model
      */
     inline GetResourceMetadataResult& AddFeatures(const char* key, const FeatureMetadata& value) { m_features.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetResourceMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetResourceMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetResourceMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_identifier;
 
     Aws::Map<Aws::String, FeatureMetadata> m_features;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

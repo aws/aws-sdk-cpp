@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/IntegrationResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ IntegrationResponse::IntegrationResponse() :
     m_responseParametersHasBeenSet(false),
     m_responseTemplatesHasBeenSet(false),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false)
+    m_contentHandlingHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,8 @@ IntegrationResponse::IntegrationResponse(JsonView jsonValue) :
     m_responseParametersHasBeenSet(false),
     m_responseTemplatesHasBeenSet(false),
     m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false)
+    m_contentHandlingHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

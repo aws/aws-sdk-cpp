@@ -407,6 +407,28 @@ namespace Model
      */
     inline GetEmailIdentityResult& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetEmailIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetEmailIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetEmailIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     IdentityType m_identityType;
@@ -426,6 +448,8 @@ namespace Model
     Aws::String m_configurationSetName;
 
     VerificationStatus m_verificationStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -49,5 +49,11 @@ RestoreObjectResult& RestoreObjectResult::operator =(const Aws::AmazonWebService
     m_restoreOutputPath = restoreOutputPathIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

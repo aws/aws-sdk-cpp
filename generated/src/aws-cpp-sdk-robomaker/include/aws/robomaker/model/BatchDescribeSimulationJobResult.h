@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/robomaker/model/SimulationJob.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/robomaker/model/SimulationJob.h>
 #include <utility>
 
 namespace Aws
@@ -110,11 +110,35 @@ namespace Model
      */
     inline BatchDescribeSimulationJobResult& AddUnprocessedJobs(const char* value) { m_unprocessedJobs.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchDescribeSimulationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchDescribeSimulationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchDescribeSimulationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<SimulationJob> m_jobs;
 
     Aws::Vector<Aws::String> m_unprocessedJobs;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

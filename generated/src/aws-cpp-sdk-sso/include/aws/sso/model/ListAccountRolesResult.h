@@ -112,11 +112,35 @@ namespace Model
      */
     inline ListAccountRolesResult& AddRoleList(RoleInfo&& value) { m_roleList.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListAccountRolesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListAccountRolesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListAccountRolesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<RoleInfo> m_roleList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

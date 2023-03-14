@@ -118,5 +118,11 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
   }
 
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

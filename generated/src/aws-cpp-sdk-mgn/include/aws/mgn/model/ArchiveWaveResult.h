@@ -352,6 +352,28 @@ namespace Model
      */
     inline ArchiveWaveResult& WithWaveID(const char* value) { SetWaveID(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ArchiveWaveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ArchiveWaveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ArchiveWaveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -371,6 +393,8 @@ namespace Model
     WaveAggregatedStatus m_waveAggregatedStatus;
 
     Aws::String m_waveID;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

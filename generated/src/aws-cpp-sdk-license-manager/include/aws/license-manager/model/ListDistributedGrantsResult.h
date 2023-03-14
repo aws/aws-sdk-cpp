@@ -105,11 +105,35 @@ namespace Model
      */
     inline ListDistributedGrantsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListDistributedGrantsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListDistributedGrantsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListDistributedGrantsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Grant> m_grants;
 
     Aws::String m_nextToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

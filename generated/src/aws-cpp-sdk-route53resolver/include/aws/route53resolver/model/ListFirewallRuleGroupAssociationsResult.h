@@ -133,11 +133,35 @@ namespace Model
      */
     inline ListFirewallRuleGroupAssociationsResult& AddFirewallRuleGroupAssociations(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociations.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<FirewallRuleGroupAssociation> m_firewallRuleGroupAssociations;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

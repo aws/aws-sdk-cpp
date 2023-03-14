@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/alexaforbusiness/model/GatewayGroup.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline GetGatewayGroupResult& WithGatewayGroup(GatewayGroup&& value) { SetGatewayGroup(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetGatewayGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetGatewayGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetGatewayGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     GatewayGroup m_gatewayGroup;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

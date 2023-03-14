@@ -218,6 +218,28 @@ namespace Model
      */
     inline UpdateAppVersionResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateAppVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateAppVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateAppVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
@@ -225,6 +247,8 @@ namespace Model
     Aws::String m_appArn;
 
     Aws::String m_appVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

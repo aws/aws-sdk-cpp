@@ -111,11 +111,35 @@ namespace Model
      */
     inline ListCACertificatesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListCACertificatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListCACertificatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListCACertificatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<CACertificate> m_certificates;
 
     Aws::String m_nextMarker;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

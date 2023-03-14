@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,13 +30,14 @@ DeleteGroupMembershipResult::DeleteGroupMembershipResult(const Aws::AmazonWebSer
 
 DeleteGroupMembershipResult& DeleteGroupMembershipResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RequestId"))
+  AWS_UNREFERENCED_PARAM(result);
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
   {
-    m_requestId = jsonValue.GetString("RequestId");
-
+    m_requestId = requestIdIter->second;
   }
-
 
 
   m_status = static_cast<int>(result.GetResponseCode());

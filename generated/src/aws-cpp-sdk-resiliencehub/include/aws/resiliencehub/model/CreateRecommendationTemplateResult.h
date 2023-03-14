@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/model/RecommendationTemplate.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,33 @@ namespace Model
      */
     inline CreateRecommendationTemplateResult& WithRecommendationTemplate(RecommendationTemplate&& value) { SetRecommendationTemplate(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateRecommendationTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateRecommendationTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateRecommendationTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     RecommendationTemplate m_recommendationTemplate;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

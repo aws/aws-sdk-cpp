@@ -24,7 +24,8 @@ InvokeEndpointResult::InvokeEndpointResult(InvokeEndpointResult&& toMove) :
     m_body(std::move(toMove.m_body)),
     m_contentType(std::move(toMove.m_contentType)),
     m_invokedProductionVariant(std::move(toMove.m_invokedProductionVariant)),
-    m_customAttributes(std::move(toMove.m_customAttributes))
+    m_customAttributes(std::move(toMove.m_customAttributes)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -39,6 +40,7 @@ InvokeEndpointResult& InvokeEndpointResult::operator=(InvokeEndpointResult&& toM
    m_contentType = std::move(toMove.m_contentType);
    m_invokedProductionVariant = std::move(toMove.m_invokedProductionVariant);
    m_customAttributes = std::move(toMove.m_customAttributes);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -69,6 +71,12 @@ InvokeEndpointResult& InvokeEndpointResult::operator =(Aws::AmazonWebServiceResu
   if(customAttributesIter != headers.end())
   {
     m_customAttributes = customAttributesIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

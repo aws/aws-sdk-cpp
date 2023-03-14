@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/meteringmarketplace/model/UsageRecordResult.h>
 #include <aws/meteringmarketplace/model/UsageRecord.h>
 #include <utility>
@@ -154,11 +155,35 @@ namespace Model
      */
     inline BatchMeterUsageResult& AddUnprocessedRecords(UsageRecord&& value) { m_unprocessedRecords.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchMeterUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchMeterUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchMeterUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<UsageRecordResult> m_results;
 
     Aws::Vector<UsageRecord> m_unprocessedRecords;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

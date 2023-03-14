@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/model/GroupMembershipExistenceResult.h>
 #include <utility>
 
@@ -68,9 +69,33 @@ namespace Model
      */
     inline IsMemberInGroupsResult& AddResults(GroupMembershipExistenceResult&& value) { m_results.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline IsMemberInGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline IsMemberInGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline IsMemberInGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<GroupMembershipExistenceResult> m_results;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -120,11 +120,35 @@ namespace Model
      */
     inline GetFolderResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     FolderMetadata m_metadata;
 
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

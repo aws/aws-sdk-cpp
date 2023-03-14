@@ -44,8 +44,7 @@ Volume::Volume() :
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -73,8 +72,7 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_throughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -292,13 +290,9 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -379,12 +373,9 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".Throughput=" << m_throughput << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

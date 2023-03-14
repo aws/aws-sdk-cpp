@@ -103,11 +103,35 @@ namespace Model
      */
     inline RemoveFlowSourceResult& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RemoveFlowSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RemoveFlowSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RemoveFlowSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_flowArn;
 
     Aws::String m_sourceArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

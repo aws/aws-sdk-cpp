@@ -334,6 +334,28 @@ namespace Model
      */
     inline PutTemplateActionResult& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutTemplateActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutTemplateActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutTemplateActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_actionID;
@@ -355,6 +377,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
 
     int m_timeoutSeconds;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

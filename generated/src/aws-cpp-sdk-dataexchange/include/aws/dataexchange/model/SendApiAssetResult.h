@@ -108,11 +108,35 @@ namespace Model
      */
     inline SendApiAssetResult& AddResponseHeaders(const char* key, const char* value) { m_responseHeaders.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SendApiAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SendApiAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SendApiAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;
 
     Aws::Map<Aws::String, Aws::String> m_responseHeaders;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -285,6 +285,28 @@ namespace Model
      */
     inline GetPolicyVersionResult& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPolicyVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPolicyVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPolicyVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_policyArn;
@@ -302,6 +324,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedDate;
 
     Aws::String m_generationId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

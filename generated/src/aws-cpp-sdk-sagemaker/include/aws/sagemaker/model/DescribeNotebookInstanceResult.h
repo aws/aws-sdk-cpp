@@ -1006,6 +1006,28 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& WithInstanceMetadataServiceConfiguration(InstanceMetadataServiceConfiguration&& value) { SetInstanceMetadataServiceConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeNotebookInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeNotebookInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeNotebookInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -1051,6 +1073,8 @@ namespace Model
     Aws::String m_platformIdentifier;
 
     InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

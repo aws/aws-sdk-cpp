@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,7 +24,8 @@ Resource::Resource() :
     m_parentIdHasBeenSet(false),
     m_pathPartHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_resourceMethodsHasBeenSet(false)
+    m_resourceMethodsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,8 @@ Resource::Resource(JsonView jsonValue) :
     m_parentIdHasBeenSet(false),
     m_pathPartHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_resourceMethodsHasBeenSet(false)
+    m_resourceMethodsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

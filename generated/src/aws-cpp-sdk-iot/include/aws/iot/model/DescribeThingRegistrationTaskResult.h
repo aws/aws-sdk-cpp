@@ -375,6 +375,28 @@ namespace Model
      */
     inline DescribeThingRegistrationTaskResult& WithPercentageProgress(int value) { SetPercentageProgress(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeThingRegistrationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeThingRegistrationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeThingRegistrationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_taskId;
@@ -400,6 +422,8 @@ namespace Model
     int m_failureCount;
 
     int m_percentageProgress;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

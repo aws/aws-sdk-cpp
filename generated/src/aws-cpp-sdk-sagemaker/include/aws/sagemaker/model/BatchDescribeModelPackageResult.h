@@ -157,11 +157,35 @@ namespace Model
      */
     inline BatchDescribeModelPackageResult& AddBatchDescribeModelPackageErrorMap(const char* key, const BatchDescribeModelPackageError& value) { m_batchDescribeModelPackageErrorMap.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchDescribeModelPackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchDescribeModelPackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchDescribeModelPackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, BatchDescribeModelPackageSummary> m_modelPackageSummaries;
 
     Aws::Map<Aws::String, BatchDescribeModelPackageError> m_batchDescribeModelPackageErrorMap;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -120,39 +120,25 @@ namespace Model
     inline CreateFolderResult& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline CreateFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline CreateFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
-    /**
-     * <p>The request ID for the newly created folder.</p>
-     */
+    
     inline CreateFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:

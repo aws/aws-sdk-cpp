@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/DomainName.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -37,7 +38,8 @@ DomainName::DomainName() :
     m_securityPolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_mutualTlsAuthenticationHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false)
+    m_ownershipVerificationCertificateArnHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,8 @@ DomainName::DomainName(JsonView jsonValue) :
     m_securityPolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_mutualTlsAuthenticationHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false)
+    m_ownershipVerificationCertificateArnHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

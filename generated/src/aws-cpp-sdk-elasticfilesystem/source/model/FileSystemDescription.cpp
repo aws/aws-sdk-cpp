@@ -5,6 +5,7 @@
 
 #include <aws/elasticfilesystem/model/FileSystemDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -41,7 +42,8 @@ FileSystemDescription::FileSystemDescription() :
     m_provisionedThroughputInMibpsHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,8 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_provisionedThroughputInMibpsHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

@@ -191,6 +191,28 @@ namespace Model
      */
     inline GetMergeOptionsResult& WithBaseCommitId(const char* value) { SetBaseCommitId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMergeOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMergeOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMergeOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<MergeOptionTypeEnum> m_mergeOptions;
@@ -200,6 +222,8 @@ namespace Model
     Aws::String m_destinationCommitId;
 
     Aws::String m_baseCommitId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

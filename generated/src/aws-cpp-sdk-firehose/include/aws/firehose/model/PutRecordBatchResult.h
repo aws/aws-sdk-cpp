@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/PutRecordBatchResponseEntry.h>
 #include <utility>
 
@@ -119,6 +120,28 @@ namespace Model
      */
     inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutRecordBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutRecordBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutRecordBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_failedPutCount;
@@ -126,6 +149,8 @@ namespace Model
     bool m_encrypted;
 
     Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

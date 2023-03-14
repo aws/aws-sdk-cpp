@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/codeguruprofiler/model/NotificationConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -63,9 +64,33 @@ namespace Model
      */
     inline RemoveNotificationChannelResult& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RemoveNotificationChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RemoveNotificationChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RemoveNotificationChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     NotificationConfiguration m_notificationConfiguration;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

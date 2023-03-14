@@ -878,6 +878,28 @@ namespace Model
      */
     inline AssociateHostedConnectionResult& AddMacSecKeys(MacSecKey&& value) { m_macSecKeys.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AssociateHostedConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AssociateHostedConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AssociateHostedConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -923,6 +945,8 @@ namespace Model
     Aws::String m_encryptionMode;
 
     Aws::Vector<MacSecKey> m_macSecKeys;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

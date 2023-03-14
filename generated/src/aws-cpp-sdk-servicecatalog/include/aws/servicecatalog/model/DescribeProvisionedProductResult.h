@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProvisionedProductDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/CloudWatchDashboard.h>
 #include <utility>
 
@@ -102,11 +103,35 @@ namespace Model
      */
     inline DescribeProvisionedProductResult& AddCloudWatchDashboards(CloudWatchDashboard&& value) { m_cloudWatchDashboards.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProvisionedProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProvisionedProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProvisionedProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProvisionedProductDetail m_provisionedProductDetail;
 
     Aws::Vector<CloudWatchDashboard> m_cloudWatchDashboards;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

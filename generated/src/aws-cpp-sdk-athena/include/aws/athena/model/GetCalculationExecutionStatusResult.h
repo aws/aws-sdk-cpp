@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/CalculationStatus.h>
 #include <aws/athena/model/CalculationStatistics.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -84,11 +85,35 @@ namespace Model
      */
     inline GetCalculationExecutionStatusResult& WithStatistics(CalculationStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetCalculationExecutionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetCalculationExecutionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetCalculationExecutionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     CalculationStatus m_status;
 
     CalculationStatistics m_statistics;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

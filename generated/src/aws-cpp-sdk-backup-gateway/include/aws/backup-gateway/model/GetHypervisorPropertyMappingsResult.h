@@ -148,6 +148,28 @@ namespace Model
      */
     inline GetHypervisorPropertyMappingsResult& AddVmwareToAwsTagMappings(VmwareToAwsTagMapping&& value) { m_vmwareToAwsTagMappings.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetHypervisorPropertyMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetHypervisorPropertyMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetHypervisorPropertyMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_hypervisorArn;
@@ -155,6 +177,8 @@ namespace Model
     Aws::String m_iamRoleArn;
 
     Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

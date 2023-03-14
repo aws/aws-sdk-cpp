@@ -677,6 +677,28 @@ during input switch actions. Presently, this
     
     inline DescribeInputResult& WithType(InputType&& value) { SetType(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -710,6 +732,8 @@ during input switch actions. Presently, this
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     InputType m_type;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

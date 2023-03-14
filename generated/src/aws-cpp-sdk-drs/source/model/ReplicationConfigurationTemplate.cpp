@@ -5,6 +5,7 @@
 
 #include <aws/drs/model/ReplicationConfigurationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -41,7 +42,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate() :
     m_stagingAreaTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false)
+    m_useDedicatedReplicationServerHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate(JsonView json
     m_stagingAreaTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false)
+    m_useDedicatedReplicationServerHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

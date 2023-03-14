@@ -212,6 +212,28 @@ namespace Model
      */
     inline DescribeGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(CapabilitySyncStatus&& value) { SetCapabilitySyncStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_gatewayId;
@@ -221,6 +243,8 @@ namespace Model
     Aws::String m_capabilityConfiguration;
 
     CapabilitySyncStatus m_capabilitySyncStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -46,5 +46,11 @@ CreateQueryLoggingConfigResult& CreateQueryLoggingConfigResult::operator =(const
     m_location = locationIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

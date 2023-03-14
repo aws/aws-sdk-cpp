@@ -139,6 +139,28 @@ namespace Model
      */
     inline GetAutoSnapshotsResult& AddAutoSnapshots(AutoSnapshotDetails&& value) { m_autoSnapshots.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAutoSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAutoSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAutoSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_resourceName;
@@ -146,6 +168,8 @@ namespace Model
     ResourceType m_resourceType;
 
     Aws::Vector<AutoSnapshotDetails> m_autoSnapshots;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

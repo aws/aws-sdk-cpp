@@ -49,6 +49,12 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
     m_archiveId = archiveIdIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
 
   return *this;
 }

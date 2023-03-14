@@ -287,6 +287,31 @@ namespace Model
      */
     inline AliasConfiguration& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    
+    inline AliasConfiguration& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AliasConfiguration& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AliasConfiguration& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_aliasArn;
@@ -306,6 +331,9 @@ namespace Model
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

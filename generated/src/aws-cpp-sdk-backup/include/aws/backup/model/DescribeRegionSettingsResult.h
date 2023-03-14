@@ -202,11 +202,35 @@ namespace Model
      */
     inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(const char* key, bool value) { m_resourceTypeManagementPreference.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeRegionSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeRegionSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeRegionSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
 
     Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

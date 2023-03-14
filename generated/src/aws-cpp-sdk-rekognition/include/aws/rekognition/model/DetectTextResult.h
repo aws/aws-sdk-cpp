@@ -105,11 +105,35 @@ namespace Model
      */
     inline DetectTextResult& WithTextModelVersion(const char* value) { SetTextModelVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DetectTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DetectTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DetectTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<TextDetection> m_textDetections;
 
     Aws::String m_textModelVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

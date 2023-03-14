@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/DistributionList.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline ListDistributionsByRealtimeLogConfig2020_05_31Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListDistributionsByRealtimeLogConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListDistributionsByRealtimeLogConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListDistributionsByRealtimeLogConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DistributionList m_distributionList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

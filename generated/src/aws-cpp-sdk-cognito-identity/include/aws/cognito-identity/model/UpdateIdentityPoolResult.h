@@ -464,6 +464,28 @@ namespace Model
      */
     inline UpdateIdentityPoolResult& AddIdentityPoolTags(const char* key, const char* value) { m_identityPoolTags.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateIdentityPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateIdentityPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateIdentityPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_identityPoolId;
@@ -485,6 +507,8 @@ namespace Model
     Aws::Vector<Aws::String> m_samlProviderARNs;
 
     Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

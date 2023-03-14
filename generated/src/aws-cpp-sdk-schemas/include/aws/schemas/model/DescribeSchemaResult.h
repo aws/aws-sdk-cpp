@@ -362,6 +362,28 @@ namespace Model
      */
     inline DescribeSchemaResult& WithVersionCreatedDate(Aws::Utils::DateTime&& value) { SetVersionCreatedDate(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_content;
@@ -381,6 +403,8 @@ namespace Model
     Aws::String m_type;
 
     Aws::Utils::DateTime m_versionCreatedDate;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

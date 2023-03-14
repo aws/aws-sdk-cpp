@@ -105,11 +105,35 @@ namespace Model
      */
     inline ListRecoveryGroupsResult& AddRecoveryGroups(RecoveryGroupOutput&& value) { m_recoveryGroups.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListRecoveryGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListRecoveryGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListRecoveryGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<RecoveryGroupOutput> m_recoveryGroups;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

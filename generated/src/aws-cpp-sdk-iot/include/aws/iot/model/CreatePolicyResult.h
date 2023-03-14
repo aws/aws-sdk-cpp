@@ -180,6 +180,28 @@ namespace Model
      */
     inline CreatePolicyResult& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreatePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreatePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreatePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_policyName;
@@ -189,6 +211,8 @@ namespace Model
     Aws::String m_policyDocument;
 
     Aws::String m_policyVersionId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

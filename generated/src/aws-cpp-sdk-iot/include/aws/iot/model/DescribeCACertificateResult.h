@@ -7,6 +7,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/CACertificateDescription.h>
 #include <aws/iot/model/RegistrationConfig.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -90,11 +91,35 @@ namespace Model
      */
     inline DescribeCACertificateResult& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeCACertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeCACertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeCACertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     CACertificateDescription m_certificateDescription;
 
     RegistrationConfig m_registrationConfig;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

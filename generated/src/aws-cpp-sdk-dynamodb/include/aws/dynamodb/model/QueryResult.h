@@ -346,6 +346,28 @@ namespace Model
      */
     inline QueryResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline QueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline QueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline QueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
@@ -357,6 +379,8 @@ namespace Model
     Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
 
     ConsumedCapacity m_consumedCapacity;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

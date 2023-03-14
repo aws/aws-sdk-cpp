@@ -23,7 +23,8 @@ GetExportResult::GetExportResult()
 GetExportResult::GetExportResult(GetExportResult&& toMove) : 
     m_contentType(std::move(toMove.m_contentType)),
     m_contentDisposition(std::move(toMove.m_contentDisposition)),
-    m_body(std::move(toMove.m_body))
+    m_body(std::move(toMove.m_body)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -37,6 +38,7 @@ GetExportResult& GetExportResult::operator=(GetExportResult&& toMove)
    m_contentType = std::move(toMove.m_contentType);
    m_contentDisposition = std::move(toMove.m_contentDisposition);
    m_body = std::move(toMove.m_body);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -61,6 +63,12 @@ GetExportResult& GetExportResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(contentDispositionIter != headers.end())
   {
     m_contentDisposition = contentDispositionIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

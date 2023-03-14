@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/comprehend/model/DocumentMetadata.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/comprehend/model/Entity.h>
 #include <aws/comprehend/model/DocumentTypeListItem.h>
 #include <aws/comprehend/model/Block.h>
@@ -321,6 +322,28 @@ namespace Model
      */
     inline DetectEntitiesResult& AddErrors(ErrorsListItem&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DetectEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DetectEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DetectEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Entity> m_entities;
@@ -332,6 +355,8 @@ namespace Model
     Aws::Vector<Block> m_blocks;
 
     Aws::Vector<ErrorsListItem> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

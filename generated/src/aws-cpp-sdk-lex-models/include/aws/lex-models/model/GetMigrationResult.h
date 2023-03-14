@@ -451,6 +451,28 @@ namespace Model
      */
     inline GetMigrationResult& AddAlerts(MigrationAlert&& value) { m_alerts.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMigrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMigrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMigrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_migrationId;
@@ -472,6 +494,8 @@ namespace Model
     Aws::Utils::DateTime m_migrationTimestamp;
 
     Aws::Vector<MigrationAlert> m_alerts;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

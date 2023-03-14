@@ -7,6 +7,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ElasticsearchDomainConfig.h>
 #include <aws/es/model/DryRunResults.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -90,11 +91,35 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateElasticsearchDomainConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateElasticsearchDomainConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateElasticsearchDomainConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ElasticsearchDomainConfig m_domainConfig;
 
     DryRunResults m_dryRunResults;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

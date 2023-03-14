@@ -120,6 +120,28 @@ namespace Model
      */
     inline ListQualificationRequestsResult& AddQualificationRequests(QualificationRequest&& value) { m_qualificationRequests.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListQualificationRequestsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListQualificationRequestsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListQualificationRequestsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_numResults;
@@ -127,6 +149,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<QualificationRequest> m_qualificationRequests;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

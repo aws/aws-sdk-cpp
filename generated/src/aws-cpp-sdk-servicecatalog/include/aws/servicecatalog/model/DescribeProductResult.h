@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProductViewSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifact.h>
 #include <aws/servicecatalog/model/BudgetDetail.h>
 #include <aws/servicecatalog/model/LaunchPath.h>
@@ -169,6 +170,28 @@ namespace Model
      */
     inline DescribeProductResult& AddLaunchPaths(LaunchPath&& value) { m_launchPaths.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProductViewSummary m_productViewSummary;
@@ -178,6 +201,8 @@ namespace Model
     Aws::Vector<BudgetDetail> m_budgets;
 
     Aws::Vector<LaunchPath> m_launchPaths;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Integration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -37,7 +38,8 @@ Integration::Integration() :
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false)
+    m_tlsConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,8 @@ Integration::Integration(JsonView jsonValue) :
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false)
+    m_tlsConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

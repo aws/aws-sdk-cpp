@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/GatewayResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -25,7 +26,8 @@ GatewayResponse::GatewayResponse() :
     m_responseParametersHasBeenSet(false),
     m_responseTemplatesHasBeenSet(false),
     m_defaultResponse(false),
-    m_defaultResponseHasBeenSet(false)
+    m_defaultResponseHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,8 @@ GatewayResponse::GatewayResponse(JsonView jsonValue) :
     m_responseParametersHasBeenSet(false),
     m_responseTemplatesHasBeenSet(false),
     m_defaultResponse(false),
-    m_defaultResponseHasBeenSet(false)
+    m_defaultResponseHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

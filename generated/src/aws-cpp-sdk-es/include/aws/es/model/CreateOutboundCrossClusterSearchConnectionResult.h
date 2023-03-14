@@ -220,6 +220,28 @@ namespace Model
      */
     inline CreateOutboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnectionId(const char* value) { SetCrossClusterSearchConnectionId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DomainInformation m_sourceDomainInfo;
@@ -231,6 +253,8 @@ namespace Model
     OutboundCrossClusterSearchConnectionStatus m_connectionStatus;
 
     Aws::String m_crossClusterSearchConnectionId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

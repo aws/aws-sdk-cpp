@@ -187,6 +187,28 @@ namespace Model
      */
     inline DescribeLocationFsxLustreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeLocationFsxLustreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeLocationFsxLustreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeLocationFsxLustreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_locationArn;
@@ -196,6 +218,8 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroupArns;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

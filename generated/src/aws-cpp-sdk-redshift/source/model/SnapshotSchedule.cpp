@@ -28,8 +28,7 @@ SnapshotSchedule::SnapshotSchedule() :
     m_nextInvocationsHasBeenSet(false),
     m_associatedClusterCount(0),
     m_associatedClusterCountHasBeenSet(false),
-    m_associatedClustersHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_associatedClustersHasBeenSet(false)
 {
 }
 
@@ -41,8 +40,7 @@ SnapshotSchedule::SnapshotSchedule(const XmlNode& xmlNode) :
     m_nextInvocationsHasBeenSet(false),
     m_associatedClusterCount(0),
     m_associatedClusterCountHasBeenSet(false),
-    m_associatedClustersHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_associatedClustersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -181,13 +179,9 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -240,12 +234,9 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, associatedClustersSs.str().c_str());
       }
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

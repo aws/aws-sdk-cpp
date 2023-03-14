@@ -203,6 +203,28 @@ namespace Model
      */
     inline ListTrafficPoliciesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListTrafficPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListTrafficPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListTrafficPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<TrafficPolicySummary> m_trafficPolicySummaries;
@@ -212,6 +234,8 @@ namespace Model
     Aws::String m_trafficPolicyIdMarker;
 
     Aws::String m_maxItems;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

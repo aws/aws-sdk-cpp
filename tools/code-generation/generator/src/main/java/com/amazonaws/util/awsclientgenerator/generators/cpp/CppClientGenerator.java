@@ -16,6 +16,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -58,6 +59,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         {
           serviceModel.getOperations().remove(operation);
         });
+        addRequestIdToResults(serviceModel);
         List<SdkFileEntry> fileList = new ArrayList<>();
         fileList.addAll(generateModelHeaderFiles(serviceModel));
         fileList.addAll(generateModelSourceFiles(serviceModel));
@@ -98,6 +100,25 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
+    }
+
+    protected void addRequestIdToResults(final ServiceModel serviceModel) {
+        serviceModel.getShapes().values().stream()
+                .filter(Shape::isResult)
+                .filter(shape -> !shape.getMembers().containsKey("requestId"))
+                .forEach(shape -> {
+                    Shape requestId = new Shape();
+                    requestId.setName("RequestId");
+                    requestId.setType("string");
+                    requestId.hasHeaderMembers();
+                    requestId.setMembers(ImmutableMap.of());
+
+                    ShapeMember requestIdMember = new ShapeMember();
+                    requestIdMember.setShape(requestId);
+                    requestIdMember.setLocation("header");
+                    requestIdMember.setLocationName("x-amzn-requestid");
+                    shape.getMembers().put("RequestId", requestIdMember);
+                });
     }
 
     protected final VelocityContext createContext(final ServiceModel serviceModel) {

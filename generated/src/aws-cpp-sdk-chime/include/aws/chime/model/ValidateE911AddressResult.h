@@ -157,6 +157,28 @@ namespace Model
      */
     inline ValidateE911AddressResult& AddCandidateAddressList(CandidateAddress&& value) { m_candidateAddressList.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ValidateE911AddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ValidateE911AddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ValidateE911AddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_validationResult;
@@ -166,6 +188,8 @@ namespace Model
     Address m_address;
 
     Aws::Vector<CandidateAddress> m_candidateAddressList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

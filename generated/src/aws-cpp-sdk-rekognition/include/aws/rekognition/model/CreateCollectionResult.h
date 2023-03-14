@@ -133,6 +133,28 @@ namespace Model
      */
     inline CreateCollectionResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_statusCode;
@@ -140,6 +162,8 @@ namespace Model
     Aws::String m_collectionArn;
 
     Aws::String m_faceModelVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

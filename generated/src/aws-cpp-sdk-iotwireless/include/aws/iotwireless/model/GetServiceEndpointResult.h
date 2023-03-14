@@ -130,6 +130,28 @@ namespace Model
      */
     inline GetServiceEndpointResult& WithServerTrust(const char* value) { SetServerTrust(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetServiceEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetServiceEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetServiceEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     WirelessGatewayServiceType m_serviceType;
@@ -137,6 +159,8 @@ namespace Model
     Aws::String m_serviceEndpoint;
 
     Aws::String m_serverTrust;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

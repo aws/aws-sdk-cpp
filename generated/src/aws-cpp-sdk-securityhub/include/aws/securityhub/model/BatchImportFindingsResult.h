@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/ImportFindingsError.h>
 #include <utility>
 
@@ -100,6 +101,28 @@ namespace Model
      */
     inline BatchImportFindingsResult& AddFailedFindings(ImportFindingsError&& value) { m_failedFindings.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchImportFindingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchImportFindingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchImportFindingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_failedCount;
@@ -107,6 +130,8 @@ namespace Model
     int m_successCount;
 
     Aws::Vector<ImportFindingsError> m_failedFindings;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

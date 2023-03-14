@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/JobDetails.h>
 #include <aws/accessanalyzer/model/GeneratedPolicyResults.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -94,11 +95,35 @@ namespace Model
      */
     inline GetGeneratedPolicyResult& WithGeneratedPolicyResults(GeneratedPolicyResults&& value) { SetGeneratedPolicyResults(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetGeneratedPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetGeneratedPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetGeneratedPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     JobDetails m_jobDetails;
 
     GeneratedPolicyResults m_generatedPolicyResults;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

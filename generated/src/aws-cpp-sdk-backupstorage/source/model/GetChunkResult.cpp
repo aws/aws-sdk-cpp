@@ -26,7 +26,8 @@ GetChunkResult::GetChunkResult(GetChunkResult&& toMove) :
     m_data(std::move(toMove.m_data)),
     m_length(toMove.m_length),
     m_checksum(std::move(toMove.m_checksum)),
-    m_checksumAlgorithm(toMove.m_checksumAlgorithm)
+    m_checksumAlgorithm(toMove.m_checksumAlgorithm),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -41,6 +42,7 @@ GetChunkResult& GetChunkResult::operator=(GetChunkResult&& toMove)
    m_length = toMove.m_length;
    m_checksum = std::move(toMove.m_checksum);
    m_checksumAlgorithm = toMove.m_checksumAlgorithm;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -73,6 +75,12 @@ GetChunkResult& GetChunkResult::operator =(Aws::AmazonWebServiceResult<ResponseS
   if(checksumAlgorithmIter != headers.end())
   {
     m_checksumAlgorithm = DataChecksumAlgorithmMapper::GetDataChecksumAlgorithmForName(checksumAlgorithmIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

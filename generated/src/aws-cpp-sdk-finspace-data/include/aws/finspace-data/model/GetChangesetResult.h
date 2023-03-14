@@ -518,6 +518,28 @@ namespace Model
      */
     inline GetChangesetResult& WithUpdatedByChangesetId(const char* value) { SetUpdatedByChangesetId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetChangesetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetChangesetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetChangesetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_changesetId;
@@ -545,6 +567,8 @@ namespace Model
     Aws::String m_updatesChangesetId;
 
     Aws::String m_updatedByChangesetId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

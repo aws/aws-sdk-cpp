@@ -45,6 +45,12 @@ PutSnapshotBlockResult& PutSnapshotBlockResult::operator =(const Aws::AmazonWebS
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
 
   return *this;
 }

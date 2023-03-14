@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -36,18 +37,19 @@ DeleteThemeResult& DeleteThemeResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("RequestId"))
-  {
-    m_requestId = jsonValue.GetString("RequestId");
-
-  }
-
   if(jsonValue.ValueExists("ThemeId"))
   {
     m_themeId = jsonValue.GetString("ThemeId");
 
   }
 
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
 
   m_status = static_cast<int>(result.GetResponseCode());

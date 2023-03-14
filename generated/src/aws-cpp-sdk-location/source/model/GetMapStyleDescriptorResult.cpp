@@ -23,7 +23,8 @@ GetMapStyleDescriptorResult::GetMapStyleDescriptorResult()
 GetMapStyleDescriptorResult::GetMapStyleDescriptorResult(GetMapStyleDescriptorResult&& toMove) : 
     m_blob(std::move(toMove.m_blob)),
     m_cacheControl(std::move(toMove.m_cacheControl)),
-    m_contentType(std::move(toMove.m_contentType))
+    m_contentType(std::move(toMove.m_contentType)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -37,6 +38,7 @@ GetMapStyleDescriptorResult& GetMapStyleDescriptorResult::operator=(GetMapStyleD
    m_blob = std::move(toMove.m_blob);
    m_cacheControl = std::move(toMove.m_cacheControl);
    m_contentType = std::move(toMove.m_contentType);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -61,6 +63,12 @@ GetMapStyleDescriptorResult& GetMapStyleDescriptorResult::operator =(Aws::Amazon
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -69,6 +70,13 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
     }
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
   return *this;

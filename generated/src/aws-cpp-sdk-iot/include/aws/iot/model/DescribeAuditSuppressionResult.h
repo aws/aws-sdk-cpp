@@ -149,6 +149,28 @@ namespace Model
      */
     inline DescribeAuditSuppressionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAuditSuppressionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAuditSuppressionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAuditSuppressionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_checkName;
@@ -160,6 +182,8 @@ namespace Model
     bool m_suppressIndefinitely;
 
     Aws::String m_description;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

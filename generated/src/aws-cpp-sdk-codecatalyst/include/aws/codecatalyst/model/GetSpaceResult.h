@@ -175,6 +175,28 @@ namespace Model
      */
     inline GetSpaceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetSpaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetSpaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetSpaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -184,6 +206,8 @@ namespace Model
     Aws::String m_displayName;
 
     Aws::String m_description;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

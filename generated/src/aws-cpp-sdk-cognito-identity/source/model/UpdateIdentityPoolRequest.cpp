@@ -5,6 +5,7 @@
 
 #include <aws/cognito-identity/model/UpdateIdentityPoolRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ UpdateIdentityPoolRequest::UpdateIdentityPoolRequest() :
     m_openIdConnectProviderARNsHasBeenSet(false),
     m_cognitoIdentityProvidersHasBeenSet(false),
     m_samlProviderARNsHasBeenSet(false),
-    m_identityPoolTagsHasBeenSet(false)
+    m_identityPoolTagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,14 @@ Aws::Http::HeaderValueCollection UpdateIdentityPoolRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UpdateIdentityPool"));
+  Aws::StringStream ss;
+  if(m_requestIdHasBeenSet)
+  {
+    ss << m_requestId;
+    headers.emplace("x-amzn-requestid",  ss.str());
+    ss.str("");
+  }
+
   return headers;
 
 }

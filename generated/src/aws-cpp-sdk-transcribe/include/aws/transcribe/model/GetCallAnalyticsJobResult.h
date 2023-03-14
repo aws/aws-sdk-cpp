@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/CallAnalyticsJob.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline GetCallAnalyticsJobResult& WithCallAnalyticsJob(CallAnalyticsJob&& value) { SetCallAnalyticsJob(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetCallAnalyticsJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetCallAnalyticsJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetCallAnalyticsJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     CallAnalyticsJob m_callAnalyticsJob;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -169,6 +169,28 @@ namespace Model
      */
     inline GetPackageVersionAssetResult& WithPackageVersionRevision(const char* value) { SetPackageVersionRevision(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPackageVersionAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPackageVersionAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPackageVersionAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::Stream::ResponseStream m_asset;
@@ -178,6 +200,8 @@ namespace Model
     Aws::String m_packageVersion;
 
     Aws::String m_packageVersionRevision;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

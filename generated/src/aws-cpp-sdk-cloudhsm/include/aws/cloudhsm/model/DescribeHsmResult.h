@@ -778,6 +778,28 @@ namespace Model
      */
     inline DescribeHsmResult& AddPartitions(const char* value) { m_partitions.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeHsmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeHsmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeHsmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_hsmArn;
@@ -821,6 +843,8 @@ namespace Model
     Aws::String m_serverCertLastUpdated;
 
     Aws::Vector<Aws::String> m_partitions;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

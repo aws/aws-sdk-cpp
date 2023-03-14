@@ -169,6 +169,31 @@ namespace Model
      */
     inline RequestValidator& WithValidateRequestParameters(bool value) { SetValidateRequestParameters(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
+
+    
+    inline RequestValidator& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RequestValidator& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RequestValidator& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -182,6 +207,9 @@ namespace Model
 
     bool m_validateRequestParameters;
     bool m_validateRequestParametersHasBeenSet = false;
+
+    Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

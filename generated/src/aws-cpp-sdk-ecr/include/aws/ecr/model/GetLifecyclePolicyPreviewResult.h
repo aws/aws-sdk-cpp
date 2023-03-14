@@ -295,6 +295,28 @@ namespace Model
      */
     inline GetLifecyclePolicyPreviewResult& WithSummary(LifecyclePolicyPreviewSummary&& value) { SetSummary(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetLifecyclePolicyPreviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetLifecyclePolicyPreviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetLifecyclePolicyPreviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -310,6 +332,8 @@ namespace Model
     Aws::Vector<LifecyclePolicyPreviewResult> m_previewResults;
 
     LifecyclePolicyPreviewSummary m_summary;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

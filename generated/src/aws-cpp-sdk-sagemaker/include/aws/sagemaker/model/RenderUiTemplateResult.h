@@ -119,11 +119,35 @@ namespace Model
      */
     inline RenderUiTemplateResult& AddErrors(RenderingError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RenderUiTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RenderUiTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RenderUiTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_renderedContent;
 
     Aws::Vector<RenderingError> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

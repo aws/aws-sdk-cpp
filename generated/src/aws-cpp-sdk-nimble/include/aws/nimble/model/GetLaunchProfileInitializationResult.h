@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/nimble/model/LaunchProfileInitialization.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetLaunchProfileInitializationResult& WithLaunchProfileInitialization(LaunchProfileInitialization&& value) { SetLaunchProfileInitialization(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetLaunchProfileInitializationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetLaunchProfileInitializationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetLaunchProfileInitializationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     LaunchProfileInitialization m_launchProfileInitialization;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

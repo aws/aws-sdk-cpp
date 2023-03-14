@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/SidewalkAccountInfoWithFingerprint.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -73,11 +74,35 @@ namespace Model
      */
     inline GetPartnerAccountResult& WithAccountLinked(bool value) { SetAccountLinked(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPartnerAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPartnerAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPartnerAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     SidewalkAccountInfoWithFingerprint m_sidewalk;
 
     bool m_accountLinked;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

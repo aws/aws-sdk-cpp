@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMe
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -388,5 +389,26 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         }
 
         return null;
+    }
+
+    @Override
+    protected void addRequestIdToResults(final ServiceModel serviceModel) {
+        serviceModel.getShapes().values().stream()
+                .filter(Shape::isResult)
+                .filter(shape -> !shape.getMembers().containsKey("requestId"))
+                .forEach(shape -> {
+                    Shape requestId = new Shape();
+                    requestId.setName("RequestId");
+                    requestId.setType("string");
+                    requestId.hasHeaderMembers();
+                    requestId.setMembers(ImmutableMap.of());
+
+                    ShapeMember requestIdMember = new ShapeMember();
+                    requestIdMember.setShape(requestId);
+                    requestIdMember.setLocation("header");
+                    //S3 uses a different header location than other services.
+                    requestIdMember.setLocationName("x-amz-request-id");
+                    shape.getMembers().put("RequestId", requestIdMember);
+                });
     }
 }

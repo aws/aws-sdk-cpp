@@ -157,6 +157,28 @@ namespace Model
      */
     inline StartReplayResult& WithReplayStartTime(Aws::Utils::DateTime&& value) { SetReplayStartTime(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartReplayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartReplayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartReplayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_replayArn;
@@ -166,6 +188,8 @@ namespace Model
     Aws::String m_stateReason;
 
     Aws::Utils::DateTime m_replayStartTime;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

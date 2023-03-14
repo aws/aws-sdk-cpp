@@ -8,6 +8,7 @@
 #include <aws/rekognition/model/ComparedSourceImageFace.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/CompareFacesMatch.h>
 #include <aws/rekognition/model/ComparedFace.h>
 #include <utility>
@@ -313,6 +314,28 @@ namespace Model
      */
     inline CompareFacesResult& WithTargetImageOrientationCorrection(OrientationCorrection&& value) { SetTargetImageOrientationCorrection(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CompareFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CompareFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CompareFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ComparedSourceImageFace m_sourceImageFace;
@@ -324,6 +347,8 @@ namespace Model
     OrientationCorrection m_sourceImageOrientationCorrection;
 
     OrientationCorrection m_targetImageOrientationCorrection;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

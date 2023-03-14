@@ -67,9 +67,33 @@ namespace Model
      */
     inline StartVirtualMachinesMetadataSyncResult& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartVirtualMachinesMetadataSyncResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartVirtualMachinesMetadataSyncResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartVirtualMachinesMetadataSyncResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_hypervisorArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

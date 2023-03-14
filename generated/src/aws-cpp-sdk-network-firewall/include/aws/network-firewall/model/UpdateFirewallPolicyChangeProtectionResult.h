@@ -251,6 +251,28 @@ namespace Model
      */
     inline UpdateFirewallPolicyChangeProtectionResult& WithFirewallPolicyChangeProtection(bool value) { SetFirewallPolicyChangeProtection(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateFirewallPolicyChangeProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateFirewallPolicyChangeProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateFirewallPolicyChangeProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_updateToken;
@@ -260,6 +282,8 @@ namespace Model
     Aws::String m_firewallName;
 
     bool m_firewallPolicyChangeProtection;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

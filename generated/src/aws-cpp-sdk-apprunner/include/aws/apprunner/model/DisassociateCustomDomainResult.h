@@ -182,6 +182,28 @@ namespace Model
      */
     inline DisassociateCustomDomainResult& AddVpcDNSTargets(VpcDNSTarget&& value) { m_vpcDNSTargets.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DisassociateCustomDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DisassociateCustomDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DisassociateCustomDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_dNSTarget;
@@ -191,6 +213,8 @@ namespace Model
     CustomDomain m_customDomain;
 
     Aws::Vector<VpcDNSTarget> m_vpcDNSTargets;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

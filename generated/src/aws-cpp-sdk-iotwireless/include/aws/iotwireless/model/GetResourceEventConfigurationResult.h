@@ -10,6 +10,7 @@
 #include <aws/iotwireless/model/JoinEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusEventConfiguration.h>
 #include <aws/iotwireless/model/MessageDeliveryStatusEventConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,28 @@ namespace Model
      */
     inline GetResourceEventConfigurationResult& WithMessageDeliveryStatus(MessageDeliveryStatusEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetResourceEventConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetResourceEventConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetResourceEventConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DeviceRegistrationStateEventConfiguration m_deviceRegistrationState;
@@ -176,6 +199,8 @@ namespace Model
     ConnectionStatusEventConfiguration m_connectionStatus;
 
     MessageDeliveryStatusEventConfiguration m_messageDeliveryStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

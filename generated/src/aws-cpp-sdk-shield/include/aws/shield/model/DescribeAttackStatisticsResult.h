@@ -7,6 +7,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/TimeRange.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/model/AttackStatisticsDataItem.h>
 #include <utility>
 
@@ -95,11 +96,35 @@ namespace Model
      */
     inline DescribeAttackStatisticsResult& AddDataItems(AttackStatisticsDataItem&& value) { m_dataItems.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAttackStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAttackStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAttackStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     TimeRange m_timeRange;
 
     Aws::Vector<AttackStatisticsDataItem> m_dataItems;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

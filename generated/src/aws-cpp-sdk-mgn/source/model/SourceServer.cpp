@@ -5,6 +5,7 @@
 
 #include <aws/mgn/model/SourceServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -31,7 +32,8 @@ SourceServer::SourceServer() :
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vcenterClientIDHasBeenSet(false)
+    m_vcenterClientIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,8 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vcenterClientIDHasBeenSet(false)
+    m_vcenterClientIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

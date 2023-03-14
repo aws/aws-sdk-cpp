@@ -176,6 +176,28 @@ namespace Model
      */
     inline ReplicateKeyResult& AddReplicaTags(Tag&& value) { m_replicaTags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ReplicateKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ReplicateKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ReplicateKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     KeyMetadata m_replicaKeyMetadata;
@@ -183,6 +205,8 @@ namespace Model
     Aws::String m_replicaPolicy;
 
     Aws::Vector<Tag> m_replicaTags;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -1093,6 +1093,28 @@ namespace Model
      */
     inline DescribeBrokerResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeBrokerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeBrokerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeBrokerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ActionRequired> m_actionsRequired;
@@ -1152,6 +1174,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Vector<UserSummary> m_users;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

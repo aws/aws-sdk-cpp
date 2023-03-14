@@ -163,6 +163,28 @@ namespace Model
      */
     inline GetUsageStatisticsResult& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetUsageStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetUsageStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetUsageStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -170,6 +192,8 @@ namespace Model
     Aws::Vector<UsageRecord> m_records;
 
     TimeRange m_timeRange;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

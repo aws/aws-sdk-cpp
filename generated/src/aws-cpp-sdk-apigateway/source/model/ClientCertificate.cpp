@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/ClientCertificate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ ClientCertificate::ClientCertificate() :
     m_pemEncodedCertificateHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,8 @@ ClientCertificate::ClientCertificate(JsonView jsonValue) :
     m_pemEncodedCertificateHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

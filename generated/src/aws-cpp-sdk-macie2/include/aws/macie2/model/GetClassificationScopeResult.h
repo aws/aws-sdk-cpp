@@ -130,6 +130,28 @@ namespace Model
      */
     inline GetClassificationScopeResult& WithS3(S3ClassificationScope&& value) { SetS3(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetClassificationScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetClassificationScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetClassificationScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -137,6 +159,8 @@ namespace Model
     Aws::String m_name;
 
     S3ClassificationScope m_s3;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

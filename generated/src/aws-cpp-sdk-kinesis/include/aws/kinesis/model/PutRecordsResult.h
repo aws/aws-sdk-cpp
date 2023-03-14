@@ -7,6 +7,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesis/model/EncryptionType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/PutRecordsResultEntry.h>
 #include <utility>
 
@@ -162,6 +163,28 @@ namespace Model
      */
     inline PutRecordsResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_failedRecordCount;
@@ -169,6 +192,8 @@ namespace Model
     Aws::Vector<PutRecordsResultEntry> m_records;
 
     EncryptionType m_encryptionType;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

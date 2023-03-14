@@ -94,11 +94,35 @@ namespace Model
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateAppInstanceAdminResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateAppInstanceAdminResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateAppInstanceAdminResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Identity m_appInstanceAdmin;
 
     Aws::String m_appInstanceArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

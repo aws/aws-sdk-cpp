@@ -269,6 +269,28 @@ namespace Model
     
     inline GetWorkerResult& WithOrientation(Orientation&& value) { SetOrientation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetWorkerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetWorkerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetWorkerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -294,6 +316,8 @@ namespace Model
     PositionCoordinates m_position;
 
     Orientation m_orientation;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/NniPartnerType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/CustomerAgreement.h>
 #include <utility>
 
@@ -120,11 +121,35 @@ namespace Model
      */
     inline DescribeCustomerMetadataResult& WithNniPartnerType(NniPartnerType&& value) { SetNniPartnerType(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeCustomerMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeCustomerMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeCustomerMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<CustomerAgreement> m_agreements;
 
     NniPartnerType m_nniPartnerType;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

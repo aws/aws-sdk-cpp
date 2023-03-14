@@ -215,6 +215,28 @@ namespace Model
      */
     inline CreateEventActionResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateEventActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateEventActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateEventActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Action m_action;
@@ -228,6 +250,8 @@ namespace Model
     Aws::String m_id;
 
     Aws::Utils::DateTime m_updatedAt;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ SynthesizeSpeechResult::SynthesizeSpeechResult() :
 SynthesizeSpeechResult::SynthesizeSpeechResult(SynthesizeSpeechResult&& toMove) : 
     m_audioStream(std::move(toMove.m_audioStream)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_requestCharacters(toMove.m_requestCharacters)
+    m_requestCharacters(toMove.m_requestCharacters),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -38,6 +39,7 @@ SynthesizeSpeechResult& SynthesizeSpeechResult::operator=(SynthesizeSpeechResult
    m_audioStream = std::move(toMove.m_audioStream);
    m_contentType = std::move(toMove.m_contentType);
    m_requestCharacters = toMove.m_requestCharacters;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -63,6 +65,12 @@ SynthesizeSpeechResult& SynthesizeSpeechResult::operator =(Aws::AmazonWebService
   if(requestCharactersIter != headers.end())
   {
      m_requestCharacters = StringUtils::ConvertToInt32(requestCharactersIter->second.c_str());
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Firewall.h>
 #include <aws/network-firewall/model/FirewallStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -64,11 +65,35 @@ namespace Model
     
     inline DeleteFirewallResult& WithFirewallStatus(FirewallStatus&& value) { SetFirewallStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteFirewallResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteFirewallResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteFirewallResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Firewall m_firewall;
 
     FirewallStatus m_firewallStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

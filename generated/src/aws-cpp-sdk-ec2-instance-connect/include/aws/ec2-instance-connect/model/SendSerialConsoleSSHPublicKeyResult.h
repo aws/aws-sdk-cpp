@@ -32,46 +32,25 @@ namespace Model
     AWS_EC2INSTANCECONNECT_API SendSerialConsoleSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline SendSerialConsoleSSHPublicKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline SendSerialConsoleSSHPublicKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
-    /**
-     * <p>The ID of the request. Please provide this ID when contacting AWS Support for
-     * assistance.</p>
-     */
+    
     inline SendSerialConsoleSSHPublicKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 

@@ -429,6 +429,28 @@ include an explanation of why the HarvestJob failed.
      */
     inline CreateHarvestJobResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateHarvestJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateHarvestJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateHarvestJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -448,6 +470,8 @@ include an explanation of why the HarvestJob failed.
     Aws::String m_startTime;
 
     Status m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/DocumentationVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,16 @@ namespace Model
 DocumentationVersion::DocumentationVersion() : 
     m_versionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 DocumentationVersion::DocumentationVersion(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

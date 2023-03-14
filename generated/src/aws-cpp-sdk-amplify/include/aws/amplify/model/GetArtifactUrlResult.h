@@ -109,11 +109,35 @@ namespace Model
      */
     inline GetArtifactUrlResult& WithArtifactUrl(const char* value) { SetArtifactUrl(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetArtifactUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetArtifactUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetArtifactUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_artifactId;
 
     Aws::String m_artifactUrl;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

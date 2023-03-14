@@ -543,6 +543,28 @@ namespace Model
      */
     inline GetDimensionValuesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetDimensionValuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetDimensionValuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetDimensionValuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<DimensionValuesWithAttributes> m_dimensionValues;
@@ -552,6 +574,8 @@ namespace Model
     int m_totalSize;
 
     Aws::String m_nextPageToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

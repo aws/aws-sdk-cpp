@@ -5,6 +5,7 @@
 
 #include <aws/appconfig/model/DeploymentStrategy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -31,7 +32,8 @@ DeploymentStrategy::DeploymentStrategy() :
     m_finalBakeTimeInMinutes(0),
     m_finalBakeTimeInMinutesHasBeenSet(false),
     m_replicateTo(ReplicateTo::NOT_SET),
-    m_replicateToHasBeenSet(false)
+    m_replicateToHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,8 @@ DeploymentStrategy::DeploymentStrategy(JsonView jsonValue) :
     m_finalBakeTimeInMinutes(0),
     m_finalBakeTimeInMinutesHasBeenSet(false),
     m_replicateTo(ReplicateTo::NOT_SET),
-    m_replicateToHasBeenSet(false)
+    m_replicateToHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
