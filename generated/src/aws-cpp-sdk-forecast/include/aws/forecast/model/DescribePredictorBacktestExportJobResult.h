@@ -389,6 +389,28 @@ namespace Model
      */
     inline DescribePredictorBacktestExportJobResult& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribePredictorBacktestExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribePredictorBacktestExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribePredictorBacktestExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_predictorBacktestExportJobArn;
@@ -408,6 +430,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModificationTime;
 
     Aws::String m_format;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

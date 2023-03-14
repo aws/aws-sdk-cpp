@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendedOptionProjectedMetric.h>
 #include <utility>
 
@@ -68,9 +69,33 @@ namespace Model
      */
     inline GetECSServiceRecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(ECSServiceRecommendedOptionProjectedMetric&& value) { m_recommendedOptionProjectedMetrics.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetECSServiceRecommendationProjectedMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetECSServiceRecommendationProjectedMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetECSServiceRecommendationProjectedMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ECSServiceRecommendedOptionProjectedMetric> m_recommendedOptionProjectedMetrics;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -338,6 +338,28 @@ namespace Model
      */
     inline GetResponsePlanResult& WithName(const char* value) { SetName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetResponsePlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetResponsePlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetResponsePlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Action> m_actions;
@@ -355,6 +377,8 @@ namespace Model
     Aws::Vector<Integration> m_integrations;
 
     Aws::String m_name;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

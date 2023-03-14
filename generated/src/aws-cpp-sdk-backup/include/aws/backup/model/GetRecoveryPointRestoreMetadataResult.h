@@ -203,6 +203,28 @@ namespace Model
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, const char* value) { m_restoreMetadata.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_backupVaultArn;
@@ -210,6 +232,8 @@ namespace Model
     Aws::String m_recoveryPointArn;
 
     Aws::Map<Aws::String, Aws::String> m_restoreMetadata;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -27,7 +27,8 @@ GetObjectMetadataResult::GetObjectMetadataResult(GetObjectMetadataResult&& toMov
     m_metadataBlob(std::move(toMove.m_metadataBlob)),
     m_metadataBlobLength(toMove.m_metadataBlobLength),
     m_metadataBlobChecksum(std::move(toMove.m_metadataBlobChecksum)),
-    m_metadataBlobChecksumAlgorithm(toMove.m_metadataBlobChecksumAlgorithm)
+    m_metadataBlobChecksumAlgorithm(toMove.m_metadataBlobChecksumAlgorithm),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -43,6 +44,7 @@ GetObjectMetadataResult& GetObjectMetadataResult::operator=(GetObjectMetadataRes
    m_metadataBlobLength = toMove.m_metadataBlobLength;
    m_metadataBlobChecksum = std::move(toMove.m_metadataBlobChecksum);
    m_metadataBlobChecksumAlgorithm = toMove.m_metadataBlobChecksumAlgorithm;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -81,6 +83,12 @@ GetObjectMetadataResult& GetObjectMetadataResult::operator =(Aws::AmazonWebServi
   if(metadataBlobChecksumAlgorithmIter != headers.end())
   {
     m_metadataBlobChecksumAlgorithm = DataChecksumAlgorithmMapper::GetDataChecksumAlgorithmForName(metadataBlobChecksumAlgorithmIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

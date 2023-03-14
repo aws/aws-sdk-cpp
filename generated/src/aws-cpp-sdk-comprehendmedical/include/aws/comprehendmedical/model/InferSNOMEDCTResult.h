@@ -249,6 +249,28 @@ namespace Model
      */
     inline InferSNOMEDCTResult& WithCharacters(Characters&& value) { SetCharacters(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline InferSNOMEDCTResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline InferSNOMEDCTResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline InferSNOMEDCTResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<SNOMEDCTEntity> m_entities;
@@ -260,6 +282,8 @@ namespace Model
     SNOMEDCTDetails m_sNOMEDCTDetails;
 
     Characters m_characters;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

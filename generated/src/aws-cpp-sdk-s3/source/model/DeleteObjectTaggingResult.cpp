@@ -41,5 +41,11 @@ DeleteObjectTaggingResult& DeleteObjectTaggingResult::operator =(const Aws::Amaz
     m_versionId = versionIdIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

@@ -7,8 +7,8 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/model/ApplicationComponentDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/migrationhubstrategy/model/AssociatedApplication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/model/AssociatedApplication.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +171,28 @@ namespace Model
      */
     inline GetApplicationComponentDetailsResult& WithMoreApplicationResource(bool value) { SetMoreApplicationResource(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetApplicationComponentDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetApplicationComponentDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetApplicationComponentDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ApplicationComponentDetail m_applicationComponentDetail;
@@ -180,6 +202,8 @@ namespace Model
     Aws::Vector<Aws::String> m_associatedServerIds;
 
     bool m_moreApplicationResource;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

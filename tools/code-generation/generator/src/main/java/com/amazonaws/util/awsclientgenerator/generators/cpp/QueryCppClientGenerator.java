@@ -25,7 +25,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+    protected void addRequestIdToResults(final ServiceModel serviceModel) {
         Shape shape = new Shape();
         shape.setName("ResponseMetadata");
         shape.setReferenced(true);
@@ -47,12 +47,15 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         responseMetadataMember.setRequired(true);
         responseMetadataMember.setValidationNeeded(true);
 
-        for(Shape resultShape : serviceModel.getShapes().values()) {
-            if(resultShape.isResult()) {
+        for (Shape resultShape : serviceModel.getShapes().values()) {
+            if (resultShape.isResult()) {
                 resultShape.getMembers().put("ResponseMetadata", responseMetadataMember);
             }
         }
+    }
 
+    @Override
+    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
         //query api ALWAYS needs a request shape, because it needs to send action and version as part of the payload
         //we don't want to add it to the operation however, because there is no need for the user to be aware of the existence of this
         //type.

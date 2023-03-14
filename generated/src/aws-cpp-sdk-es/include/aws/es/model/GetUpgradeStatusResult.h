@@ -152,6 +152,28 @@ namespace Model
      */
     inline GetUpgradeStatusResult& WithUpgradeName(const char* value) { SetUpgradeName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetUpgradeStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetUpgradeStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetUpgradeStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     UpgradeStep m_upgradeStep;
@@ -159,6 +181,8 @@ namespace Model
     UpgradeStatus m_stepStatus;
 
     Aws::String m_upgradeName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/DocumentMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/textract/model/ExpenseDocument.h>
 #include <utility>
 
@@ -85,11 +86,35 @@ namespace Model
      */
     inline AnalyzeExpenseResult& AddExpenseDocuments(ExpenseDocument&& value) { m_expenseDocuments.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AnalyzeExpenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AnalyzeExpenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AnalyzeExpenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DocumentMetadata m_documentMetadata;
 
     Aws::Vector<ExpenseDocument> m_expenseDocuments;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

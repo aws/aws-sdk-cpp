@@ -155,6 +155,28 @@ namespace Model
      */
     inline DescribeFileSystemsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeFileSystemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeFileSystemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeFileSystemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_marker;
@@ -162,6 +184,8 @@ namespace Model
     Aws::Vector<FileSystemDescription> m_fileSystems;
 
     Aws::String m_nextMarker;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -310,6 +310,28 @@ namespace Model
      */
     inline RecognizeTextResult& WithRecognizedBotMember(RecognizedBotMember&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RecognizeTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RecognizeTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RecognizeTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Message> m_messages;
@@ -323,6 +345,8 @@ namespace Model
     Aws::String m_sessionId;
 
     RecognizedBotMember m_recognizedBotMember;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

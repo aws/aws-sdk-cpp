@@ -174,6 +174,28 @@ namespace Model
      */
     inline GetAggregateDiscoveredResourceCountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAggregateDiscoveredResourceCountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAggregateDiscoveredResourceCountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAggregateDiscoveredResourceCountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     long long m_totalDiscoveredResources;
@@ -183,6 +205,8 @@ namespace Model
     Aws::Vector<GroupedResourceCount> m_groupedResourceCounts;
 
     Aws::String m_nextToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

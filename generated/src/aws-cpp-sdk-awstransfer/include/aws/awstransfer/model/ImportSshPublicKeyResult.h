@@ -153,6 +153,28 @@ namespace Model
      */
     inline ImportSshPublicKeyResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ImportSshPublicKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ImportSshPublicKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ImportSshPublicKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_serverId;
@@ -160,6 +182,8 @@ namespace Model
     Aws::String m_sshPublicKeyId;
 
     Aws::String m_userName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

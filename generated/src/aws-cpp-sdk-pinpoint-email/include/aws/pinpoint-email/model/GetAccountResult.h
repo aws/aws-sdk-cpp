@@ -242,6 +242,28 @@ namespace Model
      */
     inline GetAccountResult& WithProductionAccessEnabled(bool value) { SetProductionAccessEnabled(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     SendQuota m_sendQuota;
@@ -253,6 +275,8 @@ namespace Model
     Aws::String m_enforcementStatus;
 
     bool m_productionAccessEnabled;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

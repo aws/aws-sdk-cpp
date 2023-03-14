@@ -9,6 +9,7 @@
 #include <aws/discovery/model/CustomerConnectorInfo.h>
 #include <aws/discovery/model/CustomerMeCollectorInfo.h>
 #include <aws/discovery/model/CustomerAgentlessCollectorInfo.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +203,28 @@ namespace Model
     
     inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { SetAgentlessCollectorSummary(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetDiscoverySummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetDiscoverySummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetDiscoverySummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     long long m_servers;
@@ -219,6 +242,8 @@ namespace Model
     CustomerMeCollectorInfo m_meCollectorSummary;
 
     CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

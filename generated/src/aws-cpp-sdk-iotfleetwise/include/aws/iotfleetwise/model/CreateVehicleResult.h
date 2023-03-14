@@ -139,6 +139,28 @@ namespace Model
      */
     inline CreateVehicleResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_vehicleName;
@@ -146,6 +168,8 @@ namespace Model
     Aws::String m_arn;
 
     Aws::String m_thingArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

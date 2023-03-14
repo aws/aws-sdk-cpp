@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/account/model/ContactInformation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline GetContactInformationResult& WithContactInformation(ContactInformation&& value) { SetContactInformation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetContactInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetContactInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetContactInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ContactInformation m_contactInformation;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

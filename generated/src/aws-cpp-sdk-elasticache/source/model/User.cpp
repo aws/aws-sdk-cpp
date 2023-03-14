@@ -29,8 +29,7 @@ User::User() :
     m_accessStringHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -43,8 +42,7 @@ User::User(const XmlNode& xmlNode) :
     m_accessStringHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -173,13 +171,9 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void User::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -226,12 +220,9 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

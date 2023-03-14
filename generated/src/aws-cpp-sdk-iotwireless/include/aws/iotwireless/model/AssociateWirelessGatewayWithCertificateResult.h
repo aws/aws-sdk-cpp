@@ -67,9 +67,33 @@ namespace Model
      */
     inline AssociateWirelessGatewayWithCertificateResult& WithIotCertificateId(const char* value) { SetIotCertificateId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AssociateWirelessGatewayWithCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AssociateWirelessGatewayWithCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AssociateWirelessGatewayWithCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_iotCertificateId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

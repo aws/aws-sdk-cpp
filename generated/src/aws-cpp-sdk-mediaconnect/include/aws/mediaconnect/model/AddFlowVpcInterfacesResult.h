@@ -105,11 +105,35 @@ namespace Model
      */
     inline AddFlowVpcInterfacesResult& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AddFlowVpcInterfacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AddFlowVpcInterfacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AddFlowVpcInterfacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_flowArn;
 
     Aws::Vector<VpcInterface> m_vpcInterfaces;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

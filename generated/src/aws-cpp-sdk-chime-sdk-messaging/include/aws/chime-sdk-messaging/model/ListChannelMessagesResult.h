@@ -184,6 +184,28 @@ namespace Model
      */
     inline ListChannelMessagesResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListChannelMessagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListChannelMessagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListChannelMessagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -193,6 +215,8 @@ namespace Model
     Aws::Vector<ChannelMessageSummary> m_channelMessages;
 
     Aws::String m_subChannelId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

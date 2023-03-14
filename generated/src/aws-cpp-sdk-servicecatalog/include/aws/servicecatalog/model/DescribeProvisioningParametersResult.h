@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactPreferences.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactParameter.h>
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
@@ -276,6 +277,28 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputKeys(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputKeys.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProvisioningParametersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProvisioningParametersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProvisioningParametersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
@@ -289,6 +312,8 @@ namespace Model
     ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
 
     Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputKeys;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

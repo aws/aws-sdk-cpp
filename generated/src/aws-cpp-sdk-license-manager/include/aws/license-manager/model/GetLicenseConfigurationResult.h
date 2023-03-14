@@ -555,6 +555,28 @@ namespace Model
      */
     inline GetLicenseConfigurationResult& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetLicenseConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetLicenseConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetLicenseConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationId;
@@ -590,6 +612,8 @@ namespace Model
     AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
 
     bool m_disassociateWhenNotFound;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

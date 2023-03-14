@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -28,18 +29,19 @@ UpdateTrustResult::UpdateTrustResult(const Aws::AmazonWebServiceResult<JsonValue
 UpdateTrustResult& UpdateTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("RequestId"))
-  {
-    m_requestId = jsonValue.GetString("RequestId");
-
-  }
-
   if(jsonValue.ValueExists("TrustId"))
   {
     m_trustId = jsonValue.GetString("TrustId");
 
   }
 
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
 
   return *this;

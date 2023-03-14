@@ -24,7 +24,8 @@ GetPackageVersionAssetResult::GetPackageVersionAssetResult(GetPackageVersionAsse
     m_asset(std::move(toMove.m_asset)),
     m_assetName(std::move(toMove.m_assetName)),
     m_packageVersion(std::move(toMove.m_packageVersion)),
-    m_packageVersionRevision(std::move(toMove.m_packageVersionRevision))
+    m_packageVersionRevision(std::move(toMove.m_packageVersionRevision)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -39,6 +40,7 @@ GetPackageVersionAssetResult& GetPackageVersionAssetResult::operator=(GetPackage
    m_assetName = std::move(toMove.m_assetName);
    m_packageVersion = std::move(toMove.m_packageVersion);
    m_packageVersionRevision = std::move(toMove.m_packageVersionRevision);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -69,6 +71,12 @@ GetPackageVersionAssetResult& GetPackageVersionAssetResult::operator =(Aws::Amaz
   if(packageVersionRevisionIter != headers.end())
   {
     m_packageVersionRevision = packageVersionRevisionIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

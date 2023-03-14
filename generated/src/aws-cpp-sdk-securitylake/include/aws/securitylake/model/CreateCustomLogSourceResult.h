@@ -246,6 +246,28 @@ namespace Model
      */
     inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(const char* value) { SetLogProviderAccessRoleArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateCustomLogSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateCustomLogSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateCustomLogSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_customDataLocation;
@@ -257,6 +279,8 @@ namespace Model
     Aws::String m_glueTableName;
 
     Aws::String m_logProviderAccessRoleArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

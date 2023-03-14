@@ -153,6 +153,28 @@ namespace Model
      */
     inline ListFindingAggregationsResult& AddResponses(AggregationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListFindingAggregationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListFindingAggregationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListFindingAggregationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     AggregationType m_aggregationType;
@@ -160,6 +182,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<AggregationResponse> m_responses;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

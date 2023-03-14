@@ -5,6 +5,7 @@
 
 #include <aws/directconnect/model/Interconnect.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -36,7 +37,8 @@ Interconnect::Interconnect() :
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,8 @@ Interconnect::Interconnect(JsonView jsonValue) :
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

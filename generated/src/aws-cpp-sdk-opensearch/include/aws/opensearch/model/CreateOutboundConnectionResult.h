@@ -251,6 +251,28 @@ namespace Model
      */
     inline CreateOutboundConnectionResult& WithConnectionProperties(ConnectionProperties&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateOutboundConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateOutboundConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateOutboundConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DomainInformationContainer m_localDomainInfo;
@@ -266,6 +288,8 @@ namespace Model
     ConnectionMode m_connectionMode;
 
     ConnectionProperties m_connectionProperties;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/ThirdPartyFirewallAssociationStatus.h>
 #include <aws/fms/model/MarketplaceSubscriptionOnboardingStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -184,11 +185,35 @@ namespace Model
      */
     inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus&& value) { SetMarketplaceOnboardingStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus;
 
     MarketplaceSubscriptionOnboardingStatus m_marketplaceOnboardingStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

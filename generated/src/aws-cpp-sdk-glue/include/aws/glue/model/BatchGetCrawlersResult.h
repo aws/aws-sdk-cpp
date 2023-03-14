@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/glue/model/Crawler.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/Crawler.h>
 #include <utility>
 
 namespace Aws
@@ -110,11 +110,35 @@ namespace Model
      */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(const char* value) { m_crawlersNotFound.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetCrawlersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetCrawlersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetCrawlersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Crawler> m_crawlers;
 
     Aws::Vector<Aws::String> m_crawlersNotFound;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

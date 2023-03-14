@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProductViewDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <aws/servicecatalog/model/TagOptionDetail.h>
@@ -213,6 +214,28 @@ namespace Model
      */
     inline DescribeProductAsAdminResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProductAsAdminResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProductAsAdminResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProductAsAdminResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProductViewDetail m_productViewDetail;
@@ -224,6 +247,8 @@ namespace Model
     Aws::Vector<TagOptionDetail> m_tagOptions;
 
     Aws::Vector<BudgetDetail> m_budgets;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

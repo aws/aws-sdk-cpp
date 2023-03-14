@@ -5,6 +5,7 @@
 
 #include <aws/mgn/model/Wave.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -28,7 +29,8 @@ Wave::Wave() :
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_waveAggregatedStatusHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
+    m_waveIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,8 @@ Wave::Wave(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_waveAggregatedStatusHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
+    m_waveIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

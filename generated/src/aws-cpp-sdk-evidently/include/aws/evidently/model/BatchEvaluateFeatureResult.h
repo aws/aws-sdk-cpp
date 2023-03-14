@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/evidently/model/EvaluationResult.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline BatchEvaluateFeatureResult& AddResults(EvaluationResult&& value) { m_results.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchEvaluateFeatureResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchEvaluateFeatureResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchEvaluateFeatureResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<EvaluationResult> m_results;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

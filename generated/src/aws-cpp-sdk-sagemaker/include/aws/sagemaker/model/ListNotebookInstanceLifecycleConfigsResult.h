@@ -119,11 +119,35 @@ namespace Model
      */
     inline ListNotebookInstanceLifecycleConfigsResult& AddNotebookInstanceLifecycleConfigs(NotebookInstanceLifecycleConfigSummary&& value) { m_notebookInstanceLifecycleConfigs.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListNotebookInstanceLifecycleConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListNotebookInstanceLifecycleConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListNotebookInstanceLifecycleConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<NotebookInstanceLifecycleConfigSummary> m_notebookInstanceLifecycleConfigs;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

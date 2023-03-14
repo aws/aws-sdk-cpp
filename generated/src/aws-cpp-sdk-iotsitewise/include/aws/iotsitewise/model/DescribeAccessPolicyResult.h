@@ -280,6 +280,28 @@ namespace Model
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyLastUpdateDate(Aws::Utils::DateTime&& value) { SetAccessPolicyLastUpdateDate(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_accessPolicyId;
@@ -295,6 +317,8 @@ namespace Model
     Aws::Utils::DateTime m_accessPolicyCreationDate;
 
     Aws::Utils::DateTime m_accessPolicyLastUpdateDate;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

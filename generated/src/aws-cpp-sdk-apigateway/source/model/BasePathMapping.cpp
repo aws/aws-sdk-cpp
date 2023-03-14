@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/BasePathMapping.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,16 @@ namespace Model
 BasePathMapping::BasePathMapping() : 
     m_basePathHasBeenSet(false),
     m_restApiIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+    m_stageHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 BasePathMapping::BasePathMapping(JsonView jsonValue) : 
     m_basePathHasBeenSet(false),
     m_restApiIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+    m_stageHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

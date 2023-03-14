@@ -135,6 +135,28 @@ namespace Model
      */
     inline CreateInferenceSchedulerResult& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateInferenceSchedulerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateInferenceSchedulerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateInferenceSchedulerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_inferenceSchedulerArn;
@@ -142,6 +164,8 @@ namespace Model
     Aws::String m_inferenceSchedulerName;
 
     InferenceSchedulerStatus m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

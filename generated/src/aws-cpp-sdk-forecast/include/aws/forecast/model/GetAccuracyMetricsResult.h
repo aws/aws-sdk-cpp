@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/forecast/model/OptimizationMetric.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/forecast/model/EvaluationResult.h>
 #include <utility>
 
@@ -163,6 +164,28 @@ namespace Model
      */
     inline GetAccuracyMetricsResult& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccuracyMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccuracyMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccuracyMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
@@ -172,6 +195,8 @@ namespace Model
     AutoMLOverrideStrategy m_autoMLOverrideStrategy;
 
     OptimizationMetric m_optimizationMetric;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -370,6 +370,28 @@ namespace Model
      */
     inline UpdateUsagePlanResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateUsagePlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateUsagePlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateUsagePlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -387,6 +409,8 @@ namespace Model
     Aws::String m_productCode;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -445,6 +445,28 @@ namespace Model
      */
     inline DescribeBackupVaultResult& WithLockDate(Aws::Utils::DateTime&& value) { SetLockDate(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeBackupVaultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeBackupVaultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeBackupVaultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_backupVaultName;
@@ -466,6 +488,8 @@ namespace Model
     long long m_maxRetentionDays;
 
     Aws::Utils::DateTime m_lockDate;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

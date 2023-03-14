@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/SecurityControl.h>
 #include <aws/securityhub/model/UnprocessedSecurityControl.h>
 #include <utility>
@@ -140,11 +141,35 @@ namespace Model
      */
     inline BatchGetSecurityControlsResult& AddUnprocessedIds(UnprocessedSecurityControl&& value) { m_unprocessedIds.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetSecurityControlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetSecurityControlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetSecurityControlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<SecurityControl> m_securityControls;
 
     Aws::Vector<UnprocessedSecurityControl> m_unprocessedIds;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

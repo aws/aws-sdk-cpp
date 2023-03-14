@@ -643,6 +643,28 @@ one destination per
      */
     inline StartChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -680,6 +702,8 @@ one destination per
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     VpcOutputSettingsDescription m_vpc;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

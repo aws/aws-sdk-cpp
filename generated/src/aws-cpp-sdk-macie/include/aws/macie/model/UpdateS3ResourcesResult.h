@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie/Macie_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie/model/FailedS3Resource.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline UpdateS3ResourcesResult& AddFailedS3Resources(FailedS3Resource&& value) { m_failedS3Resources.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateS3ResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateS3ResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateS3ResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<FailedS3Resource> m_failedS3Resources;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

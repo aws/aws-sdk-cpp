@@ -377,6 +377,28 @@ namespace Model
      */
     inline DescribeMonitorResult& WithEstimatedEvaluationTimeRemainingInMinutes(long long value) { SetEstimatedEvaluationTimeRemainingInMinutes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeMonitorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeMonitorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeMonitorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -400,6 +422,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModificationTime;
 
     long long m_estimatedEvaluationTimeRemainingInMinutes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

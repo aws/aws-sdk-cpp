@@ -8,6 +8,7 @@
 #include <aws/opensearch/model/DryRunProgressStatus.h>
 #include <aws/opensearch/model/DomainStatus.h>
 #include <aws/opensearch/model/DryRunResults.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +112,28 @@ namespace Model
      */
     inline DescribeDryRunProgressResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeDryRunProgressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeDryRunProgressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeDryRunProgressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DryRunProgressStatus m_dryRunProgressStatus;
@@ -118,6 +141,8 @@ namespace Model
     DomainStatus m_dryRunConfig;
 
     DryRunResults m_dryRunResults;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

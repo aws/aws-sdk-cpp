@@ -213,6 +213,28 @@ namespace Model
      */
     inline DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeThingTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeThingTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeThingTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_thingTypeName;
@@ -224,6 +246,8 @@ namespace Model
     ThingTypeProperties m_thingTypeProperties;
 
     ThingTypeMetadata m_thingTypeMetadata;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

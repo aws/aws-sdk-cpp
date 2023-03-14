@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotfleetwise/model/UpdateVehicleResponseItem.h>
 #include <aws/iotfleetwise/model/UpdateVehicleError.h>
 #include <utility>
@@ -126,11 +127,35 @@ namespace Model
      */
     inline BatchUpdateVehicleResult& AddErrors(UpdateVehicleError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchUpdateVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchUpdateVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchUpdateVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<UpdateVehicleResponseItem> m_vehicles;
 
     Aws::Vector<UpdateVehicleError> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

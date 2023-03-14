@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/TaskDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
 
@@ -200,11 +201,35 @@ namespace Model
      */
     inline DescribeTaskDefinitionResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeTaskDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeTaskDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeTaskDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     TaskDefinition m_taskDefinition;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -99,11 +99,35 @@ namespace Model
      */
     inline CreateDetectorResult& WithUnprocessedDataSources(UnprocessedDataSourcesResult&& value) { SetUnprocessedDataSources(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_detectorId;
 
     UnprocessedDataSourcesResult m_unprocessedDataSources;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

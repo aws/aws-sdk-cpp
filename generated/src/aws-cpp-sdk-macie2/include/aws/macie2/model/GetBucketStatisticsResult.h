@@ -12,6 +12,7 @@
 #include <aws/macie2/model/BucketStatisticsBySensitivity.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -448,6 +449,28 @@ namespace Model
      */
     inline GetBucketStatisticsResult& WithUnclassifiableObjectSizeInBytes(ObjectLevelStatistics&& value) { SetUnclassifiableObjectSizeInBytes(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBucketStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBucketStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBucketStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     long long m_bucketCount;
@@ -477,6 +500,8 @@ namespace Model
     ObjectLevelStatistics m_unclassifiableObjectCount;
 
     ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

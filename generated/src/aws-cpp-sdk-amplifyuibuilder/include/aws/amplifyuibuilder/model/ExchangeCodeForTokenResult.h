@@ -126,6 +126,28 @@ namespace Model
      */
     inline ExchangeCodeForTokenResult& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ExchangeCodeForTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ExchangeCodeForTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ExchangeCodeForTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_accessToken;
@@ -133,6 +155,8 @@ namespace Model
     int m_expiresIn;
 
     Aws::String m_refreshToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

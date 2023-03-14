@@ -351,6 +351,28 @@ namespace Model
      */
     inline ListPackageVersionAssetsResult& AddAssets(AssetSummary&& value) { m_assets.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListPackageVersionAssetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListPackageVersionAssetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListPackageVersionAssetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     PackageFormat m_format;
@@ -366,6 +388,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<AssetSummary> m_assets;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

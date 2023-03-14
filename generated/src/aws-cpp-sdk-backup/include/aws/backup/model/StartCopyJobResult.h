@@ -128,6 +128,28 @@ namespace Model
      */
     inline StartCopyJobResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartCopyJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartCopyJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartCopyJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_copyJobId;
@@ -135,6 +157,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     bool m_isParent;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

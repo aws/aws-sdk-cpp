@@ -186,6 +186,28 @@ namespace Model
      */
     inline GetAccountResult& WithApiKeyVersion(const char* value) { SetApiKeyVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_cloudwatchRoleArn;
@@ -195,6 +217,8 @@ namespace Model
     Aws::Vector<Aws::String> m_features;
 
     Aws::String m_apiKeyVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

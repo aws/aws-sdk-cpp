@@ -150,11 +150,35 @@ namespace Model
      */
     inline BatchDeleteConnectionResult& AddErrors(const char* key, const ErrorDetail& value) { m_errors.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchDeleteConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchDeleteConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchDeleteConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_succeeded;
 
     Aws::Map<Aws::String, ErrorDetail> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

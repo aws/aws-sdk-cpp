@@ -37,6 +37,12 @@ UploadMultipartPartResult& UploadMultipartPartResult::operator =(const Aws::Amaz
     m_checksum = checksumIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
 
   return *this;
 }

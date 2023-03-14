@@ -1654,6 +1654,28 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeTrainingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1737,6 +1759,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_environment;
 
     WarmPoolStatus m_warmPoolStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

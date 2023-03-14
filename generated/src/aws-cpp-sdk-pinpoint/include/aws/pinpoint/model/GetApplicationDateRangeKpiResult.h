@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/ApplicationDateRangeKpiResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponse&& value) { SetApplicationDateRangeKpiResponse(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetApplicationDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetApplicationDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetApplicationDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ApplicationDateRangeKpiResponse m_applicationDateRangeKpiResponse;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

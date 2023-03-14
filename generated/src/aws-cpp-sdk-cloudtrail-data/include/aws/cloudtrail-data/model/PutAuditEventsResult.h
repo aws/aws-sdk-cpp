@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudtrail-data/model/ResultErrorEntry.h>
 #include <aws/cloudtrail-data/model/AuditEventResultEntry.h>
 #include <utility>
@@ -126,11 +127,35 @@ namespace Model
      */
     inline PutAuditEventsResult& AddSuccessful(AuditEventResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutAuditEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutAuditEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutAuditEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ResultErrorEntry> m_failed;
 
     Aws::Vector<AuditEventResultEntry> m_successful;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

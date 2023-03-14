@@ -269,6 +269,28 @@ namespace Model
      */
     inline GetImportJobResult& WithFailedRecordsCount(int value) { SetFailedRecordsCount(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -288,6 +310,8 @@ namespace Model
     int m_processedRecordsCount;
 
     int m_failedRecordsCount;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -218,6 +218,28 @@ namespace Model
      */
     inline DescribeUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_brokerId;
@@ -229,6 +251,8 @@ namespace Model
     UserPendingChanges m_pending;
 
     Aws::String m_username;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

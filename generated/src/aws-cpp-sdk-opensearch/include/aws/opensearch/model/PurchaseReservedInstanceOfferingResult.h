@@ -109,11 +109,35 @@ namespace Model
      */
     inline PurchaseReservedInstanceOfferingResult& WithReservationName(const char* value) { SetReservationName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PurchaseReservedInstanceOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PurchaseReservedInstanceOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PurchaseReservedInstanceOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_reservedInstanceId;
 
     Aws::String m_reservationName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

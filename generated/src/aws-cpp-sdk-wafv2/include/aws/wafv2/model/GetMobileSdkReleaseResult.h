@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/MobileSdkRelease.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline GetMobileSdkReleaseResult& WithMobileSdkRelease(MobileSdkRelease&& value) { SetMobileSdkRelease(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMobileSdkReleaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMobileSdkReleaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMobileSdkReleaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     MobileSdkRelease m_mobileSdkRelease;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

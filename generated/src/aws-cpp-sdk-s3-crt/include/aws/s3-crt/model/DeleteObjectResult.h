@@ -110,6 +110,28 @@ namespace Model
     
     inline DeleteObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_deleteMarker;
@@ -117,6 +139,8 @@ namespace Model
     Aws::String m_versionId;
 
     RequestCharged m_requestCharged;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -279,6 +279,28 @@ namespace Model
      */
     inline RemoveSchemaVersionMetadataResult& WithMetadataValue(const char* value) { SetMetadataValue(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RemoveSchemaVersionMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RemoveSchemaVersionMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RemoveSchemaVersionMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_schemaArn;
@@ -296,6 +318,8 @@ namespace Model
     Aws::String m_metadataKey;
 
     Aws::String m_metadataValue;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

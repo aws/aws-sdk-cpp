@@ -5,6 +5,7 @@
 
 #include <aws/mgn/model/LaunchConfigurationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -43,7 +44,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate() :
     m_smallVolumeMaxSizeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
-    m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
+    m_targetInstanceTypeRightSizingMethodHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue) :
     m_smallVolumeMaxSizeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
-    m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
+    m_targetInstanceTypeRightSizingMethodHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

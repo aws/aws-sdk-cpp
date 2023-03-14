@@ -94,11 +94,35 @@ namespace Model
      */
     inline RestoreFromRecoveryPointResult& WithRecoveryPointId(const char* value) { SetRecoveryPointId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RestoreFromRecoveryPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RestoreFromRecoveryPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RestoreFromRecoveryPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Namespace m_namespace;
 
     Aws::String m_recoveryPointId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

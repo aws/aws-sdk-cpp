@@ -166,6 +166,28 @@ namespace Model
      */
     inline UpdateModelVersionResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateModelVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateModelVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateModelVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_modelId;
@@ -175,6 +197,8 @@ namespace Model
     Aws::String m_modelVersionNumber;
 
     Aws::String m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -120,11 +120,35 @@ namespace Model
      */
     inline ImportApiKeysResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ImportApiKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ImportApiKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ImportApiKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_ids;
 
     Aws::Vector<Aws::String> m_warnings;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

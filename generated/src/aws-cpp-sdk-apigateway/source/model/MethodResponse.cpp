@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/MethodResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,16 @@ namespace Model
 MethodResponse::MethodResponse() : 
     m_statusCodeHasBeenSet(false),
     m_responseParametersHasBeenSet(false),
-    m_responseModelsHasBeenSet(false)
+    m_responseModelsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 MethodResponse::MethodResponse(JsonView jsonValue) : 
     m_statusCodeHasBeenSet(false),
     m_responseParametersHasBeenSet(false),
-    m_responseModelsHasBeenSet(false)
+    m_responseModelsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

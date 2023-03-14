@@ -5,6 +5,7 @@
 
 #include <aws/appconfig/model/Environment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -25,7 +26,8 @@ Environment::Environment() :
     m_descriptionHasBeenSet(false),
     m_state(EnvironmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_monitorsHasBeenSet(false)
+    m_monitorsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,8 @@ Environment::Environment(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_state(EnvironmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_monitorsHasBeenSet(false)
+    m_monitorsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

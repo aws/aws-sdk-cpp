@@ -94,11 +94,35 @@ namespace Model
      */
     inline CreateReusableDelegationSetResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateReusableDelegationSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateReusableDelegationSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateReusableDelegationSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DelegationSet m_delegationSet;
 
     Aws::String m_location;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

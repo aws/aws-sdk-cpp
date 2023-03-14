@@ -119,11 +119,35 @@ namespace Model
      */
     inline GetComplianceSummaryResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetComplianceSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetComplianceSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetComplianceSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Summary> m_summaryList;
 
     Aws::String m_paginationToken;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

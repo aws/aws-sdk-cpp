@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/UsagePlanKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -22,7 +23,8 @@ UsagePlanKey::UsagePlanKey() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,8 @@ UsagePlanKey::UsagePlanKey(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

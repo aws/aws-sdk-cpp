@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/xray/model/Group.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -72,9 +73,33 @@ namespace Model
      */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Group m_group;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

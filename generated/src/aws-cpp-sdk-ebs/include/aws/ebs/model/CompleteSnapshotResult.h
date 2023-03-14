@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/ebs/model/Status.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline CompleteSnapshotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CompleteSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CompleteSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CompleteSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Status m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

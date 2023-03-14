@@ -156,6 +156,28 @@ namespace Model
      */
     inline PutEventSelectorsResult& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutEventSelectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutEventSelectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutEventSelectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_trailARN;
@@ -163,6 +185,8 @@ namespace Model
     Aws::Vector<EventSelector> m_eventSelectors;
 
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

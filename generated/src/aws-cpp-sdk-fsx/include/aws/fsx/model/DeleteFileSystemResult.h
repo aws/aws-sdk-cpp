@@ -176,6 +176,28 @@ namespace Model
      */
     inline DeleteFileSystemResult& WithOpenZFSResponse(DeleteFileSystemOpenZFSResponse&& value) { SetOpenZFSResponse(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteFileSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteFileSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteFileSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_fileSystemId;
@@ -187,6 +209,8 @@ namespace Model
     DeleteFileSystemLustreResponse m_lustreResponse;
 
     DeleteFileSystemOpenZFSResponse m_openZFSResponse;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

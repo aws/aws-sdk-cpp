@@ -21,7 +21,8 @@ SendApiAssetResult::SendApiAssetResult()
 
 SendApiAssetResult::SendApiAssetResult(SendApiAssetResult&& toMove) : 
     m_body(std::move(toMove.m_body)),
-    m_responseHeaders(std::move(toMove.m_responseHeaders))
+    m_responseHeaders(std::move(toMove.m_responseHeaders)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -34,6 +35,7 @@ SendApiAssetResult& SendApiAssetResult::operator=(SendApiAssetResult&& toMove)
 
    m_body = std::move(toMove.m_body);
    m_responseHeaders = std::move(toMove.m_responseHeaders);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -57,6 +59,12 @@ SendApiAssetResult& SendApiAssetResult::operator =(Aws::AmazonWebServiceResult<R
     {
       m_responseHeaders[item.first.substr(prefixSize)] = item.second;
     }
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

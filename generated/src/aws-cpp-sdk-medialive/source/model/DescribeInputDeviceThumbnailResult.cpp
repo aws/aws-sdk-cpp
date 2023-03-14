@@ -27,7 +27,8 @@ DescribeInputDeviceThumbnailResult::DescribeInputDeviceThumbnailResult(DescribeI
     m_contentType(toMove.m_contentType),
     m_contentLength(toMove.m_contentLength),
     m_eTag(std::move(toMove.m_eTag)),
-    m_lastModified(std::move(toMove.m_lastModified))
+    m_lastModified(std::move(toMove.m_lastModified)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -43,6 +44,7 @@ DescribeInputDeviceThumbnailResult& DescribeInputDeviceThumbnailResult::operator
    m_contentLength = toMove.m_contentLength;
    m_eTag = std::move(toMove.m_eTag);
    m_lastModified = std::move(toMove.m_lastModified);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -81,6 +83,12 @@ DescribeInputDeviceThumbnailResult& DescribeInputDeviceThumbnailResult::operator
   if(lastModifiedIter != headers.end())
   {
     m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

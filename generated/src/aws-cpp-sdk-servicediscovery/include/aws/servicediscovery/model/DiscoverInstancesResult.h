@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicediscovery/model/HttpInstanceSummary.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline DiscoverInstancesResult& AddInstances(HttpInstanceSummary&& value) { m_instances.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DiscoverInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DiscoverInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DiscoverInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<HttpInstanceSummary> m_instances;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

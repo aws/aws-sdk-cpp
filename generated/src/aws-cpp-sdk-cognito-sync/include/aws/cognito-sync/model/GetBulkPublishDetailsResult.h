@@ -232,6 +232,28 @@ namespace Model
      */
     inline GetBulkPublishDetailsResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBulkPublishDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBulkPublishDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBulkPublishDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_identityPoolId;
@@ -243,6 +265,8 @@ namespace Model
     BulkPublishStatus m_bulkPublishStatus;
 
     Aws::String m_failureMessage;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@
 
 #include <aws/glacier/model/GlacierJobDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -44,7 +45,8 @@ GlacierJobDescription::GlacierJobDescription() :
     m_inventoryRetrievalParametersHasBeenSet(false),
     m_jobOutputPathHasBeenSet(false),
     m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+    m_outputLocationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,8 @@ GlacierJobDescription::GlacierJobDescription(JsonView jsonValue) :
     m_inventoryRetrievalParametersHasBeenSet(false),
     m_jobOutputPathHasBeenSet(false),
     m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
+    m_outputLocationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

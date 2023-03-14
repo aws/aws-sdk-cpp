@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/model/CalculateRouteMatrixSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/RouteMatrixEntry.h>
 #include <utility>
 
@@ -239,6 +240,28 @@ namespace Model
      */
     inline CalculateRouteMatrixResult& WithSummary(CalculateRouteMatrixSummary&& value) { SetSummary(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CalculateRouteMatrixResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CalculateRouteMatrixResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CalculateRouteMatrixResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
@@ -248,6 +271,8 @@ namespace Model
     Aws::Vector<Aws::Vector<double>> m_snappedDestinationPositions;
 
     CalculateRouteMatrixSummary m_summary;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

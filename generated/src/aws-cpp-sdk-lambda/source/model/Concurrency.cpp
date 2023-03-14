@@ -5,6 +5,7 @@
 
 #include <aws/lambda/model/Concurrency.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,13 +21,15 @@ namespace Model
 
 Concurrency::Concurrency() : 
     m_reservedConcurrentExecutions(0),
-    m_reservedConcurrentExecutionsHasBeenSet(false)
+    m_reservedConcurrentExecutionsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 Concurrency::Concurrency(JsonView jsonValue) : 
     m_reservedConcurrentExecutions(0),
-    m_reservedConcurrentExecutionsHasBeenSet(false)
+    m_reservedConcurrentExecutionsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

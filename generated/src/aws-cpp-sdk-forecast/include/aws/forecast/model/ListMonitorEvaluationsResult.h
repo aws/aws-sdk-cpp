@@ -161,11 +161,35 @@ namespace Model
      */
     inline ListMonitorEvaluationsResult& AddPredictorMonitorEvaluations(PredictorMonitorEvaluation&& value) { m_predictorMonitorEvaluations.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListMonitorEvaluationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListMonitorEvaluationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListMonitorEvaluationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<PredictorMonitorEvaluation> m_predictorMonitorEvaluations;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

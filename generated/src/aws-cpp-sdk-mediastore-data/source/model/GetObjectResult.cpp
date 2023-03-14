@@ -30,7 +30,8 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_contentType(std::move(toMove.m_contentType)),
     m_eTag(std::move(toMove.m_eTag)),
     m_lastModified(std::move(toMove.m_lastModified)),
-    m_statusCode(toMove.m_statusCode)
+    m_statusCode(toMove.m_statusCode),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -49,6 +50,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_eTag = std::move(toMove.m_eTag);
    m_lastModified = std::move(toMove.m_lastModified);
    m_statusCode = toMove.m_statusCode;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -99,6 +101,12 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(lastModifiedIter != headers.end())
   {
     m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
   m_statusCode = static_cast<int>(result.GetResponseCode());

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotanalytics/model/DatasetContentStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotanalytics/model/DatasetEntry.h>
 #include <utility>
 
@@ -122,6 +123,28 @@ namespace Model
      */
     inline GetDatasetContentResult& WithStatus(DatasetContentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetDatasetContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetDatasetContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetDatasetContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<DatasetEntry> m_entries;
@@ -129,6 +152,8 @@ namespace Model
     Aws::Utils::DateTime m_timestamp;
 
     DatasetContentStatus m_status;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

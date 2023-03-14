@@ -139,6 +139,28 @@ namespace Model
      */
     inline SetDefaultSenderIdResult& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SetDefaultSenderIdResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SetDefaultSenderIdResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SetDefaultSenderIdResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_configurationSetArn;
@@ -146,6 +168,8 @@ namespace Model
     Aws::String m_configurationSetName;
 
     Aws::String m_senderId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

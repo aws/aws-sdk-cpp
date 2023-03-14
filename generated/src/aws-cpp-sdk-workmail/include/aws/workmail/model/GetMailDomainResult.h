@@ -7,6 +7,7 @@
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workmail/model/DnsRecordVerificationStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/model/DnsRecord.h>
 #include <utility>
 
@@ -177,6 +178,28 @@ namespace Model
      */
     inline GetMailDomainResult& WithDkimVerificationStatus(DnsRecordVerificationStatus&& value) { SetDkimVerificationStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMailDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMailDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMailDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<DnsRecord> m_records;
@@ -188,6 +211,8 @@ namespace Model
     DnsRecordVerificationStatus m_ownershipVerificationStatus;
 
     DnsRecordVerificationStatus m_dkimVerificationStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

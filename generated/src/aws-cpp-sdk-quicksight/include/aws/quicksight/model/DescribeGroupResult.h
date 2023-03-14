@@ -59,39 +59,25 @@ namespace Model
     inline DescribeGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline DescribeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline DescribeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
-    /**
-     * <p>The Amazon Web Services request ID for this operation.</p>
-     */
+    
     inline DescribeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 

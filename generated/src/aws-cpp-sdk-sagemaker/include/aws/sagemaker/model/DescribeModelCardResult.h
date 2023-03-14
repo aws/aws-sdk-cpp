@@ -402,6 +402,28 @@ namespace Model
      */
     inline DescribeModelCardResult& WithModelCardProcessingStatus(ModelCardProcessingStatus&& value) { SetModelCardProcessingStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeModelCardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeModelCardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeModelCardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_modelCardArn;
@@ -425,6 +447,8 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     ModelCardProcessingStatus m_modelCardProcessingStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

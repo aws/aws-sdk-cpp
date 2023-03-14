@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/model/CollectionDetail.h>
 #include <aws/opensearchserverless/model/CollectionErrorDetail.h>
 #include <utility>
@@ -105,11 +106,35 @@ namespace Model
      */
     inline BatchGetCollectionResult& AddCollectionErrorDetails(CollectionErrorDetail&& value) { m_collectionErrorDetails.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<CollectionDetail> m_collectionDetails;
 
     Aws::Vector<CollectionErrorDetail> m_collectionErrorDetails;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-explorer-2/model/BatchGetViewError.h>
 #include <aws/resource-explorer-2/model/View.h>
 #include <utility>
@@ -119,11 +120,35 @@ namespace Model
      */
     inline BatchGetViewResult& AddViews(View&& value) { m_views.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<BatchGetViewError> m_errors;
 
     Aws::Vector<View> m_views;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

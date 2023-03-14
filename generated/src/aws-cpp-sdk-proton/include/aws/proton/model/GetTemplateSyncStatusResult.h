@@ -7,6 +7,7 @@
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/proton/model/Revision.h>
 #include <aws/proton/model/ResourceSyncAttempt.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,28 @@ namespace Model
      */
     inline GetTemplateSyncStatusResult& WithLatestSync(ResourceSyncAttempt&& value) { SetLatestSync(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetTemplateSyncStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetTemplateSyncStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetTemplateSyncStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Revision m_desiredState;
@@ -117,6 +140,8 @@ namespace Model
     ResourceSyncAttempt m_latestSuccessfulSync;
 
     ResourceSyncAttempt m_latestSync;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

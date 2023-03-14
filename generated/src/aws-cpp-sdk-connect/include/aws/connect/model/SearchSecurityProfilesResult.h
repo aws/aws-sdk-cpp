@@ -128,6 +128,28 @@ namespace Model
      */
     inline SearchSecurityProfilesResult& WithApproximateTotalCount(long long value) { SetApproximateTotalCount(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SearchSecurityProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SearchSecurityProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SearchSecurityProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<SecurityProfileSearchSummary> m_securityProfiles;
@@ -135,6 +157,8 @@ namespace Model
     Aws::String m_nextToken;
 
     long long m_approximateTotalCount;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

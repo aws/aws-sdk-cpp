@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/ObjectLambdaConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetAccessPointConfigurationForObjectLambdaResult& WithConfiguration(ObjectLambdaConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ObjectLambdaConfiguration m_configuration;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

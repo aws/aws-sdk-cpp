@@ -9,6 +9,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -34,6 +35,13 @@ GenerateRandomResult& GenerateRandomResult::operator =(const Aws::AmazonWebServi
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
   }
 
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
 
   return *this;

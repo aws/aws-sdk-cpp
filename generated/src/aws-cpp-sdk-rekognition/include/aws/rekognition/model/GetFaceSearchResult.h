@@ -268,6 +268,28 @@ namespace Model
      */
     inline GetFaceSearchResult& AddPersons(PersonMatch&& value) { m_persons.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetFaceSearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetFaceSearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetFaceSearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -279,6 +301,8 @@ namespace Model
     VideoMetadata m_videoMetadata;
 
     Aws::Vector<PersonMatch> m_persons;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

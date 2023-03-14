@@ -375,6 +375,28 @@ namespace Model
      */
     inline GetTemplateStepGroupResult& AddNext(const char* value) { m_next.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetTemplateStepGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetTemplateStepGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetTemplateStepGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_templateId;
@@ -396,6 +418,8 @@ namespace Model
     Aws::Vector<Aws::String> m_previous;
 
     Aws::Vector<Aws::String> m_next;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -198,6 +198,28 @@ namespace Model
      */
     inline DescribeCodeRepositoryResult& WithGitConfig(GitConfig&& value) { SetGitConfig(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeCodeRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeCodeRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeCodeRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_codeRepositoryName;
@@ -209,6 +231,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     GitConfig m_gitConfig;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

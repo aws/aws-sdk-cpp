@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/ExportJobProperties.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline DescribeFHIRExportJobResult& WithExportJobProperties(ExportJobProperties&& value) { SetExportJobProperties(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeFHIRExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeFHIRExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeFHIRExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ExportJobProperties m_exportJobProperties;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

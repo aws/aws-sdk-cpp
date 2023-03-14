@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/BatchScheduleActionCreateResult.h>
 #include <aws/medialive/model/BatchScheduleActionDeleteResult.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -90,11 +91,35 @@ namespace Model
      */
     inline BatchUpdateScheduleResult& WithDeletes(BatchScheduleActionDeleteResult&& value) { SetDeletes(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchUpdateScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchUpdateScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchUpdateScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BatchScheduleActionCreateResult m_creates;
 
     BatchScheduleActionDeleteResult m_deletes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

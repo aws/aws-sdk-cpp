@@ -5,6 +5,7 @@
 
 #include <aws/cognito-identity/model/IdentityDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -22,7 +23,8 @@ IdentityDescription::IdentityDescription() :
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+    m_lastModifiedDateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,8 @@ IdentityDescription::IdentityDescription(JsonView jsonValue) :
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+    m_lastModifiedDateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

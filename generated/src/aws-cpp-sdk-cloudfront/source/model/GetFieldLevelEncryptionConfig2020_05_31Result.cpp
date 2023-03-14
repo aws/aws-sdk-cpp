@@ -42,5 +42,11 @@ GetFieldLevelEncryptionConfig2020_05_31Result& GetFieldLevelEncryptionConfig2020
     m_eTag = eTagIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

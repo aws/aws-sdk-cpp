@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/model/SynthesisTask.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -62,9 +63,33 @@ namespace Model
      */
     inline StartSpeechSynthesisTaskResult& WithSynthesisTask(SynthesisTask&& value) { SetSynthesisTask(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartSpeechSynthesisTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartSpeechSynthesisTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartSpeechSynthesisTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     SynthesisTask m_synthesisTask;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

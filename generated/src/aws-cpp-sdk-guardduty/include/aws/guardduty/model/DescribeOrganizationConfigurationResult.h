@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrganizationDataSourceConfigurationsResult.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,28 @@ namespace Model
      */
     inline DescribeOrganizationConfigurationResult& WithDataSources(OrganizationDataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeOrganizationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeOrganizationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeOrganizationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_autoEnable;
@@ -107,6 +130,8 @@ namespace Model
     bool m_memberAccountLimitReached;
 
     OrganizationDataSourceConfigurationsResult m_dataSources;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -26,8 +26,7 @@ DBClusterBacktrack::DBClusterBacktrack() :
     m_backtrackToHasBeenSet(false),
     m_backtrackedFromHasBeenSet(false),
     m_backtrackRequestCreationTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -37,8 +36,7 @@ DBClusterBacktrack::DBClusterBacktrack(const XmlNode& xmlNode) :
     m_backtrackToHasBeenSet(false),
     m_backtrackedFromHasBeenSet(false),
     m_backtrackRequestCreationTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -122,13 +120,9 @@ void DBClusterBacktrack::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void DBClusterBacktrack::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -157,12 +151,9 @@ void DBClusterBacktrack::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

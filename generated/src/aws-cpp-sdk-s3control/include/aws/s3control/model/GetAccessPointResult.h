@@ -423,6 +423,28 @@ namespace Model
      */
     inline GetAccessPointResult& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccessPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccessPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccessPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -444,6 +466,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_endpoints;
 
     Aws::String m_bucketAccountId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

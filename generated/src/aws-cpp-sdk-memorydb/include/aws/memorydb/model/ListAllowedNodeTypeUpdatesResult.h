@@ -114,11 +114,35 @@ namespace Model
      */
     inline ListAllowedNodeTypeUpdatesResult& AddScaleDownNodeTypes(const char* value) { m_scaleDownNodeTypes.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_scaleUpNodeTypes;
 
     Aws::Vector<Aws::String> m_scaleDownNodeTypes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

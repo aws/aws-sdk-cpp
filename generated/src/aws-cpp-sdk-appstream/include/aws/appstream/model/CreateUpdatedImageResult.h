@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/Image.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -63,11 +64,35 @@ namespace Model
      */
     inline CreateUpdatedImageResult& WithCanUpdateImage(bool value) { SetCanUpdateImage(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateUpdatedImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateUpdatedImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateUpdatedImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Image m_image;
 
     bool m_canUpdateImage;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

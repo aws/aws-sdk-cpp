@@ -239,6 +239,28 @@ namespace Model
      */
     inline DescribeEntityResult& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeEntityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeEntityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeEntityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_entityType;
@@ -250,6 +272,8 @@ namespace Model
     Aws::String m_lastModifiedDate;
 
     Aws::String m_details;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

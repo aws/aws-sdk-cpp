@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/privatenetworks/model/Network.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DeleteNetworkResult& WithNetwork(Network&& value) { SetNetwork(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Network m_network;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

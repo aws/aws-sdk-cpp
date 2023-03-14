@@ -5,6 +5,7 @@
 
 #include <aws/mgn/model/Application.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,7 +30,8 @@ Application::Application() :
     m_lastModifiedDateTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
+    m_waveIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,8 @@ Application::Application(JsonView jsonValue) :
     m_lastModifiedDateTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
+    m_waveIDHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

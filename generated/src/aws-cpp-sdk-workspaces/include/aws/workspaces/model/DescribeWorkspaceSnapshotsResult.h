@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/Snapshot.h>
 #include <utility>
 
@@ -118,11 +119,35 @@ namespace Model
      */
     inline DescribeWorkspaceSnapshotsResult& AddRestoreSnapshots(Snapshot&& value) { m_restoreSnapshots.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeWorkspaceSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeWorkspaceSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeWorkspaceSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Snapshot> m_rebuildSnapshots;
 
     Aws::Vector<Snapshot> m_restoreSnapshots;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -247,6 +247,28 @@ namespace Model
      */
     inline CreateMedicalVocabularyResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateMedicalVocabularyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateMedicalVocabularyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateMedicalVocabularyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -258,6 +280,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::String m_failureReason;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

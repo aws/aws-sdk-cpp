@@ -5,6 +5,7 @@
 
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -62,7 +63,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_architecturesHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
     m_snapStartHasBeenSet(false),
-    m_runtimeVersionConfigHasBeenSet(false)
+    m_runtimeVersionConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -110,7 +112,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_architecturesHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
     m_snapStartHasBeenSet(false),
-    m_runtimeVersionConfigHasBeenSet(false)
+    m_runtimeVersionConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

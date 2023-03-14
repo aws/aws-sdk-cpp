@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/ApiKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,7 +30,8 @@ ApiKey::ApiKey() :
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_stageKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,8 @@ ApiKey::ApiKey(JsonView jsonValue) :
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_stageKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

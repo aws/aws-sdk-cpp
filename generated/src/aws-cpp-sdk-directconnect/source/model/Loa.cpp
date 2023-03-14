@@ -6,6 +6,7 @@
 #include <aws/directconnect/model/Loa.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -22,14 +23,16 @@ namespace Model
 Loa::Loa() : 
     m_loaContentHasBeenSet(false),
     m_loaContentType(LoaContentType::NOT_SET),
-    m_loaContentTypeHasBeenSet(false)
+    m_loaContentTypeHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 Loa::Loa(JsonView jsonValue) : 
     m_loaContentHasBeenSet(false),
     m_loaContentType(LoaContentType::NOT_SET),
-    m_loaContentTypeHasBeenSet(false)
+    m_loaContentTypeHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

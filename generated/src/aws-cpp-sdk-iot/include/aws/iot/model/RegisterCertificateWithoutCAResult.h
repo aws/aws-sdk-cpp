@@ -110,11 +110,35 @@ namespace Model
      */
     inline RegisterCertificateWithoutCAResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RegisterCertificateWithoutCAResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RegisterCertificateWithoutCAResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RegisterCertificateWithoutCAResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
 
     Aws::String m_certificateId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

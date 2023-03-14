@@ -7,6 +7,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,7 +21,8 @@ GetIntrospectionSchemaResult::GetIntrospectionSchemaResult()
 }
 
 GetIntrospectionSchemaResult::GetIntrospectionSchemaResult(GetIntrospectionSchemaResult&& toMove) : 
-    m_schema(std::move(toMove.m_schema))
+    m_schema(std::move(toMove.m_schema)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -32,6 +34,7 @@ GetIntrospectionSchemaResult& GetIntrospectionSchemaResult::operator=(GetIntrosp
    }
 
    m_schema = std::move(toMove.m_schema);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -44,6 +47,13 @@ GetIntrospectionSchemaResult::GetIntrospectionSchemaResult(Aws::AmazonWebService
 GetIntrospectionSchemaResult& GetIntrospectionSchemaResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_schema = result.TakeOwnershipOfPayload();
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
    return *this;
 }

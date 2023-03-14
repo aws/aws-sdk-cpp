@@ -247,6 +247,28 @@ namespace Model
      */
     inline CreateDynamicThingGroupResult& WithQueryVersion(const char* value) { SetQueryVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateDynamicThingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateDynamicThingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateDynamicThingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_thingGroupName;
@@ -260,6 +282,8 @@ namespace Model
     Aws::String m_queryString;
 
     Aws::String m_queryVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

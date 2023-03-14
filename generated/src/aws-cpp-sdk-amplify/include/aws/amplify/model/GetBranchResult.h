@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/amplify/model/Branch.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline GetBranchResult& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Branch m_branch;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

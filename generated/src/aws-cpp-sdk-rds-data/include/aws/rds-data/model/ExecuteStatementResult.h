@@ -291,6 +291,28 @@ namespace Model
      */
     inline ExecuteStatementResult& WithFormattedRecords(const char* value) { SetFormattedRecords(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ExecuteStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ExecuteStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ExecuteStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::Vector<Field>> m_records;
@@ -302,6 +324,8 @@ namespace Model
     Aws::Vector<Field> m_generatedFields;
 
     Aws::String m_formattedRecords;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

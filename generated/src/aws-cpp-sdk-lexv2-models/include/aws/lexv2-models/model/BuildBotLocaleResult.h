@@ -220,6 +220,28 @@ namespace Model
      */
     inline BuildBotLocaleResult& WithLastBuildSubmittedDateTime(Aws::Utils::DateTime&& value) { SetLastBuildSubmittedDateTime(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BuildBotLocaleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BuildBotLocaleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BuildBotLocaleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_botId;
@@ -231,6 +253,8 @@ namespace Model
     BotLocaleStatus m_botLocaleStatus;
 
     Aws::Utils::DateTime m_lastBuildSubmittedDateTime;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

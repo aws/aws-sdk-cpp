@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/FunctionList.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline ListFunctions2020_05_31Result& WithFunctionList(FunctionList&& value) { SetFunctionList(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListFunctions2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListFunctions2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListFunctions2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     FunctionList m_functionList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

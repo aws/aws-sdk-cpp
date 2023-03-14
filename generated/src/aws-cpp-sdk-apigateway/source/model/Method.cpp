@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Method.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -30,7 +31,8 @@ Method::Method() :
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
     m_methodIntegrationHasBeenSet(false),
-    m_authorizationScopesHasBeenSet(false)
+    m_authorizationScopesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,8 @@ Method::Method(JsonView jsonValue) :
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
     m_methodIntegrationHasBeenSet(false),
-    m_authorizationScopesHasBeenSet(false)
+    m_authorizationScopesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

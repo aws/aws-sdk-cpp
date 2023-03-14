@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Stage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -39,7 +40,8 @@ Stage::Stage() :
     m_webAclArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,8 @@ Stage::Stage(JsonView jsonValue) :
     m_webAclArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

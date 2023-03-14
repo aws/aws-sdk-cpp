@@ -371,13 +371,10 @@ namespace Model
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
-    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
-
-    
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::move(value); }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline EndpointAuthorization& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
@@ -415,7 +412,6 @@ namespace Model
     bool m_endpointCountHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

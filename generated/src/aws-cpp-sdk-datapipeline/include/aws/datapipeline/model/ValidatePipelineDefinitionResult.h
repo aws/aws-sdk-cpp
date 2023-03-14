@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/ValidationError.h>
 #include <aws/datapipeline/model/ValidationWarning.h>
 #include <utility>
@@ -127,6 +128,28 @@ namespace Model
      */
     inline ValidatePipelineDefinitionResult& WithErrored(bool value) { SetErrored(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ValidatePipelineDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ValidatePipelineDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ValidatePipelineDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ValidationError> m_validationErrors;
@@ -134,6 +157,8 @@ namespace Model
     Aws::Vector<ValidationWarning> m_validationWarnings;
 
     bool m_errored;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

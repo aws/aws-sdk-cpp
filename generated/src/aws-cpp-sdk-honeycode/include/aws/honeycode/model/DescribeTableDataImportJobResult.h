@@ -160,6 +160,28 @@ namespace Model
      */
     inline DescribeTableDataImportJobResult& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeTableDataImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeTableDataImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeTableDataImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     TableDataImportJobStatus m_jobStatus;
@@ -169,6 +191,8 @@ namespace Model
     TableDataImportJobMetadata m_jobMetadata;
 
     ErrorCode m_errorCode;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

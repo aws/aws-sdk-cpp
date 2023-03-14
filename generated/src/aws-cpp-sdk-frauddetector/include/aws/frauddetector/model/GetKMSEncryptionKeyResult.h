@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/model/KMSKey.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetKMSEncryptionKeyResult& WithKmsKey(KMSKey&& value) { SetKmsKey(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetKMSEncryptionKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetKMSEncryptionKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetKMSEncryptionKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     KMSKey m_kmsKey;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

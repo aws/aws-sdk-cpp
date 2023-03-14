@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/ProactiveInsight.h>
 #include <aws/devops-guru/model/ReactiveInsight.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -94,11 +95,35 @@ namespace Model
      */
     inline DescribeInsightResult& WithReactiveInsight(ReactiveInsight&& value) { SetReactiveInsight(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeInsightResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeInsightResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeInsightResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProactiveInsight m_proactiveInsight;
 
     ReactiveInsight m_reactiveInsight;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

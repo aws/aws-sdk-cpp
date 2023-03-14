@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/Model.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,7 +24,8 @@ Model::Model() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_schemaHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,8 @@ Model::Model(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_schemaHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

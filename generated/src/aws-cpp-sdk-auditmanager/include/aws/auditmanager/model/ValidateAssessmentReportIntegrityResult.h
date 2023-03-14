@@ -219,6 +219,28 @@ namespace Model
      */
     inline ValidateAssessmentReportIntegrityResult& AddValidationErrors(const char* value) { m_validationErrors.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ValidateAssessmentReportIntegrityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ValidateAssessmentReportIntegrityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ValidateAssessmentReportIntegrityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_signatureValid;
@@ -230,6 +252,8 @@ namespace Model
     Aws::String m_signatureKeyId;
 
     Aws::Vector<Aws::String> m_validationErrors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

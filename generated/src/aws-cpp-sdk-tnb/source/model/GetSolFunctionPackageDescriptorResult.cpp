@@ -23,7 +23,8 @@ GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult() :
 
 GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult(GetSolFunctionPackageDescriptorResult&& toMove) : 
     m_contentType(toMove.m_contentType),
-    m_vnfd(std::move(toMove.m_vnfd))
+    m_vnfd(std::move(toMove.m_vnfd)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -36,6 +37,7 @@ GetSolFunctionPackageDescriptorResult& GetSolFunctionPackageDescriptorResult::op
 
    m_contentType = toMove.m_contentType;
    m_vnfd = std::move(toMove.m_vnfd);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -55,6 +57,12 @@ GetSolFunctionPackageDescriptorResult& GetSolFunctionPackageDescriptorResult::op
   if(contentTypeIter != headers.end())
   {
     m_contentType = DescriptorContentTypeMapper::GetDescriptorContentTypeForName(contentTypeIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

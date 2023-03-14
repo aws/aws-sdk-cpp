@@ -28,7 +28,8 @@ GetJobOutputResult::GetJobOutputResult(GetJobOutputResult&& toMove) :
     m_contentRange(std::move(toMove.m_contentRange)),
     m_acceptRanges(std::move(toMove.m_acceptRanges)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_archiveDescription(std::move(toMove.m_archiveDescription))
+    m_archiveDescription(std::move(toMove.m_archiveDescription)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -46,6 +47,7 @@ GetJobOutputResult& GetJobOutputResult::operator=(GetJobOutputResult&& toMove)
    m_acceptRanges = std::move(toMove.m_acceptRanges);
    m_contentType = std::move(toMove.m_contentType);
    m_archiveDescription = std::move(toMove.m_archiveDescription);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -89,6 +91,12 @@ GetJobOutputResult& GetJobOutputResult::operator =(Aws::AmazonWebServiceResult<R
   if(archiveDescriptionIter != headers.end())
   {
     m_archiveDescription = archiveDescriptionIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
   m_status = static_cast<int>(result.GetResponseCode());

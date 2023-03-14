@@ -7,6 +7,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/AccountLimit.h>
 #include <aws/lambda/model/AccountUsage.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -84,11 +85,35 @@ namespace Model
      */
     inline GetAccountSettingsResult& WithAccountUsage(AccountUsage&& value) { SetAccountUsage(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     AccountLimit m_accountLimit;
 
     AccountUsage m_accountUsage;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

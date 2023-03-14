@@ -30,7 +30,8 @@ RecognizeUtteranceResult::RecognizeUtteranceResult(RecognizeUtteranceResult&& to
     m_sessionId(std::move(toMove.m_sessionId)),
     m_inputTranscript(std::move(toMove.m_inputTranscript)),
     m_audioStream(std::move(toMove.m_audioStream)),
-    m_recognizedBotMember(std::move(toMove.m_recognizedBotMember))
+    m_recognizedBotMember(std::move(toMove.m_recognizedBotMember)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -51,6 +52,7 @@ RecognizeUtteranceResult& RecognizeUtteranceResult::operator=(RecognizeUtterance
    m_inputTranscript = std::move(toMove.m_inputTranscript);
    m_audioStream = std::move(toMove.m_audioStream);
    m_recognizedBotMember = std::move(toMove.m_recognizedBotMember);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -117,6 +119,12 @@ RecognizeUtteranceResult& RecognizeUtteranceResult::operator =(Aws::AmazonWebSer
   if(recognizedBotMemberIter != headers.end())
   {
     m_recognizedBotMember = recognizedBotMemberIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

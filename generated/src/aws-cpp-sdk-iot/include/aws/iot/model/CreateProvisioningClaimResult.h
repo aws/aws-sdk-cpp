@@ -157,6 +157,28 @@ namespace Model
      */
     inline CreateProvisioningClaimResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateProvisioningClaimResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateProvisioningClaimResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateProvisioningClaimResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -166,6 +188,8 @@ namespace Model
     KeyPair m_keyPair;
 
     Aws::Utils::DateTime m_expiration;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

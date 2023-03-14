@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/AssociateResourceResponseElement.h>
 #include <utility>
 
@@ -118,11 +119,35 @@ namespace Model
      */
     inline BatchAssociateResourcesToCustomLineItemResult& AddFailedAssociatedResources(AssociateResourceResponseElement&& value) { m_failedAssociatedResources.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<AssociateResourceResponseElement> m_successfullyAssociatedResources;
 
     Aws::Vector<AssociateResourceResponseElement> m_failedAssociatedResources;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

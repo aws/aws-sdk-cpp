@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/Addon.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,9 +48,33 @@ namespace Model
     
     inline CreateAddonResult& WithAddon(Addon&& value) { SetAddon(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateAddonResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateAddonResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateAddonResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Addon m_addon;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

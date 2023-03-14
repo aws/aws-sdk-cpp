@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling-plans/model/Datapoint.h>
 #include <utility>
 
@@ -68,9 +69,33 @@ namespace Model
      */
     inline GetScalingPlanResourceForecastDataResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetScalingPlanResourceForecastDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetScalingPlanResourceForecastDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetScalingPlanResourceForecastDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Datapoint> m_datapoints;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

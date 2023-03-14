@@ -305,6 +305,28 @@ namespace Model
      */
     inline DescribeDeviceFleetResult& WithIotRoleAlias(const char* value) { SetIotRoleAlias(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeDeviceFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeDeviceFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeDeviceFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_deviceFleetName;
@@ -322,6 +344,8 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_iotRoleAlias;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -227,6 +227,28 @@ namespace Model
      */
     inline CreateCommitResult& AddFilesDeleted(FileMetadata&& value) { m_filesDeleted.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateCommitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateCommitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateCommitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_commitId;
@@ -238,6 +260,8 @@ namespace Model
     Aws::Vector<FileMetadata> m_filesUpdated;
 
     Aws::Vector<FileMetadata> m_filesDeleted;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

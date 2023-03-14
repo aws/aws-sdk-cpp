@@ -10,6 +10,7 @@
 #include <aws/iotsitewise/model/DisassociatedDataStorageState.h>
 #include <aws/iotsitewise/model/RetentionPeriod.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -220,6 +221,28 @@ namespace Model
     
     inline PutStorageConfigurationResult& WithConfigurationStatus(ConfigurationStatus&& value) { SetConfigurationStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutStorageConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutStorageConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutStorageConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     StorageType m_storageType;
@@ -231,6 +254,8 @@ namespace Model
     RetentionPeriod m_retentionPeriod;
 
     ConfigurationStatus m_configurationStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

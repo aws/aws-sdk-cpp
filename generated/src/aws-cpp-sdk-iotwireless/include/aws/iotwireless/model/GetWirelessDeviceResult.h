@@ -403,6 +403,28 @@ namespace Model
      */
     inline GetWirelessDeviceResult& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetWirelessDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetWirelessDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetWirelessDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     WirelessDeviceType m_type;
@@ -426,6 +448,8 @@ namespace Model
     SidewalkDevice m_sidewalk;
 
     PositioningConfigStatus m_positioning;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

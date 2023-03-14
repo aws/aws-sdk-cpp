@@ -7,6 +7,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/model/RetentionSettings.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -89,11 +90,35 @@ namespace Model
      */
     inline GetRetentionSettingsResult& WithInitiateDeletionTimestamp(Aws::Utils::DateTime&& value) { SetInitiateDeletionTimestamp(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetRetentionSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetRetentionSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetRetentionSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     RetentionSettings m_retentionSettings;
 
     Aws::Utils::DateTime m_initiateDeletionTimestamp;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

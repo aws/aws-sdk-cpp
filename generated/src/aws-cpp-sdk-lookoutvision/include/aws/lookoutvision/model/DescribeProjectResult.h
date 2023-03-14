@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/lookoutvision/model/ProjectDescription.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribeProjectResult& WithProjectDescription(ProjectDescription&& value) { SetProjectDescription(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ProjectDescription m_projectDescription;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model
