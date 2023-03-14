@@ -24,9 +24,10 @@ namespace Keyspaces
    * without deploying any infrastructure or installing software. </p> <p>In addition
    * to supporting Cassandra Query Language (CQL) requests via open-source Cassandra
    * drivers, Amazon Keyspaces supports data definition language (DDL) operations to
-   * manage keyspaces and tables using the Amazon Web Services SDK and CLI. This API
-   * reference describes the supported DDL operations in detail.</p> <p>For the list
-   * of all supported CQL APIs, see <a
+   * manage keyspaces and tables using the Amazon Web Services SDK and CLI, as well
+   * as infrastructure as code (IaC) services and tools such as CloudFormation and
+   * Terraform. This API reference describes the supported DDL operations in
+   * detail.</p> <p>For the list of all supported CQL APIs, see <a
    * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html">Supported
    * Cassandra APIs, operations, and data types in Amazon Keyspaces</a> in the
    * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>To learn how Amazon Keyspaces
@@ -358,7 +359,7 @@ namespace Keyspaces
          * information about restore points, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
          * Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer
-         * Guide</i>. </p> <p>Any number of users can execute up to 4 concurrent restores
+         * Guide</i>.</p> <p>Any number of users can execute up to 4 concurrent restores
          * (any type of restore) in a given account.</p> <p>When you restore using point in
          * time recovery, Amazon Keyspaces restores your source table's schema and data to
          * the state based on the selected timestamp <code>(day:hour:minute:second)</code>
@@ -369,16 +370,17 @@ namespace Keyspaces
          * the table's schema data and TTL settings, which are restored based on the
          * selected timestamp, these settings are always restored based on the table's
          * settings as of the current time or when the table was deleted.</p> <p>You can
-         * also overwrite these settings during restore:</p> <p>• Read/write capacity
-         * mode</p> <p>• Provisioned throughput capacity settings</p> <p>• Point-in-time
-         * (PITR) settings</p> <p>• Tags</p> <p>For more information, see <a
+         * also overwrite these settings during restore:</p> <ul> <li> <p>Read/write
+         * capacity mode</p> </li> <li> <p>Provisioned throughput capacity settings</p>
+         * </li> <li> <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li>
+         * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
          * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>Note
          * that the following settings are not restored, and you must configure them
-         * manually for the new table:</p> <p>• Automatic scaling policies (for tables that
-         * use provisioned capacity mode)</p> <p>• Identity and Access Management (IAM)
-         * policies</p> <p>• Amazon CloudWatch metrics and alarms</p><p><h3>See Also:</h3> 
-         * <a
+         * manually for the new table:</p> <ul> <li> <p>Automatic scaling policies (for
+         * tables that use provisioned capacity mode)</p> </li> <li> <p>Identity and Access
+         * Management (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and
+         * alarms</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">AWS
          * API Reference</a></p>
          */

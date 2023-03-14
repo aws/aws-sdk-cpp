@@ -143,7 +143,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline const DirectConnectGatewayAssociationState& GetAssociationState() const{ return m_associationState; }
 
@@ -158,7 +160,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
 
@@ -173,7 +177,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline void SetAssociationState(const DirectConnectGatewayAssociationState& value) { m_associationStateHasBeenSet = true; m_associationState = value; }
 
@@ -188,7 +194,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline void SetAssociationState(DirectConnectGatewayAssociationState&& value) { m_associationStateHasBeenSet = true; m_associationState = std::move(value); }
 
@@ -203,7 +211,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline DirectConnectGatewayAssociation& WithAssociationState(const DirectConnectGatewayAssociationState& value) { SetAssociationState(value); return *this;}
 
@@ -218,7 +228,9 @@ namespace Model
      * <code>disassociated</code>: The virtual private gateway or transit gateway is
      * disassociated from the Direct Connect gateway. Traffic flow between the Direct
      * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>updating</code>: The CIDR blocks for the virtual private
+     * gateway or transit gateway are currently being updated. This could be new CIDR
+     * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
     inline DirectConnectGatewayAssociation& WithAssociationState(DirectConnectGatewayAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
 

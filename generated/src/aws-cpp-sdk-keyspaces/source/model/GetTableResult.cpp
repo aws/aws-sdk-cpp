@@ -104,6 +104,12 @@ GetTableResult& GetTableResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("clientSideTimestamps"))
+  {
+    m_clientSideTimestamps = jsonValue.GetObject("clientSideTimestamps");
+
+  }
+
 
 
   return *this;

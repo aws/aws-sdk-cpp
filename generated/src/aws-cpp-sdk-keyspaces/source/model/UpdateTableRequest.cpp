@@ -21,7 +21,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_pointInTimeRecoveryHasBeenSet(false),
     m_ttlHasBeenSet(false),
     m_defaultTimeToLive(0),
-    m_defaultTimeToLiveHasBeenSet(false)
+    m_defaultTimeToLiveHasBeenSet(false),
+    m_clientSideTimestampsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_defaultTimeToLiveHasBeenSet)
   {
    payload.WithInteger("defaultTimeToLive", m_defaultTimeToLive);
+
+  }
+
+  if(m_clientSideTimestampsHasBeenSet)
+  {
+   payload.WithObject("clientSideTimestamps", m_clientSideTimestamps.Jsonize());
 
   }
 

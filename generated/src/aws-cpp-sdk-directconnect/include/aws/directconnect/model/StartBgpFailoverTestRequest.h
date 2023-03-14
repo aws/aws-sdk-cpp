@@ -124,28 +124,28 @@ namespace Model
 
     /**
      * <p>The time in minutes that the virtual interface failover test will last.</p>
-     * <p>Maximum value: 180 minutes (3 hours).</p> <p>Default: 180 minutes (3
+     * <p>Maximum value: 4,320 minutes (72 hours).</p> <p>Default: 180 minutes (3
      * hours).</p>
      */
     inline int GetTestDurationInMinutes() const{ return m_testDurationInMinutes; }
 
     /**
      * <p>The time in minutes that the virtual interface failover test will last.</p>
-     * <p>Maximum value: 180 minutes (3 hours).</p> <p>Default: 180 minutes (3
+     * <p>Maximum value: 4,320 minutes (72 hours).</p> <p>Default: 180 minutes (3
      * hours).</p>
      */
     inline bool TestDurationInMinutesHasBeenSet() const { return m_testDurationInMinutesHasBeenSet; }
 
     /**
      * <p>The time in minutes that the virtual interface failover test will last.</p>
-     * <p>Maximum value: 180 minutes (3 hours).</p> <p>Default: 180 minutes (3
+     * <p>Maximum value: 4,320 minutes (72 hours).</p> <p>Default: 180 minutes (3
      * hours).</p>
      */
     inline void SetTestDurationInMinutes(int value) { m_testDurationInMinutesHasBeenSet = true; m_testDurationInMinutes = value; }
 
     /**
      * <p>The time in minutes that the virtual interface failover test will last.</p>
-     * <p>Maximum value: 180 minutes (3 hours).</p> <p>Default: 180 minutes (3
+     * <p>Maximum value: 4,320 minutes (72 hours).</p> <p>Default: 180 minutes (3
      * hours).</p>
      */
     inline StartBgpFailoverTestRequest& WithTestDurationInMinutes(int value) { SetTestDurationInMinutes(value); return *this;}

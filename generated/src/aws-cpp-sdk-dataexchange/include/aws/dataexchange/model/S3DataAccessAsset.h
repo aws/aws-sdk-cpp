@@ -7,6 +7,7 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dataexchange/model/KmsKeyToGrant.h>
 #include <utility>
 
 namespace Aws
@@ -285,6 +286,63 @@ namespace Model
      */
     inline S3DataAccessAsset& WithS3AccessPointArn(const char* value) { SetS3AccessPointArn(value); return *this;}
 
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline const Aws::Vector<KmsKeyToGrant>& GetKmsKeysToGrant() const{ return m_kmsKeysToGrant; }
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline bool KmsKeysToGrantHasBeenSet() const { return m_kmsKeysToGrantHasBeenSet; }
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline void SetKmsKeysToGrant(const Aws::Vector<KmsKeyToGrant>& value) { m_kmsKeysToGrantHasBeenSet = true; m_kmsKeysToGrant = value; }
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline void SetKmsKeysToGrant(Aws::Vector<KmsKeyToGrant>&& value) { m_kmsKeysToGrantHasBeenSet = true; m_kmsKeysToGrant = std::move(value); }
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline S3DataAccessAsset& WithKmsKeysToGrant(const Aws::Vector<KmsKeyToGrant>& value) { SetKmsKeysToGrant(value); return *this;}
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline S3DataAccessAsset& WithKmsKeysToGrant(Aws::Vector<KmsKeyToGrant>&& value) { SetKmsKeysToGrant(std::move(value)); return *this;}
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline S3DataAccessAsset& AddKmsKeysToGrant(const KmsKeyToGrant& value) { m_kmsKeysToGrantHasBeenSet = true; m_kmsKeysToGrant.push_back(value); return *this; }
+
+    /**
+     * <p> List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs
+     * used to encrypt S3 objects being shared in this S3 Data Access asset. Providers
+     * must include all AWS KMS keys used to encrypt these shared S3 objects.</p>
+     */
+    inline S3DataAccessAsset& AddKmsKeysToGrant(KmsKeyToGrant&& value) { m_kmsKeysToGrantHasBeenSet = true; m_kmsKeysToGrant.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_bucket;
@@ -301,6 +359,9 @@ namespace Model
 
     Aws::String m_s3AccessPointArn;
     bool m_s3AccessPointArnHasBeenSet = false;
+
+    Aws::Vector<KmsKeyToGrant> m_kmsKeysToGrant;
+    bool m_kmsKeysToGrantHasBeenSet = false;
   };
 
 } // namespace Model

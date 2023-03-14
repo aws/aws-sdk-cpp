@@ -924,22 +924,40 @@ namespace Model
     inline ScalableTarget& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline void SetSuspendedState(const SuspendedState& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = value; }
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline void SetSuspendedState(SuspendedState&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::move(value); }
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline ScalableTarget& WithSuspendedState(const SuspendedState& value) { SetSuspendedState(value); return *this;}
 
-    
+    /**
+     * <p>Specifies whether the scaling activities for a scalable target are in a
+     * suspended state.</p>
+     */
     inline ScalableTarget& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
 
   private:

@@ -23,7 +23,8 @@ CreateTableRequest::CreateTableRequest() :
     m_ttlHasBeenSet(false),
     m_defaultTimeToLive(0),
     m_defaultTimeToLiveHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientSideTimestampsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateTableRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_clientSideTimestampsHasBeenSet)
+  {
+   payload.WithObject("clientSideTimestamps", m_clientSideTimestamps.Jsonize());
 
   }
 

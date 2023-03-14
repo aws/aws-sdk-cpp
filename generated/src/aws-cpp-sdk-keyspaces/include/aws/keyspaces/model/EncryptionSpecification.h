@@ -28,12 +28,12 @@ namespace Model
    * <p>Amazon Keyspaces encrypts and decrypts the table data at rest transparently
    * and integrates with Key Management Service for storing and managing the
    * encryption key. You can choose one of the following KMS keys (KMS keys):</p>
-   * <p>• Amazon Web Services owned key - This is the default encryption type. The
-   * key is owned by Amazon Keyspaces (no additional charge). </p> <p>• Customer
-   * managed key - This key is stored in your account and is created, owned, and
-   * managed by you. You have full control over the customer managed key (KMS charges
-   * apply).</p> <p>For more information about encryption at rest in Amazon
-   * Keyspaces, see <a
+   * <ul> <li> <p>Amazon Web Services owned key - This is the default encryption
+   * type. The key is owned by Amazon Keyspaces (no additional charge). </p> </li>
+   * <li> <p>Customer managed key - This key is stored in your account and is
+   * created, owned, and managed by you. You have full control over the customer
+   * managed key (KMS charges apply).</p> </li> </ul> <p>For more information about
+   * encryption at rest in Amazon Keyspaces, see <a
    * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
    * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>For more
    * information about KMS, see <a
@@ -54,13 +54,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -68,13 +68,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -82,13 +82,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -96,13 +96,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -110,13 +110,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -124,13 +124,13 @@ namespace Model
 
     /**
      * <p>The encryption option specified for the table. You can choose one of the
-     * following KMS keys (KMS keys):</p> <p>• <code>type:AWS_OWNED_KMS_KEY</code> -
-     * This key is owned by Amazon Keyspaces. </p> <p>•
-     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-     * and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input. </p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.
-     * </p> <p>For more information, see <a
+     * following KMS keys (KMS keys):</p> <ul> <li> <p>
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input. </p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
