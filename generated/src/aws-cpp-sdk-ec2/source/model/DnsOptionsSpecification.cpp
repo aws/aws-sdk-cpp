@@ -22,13 +22,17 @@ namespace Model
 
 DnsOptionsSpecification::DnsOptionsSpecification() : 
     m_dnsRecordIpType(DnsRecordIpType::NOT_SET),
-    m_dnsRecordIpTypeHasBeenSet(false)
+    m_dnsRecordIpTypeHasBeenSet(false),
+    m_privateDnsOnlyForInboundResolverEndpoint(false),
+    m_privateDnsOnlyForInboundResolverEndpointHasBeenSet(false)
 {
 }
 
 DnsOptionsSpecification::DnsOptionsSpecification(const XmlNode& xmlNode) : 
     m_dnsRecordIpType(DnsRecordIpType::NOT_SET),
-    m_dnsRecordIpTypeHasBeenSet(false)
+    m_dnsRecordIpTypeHasBeenSet(false),
+    m_privateDnsOnlyForInboundResolverEndpoint(false),
+    m_privateDnsOnlyForInboundResolverEndpointHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -45,6 +49,12 @@ DnsOptionsSpecification& DnsOptionsSpecification::operator =(const XmlNode& xmlN
       m_dnsRecordIpType = DnsRecordIpTypeMapper::GetDnsRecordIpTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsRecordIpTypeNode.GetText()).c_str()).c_str());
       m_dnsRecordIpTypeHasBeenSet = true;
     }
+    XmlNode privateDnsOnlyForInboundResolverEndpointNode = resultNode.FirstChild("PrivateDnsOnlyForInboundResolverEndpoint");
+    if(!privateDnsOnlyForInboundResolverEndpointNode.IsNull())
+    {
+      m_privateDnsOnlyForInboundResolverEndpoint = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsOnlyForInboundResolverEndpointNode.GetText()).c_str()).c_str());
+      m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +67,11 @@ void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".DnsRecordIpType=" << DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType) << "&";
   }
 
+  if(m_privateDnsOnlyForInboundResolverEndpointHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateDnsOnlyForInboundResolverEndpoint=" << std::boolalpha << m_privateDnsOnlyForInboundResolverEndpoint << "&";
+  }
+
 }
 
 void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -64,6 +79,10 @@ void DnsOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_dnsRecordIpTypeHasBeenSet)
   {
       oStream << location << ".DnsRecordIpType=" << DnsRecordIpTypeMapper::GetNameForDnsRecordIpType(m_dnsRecordIpType) << "&";
+  }
+  if(m_privateDnsOnlyForInboundResolverEndpointHasBeenSet)
+  {
+      oStream << location << ".PrivateDnsOnlyForInboundResolverEndpoint=" << std::boolalpha << m_privateDnsOnlyForInboundResolverEndpoint << "&";
   }
 }
 

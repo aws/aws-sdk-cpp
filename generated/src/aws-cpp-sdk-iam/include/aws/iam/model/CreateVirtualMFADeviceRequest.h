@@ -160,74 +160,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetVirtualMFADeviceName() const{ return m_virtualMFADeviceName; }
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline bool VirtualMFADeviceNameHasBeenSet() const { return m_virtualMFADeviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetVirtualMFADeviceName(const Aws::String& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetVirtualMFADeviceName(Aws::String&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = std::move(value); }
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetVirtualMFADeviceName(const char* value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName.assign(value); }
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const Aws::String& value) { SetVirtualMFADeviceName(value); return *this;}
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(Aws::String&& value) { SetVirtualMFADeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the virtual MFA device, which must be unique. Use with path to
+     * uniquely identify a virtual MFA device.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const char* value) { SetVirtualMFADeviceName(value); return *this;}
 

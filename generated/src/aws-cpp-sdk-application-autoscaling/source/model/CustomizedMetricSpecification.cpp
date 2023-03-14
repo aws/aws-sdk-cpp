@@ -24,7 +24,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification() :
     m_dimensionsHasBeenSet(false),
     m_statistic(MetricStatistic::NOT_SET),
     m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue)
     m_dimensionsHasBeenSet(false),
     m_statistic(MetricStatistic::NOT_SET),
     m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,16 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(JsonVie
     m_unitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Metrics"))
+  {
+    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
+    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+    {
+      m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());
+    }
+    m_metricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +129,17 @@ JsonValue CustomizedMetricSpecification::Jsonize() const
   if(m_unitHasBeenSet)
   {
    payload.WithString("Unit", m_unit);
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+   {
+     metricsJsonList[metricsIndex].AsObject(m_metrics[metricsIndex].Jsonize());
+   }
+   payload.WithArray("Metrics", std::move(metricsJsonList));
 
   }
 

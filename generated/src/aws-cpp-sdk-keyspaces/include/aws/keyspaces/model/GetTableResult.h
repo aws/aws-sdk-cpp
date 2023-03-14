@@ -14,6 +14,7 @@
 #include <aws/keyspaces/model/PointInTimeRecoverySummary.h>
 #include <aws/keyspaces/model/TimeToLive.h>
 #include <aws/keyspaces/model/Comment.h>
+#include <aws/keyspaces/model/ClientSideTimestamps.h>
 #include <utility>
 
 namespace Aws
@@ -228,36 +229,36 @@ namespace Model
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> </p>
+     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li> <li> <p>
+     * <code>throughputMode:PROVISIONED</code> </p> </li> </ul>
      */
     inline const CapacitySpecificationSummary& GetCapacitySpecification() const{ return m_capacitySpecification; }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> </p>
+     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li> <li> <p>
+     * <code>throughputMode:PROVISIONED</code> </p> </li> </ul>
      */
     inline void SetCapacitySpecification(const CapacitySpecificationSummary& value) { m_capacitySpecification = value; }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> </p>
+     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li> <li> <p>
+     * <code>throughputMode:PROVISIONED</code> </p> </li> </ul>
      */
     inline void SetCapacitySpecification(CapacitySpecificationSummary&& value) { m_capacitySpecification = std::move(value); }
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> </p>
+     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li> <li> <p>
+     * <code>throughputMode:PROVISIONED</code> </p> </li> </ul>
      */
     inline GetTableResult& WithCapacitySpecification(const CapacitySpecificationSummary& value) { SetCapacitySpecification(value); return *this;}
 
     /**
      * <p>The read/write throughput capacity mode for a table. The options are:</p>
-     * <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> </p>
+     * <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li> <li> <p>
+     * <code>throughputMode:PROVISIONED</code> </p> </li> </ul>
      */
     inline GetTableResult& WithCapacitySpecification(CapacitySpecificationSummary&& value) { SetCapacitySpecification(std::move(value)); return *this;}
 
@@ -341,17 +342,17 @@ namespace Model
 
 
     /**
-     * <p>The default Time to Live settings of the specified table.</p>
+     * <p>The default Time to Live settings in seconds of the specified table.</p>
      */
     inline int GetDefaultTimeToLive() const{ return m_defaultTimeToLive; }
 
     /**
-     * <p>The default Time to Live settings of the specified table.</p>
+     * <p>The default Time to Live settings in seconds of the specified table.</p>
      */
     inline void SetDefaultTimeToLive(int value) { m_defaultTimeToLive = value; }
 
     /**
-     * <p>The default Time to Live settings of the specified table.</p>
+     * <p>The default Time to Live settings in seconds of the specified table.</p>
      */
     inline GetTableResult& WithDefaultTimeToLive(int value) { SetDefaultTimeToLive(value); return *this;}
 
@@ -381,6 +382,32 @@ namespace Model
      */
     inline GetTableResult& WithComment(Comment&& value) { SetComment(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The client-side timestamps setting of the table.</p>
+     */
+    inline const ClientSideTimestamps& GetClientSideTimestamps() const{ return m_clientSideTimestamps; }
+
+    /**
+     * <p> The client-side timestamps setting of the table.</p>
+     */
+    inline void SetClientSideTimestamps(const ClientSideTimestamps& value) { m_clientSideTimestamps = value; }
+
+    /**
+     * <p> The client-side timestamps setting of the table.</p>
+     */
+    inline void SetClientSideTimestamps(ClientSideTimestamps&& value) { m_clientSideTimestamps = std::move(value); }
+
+    /**
+     * <p> The client-side timestamps setting of the table.</p>
+     */
+    inline GetTableResult& WithClientSideTimestamps(const ClientSideTimestamps& value) { SetClientSideTimestamps(value); return *this;}
+
+    /**
+     * <p> The client-side timestamps setting of the table.</p>
+     */
+    inline GetTableResult& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyspaceName;
@@ -406,6 +433,8 @@ namespace Model
     int m_defaultTimeToLive;
 
     Comment m_comment;
+
+    ClientSideTimestamps m_clientSideTimestamps;
   };
 
 } // namespace Model

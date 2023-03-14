@@ -23,7 +23,8 @@ S3DataAccessAsset::S3DataAccessAsset() :
     m_keyPrefixesHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_s3AccessPointAliasHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false)
+    m_s3AccessPointArnHasBeenSet(false),
+    m_kmsKeysToGrantHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ S3DataAccessAsset::S3DataAccessAsset(JsonView jsonValue) :
     m_keyPrefixesHasBeenSet(false),
     m_keysHasBeenSet(false),
     m_s3AccessPointAliasHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false)
+    m_s3AccessPointArnHasBeenSet(false),
+    m_kmsKeysToGrantHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,16 @@ S3DataAccessAsset& S3DataAccessAsset::operator =(JsonView jsonValue)
     m_s3AccessPointArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeysToGrant"))
+  {
+    Aws::Utils::Array<JsonView> kmsKeysToGrantJsonList = jsonValue.GetArray("KmsKeysToGrant");
+    for(unsigned kmsKeysToGrantIndex = 0; kmsKeysToGrantIndex < kmsKeysToGrantJsonList.GetLength(); ++kmsKeysToGrantIndex)
+    {
+      m_kmsKeysToGrant.push_back(kmsKeysToGrantJsonList[kmsKeysToGrantIndex].AsObject());
+    }
+    m_kmsKeysToGrantHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +136,17 @@ JsonValue S3DataAccessAsset::Jsonize() const
   if(m_s3AccessPointArnHasBeenSet)
   {
    payload.WithString("S3AccessPointArn", m_s3AccessPointArn);
+
+  }
+
+  if(m_kmsKeysToGrantHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> kmsKeysToGrantJsonList(m_kmsKeysToGrant.size());
+   for(unsigned kmsKeysToGrantIndex = 0; kmsKeysToGrantIndex < kmsKeysToGrantJsonList.GetLength(); ++kmsKeysToGrantIndex)
+   {
+     kmsKeysToGrantJsonList[kmsKeysToGrantIndex].AsObject(m_kmsKeysToGrant[kmsKeysToGrantIndex].Jsonize());
+   }
+   payload.WithArray("KmsKeysToGrant", std::move(kmsKeysToGrantJsonList));
 
   }
 

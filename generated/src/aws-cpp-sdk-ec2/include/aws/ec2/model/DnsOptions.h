@@ -69,10 +69,34 @@ namespace Model
      */
     inline DnsOptions& WithDnsRecordIpType(DnsRecordIpType&& value) { SetDnsRecordIpType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
+     */
+    inline bool GetPrivateDnsOnlyForInboundResolverEndpoint() const{ return m_privateDnsOnlyForInboundResolverEndpoint; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
+     */
+    inline bool PrivateDnsOnlyForInboundResolverEndpointHasBeenSet() const { return m_privateDnsOnlyForInboundResolverEndpointHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
+     */
+    inline void SetPrivateDnsOnlyForInboundResolverEndpoint(bool value) { m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true; m_privateDnsOnlyForInboundResolverEndpoint = value; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints.</p>
+     */
+    inline DnsOptions& WithPrivateDnsOnlyForInboundResolverEndpoint(bool value) { SetPrivateDnsOnlyForInboundResolverEndpoint(value); return *this;}
+
   private:
 
     DnsRecordIpType m_dnsRecordIpType;
     bool m_dnsRecordIpTypeHasBeenSet = false;
+
+    bool m_privateDnsOnlyForInboundResolverEndpoint;
+    bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
   };
 
 } // namespace Model

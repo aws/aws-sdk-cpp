@@ -14,6 +14,7 @@
 #include <aws/keyspaces/model/PointInTimeRecovery.h>
 #include <aws/keyspaces/model/TimeToLive.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/ClientSideTimestamps.h>
 #include <aws/keyspaces/model/Tag.h>
 #include <utility>
 
@@ -126,139 +127,151 @@ namespace Model
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline const SchemaDefinition& GetSchemaDefinition() const{ return m_schemaDefinition; }
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline bool SchemaDefinitionHasBeenSet() const { return m_schemaDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline void SetSchemaDefinition(const SchemaDefinition& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = value; }
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline void SetSchemaDefinition(SchemaDefinition&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::move(value); }
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline CreateTableRequest& WithSchemaDefinition(const SchemaDefinition& value) { SetSchemaDefinition(value); return *this;}
 
     /**
      * <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-     * <p>For each column to be created:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type. For more
-     * information, see <a
+     * <p>For each column to be created:</p> <ul> <li> <p> <code>name</code> - The name
+     * of the column.</p> </li> <li> <p> <code>type</code> - An Amazon Keyspaces data
+     * type. For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
-     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>The primary key
-     * of the table consists of the following columns:</p> <p>•
+     * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul> <p>The
+     * primary key of the table consists of the following columns:</p> <ul> <li> <p>
      * <code>partitionKeys</code> - The partition key can be a single column, or it can
      * be a compound value composed of two or more columns. The partition key portion
      * of the primary key is required and determines how Amazon Keyspaces stores your
-     * data.</p> <p>• <code>name</code> - The name of each partition key column.</p>
-     * <p>• <code>clusteringKeys</code> - The optional clustering column portion of
-     * your primary key determines how the data is clustered and sorted within each
-     * partition.</p> <p>• <code>name</code> - The name of the clustering column. </p>
-     * <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant
-     * (<code>DESC</code>) order modifier.</p> <p>To define a column as static use
-     * <code>staticColumns</code> - Static columns store values that are shared by all
-     * rows in the same partition:</p> <p>• <code>name</code> - The name of the
-     * column.</p> <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
+     * data.</p> </li> <li> <p> <code>name</code> - The name of each partition key
+     * column.</p> </li> <li> <p> <code>clusteringKeys</code> - The optional clustering
+     * column portion of your primary key determines how the data is clustered and
+     * sorted within each partition.</p> </li> <li> <p> <code>name</code> - The name of
+     * the clustering column. </p> </li> <li> <p> <code>orderBy</code> - Sets the
+     * ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order
+     * modifier.</p> <p>To define a column as static use <code>staticColumns</code> -
+     * Static columns store values that are shared by all rows in the same
+     * partition:</p> </li> <li> <p> <code>name</code> - The name of the column.</p>
+     * </li> <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
+     * </ul>
      */
     inline CreateTableRequest& WithSchemaDefinition(SchemaDefinition&& value) { SetSchemaDefinition(std::move(value)); return *this;}
 
@@ -296,11 +309,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -308,11 +322,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -320,11 +335,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -332,11 +348,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -344,11 +361,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -356,11 +374,12 @@ namespace Model
 
     /**
      * <p>Specifies the read/write throughput capacity mode for the table. The options
-     * are:</p> <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> <p>•
-     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
-     * <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-     * <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more
-     * information, see <a
+     * are:</p> <ul> <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> and </p>
+     * </li> <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity
+     * mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code>
+     * as input.</p> </li> </ul> <p>The default is
+     * <code>throughput_mode:PAY_PER_REQUEST</code>.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -369,13 +388,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -383,13 +402,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -397,13 +416,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -411,13 +430,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -425,13 +444,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -439,13 +458,13 @@ namespace Model
 
     /**
      * <p>Specifies how the encryption key for encryption at rest is managed for the
-     * table. You can choose one of the following KMS key (KMS key):</p> <p>•
+     * table. You can choose one of the following KMS key (KMS key):</p> <ul> <li> <p>
      * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
-     * </p> <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in
-     * your account and is created, owned, and managed by you. This option requires the
-     * <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN)
-     * format as input.</p> <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
-     * <p>For more information, see <a
+     * </p> </li> <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is
+     * stored in your account and is created, owned, and managed by you. This option
+     * requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     * Name (ARN) format as input.</p> </li> </ul> <p>The default is
+     * <code>type:AWS_OWNED_KMS_KEY</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -454,9 +473,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -464,9 +483,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -474,9 +493,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -484,9 +503,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -494,9 +513,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -504,9 +523,9 @@ namespace Model
 
     /**
      * <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the
-     * table. The options are:</p> <p>• <code>ENABLED</code> </p> <p>•
-     * <code>DISABLED</code> </p> <p>If it's not specified, the default is
-     * <code>DISABLED</code>.</p> <p>For more information, see <a
+     * table. The options are:</p> <ul> <li> <p> <code>status=ENABLED</code> </p> </li>
+     * <li> <p> <code>status=DISABLED</code> </p> </li> </ul> <p>If it's not specified,
+     * the default is <code>status=DISABLED</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
@@ -514,10 +533,11 @@ namespace Model
 
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -525,10 +545,11 @@ namespace Model
     inline const TimeToLive& GetTtl() const{ return m_ttl; }
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -536,10 +557,11 @@ namespace Model
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -547,10 +569,11 @@ namespace Model
     inline void SetTtl(const TimeToLive& value) { m_ttlHasBeenSet = true; m_ttl = value; }
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -558,10 +581,11 @@ namespace Model
     inline void SetTtl(TimeToLive&& value) { m_ttlHasBeenSet = true; m_ttl = std::move(value); }
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -569,10 +593,11 @@ namespace Model
     inline CreateTableRequest& WithTtl(const TimeToLive& value) { SetTtl(value); return *this;}
 
     /**
-     * <p>Enables Time to Live custom settings for the table. The options are:</p> <p>•
-     * <code>status:enabled</code> </p> <p>• <code>status:disabled</code> </p> <p>The
-     * default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-     * can't disable it for the table.</p> <p>For more information, see <a
+     * <p>Enables Time to Live custom settings for the table. The options are:</p> <ul>
+     * <li> <p> <code>status:enabled</code> </p> </li> <li> <p>
+     * <code>status:disabled</code> </p> </li> </ul> <p>The default is
+     * <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't
+     * disable it for the table.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
@@ -689,6 +714,61 @@ namespace Model
      */
     inline CreateTableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline const ClientSideTimestamps& GetClientSideTimestamps() const{ return m_clientSideTimestamps; }
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline bool ClientSideTimestampsHasBeenSet() const { return m_clientSideTimestampsHasBeenSet; }
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline void SetClientSideTimestamps(const ClientSideTimestamps& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = value; }
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline void SetClientSideTimestamps(ClientSideTimestamps&& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = std::move(value); }
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline CreateTableRequest& WithClientSideTimestamps(const ClientSideTimestamps& value) { SetClientSideTimestamps(value); return *this;}
+
+    /**
+     * <p> Enables client-side timestamps for the table. By default, the setting is
+     * disabled. You can enable client-side timestamps with the following option:</p>
+     * <ul> <li> <p> <code>status: "enabled"</code> </p> </li> </ul> <p>Once
+     * client-side timestamps are enabled for a table, this setting cannot be
+     * disabled.</p>
+     */
+    inline CreateTableRequest& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyspaceName;
@@ -720,6 +800,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ClientSideTimestamps m_clientSideTimestamps;
+    bool m_clientSideTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

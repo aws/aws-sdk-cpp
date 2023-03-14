@@ -284,7 +284,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -295,7 +295,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -306,7 +306,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -317,7 +317,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -328,7 +328,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -339,7 +339,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -350,7 +350,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -361,7 +361,7 @@ namespace Model
      * <p>The path of the Organizations entity (root, organizational unit, or account)
      * from which an authenticated principal last attempted to access the service.
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
-     * is null if no principals (IAM users, IAM roles, or root users) in the reported
+     * is null if no principals (IAM users, IAM roles, or root user) in the reported
      * Organizations entity attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
@@ -437,25 +437,25 @@ namespace Model
 
 
     /**
-     * <p>The number of accounts with authenticated principals (root users, IAM users,
+     * <p>The number of accounts with authenticated principals (root user, IAM users,
      * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
 
     /**
-     * <p>The number of accounts with authenticated principals (root users, IAM users,
+     * <p>The number of accounts with authenticated principals (root user, IAM users,
      * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
 
     /**
-     * <p>The number of accounts with authenticated principals (root users, IAM users,
+     * <p>The number of accounts with authenticated principals (root user, IAM users,
      * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline void SetTotalAuthenticatedEntities(int value) { m_totalAuthenticatedEntitiesHasBeenSet = true; m_totalAuthenticatedEntities = value; }
 
     /**
-     * <p>The number of accounts with authenticated principals (root users, IAM users,
+     * <p>The number of accounts with authenticated principals (root user, IAM users,
      * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline AccessDetail& WithTotalAuthenticatedEntities(int value) { SetTotalAuthenticatedEntities(value); return *this;}

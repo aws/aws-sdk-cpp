@@ -503,7 +503,8 @@ namespace IAM
          * following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications allowed to authenticate using the OIDC
-         * provider</p> </li> <li> <p>A list of thumbprints of one or more server
+         * provider</p> </li> <li> <p>A list of tags that are attached to the specified IAM
+         * OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
          *  <p>Amazon Web Services secures communication with some OIDC identity
@@ -2333,8 +2334,8 @@ namespace IAM
          * perform this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Refining
          * permissions using service last accessed data</a> in the <i>IAM User
-         * Guide</i>.</p> <p>For each service that principals in an account (root users,
-         * IAM users, or IAM roles) could access using SCPs, the operation returns details
+         * Guide</i>.</p> <p>For each service that principals in an account (root user, IAM
+         * users, or IAM roles) could access using SCPs, the operation returns details
          * about the most recent access attempt. If there was no attempt, the service is
          * listed without details about the most recent attempt to access the service. If
          * the operation fails, it returns the reason that it failed.</p> <p>By default,
@@ -4564,9 +4565,10 @@ namespace IAM
          * could search for all resources with the key name <i>Project</i> and the value
          * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost
          * Center</i> and the value <i>41200</i>. </p> </li> <li> <p> <b>Access control</b>
-         * - Include tags in IAM user-based and resource-based policies. You can use tags
-         * to restrict access to only an OIDC provider that has a specified tag attached.
-         * For examples of policies that show how to use tags to control access, see <a
+         * - Include tags in IAM identity-based and resource-based policies. You can use
+         * tags to restrict access to only an OIDC provider that has a specified tag
+         * attached. For examples of policies that show how to use tags to control access,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
          * access using IAM tags</a> in the <i>IAM User Guide</i>.</p> </li> </ul> 
          * <ul> <li> <p>If any one of the tags is invalid or if you exceed the allowed
@@ -4815,7 +4817,7 @@ namespace IAM
          * example, you could search for all resources with the key name <i>Project</i> and
          * the value <i>MyImportantProject</i>. Or search for all resources with the key
          * name <i>Cost Center</i> and the value <i>41200</i>. </p> </li> <li> <p>
-         * <b>Access control</b> - Include tags in IAM user-based and resource-based
+         * <b>Access control</b> - Include tags in IAM identity-based and resource-based
          * policies. You can use tags to restrict access to only an IAM requesting user
          * that has a specified tag attached. You can also restrict access to only those
          * resources that have a certain tag attached. For examples of policies that show

@@ -69,10 +69,50 @@ namespace Model
      */
     inline DnsOptionsSpecification& WithDnsRecordIpType(DnsRecordIpType&& value) { SetDnsRecordIpType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
+     * option is available only for services that support both gateway and interface
+     * endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface
+     * endpoint.</p>
+     */
+    inline bool GetPrivateDnsOnlyForInboundResolverEndpoint() const{ return m_privateDnsOnlyForInboundResolverEndpoint; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
+     * option is available only for services that support both gateway and interface
+     * endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface
+     * endpoint.</p>
+     */
+    inline bool PrivateDnsOnlyForInboundResolverEndpointHasBeenSet() const { return m_privateDnsOnlyForInboundResolverEndpointHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
+     * option is available only for services that support both gateway and interface
+     * endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface
+     * endpoint.</p>
+     */
+    inline void SetPrivateDnsOnlyForInboundResolverEndpoint(bool value) { m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true; m_privateDnsOnlyForInboundResolverEndpoint = value; }
+
+    /**
+     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
+     * option is available only for services that support both gateway and interface
+     * endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface
+     * endpoint.</p>
+     */
+    inline DnsOptionsSpecification& WithPrivateDnsOnlyForInboundResolverEndpoint(bool value) { SetPrivateDnsOnlyForInboundResolverEndpoint(value); return *this;}
+
   private:
 
     DnsRecordIpType m_dnsRecordIpType;
     bool m_dnsRecordIpTypeHasBeenSet = false;
+
+    bool m_privateDnsOnlyForInboundResolverEndpoint;
+    bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
   };
 
 } // namespace Model

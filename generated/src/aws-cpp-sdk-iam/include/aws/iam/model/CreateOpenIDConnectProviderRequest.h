@@ -285,7 +285,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
@@ -306,7 +306,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }
@@ -327,7 +327,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
@@ -348,7 +348,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
@@ -369,7 +369,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
@@ -390,7 +390,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
@@ -411,7 +411,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
@@ -432,7 +432,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
@@ -453,7 +453,7 @@ namespace Model
      * <code>https://keys.server.example.com.</code> </p> <p>For more information about
      * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
