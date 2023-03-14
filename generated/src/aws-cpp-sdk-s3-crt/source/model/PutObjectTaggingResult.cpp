@@ -41,5 +41,11 @@ PutObjectTaggingResult& PutObjectTaggingResult::operator =(const Aws::AmazonWebS
     m_versionId = versionIdIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mobile/Mobile_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mobile/model/Resource.h>
 #include <utility>
 
@@ -117,11 +118,35 @@ namespace Model
      */
     inline DeleteProjectResult& AddOrphanedResources(Resource&& value) { m_orphanedResources.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DeleteProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DeleteProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DeleteProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Resource> m_deletedResources;
 
     Aws::Vector<Resource> m_orphanedResources;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -42,5 +42,11 @@ GetStreamingDistributionConfig2020_05_31Result& GetStreamingDistributionConfig20
     m_eTag = eTagIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

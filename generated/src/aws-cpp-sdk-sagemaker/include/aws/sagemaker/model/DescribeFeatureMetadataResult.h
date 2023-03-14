@@ -310,6 +310,28 @@ namespace Model
      */
     inline DescribeFeatureMetadataResult& AddParameters(FeatureParameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeFeatureMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeFeatureMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeFeatureMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_featureGroupArn;
@@ -327,6 +349,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<FeatureParameter> m_parameters;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@
 
 #include <aws/directconnect/model/Lag.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -46,7 +47,8 @@ Lag::Lag() :
     m_macSecCapable(false),
     m_macSecCapableHasBeenSet(false),
     m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false)
+    m_macSecKeysHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,8 @@ Lag::Lag(JsonView jsonValue) :
     m_macSecCapable(false),
     m_macSecCapableHasBeenSet(false),
     m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false)
+    m_macSecKeysHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

@@ -445,6 +445,28 @@ namespace Model
      */
     inline GetMissionProfileResult& WithTrackingConfigArn(const char* value) { SetTrackingConfigArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMissionProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMissionProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMissionProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_contactPostPassDurationSeconds;
@@ -470,6 +492,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_trackingConfigArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

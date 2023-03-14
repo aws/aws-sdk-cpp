@@ -28,7 +28,8 @@ CreateHostedConfigurationVersionResult::CreateHostedConfigurationVersionResult(C
     m_description(std::move(toMove.m_description)),
     m_content(std::move(toMove.m_content)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_versionLabel(std::move(toMove.m_versionLabel))
+    m_versionLabel(std::move(toMove.m_versionLabel)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -46,6 +47,7 @@ CreateHostedConfigurationVersionResult& CreateHostedConfigurationVersionResult::
    m_content = std::move(toMove.m_content);
    m_contentType = std::move(toMove.m_contentType);
    m_versionLabel = std::move(toMove.m_versionLabel);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -95,6 +97,12 @@ CreateHostedConfigurationVersionResult& CreateHostedConfigurationVersionResult::
   if(versionLabelIter != headers.end())
   {
     m_versionLabel = versionLabelIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

@@ -495,6 +495,28 @@ namespace Model
      */
     inline DescribeTaskExecutionResult& WithBytesCompressed(long long value) { SetBytesCompressed(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeTaskExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeTaskExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeTaskExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_taskExecutionArn;
@@ -522,6 +544,8 @@ namespace Model
     TaskExecutionResultDetail m_result;
 
     long long m_bytesCompressed;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

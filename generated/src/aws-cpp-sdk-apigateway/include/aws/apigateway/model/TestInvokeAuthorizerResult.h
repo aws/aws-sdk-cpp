@@ -311,6 +311,28 @@ namespace Model
      */
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, const char* value) { m_claims.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline TestInvokeAuthorizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline TestInvokeAuthorizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_clientStatus;
@@ -326,6 +348,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_authorization;
 
     Aws::Map<Aws::String, Aws::String> m_claims;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

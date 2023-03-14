@@ -154,6 +154,28 @@ namespace Model
      */
     inline CreateMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateMapResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateMapResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateMapResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_createTime;
@@ -161,6 +183,8 @@ namespace Model
     Aws::String m_mapArn;
 
     Aws::String m_mapName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

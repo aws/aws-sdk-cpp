@@ -371,6 +371,28 @@ namespace Model
      */
     inline GetSolNetworkOperationResult& AddTasks(GetSolNetworkOperationTaskDetails&& value) { m_tasks.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetSolNetworkOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetSolNetworkOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetSolNetworkOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -390,6 +412,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Vector<GetSolNetworkOperationTaskDetails> m_tasks;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

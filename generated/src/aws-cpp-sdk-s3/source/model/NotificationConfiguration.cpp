@@ -7,6 +7,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ NotificationConfiguration::NotificationConfiguration() :
     m_topicConfigurationsHasBeenSet(false),
     m_queueConfigurationsHasBeenSet(false),
     m_lambdaFunctionConfigurationsHasBeenSet(false),
-    m_eventBridgeConfigurationHasBeenSet(false)
+    m_eventBridgeConfigurationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,8 @@ NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode) :
     m_topicConfigurationsHasBeenSet(false),
     m_queueConfigurationsHasBeenSet(false),
     m_lambdaFunctionConfigurationsHasBeenSet(false),
-    m_eventBridgeConfigurationHasBeenSet(false)
+    m_eventBridgeConfigurationHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = xmlNode;
 }

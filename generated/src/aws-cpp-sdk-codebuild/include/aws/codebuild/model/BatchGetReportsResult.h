@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/codebuild/model/Report.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/Report.h>
 #include <utility>
 
 namespace Aws
@@ -125,11 +125,35 @@ namespace Model
      */
     inline BatchGetReportsResult& AddReportsNotFound(const char* value) { m_reportsNotFound.push_back(value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetReportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetReportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetReportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Report> m_reports;
 
     Aws::Vector<Aws::String> m_reportsNotFound;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

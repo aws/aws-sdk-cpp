@@ -5,6 +5,7 @@
 
 #include <aws/elasticfilesystem/model/AccessPointDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,7 +30,8 @@ AccessPointDescription::AccessPointDescription() :
     m_rootDirectoryHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false)
+    m_lifeCycleStateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,8 @@ AccessPointDescription::AccessPointDescription(JsonView jsonValue) :
     m_rootDirectoryHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false)
+    m_lifeCycleStateHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

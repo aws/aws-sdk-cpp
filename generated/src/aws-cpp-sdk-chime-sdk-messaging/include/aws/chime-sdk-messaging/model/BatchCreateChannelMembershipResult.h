@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/chime-sdk-messaging/model/BatchChannelMemberships.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-messaging/model/BatchCreateChannelMembershipError.h>
 #include <utility>
 
@@ -102,11 +103,35 @@ namespace Model
      */
     inline BatchCreateChannelMembershipResult& AddErrors(BatchCreateChannelMembershipError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchCreateChannelMembershipResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchCreateChannelMembershipResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchCreateChannelMembershipResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BatchChannelMemberships m_batchChannelMemberships;
 
     Aws::Vector<BatchCreateChannelMembershipError> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

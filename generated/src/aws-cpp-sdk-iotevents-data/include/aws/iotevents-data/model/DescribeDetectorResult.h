@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/iotevents-data/model/Detector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribeDetectorResult& WithDetector(Detector&& value) { SetDetector(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Detector m_detector;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

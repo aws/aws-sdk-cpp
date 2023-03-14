@@ -121,6 +121,28 @@ namespace Model
      */
     inline AddApplicationInputResult& AddInputDescriptions(InputDescription&& value) { m_inputDescriptions.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AddApplicationInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AddApplicationInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AddApplicationInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -128,6 +150,8 @@ namespace Model
     long long m_applicationVersionId;
 
     Aws::Vector<InputDescription> m_inputDescriptions;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

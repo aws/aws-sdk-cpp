@@ -227,6 +227,28 @@ namespace Model
      */
     inline GetBackupSelectionResult& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBackupSelectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBackupSelectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBackupSelectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BackupSelection m_backupSelection;
@@ -238,6 +260,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     Aws::String m_creatorRequestId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

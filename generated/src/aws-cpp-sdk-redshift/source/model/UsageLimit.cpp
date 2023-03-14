@@ -33,8 +33,7 @@ UsageLimit::UsageLimit() :
     m_periodHasBeenSet(false),
     m_breachAction(UsageLimitBreachAction::NOT_SET),
     m_breachActionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -51,8 +50,7 @@ UsageLimit::UsageLimit(const XmlNode& xmlNode) :
     m_periodHasBeenSet(false),
     m_breachAction(UsageLimitBreachAction::NOT_SET),
     m_breachActionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -170,13 +168,9 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -219,12 +213,9 @@ void UsageLimit::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

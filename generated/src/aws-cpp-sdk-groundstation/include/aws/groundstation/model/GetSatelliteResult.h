@@ -198,6 +198,28 @@ namespace Model
      */
     inline GetSatelliteResult& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetSatelliteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetSatelliteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetSatelliteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     EphemerisMetaData m_currentEphemeris;
@@ -209,6 +231,8 @@ namespace Model
     Aws::String m_satelliteArn;
 
     Aws::String m_satelliteId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

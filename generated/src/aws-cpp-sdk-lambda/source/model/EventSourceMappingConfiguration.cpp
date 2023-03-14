@@ -5,6 +5,7 @@
 
 #include <aws/lambda/model/EventSourceMappingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -53,7 +54,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
     m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
-    m_documentDBEventSourceConfigHasBeenSet(false)
+    m_documentDBEventSourceConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_amazonManagedKafkaEventSourceConfigHasBeenSet(false),
     m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
-    m_documentDBEventSourceConfigHasBeenSet(false)
+    m_documentDBEventSourceConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

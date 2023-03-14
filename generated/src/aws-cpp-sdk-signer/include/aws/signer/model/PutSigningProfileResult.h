@@ -139,6 +139,28 @@ namespace Model
      */
     inline PutSigningProfileResult& WithProfileVersionArn(const char* value) { SetProfileVersionArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutSigningProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutSigningProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutSigningProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -146,6 +168,8 @@ namespace Model
     Aws::String m_profileVersion;
 
     Aws::String m_profileVersionArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

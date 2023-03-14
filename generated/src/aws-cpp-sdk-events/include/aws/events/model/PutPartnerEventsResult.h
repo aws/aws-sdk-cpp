@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/model/PutPartnerEventsResultEntry.h>
 #include <utility>
 
@@ -94,11 +95,35 @@ namespace Model
      */
     inline PutPartnerEventsResult& AddEntries(PutPartnerEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutPartnerEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutPartnerEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutPartnerEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_failedEntryCount;
 
     Aws::Vector<PutPartnerEventsResultEntry> m_entries;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

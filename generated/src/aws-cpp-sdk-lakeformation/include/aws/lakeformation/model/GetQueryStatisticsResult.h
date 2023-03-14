@@ -8,6 +8,7 @@
 #include <aws/lakeformation/model/ExecutionStatistics.h>
 #include <aws/lakeformation/model/PlanningStatistics.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,28 @@ namespace Model
      */
     inline GetQueryStatisticsResult& WithQuerySubmissionTime(Aws::Utils::DateTime&& value) { SetQuerySubmissionTime(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetQueryStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetQueryStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetQueryStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ExecutionStatistics m_executionStatistics;
@@ -128,6 +151,8 @@ namespace Model
     PlanningStatistics m_planningStatistics;
 
     Aws::Utils::DateTime m_querySubmissionTime;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

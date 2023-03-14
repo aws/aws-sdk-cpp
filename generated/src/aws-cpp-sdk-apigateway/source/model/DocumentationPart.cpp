@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/DocumentationPart.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -21,14 +22,16 @@ namespace Model
 DocumentationPart::DocumentationPart() : 
     m_idHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
 DocumentationPart::DocumentationPart(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

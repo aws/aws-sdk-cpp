@@ -103,11 +103,35 @@ namespace Model
      */
     inline UpgradeAppliedSchemaResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpgradeAppliedSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpgradeAppliedSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpgradeAppliedSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_upgradedSchemaArn;
 
     Aws::String m_directoryArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -139,6 +139,28 @@ namespace Model
      */
     inline GetConfigResult& WithConfigCred(const char* value) { SetConfigCred(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_configType;
@@ -146,6 +168,8 @@ namespace Model
     Aws::String m_configFile;
 
     Aws::String m_configCred;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

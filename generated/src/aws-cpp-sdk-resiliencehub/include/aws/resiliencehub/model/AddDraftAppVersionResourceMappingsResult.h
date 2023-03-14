@@ -211,6 +211,28 @@ namespace Model
      */
     inline AddDraftAppVersionResourceMappingsResult& AddResourceMappings(ResourceMapping&& value) { m_resourceMappings.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_appArn;
@@ -218,6 +240,8 @@ namespace Model
     Aws::String m_appVersion;
 
     Aws::Vector<ResourceMapping> m_resourceMappings;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/nimble/model/StudioComponent.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline UpdateStudioComponentResult& WithStudioComponent(StudioComponent&& value) { SetStudioComponent(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateStudioComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateStudioComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateStudioComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     StudioComponent m_studioComponent;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

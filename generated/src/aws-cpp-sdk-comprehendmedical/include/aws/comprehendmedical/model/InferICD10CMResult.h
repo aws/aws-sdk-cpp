@@ -183,6 +183,28 @@ namespace Model
      */
     inline InferICD10CMResult& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline InferICD10CMResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline InferICD10CMResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline InferICD10CMResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ICD10CMEntity> m_entities;
@@ -190,6 +212,8 @@ namespace Model
     Aws::String m_paginationToken;
 
     Aws::String m_modelVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

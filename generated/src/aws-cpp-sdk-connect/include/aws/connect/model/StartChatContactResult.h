@@ -203,6 +203,28 @@ namespace Model
      */
     inline StartChatContactResult& WithContinuedFromContactId(const char* value) { SetContinuedFromContactId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartChatContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartChatContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartChatContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_contactId;
@@ -212,6 +234,8 @@ namespace Model
     Aws::String m_participantToken;
 
     Aws::String m_continuedFromContactId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

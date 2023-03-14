@@ -263,6 +263,28 @@ namespace Model
      */
     inline CreatePortalResult& WithSsoApplicationId(const char* value) { SetSsoApplicationId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreatePortalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreatePortalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreatePortalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_portalId;
@@ -274,6 +296,8 @@ namespace Model
     PortalStatus m_portalStatus;
 
     Aws::String m_ssoApplicationId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

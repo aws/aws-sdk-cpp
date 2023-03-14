@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -124,6 +126,28 @@ namespace Model
      */
     inline DescribeAccountHealthResult& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeAccountHealthResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeAccountHealthResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeAccountHealthResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_openReactiveInsights;
@@ -135,6 +159,8 @@ namespace Model
     long long m_resourceHours;
 
     long long m_analyzedResourceCount;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

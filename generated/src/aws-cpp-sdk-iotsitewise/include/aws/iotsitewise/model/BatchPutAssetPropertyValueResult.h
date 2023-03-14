@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/BatchPutAssetPropertyErrorEntry.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline BatchPutAssetPropertyValueResult& AddErrorEntries(BatchPutAssetPropertyErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchPutAssetPropertyValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchPutAssetPropertyValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchPutAssetPropertyValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<BatchPutAssetPropertyErrorEntry> m_errorEntries;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

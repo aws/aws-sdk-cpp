@@ -23,7 +23,8 @@ GetSolFunctionPackageContentResult::GetSolFunctionPackageContentResult() :
 
 GetSolFunctionPackageContentResult::GetSolFunctionPackageContentResult(GetSolFunctionPackageContentResult&& toMove) : 
     m_contentType(toMove.m_contentType),
-    m_packageContent(std::move(toMove.m_packageContent))
+    m_packageContent(std::move(toMove.m_packageContent)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -36,6 +37,7 @@ GetSolFunctionPackageContentResult& GetSolFunctionPackageContentResult::operator
 
    m_contentType = toMove.m_contentType;
    m_packageContent = std::move(toMove.m_packageContent);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -55,6 +57,12 @@ GetSolFunctionPackageContentResult& GetSolFunctionPackageContentResult::operator
   if(contentTypeIter != headers.end())
   {
     m_contentType = PackageContentTypeMapper::GetPackageContentTypeForName(contentTypeIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

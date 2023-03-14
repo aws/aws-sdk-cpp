@@ -1012,6 +1012,28 @@ namespace Model
      */
     inline AssociateVirtualInterfaceResult& WithSiteLinkEnabled(bool value) { SetSiteLinkEnabled(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AssociateVirtualInterfaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AssociateVirtualInterfaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AssociateVirtualInterfaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -1065,6 +1087,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     bool m_siteLinkEnabled;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

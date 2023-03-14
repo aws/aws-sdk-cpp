@@ -196,6 +196,28 @@ namespace Model
      */
     inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetFunctionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetFunctionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetFunctionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     FunctionConfiguration m_configuration;
@@ -205,6 +227,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Concurrency m_concurrency;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

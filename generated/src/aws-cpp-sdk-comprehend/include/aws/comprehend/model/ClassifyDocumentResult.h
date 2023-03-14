@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/comprehend/model/DocumentMetadata.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/comprehend/model/DocumentClass.h>
 #include <aws/comprehend/model/DocumentLabel.h>
 #include <aws/comprehend/model/DocumentTypeListItem.h>
@@ -281,6 +282,28 @@ namespace Model
      */
     inline ClassifyDocumentResult& AddErrors(ErrorsListItem&& value) { m_errors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ClassifyDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ClassifyDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ClassifyDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<DocumentClass> m_classes;
@@ -292,6 +315,8 @@ namespace Model
     Aws::Vector<DocumentTypeListItem> m_documentType;
 
     Aws::Vector<ErrorsListItem> m_errors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

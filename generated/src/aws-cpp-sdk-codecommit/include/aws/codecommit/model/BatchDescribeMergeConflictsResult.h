@@ -285,6 +285,28 @@ namespace Model
      */
     inline BatchDescribeMergeConflictsResult& WithBaseCommitId(const char* value) { SetBaseCommitId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchDescribeMergeConflictsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchDescribeMergeConflictsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchDescribeMergeConflictsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Conflict> m_conflicts;
@@ -298,6 +320,8 @@ namespace Model
     Aws::String m_sourceCommitId;
 
     Aws::String m_baseCommitId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

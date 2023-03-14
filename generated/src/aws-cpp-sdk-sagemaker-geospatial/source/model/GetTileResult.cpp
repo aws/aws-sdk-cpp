@@ -7,6 +7,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,7 +21,8 @@ GetTileResult::GetTileResult()
 }
 
 GetTileResult::GetTileResult(GetTileResult&& toMove) : 
-    m_binaryFile(std::move(toMove.m_binaryFile))
+    m_binaryFile(std::move(toMove.m_binaryFile)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -32,6 +34,7 @@ GetTileResult& GetTileResult::operator=(GetTileResult&& toMove)
    }
 
    m_binaryFile = std::move(toMove.m_binaryFile);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -44,6 +47,13 @@ GetTileResult::GetTileResult(Aws::AmazonWebServiceResult<ResponseStream>&& resul
 GetTileResult& GetTileResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_binaryFile = result.TakeOwnershipOfPayload();
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
    return *this;
 }

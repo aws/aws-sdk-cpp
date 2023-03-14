@@ -159,6 +159,28 @@ namespace Model
      */
     inline GenerateDataKeyResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GenerateDataKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GenerateDataKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GenerateDataKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::ByteBuffer m_ciphertextBlob;
@@ -166,6 +188,8 @@ namespace Model
     Aws::Utils::CryptoBuffer m_plaintext;
 
     Aws::String m_keyId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

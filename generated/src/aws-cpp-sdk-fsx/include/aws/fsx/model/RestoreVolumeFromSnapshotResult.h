@@ -146,6 +146,28 @@ namespace Model
      */
     inline RestoreVolumeFromSnapshotResult& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActions.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RestoreVolumeFromSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RestoreVolumeFromSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RestoreVolumeFromSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_volumeId;
@@ -153,6 +175,8 @@ namespace Model
     VolumeLifecycle m_lifecycle;
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

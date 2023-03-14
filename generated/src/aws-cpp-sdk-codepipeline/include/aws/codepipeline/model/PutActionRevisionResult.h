@@ -92,11 +92,35 @@ namespace Model
      */
     inline PutActionRevisionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PutActionRevisionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PutActionRevisionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PutActionRevisionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_newRevision;
 
     Aws::String m_pipelineExecutionId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -94,11 +94,35 @@ namespace Model
      */
     inline GetTrustStoreCertificateResult& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetTrustStoreCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetTrustStoreCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetTrustStoreCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Certificate m_certificate;
 
     Aws::String m_trustStoreArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

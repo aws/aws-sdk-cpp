@@ -9,9 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codeguruprofiler/model/AggregationPeriod.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codeguruprofiler/model/TimestampStructure.h>
 #include <aws/codeguruprofiler/model/FrameMetricDatum.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -342,6 +342,28 @@ namespace Model
      */
     inline BatchGetFrameMetricDataResult& AddUnprocessedEndTimes(const char* key, const Aws::Vector<TimestampStructure>& value) { m_unprocessedEndTimes.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetFrameMetricDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetFrameMetricDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetFrameMetricDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_endTime;
@@ -355,6 +377,8 @@ namespace Model
     Aws::Utils::DateTime m_startTime;
 
     Aws::Map<Aws::String, Aws::Vector<TimestampStructure>> m_unprocessedEndTimes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

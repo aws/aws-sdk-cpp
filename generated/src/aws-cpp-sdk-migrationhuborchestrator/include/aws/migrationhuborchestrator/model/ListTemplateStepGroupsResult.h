@@ -105,11 +105,35 @@ namespace Model
      */
     inline ListTemplateStepGroupsResult& AddTemplateStepGroupSummary(TemplateStepGroupSummary&& value) { m_templateStepGroupSummary.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListTemplateStepGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListTemplateStepGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListTemplateStepGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<TemplateStepGroupSummary> m_templateStepGroupSummary;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -156,6 +156,28 @@ namespace Model
      */
     inline GetUnfilteredTableMetadataResult& AddCellFilters(ColumnRowFilter&& value) { m_cellFilters.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetUnfilteredTableMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetUnfilteredTableMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetUnfilteredTableMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Table m_table;
@@ -165,6 +187,8 @@ namespace Model
     bool m_isRegisteredWithLakeFormation;
 
     Aws::Vector<ColumnRowFilter> m_cellFilters;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

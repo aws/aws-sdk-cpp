@@ -176,6 +176,28 @@ namespace Model
      */
     inline CreateSourceRepositoryBranchResult& WithHeadCommitId(const char* value) { SetHeadCommitId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateSourceRepositoryBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateSourceRepositoryBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateSourceRepositoryBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_ref;
@@ -185,6 +207,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedTime;
 
     Aws::String m_headCommitId;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

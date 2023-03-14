@@ -276,6 +276,28 @@ namespace Model
      */
     inline DescribeContributorInsightsResult& WithFailureException(FailureException&& value) { SetFailureException(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeContributorInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeContributorInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeContributorInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_tableName;
@@ -289,6 +311,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdateDateTime;
 
     FailureException m_failureException;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

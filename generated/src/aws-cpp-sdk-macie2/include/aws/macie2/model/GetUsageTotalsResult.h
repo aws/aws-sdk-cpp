@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/model/TimeRange.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/UsageTotal.h>
 #include <utility>
 
@@ -112,11 +113,35 @@ namespace Model
      */
     inline GetUsageTotalsResult& AddUsageTotals(UsageTotal&& value) { m_usageTotals.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetUsageTotalsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetUsageTotalsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetUsageTotalsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     TimeRange m_timeRange;
 
     Aws::Vector<UsageTotal> m_usageTotals;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

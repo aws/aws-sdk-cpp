@@ -48,5 +48,11 @@ CreatePublicKey2020_05_31Result& CreatePublicKey2020_05_31Result::operator =(con
     m_eTag = eTagIter->second;
   }
 
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

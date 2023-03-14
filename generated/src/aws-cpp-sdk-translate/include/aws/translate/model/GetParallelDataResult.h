@@ -7,6 +7,7 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/ParallelDataProperties.h>
 #include <aws/translate/model/ParallelDataDataLocation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,28 @@ namespace Model
      */
     inline GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation&& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetParallelDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetParallelDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetParallelDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     ParallelDataProperties m_parallelDataProperties;
@@ -220,6 +243,8 @@ namespace Model
     ParallelDataDataLocation m_auxiliaryDataLocation;
 
     ParallelDataDataLocation m_latestUpdateAttemptAuxiliaryDataLocation;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

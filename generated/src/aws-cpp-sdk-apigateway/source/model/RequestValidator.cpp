@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/RequestValidator.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ RequestValidator::RequestValidator() :
     m_validateRequestBody(false),
     m_validateRequestBodyHasBeenSet(false),
     m_validateRequestParameters(false),
-    m_validateRequestParametersHasBeenSet(false)
+    m_validateRequestParametersHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,8 @@ RequestValidator::RequestValidator(JsonView jsonValue) :
     m_validateRequestBody(false),
     m_validateRequestBodyHasBeenSet(false),
     m_validateRequestParameters(false),
-    m_validateRequestParametersHasBeenSet(false)
+    m_validateRequestParametersHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

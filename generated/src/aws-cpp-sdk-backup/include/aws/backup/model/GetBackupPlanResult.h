@@ -404,6 +404,28 @@ namespace Model
      */
     inline GetBackupPlanResult& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettings.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBackupPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBackupPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBackupPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     BackupPlan m_backupPlan;
@@ -423,6 +445,8 @@ namespace Model
     Aws::Utils::DateTime m_lastExecutionDate;
 
     Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

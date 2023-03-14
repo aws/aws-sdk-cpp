@@ -166,6 +166,28 @@ namespace Model
      */
     inline GetServiceProfileResult& WithLoRaWAN(LoRaWANGetServiceProfileInfo&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetServiceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetServiceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetServiceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -175,6 +197,8 @@ namespace Model
     Aws::String m_id;
 
     LoRaWANGetServiceProfileInfo m_loRaWAN;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

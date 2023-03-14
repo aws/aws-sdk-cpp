@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/model/MultiRegionAccessPointPolicyDocument.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetMultiRegionAccessPointPolicyResult& WithPolicy(MultiRegionAccessPointPolicyDocument&& value) { SetPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetMultiRegionAccessPointPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetMultiRegionAccessPointPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetMultiRegionAccessPointPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     MultiRegionAccessPointPolicyDocument m_policy;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

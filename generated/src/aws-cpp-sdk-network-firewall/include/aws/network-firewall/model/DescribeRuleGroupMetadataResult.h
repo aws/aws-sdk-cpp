@@ -287,6 +287,28 @@ namespace Model
      */
     inline DescribeRuleGroupMetadataResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeRuleGroupMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeRuleGroupMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeRuleGroupMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -302,6 +324,8 @@ namespace Model
     StatefulRuleOptions m_statefulRuleOptions;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

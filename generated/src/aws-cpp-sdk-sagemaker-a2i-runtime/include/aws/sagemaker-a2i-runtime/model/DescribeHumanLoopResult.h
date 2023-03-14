@@ -327,6 +327,28 @@ namespace Model
      */
     inline DescribeHumanLoopResult& WithHumanLoopOutput(HumanLoopOutput&& value) { SetHumanLoopOutput(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeHumanLoopResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeHumanLoopResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeHumanLoopResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -344,6 +366,8 @@ namespace Model
     Aws::String m_flowDefinitionArn;
 
     HumanLoopOutput m_humanLoopOutput;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

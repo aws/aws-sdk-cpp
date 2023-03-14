@@ -207,6 +207,28 @@ namespace Model
      */
     inline SearchResult& AddStats(const char* key, const FieldStats& value) { m_stats.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     SearchStatus m_status;
@@ -216,6 +238,8 @@ namespace Model
     Aws::Map<Aws::String, BucketInfo> m_facets;
 
     Aws::Map<Aws::String, FieldStats> m_stats;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

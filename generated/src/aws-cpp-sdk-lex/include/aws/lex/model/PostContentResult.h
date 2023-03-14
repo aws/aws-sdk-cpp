@@ -1087,6 +1087,28 @@ namespace Model
      */
     inline PostContentResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline PostContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline PostContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline PostContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
@@ -1120,6 +1142,8 @@ namespace Model
     Aws::String m_sessionId;
 
     Aws::String m_activeContexts;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

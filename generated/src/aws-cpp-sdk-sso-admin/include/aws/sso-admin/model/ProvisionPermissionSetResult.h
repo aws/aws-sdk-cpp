@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/PermissionSetProvisioningStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline ProvisionPermissionSetResult& WithPermissionSetProvisioningStatus(PermissionSetProvisioningStatus&& value) { SetPermissionSetProvisioningStatus(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ProvisionPermissionSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ProvisionPermissionSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ProvisionPermissionSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     PermissionSetProvisioningStatus m_permissionSetProvisioningStatus;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -139,6 +139,28 @@ namespace Model
      */
     inline AddInstanceFleetResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline AddInstanceFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline AddInstanceFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline AddInstanceFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_clusterId;
@@ -146,6 +168,8 @@ namespace Model
     Aws::String m_instanceFleetId;
 
     Aws::String m_clusterArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

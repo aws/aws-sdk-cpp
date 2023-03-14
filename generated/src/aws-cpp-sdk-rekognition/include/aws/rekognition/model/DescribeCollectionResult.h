@@ -173,6 +173,28 @@ namespace Model
      */
     inline DescribeCollectionResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     long long m_faceCount;
@@ -182,6 +204,8 @@ namespace Model
     Aws::String m_collectionARN;
 
     Aws::Utils::DateTime m_creationTimestamp;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

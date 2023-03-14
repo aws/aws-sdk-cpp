@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/FileSystemAssociationInfo.h>
 #include <utility>
 
@@ -75,9 +76,33 @@ namespace Model
      */
     inline DescribeFileSystemAssociationsResult& AddFileSystemAssociationInfoList(FileSystemAssociationInfo&& value) { m_fileSystemAssociationInfoList.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeFileSystemAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeFileSystemAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeFileSystemAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<FileSystemAssociationInfo> m_fileSystemAssociationInfoList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

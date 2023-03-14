@@ -545,6 +545,28 @@ namespace Model
      */
     inline DescribeInferenceSchedulerResult& WithLatestInferenceResult(LatestInferenceResult&& value) { SetLatestInferenceResult(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeInferenceSchedulerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeInferenceSchedulerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeInferenceSchedulerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_modelArn;
@@ -574,6 +596,8 @@ namespace Model
     Aws::String m_serverSideKmsKeyId;
 
     LatestInferenceResult m_latestInferenceResult;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

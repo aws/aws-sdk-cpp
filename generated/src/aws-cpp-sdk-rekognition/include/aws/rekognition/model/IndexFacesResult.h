@@ -308,6 +308,28 @@ namespace Model
      */
     inline IndexFacesResult& AddUnindexedFaces(UnindexedFace&& value) { m_unindexedFaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline IndexFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline IndexFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline IndexFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<FaceRecord> m_faceRecords;
@@ -317,6 +339,8 @@ namespace Model
     Aws::String m_faceModelVersion;
 
     Aws::Vector<UnindexedFace> m_unindexedFaces;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

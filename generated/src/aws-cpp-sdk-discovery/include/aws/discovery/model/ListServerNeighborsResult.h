@@ -149,6 +149,28 @@ namespace Model
      */
     inline ListServerNeighborsResult& WithKnownDependencyCount(long long value) { SetKnownDependencyCount(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListServerNeighborsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListServerNeighborsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListServerNeighborsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<NeighborConnectionDetail> m_neighbors;
@@ -156,6 +178,8 @@ namespace Model
     Aws::String m_nextToken;
 
     long long m_knownDependencyCount;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

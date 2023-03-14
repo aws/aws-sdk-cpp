@@ -23,7 +23,8 @@ GetSolNetworkPackageDescriptorResult::GetSolNetworkPackageDescriptorResult() :
 
 GetSolNetworkPackageDescriptorResult::GetSolNetworkPackageDescriptorResult(GetSolNetworkPackageDescriptorResult&& toMove) : 
     m_contentType(toMove.m_contentType),
-    m_nsd(std::move(toMove.m_nsd))
+    m_nsd(std::move(toMove.m_nsd)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -36,6 +37,7 @@ GetSolNetworkPackageDescriptorResult& GetSolNetworkPackageDescriptorResult::oper
 
    m_contentType = toMove.m_contentType;
    m_nsd = std::move(toMove.m_nsd);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -55,6 +57,12 @@ GetSolNetworkPackageDescriptorResult& GetSolNetworkPackageDescriptorResult::oper
   if(contentTypeIter != headers.end())
   {
     m_contentType = DescriptorContentTypeMapper::GetDescriptorContentTypeForName(contentTypeIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

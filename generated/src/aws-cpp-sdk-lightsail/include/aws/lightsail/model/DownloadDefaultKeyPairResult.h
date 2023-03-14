@@ -130,6 +130,28 @@ namespace Model
      */
     inline DownloadDefaultKeyPairResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DownloadDefaultKeyPairResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DownloadDefaultKeyPairResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DownloadDefaultKeyPairResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_publicKeyBase64;
@@ -137,6 +159,8 @@ namespace Model
     Aws::String m_privateKeyBase64;
 
     Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

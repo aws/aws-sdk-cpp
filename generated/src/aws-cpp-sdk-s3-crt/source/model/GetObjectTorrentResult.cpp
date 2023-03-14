@@ -23,7 +23,8 @@ GetObjectTorrentResult::GetObjectTorrentResult() :
 
 GetObjectTorrentResult::GetObjectTorrentResult(GetObjectTorrentResult&& toMove) : 
     m_body(std::move(toMove.m_body)),
-    m_requestCharged(toMove.m_requestCharged)
+    m_requestCharged(toMove.m_requestCharged),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -36,6 +37,7 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator=(GetObjectTorrentResult
 
    m_body = std::move(toMove.m_body);
    m_requestCharged = toMove.m_requestCharged;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -55,6 +57,12 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator =(Aws::AmazonWebService
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

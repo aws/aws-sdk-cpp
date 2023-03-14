@@ -160,6 +160,28 @@ namespace Model
      */
     inline GetWorkUnitsResult& AddWorkUnitRanges(WorkUnitRange&& value) { m_workUnitRanges.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetWorkUnitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetWorkUnitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetWorkUnitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -167,6 +189,8 @@ namespace Model
     Aws::String m_queryId;
 
     Aws::Vector<WorkUnitRange> m_workUnitRanges;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

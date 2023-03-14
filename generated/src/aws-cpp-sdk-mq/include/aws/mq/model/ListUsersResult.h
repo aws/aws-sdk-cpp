@@ -174,6 +174,28 @@ namespace Model
      */
     inline ListUsersResult& AddUsers(UserSummary&& value) { m_users.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_brokerId;
@@ -183,6 +205,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<UserSummary> m_users;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

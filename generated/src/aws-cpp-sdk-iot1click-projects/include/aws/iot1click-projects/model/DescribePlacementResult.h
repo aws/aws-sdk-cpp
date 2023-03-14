@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
 #include <aws/iot1click-projects/model/PlacementDescription.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribePlacementResult& WithPlacement(PlacementDescription&& value) { SetPlacement(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribePlacementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribePlacementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribePlacementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     PlacementDescription m_placement;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

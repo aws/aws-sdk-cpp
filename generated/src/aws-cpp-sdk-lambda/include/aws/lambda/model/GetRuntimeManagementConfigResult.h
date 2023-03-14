@@ -144,6 +144,28 @@ namespace Model
      */
     inline GetRuntimeManagementConfigResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetRuntimeManagementConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetRuntimeManagementConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetRuntimeManagementConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     UpdateRuntimeOn m_updateRuntimeOn;
@@ -151,6 +173,8 @@ namespace Model
     Aws::String m_runtimeVersionArn;
 
     Aws::String m_functionArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

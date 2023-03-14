@@ -591,6 +591,28 @@ namespace Model
      */
     inline DescribeImageVersionResult& WithReleaseNotes(const char* value) { SetReleaseNotes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeImageVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeImageVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeImageVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_baseImage;
@@ -624,6 +646,8 @@ namespace Model
     bool m_horovod;
 
     Aws::String m_releaseNotes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

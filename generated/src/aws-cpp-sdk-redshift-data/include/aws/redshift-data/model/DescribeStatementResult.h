@@ -655,6 +655,28 @@ namespace Model
      */
     inline DescribeStatementResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -694,6 +716,8 @@ namespace Model
     Aws::Utils::DateTime m_updatedAt;
 
     Aws::String m_workgroupName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

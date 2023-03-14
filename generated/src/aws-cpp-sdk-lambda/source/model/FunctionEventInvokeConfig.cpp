@@ -5,6 +5,7 @@
 
 #include <aws/lambda/model/FunctionEventInvokeConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -25,7 +26,8 @@ FunctionEventInvokeConfig::FunctionEventInvokeConfig() :
     m_maximumRetryAttemptsHasBeenSet(false),
     m_maximumEventAgeInSeconds(0),
     m_maximumEventAgeInSecondsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
+    m_destinationConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,8 @@ FunctionEventInvokeConfig::FunctionEventInvokeConfig(JsonView jsonValue) :
     m_maximumRetryAttemptsHasBeenSet(false),
     m_maximumEventAgeInSeconds(0),
     m_maximumEventAgeInSecondsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
+    m_destinationConfigHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

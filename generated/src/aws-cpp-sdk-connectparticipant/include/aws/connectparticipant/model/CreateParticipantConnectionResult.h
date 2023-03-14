@@ -7,6 +7,7 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/Websocket.h>
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -89,11 +90,35 @@ namespace Model
      */
     inline CreateParticipantConnectionResult& WithConnectionCredentials(ConnectionCredentials&& value) { SetConnectionCredentials(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateParticipantConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateParticipantConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateParticipantConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Websocket m_websocket;
 
     ConnectionCredentials m_connectionCredentials;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

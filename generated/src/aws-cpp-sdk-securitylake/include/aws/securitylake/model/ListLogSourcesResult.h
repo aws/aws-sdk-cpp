@@ -112,11 +112,35 @@ namespace Model
      */
     inline ListLogSourcesResult& AddRegionSourceTypesAccountsList(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_regionSourceTypesAccountsList.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListLogSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListLogSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListLogSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>> m_regionSourceTypesAccountsList;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

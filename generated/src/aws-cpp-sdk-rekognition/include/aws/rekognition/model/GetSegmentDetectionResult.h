@@ -398,6 +398,28 @@ namespace Model
      */
     inline GetSegmentDetectionResult& AddSelectedSegmentTypes(SegmentTypeInfo&& value) { m_selectedSegmentTypes.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetSegmentDetectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetSegmentDetectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetSegmentDetectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -413,6 +435,8 @@ namespace Model
     Aws::Vector<SegmentDetection> m_segments;
 
     Aws::Vector<SegmentTypeInfo> m_selectedSegmentTypes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

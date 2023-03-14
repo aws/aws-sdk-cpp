@@ -7,6 +7,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/AwsCredentials.h>
 #include <aws/gamelift/model/S3Location.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -99,11 +100,35 @@ namespace Model
      */
     inline RequestUploadCredentialsResult& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RequestUploadCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RequestUploadCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RequestUploadCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     AwsCredentials m_uploadCredentials;
 
     S3Location m_storageLocation;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/model/IdentityType.h>
 #include <aws/pinpoint-email/model/DkimAttributes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,28 @@ namespace Model
      */
     inline CreateEmailIdentityResult& WithDkimAttributes(DkimAttributes&& value) { SetDkimAttributes(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateEmailIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateEmailIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateEmailIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     IdentityType m_identityType;
@@ -138,6 +161,8 @@ namespace Model
     bool m_verifiedForSendingStatus;
 
     DkimAttributes m_dkimAttributes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

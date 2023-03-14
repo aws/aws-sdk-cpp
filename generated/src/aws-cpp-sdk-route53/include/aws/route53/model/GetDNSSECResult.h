@@ -7,6 +7,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/DNSSECStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/KeySigningKey.h>
 #include <utility>
 
@@ -95,11 +96,35 @@ namespace Model
      */
     inline GetDNSSECResult& AddKeySigningKeys(KeySigningKey&& value) { m_keySigningKeys.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetDNSSECResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetDNSSECResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetDNSSECResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DNSSECStatus m_status;
 
     Aws::Vector<KeySigningKey> m_keySigningKeys;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

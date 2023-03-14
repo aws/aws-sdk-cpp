@@ -200,6 +200,28 @@ namespace Model
     
     inline CreateChannelResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -211,6 +233,8 @@ namespace Model
     Aws::Vector<Destination> m_destinations;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -26,7 +26,8 @@ GetSnapshotBlockResult::GetSnapshotBlockResult(GetSnapshotBlockResult&& toMove) 
     m_dataLength(toMove.m_dataLength),
     m_blockData(std::move(toMove.m_blockData)),
     m_checksum(std::move(toMove.m_checksum)),
-    m_checksumAlgorithm(toMove.m_checksumAlgorithm)
+    m_checksumAlgorithm(toMove.m_checksumAlgorithm),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -41,6 +42,7 @@ GetSnapshotBlockResult& GetSnapshotBlockResult::operator=(GetSnapshotBlockResult
    m_blockData = std::move(toMove.m_blockData);
    m_checksum = std::move(toMove.m_checksum);
    m_checksumAlgorithm = toMove.m_checksumAlgorithm;
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -73,6 +75,12 @@ GetSnapshotBlockResult& GetSnapshotBlockResult::operator =(Aws::AmazonWebService
   if(checksumAlgorithmIter != headers.end())
   {
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

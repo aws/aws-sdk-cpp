@@ -605,6 +605,28 @@ namespace Model
      */
     inline CreateInterconnectResult& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CreateInterconnectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CreateInterconnectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CreateInterconnectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_interconnectId;
@@ -636,6 +658,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     Aws::String m_providerName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

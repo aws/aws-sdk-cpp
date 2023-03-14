@@ -174,6 +174,28 @@ namespace Model
      */
     inline GetPropertyValueResult& AddTabularPropertyValues(Aws::Vector<Aws::Map<Aws::String, DataValue>>&& value) { m_tabularPropertyValues.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetPropertyValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetPropertyValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetPropertyValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, PropertyLatestValue> m_propertyValues;
@@ -181,6 +203,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>> m_tabularPropertyValues;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

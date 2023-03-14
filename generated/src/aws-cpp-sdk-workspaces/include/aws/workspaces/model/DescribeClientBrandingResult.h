@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/DefaultClientBrandingAttributes.h>
 #include <aws/workspaces/model/IosClientBrandingAttributes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,28 @@ namespace Model
      */
     inline DescribeClientBrandingResult& WithDeviceTypeWeb(DefaultClientBrandingAttributes&& value) { SetDeviceTypeWeb(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeClientBrandingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeClientBrandingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeClientBrandingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DefaultClientBrandingAttributes m_deviceTypeWindows;
@@ -201,6 +224,8 @@ namespace Model
     DefaultClientBrandingAttributes m_deviceTypeLinux;
 
     DefaultClientBrandingAttributes m_deviceTypeWeb;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

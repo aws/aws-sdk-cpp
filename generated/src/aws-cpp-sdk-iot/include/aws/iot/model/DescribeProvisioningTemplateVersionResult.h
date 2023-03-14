@@ -126,6 +126,28 @@ namespace Model
      */
     inline DescribeProvisioningTemplateVersionResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeProvisioningTemplateVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeProvisioningTemplateVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeProvisioningTemplateVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     int m_versionId;
@@ -135,6 +157,8 @@ namespace Model
     Aws::String m_templateBody;
 
     bool m_isDefaultVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

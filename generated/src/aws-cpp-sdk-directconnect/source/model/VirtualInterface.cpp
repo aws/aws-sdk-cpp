@@ -5,6 +5,7 @@
 
 #include <aws/directconnect/model/VirtualInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -52,7 +53,8 @@ VirtualInterface::VirtualInterface() :
     m_awsLogicalDeviceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_siteLinkEnabled(false),
-    m_siteLinkEnabledHasBeenSet(false)
+    m_siteLinkEnabledHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,8 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_awsLogicalDeviceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_siteLinkEnabled(false),
-    m_siteLinkEnabledHasBeenSet(false)
+    m_siteLinkEnabledHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

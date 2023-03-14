@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/RestApi.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -34,7 +35,8 @@ RestApi::RestApi() :
     m_policyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false)
+    m_disableExecuteApiEndpointHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,8 @@ RestApi::RestApi(JsonView jsonValue) :
     m_policyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false)
+    m_disableExecuteApiEndpointHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

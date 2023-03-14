@@ -7,6 +7,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -20,7 +21,8 @@ GetWorkUnitResultsResult::GetWorkUnitResultsResult()
 }
 
 GetWorkUnitResultsResult::GetWorkUnitResultsResult(GetWorkUnitResultsResult&& toMove) : 
-    m_resultStream(std::move(toMove.m_resultStream))
+    m_resultStream(std::move(toMove.m_resultStream)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -32,6 +34,7 @@ GetWorkUnitResultsResult& GetWorkUnitResultsResult::operator=(GetWorkUnitResults
    }
 
    m_resultStream = std::move(toMove.m_resultStream);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -44,6 +47,13 @@ GetWorkUnitResultsResult::GetWorkUnitResultsResult(Aws::AmazonWebServiceResult<R
 GetWorkUnitResultsResult& GetWorkUnitResultsResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_resultStream = result.TakeOwnershipOfPayload();
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
    return *this;
 }

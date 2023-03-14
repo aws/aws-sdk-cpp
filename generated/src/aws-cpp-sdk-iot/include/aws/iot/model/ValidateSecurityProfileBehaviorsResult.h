@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/ValidationError.h>
 #include <utility>
 
@@ -84,11 +85,35 @@ namespace Model
      */
     inline ValidateSecurityProfileBehaviorsResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_valid;
 
     Aws::Vector<ValidationError> m_validationErrors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

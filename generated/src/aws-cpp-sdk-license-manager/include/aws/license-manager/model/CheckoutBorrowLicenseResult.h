@@ -322,6 +322,28 @@ namespace Model
      */
     inline CheckoutBorrowLicenseResult& AddCheckoutMetadata(Metadata&& value) { m_checkoutMetadata.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline CheckoutBorrowLicenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline CheckoutBorrowLicenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline CheckoutBorrowLicenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_licenseArn;
@@ -339,6 +361,8 @@ namespace Model
     Aws::String m_expiration;
 
     Aws::Vector<Metadata> m_checkoutMetadata;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

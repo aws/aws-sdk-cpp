@@ -28,8 +28,7 @@ VolumeAttachment::VolumeAttachment() :
     m_stateHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false)
 {
 }
 
@@ -41,8 +40,7 @@ VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -126,13 +124,9 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -161,12 +155,9 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

@@ -5,6 +5,7 @@
 
 #include <aws/apigateway/model/VpcLink.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -26,7 +27,8 @@ VpcLink::VpcLink() :
     m_status(VpcLinkStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,8 @@ VpcLink::VpcLink(JsonView jsonValue) :
     m_status(VpcLinkStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

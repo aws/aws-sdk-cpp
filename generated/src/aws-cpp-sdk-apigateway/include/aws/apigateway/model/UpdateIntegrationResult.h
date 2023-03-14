@@ -1142,6 +1142,28 @@ namespace Model
      */
     inline UpdateIntegrationResult& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateIntegrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateIntegrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateIntegrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     IntegrationType m_type;
@@ -1173,6 +1195,8 @@ namespace Model
     Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
 
     TlsConfig m_tlsConfig;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

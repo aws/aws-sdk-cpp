@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/secretsmanager/model/ValidationErrorsEntry.h>
 #include <utility>
 
@@ -84,11 +85,35 @@ namespace Model
      */
     inline ValidateResourcePolicyResult& AddValidationErrors(ValidationErrorsEntry&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ValidateResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ValidateResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ValidateResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     bool m_policyValidationPassed;
 
     Aws::Vector<ValidationErrorsEntry> m_validationErrors;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

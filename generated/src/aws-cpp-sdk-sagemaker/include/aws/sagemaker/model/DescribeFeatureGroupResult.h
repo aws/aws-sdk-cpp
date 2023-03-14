@@ -697,6 +697,28 @@ namespace Model
      */
     inline DescribeFeatureGroupResult& WithOnlineStoreTotalSizeBytes(long long value) { SetOnlineStoreTotalSizeBytes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeFeatureGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeFeatureGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeFeatureGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_featureGroupArn;
@@ -732,6 +754,8 @@ namespace Model
     Aws::String m_nextToken;
 
     long long m_onlineStoreTotalSizeBytes;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

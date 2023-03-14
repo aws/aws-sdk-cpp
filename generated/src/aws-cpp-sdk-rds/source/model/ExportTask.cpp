@@ -39,8 +39,7 @@ ExportTask::ExportTask() :
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
     m_sourceType(ExportSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -63,8 +62,7 @@ ExportTask::ExportTask(const XmlNode& xmlNode) :
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
     m_sourceType(ExportSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -268,13 +266,9 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -347,12 +341,9 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

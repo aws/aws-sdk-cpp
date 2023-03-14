@@ -43,5 +43,11 @@ PutObjectAclResult& PutObjectAclResult::operator =(const Aws::AmazonWebServiceRe
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
   }
 
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
   return *this;
 }

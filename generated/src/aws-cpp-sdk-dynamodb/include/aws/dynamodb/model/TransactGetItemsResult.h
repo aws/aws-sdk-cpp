@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <aws/dynamodb/model/ItemResponse.h>
 #include <utility>
@@ -182,11 +183,35 @@ namespace Model
      */
     inline TransactGetItemsResult& AddResponses(ItemResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline TransactGetItemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline TransactGetItemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline TransactGetItemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
     Aws::Vector<ItemResponse> m_responses;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

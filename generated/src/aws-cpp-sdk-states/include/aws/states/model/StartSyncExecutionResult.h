@@ -499,6 +499,28 @@ namespace Model
      */
     inline StartSyncExecutionResult& WithBillingDetails(BillingDetails&& value) { SetBillingDetails(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartSyncExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartSyncExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartSyncExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_executionArn;
@@ -528,6 +550,8 @@ namespace Model
     Aws::String m_traceHeader;
 
     BillingDetails m_billingDetails;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

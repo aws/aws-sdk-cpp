@@ -5,6 +5,7 @@
 
 #include <aws/elasticfilesystem/model/ReplicationConfigurationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -24,7 +25,8 @@ ReplicationConfigurationDescription::ReplicationConfigurationDescription() :
     m_sourceFileSystemArnHasBeenSet(false),
     m_originalSourceFileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,8 @@ ReplicationConfigurationDescription::ReplicationConfigurationDescription(JsonVie
     m_sourceFileSystemArnHasBeenSet(false),
     m_originalSourceFileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

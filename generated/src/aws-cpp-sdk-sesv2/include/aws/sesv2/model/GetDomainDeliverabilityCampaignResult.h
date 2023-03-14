@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DomainDeliverabilityCampaign.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -65,9 +66,33 @@ namespace Model
      */
     inline GetDomainDeliverabilityCampaignResult& WithDomainDeliverabilityCampaign(DomainDeliverabilityCampaign&& value) { SetDomainDeliverabilityCampaign(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetDomainDeliverabilityCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetDomainDeliverabilityCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetDomainDeliverabilityCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DomainDeliverabilityCampaign m_domainDeliverabilityCampaign;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

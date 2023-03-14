@@ -6,6 +6,7 @@
 #include <aws/s3/model/GetBucketPolicyResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -19,7 +20,8 @@ GetBucketPolicyResult::GetBucketPolicyResult()
 }
 
 GetBucketPolicyResult::GetBucketPolicyResult(GetBucketPolicyResult&& toMove) : 
-    m_policy(std::move(toMove.m_policy))
+    m_policy(std::move(toMove.m_policy)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -31,6 +33,7 @@ GetBucketPolicyResult& GetBucketPolicyResult::operator=(GetBucketPolicyResult&& 
    }
 
    m_policy = std::move(toMove.m_policy);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -43,6 +46,13 @@ GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<Respons
 GetBucketPolicyResult& GetBucketPolicyResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_policy = result.TakeOwnershipOfPayload();
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amz-request-id");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
 
    return *this;
 }

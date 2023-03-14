@@ -23,7 +23,8 @@ GetFunction2020_05_31Result::GetFunction2020_05_31Result()
 GetFunction2020_05_31Result::GetFunction2020_05_31Result(GetFunction2020_05_31Result&& toMove) : 
     m_functionCode(std::move(toMove.m_functionCode)),
     m_eTag(std::move(toMove.m_eTag)),
-    m_contentType(std::move(toMove.m_contentType))
+    m_contentType(std::move(toMove.m_contentType)),
+    m_requestId(std::move(toMove.m_requestId))
 {
 }
 
@@ -37,6 +38,7 @@ GetFunction2020_05_31Result& GetFunction2020_05_31Result::operator=(GetFunction2
    m_functionCode = std::move(toMove.m_functionCode);
    m_eTag = std::move(toMove.m_eTag);
    m_contentType = std::move(toMove.m_contentType);
+   m_requestId = std::move(toMove.m_requestId);
 
    return *this;
 }
@@ -61,6 +63,12 @@ GetFunction2020_05_31Result& GetFunction2020_05_31Result::operator =(Aws::Amazon
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+  }
+
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
 
    return *this;

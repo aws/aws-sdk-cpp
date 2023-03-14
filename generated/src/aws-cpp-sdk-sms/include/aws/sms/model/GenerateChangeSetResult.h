@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
 #include <aws/sms/model/S3Location.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GenerateChangeSetResult& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GenerateChangeSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GenerateChangeSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GenerateChangeSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     S3Location m_s3Location;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

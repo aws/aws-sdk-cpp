@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/RecommendationFeedback.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline DescribeRecommendationFeedbackResult& WithRecommendationFeedback(RecommendationFeedback&& value) { SetRecommendationFeedback(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeRecommendationFeedbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeRecommendationFeedbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeRecommendationFeedbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     RecommendationFeedback m_recommendationFeedback;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

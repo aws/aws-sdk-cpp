@@ -26,8 +26,7 @@ DataShare::DataShare() :
     m_allowPubliclyAccessibleConsumers(false),
     m_allowPubliclyAccessibleConsumersHasBeenSet(false),
     m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_managedByHasBeenSet(false)
 {
 }
 
@@ -37,8 +36,7 @@ DataShare::DataShare(const XmlNode& xmlNode) :
     m_allowPubliclyAccessibleConsumers(false),
     m_allowPubliclyAccessibleConsumersHasBeenSet(false),
     m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_managedByHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -123,13 +121,9 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -160,12 +154,9 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       oStream << location << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

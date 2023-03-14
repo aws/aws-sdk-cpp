@@ -5,6 +5,7 @@
 
 #include <aws/elasticfilesystem/model/MountTargetDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,7 +30,8 @@ MountTargetDescription::MountTargetDescription() :
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,8 @@ MountTargetDescription::MountTargetDescription(JsonView jsonValue) :
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

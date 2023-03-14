@@ -5,6 +5,7 @@
 
 #include <aws/glacier/model/DescribeVaultOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -26,7 +27,8 @@ DescribeVaultOutput::DescribeVaultOutput() :
     m_numberOfArchives(0),
     m_numberOfArchivesHasBeenSet(false),
     m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,8 @@ DescribeVaultOutput::DescribeVaultOutput(JsonView jsonValue) :
     m_numberOfArchives(0),
     m_numberOfArchivesHasBeenSet(false),
     m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }

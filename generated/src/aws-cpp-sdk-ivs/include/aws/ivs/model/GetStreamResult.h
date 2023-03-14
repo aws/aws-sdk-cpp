@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/Stream.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline GetStreamResult& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Stream m_stream;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

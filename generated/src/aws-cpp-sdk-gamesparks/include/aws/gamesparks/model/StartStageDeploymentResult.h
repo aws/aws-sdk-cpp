@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/gamesparks/GameSparks_EXPORTS.h>
 #include <aws/gamesparks/model/StageDeploymentDetails.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -57,9 +58,33 @@ namespace Model
      */
     inline StartStageDeploymentResult& WithStageDeployment(StageDeploymentDetails&& value) { SetStageDeployment(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline StartStageDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline StartStageDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline StartStageDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     StageDeploymentDetails m_stageDeployment;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

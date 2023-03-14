@@ -8,6 +8,7 @@
 #include <aws/kendra/model/Mode.h>
 #include <aws/kendra/model/QuerySuggestionsStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -290,6 +291,28 @@ namespace Model
      */
     inline DescribeQuerySuggestionsConfigResult& WithTotalSuggestionsCount(int value) { SetTotalSuggestionsCount(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeQuerySuggestionsConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeQuerySuggestionsConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeQuerySuggestionsConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Mode m_mode;
@@ -309,6 +332,8 @@ namespace Model
     Aws::Utils::DateTime m_lastClearTime;
 
     int m_totalSuggestionsCount;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

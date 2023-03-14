@@ -381,6 +381,28 @@ namespace Model
      */
     inline DescribeThingResult& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeThingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeThingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeThingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_defaultClientId;
@@ -398,6 +420,8 @@ namespace Model
     long long m_version;
 
     Aws::String m_billingGroupName;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

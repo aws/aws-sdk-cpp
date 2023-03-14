@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/PreparedStatement.h>
 #include <aws/athena/model/UnprocessedPreparedStatementName.h>
 #include <utility>
@@ -112,11 +113,35 @@ namespace Model
      */
     inline BatchGetPreparedStatementResult& AddUnprocessedPreparedStatementNames(UnprocessedPreparedStatementName&& value) { m_unprocessedPreparedStatementNames.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline BatchGetPreparedStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline BatchGetPreparedStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline BatchGetPreparedStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<PreparedStatement> m_preparedStatements;
 
     Aws::Vector<UnprocessedPreparedStatementName> m_unprocessedPreparedStatementNames;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

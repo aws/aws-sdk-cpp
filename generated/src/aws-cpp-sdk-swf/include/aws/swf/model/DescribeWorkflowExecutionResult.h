@@ -219,6 +219,28 @@ namespace Model
      */
     inline DescribeWorkflowExecutionResult& WithLatestExecutionContext(const char* value) { SetLatestExecutionContext(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeWorkflowExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeWorkflowExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeWorkflowExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     WorkflowExecutionInfo m_executionInfo;
@@ -230,6 +252,8 @@ namespace Model
     Aws::Utils::DateTime m_latestActivityTaskTimestamp;
 
     Aws::String m_latestExecutionContext;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

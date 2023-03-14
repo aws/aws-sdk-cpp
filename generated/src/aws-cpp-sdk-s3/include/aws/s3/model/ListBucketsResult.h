@@ -7,6 +7,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Owner.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Bucket.h>
 #include <utility>
 
@@ -95,11 +96,35 @@ namespace Model
      */
     inline ListBucketsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListBucketsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListBucketsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListBucketsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::Vector<Bucket> m_buckets;
 
     Owner m_owner;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -197,6 +197,28 @@ namespace Model
      */
     inline EnableEnhancedMonitoringResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline EnableEnhancedMonitoringResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline EnableEnhancedMonitoringResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline EnableEnhancedMonitoringResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -206,6 +228,8 @@ namespace Model
     Aws::Vector<MetricsName> m_desiredShardLevelMetrics;
 
     Aws::String m_streamARN;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

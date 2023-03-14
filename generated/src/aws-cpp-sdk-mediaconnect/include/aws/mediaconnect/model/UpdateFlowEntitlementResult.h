@@ -94,11 +94,35 @@ namespace Model
      */
     inline UpdateFlowEntitlementResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateFlowEntitlementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateFlowEntitlementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateFlowEntitlementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Entitlement m_entitlement;
 
     Aws::String m_flowArn;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

@@ -153,6 +153,28 @@ namespace Model
      */
     inline ExportCertificateResult& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ExportCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ExportCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ExportCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_certificate;
@@ -160,6 +182,8 @@ namespace Model
     Aws::String m_certificateChain;
 
     Aws::String m_privateKey;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

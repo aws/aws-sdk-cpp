@@ -57,8 +57,7 @@ DBEngineVersion::DBEngineVersion() :
     m_customDBEngineVersionManifestHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_supportedCACertificateIdentifiersHasBeenSet(false)
 {
 }
 
@@ -99,8 +98,7 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_customDBEngineVersionManifestHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_supportedCACertificateIdentifiersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -563,13 +561,9 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -748,12 +742,9 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         oStream << location << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

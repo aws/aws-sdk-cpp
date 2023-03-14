@@ -119,6 +119,28 @@ namespace Model
      */
     inline RegisterJobDefinitionResult& WithRevision(int value) { SetRevision(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline RegisterJobDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline RegisterJobDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline RegisterJobDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     Aws::String m_jobDefinitionName;
@@ -126,6 +148,8 @@ namespace Model
     Aws::String m_jobDefinitionArn;
 
     int m_revision;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

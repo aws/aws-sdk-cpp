@@ -28,8 +28,7 @@ UserGroup::UserGroup() :
     m_minimumEngineVersionHasBeenSet(false),
     m_pendingChangesHasBeenSet(false),
     m_replicationGroupsHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -41,8 +40,7 @@ UserGroup::UserGroup(const XmlNode& xmlNode) :
     m_minimumEngineVersionHasBeenSet(false),
     m_pendingChangesHasBeenSet(false),
     m_replicationGroupsHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_responseMetadataHasBeenSet(false)
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -170,13 +168,9 @@ void UserGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::StringStream responseMetadataLocationAndMemberSs;
-      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
-  }
-
+  Aws::StringStream responseMetadataLocationAndMemberSs;
+  responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
 void UserGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -223,12 +217,9 @@ void UserGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
-  if(m_responseMetadataHasBeenSet)
-  {
-      Aws::String responseMetadataLocationAndMember(location);
-      responseMetadataLocationAndMember += ".ResponseMetadata";
-      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
-  }
+  Aws::String responseMetadataLocationAndMember(location);
+  responseMetadataLocationAndMember += ".ResponseMetadata";
+  m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
 } // namespace Model

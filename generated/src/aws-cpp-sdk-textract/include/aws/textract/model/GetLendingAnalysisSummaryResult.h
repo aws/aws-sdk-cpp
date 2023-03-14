@@ -219,6 +219,28 @@ namespace Model
      */
     inline GetLendingAnalysisSummaryResult& WithAnalyzeLendingModelVersion(const char* value) { SetAnalyzeLendingModelVersion(value); return *this;}
 
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetLendingAnalysisSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetLendingAnalysisSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetLendingAnalysisSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
   private:
 
     DocumentMetadata m_documentMetadata;
@@ -232,6 +254,8 @@ namespace Model
     Aws::String m_statusMessage;
 
     Aws::String m_analyzeLendingModelVersion;
+
+    Aws::String m_requestId;
   };
 
 } // namespace Model

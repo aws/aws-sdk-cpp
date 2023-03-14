@@ -5,6 +5,7 @@
 
 #include <aws/directconnect/model/Connection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -45,7 +46,8 @@ Connection::Connection() :
     m_macSecCapableHasBeenSet(false),
     m_portEncryptionStatusHasBeenSet(false),
     m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false)
+    m_macSecKeysHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,8 @@ Connection::Connection(JsonView jsonValue) :
     m_macSecCapableHasBeenSet(false),
     m_portEncryptionStatusHasBeenSet(false),
     m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false)
+    m_macSecKeysHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
