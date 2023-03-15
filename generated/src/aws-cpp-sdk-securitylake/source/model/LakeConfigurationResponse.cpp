@@ -26,7 +26,8 @@ LakeConfigurationResponse::LakeConfigurationResponse() :
     m_s3BucketArnHasBeenSet(false),
     m_status(SettingsStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsMapHasBeenSet(false)
+    m_tagsMapHasBeenSet(false),
+    m_updateStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ LakeConfigurationResponse::LakeConfigurationResponse(JsonView jsonValue) :
     m_s3BucketArnHasBeenSet(false),
     m_status(SettingsStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsMapHasBeenSet(false)
+    m_tagsMapHasBeenSet(false),
+    m_updateStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ LakeConfigurationResponse& LakeConfigurationResponse::operator =(JsonView jsonVa
     m_tagsMapHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updateStatus"))
+  {
+    m_updateStatus = jsonValue.GetObject("updateStatus");
+
+    m_updateStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,12 @@ JsonValue LakeConfigurationResponse::Jsonize() const
      tagsMapJsonMap.WithString(tagsMapItem.first, tagsMapItem.second);
    }
    payload.WithObject("tagsMap", std::move(tagsMapJsonMap));
+
+  }
+
+  if(m_updateStatusHasBeenSet)
+  {
+   payload.WithObject("updateStatus", m_updateStatus.Jsonize());
 
   }
 

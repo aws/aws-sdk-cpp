@@ -169,49 +169,89 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role
-     * that you created.</p>
+     * that you created. For more information about ARNs and how to use them in
+     * policies, see <a
+     * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+     * data access</a> and <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -266,42 +306,42 @@ namespace Model
 
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
 
     /**
-     * <p>The subscription ID for the notification subscription/</p>
+     * <p>The subscription ID for the notification subscription.</p>
      */
     inline CreateSubscriptionNotificationConfigurationRequest& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
 

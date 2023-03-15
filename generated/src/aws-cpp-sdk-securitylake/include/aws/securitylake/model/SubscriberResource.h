@@ -272,6 +272,112 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline SubscriberResource& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline SubscriberResource& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p> <p>This field is available only for Lake
+     * Formation subscribers created after March 8, 2023.</p>
+     */
+    inline SubscriberResource& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline bool ResourceShareNameHasBeenSet() const { return m_resourceShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const Aws::String& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = value; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(Aws::String&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::move(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const char* value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName.assign(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline SubscriberResource& WithResourceShareName(const Aws::String& value) { SetResourceShareName(value); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline SubscriberResource& WithResourceShareName(Aws::String&& value) { SetResourceShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline SubscriberResource& WithResourceShareName(const char* value) { SetResourceShareName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -736,6 +842,12 @@ namespace Model
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet = false;
+
+    Aws::String m_resourceShareArn;
+    bool m_resourceShareArnHasBeenSet = false;
+
+    Aws::String m_resourceShareName;
+    bool m_resourceShareNameHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

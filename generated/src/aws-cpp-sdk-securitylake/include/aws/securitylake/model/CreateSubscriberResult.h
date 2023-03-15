@@ -33,58 +33,144 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline void SetResourceShareArn(const char* value) { m_resourceShareArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
+     * share. Before accepting the RAM resource share invitation, you can view details
+     * related to the RAM resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const Aws::String& value) { m_resourceShareName = value; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(Aws::String&& value) { m_resourceShareName = std::move(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const char* value) { m_resourceShareName.assign(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareName(const Aws::String& value) { SetResourceShareName(value); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareName(Aws::String&& value) { SetResourceShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline CreateSubscriberResult& WithResourceShareName(const char* value) { SetResourceShareName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline CreateSubscriberResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline CreateSubscriberResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber.
      * For more information about ARNs and how to use them in policies, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline CreateSubscriberResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -204,6 +290,10 @@ namespace Model
     inline CreateSubscriberResult& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
 
   private:
+
+    Aws::String m_resourceShareArn;
+
+    Aws::String m_resourceShareName;
 
     Aws::String m_roleArn;
 

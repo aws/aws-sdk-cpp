@@ -639,9 +639,9 @@ namespace S3Control
          * section.</p> <p>For information about S3 replication on Outposts configuration,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-         * objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User
-         * Guide</i>.</p> <p>The following operations are related to
-         * <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
+         * objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following operations are related to <code>DeleteBucketReplication</code>:</p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html">PutBucketReplication</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">GetBucketReplication</a>
@@ -1378,16 +1378,16 @@ namespace S3Control
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>. For information
          * about S3 replication on Outposts configuration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-         * objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User
-         * Guide</i>.</p>  <p>It can take a while to propagate <code>PUT</code> or
-         * <code>DELETE</code> requests for a replication configuration to all S3 on
-         * Outposts systems. Therefore, the replication configuration that's returned by a
-         * <code>GET</code> request soon after a <code>PUT</code> or <code>DELETE</code>
-         * request might return a more recent result than what's on the Outpost. If an
-         * Outpost is offline, the delay in updating the replication configuration on that
-         * Outpost can be significant.</p>  <p>This action requires permissions for
-         * the <code>s3-outposts:GetReplicationConfiguration</code> action. The Outposts
-         * bucket owner has this permission by default and can grant it to others. For more
+         * objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> 
+         * <p>It can take a while to propagate <code>PUT</code> or <code>DELETE</code>
+         * requests for a replication configuration to all S3 on Outposts systems.
+         * Therefore, the replication configuration that's returned by a <code>GET</code>
+         * request soon after a <code>PUT</code> or <code>DELETE</code> request might
+         * return a more recent result than what's on the Outpost. If an Outpost is
+         * offline, the delay in updating the replication configuration on that Outpost can
+         * be significant.</p>  <p>This action requires permissions for the
+         * <code>s3-outposts:GetReplicationConfiguration</code> action. The Outposts bucket
+         * owner has this permission by default and can grant it to others. For more
          * information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting
          * up IAM with S3 on Outposts</a> and <a
@@ -2262,16 +2262,16 @@ namespace S3Control
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>Creates a replication
          * configuration or replaces an existing one. For information about S3 replication
          * on Outposts configuration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
-         * objects for Amazon Web Services Outposts</a> in the <i>Amazon S3 User
-         * Guide</i>.</p>  <p>It can take a while to propagate <code>PUT</code> or
-         * <code>DELETE</code> requests for a replication configuration to all S3 on
-         * Outposts systems. Therefore, the replication configuration that's returned by a
-         * <code>GET</code> request soon after a <code>PUT</code> or <code>DELETE</code>
-         * request might return a more recent result than what's on the Outpost. If an
-         * Outpost is offline, the delay in updating the replication configuration on that
-         * Outpost can be significant.</p>  <p>Specify the replication configuration
-         * in the request body. In the replication configuration, you provide the following
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating
+         * objects for S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> 
+         * <p>It can take a while to propagate <code>PUT</code> or <code>DELETE</code>
+         * requests for a replication configuration to all S3 on Outposts systems.
+         * Therefore, the replication configuration that's returned by a <code>GET</code>
+         * request soon after a <code>PUT</code> or <code>DELETE</code> request might
+         * return a more recent result than what's on the Outpost. If an Outpost is
+         * offline, the delay in updating the replication configuration on that Outpost can
+         * be significant.</p>  <p>Specify the replication configuration in the
+         * request body. In the replication configuration, you provide the following
          * information:</p> <ul> <li> <p>The name of the destination bucket or buckets
          * where you want S3 on Outposts to replicate objects</p> </li> <li> <p>The
          * Identity and Access Management (IAM) role that S3 on Outposts can assume to
@@ -2308,16 +2308,18 @@ namespace S3Control
          * up IAM with S3 on Outposts</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing
          * access to S3 on Outposts buckets</a>. </p>  <p>To perform this operation,
-         * the user or role must also have the <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-         * permission.</p>  <p>All Amazon S3 on Outposts REST API requests for this
-         * action require an additional parameter of <code>x-amz-outpost-id</code> to be
-         * passed with the request. In addition, you must use an S3 on Outposts endpoint
-         * hostname prefix instead of <code>s3-control</code>. For an example of the
-         * request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
-         * hostname prefix and the <code>x-amz-outpost-id</code> derived by using the
-         * access point ARN, see the <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a>
+         * the user or role must also have the <code>iam:CreateRole</code> and
+         * <code>iam:PassRole</code> permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+         * a user permissions to pass a role to an Amazon Web Services service</a>.</p>
+         *  <p>All Amazon S3 on Outposts REST API requests for this action require
+         * an additional parameter of <code>x-amz-outpost-id</code> to be passed with the
+         * request. In addition, you must use an S3 on Outposts endpoint hostname prefix
+         * instead of <code>s3-control</code>. For an example of the request syntax for
+         * Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and
+         * the <code>x-amz-outpost-id</code> derived by using the access point ARN, see the
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html#API_control_PutBucketReplication_Examples">Examples</a>
          * section.</p> <p>The following operations are related to
          * <code>PutBucketReplication</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">GetBucketReplication</a>
@@ -2450,10 +2452,10 @@ namespace S3Control
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsLifecycleManaging.html">
          * Creating and managing a lifecycle configuration for your S3 on Outposts
          * bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you have an object
-         * expiration lifecycle policy in your non-versioned bucket and you want to
+         * expiration lifecycle configuration in your non-versioned bucket and you want to
          * maintain the same permanent delete behavior when you enable versioning, you must
-         * add a noncurrent expiration policy. The noncurrent expiration lifecycle policy
-         * will manage the deletions of the noncurrent object versions in the
+         * add a noncurrent expiration policy. The noncurrent expiration lifecycle
+         * configuration will manage the deletes of the noncurrent object versions in the
          * version-enabled bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
          * in the <i>Amazon S3 User Guide</i>.</p> <p>All Amazon S3 on Outposts REST API

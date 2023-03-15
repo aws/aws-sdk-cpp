@@ -19,6 +19,7 @@
 #include <aws/migrationhubstrategy/model/ResourceSubType.h>
 #include <aws/migrationhubstrategy/model/RuntimeAnalysisStatus.h>
 #include <aws/migrationhubstrategy/model/AntipatternSeveritySummary.h>
+#include <aws/migrationhubstrategy/model/Result.h>
 #include <aws/migrationhubstrategy/model/SourceCodeRepository.h>
 #include <utility>
 
@@ -695,6 +696,47 @@ namespace Model
 
 
     /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline const Aws::Vector<Result>& GetResultList() const{ return m_resultList; }
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline bool ResultListHasBeenSet() const { return m_resultListHasBeenSet; }
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline void SetResultList(const Aws::Vector<Result>& value) { m_resultListHasBeenSet = true; m_resultList = value; }
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline void SetResultList(Aws::Vector<Result>&& value) { m_resultListHasBeenSet = true; m_resultList = std::move(value); }
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline ApplicationComponentDetail& WithResultList(const Aws::Vector<Result>& value) { SetResultList(value); return *this;}
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline ApplicationComponentDetail& WithResultList(Aws::Vector<Result>&& value) { SetResultList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline ApplicationComponentDetail& AddResultList(const Result& value) { m_resultListHasBeenSet = true; m_resultList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the analysis results.</p>
+     */
+    inline ApplicationComponentDetail& AddResultList(Result&& value) { m_resultListHasBeenSet = true; m_resultList.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The status of the application unit.</p>
      */
     inline const RuntimeAnalysisStatus& GetRuntimeStatus() const{ return m_runtimeStatus; }
@@ -910,6 +952,9 @@ namespace Model
 
     ResourceSubType m_resourceSubType;
     bool m_resourceSubTypeHasBeenSet = false;
+
+    Aws::Vector<Result> m_resultList;
+    bool m_resultListHasBeenSet = false;
 
     RuntimeAnalysisStatus m_runtimeStatus;
     bool m_runtimeStatusHasBeenSet = false;
