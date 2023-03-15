@@ -28,6 +28,18 @@ CreateSubscriberResult::CreateSubscriberResult(const Aws::AmazonWebServiceResult
 CreateSubscriberResult& CreateSubscriberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("resourceShareArn"))
+  {
+    m_resourceShareArn = jsonValue.GetString("resourceShareArn");
+
+  }
+
+  if(jsonValue.ValueExists("resourceShareName"))
+  {
+    m_resourceShareName = jsonValue.GetString("resourceShareName");
+
+  }
+
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

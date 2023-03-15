@@ -12,6 +12,7 @@
 #include <aws/securitylake/model/ValidationException.h>
 #include <aws/securitylake/model/ServiceQuotaExceededException.h>
 #include <aws/securitylake/model/ThrottlingException.h>
+#include <aws/securitylake/model/AccessDeniedException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -56,6 +57,12 @@ template<> AWS_SECURITYLAKE_API ThrottlingException SecurityLakeError::GetModele
 {
   assert(this->GetErrorType() == SecurityLakeErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SECURITYLAKE_API AccessDeniedException SecurityLakeError::GetModeledError()
+{
+  assert(this->GetErrorType() == SecurityLakeErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
 }
 
 namespace SecurityLakeErrorMapper

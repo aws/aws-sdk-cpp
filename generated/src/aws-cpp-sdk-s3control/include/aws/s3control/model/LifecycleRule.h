@@ -374,8 +374,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
 
@@ -384,8 +384,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
@@ -394,8 +394,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
 
@@ -404,8 +404,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
 
@@ -414,8 +414,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
 
@@ -424,8 +424,8 @@ namespace Model
      * that Amazon S3 waits before permanently removing all parts of the upload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-     * <i>Amazon S3 User Guide</i>.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securitylake/model/SettingsStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securitylake/model/UpdateStatus.h>
 #include <aws/securitylake/model/Region.h>
 #include <aws/securitylake/model/RetentionSetting.h>
 #include <utility>
@@ -467,6 +468,43 @@ namespace Model
      */
     inline LakeConfigurationResponse& AddTagsMap(const char* key, const char* value) { m_tagsMapHasBeenSet = true; m_tagsMap.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline void SetUpdateStatus(const UpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline void SetUpdateStatus(UpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline LakeConfigurationResponse& WithUpdateStatus(const UpdateStatus& value) { SetUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The status of the last <code>UpdateDatalake </code>or
+     * <code>DeleteDatalake</code> API request. </p>
+     */
+    inline LakeConfigurationResponse& WithUpdateStatus(UpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_encryptionKey;
@@ -489,6 +527,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tagsMap;
     bool m_tagsMapHasBeenSet = false;
+
+    UpdateStatus m_updateStatus;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

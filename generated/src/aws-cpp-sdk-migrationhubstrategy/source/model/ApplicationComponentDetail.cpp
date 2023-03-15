@@ -43,6 +43,7 @@ ApplicationComponentDetail::ApplicationComponentDetail() :
     m_recommendationSetHasBeenSet(false),
     m_resourceSubType(ResourceSubType::NOT_SET),
     m_resourceSubTypeHasBeenSet(false),
+    m_resultListHasBeenSet(false),
     m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
     m_runtimeStatusHasBeenSet(false),
     m_runtimeStatusMessageHasBeenSet(false),
@@ -76,6 +77,7 @@ ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue) :
     m_recommendationSetHasBeenSet(false),
     m_resourceSubType(ResourceSubType::NOT_SET),
     m_resourceSubTypeHasBeenSet(false),
+    m_resultListHasBeenSet(false),
     m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
     m_runtimeStatusHasBeenSet(false),
     m_runtimeStatusMessageHasBeenSet(false),
@@ -214,6 +216,16 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     m_resourceSubType = ResourceSubTypeMapper::GetResourceSubTypeForName(jsonValue.GetString("resourceSubType"));
 
     m_resourceSubTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resultList"))
+  {
+    Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("resultList");
+    for(unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex)
+    {
+      m_resultList.push_back(resultListJsonList[resultListIndex].AsObject());
+    }
+    m_resultListHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("runtimeStatus"))
@@ -359,6 +371,17 @@ JsonValue ApplicationComponentDetail::Jsonize() const
   if(m_resourceSubTypeHasBeenSet)
   {
    payload.WithString("resourceSubType", ResourceSubTypeMapper::GetNameForResourceSubType(m_resourceSubType));
+  }
+
+  if(m_resultListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resultListJsonList(m_resultList.size());
+   for(unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex)
+   {
+     resultListJsonList[resultListIndex].AsObject(m_resultList[resultListIndex].Jsonize());
+   }
+   payload.WithArray("resultList", std::move(resultListJsonList));
+
   }
 
   if(m_runtimeStatusHasBeenSet)

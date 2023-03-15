@@ -46,6 +46,11 @@ GetAccessPointForObjectLambdaResult& GetAccessPointForObjectLambdaResult::operat
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = aliasNode;
+    }
   }
 
   return *this;

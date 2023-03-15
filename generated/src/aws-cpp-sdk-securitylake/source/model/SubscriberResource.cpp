@@ -23,6 +23,8 @@ SubscriberResource::SubscriberResource() :
     m_accountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_externalIdHasBeenSet(false),
+    m_resourceShareArnHasBeenSet(false),
+    m_resourceShareNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_s3BucketArnHasBeenSet(false),
     m_snsArnHasBeenSet(false),
@@ -44,6 +46,8 @@ SubscriberResource::SubscriberResource(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_externalIdHasBeenSet(false),
+    m_resourceShareArnHasBeenSet(false),
+    m_resourceShareNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_s3BucketArnHasBeenSet(false),
     m_snsArnHasBeenSet(false),
@@ -92,6 +96,20 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     m_externalId = jsonValue.GetString("externalId");
 
     m_externalIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceShareArn"))
+  {
+    m_resourceShareArn = jsonValue.GetString("resourceShareArn");
+
+    m_resourceShareArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceShareName"))
+  {
+    m_resourceShareName = jsonValue.GetString("resourceShareName");
+
+    m_resourceShareNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -206,6 +224,18 @@ JsonValue SubscriberResource::Jsonize() const
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("externalId", m_externalId);
+
+  }
+
+  if(m_resourceShareArnHasBeenSet)
+  {
+   payload.WithString("resourceShareArn", m_resourceShareArn);
+
+  }
+
+  if(m_resourceShareNameHasBeenSet)
+  {
+   payload.WithString("resourceShareName", m_resourceShareName);
 
   }
 

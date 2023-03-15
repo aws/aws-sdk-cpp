@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/model/ObjectLambdaAccessPointAlias.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,37 @@ namespace Model
      */
     inline CreateAccessPointForObjectLambdaResult& WithObjectLambdaAccessPointArn(const char* value) { SetObjectLambdaAccessPointArn(value); return *this;}
 
+
+    /**
+     * <p>The alias of the Object Lambda Access Point.</p>
+     */
+    inline const ObjectLambdaAccessPointAlias& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The alias of the Object Lambda Access Point.</p>
+     */
+    inline void SetAlias(const ObjectLambdaAccessPointAlias& value) { m_alias = value; }
+
+    /**
+     * <p>The alias of the Object Lambda Access Point.</p>
+     */
+    inline void SetAlias(ObjectLambdaAccessPointAlias&& value) { m_alias = std::move(value); }
+
+    /**
+     * <p>The alias of the Object Lambda Access Point.</p>
+     */
+    inline CreateAccessPointForObjectLambdaResult& WithAlias(const ObjectLambdaAccessPointAlias& value) { SetAlias(value); return *this;}
+
+    /**
+     * <p>The alias of the Object Lambda Access Point.</p>
+     */
+    inline CreateAccessPointForObjectLambdaResult& WithAlias(ObjectLambdaAccessPointAlias&& value) { SetAlias(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_objectLambdaAccessPointArn;
+
+    ObjectLambdaAccessPointAlias m_alias;
   };
 
 } // namespace Model

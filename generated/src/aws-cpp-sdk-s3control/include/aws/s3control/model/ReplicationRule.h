@@ -93,7 +93,7 @@ namespace Model
      * to the rule with the highest priority. The higher the number, the higher the
      * priority. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
-     * replication rules between Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
@@ -105,7 +105,7 @@ namespace Model
      * to the rule with the highest priority. The higher the number, the higher the
      * priority. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
-     * replication rules between Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
@@ -117,7 +117,7 @@ namespace Model
      * to the rule with the highest priority. The higher the number, the higher the
      * priority. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
-     * replication rules between Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
@@ -129,7 +129,7 @@ namespace Model
      * to the rule with the highest priority. The higher the number, the higher the
      * priority. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
-     * replication rules between Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}
 

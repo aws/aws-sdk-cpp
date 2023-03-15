@@ -22,13 +22,15 @@ namespace Model
 
 ObjectLambdaAccessPoint::ObjectLambdaAccessPoint() : 
     m_nameHasBeenSet(false),
-    m_objectLambdaAccessPointArnHasBeenSet(false)
+    m_objectLambdaAccessPointArnHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
 ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode) : 
     m_nameHasBeenSet(false),
-    m_objectLambdaAccessPointArnHasBeenSet(false)
+    m_objectLambdaAccessPointArnHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -51,6 +53,12 @@ ObjectLambdaAccessPoint& ObjectLambdaAccessPoint::operator =(const XmlNode& xmlN
       m_objectLambdaAccessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectLambdaAccessPointArnNode.GetText());
       m_objectLambdaAccessPointArnHasBeenSet = true;
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = aliasNode;
+      m_aliasHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -69,6 +77,12 @@ void ObjectLambdaAccessPoint::AddToNode(XmlNode& parentNode) const
   {
    XmlNode objectLambdaAccessPointArnNode = parentNode.CreateChildElement("ObjectLambdaAccessPointArn");
    objectLambdaAccessPointArnNode.SetText(m_objectLambdaAccessPointArn);
+  }
+
+  if(m_aliasHasBeenSet)
+  {
+   XmlNode aliasNode = parentNode.CreateChildElement("Alias");
+   m_alias.AddToNode(aliasNode);
   }
 
 }

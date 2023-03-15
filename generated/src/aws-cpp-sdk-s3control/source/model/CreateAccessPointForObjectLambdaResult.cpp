@@ -36,6 +36,11 @@ CreateAccessPointForObjectLambdaResult& CreateAccessPointForObjectLambdaResult::
     {
       m_objectLambdaAccessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectLambdaAccessPointArnNode.GetText());
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = aliasNode;
+    }
   }
 
   return *this;

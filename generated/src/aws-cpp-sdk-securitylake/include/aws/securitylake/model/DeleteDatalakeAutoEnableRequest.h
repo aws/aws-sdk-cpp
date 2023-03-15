@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline const Aws::Vector<AutoEnableNewRegionConfiguration>& GetRemoveFromConfigurationForNewAccounts() const{ return m_removeFromConfigurationForNewAccounts; }
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline bool RemoveFromConfigurationForNewAccountsHasBeenSet() const { return m_removeFromConfigurationForNewAccountsHasBeenSet; }
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline void SetRemoveFromConfigurationForNewAccounts(const Aws::Vector<AutoEnableNewRegionConfiguration>& value) { m_removeFromConfigurationForNewAccountsHasBeenSet = true; m_removeFromConfigurationForNewAccounts = value; }
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline void SetRemoveFromConfigurationForNewAccounts(Aws::Vector<AutoEnableNewRegionConfiguration>&& value) { m_removeFromConfigurationForNewAccountsHasBeenSet = true; m_removeFromConfigurationForNewAccounts = std::move(value); }
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline DeleteDatalakeAutoEnableRequest& WithRemoveFromConfigurationForNewAccounts(const Aws::Vector<AutoEnableNewRegionConfiguration>& value) { SetRemoveFromConfigurationForNewAccounts(value); return *this;}
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline DeleteDatalakeAutoEnableRequest& WithRemoveFromConfigurationForNewAccounts(Aws::Vector<AutoEnableNewRegionConfiguration>&& value) { SetRemoveFromConfigurationForNewAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline DeleteDatalakeAutoEnableRequest& AddRemoveFromConfigurationForNewAccounts(const AutoEnableNewRegionConfiguration& value) { m_removeFromConfigurationForNewAccountsHasBeenSet = true; m_removeFromConfigurationForNewAccounts.push_back(value); return *this; }
 
     /**
-     * <p>Delete Amazon Security Lake with the specified configuration settings to stop
-     * ingesting security data for new accounts in Security Lake. </p>
+     * <p>Remove automatic enablement of configuration settings for new member accounts
+     * in Security Lake. </p>
      */
     inline DeleteDatalakeAutoEnableRequest& AddRemoveFromConfigurationForNewAccounts(AutoEnableNewRegionConfiguration&& value) { m_removeFromConfigurationForNewAccountsHasBeenSet = true; m_removeFromConfigurationForNewAccounts.push_back(std::move(value)); return *this; }
 
