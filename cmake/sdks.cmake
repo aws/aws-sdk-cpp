@@ -214,6 +214,7 @@ function(add_sdks)
     #testing
     if(ENABLE_TESTING)
         add_subdirectory(tests/testing-resources)
+        add_subdirectory(tests/testing-common-pch)
 
         if(ENABLE_FUNCTIONAL_TESTING)
             message(STATUS "Clearing existing directory for document-test to prepare for generation.")
