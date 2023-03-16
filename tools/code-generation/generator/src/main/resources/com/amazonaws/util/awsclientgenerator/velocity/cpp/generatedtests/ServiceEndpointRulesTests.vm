@@ -5,12 +5,7 @@
 #set($endpointPrefix = $metadata.endpointPrefix)
 #set($testCases = $serviceModel.endpointTests.testCases)
 
-\#include <gtest/gtest.h>
-\#include <aws/testing/AwsTestHelpers.h>
-
-\#include <aws/core/auth/AWSCredentials.h>
-\#include <aws/core/http/standard/StandardHttpResponse.h>
-\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/testing-common-pch/AwsTestingCommonPCH.h>
 
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 
