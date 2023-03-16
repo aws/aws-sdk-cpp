@@ -19,8 +19,8 @@ CreateDetectorRequest::CreateDetectorRequest() :
     m_clientTokenHasBeenSet(true),
     m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
     m_findingPublishingFrequencyHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -45,12 +45,6 @@ Aws::String CreateDetectorRequest::SerializePayload() const
    payload.WithString("findingPublishingFrequency", FindingPublishingFrequencyMapper::GetNameForFindingPublishingFrequency(m_findingPublishingFrequency));
   }
 
-  if(m_dataSourcesHasBeenSet)
-  {
-   payload.WithObject("dataSources", m_dataSources.Jsonize());
-
-  }
-
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -59,6 +53,17 @@ Aws::String CreateDetectorRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_featuresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsObject(m_features[featuresIndex].Jsonize());
+   }
+   payload.WithArray("features", std::move(featuresJsonList));
 
   }
 

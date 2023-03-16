@@ -24,6 +24,7 @@ namespace Aws
         static const int SUM_BY_DATA_SOURCE_HASH = HashingUtils::HashString("SUM_BY_DATA_SOURCE");
         static const int SUM_BY_RESOURCE_HASH = HashingUtils::HashString("SUM_BY_RESOURCE");
         static const int TOP_RESOURCES_HASH = HashingUtils::HashString("TOP_RESOURCES");
+        static const int SUM_BY_FEATURES_HASH = HashingUtils::HashString("SUM_BY_FEATURES");
 
 
         UsageStatisticType GetUsageStatisticTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TOP_RESOURCES_HASH)
           {
             return UsageStatisticType::TOP_RESOURCES;
+          }
+          else if (hashCode == SUM_BY_FEATURES_HASH)
+          {
+            return UsageStatisticType::SUM_BY_FEATURES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "SUM_BY_RESOURCE";
           case UsageStatisticType::TOP_RESOURCES:
             return "TOP_RESOURCES";
+          case UsageStatisticType::SUM_BY_FEATURES:
+            return "SUM_BY_FEATURES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

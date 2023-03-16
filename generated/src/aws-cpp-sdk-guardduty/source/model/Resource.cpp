@@ -27,7 +27,9 @@ Resource::Resource() :
     m_resourceTypeHasBeenSet(false),
     m_ebsVolumeDetailsHasBeenSet(false),
     m_ecsClusterDetailsHasBeenSet(false),
-    m_containerDetailsHasBeenSet(false)
+    m_containerDetailsHasBeenSet(false),
+    m_rdsDbInstanceDetailsHasBeenSet(false),
+    m_rdsDbUserDetailsHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Resource::Resource(JsonView jsonValue) :
     m_resourceTypeHasBeenSet(false),
     m_ebsVolumeDetailsHasBeenSet(false),
     m_ecsClusterDetailsHasBeenSet(false),
-    m_containerDetailsHasBeenSet(false)
+    m_containerDetailsHasBeenSet(false),
+    m_rdsDbInstanceDetailsHasBeenSet(false),
+    m_rdsDbUserDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,20 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_containerDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rdsDbInstanceDetails"))
+  {
+    m_rdsDbInstanceDetails = jsonValue.GetObject("rdsDbInstanceDetails");
+
+    m_rdsDbInstanceDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rdsDbUserDetails"))
+  {
+    m_rdsDbUserDetails = jsonValue.GetObject("rdsDbUserDetails");
+
+    m_rdsDbUserDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +194,18 @@ JsonValue Resource::Jsonize() const
   if(m_containerDetailsHasBeenSet)
   {
    payload.WithObject("containerDetails", m_containerDetails.Jsonize());
+
+  }
+
+  if(m_rdsDbInstanceDetailsHasBeenSet)
+  {
+   payload.WithObject("rdsDbInstanceDetails", m_rdsDbInstanceDetails.Jsonize());
+
+  }
+
+  if(m_rdsDbUserDetailsHasBeenSet)
+  {
+   payload.WithObject("rdsDbUserDetails", m_rdsDbUserDetails.Jsonize());
 
   }
 

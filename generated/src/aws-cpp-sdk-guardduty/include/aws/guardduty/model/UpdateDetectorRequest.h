@@ -8,7 +8,8 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
-#include <aws/guardduty/model/DataSourceConfigurations.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/DetectorFeatureConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -134,64 +135,44 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<DetectorFeatureConfiguration>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline UpdateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
+    inline UpdateDetectorRequest& WithFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Describes which data sources will be updated.</p> <p>There might be regional
-     * differences because some data sources might not be available in all the Amazon
-     * Web Services Regions where GuardDuty is presently supported. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
+     * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline UpdateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+    inline UpdateDetectorRequest& WithFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides the features that will be updated for the detector.</p>
+     */
+    inline UpdateDetectorRequest& AddFeatures(const DetectorFeatureConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>Provides the features that will be updated for the detector.</p>
+     */
+    inline UpdateDetectorRequest& AddFeatures(DetectorFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -204,8 +185,8 @@ namespace Model
     FindingPublishingFrequency m_findingPublishingFrequency;
     bool m_findingPublishingFrequencyHasBeenSet = false;
 
-    DataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
+    Aws::Vector<DetectorFeatureConfiguration> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

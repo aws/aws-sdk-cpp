@@ -8,8 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
 #include <aws/guardduty/model/DetectorStatus.h>
-#include <aws/guardduty/model/DataSourceConfigurationsResult.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/DetectorFeatureConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -197,32 +198,6 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources are enabled for the detector.</p>
-     */
-    inline const DataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
-
-    /**
-     * <p>Describes which data sources are enabled for the detector.</p>
-     */
-    inline void SetDataSources(const DataSourceConfigurationsResult& value) { m_dataSources = value; }
-
-    /**
-     * <p>Describes which data sources are enabled for the detector.</p>
-     */
-    inline void SetDataSources(DataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
-
-    /**
-     * <p>Describes which data sources are enabled for the detector.</p>
-     */
-    inline GetDetectorResult& WithDataSources(const DataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
-
-    /**
-     * <p>Describes which data sources are enabled for the detector.</p>
-     */
-    inline GetDetectorResult& WithDataSources(DataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
-
-
-    /**
      * <p>The tags of the detector resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -283,6 +258,42 @@ namespace Model
     inline GetDetectorResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline const Aws::Vector<DetectorFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline void SetFeatures(const Aws::Vector<DetectorFeatureConfigurationResult>& value) { m_features = value; }
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline void SetFeatures(Aws::Vector<DetectorFeatureConfigurationResult>&& value) { m_features = std::move(value); }
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithFeatures(const Aws::Vector<DetectorFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithFeatures(Aws::Vector<DetectorFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline GetDetectorResult& AddFeatures(const DetectorFeatureConfigurationResult& value) { m_features.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the features that have been enabled for the detector.</p>
+     */
+    inline GetDetectorResult& AddFeatures(DetectorFeatureConfigurationResult&& value) { m_features.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -316,9 +327,9 @@ namespace Model
 
     Aws::String m_updatedAt;
 
-    DataSourceConfigurationsResult m_dataSources;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Vector<DetectorFeatureConfigurationResult> m_features;
 
     Aws::String m_requestId;
   };

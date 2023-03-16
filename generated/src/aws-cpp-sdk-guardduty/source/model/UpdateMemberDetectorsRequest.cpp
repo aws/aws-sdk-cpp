@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateMemberDetectorsRequest::UpdateMemberDetectorsRequest() : 
     m_detectorIdHasBeenSet(false),
     m_accountIdsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false)
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -34,9 +34,14 @@ Aws::String UpdateMemberDetectorsRequest::SerializePayload() const
 
   }
 
-  if(m_dataSourcesHasBeenSet)
+  if(m_featuresHasBeenSet)
   {
-   payload.WithObject("dataSources", m_dataSources.Jsonize());
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsObject(m_features[featuresIndex].Jsonize());
+   }
+   payload.WithArray("features", std::move(featuresJsonList));
 
   }
 

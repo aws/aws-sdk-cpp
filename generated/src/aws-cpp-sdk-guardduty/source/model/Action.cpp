@@ -24,7 +24,8 @@ Action::Action() :
     m_dnsRequestActionHasBeenSet(false),
     m_networkConnectionActionHasBeenSet(false),
     m_portProbeActionHasBeenSet(false),
-    m_kubernetesApiCallActionHasBeenSet(false)
+    m_kubernetesApiCallActionHasBeenSet(false),
+    m_rdsLoginAttemptActionHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Action::Action(JsonView jsonValue) :
     m_dnsRequestActionHasBeenSet(false),
     m_networkConnectionActionHasBeenSet(false),
     m_portProbeActionHasBeenSet(false),
-    m_kubernetesApiCallActionHasBeenSet(false)
+    m_kubernetesApiCallActionHasBeenSet(false),
+    m_rdsLoginAttemptActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_kubernetesApiCallActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rdsLoginAttemptAction"))
+  {
+    m_rdsLoginAttemptAction = jsonValue.GetObject("rdsLoginAttemptAction");
+
+    m_rdsLoginAttemptActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue Action::Jsonize() const
   if(m_kubernetesApiCallActionHasBeenSet)
   {
    payload.WithObject("kubernetesApiCallAction", m_kubernetesApiCallAction.Jsonize());
+
+  }
+
+  if(m_rdsLoginAttemptActionHasBeenSet)
+  {
+   payload.WithObject("rdsLoginAttemptAction", m_rdsLoginAttemptAction.Jsonize());
 
   }
 

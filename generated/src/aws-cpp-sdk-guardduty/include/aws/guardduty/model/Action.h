@@ -11,6 +11,7 @@
 #include <aws/guardduty/model/NetworkConnectionAction.h>
 #include <aws/guardduty/model/PortProbeAction.h>
 #include <aws/guardduty/model/KubernetesApiCallAction.h>
+#include <aws/guardduty/model/RdsLoginAttemptAction.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +250,43 @@ namespace Model
      */
     inline Action& WithKubernetesApiCallAction(KubernetesApiCallAction&& value) { SetKubernetesApiCallAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline const RdsLoginAttemptAction& GetRdsLoginAttemptAction() const{ return m_rdsLoginAttemptAction; }
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline bool RdsLoginAttemptActionHasBeenSet() const { return m_rdsLoginAttemptActionHasBeenSet; }
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline void SetRdsLoginAttemptAction(const RdsLoginAttemptAction& value) { m_rdsLoginAttemptActionHasBeenSet = true; m_rdsLoginAttemptAction = value; }
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline void SetRdsLoginAttemptAction(RdsLoginAttemptAction&& value) { m_rdsLoginAttemptActionHasBeenSet = true; m_rdsLoginAttemptAction = std::move(value); }
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline Action& WithRdsLoginAttemptAction(const RdsLoginAttemptAction& value) { SetRdsLoginAttemptAction(value); return *this;}
+
+    /**
+     * <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this
+     * finding.</p>
+     */
+    inline Action& WithRdsLoginAttemptAction(RdsLoginAttemptAction&& value) { SetRdsLoginAttemptAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -268,6 +306,9 @@ namespace Model
 
     KubernetesApiCallAction m_kubernetesApiCallAction;
     bool m_kubernetesApiCallActionHasBeenSet = false;
+
+    RdsLoginAttemptAction m_rdsLoginAttemptAction;
+    bool m_rdsLoginAttemptActionHasBeenSet = false;
   };
 
 } // namespace Model

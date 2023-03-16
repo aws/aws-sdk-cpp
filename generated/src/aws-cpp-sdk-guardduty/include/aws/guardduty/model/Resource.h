@@ -14,6 +14,8 @@
 #include <aws/guardduty/model/EbsVolumeDetails.h>
 #include <aws/guardduty/model/EcsClusterDetails.h>
 #include <aws/guardduty/model/Container.h>
+#include <aws/guardduty/model/RdsDbInstanceDetails.h>
+#include <aws/guardduty/model/RdsDbUserDetails.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
 #include <utility>
 
@@ -352,6 +354,80 @@ namespace Model
     
     inline Resource& WithContainerDetails(Container&& value) { SetContainerDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline const RdsDbInstanceDetails& GetRdsDbInstanceDetails() const{ return m_rdsDbInstanceDetails; }
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline bool RdsDbInstanceDetailsHasBeenSet() const { return m_rdsDbInstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline void SetRdsDbInstanceDetails(const RdsDbInstanceDetails& value) { m_rdsDbInstanceDetailsHasBeenSet = true; m_rdsDbInstanceDetails = value; }
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline void SetRdsDbInstanceDetails(RdsDbInstanceDetails&& value) { m_rdsDbInstanceDetailsHasBeenSet = true; m_rdsDbInstanceDetails = std::move(value); }
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline Resource& WithRdsDbInstanceDetails(const RdsDbInstanceDetails& value) { SetRdsDbInstanceDetails(value); return *this;}
+
+    /**
+     * <p>Contains information about the database instance to which an anomalous login
+     * attempt was made.</p>
+     */
+    inline Resource& WithRdsDbInstanceDetails(RdsDbInstanceDetails&& value) { SetRdsDbInstanceDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline const RdsDbUserDetails& GetRdsDbUserDetails() const{ return m_rdsDbUserDetails; }
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline bool RdsDbUserDetailsHasBeenSet() const { return m_rdsDbUserDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline void SetRdsDbUserDetails(const RdsDbUserDetails& value) { m_rdsDbUserDetailsHasBeenSet = true; m_rdsDbUserDetails = value; }
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline void SetRdsDbUserDetails(RdsDbUserDetails&& value) { m_rdsDbUserDetailsHasBeenSet = true; m_rdsDbUserDetails = std::move(value); }
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline Resource& WithRdsDbUserDetails(const RdsDbUserDetails& value) { SetRdsDbUserDetails(value); return *this;}
+
+    /**
+     * <p>Contains information about the user details through which anomalous login
+     * attempt was made.</p>
+     */
+    inline Resource& WithRdsDbUserDetails(RdsDbUserDetails&& value) { SetRdsDbUserDetails(std::move(value)); return *this;}
+
   private:
 
     AccessKeyDetails m_accessKeyDetails;
@@ -380,6 +456,12 @@ namespace Model
 
     Container m_containerDetails;
     bool m_containerDetailsHasBeenSet = false;
+
+    RdsDbInstanceDetails m_rdsDbInstanceDetails;
+    bool m_rdsDbInstanceDetailsHasBeenSet = false;
+
+    RdsDbUserDetails m_rdsDbUserDetails;
+    bool m_rdsDbUserDetailsHasBeenSet = false;
   };
 
 } // namespace Model

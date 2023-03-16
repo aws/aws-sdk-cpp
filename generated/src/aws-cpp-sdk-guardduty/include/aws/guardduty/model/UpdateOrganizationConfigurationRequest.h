@@ -7,7 +7,8 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/guardduty/model/OrganizationDataSourceConfigurations.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/OrganizationFeatureConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -100,34 +101,44 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline const OrganizationDataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<OrganizationFeatureConfiguration>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline void SetDataSources(const OrganizationDataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<OrganizationFeatureConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline void SetDataSources(OrganizationDataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<OrganizationFeatureConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline UpdateOrganizationConfigurationRequest& WithDataSources(const OrganizationDataSourceConfigurations& value) { SetDataSources(value); return *this;}
+    inline UpdateOrganizationConfigurationRequest& WithFeatures(const Aws::Vector<OrganizationFeatureConfiguration>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be configured for the organization.</p>
      */
-    inline UpdateOrganizationConfigurationRequest& WithDataSources(OrganizationDataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+    inline UpdateOrganizationConfigurationRequest& WithFeatures(Aws::Vector<OrganizationFeatureConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of features that will be configured for the organization.</p>
+     */
+    inline UpdateOrganizationConfigurationRequest& AddFeatures(const OrganizationFeatureConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of features that will be configured for the organization.</p>
+     */
+    inline UpdateOrganizationConfigurationRequest& AddFeatures(OrganizationFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -137,8 +148,8 @@ namespace Model
     bool m_autoEnable;
     bool m_autoEnableHasBeenSet = false;
 
-    OrganizationDataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
+    Aws::Vector<OrganizationFeatureConfiguration> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

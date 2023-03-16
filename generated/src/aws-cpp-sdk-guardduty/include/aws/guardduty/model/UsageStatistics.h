@@ -9,6 +9,7 @@
 #include <aws/guardduty/model/UsageAccountResult.h>
 #include <aws/guardduty/model/UsageDataSourceResult.h>
 #include <aws/guardduty/model/UsageResourceResult.h>
+#include <aws/guardduty/model/UsageFeatureResult.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +213,47 @@ namespace Model
      */
     inline UsageStatistics& AddTopResources(UsageResourceResult&& value) { m_topResourcesHasBeenSet = true; m_topResources.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline const Aws::Vector<UsageFeatureResult>& GetSumByFeature() const{ return m_sumByFeature; }
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline bool SumByFeatureHasBeenSet() const { return m_sumByFeatureHasBeenSet; }
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline void SetSumByFeature(const Aws::Vector<UsageFeatureResult>& value) { m_sumByFeatureHasBeenSet = true; m_sumByFeature = value; }
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline void SetSumByFeature(Aws::Vector<UsageFeatureResult>&& value) { m_sumByFeatureHasBeenSet = true; m_sumByFeature = std::move(value); }
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline UsageStatistics& WithSumByFeature(const Aws::Vector<UsageFeatureResult>& value) { SetSumByFeature(value); return *this;}
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline UsageStatistics& WithSumByFeature(Aws::Vector<UsageFeatureResult>&& value) { SetSumByFeature(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline UsageStatistics& AddSumByFeature(const UsageFeatureResult& value) { m_sumByFeatureHasBeenSet = true; m_sumByFeature.push_back(value); return *this; }
+
+    /**
+     * <p>The usage statistic sum organized by feature.</p>
+     */
+    inline UsageStatistics& AddSumByFeature(UsageFeatureResult&& value) { m_sumByFeatureHasBeenSet = true; m_sumByFeature.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<UsageAccountResult> m_sumByAccount;
@@ -225,6 +267,9 @@ namespace Model
 
     Aws::Vector<UsageResourceResult> m_topResources;
     bool m_topResourcesHasBeenSet = false;
+
+    Aws::Vector<UsageFeatureResult> m_sumByFeature;
+    bool m_sumByFeatureHasBeenSet = false;
   };
 
 } // namespace Model

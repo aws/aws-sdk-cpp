@@ -6,7 +6,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/guardduty/model/DataSourcesFreeTrial.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/FreeTrialFeatureConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -81,42 +82,52 @@ namespace Model
 
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline const DataSourcesFreeTrial& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<FreeTrialFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline void SetDataSources(const DataSourcesFreeTrial& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<FreeTrialFeatureConfigurationResult>& value) { m_featuresHasBeenSet = true; m_features = value; }
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline void SetDataSources(DataSourcesFreeTrial&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<FreeTrialFeatureConfigurationResult>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline AccountFreeTrialInfo& WithDataSources(const DataSourcesFreeTrial& value) { SetDataSources(value); return *this;}
+    inline AccountFreeTrialInfo& WithFeatures(const Aws::Vector<FreeTrialFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Describes the data source enabled for the GuardDuty member account.</p>
+     * <p>A list of features enabled for the GuardDuty account.</p>
      */
-    inline AccountFreeTrialInfo& WithDataSources(DataSourcesFreeTrial&& value) { SetDataSources(std::move(value)); return *this;}
+    inline AccountFreeTrialInfo& WithFeatures(Aws::Vector<FreeTrialFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of features enabled for the GuardDuty account.</p>
+     */
+    inline AccountFreeTrialInfo& AddFeatures(const FreeTrialFeatureConfigurationResult& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of features enabled for the GuardDuty account.</p>
+     */
+    inline AccountFreeTrialInfo& AddFeatures(FreeTrialFeatureConfigurationResult&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    DataSourcesFreeTrial m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
+    Aws::Vector<FreeTrialFeatureConfigurationResult> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model
