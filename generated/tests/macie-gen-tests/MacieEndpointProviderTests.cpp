@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
-#include <aws/testing/AwsTestHelpers.h>
-
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
-#include <aws/core/http/HttpClientFactory.h>
+#include <aws/testing-common-pch/AwsTestingCommonPCH.h>
 
 #include <aws/macie/MacieEndpointProvider.h>
 
