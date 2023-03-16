@@ -8,7 +8,7 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/guardduty/model/DataSourceConfigurations.h>
+#include <aws/guardduty/model/MemberFeaturesConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -122,34 +122,52 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<MemberFeaturesConfiguration>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<MemberFeaturesConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<MemberFeaturesConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline UpdateMemberDetectorsRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
+    inline UpdateMemberDetectorsRequest& WithFeatures(const Aws::Vector<MemberFeaturesConfiguration>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Describes which data sources will be updated.</p>
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
      */
-    inline UpdateMemberDetectorsRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+    inline UpdateMemberDetectorsRequest& WithFeatures(Aws::Vector<MemberFeaturesConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
+     */
+    inline UpdateMemberDetectorsRequest& AddFeatures(const MemberFeaturesConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of features that will be updated for the specified member
+     * accounts.</p>
+     */
+    inline UpdateMemberDetectorsRequest& AddFeatures(MemberFeaturesConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -159,8 +177,8 @@ namespace Model
     Aws::Vector<Aws::String> m_accountIds;
     bool m_accountIdsHasBeenSet = false;
 
-    DataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
+    Aws::Vector<MemberFeaturesConfiguration> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

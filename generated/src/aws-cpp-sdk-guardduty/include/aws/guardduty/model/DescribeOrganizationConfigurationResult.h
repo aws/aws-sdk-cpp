@@ -5,8 +5,9 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
-#include <aws/guardduty/model/OrganizationDataSourceConfigurationsResult.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/OrganizationFeatureConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -72,34 +73,82 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources are enabled automatically for member
-     * accounts.</p>
+     * <p>A list of features that are configured for this organization.</p>
      */
-    inline const OrganizationDataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<OrganizationFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Describes which data sources are enabled automatically for member
-     * accounts.</p>
+     * <p>A list of features that are configured for this organization.</p>
      */
-    inline void SetDataSources(const OrganizationDataSourceConfigurationsResult& value) { m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<OrganizationFeatureConfigurationResult>& value) { m_features = value; }
 
     /**
-     * <p>Describes which data sources are enabled automatically for member
-     * accounts.</p>
+     * <p>A list of features that are configured for this organization.</p>
      */
-    inline void SetDataSources(OrganizationDataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<OrganizationFeatureConfigurationResult>&& value) { m_features = std::move(value); }
 
     /**
-     * <p>Describes which data sources are enabled automatically for member
-     * accounts.</p>
+     * <p>A list of features that are configured for this organization.</p>
      */
-    inline DescribeOrganizationConfigurationResult& WithDataSources(const OrganizationDataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+    inline DescribeOrganizationConfigurationResult& WithFeatures(const Aws::Vector<OrganizationFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Describes which data sources are enabled automatically for member
-     * accounts.</p>
+     * <p>A list of features that are configured for this organization.</p>
      */
-    inline DescribeOrganizationConfigurationResult& WithDataSources(OrganizationDataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
+    inline DescribeOrganizationConfigurationResult& WithFeatures(Aws::Vector<OrganizationFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of features that are configured for this organization.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& AddFeatures(const OrganizationFeatureConfigurationResult& value) { m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of features that are configured for this organization.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& AddFeatures(OrganizationFeatureConfigurationResult&& value) { m_features.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     
@@ -129,7 +178,9 @@ namespace Model
 
     bool m_memberAccountLimitReached;
 
-    OrganizationDataSourceConfigurationsResult m_dataSources;
+    Aws::Vector<OrganizationFeatureConfigurationResult> m_features;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

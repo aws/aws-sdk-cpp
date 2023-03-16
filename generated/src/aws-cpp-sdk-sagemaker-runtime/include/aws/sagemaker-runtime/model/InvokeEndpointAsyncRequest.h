@@ -426,50 +426,50 @@ namespace Model
 
     /**
      * <p>Maximum age in seconds a request can be in the queue before it is marked as
-     * expired.</p>
+     * expired. The default is 6 hours, or 21,600 seconds.</p>
      */
     inline int GetRequestTTLSeconds() const{ return m_requestTTLSeconds; }
 
     /**
      * <p>Maximum age in seconds a request can be in the queue before it is marked as
-     * expired.</p>
+     * expired. The default is 6 hours, or 21,600 seconds.</p>
      */
     inline bool RequestTTLSecondsHasBeenSet() const { return m_requestTTLSecondsHasBeenSet; }
 
     /**
      * <p>Maximum age in seconds a request can be in the queue before it is marked as
-     * expired.</p>
+     * expired. The default is 6 hours, or 21,600 seconds.</p>
      */
     inline void SetRequestTTLSeconds(int value) { m_requestTTLSecondsHasBeenSet = true; m_requestTTLSeconds = value; }
 
     /**
      * <p>Maximum age in seconds a request can be in the queue before it is marked as
-     * expired.</p>
+     * expired. The default is 6 hours, or 21,600 seconds.</p>
      */
     inline InvokeEndpointAsyncRequest& WithRequestTTLSeconds(int value) { SetRequestTTLSeconds(value); return *this;}
 
 
     /**
      * <p>Maximum amount of time in seconds a request can be processed before it is
-     * marked as expired.</p>
+     * marked as expired. The default is 15 minutes, or 900 seconds.</p>
      */
     inline int GetInvocationTimeoutSeconds() const{ return m_invocationTimeoutSeconds; }
 
     /**
      * <p>Maximum amount of time in seconds a request can be processed before it is
-     * marked as expired.</p>
+     * marked as expired. The default is 15 minutes, or 900 seconds.</p>
      */
     inline bool InvocationTimeoutSecondsHasBeenSet() const { return m_invocationTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>Maximum amount of time in seconds a request can be processed before it is
-     * marked as expired.</p>
+     * marked as expired. The default is 15 minutes, or 900 seconds.</p>
      */
     inline void SetInvocationTimeoutSeconds(int value) { m_invocationTimeoutSecondsHasBeenSet = true; m_invocationTimeoutSeconds = value; }
 
     /**
      * <p>Maximum amount of time in seconds a request can be processed before it is
-     * marked as expired.</p>
+     * marked as expired. The default is 15 minutes, or 900 seconds.</p>
      */
     inline InvokeEndpointAsyncRequest& WithInvocationTimeoutSeconds(int value) { SetInvocationTimeoutSeconds(value); return *this;}
 

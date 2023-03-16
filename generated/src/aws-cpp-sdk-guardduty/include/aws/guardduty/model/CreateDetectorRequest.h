@@ -8,8 +8,9 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
-#include <aws/guardduty/model/DataSourceConfigurations.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/DetectorFeatureConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -130,67 +131,6 @@ namespace Model
 
 
     /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
-
-    /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
-
-    /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
-
-    /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
-
-    /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline CreateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
-
-    /**
-     * <p>Describes which data sources will be enabled for the detector.</p> <p>There
-     * might be regional differences because some data sources might not be available
-     * in all the Amazon Web Services Regions where GuardDuty is presently supported.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
-     * and endpoints</a>.</p>
-     */
-    inline CreateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
-
-
-    /**
      * <p>The tags to be added to a new detector resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -255,6 +195,47 @@ namespace Model
      */
     inline CreateDetectorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline const Aws::Vector<DetectorFeatureConfiguration>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline void SetFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline void SetFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline CreateDetectorRequest& WithFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { SetFeatures(value); return *this;}
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline CreateDetectorRequest& WithFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline CreateDetectorRequest& AddFeatures(const DetectorFeatureConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of features that will be configured for the detector.</p>
+     */
+    inline CreateDetectorRequest& AddFeatures(DetectorFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_enable;
@@ -266,11 +247,11 @@ namespace Model
     FindingPublishingFrequency m_findingPublishingFrequency;
     bool m_findingPublishingFrequencyHasBeenSet = false;
 
-    DataSourceConfigurations m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<DetectorFeatureConfiguration> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

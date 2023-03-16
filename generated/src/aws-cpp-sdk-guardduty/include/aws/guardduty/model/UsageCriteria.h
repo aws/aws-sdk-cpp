@@ -7,7 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/guardduty/model/DataSource.h>
+#include <aws/guardduty/model/UsageFeature.h>
 #include <utility>
 
 namespace Aws
@@ -87,47 +87,6 @@ namespace Model
 
 
     /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline UsageCriteria& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline UsageCriteria& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline UsageCriteria& AddDataSources(const DataSource& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
-
-    /**
-     * <p>The data sources to aggregate usage statistics from.</p>
-     */
-    inline UsageCriteria& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The resources to aggregate usage statistics from. Only accepts exact resource
      * names.</p>
      */
@@ -181,16 +140,57 @@ namespace Model
      */
     inline UsageCriteria& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline const Aws::Vector<UsageFeature>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline void SetFeatures(const Aws::Vector<UsageFeature>& value) { m_featuresHasBeenSet = true; m_features = value; }
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline void SetFeatures(Aws::Vector<UsageFeature>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline UsageCriteria& WithFeatures(const Aws::Vector<UsageFeature>& value) { SetFeatures(value); return *this;}
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline UsageCriteria& WithFeatures(Aws::Vector<UsageFeature>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline UsageCriteria& AddFeatures(const UsageFeature& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>The features to aggregate usage statistics from.</p>
+     */
+    inline UsageCriteria& AddFeatures(UsageFeature&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
     bool m_accountIdsHasBeenSet = false;
 
-    Aws::Vector<DataSource> m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_resources;
     bool m_resourcesHasBeenSet = false;
+
+    Aws::Vector<UsageFeature> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

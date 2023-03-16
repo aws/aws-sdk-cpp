@@ -45,9 +45,18 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
 
   }
 
-  if(jsonValue.ValueExists("dataSources"))
+  if(jsonValue.ValueExists("features"))
   {
-    m_dataSources = jsonValue.GetObject("dataSources");
+    Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
+    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+    {
+      m_features.push_back(featuresJsonList[featuresIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
 
   }
 

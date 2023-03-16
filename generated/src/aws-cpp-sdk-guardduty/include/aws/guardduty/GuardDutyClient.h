@@ -181,8 +181,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Creates a filter using the specified finding criteria.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a filter using the specified finding criteria. The maximum number of
+         * saved filters per Amazon Web Services account per Region is 100. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas
+         * for GuardDuty</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">AWS
          * API Reference</a></p>
          */

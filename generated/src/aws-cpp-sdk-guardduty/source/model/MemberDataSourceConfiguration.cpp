@@ -20,13 +20,13 @@ namespace Model
 
 MemberDataSourceConfiguration::MemberDataSourceConfiguration() : 
     m_accountIdHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false)
+    m_featuresHasBeenSet(false)
 {
 }
 
 MemberDataSourceConfiguration::MemberDataSourceConfiguration(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false)
+    m_featuresHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,11 +40,14 @@ MemberDataSourceConfiguration& MemberDataSourceConfiguration::operator =(JsonVie
     m_accountIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("dataSources"))
+  if(jsonValue.ValueExists("features"))
   {
-    m_dataSources = jsonValue.GetObject("dataSources");
-
-    m_dataSourcesHasBeenSet = true;
+    Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
+    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+    {
+      m_features.push_back(featuresJsonList[featuresIndex].AsObject());
+    }
+    m_featuresHasBeenSet = true;
   }
 
   return *this;
@@ -60,9 +63,14 @@ JsonValue MemberDataSourceConfiguration::Jsonize() const
 
   }
 
-  if(m_dataSourcesHasBeenSet)
+  if(m_featuresHasBeenSet)
   {
-   payload.WithObject("dataSources", m_dataSources.Jsonize());
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsObject(m_features[featuresIndex].Jsonize());
+   }
+   payload.WithArray("features", std::move(featuresJsonList));
 
   }
 

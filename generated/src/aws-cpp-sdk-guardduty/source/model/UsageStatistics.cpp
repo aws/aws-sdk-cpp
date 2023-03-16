@@ -22,7 +22,8 @@ UsageStatistics::UsageStatistics() :
     m_sumByAccountHasBeenSet(false),
     m_sumByDataSourceHasBeenSet(false),
     m_sumByResourceHasBeenSet(false),
-    m_topResourcesHasBeenSet(false)
+    m_topResourcesHasBeenSet(false),
+    m_sumByFeatureHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ UsageStatistics::UsageStatistics(JsonView jsonValue) :
     m_sumByAccountHasBeenSet(false),
     m_sumByDataSourceHasBeenSet(false),
     m_sumByResourceHasBeenSet(false),
-    m_topResourcesHasBeenSet(false)
+    m_topResourcesHasBeenSet(false),
+    m_sumByFeatureHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,16 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
       m_topResources.push_back(topResourcesJsonList[topResourcesIndex].AsObject());
     }
     m_topResourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sumByFeature"))
+  {
+    Aws::Utils::Array<JsonView> sumByFeatureJsonList = jsonValue.GetArray("sumByFeature");
+    for(unsigned sumByFeatureIndex = 0; sumByFeatureIndex < sumByFeatureJsonList.GetLength(); ++sumByFeatureIndex)
+    {
+      m_sumByFeature.push_back(sumByFeatureJsonList[sumByFeatureIndex].AsObject());
+    }
+    m_sumByFeatureHasBeenSet = true;
   }
 
   return *this;
@@ -125,6 +137,17 @@ JsonValue UsageStatistics::Jsonize() const
      topResourcesJsonList[topResourcesIndex].AsObject(m_topResources[topResourcesIndex].Jsonize());
    }
    payload.WithArray("topResources", std::move(topResourcesJsonList));
+
+  }
+
+  if(m_sumByFeatureHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sumByFeatureJsonList(m_sumByFeature.size());
+   for(unsigned sumByFeatureIndex = 0; sumByFeatureIndex < sumByFeatureJsonList.GetLength(); ++sumByFeatureIndex)
+   {
+     sumByFeatureJsonList[sumByFeatureIndex].AsObject(m_sumByFeature[sumByFeatureIndex].Jsonize());
+   }
+   payload.WithArray("sumByFeature", std::move(sumByFeatureJsonList));
 
   }
 

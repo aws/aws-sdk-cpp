@@ -6,7 +6,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/guardduty/model/DataSourceConfigurationsResult.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/MemberFeaturesConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -81,42 +82,60 @@ namespace Model
 
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline const DataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<MemberFeaturesConfigurationResult>& GetFeatures() const{ return m_features; }
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline void SetDataSources(const DataSourceConfigurationsResult& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+    inline void SetFeatures(const Aws::Vector<MemberFeaturesConfigurationResult>& value) { m_featuresHasBeenSet = true; m_features = value; }
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline void SetDataSources(DataSourceConfigurationsResult&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+    inline void SetFeatures(Aws::Vector<MemberFeaturesConfigurationResult>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline MemberDataSourceConfiguration& WithDataSources(const DataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+    inline MemberDataSourceConfiguration& WithFeatures(const Aws::Vector<MemberFeaturesConfigurationResult>& value) { SetFeatures(value); return *this;}
 
     /**
-     * <p>Contains information on the status of data sources for the account.</p>
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
      */
-    inline MemberDataSourceConfiguration& WithDataSources(DataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
+    inline MemberDataSourceConfiguration& WithFeatures(Aws::Vector<MemberFeaturesConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
+     */
+    inline MemberDataSourceConfiguration& AddFeatures(const MemberFeaturesConfigurationResult& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>Contains information about the status of the features for the member
+     * account.</p>
+     */
+    inline MemberDataSourceConfiguration& AddFeatures(MemberFeaturesConfigurationResult&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    DataSourceConfigurationsResult m_dataSources;
-    bool m_dataSourcesHasBeenSet = false;
+    Aws::Vector<MemberFeaturesConfigurationResult> m_features;
+    bool m_featuresHasBeenSet = false;
   };
 
 } // namespace Model

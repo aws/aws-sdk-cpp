@@ -63,18 +63,21 @@ GetDetectorResult& GetDetectorResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("dataSources"))
-  {
-    m_dataSources = jsonValue.GetObject("dataSources");
-
-  }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("features"))
+  {
+    Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
+    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+    {
+      m_features.push_back(featuresJsonList[featuresIndex].AsObject());
     }
   }
 

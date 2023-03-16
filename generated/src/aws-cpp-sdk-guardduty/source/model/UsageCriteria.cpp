@@ -20,15 +20,15 @@ namespace Model
 
 UsageCriteria::UsageCriteria() : 
     m_accountIdsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+    m_resourcesHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
 UsageCriteria::UsageCriteria(JsonView jsonValue) : 
     m_accountIdsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+    m_resourcesHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -45,16 +45,6 @@ UsageCriteria& UsageCriteria::operator =(JsonView jsonValue)
     m_accountIdsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("dataSources"))
-  {
-    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
-    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
-    {
-      m_dataSources.push_back(DataSourceMapper::GetDataSourceForName(dataSourcesJsonList[dataSourcesIndex].AsString()));
-    }
-    m_dataSourcesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -63,6 +53,16 @@ UsageCriteria& UsageCriteria::operator =(JsonView jsonValue)
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());
     }
     m_resourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("features"))
+  {
+    Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
+    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+    {
+      m_features.push_back(UsageFeatureMapper::GetUsageFeatureForName(featuresJsonList[featuresIndex].AsString()));
+    }
+    m_featuresHasBeenSet = true;
   }
 
   return *this;
@@ -83,17 +83,6 @@ JsonValue UsageCriteria::Jsonize() const
 
   }
 
-  if(m_dataSourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
-   for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
-   {
-     dataSourcesJsonList[dataSourcesIndex].AsString(DataSourceMapper::GetNameForDataSource(m_dataSources[dataSourcesIndex]));
-   }
-   payload.WithArray("dataSources", std::move(dataSourcesJsonList));
-
-  }
-
   if(m_resourcesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
@@ -102,6 +91,17 @@ JsonValue UsageCriteria::Jsonize() const
      resourcesJsonList[resourcesIndex].AsString(m_resources[resourcesIndex]);
    }
    payload.WithArray("resources", std::move(resourcesJsonList));
+
+  }
+
+  if(m_featuresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsString(UsageFeatureMapper::GetNameForUsageFeature(m_features[featuresIndex]));
+   }
+   payload.WithArray("features", std::move(featuresJsonList));
 
   }
 
