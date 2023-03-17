@@ -1562,6 +1562,31 @@ namespace Model
      */
     inline RedshiftSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
+     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     */
+    inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
+
+    /**
+     * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
+     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     */
+    inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
+
+    /**
+     * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
+     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     */
+    inline void SetMapBooleanAsBoolean(bool value) { m_mapBooleanAsBooleanHasBeenSet = true; m_mapBooleanAsBoolean = value; }
+
+    /**
+     * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
+     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     */
+    inline RedshiftSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
+
   private:
 
     bool m_acceptAnyDate;
@@ -1653,6 +1678,9 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
+
+    bool m_mapBooleanAsBoolean;
+    bool m_mapBooleanAsBooleanHasBeenSet = false;
   };
 
 } // namespace Model

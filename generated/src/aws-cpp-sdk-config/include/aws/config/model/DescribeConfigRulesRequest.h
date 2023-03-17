@@ -144,38 +144,56 @@ namespace Model
 
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline const DescribeConfigRulesFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline void SetFilters(const DescribeConfigRulesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline void SetFilters(DescribeConfigRulesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline DescribeConfigRulesRequest& WithFilters(const DescribeConfigRulesFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
-     * returns an unfiltered list.</p>
+     * <p>Returns a list of Detective or Proactive Config rules. By default, this API
+     * returns an unfiltered list. For more information on Detective or Proactive
+     * Config rules, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
+     * <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
      */
     inline DescribeConfigRulesRequest& WithFilters(DescribeConfigRulesFilters&& value) { SetFilters(std::move(value)); return *this;}
 

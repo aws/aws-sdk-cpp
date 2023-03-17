@@ -83,7 +83,9 @@ OracleSettings::OracleSettings() :
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
     m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
     m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false)
+    m_trimSpaceInCharHasBeenSet(false),
+    m_convertTimestampWithZoneToUTC(false),
+    m_convertTimestampWithZoneToUTCHasBeenSet(false)
 {
 }
 
@@ -152,7 +154,9 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
     m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
     m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false)
+    m_trimSpaceInCharHasBeenSet(false),
+    m_convertTimestampWithZoneToUTC(false),
+    m_convertTimestampWithZoneToUTCHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -449,6 +453,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_trimSpaceInCharHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConvertTimestampWithZoneToUTC"))
+  {
+    m_convertTimestampWithZoneToUTC = jsonValue.GetBool("ConvertTimestampWithZoneToUTC");
+
+    m_convertTimestampWithZoneToUTCHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -703,6 +714,12 @@ JsonValue OracleSettings::Jsonize() const
   if(m_trimSpaceInCharHasBeenSet)
   {
    payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
+
+  }
+
+  if(m_convertTimestampWithZoneToUTCHasBeenSet)
+  {
+   payload.WithBool("ConvertTimestampWithZoneToUTC", m_convertTimestampWithZoneToUTC);
 
   }
 

@@ -2353,6 +2353,31 @@ namespace Model
      */
     inline OracleSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
 
+
+    /**
+     * <p>When true, converts timestamps with the <code>timezone</code> datatype to
+     * their UTC value.</p>
+     */
+    inline bool GetConvertTimestampWithZoneToUTC() const{ return m_convertTimestampWithZoneToUTC; }
+
+    /**
+     * <p>When true, converts timestamps with the <code>timezone</code> datatype to
+     * their UTC value.</p>
+     */
+    inline bool ConvertTimestampWithZoneToUTCHasBeenSet() const { return m_convertTimestampWithZoneToUTCHasBeenSet; }
+
+    /**
+     * <p>When true, converts timestamps with the <code>timezone</code> datatype to
+     * their UTC value.</p>
+     */
+    inline void SetConvertTimestampWithZoneToUTC(bool value) { m_convertTimestampWithZoneToUTCHasBeenSet = true; m_convertTimestampWithZoneToUTC = value; }
+
+    /**
+     * <p>When true, converts timestamps with the <code>timezone</code> datatype to
+     * their UTC value.</p>
+     */
+    inline OracleSettings& WithConvertTimestampWithZoneToUTC(bool value) { SetConvertTimestampWithZoneToUTC(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
@@ -2477,6 +2502,9 @@ namespace Model
 
     bool m_trimSpaceInChar;
     bool m_trimSpaceInCharHasBeenSet = false;
+
+    bool m_convertTimestampWithZoneToUTC;
+    bool m_convertTimestampWithZoneToUTCHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1071,6 +1071,31 @@ namespace Model
      */
     inline PostgreSQLSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
 
+
+    /**
+     * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     */
+    inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
+
+    /**
+     * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     */
+    inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
+
+    /**
+     * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     */
+    inline void SetMapBooleanAsBoolean(bool value) { m_mapBooleanAsBooleanHasBeenSet = true; m_mapBooleanAsBoolean = value; }
+
+    /**
+     * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
+     * PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+     */
+    inline PostgreSQLSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -1129,6 +1154,9 @@ namespace Model
 
     bool m_trimSpaceInChar;
     bool m_trimSpaceInCharHasBeenSet = false;
+
+    bool m_mapBooleanAsBoolean;
+    bool m_mapBooleanAsBooleanHasBeenSet = false;
   };
 
 } // namespace Model

@@ -73,6 +73,10 @@ namespace Aws
         static const int ILLEGAL_TYPE_HASH = HashingUtils::HashString("ILLEGAL_TYPE");
         static const int ILLEGAL_ENDED_BILLINGGROUP_HASH = HashingUtils::HashString("ILLEGAL_ENDED_BILLINGGROUP");
         static const int ILLEGAL_TIERING_INPUT_HASH = HashingUtils::HashString("ILLEGAL_TIERING_INPUT");
+        static const int ILLEGAL_OPERATION_HASH = HashingUtils::HashString("ILLEGAL_OPERATION");
+        static const int ILLEGAL_USAGE_TYPE_HASH = HashingUtils::HashString("ILLEGAL_USAGE_TYPE");
+        static const int INVALID_SKU_COMBO_HASH = HashingUtils::HashString("INVALID_SKU_COMBO");
+        static const int INVALID_FILTER_HASH = HashingUtils::HashString("INVALID_FILTER");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -290,6 +294,22 @@ namespace Aws
           {
             return ValidationExceptionReason::ILLEGAL_TIERING_INPUT;
           }
+          else if (hashCode == ILLEGAL_OPERATION_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_OPERATION;
+          }
+          else if (hashCode == ILLEGAL_USAGE_TYPE_HASH)
+          {
+            return ValidationExceptionReason::ILLEGAL_USAGE_TYPE;
+          }
+          else if (hashCode == INVALID_SKU_COMBO_HASH)
+          {
+            return ValidationExceptionReason::INVALID_SKU_COMBO;
+          }
+          else if (hashCode == INVALID_FILTER_HASH)
+          {
+            return ValidationExceptionReason::INVALID_FILTER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -410,6 +430,14 @@ namespace Aws
             return "ILLEGAL_ENDED_BILLINGGROUP";
           case ValidationExceptionReason::ILLEGAL_TIERING_INPUT:
             return "ILLEGAL_TIERING_INPUT";
+          case ValidationExceptionReason::ILLEGAL_OPERATION:
+            return "ILLEGAL_OPERATION";
+          case ValidationExceptionReason::ILLEGAL_USAGE_TYPE:
+            return "ILLEGAL_USAGE_TYPE";
+          case ValidationExceptionReason::INVALID_SKU_COMBO:
+            return "INVALID_SKU_COMBO";
+          case ValidationExceptionReason::INVALID_FILTER:
+            return "INVALID_FILTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

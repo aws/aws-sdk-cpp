@@ -81,44 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline const ConformancePackComplianceType& GetConformancePackComplianceStatus() const{ return m_conformancePackComplianceStatus; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline bool ConformancePackComplianceStatusHasBeenSet() const { return m_conformancePackComplianceStatusHasBeenSet; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline void SetConformancePackComplianceStatus(const ConformancePackComplianceType& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = value; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline void SetConformancePackComplianceStatus(ConformancePackComplianceType&& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = std::move(value); }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(const ConformancePackComplianceType& value) { SetConformancePackComplianceStatus(value); return *this;}
 
     /**
-     * <p>The status of the conformance pack. The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>The status of the conformance pack.</p>
      */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(ConformancePackComplianceType&& value) { SetConformancePackComplianceStatus(std::move(value)); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/billingconductor/model/BillingGroupStatus.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,55 @@ namespace Model
      */
     inline ListBillingGroupsFilter& WithPricingPlan(const char* value) { SetPricingPlan(value); return *this;}
 
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline const Aws::Vector<BillingGroupStatus>& GetStatuses() const{ return m_statuses; }
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline void SetStatuses(const Aws::Vector<BillingGroupStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline void SetStatuses(Aws::Vector<BillingGroupStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline ListBillingGroupsFilter& WithStatuses(const Aws::Vector<BillingGroupStatus>& value) { SetStatuses(value); return *this;}
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline ListBillingGroupsFilter& WithStatuses(Aws::Vector<BillingGroupStatus>&& value) { SetStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline ListBillingGroupsFilter& AddStatuses(const BillingGroupStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
+
+    /**
+     * <p> A list of billing groups to retrieve their current status for a specific
+     * time range </p>
+     */
+    inline ListBillingGroupsFilter& AddStatuses(BillingGroupStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_arns;
@@ -141,6 +191,9 @@ namespace Model
 
     Aws::String m_pricingPlan;
     bool m_pricingPlanHasBeenSet = false;
+
+    Aws::Vector<BillingGroupStatus> m_statuses;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

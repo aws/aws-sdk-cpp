@@ -895,11 +895,14 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns the current status of the specified configuration recorder. If a
-         * configuration recorder is not specified, this action returns the status of all
-         * configuration recorders associated with the account.</p>  <p>Currently,
-         * you can specify only one configuration recorder per region in your account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Returns the current status of the specified configuration recorder as well as
+         * the status of the last recording event for the recorder. If a configuration
+         * recorder is not specified, this action returns the status of all configuration
+         * recorders associated with the account.</p>  <p>Currently, you can specify
+         * only one configuration recorder per region in your account. For a detailed
+         * status of recording events over time, add your Config events to Amazon
+         * CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
@@ -1877,8 +1880,13 @@ namespace ConfigService
          * evaluation ID from the proactive rules that were run. The results indicate which
          * evaluation context was used to evaluate the rules, which resource details were
          * evaluated, the evaluation mode that was run, and whether the resource details
-         * comply with the configuration of the proactive rules. </p><p><h3>See Also:</h3> 
-         * <a
+         * comply with the configuration of the proactive rules. </p>  <p>To see
+         * additional information about the evaluation result, such as which rule flagged a
+         * resource as NON_COMPLIANT, use the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html">GetComplianceDetailsByResource</a>
+         * API. For more information, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples">Examples</a>
+         * section.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">AWS
          * API Reference</a></p>
          */
@@ -2110,7 +2118,12 @@ namespace ConfigService
 
         /**
          * <p>Authorizes the aggregator account and region to collect data from the source
-         * account and region. </p><p><h3>See Also:</h3>   <a
+         * account and region. </p>  <p> <code>PutAggregationAuthorization</code> is
+         * an idempotent API. Subsequent requests won’t create a duplicate resource if one
+         * was already created. If a following request has different <code>tags</code>
+         * values, Config will ignore these differences and treat it as an idempotent
+         * request of the previous. In this case, <code>tags</code> will not be updated,
+         * even if they are different.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -2140,36 +2153,44 @@ namespace ConfigService
          * Config rules you can have per account, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
          * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>There
-         * are two types of rules: Config Custom Rules and Config Managed Rules. You can
-         * use <code>PutConfigRule</code> to create both Config custom rules and Config
-         * managed rules.</p> <p>Custom rules are rules that you can create using either
-         * Guard or Lambda functions. Guard (<a
-         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-         * Repository</a>) is a policy-as-code language that allows you to write policies
-         * that are enforced by Config Custom Policy rules. Lambda uses custom code that
-         * you upload to evaluate a custom rule. If you are adding a new Custom Lambda
-         * rule, you first need to create an Lambda function that the rule invokes to
-         * evaluate your resources. When you use <code>PutConfigRule</code> to add a Custom
-         * Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that
-         * Lambda assigns to the function. You specify the ARN in the
-         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-         * object, which is part of the <code>ConfigRule</code> object. </p> <p>Managed
-         * rules are predefined, customizable rules created by Config. For a list of
-         * managed rules, see <a
+         * are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom
+         * Rules</i>. You can use <code>PutConfigRule</code> to create both Config Managed
+         * Rules and Config Custom Rules.</p> <p>Config Managed Rules are predefined,
+         * customizable rules created by Config. For a list of managed rules, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
          * of Config Managed Rules</a>. If you are adding an Config managed rule, you must
          * specify the rule's identifier for the <code>SourceIdentifier</code> key.</p>
-         * <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the
-         * <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or
-         * the <code>ConfigRuleId</code>. These values are generated by Config for new
-         * rules.</p> <p>If you are updating a rule that you added previously, you can
-         * specify the rule by <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
+         * <p>Config Custom Rules are rules that you create from scratch. There are two
+         * ways to create Config custom rules: with Lambda functions (<a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function">
+         * Lambda Developer Guide</a>) and with Guard (<a
+         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
+         * Repository</a>), a policy-as-code language. Config custom rules created with
+         * Lambda are called <i>Config Custom Lambda Rules</i> and Config custom rules
+         * created with Guard are called <i>Config Custom Policy Rules</i>.</p> <p>If you
+         * are adding a new Config Custom Lambda rule, you first need to create an Lambda
+         * function that the rule invokes to evaluate your resources. When you use
+         * <code>PutConfigRule</code> to add a Custom Lambda rule to Config, you must
+         * specify the Amazon Resource Name (ARN) that Lambda assigns to the function. You
+         * specify the ARN in the <code>SourceIdentifier</code> key. This key is part of
+         * the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+         * object. </p> <p>For any new Config rule that you add, specify the
+         * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
+         * specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These
+         * values are generated by Config for new rules.</p> <p>If you are updating a rule
+         * that you added previously, you can specify the rule by
+         * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>For more information about developing and using Config
          * rules, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-         * Amazon Web Services resource Configurations with Config</a> in the <i>Config
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Resources with Config Rules</a> in the <i>Config Developer Guide</i>.</p> 
+         * <p> <code>PutConfigRule</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if one was already created. If a following request
+         * has different <code>tags</code> values, Config will ignore these differences and
+         * treat it as an idempotent request of the previous. In this case,
+         * <code>tags</code> will not be updated, even if they are different.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">AWS
          * API Reference</a></p>
          */
@@ -2210,8 +2231,13 @@ namespace ConfigService
          * is a valid delegated administrator.</p> <p>To register a delegated
          * administrator, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-         * a Delegated Administrator</a> in the <i>Config developer guide</i>. </p>
-         * <p><h3>See Also:</h3>   <a
+         * a Delegated Administrator</a> in the <i>Config developer guide</i>. </p> 
+         *  <p> <code>PutConfigurationAggregator</code> is an idempotent API.
+         * Subsequent requests won’t create a duplicate resource if one was already
+         * created. If a following request has different <code>tags</code> values, Config
+         * will ignore these differences and treat it as an idempotent request of the
+         * previous. In this case, <code>tags</code> will not be updated, even if they are
+         * different.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          */
@@ -2411,28 +2437,32 @@ namespace ConfigService
          * with delegated administrator, register a delegated administrator by calling
          * Amazon Web Services Organization <code>register-delegated-administrator</code>
          * for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>There are two
-         * types of rules: Config Custom Rules and Config Managed Rules. You can use
-         * <code>PutOrganizationConfigRule</code> to create both Config custom rules and
-         * Config managed rules.</p> <p>Custom rules are rules that you can create using
-         * either Guard or Lambda functions. Guard (<a
-         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
-         * Repository</a>) is a policy-as-code language that allows you to write policies
-         * that are enforced by Config Custom Policy rules. Lambda uses custom code that
-         * you upload to evaluate a custom rule. If you are adding a new Custom Lambda
-         * rule, you first need to create an Lambda function in the management account or a
-         * delegated administrator that the rule invokes to evaluate your resources. You
-         * also need to create an IAM role in the managed account that can be assumed by
-         * the Lambda function. When you use <code>PutOrganizationConfigRule</code> to add
-         * a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
-         * that Lambda assigns to the function.</p> <p>Managed rules are predefined,
+         * types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>. You
+         * can use <code>PutOrganizationConfigRule</code> to create both Config Managed
+         * Rules and Config Custom Rules.</p> <p>Config Managed Rules are predefined,
          * customizable rules created by Config. For a list of managed rules, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
          * of Config Managed Rules</a>. If you are adding an Config managed rule, you must
          * specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
-         *  <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to
-         * enable all features in an organization.</p> <p>Make sure to specify one of
-         * either <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy
-         * rules, <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or
+         * <p>Config Custom Rules are rules that you create from scratch. There are two
+         * ways to create Config custom rules: with Lambda functions (<a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function">
+         * Lambda Developer Guide</a>) and with Guard (<a
+         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
+         * Repository</a>), a policy-as-code language. Config custom rules created with
+         * Lambda are called <i>Config Custom Lambda Rules</i> and Config custom rules
+         * created with Guard are called <i>Config Custom Policy Rules</i>.</p> <p>If you
+         * are adding a new Config Custom Lambda rule, you first need to create an Lambda
+         * function in the management account or a delegated administrator that the rule
+         * invokes to evaluate your resources. You also need to create an IAM role in the
+         * managed account that can be assumed by the Lambda function. When you use
+         * <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config,
+         * you must specify the Amazon Resource Name (ARN) that Lambda assigns to the
+         * function.</p>  <p>Prerequisite: Ensure you call
+         * <code>EnableAllFeatures</code> API to enable all features in an
+         * organization.</p> <p>Make sure to specify one of either
+         * <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy rules,
+         * <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or
          * <code>OrganizationManagedRuleMetadata</code> for managed rules.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
@@ -2550,14 +2580,28 @@ namespace ConfigService
         }
 
         /**
-         * <p>A remediation exception is when a specific resource is no longer considered
+         * <p>A remediation exception is when a specified resource is no longer considered
          * for auto-remediation. This API adds a new exception or updates an existing
-         * exception for a specific resource with a specific Config rule. </p> 
-         * <p>Config generates a remediation exception when a problem occurs executing a
-         * remediation action to a specific resource. Remediation exceptions blocks
-         * auto-remediation until the exception is cleared.</p>   <p>To place
-         * an exception on an Amazon Web Services resource, ensure remediation is set as
-         * manual remediation.</p> <p><h3>See Also:</h3>   <a
+         * exception for a specified resource with a specified Config rule. </p> 
+         * <p>Config generates a remediation exception when a problem occurs running a
+         * remediation action for a specified resource. Remediation exceptions blocks
+         * auto-remediation until the exception is cleared.</p>   <p>When
+         * placing an exception on an Amazon Web Services resource, it is recommended that
+         * remediation is set as manual remediation until the given Config rule for the
+         * specified resource evaluates the resource as <code>NON_COMPLIANT</code>. Once
+         * the resource has been evaluated as <code>NON_COMPLIANT</code>, you can add
+         * remediation exceptions and change the remediation type back from Manual to Auto
+         * if you want to use auto-remediation. Otherwise, using auto-remediation before a
+         * <code>NON_COMPLIANT</code> evaluation result can delete resources before the
+         * exception is applied.</p>   <p>Placing an exception can only be
+         * performed on resources that are <code>NON_COMPLIANT</code>. If you use this API
+         * for <code>COMPLIANT</code> resources or resources that are
+         * <code>NOT_APPLICABLE</code>, a remediation exception will not be generated. For
+         * more information on the conditions that initiate the possible Config evaluation
+         * results, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
+         * | Config Rules</a> in the Config Developer Guide.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          */
@@ -2651,8 +2695,13 @@ namespace ConfigService
          * <p>Saves a new query or updates an existing saved query. The
          * <code>QueryName</code> must be unique for a single Amazon Web Services account
          * and a single Amazon Web Services Region. You can create upto 300 queries in a
-         * single Amazon Web Services account and a single Amazon Web Services
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * single Amazon Web Services account and a single Amazon Web Services Region.</p>
+         *  <p> <code>PutStoredQuery</code> is an idempotent API. Subsequent requests
+         * won’t create a duplicate resource if one was already created. If a following
+         * request has different <code>tags</code> values, Config will ignore these
+         * differences and treat it as an idempotent request of the previous. In this case,
+         * <code>tags</code> will not be updated, even if they are different.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          */
@@ -2860,8 +2909,17 @@ namespace ConfigService
          * runs an execution against the resource details with all of the Config rules in
          * your account that match with the specified proactive mode and resource type.</p>
          *  <p>Ensure you have the <code>cloudformation:DescribeType</code> role
-         * setup to validate the resource type schema. </p> <p><h3>See Also:</h3>  
-         * <a
+         * setup to validate the resource type schema.</p> <p>You can find the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+         * type schema</a> in "<i>Amazon Web Services public extensions</i>" within the
+         * CloudFormation registry or with the following CLI commmand: <code>aws
+         * cloudformation describe-type --type-name "AWS::S3::Bucket" --type
+         * RESOURCE</code>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+         * extensions through the CloudFormation registry</a> and <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+         * Web Services resource and property types reference</a> in the CloudFormation
+         * User Guide.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">AWS
          * API Reference</a></p>
          */
@@ -2915,8 +2973,9 @@ namespace ConfigService
         /**
          * <p>Associates the specified tags to a resource with the specified resourceArn.
          * If existing tags on a resource are not specified in the request parameters, they
-         * are not changed. When a resource is deleted, the tags associated with that
-         * resource are deleted as well.</p><p><h3>See Also:</h3>   <a
+         * are not changed. If existing tags are specified, however, then their values will
+         * be updated. When a resource is deleted, the tags associated with that resource
+         * are deleted as well.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource">AWS
          * API Reference</a></p>
          */

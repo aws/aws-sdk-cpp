@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,61 @@ namespace Model
      */
     inline ListAccountAssociationsFilter& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline ListAccountAssociationsFilter& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline ListAccountAssociationsFilter& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline ListAccountAssociationsFilter& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline ListAccountAssociationsFilter& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The list of Amazon Web Services IDs to retrieve their associated billing
+     * group for a given time range. </p>
+     */
+    inline ListAccountAssociationsFilter& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_association;
@@ -154,6 +210,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_accountIds;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

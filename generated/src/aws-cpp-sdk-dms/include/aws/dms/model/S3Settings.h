@@ -2692,6 +2692,31 @@ namespace Model
      */
     inline S3Settings& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
+
+    /**
+     * <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog
+     * lets you use Athena to query your data.</p>
+     */
+    inline bool GetGlueCatalogGeneration() const{ return m_glueCatalogGeneration; }
+
+    /**
+     * <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog
+     * lets you use Athena to query your data.</p>
+     */
+    inline bool GlueCatalogGenerationHasBeenSet() const { return m_glueCatalogGenerationHasBeenSet; }
+
+    /**
+     * <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog
+     * lets you use Athena to query your data.</p>
+     */
+    inline void SetGlueCatalogGeneration(bool value) { m_glueCatalogGenerationHasBeenSet = true; m_glueCatalogGeneration = value; }
+
+    /**
+     * <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog
+     * lets you use Athena to query your data.</p>
+     */
+    inline S3Settings& WithGlueCatalogGeneration(bool value) { SetGlueCatalogGeneration(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
@@ -2813,6 +2838,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
+
+    bool m_glueCatalogGeneration;
+    bool m_glueCatalogGenerationHasBeenSet = false;
   };
 
 } // namespace Model

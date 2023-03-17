@@ -33,7 +33,10 @@ CustomLineItemVersionListElement::CustomLineItemVersionListElement() :
     m_associationSize(0),
     m_associationSizeHasBeenSet(false),
     m_startBillingPeriodHasBeenSet(false),
-    m_endBillingPeriodHasBeenSet(false)
+    m_endBillingPeriodHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_startTime(0),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,10 @@ CustomLineItemVersionListElement::CustomLineItemVersionListElement(JsonView json
     m_associationSize(0),
     m_associationSizeHasBeenSet(false),
     m_startBillingPeriodHasBeenSet(false),
-    m_endBillingPeriodHasBeenSet(false)
+    m_endBillingPeriodHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_startTime(0),
+    m_startTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +142,20 @@ CustomLineItemVersionListElement& CustomLineItemVersionListElement::operator =(J
     m_endBillingPeriodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartTime"))
+  {
+    m_startTime = jsonValue.GetInt64("StartTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -205,6 +225,18 @@ JsonValue CustomLineItemVersionListElement::Jsonize() const
   if(m_endBillingPeriodHasBeenSet)
   {
    payload.WithString("EndBillingPeriod", m_endBillingPeriod);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithInt64("StartTime", m_startTime);
 
   }
 

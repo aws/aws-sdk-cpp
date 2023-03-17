@@ -73,63 +73,72 @@ namespace Model
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline ListDiscoveredResourcesRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline ListDiscoveredResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline ListDiscoveredResourcesRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline ListDiscoveredResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of only those resources that you want Config to list in the response.
      * If you do not specify this parameter, Config lists all resources of the
-     * specified type that it has discovered.</p>
+     * specified type that it has discovered. You can list a minimum of 1 resourceID
+     * and a maximum of 20 resourceIds.</p>
      */
     inline ListDiscoveredResourcesRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 

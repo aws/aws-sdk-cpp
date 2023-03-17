@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/MessageFormatValue.h>
 #include <aws/dms/model/KafkaSecurityProtocol.h>
+#include <aws/dms/model/KafkaSaslMechanism.h>
 #include <utility>
 
 namespace Aws
@@ -851,6 +852,55 @@ namespace Model
      */
     inline KafkaSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
 
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline const KafkaSaslMechanism& GetSaslMechanism() const{ return m_saslMechanism; }
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline bool SaslMechanismHasBeenSet() const { return m_saslMechanismHasBeenSet; }
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline void SetSaslMechanism(const KafkaSaslMechanism& value) { m_saslMechanismHasBeenSet = true; m_saslMechanism = value; }
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline void SetSaslMechanism(KafkaSaslMechanism&& value) { m_saslMechanismHasBeenSet = true; m_saslMechanism = std::move(value); }
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline KafkaSettings& WithSaslMechanism(const KafkaSaslMechanism& value) { SetSaslMechanism(value); return *this;}
+
+    /**
+     * <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code>
+     * mechanism by default. DMS versions 3.5.0 and later also support the
+     * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code> </p>
+     */
+    inline KafkaSettings& WithSaslMechanism(KafkaSaslMechanism&& value) { SetSaslMechanism(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_broker;
@@ -906,6 +956,9 @@ namespace Model
 
     bool m_noHexPrefix;
     bool m_noHexPrefixHasBeenSet = false;
+
+    KafkaSaslMechanism m_saslMechanism;
+    bool m_saslMechanismHasBeenSet = false;
   };
 
 } // namespace Model

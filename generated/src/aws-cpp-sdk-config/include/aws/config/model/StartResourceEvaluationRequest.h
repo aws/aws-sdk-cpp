@@ -100,38 +100,38 @@ namespace Model
 
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline StartResourceEvaluationRequest& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
 
     /**
-     * <p>The mode of an evaluation. The valid value for this API is
-     * <code>Proactive</code>.</p>
+     * <p>The mode of an evaluation. The valid values for this API are
+     * <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
      */
     inline StartResourceEvaluationRequest& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
 

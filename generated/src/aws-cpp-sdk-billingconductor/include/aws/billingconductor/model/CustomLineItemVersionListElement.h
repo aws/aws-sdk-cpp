@@ -405,6 +405,76 @@ namespace Model
      */
     inline CustomLineItemVersionListElement& WithEndBillingPeriod(const char* value) { SetEndBillingPeriod(value); return *this;}
 
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline CustomLineItemVersionListElement& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline CustomLineItemVersionListElement& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of custom line item Amazon Resource Names (ARNs) to retrieve
+     * information. </p>
+     */
+    inline CustomLineItemVersionListElement& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p> The inclusive start time. </p>
+     */
+    inline long long GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p> The inclusive start time. </p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p> The inclusive start time. </p>
+     */
+    inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p> The inclusive start time. </p>
+     */
+    inline CustomLineItemVersionListElement& WithStartTime(long long value) { SetStartTime(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -439,6 +509,12 @@ namespace Model
 
     Aws::String m_endBillingPeriod;
     bool m_endBillingPeriodHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
+    long long m_startTime;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

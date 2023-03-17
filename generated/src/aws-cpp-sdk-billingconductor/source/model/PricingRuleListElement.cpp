@@ -36,7 +36,9 @@ PricingRuleListElement::PricingRuleListElement() :
     m_lastModifiedTime(0),
     m_lastModifiedTimeHasBeenSet(false),
     m_billingEntityHasBeenSet(false),
-    m_tieringHasBeenSet(false)
+    m_tieringHasBeenSet(false),
+    m_usageTypeHasBeenSet(false),
+    m_operationHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ PricingRuleListElement::PricingRuleListElement(JsonView jsonValue) :
     m_lastModifiedTime(0),
     m_lastModifiedTimeHasBeenSet(false),
     m_billingEntityHasBeenSet(false),
-    m_tieringHasBeenSet(false)
+    m_tieringHasBeenSet(false),
+    m_usageTypeHasBeenSet(false),
+    m_operationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +153,20 @@ PricingRuleListElement& PricingRuleListElement::operator =(JsonView jsonValue)
     m_tieringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UsageType"))
+  {
+    m_usageType = jsonValue.GetString("UsageType");
+
+    m_usageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Operation"))
+  {
+    m_operation = jsonValue.GetString("Operation");
+
+    m_operationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +241,18 @@ JsonValue PricingRuleListElement::Jsonize() const
   if(m_tieringHasBeenSet)
   {
    payload.WithObject("Tiering", m_tiering.Jsonize());
+
+  }
+
+  if(m_usageTypeHasBeenSet)
+  {
+   payload.WithString("UsageType", m_usageType);
+
+  }
+
+  if(m_operationHasBeenSet)
+  {
+   payload.WithString("Operation", m_operation);
 
   }
 

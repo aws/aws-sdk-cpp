@@ -7,6 +7,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/SafeguardPolicy.h>
+#include <aws/dms/model/TlogAccessMode.h>
 #include <utility>
 
 namespace Aws
@@ -829,6 +830,58 @@ namespace Model
      */
     inline MicrosoftSQLServerSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
 
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline const TlogAccessMode& GetTlogAccessMode() const{ return m_tlogAccessMode; }
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline bool TlogAccessModeHasBeenSet() const { return m_tlogAccessModeHasBeenSet; }
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline void SetTlogAccessMode(const TlogAccessMode& value) { m_tlogAccessModeHasBeenSet = true; m_tlogAccessMode = value; }
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline void SetTlogAccessMode(TlogAccessMode&& value) { m_tlogAccessModeHasBeenSet = true; m_tlogAccessMode = std::move(value); }
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithTlogAccessMode(const TlogAccessMode& value) { SetTlogAccessMode(value); return *this;}
+
+    /**
+     * <p>Indicates the mode used to fetch CDC data.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithTlogAccessMode(TlogAccessMode&& value) { SetTlogAccessMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Forces LOB lookup on inline LOB.</p>
+     */
+    inline bool GetForceLobLookup() const{ return m_forceLobLookup; }
+
+    /**
+     * <p>Forces LOB lookup on inline LOB.</p>
+     */
+    inline bool ForceLobLookupHasBeenSet() const { return m_forceLobLookupHasBeenSet; }
+
+    /**
+     * <p>Forces LOB lookup on inline LOB.</p>
+     */
+    inline void SetForceLobLookup(bool value) { m_forceLobLookupHasBeenSet = true; m_forceLobLookup = value; }
+
+    /**
+     * <p>Forces LOB lookup on inline LOB.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithForceLobLookup(bool value) { SetForceLobLookup(value); return *this;}
+
   private:
 
     int m_port;
@@ -875,6 +928,12 @@ namespace Model
 
     bool m_trimSpaceInChar;
     bool m_trimSpaceInCharHasBeenSet = false;
+
+    TlogAccessMode m_tlogAccessMode;
+    bool m_tlogAccessModeHasBeenSet = false;
+
+    bool m_forceLobLookup;
+    bool m_forceLobLookupHasBeenSet = false;
   };
 
 } // namespace Model
