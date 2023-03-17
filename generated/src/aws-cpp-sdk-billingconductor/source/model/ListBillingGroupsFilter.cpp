@@ -20,13 +20,15 @@ namespace Model
 
 ListBillingGroupsFilter::ListBillingGroupsFilter() : 
     m_arnsHasBeenSet(false),
-    m_pricingPlanHasBeenSet(false)
+    m_pricingPlanHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
 }
 
 ListBillingGroupsFilter::ListBillingGroupsFilter(JsonView jsonValue) : 
     m_arnsHasBeenSet(false),
-    m_pricingPlanHasBeenSet(false)
+    m_pricingPlanHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ ListBillingGroupsFilter& ListBillingGroupsFilter::operator =(JsonView jsonValue)
     m_pricingPlanHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Statuses"))
+  {
+    Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("Statuses");
+    for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
+    {
+      m_statuses.push_back(BillingGroupStatusMapper::GetBillingGroupStatusForName(statusesJsonList[statusesIndex].AsString()));
+    }
+    m_statusesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue ListBillingGroupsFilter::Jsonize() const
   if(m_pricingPlanHasBeenSet)
   {
    payload.WithString("PricingPlan", m_pricingPlan);
+
+  }
+
+  if(m_statusesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> statusesJsonList(m_statuses.size());
+   for(unsigned statusesIndex = 0; statusesIndex < statusesJsonList.GetLength(); ++statusesIndex)
+   {
+     statusesJsonList[statusesIndex].AsString(BillingGroupStatusMapper::GetNameForBillingGroupStatus(m_statuses[statusesIndex]));
+   }
+   payload.WithArray("Statuses", std::move(statusesJsonList));
 
   }
 

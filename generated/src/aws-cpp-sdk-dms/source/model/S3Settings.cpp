@@ -85,7 +85,9 @@ S3Settings::S3Settings() :
     m_datePartitionTimezoneHasBeenSet(false),
     m_addTrailingPaddingCharacter(false),
     m_addTrailingPaddingCharacterHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false)
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_glueCatalogGeneration(false),
+    m_glueCatalogGenerationHasBeenSet(false)
 {
 }
 
@@ -156,7 +158,9 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_datePartitionTimezoneHasBeenSet(false),
     m_addTrailingPaddingCharacter(false),
     m_addTrailingPaddingCharacterHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false)
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_glueCatalogGeneration(false),
+    m_glueCatalogGenerationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -443,6 +447,13 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_expectedBucketOwnerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GlueCatalogGeneration"))
+  {
+    m_glueCatalogGeneration = jsonValue.GetBool("GlueCatalogGeneration");
+
+    m_glueCatalogGenerationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -679,6 +690,12 @@ JsonValue S3Settings::Jsonize() const
   if(m_expectedBucketOwnerHasBeenSet)
   {
    payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
+
+  }
+
+  if(m_glueCatalogGenerationHasBeenSet)
+  {
+   payload.WithBool("GlueCatalogGeneration", m_glueCatalogGeneration);
 
   }
 

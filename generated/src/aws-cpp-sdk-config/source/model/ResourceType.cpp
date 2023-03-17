@@ -184,6 +184,93 @@ namespace Aws
         static const int AWS_SES_ContactList_HASH = HashingUtils::HashString("AWS::SES::ContactList");
         static const int AWS_SES_ConfigurationSet_HASH = HashingUtils::HashString("AWS::SES::ConfigurationSet");
         static const int AWS_Route53_HostedZone_HASH = HashingUtils::HashString("AWS::Route53::HostedZone");
+        static const int AWS_IoTEvents_Input_HASH = HashingUtils::HashString("AWS::IoTEvents::Input");
+        static const int AWS_IoTEvents_DetectorModel_HASH = HashingUtils::HashString("AWS::IoTEvents::DetectorModel");
+        static const int AWS_IoTEvents_AlarmModel_HASH = HashingUtils::HashString("AWS::IoTEvents::AlarmModel");
+        static const int AWS_ServiceDiscovery_HttpNamespace_HASH = HashingUtils::HashString("AWS::ServiceDiscovery::HttpNamespace");
+        static const int AWS_Events_EventBus_HASH = HashingUtils::HashString("AWS::Events::EventBus");
+        static const int AWS_ImageBuilder_ContainerRecipe_HASH = HashingUtils::HashString("AWS::ImageBuilder::ContainerRecipe");
+        static const int AWS_ImageBuilder_DistributionConfiguration_HASH = HashingUtils::HashString("AWS::ImageBuilder::DistributionConfiguration");
+        static const int AWS_ImageBuilder_InfrastructureConfiguration_HASH = HashingUtils::HashString("AWS::ImageBuilder::InfrastructureConfiguration");
+        static const int AWS_DataSync_LocationObjectStorage_HASH = HashingUtils::HashString("AWS::DataSync::LocationObjectStorage");
+        static const int AWS_DataSync_LocationHDFS_HASH = HashingUtils::HashString("AWS::DataSync::LocationHDFS");
+        static const int AWS_Glue_Classifier_HASH = HashingUtils::HashString("AWS::Glue::Classifier");
+        static const int AWS_Route53RecoveryReadiness_Cell_HASH = HashingUtils::HashString("AWS::Route53RecoveryReadiness::Cell");
+        static const int AWS_Route53RecoveryReadiness_ReadinessCheck_HASH = HashingUtils::HashString("AWS::Route53RecoveryReadiness::ReadinessCheck");
+        static const int AWS_ECR_RegistryPolicy_HASH = HashingUtils::HashString("AWS::ECR::RegistryPolicy");
+        static const int AWS_Backup_ReportPlan_HASH = HashingUtils::HashString("AWS::Backup::ReportPlan");
+        static const int AWS_Lightsail_Certificate_HASH = HashingUtils::HashString("AWS::Lightsail::Certificate");
+        static const int AWS_RUM_AppMonitor_HASH = HashingUtils::HashString("AWS::RUM::AppMonitor");
+        static const int AWS_Events_Endpoint_HASH = HashingUtils::HashString("AWS::Events::Endpoint");
+        static const int AWS_SES_ReceiptRuleSet_HASH = HashingUtils::HashString("AWS::SES::ReceiptRuleSet");
+        static const int AWS_Events_Archive_HASH = HashingUtils::HashString("AWS::Events::Archive");
+        static const int AWS_Events_ApiDestination_HASH = HashingUtils::HashString("AWS::Events::ApiDestination");
+        static const int AWS_Lightsail_Disk_HASH = HashingUtils::HashString("AWS::Lightsail::Disk");
+        static const int AWS_FIS_ExperimentTemplate_HASH = HashingUtils::HashString("AWS::FIS::ExperimentTemplate");
+        static const int AWS_DataSync_LocationFSxWindows_HASH = HashingUtils::HashString("AWS::DataSync::LocationFSxWindows");
+        static const int AWS_SES_ReceiptFilter_HASH = HashingUtils::HashString("AWS::SES::ReceiptFilter");
+        static const int AWS_GuardDuty_Filter_HASH = HashingUtils::HashString("AWS::GuardDuty::Filter");
+        static const int AWS_SES_Template_HASH = HashingUtils::HashString("AWS::SES::Template");
+        static const int AWS_AmazonMQ_Broker_HASH = HashingUtils::HashString("AWS::AmazonMQ::Broker");
+        static const int AWS_AppConfig_Environment_HASH = HashingUtils::HashString("AWS::AppConfig::Environment");
+        static const int AWS_AppConfig_ConfigurationProfile_HASH = HashingUtils::HashString("AWS::AppConfig::ConfigurationProfile");
+        static const int AWS_Cloud9_EnvironmentEC2_HASH = HashingUtils::HashString("AWS::Cloud9::EnvironmentEC2");
+        static const int AWS_EventSchemas_Registry_HASH = HashingUtils::HashString("AWS::EventSchemas::Registry");
+        static const int AWS_EventSchemas_RegistryPolicy_HASH = HashingUtils::HashString("AWS::EventSchemas::RegistryPolicy");
+        static const int AWS_EventSchemas_Discoverer_HASH = HashingUtils::HashString("AWS::EventSchemas::Discoverer");
+        static const int AWS_FraudDetector_Label_HASH = HashingUtils::HashString("AWS::FraudDetector::Label");
+        static const int AWS_FraudDetector_EntityType_HASH = HashingUtils::HashString("AWS::FraudDetector::EntityType");
+        static const int AWS_FraudDetector_Variable_HASH = HashingUtils::HashString("AWS::FraudDetector::Variable");
+        static const int AWS_FraudDetector_Outcome_HASH = HashingUtils::HashString("AWS::FraudDetector::Outcome");
+        static const int AWS_IoT_Authorizer_HASH = HashingUtils::HashString("AWS::IoT::Authorizer");
+        static const int AWS_IoT_SecurityProfile_HASH = HashingUtils::HashString("AWS::IoT::SecurityProfile");
+        static const int AWS_IoT_RoleAlias_HASH = HashingUtils::HashString("AWS::IoT::RoleAlias");
+        static const int AWS_IoT_Dimension_HASH = HashingUtils::HashString("AWS::IoT::Dimension");
+        static const int AWS_IoTAnalytics_Datastore_HASH = HashingUtils::HashString("AWS::IoTAnalytics::Datastore");
+        static const int AWS_Lightsail_Bucket_HASH = HashingUtils::HashString("AWS::Lightsail::Bucket");
+        static const int AWS_Lightsail_StaticIp_HASH = HashingUtils::HashString("AWS::Lightsail::StaticIp");
+        static const int AWS_MediaPackage_PackagingGroup_HASH = HashingUtils::HashString("AWS::MediaPackage::PackagingGroup");
+        static const int AWS_Route53RecoveryReadiness_RecoveryGroup_HASH = HashingUtils::HashString("AWS::Route53RecoveryReadiness::RecoveryGroup");
+        static const int AWS_ResilienceHub_ResiliencyPolicy_HASH = HashingUtils::HashString("AWS::ResilienceHub::ResiliencyPolicy");
+        static const int AWS_Transfer_Workflow_HASH = HashingUtils::HashString("AWS::Transfer::Workflow");
+        static const int AWS_EKS_IdentityProviderConfig_HASH = HashingUtils::HashString("AWS::EKS::IdentityProviderConfig");
+        static const int AWS_EKS_Addon_HASH = HashingUtils::HashString("AWS::EKS::Addon");
+        static const int AWS_Glue_MLTransform_HASH = HashingUtils::HashString("AWS::Glue::MLTransform");
+        static const int AWS_IoT_Policy_HASH = HashingUtils::HashString("AWS::IoT::Policy");
+        static const int AWS_IoT_MitigationAction_HASH = HashingUtils::HashString("AWS::IoT::MitigationAction");
+        static const int AWS_IoTTwinMaker_Workspace_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::Workspace");
+        static const int AWS_IoTTwinMaker_Entity_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::Entity");
+        static const int AWS_IoTAnalytics_Dataset_HASH = HashingUtils::HashString("AWS::IoTAnalytics::Dataset");
+        static const int AWS_IoTAnalytics_Pipeline_HASH = HashingUtils::HashString("AWS::IoTAnalytics::Pipeline");
+        static const int AWS_IoTAnalytics_Channel_HASH = HashingUtils::HashString("AWS::IoTAnalytics::Channel");
+        static const int AWS_IoTSiteWise_Dashboard_HASH = HashingUtils::HashString("AWS::IoTSiteWise::Dashboard");
+        static const int AWS_IoTSiteWise_Project_HASH = HashingUtils::HashString("AWS::IoTSiteWise::Project");
+        static const int AWS_IoTSiteWise_Portal_HASH = HashingUtils::HashString("AWS::IoTSiteWise::Portal");
+        static const int AWS_IoTSiteWise_AssetModel_HASH = HashingUtils::HashString("AWS::IoTSiteWise::AssetModel");
+        static const int AWS_IVS_Channel_HASH = HashingUtils::HashString("AWS::IVS::Channel");
+        static const int AWS_IVS_RecordingConfiguration_HASH = HashingUtils::HashString("AWS::IVS::RecordingConfiguration");
+        static const int AWS_IVS_PlaybackKeyPair_HASH = HashingUtils::HashString("AWS::IVS::PlaybackKeyPair");
+        static const int AWS_KinesisAnalyticsV2_Application_HASH = HashingUtils::HashString("AWS::KinesisAnalyticsV2::Application");
+        static const int AWS_RDS_GlobalCluster_HASH = HashingUtils::HashString("AWS::RDS::GlobalCluster");
+        static const int AWS_S3_MultiRegionAccessPoint_HASH = HashingUtils::HashString("AWS::S3::MultiRegionAccessPoint");
+        static const int AWS_DeviceFarm_TestGridProject_HASH = HashingUtils::HashString("AWS::DeviceFarm::TestGridProject");
+        static const int AWS_Budgets_BudgetsAction_HASH = HashingUtils::HashString("AWS::Budgets::BudgetsAction");
+        static const int AWS_Lex_Bot_HASH = HashingUtils::HashString("AWS::Lex::Bot");
+        static const int AWS_CodeGuruReviewer_RepositoryAssociation_HASH = HashingUtils::HashString("AWS::CodeGuruReviewer::RepositoryAssociation");
+        static const int AWS_IoT_CustomMetric_HASH = HashingUtils::HashString("AWS::IoT::CustomMetric");
+        static const int AWS_Route53Resolver_FirewallDomainList_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallDomainList");
+        static const int AWS_RoboMaker_RobotApplicationVersion_HASH = HashingUtils::HashString("AWS::RoboMaker::RobotApplicationVersion");
+        static const int AWS_EC2_TrafficMirrorSession_HASH = HashingUtils::HashString("AWS::EC2::TrafficMirrorSession");
+        static const int AWS_IoTSiteWise_Gateway_HASH = HashingUtils::HashString("AWS::IoTSiteWise::Gateway");
+        static const int AWS_Lex_BotAlias_HASH = HashingUtils::HashString("AWS::Lex::BotAlias");
+        static const int AWS_LookoutMetrics_Alert_HASH = HashingUtils::HashString("AWS::LookoutMetrics::Alert");
+        static const int AWS_IoT_AccountAuditConfiguration_HASH = HashingUtils::HashString("AWS::IoT::AccountAuditConfiguration");
+        static const int AWS_EC2_TrafficMirrorTarget_HASH = HashingUtils::HashString("AWS::EC2::TrafficMirrorTarget");
+        static const int AWS_S3_StorageLens_HASH = HashingUtils::HashString("AWS::S3::StorageLens");
+        static const int AWS_IoT_ScheduledAudit_HASH = HashingUtils::HashString("AWS::IoT::ScheduledAudit");
+        static const int AWS_Events_Connection_HASH = HashingUtils::HashString("AWS::Events::Connection");
+        static const int AWS_EventSchemas_Schema_HASH = HashingUtils::HashString("AWS::EventSchemas::Schema");
+        static const int AWS_MediaPackage_PackagingConfiguration_HASH = HashingUtils::HashString("AWS::MediaPackage::PackagingConfiguration");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1016,6 +1103,445 @@ namespace Aws
             enumValue = ResourceType::AWS_Route53_HostedZone;
             return true;
           }
+          else if (hashCode == AWS_IoTEvents_Input_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTEvents_Input;
+            return true;
+          }
+          else if (hashCode == AWS_IoTEvents_DetectorModel_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTEvents_DetectorModel;
+            return true;
+          }
+          else if (hashCode == AWS_IoTEvents_AlarmModel_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTEvents_AlarmModel;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceDiscovery_HttpNamespace_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceDiscovery_HttpNamespace;
+            return true;
+          }
+          else if (hashCode == AWS_Events_EventBus_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_EventBus;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_ContainerRecipe_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_ContainerRecipe;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_DistributionConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_DistributionConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_InfrastructureConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_InfrastructureConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationObjectStorage_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationObjectStorage;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationHDFS_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationHDFS;
+            return true;
+          }
+          else if (hashCode == AWS_Glue_Classifier_HASH)
+          {
+            enumValue = ResourceType::AWS_Glue_Classifier;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryReadiness_Cell_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryReadiness_Cell;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryReadiness_ReadinessCheck_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryReadiness_ReadinessCheck;
+            return true;
+          }
+          else if (hashCode == AWS_ECR_RegistryPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_ECR_RegistryPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_Backup_ReportPlan_HASH)
+          {
+            enumValue = ResourceType::AWS_Backup_ReportPlan;
+            return true;
+          }
+          else if (hashCode == AWS_Lightsail_Certificate_HASH)
+          {
+            enumValue = ResourceType::AWS_Lightsail_Certificate;
+            return true;
+          }
+          else if (hashCode == AWS_RUM_AppMonitor_HASH)
+          {
+            enumValue = ResourceType::AWS_RUM_AppMonitor;
+            return true;
+          }
+          else if (hashCode == AWS_Events_Endpoint_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_Endpoint;
+            return true;
+          }
+          else if (hashCode == AWS_SES_ReceiptRuleSet_HASH)
+          {
+            enumValue = ResourceType::AWS_SES_ReceiptRuleSet;
+            return true;
+          }
+          else if (hashCode == AWS_Events_Archive_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_Archive;
+            return true;
+          }
+          else if (hashCode == AWS_Events_ApiDestination_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_ApiDestination;
+            return true;
+          }
+          else if (hashCode == AWS_Lightsail_Disk_HASH)
+          {
+            enumValue = ResourceType::AWS_Lightsail_Disk;
+            return true;
+          }
+          else if (hashCode == AWS_FIS_ExperimentTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_FIS_ExperimentTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationFSxWindows_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationFSxWindows;
+            return true;
+          }
+          else if (hashCode == AWS_SES_ReceiptFilter_HASH)
+          {
+            enumValue = ResourceType::AWS_SES_ReceiptFilter;
+            return true;
+          }
+          else if (hashCode == AWS_GuardDuty_Filter_HASH)
+          {
+            enumValue = ResourceType::AWS_GuardDuty_Filter;
+            return true;
+          }
+          else if (hashCode == AWS_SES_Template_HASH)
+          {
+            enumValue = ResourceType::AWS_SES_Template;
+            return true;
+          }
+          else if (hashCode == AWS_AmazonMQ_Broker_HASH)
+          {
+            enumValue = ResourceType::AWS_AmazonMQ_Broker;
+            return true;
+          }
+          else if (hashCode == AWS_AppConfig_Environment_HASH)
+          {
+            enumValue = ResourceType::AWS_AppConfig_Environment;
+            return true;
+          }
+          else if (hashCode == AWS_AppConfig_ConfigurationProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_AppConfig_ConfigurationProfile;
+            return true;
+          }
+          else if (hashCode == AWS_Cloud9_EnvironmentEC2_HASH)
+          {
+            enumValue = ResourceType::AWS_Cloud9_EnvironmentEC2;
+            return true;
+          }
+          else if (hashCode == AWS_EventSchemas_Registry_HASH)
+          {
+            enumValue = ResourceType::AWS_EventSchemas_Registry;
+            return true;
+          }
+          else if (hashCode == AWS_EventSchemas_RegistryPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_EventSchemas_RegistryPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_EventSchemas_Discoverer_HASH)
+          {
+            enumValue = ResourceType::AWS_EventSchemas_Discoverer;
+            return true;
+          }
+          else if (hashCode == AWS_FraudDetector_Label_HASH)
+          {
+            enumValue = ResourceType::AWS_FraudDetector_Label;
+            return true;
+          }
+          else if (hashCode == AWS_FraudDetector_EntityType_HASH)
+          {
+            enumValue = ResourceType::AWS_FraudDetector_EntityType;
+            return true;
+          }
+          else if (hashCode == AWS_FraudDetector_Variable_HASH)
+          {
+            enumValue = ResourceType::AWS_FraudDetector_Variable;
+            return true;
+          }
+          else if (hashCode == AWS_FraudDetector_Outcome_HASH)
+          {
+            enumValue = ResourceType::AWS_FraudDetector_Outcome;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_Authorizer_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_Authorizer;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_SecurityProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_SecurityProfile;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_RoleAlias_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_RoleAlias;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_Dimension_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_Dimension;
+            return true;
+          }
+          else if (hashCode == AWS_IoTAnalytics_Datastore_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTAnalytics_Datastore;
+            return true;
+          }
+          else if (hashCode == AWS_Lightsail_Bucket_HASH)
+          {
+            enumValue = ResourceType::AWS_Lightsail_Bucket;
+            return true;
+          }
+          else if (hashCode == AWS_Lightsail_StaticIp_HASH)
+          {
+            enumValue = ResourceType::AWS_Lightsail_StaticIp;
+            return true;
+          }
+          else if (hashCode == AWS_MediaPackage_PackagingGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_MediaPackage_PackagingGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryReadiness_RecoveryGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryReadiness_RecoveryGroup;
+            return true;
+          }
+          else if (hashCode == AWS_ResilienceHub_ResiliencyPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_ResilienceHub_ResiliencyPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_Transfer_Workflow_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Workflow;
+            return true;
+          }
+          else if (hashCode == AWS_EKS_IdentityProviderConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_EKS_IdentityProviderConfig;
+            return true;
+          }
+          else if (hashCode == AWS_EKS_Addon_HASH)
+          {
+            enumValue = ResourceType::AWS_EKS_Addon;
+            return true;
+          }
+          else if (hashCode == AWS_Glue_MLTransform_HASH)
+          {
+            enumValue = ResourceType::AWS_Glue_MLTransform;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_Policy_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_Policy;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_MitigationAction_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_MitigationAction;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_Workspace_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_Workspace;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_Entity_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_Entity;
+            return true;
+          }
+          else if (hashCode == AWS_IoTAnalytics_Dataset_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTAnalytics_Dataset;
+            return true;
+          }
+          else if (hashCode == AWS_IoTAnalytics_Pipeline_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTAnalytics_Pipeline;
+            return true;
+          }
+          else if (hashCode == AWS_IoTAnalytics_Channel_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTAnalytics_Channel;
+            return true;
+          }
+          else if (hashCode == AWS_IoTSiteWise_Dashboard_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTSiteWise_Dashboard;
+            return true;
+          }
+          else if (hashCode == AWS_IoTSiteWise_Project_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTSiteWise_Project;
+            return true;
+          }
+          else if (hashCode == AWS_IoTSiteWise_Portal_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTSiteWise_Portal;
+            return true;
+          }
+          else if (hashCode == AWS_IoTSiteWise_AssetModel_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTSiteWise_AssetModel;
+            return true;
+          }
+          else if (hashCode == AWS_IVS_Channel_HASH)
+          {
+            enumValue = ResourceType::AWS_IVS_Channel;
+            return true;
+          }
+          else if (hashCode == AWS_IVS_RecordingConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_IVS_RecordingConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_IVS_PlaybackKeyPair_HASH)
+          {
+            enumValue = ResourceType::AWS_IVS_PlaybackKeyPair;
+            return true;
+          }
+          else if (hashCode == AWS_KinesisAnalyticsV2_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_KinesisAnalyticsV2_Application;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_GlobalCluster_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_GlobalCluster;
+            return true;
+          }
+          else if (hashCode == AWS_S3_MultiRegionAccessPoint_HASH)
+          {
+            enumValue = ResourceType::AWS_S3_MultiRegionAccessPoint;
+            return true;
+          }
+          else if (hashCode == AWS_DeviceFarm_TestGridProject_HASH)
+          {
+            enumValue = ResourceType::AWS_DeviceFarm_TestGridProject;
+            return true;
+          }
+          else if (hashCode == AWS_Budgets_BudgetsAction_HASH)
+          {
+            enumValue = ResourceType::AWS_Budgets_BudgetsAction;
+            return true;
+          }
+          else if (hashCode == AWS_Lex_Bot_HASH)
+          {
+            enumValue = ResourceType::AWS_Lex_Bot;
+            return true;
+          }
+          else if (hashCode == AWS_CodeGuruReviewer_RepositoryAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeGuruReviewer_RepositoryAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_CustomMetric_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_CustomMetric;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_FirewallDomainList_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_FirewallDomainList;
+            return true;
+          }
+          else if (hashCode == AWS_RoboMaker_RobotApplicationVersion_HASH)
+          {
+            enumValue = ResourceType::AWS_RoboMaker_RobotApplicationVersion;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TrafficMirrorSession_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TrafficMirrorSession;
+            return true;
+          }
+          else if (hashCode == AWS_IoTSiteWise_Gateway_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTSiteWise_Gateway;
+            return true;
+          }
+          else if (hashCode == AWS_Lex_BotAlias_HASH)
+          {
+            enumValue = ResourceType::AWS_Lex_BotAlias;
+            return true;
+          }
+          else if (hashCode == AWS_LookoutMetrics_Alert_HASH)
+          {
+            enumValue = ResourceType::AWS_LookoutMetrics_Alert;
+            return true;
+          }
+          return false;
+        }
+        static bool GetEnumForNameHelper2(int hashCode, ResourceType& enumValue)
+        {
+          if (hashCode == AWS_IoT_AccountAuditConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_AccountAuditConfiguration;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TrafficMirrorTarget_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TrafficMirrorTarget;
+            return true;
+          }
+          else if (hashCode == AWS_S3_StorageLens_HASH)
+          {
+            enumValue = ResourceType::AWS_S3_StorageLens;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_ScheduledAudit_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_ScheduledAudit;
+            return true;
+          }
+          else if (hashCode == AWS_Events_Connection_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_Connection;
+            return true;
+          }
+          else if (hashCode == AWS_EventSchemas_Schema_HASH)
+          {
+            enumValue = ResourceType::AWS_EventSchemas_Schema;
+            return true;
+          }
+          else if (hashCode == AWS_MediaPackage_PackagingConfiguration_HASH)
+          {
+            enumValue = ResourceType::AWS_MediaPackage_PackagingConfiguration;
+            return true;
+          }
           return false;
         }
 
@@ -1523,6 +2049,275 @@ namespace Aws
           case ResourceType::AWS_Route53_HostedZone:
             value = "AWS::Route53::HostedZone";
             return true;
+          case ResourceType::AWS_IoTEvents_Input:
+            value = "AWS::IoTEvents::Input";
+            return true;
+          case ResourceType::AWS_IoTEvents_DetectorModel:
+            value = "AWS::IoTEvents::DetectorModel";
+            return true;
+          case ResourceType::AWS_IoTEvents_AlarmModel:
+            value = "AWS::IoTEvents::AlarmModel";
+            return true;
+          case ResourceType::AWS_ServiceDiscovery_HttpNamespace:
+            value = "AWS::ServiceDiscovery::HttpNamespace";
+            return true;
+          case ResourceType::AWS_Events_EventBus:
+            value = "AWS::Events::EventBus";
+            return true;
+          case ResourceType::AWS_ImageBuilder_ContainerRecipe:
+            value = "AWS::ImageBuilder::ContainerRecipe";
+            return true;
+          case ResourceType::AWS_ImageBuilder_DistributionConfiguration:
+            value = "AWS::ImageBuilder::DistributionConfiguration";
+            return true;
+          case ResourceType::AWS_ImageBuilder_InfrastructureConfiguration:
+            value = "AWS::ImageBuilder::InfrastructureConfiguration";
+            return true;
+          case ResourceType::AWS_DataSync_LocationObjectStorage:
+            value = "AWS::DataSync::LocationObjectStorage";
+            return true;
+          case ResourceType::AWS_DataSync_LocationHDFS:
+            value = "AWS::DataSync::LocationHDFS";
+            return true;
+          case ResourceType::AWS_Glue_Classifier:
+            value = "AWS::Glue::Classifier";
+            return true;
+          case ResourceType::AWS_Route53RecoveryReadiness_Cell:
+            value = "AWS::Route53RecoveryReadiness::Cell";
+            return true;
+          case ResourceType::AWS_Route53RecoveryReadiness_ReadinessCheck:
+            value = "AWS::Route53RecoveryReadiness::ReadinessCheck";
+            return true;
+          case ResourceType::AWS_ECR_RegistryPolicy:
+            value = "AWS::ECR::RegistryPolicy";
+            return true;
+          case ResourceType::AWS_Backup_ReportPlan:
+            value = "AWS::Backup::ReportPlan";
+            return true;
+          case ResourceType::AWS_Lightsail_Certificate:
+            value = "AWS::Lightsail::Certificate";
+            return true;
+          case ResourceType::AWS_RUM_AppMonitor:
+            value = "AWS::RUM::AppMonitor";
+            return true;
+          case ResourceType::AWS_Events_Endpoint:
+            value = "AWS::Events::Endpoint";
+            return true;
+          case ResourceType::AWS_SES_ReceiptRuleSet:
+            value = "AWS::SES::ReceiptRuleSet";
+            return true;
+          case ResourceType::AWS_Events_Archive:
+            value = "AWS::Events::Archive";
+            return true;
+          case ResourceType::AWS_Events_ApiDestination:
+            value = "AWS::Events::ApiDestination";
+            return true;
+          case ResourceType::AWS_Lightsail_Disk:
+            value = "AWS::Lightsail::Disk";
+            return true;
+          case ResourceType::AWS_FIS_ExperimentTemplate:
+            value = "AWS::FIS::ExperimentTemplate";
+            return true;
+          case ResourceType::AWS_DataSync_LocationFSxWindows:
+            value = "AWS::DataSync::LocationFSxWindows";
+            return true;
+          case ResourceType::AWS_SES_ReceiptFilter:
+            value = "AWS::SES::ReceiptFilter";
+            return true;
+          case ResourceType::AWS_GuardDuty_Filter:
+            value = "AWS::GuardDuty::Filter";
+            return true;
+          case ResourceType::AWS_SES_Template:
+            value = "AWS::SES::Template";
+            return true;
+          case ResourceType::AWS_AmazonMQ_Broker:
+            value = "AWS::AmazonMQ::Broker";
+            return true;
+          case ResourceType::AWS_AppConfig_Environment:
+            value = "AWS::AppConfig::Environment";
+            return true;
+          case ResourceType::AWS_AppConfig_ConfigurationProfile:
+            value = "AWS::AppConfig::ConfigurationProfile";
+            return true;
+          case ResourceType::AWS_Cloud9_EnvironmentEC2:
+            value = "AWS::Cloud9::EnvironmentEC2";
+            return true;
+          case ResourceType::AWS_EventSchemas_Registry:
+            value = "AWS::EventSchemas::Registry";
+            return true;
+          case ResourceType::AWS_EventSchemas_RegistryPolicy:
+            value = "AWS::EventSchemas::RegistryPolicy";
+            return true;
+          case ResourceType::AWS_EventSchemas_Discoverer:
+            value = "AWS::EventSchemas::Discoverer";
+            return true;
+          case ResourceType::AWS_FraudDetector_Label:
+            value = "AWS::FraudDetector::Label";
+            return true;
+          case ResourceType::AWS_FraudDetector_EntityType:
+            value = "AWS::FraudDetector::EntityType";
+            return true;
+          case ResourceType::AWS_FraudDetector_Variable:
+            value = "AWS::FraudDetector::Variable";
+            return true;
+          case ResourceType::AWS_FraudDetector_Outcome:
+            value = "AWS::FraudDetector::Outcome";
+            return true;
+          case ResourceType::AWS_IoT_Authorizer:
+            value = "AWS::IoT::Authorizer";
+            return true;
+          case ResourceType::AWS_IoT_SecurityProfile:
+            value = "AWS::IoT::SecurityProfile";
+            return true;
+          case ResourceType::AWS_IoT_RoleAlias:
+            value = "AWS::IoT::RoleAlias";
+            return true;
+          case ResourceType::AWS_IoT_Dimension:
+            value = "AWS::IoT::Dimension";
+            return true;
+          case ResourceType::AWS_IoTAnalytics_Datastore:
+            value = "AWS::IoTAnalytics::Datastore";
+            return true;
+          case ResourceType::AWS_Lightsail_Bucket:
+            value = "AWS::Lightsail::Bucket";
+            return true;
+          case ResourceType::AWS_Lightsail_StaticIp:
+            value = "AWS::Lightsail::StaticIp";
+            return true;
+          case ResourceType::AWS_MediaPackage_PackagingGroup:
+            value = "AWS::MediaPackage::PackagingGroup";
+            return true;
+          case ResourceType::AWS_Route53RecoveryReadiness_RecoveryGroup:
+            value = "AWS::Route53RecoveryReadiness::RecoveryGroup";
+            return true;
+          case ResourceType::AWS_ResilienceHub_ResiliencyPolicy:
+            value = "AWS::ResilienceHub::ResiliencyPolicy";
+            return true;
+          case ResourceType::AWS_Transfer_Workflow:
+            value = "AWS::Transfer::Workflow";
+            return true;
+          case ResourceType::AWS_EKS_IdentityProviderConfig:
+            value = "AWS::EKS::IdentityProviderConfig";
+            return true;
+          case ResourceType::AWS_EKS_Addon:
+            value = "AWS::EKS::Addon";
+            return true;
+          case ResourceType::AWS_Glue_MLTransform:
+            value = "AWS::Glue::MLTransform";
+            return true;
+          case ResourceType::AWS_IoT_Policy:
+            value = "AWS::IoT::Policy";
+            return true;
+          case ResourceType::AWS_IoT_MitigationAction:
+            value = "AWS::IoT::MitigationAction";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_Workspace:
+            value = "AWS::IoTTwinMaker::Workspace";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_Entity:
+            value = "AWS::IoTTwinMaker::Entity";
+            return true;
+          case ResourceType::AWS_IoTAnalytics_Dataset:
+            value = "AWS::IoTAnalytics::Dataset";
+            return true;
+          case ResourceType::AWS_IoTAnalytics_Pipeline:
+            value = "AWS::IoTAnalytics::Pipeline";
+            return true;
+          case ResourceType::AWS_IoTAnalytics_Channel:
+            value = "AWS::IoTAnalytics::Channel";
+            return true;
+          case ResourceType::AWS_IoTSiteWise_Dashboard:
+            value = "AWS::IoTSiteWise::Dashboard";
+            return true;
+          case ResourceType::AWS_IoTSiteWise_Project:
+            value = "AWS::IoTSiteWise::Project";
+            return true;
+          case ResourceType::AWS_IoTSiteWise_Portal:
+            value = "AWS::IoTSiteWise::Portal";
+            return true;
+          case ResourceType::AWS_IoTSiteWise_AssetModel:
+            value = "AWS::IoTSiteWise::AssetModel";
+            return true;
+          case ResourceType::AWS_IVS_Channel:
+            value = "AWS::IVS::Channel";
+            return true;
+          case ResourceType::AWS_IVS_RecordingConfiguration:
+            value = "AWS::IVS::RecordingConfiguration";
+            return true;
+          case ResourceType::AWS_IVS_PlaybackKeyPair:
+            value = "AWS::IVS::PlaybackKeyPair";
+            return true;
+          case ResourceType::AWS_KinesisAnalyticsV2_Application:
+            value = "AWS::KinesisAnalyticsV2::Application";
+            return true;
+          case ResourceType::AWS_RDS_GlobalCluster:
+            value = "AWS::RDS::GlobalCluster";
+            return true;
+          case ResourceType::AWS_S3_MultiRegionAccessPoint:
+            value = "AWS::S3::MultiRegionAccessPoint";
+            return true;
+          case ResourceType::AWS_DeviceFarm_TestGridProject:
+            value = "AWS::DeviceFarm::TestGridProject";
+            return true;
+          case ResourceType::AWS_Budgets_BudgetsAction:
+            value = "AWS::Budgets::BudgetsAction";
+            return true;
+          case ResourceType::AWS_Lex_Bot:
+            value = "AWS::Lex::Bot";
+            return true;
+          case ResourceType::AWS_CodeGuruReviewer_RepositoryAssociation:
+            value = "AWS::CodeGuruReviewer::RepositoryAssociation";
+            return true;
+          case ResourceType::AWS_IoT_CustomMetric:
+            value = "AWS::IoT::CustomMetric";
+            return true;
+          case ResourceType::AWS_Route53Resolver_FirewallDomainList:
+            value = "AWS::Route53Resolver::FirewallDomainList";
+            return true;
+          case ResourceType::AWS_RoboMaker_RobotApplicationVersion:
+            value = "AWS::RoboMaker::RobotApplicationVersion";
+            return true;
+          case ResourceType::AWS_EC2_TrafficMirrorSession:
+            value = "AWS::EC2::TrafficMirrorSession";
+            return true;
+          case ResourceType::AWS_IoTSiteWise_Gateway:
+            value = "AWS::IoTSiteWise::Gateway";
+            return true;
+          case ResourceType::AWS_Lex_BotAlias:
+            value = "AWS::Lex::BotAlias";
+            return true;
+          case ResourceType::AWS_LookoutMetrics_Alert:
+            value = "AWS::LookoutMetrics::Alert";
+            return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper2(ResourceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_IoT_AccountAuditConfiguration:
+            value = "AWS::IoT::AccountAuditConfiguration";
+            return true;
+          case ResourceType::AWS_EC2_TrafficMirrorTarget:
+            value = "AWS::EC2::TrafficMirrorTarget";
+            return true;
+          case ResourceType::AWS_S3_StorageLens:
+            value = "AWS::S3::StorageLens";
+            return true;
+          case ResourceType::AWS_IoT_ScheduledAudit:
+            value = "AWS::IoT::ScheduledAudit";
+            return true;
+          case ResourceType::AWS_Events_Connection:
+            value = "AWS::Events::Connection";
+            return true;
+          case ResourceType::AWS_EventSchemas_Schema:
+            value = "AWS::EventSchemas::Schema";
+            return true;
+          case ResourceType::AWS_MediaPackage_PackagingConfiguration:
+            value = "AWS::MediaPackage::PackagingConfiguration";
+            return true;
           default:
             return false;
           }
@@ -1537,6 +2332,10 @@ namespace Aws
              return enumValue;
           }
           else if (GetEnumForNameHelper1(hashCode, enumValue))
+          {
+             return enumValue;
+          }
+          else if (GetEnumForNameHelper2(hashCode, enumValue))
           {
              return enumValue;
           }
@@ -1558,6 +2357,10 @@ namespace Aws
             return value;
           }
           else if (GetNameForEnumHelper1(enumValue, value))
+          {
+            return value;
+          }
+          else if (GetNameForEnumHelper2(enumValue, value))
           {
             return value;
           }

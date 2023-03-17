@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The current status of the configuration recorder.</p><p><h3>See Also:</h3>  
+   * <p>The current status of the configuration recorder.</p>  <p>For a
+   * detailed status of recording events over time, add your Config events to
+   * CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorderStatus">AWS
    * API Reference</a></p>
@@ -165,145 +167,151 @@ namespace Model
 
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline const RecorderStatus& GetLastStatus() const{ return m_lastStatus; }
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline void SetLastStatus(const RecorderStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline void SetLastStatus(RecorderStatus&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = std::move(value); }
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStatus(const RecorderStatus& value) { SetLastStatus(value); return *this;}
 
     /**
-     * <p>The last (previous) status of the recorder.</p>
+     * <p>The status of the latest recording event processed by the recorder.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStatus(RecorderStatus&& value) { SetLastStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline void SetLastErrorCode(const Aws::String& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = value; }
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline void SetLastErrorCode(Aws::String&& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = std::move(value); }
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline void SetLastErrorCode(const char* value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode.assign(value); }
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorCode(const Aws::String& value) { SetLastErrorCode(value); return *this;}
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorCode(Aws::String&& value) { SetLastErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code indicating that the recording failed.</p>
+     * <p>The latest error code from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline const Aws::String& GetLastErrorMessage() const{ return m_lastErrorMessage; }
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline void SetLastErrorMessage(const Aws::String& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = value; }
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline void SetLastErrorMessage(Aws::String&& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = std::move(value); }
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline void SetLastErrorMessage(const char* value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage.assign(value); }
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorMessage(const Aws::String& value) { SetLastErrorMessage(value); return *this;}
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorMessage(Aws::String&& value) { SetLastErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message indicating that the recording failed due to an error.</p>
+     * <p>The latest error message from when the recorder last failed.</p>
      */
     inline ConfigurationRecorderStatus& WithLastErrorMessage(const char* value) { SetLastErrorMessage(value); return *this;}
 
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline bool LastStatusChangeTimeHasBeenSet() const { return m_lastStatusChangeTimeHasBeenSet; }
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline void SetLastStatusChangeTime(const Aws::Utils::DateTime& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline void SetLastStatusChangeTime(Aws::Utils::DateTime&& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = std::move(value); }
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStatusChangeTime(const Aws::Utils::DateTime& value) { SetLastStatusChangeTime(value); return *this;}
 
     /**
-     * <p>The time when the status was last changed.</p>
+     * <p>The time of the latest change in status of an recording event processed by
+     * the recorder.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStatusChangeTime(Aws::Utils::DateTime&& value) { SetLastStatusChangeTime(std::move(value)); return *this;}
 

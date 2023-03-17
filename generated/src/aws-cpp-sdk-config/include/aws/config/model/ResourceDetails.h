@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about the resource being evaluated. </p><p><h3>See
+   * <p>Returns information about the resource being evaluated.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceDetails">AWS
    * API Reference</a></p>
@@ -171,32 +171,98 @@ namespace Model
 
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline const ResourceConfigurationSchemaType& GetResourceConfigurationSchemaType() const{ return m_resourceConfigurationSchemaType; }
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline bool ResourceConfigurationSchemaTypeHasBeenSet() const { return m_resourceConfigurationSchemaTypeHasBeenSet; }
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline void SetResourceConfigurationSchemaType(const ResourceConfigurationSchemaType& value) { m_resourceConfigurationSchemaTypeHasBeenSet = true; m_resourceConfigurationSchemaType = value; }
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline void SetResourceConfigurationSchemaType(ResourceConfigurationSchemaType&& value) { m_resourceConfigurationSchemaTypeHasBeenSet = true; m_resourceConfigurationSchemaType = std::move(value); }
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline ResourceDetails& WithResourceConfigurationSchemaType(const ResourceConfigurationSchemaType& value) { SetResourceConfigurationSchemaType(value); return *this;}
 
     /**
-     * <p>The schema type of the resource configuration.</p>
+     * <p>The schema type of the resource configuration.</p>  <p>You can find the
+     * <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+     * type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services
+     * public extensions</i>" within the CloudFormation registry or with the following
+     * CLI commmand: <code>aws cloudformation describe-type --type-name
+     * "AWS::S3::Bucket" --type RESOURCE</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation
+     * User Guide.</p> 
      */
     inline ResourceDetails& WithResourceConfigurationSchemaType(ResourceConfigurationSchemaType&& value) { SetResourceConfigurationSchemaType(std::move(value)); return *this;}
 

@@ -83,44 +83,32 @@ namespace Model
 
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>Compliance of the Config rule.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <p>Compliance of the Config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 

@@ -46,7 +46,9 @@ KafkaSettings::KafkaSettings() :
     m_saslUsernameHasBeenSet(false),
     m_saslPasswordHasBeenSet(false),
     m_noHexPrefix(false),
-    m_noHexPrefixHasBeenSet(false)
+    m_noHexPrefixHasBeenSet(false),
+    m_saslMechanism(KafkaSaslMechanism::NOT_SET),
+    m_saslMechanismHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ KafkaSettings::KafkaSettings(JsonView jsonValue) :
     m_saslUsernameHasBeenSet(false),
     m_saslPasswordHasBeenSet(false),
     m_noHexPrefix(false),
-    m_noHexPrefixHasBeenSet(false)
+    m_noHexPrefixHasBeenSet(false),
+    m_saslMechanism(KafkaSaslMechanism::NOT_SET),
+    m_saslMechanismHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -211,6 +215,13 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_noHexPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SaslMechanism"))
+  {
+    m_saslMechanism = KafkaSaslMechanismMapper::GetKafkaSaslMechanismForName(jsonValue.GetString("SaslMechanism"));
+
+    m_saslMechanismHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -322,6 +333,11 @@ JsonValue KafkaSettings::Jsonize() const
   {
    payload.WithBool("NoHexPrefix", m_noHexPrefix);
 
+  }
+
+  if(m_saslMechanismHasBeenSet)
+  {
+   payload.WithString("SaslMechanism", KafkaSaslMechanismMapper::GetNameForKafkaSaslMechanism(m_saslMechanism));
   }
 
   return payload;

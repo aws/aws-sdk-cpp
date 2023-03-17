@@ -63,7 +63,9 @@ RedshiftSettings::RedshiftSettings() :
     m_writeBufferSize(0),
     m_writeBufferSizeHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_mapBooleanAsBoolean(false),
+    m_mapBooleanAsBooleanHasBeenSet(false)
 {
 }
 
@@ -112,7 +114,9 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_writeBufferSize(0),
     m_writeBufferSizeHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_mapBooleanAsBoolean(false),
+    m_mapBooleanAsBooleanHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -329,6 +333,13 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MapBooleanAsBoolean"))
+  {
+    m_mapBooleanAsBoolean = jsonValue.GetBool("MapBooleanAsBoolean");
+
+    m_mapBooleanAsBooleanHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -512,6 +523,12 @@ JsonValue RedshiftSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_mapBooleanAsBooleanHasBeenSet)
+  {
+   payload.WithBool("MapBooleanAsBoolean", m_mapBooleanAsBoolean);
 
   }
 

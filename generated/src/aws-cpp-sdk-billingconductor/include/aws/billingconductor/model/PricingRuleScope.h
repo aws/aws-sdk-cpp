@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     GLOBAL,
     SERVICE,
-    BILLING_ENTITY
+    BILLING_ENTITY,
+    SKU
   };
 
 namespace PricingRuleScopeMapper

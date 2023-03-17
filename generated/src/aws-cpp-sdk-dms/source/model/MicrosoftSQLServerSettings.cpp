@@ -41,7 +41,11 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false)
+    m_trimSpaceInCharHasBeenSet(false),
+    m_tlogAccessMode(TlogAccessMode::NOT_SET),
+    m_tlogAccessModeHasBeenSet(false),
+    m_forceLobLookup(false),
+    m_forceLobLookupHasBeenSet(false)
 {
 }
 
@@ -68,7 +72,11 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings(JsonView jsonValue) :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false)
+    m_trimSpaceInCharHasBeenSet(false),
+    m_tlogAccessMode(TlogAccessMode::NOT_SET),
+    m_tlogAccessModeHasBeenSet(false),
+    m_forceLobLookup(false),
+    m_forceLobLookupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +188,20 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
     m_trimSpaceInCharHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TlogAccessMode"))
+  {
+    m_tlogAccessMode = TlogAccessModeMapper::GetTlogAccessModeForName(jsonValue.GetString("TlogAccessMode"));
+
+    m_tlogAccessModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ForceLobLookup"))
+  {
+    m_forceLobLookup = jsonValue.GetBool("ForceLobLookup");
+
+    m_forceLobLookupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -273,6 +295,17 @@ JsonValue MicrosoftSQLServerSettings::Jsonize() const
   if(m_trimSpaceInCharHasBeenSet)
   {
    payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
+
+  }
+
+  if(m_tlogAccessModeHasBeenSet)
+  {
+   payload.WithString("TlogAccessMode", TlogAccessModeMapper::GetNameForTlogAccessMode(m_tlogAccessMode));
+  }
+
+  if(m_forceLobLookupHasBeenSet)
+  {
+   payload.WithBool("ForceLobLookup", m_forceLobLookup);
 
   }
 

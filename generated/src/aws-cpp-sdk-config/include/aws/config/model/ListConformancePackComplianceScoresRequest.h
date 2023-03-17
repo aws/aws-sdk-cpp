@@ -241,49 +241,57 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> string in a prior request that you can use to get
-     * the paginated response for next set of conformance pack compliance scores.</p>
+     * the paginated response for the next set of conformance pack compliance
+     * scores.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
