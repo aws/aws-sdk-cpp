@@ -23,7 +23,8 @@ RegisterScalableTargetRequest::RegisterScalableTargetRequest() :
     m_maxCapacity(0),
     m_maxCapacityHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_suspendedStateHasBeenSet(false)
+    m_suspendedStateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String RegisterScalableTargetRequest::SerializePayload() const
   if(m_suspendedStateHasBeenSet)
   {
    payload.WithObject("SuspendedState", m_suspendedState.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

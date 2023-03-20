@@ -65,12 +65,14 @@ DBCluster::DBCluster() :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
     m_automaticRestartTimeHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_globalClusterIdentifierHasBeenSet(false)
 {
 }
 
@@ -119,12 +121,14 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
     m_automaticRestartTimeHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_globalClusterIdentifierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -399,6 +403,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_enabledCloudwatchLogsExportsHasBeenSet = true;
     }
+    XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
+    if(!pendingModifiedValuesNode.IsNull())
+    {
+      m_pendingModifiedValues = pendingModifiedValuesNode;
+      m_pendingModifiedValuesHasBeenSet = true;
+    }
     XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
     if(!deletionProtectionNode.IsNull())
     {
@@ -422,6 +432,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
       m_serverlessV2ScalingConfigurationHasBeenSet = true;
+    }
+    XmlNode globalClusterIdentifierNode = resultNode.FirstChild("GlobalClusterIdentifier");
+    if(!globalClusterIdentifierNode.IsNull())
+    {
+      m_globalClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterIdentifierNode.GetText());
+      m_globalClusterIdentifierHasBeenSet = true;
     }
   }
 
@@ -651,6 +667,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
+      pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -671,6 +694,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       Aws::StringStream serverlessV2ScalingConfigurationLocationAndMemberSs;
       serverlessV2ScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".ServerlessV2ScalingConfiguration";
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
 }
@@ -861,6 +889,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::String pendingModifiedValuesLocationAndMember(location);
+      pendingModifiedValuesLocationAndMember += ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMember.c_str());
+  }
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -878,6 +912,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
       serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
       m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
+  }
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+      oStream << location << ".GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 }
 

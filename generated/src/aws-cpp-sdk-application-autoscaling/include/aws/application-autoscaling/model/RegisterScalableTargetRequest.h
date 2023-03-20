@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/application-autoscaling/model/SuspendedState.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -890,11 +891,11 @@ namespace Model
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
      * capacity limit in response to changing demand. This property is required when
      * registering a new scalable target.</p> <p>Although you can specify a large
-     * maximum capacity, note that service quotas may impose lower limits. Each service
-     * has its own default quotas for the maximum capacity of the resource. If you want
-     * to specify a higher limit, you can request an increase. For more information,
-     * consult the documentation for that service. For information about the default
-     * quotas for each service, see <a
+     * maximum capacity, note that service quotas might impose lower limits. Each
+     * service has its own default quotas for the maximum capacity of the resource. If
+     * you want to specify a higher limit, you can request an increase. For more
+     * information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -906,11 +907,11 @@ namespace Model
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
      * capacity limit in response to changing demand. This property is required when
      * registering a new scalable target.</p> <p>Although you can specify a large
-     * maximum capacity, note that service quotas may impose lower limits. Each service
-     * has its own default quotas for the maximum capacity of the resource. If you want
-     * to specify a higher limit, you can request an increase. For more information,
-     * consult the documentation for that service. For information about the default
-     * quotas for each service, see <a
+     * maximum capacity, note that service quotas might impose lower limits. Each
+     * service has its own default quotas for the maximum capacity of the resource. If
+     * you want to specify a higher limit, you can request an increase. For more
+     * information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -922,11 +923,11 @@ namespace Model
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
      * capacity limit in response to changing demand. This property is required when
      * registering a new scalable target.</p> <p>Although you can specify a large
-     * maximum capacity, note that service quotas may impose lower limits. Each service
-     * has its own default quotas for the maximum capacity of the resource. If you want
-     * to specify a higher limit, you can request an increase. For more information,
-     * consult the documentation for that service. For information about the default
-     * quotas for each service, see <a
+     * maximum capacity, note that service quotas might impose lower limits. Each
+     * service has its own default quotas for the maximum capacity of the resource. If
+     * you want to specify a higher limit, you can request an increase. For more
+     * information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -938,11 +939,11 @@ namespace Model
      * effect, Application Auto Scaling can scale out (expand) as needed to the maximum
      * capacity limit in response to changing demand. This property is required when
      * registering a new scalable target.</p> <p>Although you can specify a large
-     * maximum capacity, note that service quotas may impose lower limits. Each service
-     * has its own default quotas for the maximum capacity of the resource. If you want
-     * to specify a higher limit, you can request an increase. For more information,
-     * consult the documentation for that service. For information about the default
-     * quotas for each service, see <a
+     * maximum capacity, note that service quotas might impose lower limits. Each
+     * service has its own default quotas for the maximum capacity of the resource. If
+     * you want to specify a higher limit, you can request an increase. For more
+     * information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -1155,6 +1156,176 @@ namespace Model
      */
     inline RegisterScalableTargetRequest& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Assigns one or more tags to the scalable target. Use this parameter to tag
+     * the scalable target when it is created. To tag an existing scalable target, use
+     * the <a>TagResource</a> operation.</p> <p>Each tag consists of a tag key and a
+     * tag value. Both the tag key and the tag value are required. You cannot have more
+     * than one tag on a scalable target with the same tag key.</p> <p>Use tags to
+     * control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline RegisterScalableTargetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     ServiceNamespace m_serviceNamespace;
@@ -1177,6 +1348,9 @@ namespace Model
 
     SuspendedState m_suspendedState;
     bool m_suspendedStateHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

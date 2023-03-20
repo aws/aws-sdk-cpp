@@ -52,7 +52,8 @@ enum class ApplicationAutoScalingErrors
   INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
-  OBJECT_NOT_FOUND
+  OBJECT_NOT_FOUND,
+  TOO_MANY_TAGS
 };
 
 class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingError : public Aws::Client::AWSError<ApplicationAutoScalingErrors>

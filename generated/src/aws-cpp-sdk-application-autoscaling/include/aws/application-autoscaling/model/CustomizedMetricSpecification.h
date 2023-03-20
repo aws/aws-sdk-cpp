@@ -64,7 +64,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
@@ -73,7 +73,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
@@ -91,7 +91,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
@@ -100,7 +100,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
@@ -109,7 +109,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline CustomizedMetricSpecification& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
@@ -118,7 +118,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline CustomizedMetricSpecification& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
@@ -127,7 +127,7 @@ namespace Model
      * <p>The name of the metric. To get the exact metric name, namespace, and
      * dimensions, inspect the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a>
-     * object that is returned by a call to <a
+     * object that's returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
     inline CustomizedMetricSpecification& WithMetricName(const char* value) { SetMetricName(value); return *this;}

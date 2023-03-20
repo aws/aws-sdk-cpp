@@ -322,6 +322,36 @@ namespace ApplicationAutoScaling
         }
 
         /**
+         * <p>Returns all the tags on the specified Application Auto Scaling scalable
+         * target.</p> <p>For general information about tags, including the format and
+         * syntax, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+         * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationAutoScalingClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationAutoScalingClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Creates or updates a scaling policy for an Application Auto Scaling scalable
          * target.</p> <p>Each scalable target is identified by a service namespace,
          * resource ID, and scalable dimension. A scaling policy applies to the scalable
@@ -348,8 +378,8 @@ namespace ApplicationAutoScaling
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
          * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
          *  <p>If a scalable target is deregistered, the scalable target is no longer
-         * available to execute scaling policies. Any scaling policies that were specified
-         * for the scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
+         * available to use scaling policies. Any scaling policies that were specified for
+         * the scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">AWS
          * API Reference</a></p>
          */
@@ -379,7 +409,7 @@ namespace ApplicationAutoScaling
          * namespace, resource ID, and scalable dimension. A scheduled action applies to
          * the scalable target identified by those three attributes. You cannot create a
          * scheduled action until you have registered the resource as a scalable
-         * target.</p> <p>When start and end times are specified with a recurring schedule
+         * target.</p> <p>When you specify start and end times with a recurring schedule
          * using a cron expression or rates, they form the boundaries for when the
          * recurring action starts and stops.</p> <p>To update a scheduled action, specify
          * the parameters that you want to change. If you don't specify start and end
@@ -413,17 +443,17 @@ namespace ApplicationAutoScaling
         }
 
         /**
-         * <p>Registers or updates a scalable target, the resource that you want to
-         * scale.</p> <p>Scalable targets are uniquely identified by the combination of
+         * <p>Registers or updates a scalable target, which is the resource that you want
+         * to scale.</p> <p>Scalable targets are uniquely identified by the combination of
          * resource ID, scalable dimension, and namespace, which represents some capacity
          * dimension of the underlying service.</p> <p>When you register a new scalable
          * target, you must specify values for the minimum and maximum capacity. If the
          * specified resource is not active in the target service, this operation does not
          * change the resource's current capacity. Otherwise, it changes the resource's
-         * current capacity to a value that is inside of this range.</p> <p>If you choose
-         * to add a scaling policy, current capacity is adjustable within the specified
-         * range when scaling starts. Application Auto Scaling scaling policies will not
-         * scale capacity to values that are outside of the minimum and maximum range.</p>
+         * current capacity to a value that is inside of this range.</p> <p>If you add a
+         * scaling policy, current capacity is adjustable within the specified range when
+         * scaling starts. Application Auto Scaling scaling policies will not scale
+         * capacity to values that are outside of the minimum and maximum range.</p>
          * <p>After you register a scalable target, you do not need to register it again to
          * use other Application Auto Scaling operations. To see which resources have been
          * registered, use <a
@@ -436,11 +466,18 @@ namespace ApplicationAutoScaling
          * Include the parameters that identify the scalable target: resource ID, scalable
          * dimension, and namespace. Any parameters that you don't specify are not changed
          * by this update request. </p>  <p>If you call the
-         * <code>RegisterScalableTarget</code> API to update an existing scalable target,
-         * Application Auto Scaling retrieves the current capacity of the resource. If it
-         * is below the minimum capacity or above the maximum capacity, Application Auto
-         * Scaling adjusts the capacity of the scalable target to place it within these
-         * bounds, even if you don't include the <code>MinCapacity</code> or
+         * <code>RegisterScalableTarget</code> API operation to create a scalable target,
+         * there might be a brief delay until the operation achieves <a
+         * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+         * consistency</a>. You might become aware of this brief delay if you get
+         * unexpected errors when performing sequential operations. The typical strategy is
+         * to retry the request, and some Amazon Web Services SDKs include automatic
+         * backoff and retry logic.</p> <p>If you call the
+         * <code>RegisterScalableTarget</code> API operation to update an existing scalable
+         * target, Application Auto Scaling retrieves the current capacity of the resource.
+         * If it's below the minimum capacity or above the maximum capacity, Application
+         * Auto Scaling adjusts the capacity of the scalable target to place it within
+         * these bounds, even if you don't include the <code>MinCapacity</code> or
          * <code>MaxCapacity</code> request parameters.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
@@ -464,6 +501,73 @@ namespace ApplicationAutoScaling
         void RegisterScalableTargetAsync(const RegisterScalableTargetRequestT& request, const RegisterScalableTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationAutoScalingClient::RegisterScalableTarget, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or edits tags on an Application Auto Scaling scalable target.</p>
+         * <p>Each tag consists of a tag key and a tag value, which are both case-sensitive
+         * strings. To add a tag, specify a new tag key and a tag value. To edit a tag,
+         * specify an existing tag key and a new tag value.</p> <p>You can use this
+         * operation to tag an Application Auto Scaling scalable target, but you cannot tag
+         * a scaling policy or scheduled action.</p> <p>You can also add tags to an
+         * Application Auto Scaling scalable target while creating it
+         * (<code>RegisterScalableTarget</code>).</p> <p>For general information about
+         * tags, including the format and syntax, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+         * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+         * Reference</i>.</p> <p>Use tags to control access to a scalable target. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+         * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationAutoScalingClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationAutoScalingClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes tags from an Application Auto Scaling scalable target. To delete a
+         * tag, specify the tag key and the Application Auto Scaling scalable
+         * target.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationAutoScalingClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationAutoScalingClient::UntagResource, request, handler, context);
         }
 
 

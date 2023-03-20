@@ -24,7 +24,8 @@ CommentMetadata::CommentMetadata() :
     m_createdTimestampHasBeenSet(false),
     m_commentStatus(CommentStatusType::NOT_SET),
     m_commentStatusHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_contributorIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ CommentMetadata::CommentMetadata(JsonView jsonValue) :
     m_createdTimestampHasBeenSet(false),
     m_commentStatus(CommentStatusType::NOT_SET),
     m_commentStatusHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_contributorIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ CommentMetadata& CommentMetadata::operator =(JsonView jsonValue)
     m_recipientIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContributorId"))
+  {
+    m_contributorId = jsonValue.GetString("ContributorId");
+
+    m_contributorIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue CommentMetadata::Jsonize() const
   if(m_recipientIdHasBeenSet)
   {
    payload.WithString("RecipientId", m_recipientId);
+
+  }
+
+  if(m_contributorIdHasBeenSet)
+  {
+   payload.WithString("ContributorId", m_contributorId);
 
   }
 
