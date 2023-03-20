@@ -31,7 +31,8 @@ Endpoint::Endpoint() :
     m_securityGroupIdHasBeenSet(false),
     m_accessType(EndpointAccessType::NOT_SET),
     m_accessTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_failedReasonHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_securityGroupIdHasBeenSet(false),
     m_accessType(EndpointAccessType::NOT_SET),
     m_accessTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_failedReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +137,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_customerOwnedIpv4PoolHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FailedReason"))
+  {
+    m_failedReason = jsonValue.GetObject("FailedReason");
+
+    m_failedReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +216,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
    payload.WithString("CustomerOwnedIpv4Pool", m_customerOwnedIpv4Pool);
+
+  }
+
+  if(m_failedReasonHasBeenSet)
+  {
+   payload.WithObject("FailedReason", m_failedReason.Jsonize());
 
   }
 

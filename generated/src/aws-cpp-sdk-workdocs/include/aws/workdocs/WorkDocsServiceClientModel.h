@@ -45,6 +45,7 @@
 #include <aws/workdocs/model/GetFolderPathResult.h>
 #include <aws/workdocs/model/GetResourcesResult.h>
 #include <aws/workdocs/model/InitiateDocumentVersionUploadResult.h>
+#include <aws/workdocs/model/SearchResourcesResult.h>
 #include <aws/workdocs/model/UpdateUserResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in WorkDocsClient header */
@@ -126,6 +127,7 @@ namespace Aws
       class RemoveAllResourcePermissionsRequest;
       class RemoveResourcePermissionRequest;
       class RestoreDocumentVersionsRequest;
+      class SearchResourcesRequest;
       class UpdateDocumentRequest;
       class UpdateDocumentVersionRequest;
       class UpdateFolderRequest;
@@ -172,6 +174,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> RemoveAllResourcePermissionsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> RemoveResourcePermissionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> RestoreDocumentVersionsOutcome;
+      typedef Aws::Utils::Outcome<SearchResourcesResult, WorkDocsError> SearchResourcesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateDocumentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateDocumentVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, WorkDocsError> UpdateFolderOutcome;
@@ -218,6 +221,7 @@ namespace Aws
       typedef std::future<RemoveAllResourcePermissionsOutcome> RemoveAllResourcePermissionsOutcomeCallable;
       typedef std::future<RemoveResourcePermissionOutcome> RemoveResourcePermissionOutcomeCallable;
       typedef std::future<RestoreDocumentVersionsOutcome> RestoreDocumentVersionsOutcomeCallable;
+      typedef std::future<SearchResourcesOutcome> SearchResourcesOutcomeCallable;
       typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
       typedef std::future<UpdateDocumentVersionOutcome> UpdateDocumentVersionOutcomeCallable;
       typedef std::future<UpdateFolderOutcome> UpdateFolderOutcomeCallable;
@@ -267,6 +271,7 @@ namespace Aws
     typedef std::function<void(const WorkDocsClient*, const Model::RemoveAllResourcePermissionsRequest&, const Model::RemoveAllResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAllResourcePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::RemoveResourcePermissionRequest&, const Model::RemoveResourcePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveResourcePermissionResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::RestoreDocumentVersionsRequest&, const Model::RestoreDocumentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDocumentVersionsResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::SearchResourcesRequest&, const Model::SearchResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourcesResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::UpdateDocumentVersionRequest&, const Model::UpdateDocumentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentVersionResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::UpdateFolderRequest&, const Model::UpdateFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderResponseReceivedHandler;

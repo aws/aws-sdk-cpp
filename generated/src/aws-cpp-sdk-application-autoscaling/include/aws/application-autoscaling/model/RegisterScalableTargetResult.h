@@ -32,6 +32,42 @@ namespace Model
     AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline const Aws::String& GetScalableTargetARN() const{ return m_scalableTargetARN; }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(const Aws::String& value) { m_scalableTargetARN = value; }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(Aws::String&& value) { m_scalableTargetARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(const char* value) { m_scalableTargetARN.assign(value); }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline RegisterScalableTargetResult& WithScalableTargetARN(const Aws::String& value) { SetScalableTargetARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline RegisterScalableTargetResult& WithScalableTargetARN(Aws::String&& value) { SetScalableTargetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline RegisterScalableTargetResult& WithScalableTargetARN(const char* value) { SetScalableTargetARN(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -54,6 +90,8 @@ namespace Model
     inline RegisterScalableTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Aws::String m_scalableTargetARN;
 
     Aws::String m_requestId;
   };

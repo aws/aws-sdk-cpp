@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3outposts/model/EndpointAccessType.h>
+#include <aws/s3outposts/model/FailedReason.h>
 #include <aws/s3outposts/model/NetworkInterface.h>
 #include <utility>
 
@@ -474,6 +475,37 @@ namespace Model
      */
     inline Endpoint& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline const FailedReason& GetFailedReason() const{ return m_failedReason; }
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline bool FailedReasonHasBeenSet() const { return m_failedReasonHasBeenSet; }
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline void SetFailedReason(const FailedReason& value) { m_failedReasonHasBeenSet = true; m_failedReason = value; }
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline void SetFailedReason(FailedReason&& value) { m_failedReasonHasBeenSet = true; m_failedReason = std::move(value); }
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline Endpoint& WithFailedReason(const FailedReason& value) { SetFailedReason(value); return *this;}
+
+    /**
+     * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
+     */
+    inline Endpoint& WithFailedReason(FailedReason&& value) { SetFailedReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointArn;
@@ -508,6 +540,9 @@ namespace Model
 
     Aws::String m_customerOwnedIpv4Pool;
     bool m_customerOwnedIpv4PoolHasBeenSet = false;
+
+    FailedReason m_failedReason;
+    bool m_failedReasonHasBeenSet = false;
   };
 
 } // namespace Model

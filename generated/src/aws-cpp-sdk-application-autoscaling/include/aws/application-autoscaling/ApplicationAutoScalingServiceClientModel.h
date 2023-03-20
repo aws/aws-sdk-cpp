@@ -25,9 +25,12 @@
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesResult.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesResult.h>
 #include <aws/application-autoscaling/model/DescribeScheduledActionsResult.h>
+#include <aws/application-autoscaling/model/ListTagsForResourceResult.h>
 #include <aws/application-autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/application-autoscaling/model/PutScheduledActionResult.h>
 #include <aws/application-autoscaling/model/RegisterScalableTargetResult.h>
+#include <aws/application-autoscaling/model/TagResourceResult.h>
+#include <aws/application-autoscaling/model/UntagResourceResult.h>
 /* End of service model headers required in ApplicationAutoScalingClient header */
 
 namespace Aws
@@ -75,9 +78,12 @@ namespace Aws
       class DescribeScalingActivitiesRequest;
       class DescribeScalingPoliciesRequest;
       class DescribeScheduledActionsRequest;
+      class ListTagsForResourceRequest;
       class PutScalingPolicyRequest;
       class PutScheduledActionRequest;
       class RegisterScalableTargetRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       /* End of service model forward declarations required in ApplicationAutoScalingClient header */
 
       /* Service model Outcome class definitions */
@@ -88,9 +94,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, ApplicationAutoScalingError> DescribeScalingActivitiesOutcome;
       typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, ApplicationAutoScalingError> DescribeScalingPoliciesOutcome;
       typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, ApplicationAutoScalingError> DescribeScheduledActionsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationAutoScalingError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutScalingPolicyResult, ApplicationAutoScalingError> PutScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<PutScheduledActionResult, ApplicationAutoScalingError> PutScheduledActionOutcome;
       typedef Aws::Utils::Outcome<RegisterScalableTargetResult, ApplicationAutoScalingError> RegisterScalableTargetOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, ApplicationAutoScalingError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, ApplicationAutoScalingError> UntagResourceOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -101,9 +110,12 @@ namespace Aws
       typedef std::future<DescribeScalingActivitiesOutcome> DescribeScalingActivitiesOutcomeCallable;
       typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
       typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
       typedef std::future<PutScheduledActionOutcome> PutScheduledActionOutcomeCallable;
       typedef std::future<RegisterScalableTargetOutcome> RegisterScalableTargetOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -117,9 +129,12 @@ namespace Aws
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingActivitiesResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScheduledActionRequest&, const Model::PutScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScheduledActionResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::RegisterScalableTargetRequest&, const Model::RegisterScalableTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterScalableTargetResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ApplicationAutoScaling
 } // namespace Aws

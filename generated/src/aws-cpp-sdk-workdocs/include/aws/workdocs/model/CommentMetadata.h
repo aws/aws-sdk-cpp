@@ -214,6 +214,47 @@ namespace Model
      */
     inline CommentMetadata& WithRecipientId(const char* value) { SetRecipientId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline const Aws::String& GetContributorId() const{ return m_contributorId; }
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline bool ContributorIdHasBeenSet() const { return m_contributorIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline void SetContributorId(const Aws::String& value) { m_contributorIdHasBeenSet = true; m_contributorId = value; }
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline void SetContributorId(Aws::String&& value) { m_contributorIdHasBeenSet = true; m_contributorId = std::move(value); }
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline void SetContributorId(const char* value) { m_contributorIdHasBeenSet = true; m_contributorId.assign(value); }
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline CommentMetadata& WithContributorId(const Aws::String& value) { SetContributorId(value); return *this;}
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline CommentMetadata& WithContributorId(Aws::String&& value) { SetContributorId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the user who made the comment.</p>
+     */
+    inline CommentMetadata& WithContributorId(const char* value) { SetContributorId(value); return *this;}
+
   private:
 
     Aws::String m_commentId;
@@ -230,6 +271,9 @@ namespace Model
 
     Aws::String m_recipientId;
     bool m_recipientIdHasBeenSet = false;
+
+    Aws::String m_contributorId;
+    bool m_contributorIdHasBeenSet = false;
   };
 
 } // namespace Model

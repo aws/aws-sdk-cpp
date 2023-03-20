@@ -1155,6 +1155,32 @@ namespace WorkDocs
         }
 
         /**
+         * <p>Searches metadata and the content of folders, documents, document versions,
+         * and comments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SearchResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchResourcesRequestT = Model::SearchResourcesRequest>
+        Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const SearchResourcesRequestT& request) const
+        {
+            return SubmitCallable(&WorkDocsClient::SearchResources, request);
+        }
+
+        /**
+         * An Async wrapper for SearchResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchResourcesRequestT = Model::SearchResourcesRequest>
+        void SearchResourcesAsync(const SearchResourcesRequestT& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkDocsClient::SearchResources, request, handler, context);
+        }
+
+        /**
          * <p>Updates the specified attributes of a document. The user must have access to
          * both the document and its parent folder, if applicable.</p><p><h3>See Also:</h3>
          * <a

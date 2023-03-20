@@ -60,6 +60,7 @@
 #include <aws/workdocs/model/RemoveAllResourcePermissionsRequest.h>
 #include <aws/workdocs/model/RemoveResourcePermissionRequest.h>
 #include <aws/workdocs/model/RestoreDocumentVersionsRequest.h>
+#include <aws/workdocs/model/SearchResourcesRequest.h>
 #include <aws/workdocs/model/UpdateDocumentRequest.h>
 #include <aws/workdocs/model/UpdateDocumentVersionRequest.h>
 #include <aws/workdocs/model/UpdateFolderRequest.h>
@@ -822,6 +823,15 @@ RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const Res
   endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/documentVersions/restore/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
   return RestoreDocumentVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchResourcesOutcome WorkDocsClient::SearchResources(const SearchResourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/search");
+  return SearchResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const

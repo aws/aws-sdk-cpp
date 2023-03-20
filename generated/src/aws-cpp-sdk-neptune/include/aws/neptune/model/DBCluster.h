@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/neptune/model/ClusterPendingModifiedValues.h>
 #include <aws/neptune/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/neptune/model/DBClusterOptionGroupStatus.h>
 #include <aws/neptune/model/DBClusterMember.h>
@@ -1660,6 +1661,49 @@ namespace Model
 
 
     /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+
+    /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline void SetPendingModifiedValues(const ClusterPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+
+    /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline void SetPendingModifiedValues(ClusterPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
+
+    /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(const ClusterPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
+
+    /**
+     * <p>This data type is used as a response element in the
+     * <code>ModifyDBCluster</code> operation and contains changes that will be applied
+     * during the next maintenance window.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(ClusterPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates whether or not the DB cluster has deletion protection enabled. The
      * database can't be deleted when deletion protection is enabled.</p>
      */
@@ -1757,6 +1801,55 @@ namespace Model
 
     
     inline DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline DBCluster& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline DBCluster& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database.</p>
+     */
+    inline DBCluster& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 
   private:
 
@@ -1871,6 +1964,9 @@ namespace Model
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
+    ClusterPendingModifiedValues m_pendingModifiedValues;
+    bool m_pendingModifiedValuesHasBeenSet = false;
+
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;
 
@@ -1882,6 +1978,9 @@ namespace Model
 
     ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_globalClusterIdentifier;
+    bool m_globalClusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

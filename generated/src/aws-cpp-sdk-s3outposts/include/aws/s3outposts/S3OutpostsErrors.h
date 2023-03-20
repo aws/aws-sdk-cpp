@@ -48,7 +48,8 @@ enum class S3OutpostsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  OUTPOST_OFFLINE
 };
 
 class AWS_S3OUTPOSTS_API S3OutpostsError : public Aws::Client::AWSError<S3OutpostsErrors>

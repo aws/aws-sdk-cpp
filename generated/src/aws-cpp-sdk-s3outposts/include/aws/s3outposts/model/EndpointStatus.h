@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     Pending,
     Available,
-    Deleting
+    Deleting,
+    Create_Failed,
+    Delete_Failed
   };
 
 namespace EndpointStatusMapper

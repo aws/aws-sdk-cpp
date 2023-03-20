@@ -108,8 +108,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline const Aws::String& GetStat() const{ return m_stat; }
 
@@ -117,8 +117,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
 
@@ -126,8 +126,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline void SetStat(const Aws::String& value) { m_statHasBeenSet = true; m_stat = value; }
 
@@ -135,8 +135,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline void SetStat(Aws::String&& value) { m_statHasBeenSet = true; m_stat = std::move(value); }
 
@@ -144,8 +144,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline void SetStat(const char* value) { m_statHasBeenSet = true; m_stat.assign(value); }
 
@@ -153,8 +153,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline TargetTrackingMetricStat& WithStat(const Aws::String& value) { SetStat(value); return *this;}
 
@@ -162,8 +162,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline TargetTrackingMetricStat& WithStat(Aws::String&& value) { SetStat(std::move(value)); return *this;}
 
@@ -171,8 +171,8 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic. For a list of valid values, see the table in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used
-     * metrics for scaling is <code>Average</code> </p>
+     * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
+     * for scaling is <code>Average</code>.</p>
      */
     inline TargetTrackingMetricStat& WithStat(const char* value) { SetStat(value); return *this;}
 

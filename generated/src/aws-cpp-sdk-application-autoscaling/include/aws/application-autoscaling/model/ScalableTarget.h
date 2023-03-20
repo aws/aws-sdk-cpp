@@ -960,6 +960,47 @@ namespace Model
      */
     inline ScalableTarget& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline const Aws::String& GetScalableTargetARN() const{ return m_scalableTargetARN; }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline bool ScalableTargetARNHasBeenSet() const { return m_scalableTargetARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(const Aws::String& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = value; }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(Aws::String&& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline void SetScalableTargetARN(const char* value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN.assign(value); }
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline ScalableTarget& WithScalableTargetARN(const Aws::String& value) { SetScalableTargetARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline ScalableTarget& WithScalableTargetARN(Aws::String&& value) { SetScalableTargetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the scalable target.</p>
+     */
+    inline ScalableTarget& WithScalableTargetARN(const char* value) { SetScalableTargetARN(value); return *this;}
+
   private:
 
     ServiceNamespace m_serviceNamespace;
@@ -985,6 +1026,9 @@ namespace Model
 
     SuspendedState m_suspendedState;
     bool m_suspendedStateHasBeenSet = false;
+
+    Aws::String m_scalableTargetARN;
+    bool m_scalableTargetARNHasBeenSet = false;
   };
 
 } // namespace Model

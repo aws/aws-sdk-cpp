@@ -20,6 +20,7 @@ namespace S3OutpostsErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int OUTPOST_OFFLINE_HASH = HashingUtils::HashString("OutpostOfflineException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -33,6 +34,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == OUTPOST_OFFLINE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::OUTPOST_OFFLINE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

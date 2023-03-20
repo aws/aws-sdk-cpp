@@ -30,7 +30,8 @@ ScalableTarget::ScalableTarget() :
     m_maxCapacityHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_suspendedStateHasBeenSet(false)
+    m_suspendedStateHasBeenSet(false),
+    m_scalableTargetARNHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ScalableTarget::ScalableTarget(JsonView jsonValue) :
     m_maxCapacityHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_suspendedStateHasBeenSet(false)
+    m_suspendedStateHasBeenSet(false),
+    m_scalableTargetARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ ScalableTarget& ScalableTarget::operator =(JsonView jsonValue)
     m_suspendedStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScalableTargetARN"))
+  {
+    m_scalableTargetARN = jsonValue.GetString("ScalableTargetARN");
+
+    m_scalableTargetARNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -158,6 +167,12 @@ JsonValue ScalableTarget::Jsonize() const
   if(m_suspendedStateHasBeenSet)
   {
    payload.WithObject("SuspendedState", m_suspendedState.Jsonize());
+
+  }
+
+  if(m_scalableTargetARNHasBeenSet)
+  {
+   payload.WithString("ScalableTargetARN", m_scalableTargetARN);
 
   }
 
