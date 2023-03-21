@@ -17,8 +17,12 @@ PutTemplateActionRequest::PutTemplateActionRequest() :
     m_actionNameHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
+    m_category(ActionCategory::NOT_SET),
+    m_categoryHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_documentIdentifierHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_externalParametersHasBeenSet(false),
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_mustSucceedForCutover(false),
     m_mustSucceedForCutoverHasBeenSet(false),
@@ -53,6 +57,17 @@ Aws::String PutTemplateActionRequest::SerializePayload() const
 
   }
 
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_documentIdentifierHasBeenSet)
   {
    payload.WithString("documentIdentifier", m_documentIdentifier);
@@ -62,6 +77,17 @@ Aws::String PutTemplateActionRequest::SerializePayload() const
   if(m_documentVersionHasBeenSet)
   {
    payload.WithString("documentVersion", m_documentVersion);
+
+  }
+
+  if(m_externalParametersHasBeenSet)
+  {
+   JsonValue externalParametersJsonMap;
+   for(auto& externalParametersItem : m_externalParameters)
+   {
+     externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
+   }
+   payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
 
   }
 

@@ -23,7 +23,9 @@ CreateNetworkInsightsPathRequest::CreateNetworkInsightsPathRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_filterAtSourceHasBeenSet(false),
+    m_filterAtDestinationHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,16 @@ Aws::String CreateNetworkInsightsPathRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_filterAtSourceHasBeenSet)
+  {
+    m_filterAtSource.OutputToStream(ss, "FilterAtSource");
+  }
+
+  if(m_filterAtDestinationHasBeenSet)
+  {
+    m_filterAtDestination.OutputToStream(ss, "FilterAtDestination");
   }
 
   ss << "Version=2016-11-15";

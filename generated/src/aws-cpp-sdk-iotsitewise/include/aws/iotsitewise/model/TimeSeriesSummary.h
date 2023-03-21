@@ -381,6 +381,79 @@ namespace Model
      */
     inline TimeSeriesSummary& WithTimeSeriesLastUpdateDate(Aws::Utils::DateTime&& value) { SetTimeSeriesLastUpdateDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline const Aws::String& GetTimeSeriesArn() const{ return m_timeSeriesArn; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline bool TimeSeriesArnHasBeenSet() const { return m_timeSeriesArnHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline void SetTimeSeriesArn(const Aws::String& value) { m_timeSeriesArnHasBeenSet = true; m_timeSeriesArn = value; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline void SetTimeSeriesArn(Aws::String&& value) { m_timeSeriesArnHasBeenSet = true; m_timeSeriesArn = std::move(value); }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline void SetTimeSeriesArn(const char* value) { m_timeSeriesArnHasBeenSet = true; m_timeSeriesArn.assign(value); }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline TimeSeriesSummary& WithTimeSeriesArn(const Aws::String& value) { SetTimeSeriesArn(value); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline TimeSeriesSummary& WithTimeSeriesArn(Aws::String&& value) { SetTimeSeriesArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * of the time series, which has the following format.</p> <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    inline TimeSeriesSummary& WithTimeSeriesArn(const char* value) { SetTimeSeriesArn(value); return *this;}
+
   private:
 
     Aws::String m_assetId;
@@ -406,6 +479,9 @@ namespace Model
 
     Aws::Utils::DateTime m_timeSeriesLastUpdateDate;
     bool m_timeSeriesLastUpdateDateHasBeenSet = false;
+
+    Aws::String m_timeSeriesArn;
+    bool m_timeSeriesArnHasBeenSet = false;
   };
 
 } // namespace Model

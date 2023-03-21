@@ -27,7 +27,8 @@ TimeSeriesSummary::TimeSeriesSummary() :
     m_dataTypeHasBeenSet(false),
     m_dataTypeSpecHasBeenSet(false),
     m_timeSeriesCreationDateHasBeenSet(false),
-    m_timeSeriesLastUpdateDateHasBeenSet(false)
+    m_timeSeriesLastUpdateDateHasBeenSet(false),
+    m_timeSeriesArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TimeSeriesSummary::TimeSeriesSummary(JsonView jsonValue) :
     m_dataTypeHasBeenSet(false),
     m_dataTypeSpecHasBeenSet(false),
     m_timeSeriesCreationDateHasBeenSet(false),
-    m_timeSeriesLastUpdateDateHasBeenSet(false)
+    m_timeSeriesLastUpdateDateHasBeenSet(false),
+    m_timeSeriesArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ TimeSeriesSummary& TimeSeriesSummary::operator =(JsonView jsonValue)
     m_timeSeriesLastUpdateDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeSeriesArn"))
+  {
+    m_timeSeriesArn = jsonValue.GetString("timeSeriesArn");
+
+    m_timeSeriesArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue TimeSeriesSummary::Jsonize() const
   if(m_timeSeriesLastUpdateDateHasBeenSet)
   {
    payload.WithDouble("timeSeriesLastUpdateDate", m_timeSeriesLastUpdateDate.SecondsWithMSPrecision());
+  }
+
+  if(m_timeSeriesArnHasBeenSet)
+  {
+   payload.WithString("timeSeriesArn", m_timeSeriesArn);
+
   }
 
   return payload;

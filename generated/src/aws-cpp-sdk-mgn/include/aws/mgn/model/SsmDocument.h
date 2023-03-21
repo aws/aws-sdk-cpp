@@ -7,6 +7,7 @@
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mgn/model/SsmExternalParameter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/model/SsmParameterStoreParameter.h>
 #include <utility>
@@ -79,6 +80,67 @@ namespace Model
      * <p>User-friendly name for the AWS Systems Manager Document.</p>
      */
     inline SsmDocument& WithActionName(const char* value) { SetActionName(value); return *this;}
+
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const{ return m_externalParameters; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline void SetExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { m_externalParametersHasBeenSet = true; m_externalParameters = value; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline void SetExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { m_externalParametersHasBeenSet = true; m_externalParameters = std::move(value); }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& WithExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { SetExternalParameters(value); return *this;}
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& WithExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { SetExternalParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(const Aws::String& key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(Aws::String&& key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(const Aws::String& key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(Aws::String&& key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(const char* key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>AWS Systems Manager Document external parameters.</p>
+     */
+    inline SsmDocument& AddExternalParameters(const char* key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -228,6 +290,9 @@ namespace Model
 
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
+    bool m_externalParametersHasBeenSet = false;
 
     bool m_mustSucceedForCutover;
     bool m_mustSucceedForCutoverHasBeenSet = false;

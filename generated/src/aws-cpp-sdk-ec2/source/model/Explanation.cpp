@@ -74,7 +74,9 @@ Explanation::Explanation() :
     m_transitGatewayRouteTableRouteHasBeenSet(false),
     m_transitGatewayAttachmentHasBeenSet(false),
     m_componentAccountHasBeenSet(false),
-    m_componentRegionHasBeenSet(false)
+    m_componentRegionHasBeenSet(false),
+    m_firewallStatelessRuleHasBeenSet(false),
+    m_firewallStatefulRuleHasBeenSet(false)
 {
 }
 
@@ -132,7 +134,9 @@ Explanation::Explanation(const XmlNode& xmlNode) :
     m_transitGatewayRouteTableRouteHasBeenSet(false),
     m_transitGatewayAttachmentHasBeenSet(false),
     m_componentAccountHasBeenSet(false),
-    m_componentRegionHasBeenSet(false)
+    m_componentRegionHasBeenSet(false),
+    m_firewallStatelessRuleHasBeenSet(false),
+    m_firewallStatefulRuleHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -490,6 +494,18 @@ Explanation& Explanation::operator =(const XmlNode& xmlNode)
     {
       m_componentRegion = Aws::Utils::Xml::DecodeEscapedXmlText(componentRegionNode.GetText());
       m_componentRegionHasBeenSet = true;
+    }
+    XmlNode firewallStatelessRuleNode = resultNode.FirstChild("firewallStatelessRule");
+    if(!firewallStatelessRuleNode.IsNull())
+    {
+      m_firewallStatelessRule = firewallStatelessRuleNode;
+      m_firewallStatelessRuleHasBeenSet = true;
+    }
+    XmlNode firewallStatefulRuleNode = resultNode.FirstChild("firewallStatefulRule");
+    if(!firewallStatefulRuleNode.IsNull())
+    {
+      m_firewallStatefulRule = firewallStatefulRuleNode;
+      m_firewallStatefulRuleHasBeenSet = true;
     }
   }
 
@@ -851,6 +867,20 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ComponentRegion=" << StringUtils::URLEncode(m_componentRegion.c_str()) << "&";
   }
 
+  if(m_firewallStatelessRuleHasBeenSet)
+  {
+      Aws::StringStream firewallStatelessRuleLocationAndMemberSs;
+      firewallStatelessRuleLocationAndMemberSs << location << index << locationValue << ".FirewallStatelessRule";
+      m_firewallStatelessRule.OutputToStream(oStream, firewallStatelessRuleLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_firewallStatefulRuleHasBeenSet)
+  {
+      Aws::StringStream firewallStatefulRuleLocationAndMemberSs;
+      firewallStatefulRuleLocationAndMemberSs << location << index << locationValue << ".FirewallStatefulRule";
+      m_firewallStatefulRule.OutputToStream(oStream, firewallStatefulRuleLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1156,6 +1186,18 @@ void Explanation::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_componentRegionHasBeenSet)
   {
       oStream << location << ".ComponentRegion=" << StringUtils::URLEncode(m_componentRegion.c_str()) << "&";
+  }
+  if(m_firewallStatelessRuleHasBeenSet)
+  {
+      Aws::String firewallStatelessRuleLocationAndMember(location);
+      firewallStatelessRuleLocationAndMember += ".FirewallStatelessRule";
+      m_firewallStatelessRule.OutputToStream(oStream, firewallStatelessRuleLocationAndMember.c_str());
+  }
+  if(m_firewallStatefulRuleHasBeenSet)
+  {
+      Aws::String firewallStatefulRuleLocationAndMember(location);
+      firewallStatefulRuleLocationAndMember += ".FirewallStatefulRule";
+      m_firewallStatefulRule.OutputToStream(oStream, firewallStatefulRuleLocationAndMember.c_str());
   }
 }
 

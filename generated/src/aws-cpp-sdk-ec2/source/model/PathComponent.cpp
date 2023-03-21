@@ -38,7 +38,10 @@ PathComponent::PathComponent() :
     m_transitGatewayHasBeenSet(false),
     m_transitGatewayRouteTableRouteHasBeenSet(false),
     m_explanationsHasBeenSet(false),
-    m_elasticLoadBalancerListenerHasBeenSet(false)
+    m_elasticLoadBalancerListenerHasBeenSet(false),
+    m_firewallStatelessRuleHasBeenSet(false),
+    m_firewallStatefulRuleHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
 }
 
@@ -60,7 +63,10 @@ PathComponent::PathComponent(const XmlNode& xmlNode) :
     m_transitGatewayHasBeenSet(false),
     m_transitGatewayRouteTableRouteHasBeenSet(false),
     m_explanationsHasBeenSet(false),
-    m_elasticLoadBalancerListenerHasBeenSet(false)
+    m_elasticLoadBalancerListenerHasBeenSet(false),
+    m_firewallStatelessRuleHasBeenSet(false),
+    m_firewallStatefulRuleHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -184,6 +190,24 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
     {
       m_elasticLoadBalancerListener = elasticLoadBalancerListenerNode;
       m_elasticLoadBalancerListenerHasBeenSet = true;
+    }
+    XmlNode firewallStatelessRuleNode = resultNode.FirstChild("firewallStatelessRule");
+    if(!firewallStatelessRuleNode.IsNull())
+    {
+      m_firewallStatelessRule = firewallStatelessRuleNode;
+      m_firewallStatelessRuleHasBeenSet = true;
+    }
+    XmlNode firewallStatefulRuleNode = resultNode.FirstChild("firewallStatefulRule");
+    if(!firewallStatefulRuleNode.IsNull())
+    {
+      m_firewallStatefulRule = firewallStatefulRuleNode;
+      m_firewallStatefulRuleHasBeenSet = true;
+    }
+    XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
+    if(!serviceNameNode.IsNull())
+    {
+      m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
+      m_serviceNameHasBeenSet = true;
     }
   }
 
@@ -317,6 +341,25 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
       m_elasticLoadBalancerListener.OutputToStream(oStream, elasticLoadBalancerListenerLocationAndMemberSs.str().c_str());
   }
 
+  if(m_firewallStatelessRuleHasBeenSet)
+  {
+      Aws::StringStream firewallStatelessRuleLocationAndMemberSs;
+      firewallStatelessRuleLocationAndMemberSs << location << index << locationValue << ".FirewallStatelessRule";
+      m_firewallStatelessRule.OutputToStream(oStream, firewallStatelessRuleLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_firewallStatefulRuleHasBeenSet)
+  {
+      Aws::StringStream firewallStatefulRuleLocationAndMemberSs;
+      firewallStatefulRuleLocationAndMemberSs << location << index << locationValue << ".FirewallStatefulRule";
+      m_firewallStatefulRule.OutputToStream(oStream, firewallStatefulRuleLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+
 }
 
 void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -428,6 +471,22 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String elasticLoadBalancerListenerLocationAndMember(location);
       elasticLoadBalancerListenerLocationAndMember += ".ElasticLoadBalancerListener";
       m_elasticLoadBalancerListener.OutputToStream(oStream, elasticLoadBalancerListenerLocationAndMember.c_str());
+  }
+  if(m_firewallStatelessRuleHasBeenSet)
+  {
+      Aws::String firewallStatelessRuleLocationAndMember(location);
+      firewallStatelessRuleLocationAndMember += ".FirewallStatelessRule";
+      m_firewallStatelessRule.OutputToStream(oStream, firewallStatelessRuleLocationAndMember.c_str());
+  }
+  if(m_firewallStatefulRuleHasBeenSet)
+  {
+      Aws::String firewallStatefulRuleLocationAndMember(location);
+      firewallStatefulRuleLocationAndMember += ".FirewallStatefulRule";
+      m_firewallStatefulRule.OutputToStream(oStream, firewallStatefulRuleLocationAndMember.c_str());
+  }
+  if(m_serviceNameHasBeenSet)
+  {
+      oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 }
 

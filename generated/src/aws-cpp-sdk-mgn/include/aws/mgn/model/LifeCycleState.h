@@ -24,7 +24,8 @@ namespace Model
     CUTTING_OVER,
     CUTOVER,
     DISCONNECTED,
-    DISCOVERED
+    DISCOVERED,
+    PENDING_INSTALLATION
   };
 
 namespace LifeCycleStateMapper

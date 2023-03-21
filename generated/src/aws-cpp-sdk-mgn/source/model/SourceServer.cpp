@@ -23,6 +23,7 @@ SourceServer::SourceServer() :
     m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
+    m_fqdnForActionFrameworkHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
     m_launchedInstanceHasBeenSet(false),
@@ -32,6 +33,7 @@ SourceServer::SourceServer() :
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_userProvidedIDHasBeenSet(false),
     m_vcenterClientIDHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
@@ -41,6 +43,7 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
+    m_fqdnForActionFrameworkHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
     m_launchedInstanceHasBeenSet(false),
@@ -50,6 +53,7 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_userProvidedIDHasBeenSet(false),
     m_vcenterClientIDHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
@@ -77,6 +81,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
 
     m_dataReplicationInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fqdnForActionFramework"))
+  {
+    m_fqdnForActionFramework = jsonValue.GetString("fqdnForActionFramework");
+
+    m_fqdnForActionFrameworkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isArchived"))
@@ -131,6 +142,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userProvidedID"))
+  {
+    m_userProvidedID = jsonValue.GetString("userProvidedID");
+
+    m_userProvidedIDHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("vcenterClientID"))
   {
     m_vcenterClientID = jsonValue.GetString("vcenterClientID");
@@ -160,6 +178,12 @@ JsonValue SourceServer::Jsonize() const
   if(m_dataReplicationInfoHasBeenSet)
   {
    payload.WithObject("dataReplicationInfo", m_dataReplicationInfo.Jsonize());
+
+  }
+
+  if(m_fqdnForActionFrameworkHasBeenSet)
+  {
+   payload.WithString("fqdnForActionFramework", m_fqdnForActionFramework);
 
   }
 
@@ -206,6 +230,12 @@ JsonValue SourceServer::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_userProvidedIDHasBeenSet)
+  {
+   payload.WithString("userProvidedID", m_userProvidedID);
 
   }
 

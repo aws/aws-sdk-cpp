@@ -537,6 +537,129 @@ namespace Model
      */
     inline AnalysisRouteTableRoute& WithState(const char* value) { SetState(value); return *this;}
 
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline const Aws::String& GetCarrierGatewayId() const{ return m_carrierGatewayId; }
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline bool CarrierGatewayIdHasBeenSet() const { return m_carrierGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const Aws::String& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = value; }
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(Aws::String&& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline void SetCarrierGatewayId(const char* value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCarrierGatewayId(const Aws::String& value) { SetCarrierGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCarrierGatewayId(Aws::String&& value) { SetCarrierGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a carrier gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCarrierGatewayId(const char* value) { SetCarrierGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a core network.</p>
+     */
+    inline AnalysisRouteTableRoute& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline const Aws::String& GetLocalGatewayId() const{ return m_localGatewayId; }
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline bool LocalGatewayIdHasBeenSet() const { return m_localGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline void SetLocalGatewayId(const Aws::String& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = value; }
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline void SetLocalGatewayId(Aws::String&& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline void SetLocalGatewayId(const char* value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithLocalGatewayId(const Aws::String& value) { SetLocalGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithLocalGatewayId(Aws::String&& value) { SetLocalGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a local gateway.</p>
+     */
+    inline AnalysisRouteTableRoute& WithLocalGatewayId(const char* value) { SetLocalGatewayId(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidr;
@@ -571,6 +694,15 @@ namespace Model
 
     Aws::String m_state;
     bool m_stateHasBeenSet = false;
+
+    Aws::String m_carrierGatewayId;
+    bool m_carrierGatewayIdHasBeenSet = false;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet = false;
+
+    Aws::String m_localGatewayId;
+    bool m_localGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

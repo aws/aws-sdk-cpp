@@ -7,7 +7,9 @@
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/ActionCategory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mgn/model/SsmExternalParameter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/model/SsmParameterStoreParameter.h>
 #include <utility>
@@ -139,6 +141,78 @@ namespace Model
 
 
     /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline const ActionCategory& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline PutSourceServerActionRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>Source server post migration custom action category.</p>
+     */
+    inline PutSourceServerActionRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline PutSourceServerActionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline PutSourceServerActionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server post migration custom action description.</p>
+     */
+    inline PutSourceServerActionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>Source server post migration custom action document identifier.</p>
      */
     inline const Aws::String& GetDocumentIdentifier() const{ return m_documentIdentifier; }
@@ -218,6 +292,67 @@ namespace Model
      * <p>Source server post migration custom action document version.</p>
      */
     inline PutSourceServerActionRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const{ return m_externalParameters; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline void SetExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { m_externalParametersHasBeenSet = true; m_externalParameters = value; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline void SetExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { m_externalParametersHasBeenSet = true; m_externalParameters = std::move(value); }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& WithExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { SetExternalParameters(value); return *this;}
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& WithExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { SetExternalParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(const Aws::String& key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(Aws::String&& key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(const Aws::String& key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(Aws::String&& key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(const char* key, SsmExternalParameter&& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Source server post migration custom action external parameters.</p>
+     */
+    inline PutSourceServerActionRequest& AddExternalParameters(const char* key, const SsmExternalParameter& value) { m_externalParametersHasBeenSet = true; m_externalParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -395,11 +530,20 @@ namespace Model
     bool m_active;
     bool m_activeHasBeenSet = false;
 
+    ActionCategory m_category;
+    bool m_categoryHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::String m_documentIdentifier;
     bool m_documentIdentifierHasBeenSet = false;
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet = false;
+
+    Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
+    bool m_externalParametersHasBeenSet = false;
 
     bool m_mustSucceedForCutover;
     bool m_mustSucceedForCutoverHasBeenSet = false;

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
         static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_CONFIGURATION");
+        static const int INVALID_QUERY_HASH = HashingUtils::HashString("INVALID_QUERY");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INVALID_CONFIGURATION_HASH)
           {
             return ValidationExceptionReason::INVALID_CONFIGURATION;
+          }
+          else if (hashCode == INVALID_QUERY_HASH)
+          {
+            return ValidationExceptionReason::INVALID_QUERY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "FIELD_VALIDATION_FAILED";
           case ValidationExceptionReason::INVALID_CONFIGURATION:
             return "INVALID_CONFIGURATION";
+          case ValidationExceptionReason::INVALID_QUERY:
+            return "INVALID_QUERY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

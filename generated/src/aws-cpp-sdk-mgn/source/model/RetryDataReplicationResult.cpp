@@ -51,6 +51,12 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("fqdnForActionFramework"))
+  {
+    m_fqdnForActionFramework = jsonValue.GetString("fqdnForActionFramework");
+
+  }
+
   if(jsonValue.ValueExists("isArchived"))
   {
     m_isArchived = jsonValue.GetBool("isArchived");
@@ -94,6 +100,12 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("userProvidedID"))
+  {
+    m_userProvidedID = jsonValue.GetString("userProvidedID");
+
   }
 
   if(jsonValue.ValueExists("vcenterClientID"))
