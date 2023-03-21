@@ -34,7 +34,9 @@ NetworkInsightsPath::NetworkInsightsPath() :
     m_protocolHasBeenSet(false),
     m_destinationPort(0),
     m_destinationPortHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_filterAtSourceHasBeenSet(false),
+    m_filterAtDestinationHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ NetworkInsightsPath::NetworkInsightsPath(const XmlNode& xmlNode) :
     m_protocolHasBeenSet(false),
     m_destinationPort(0),
     m_destinationPortHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_filterAtSourceHasBeenSet(false),
+    m_filterAtDestinationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -141,6 +145,18 @@ NetworkInsightsPath& NetworkInsightsPath::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode filterAtSourceNode = resultNode.FirstChild("filterAtSource");
+    if(!filterAtSourceNode.IsNull())
+    {
+      m_filterAtSource = filterAtSourceNode;
+      m_filterAtSourceHasBeenSet = true;
+    }
+    XmlNode filterAtDestinationNode = resultNode.FirstChild("filterAtDestination");
+    if(!filterAtDestinationNode.IsNull())
+    {
+      m_filterAtDestination = filterAtDestinationNode;
+      m_filterAtDestinationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -214,6 +230,20 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_filterAtSourceHasBeenSet)
+  {
+      Aws::StringStream filterAtSourceLocationAndMemberSs;
+      filterAtSourceLocationAndMemberSs << location << index << locationValue << ".FilterAtSource";
+      m_filterAtSource.OutputToStream(oStream, filterAtSourceLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_filterAtDestinationHasBeenSet)
+  {
+      Aws::StringStream filterAtDestinationLocationAndMemberSs;
+      filterAtDestinationLocationAndMemberSs << location << index << locationValue << ".FilterAtDestination";
+      m_filterAtDestination.OutputToStream(oStream, filterAtDestinationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -271,6 +301,18 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_filterAtSourceHasBeenSet)
+  {
+      Aws::String filterAtSourceLocationAndMember(location);
+      filterAtSourceLocationAndMember += ".FilterAtSource";
+      m_filterAtSource.OutputToStream(oStream, filterAtSourceLocationAndMember.c_str());
+  }
+  if(m_filterAtDestinationHasBeenSet)
+  {
+      Aws::String filterAtDestinationLocationAndMember(location);
+      filterAtDestinationLocationAndMember += ".FilterAtDestination";
+      m_filterAtDestination.OutputToStream(oStream, filterAtDestinationLocationAndMember.c_str());
   }
 }
 

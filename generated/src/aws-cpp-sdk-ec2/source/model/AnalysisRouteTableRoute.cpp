@@ -31,7 +31,10 @@ AnalysisRouteTableRoute::AnalysisRouteTableRoute() :
     m_originHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_carrierGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_localGatewayIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +49,10 @@ AnalysisRouteTableRoute::AnalysisRouteTableRoute(const XmlNode& xmlNode) :
     m_originHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_carrierGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_localGatewayIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -123,6 +129,24 @@ AnalysisRouteTableRoute& AnalysisRouteTableRoute::operator =(const XmlNode& xmlN
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
     }
+    XmlNode carrierGatewayIdNode = resultNode.FirstChild("carrierGatewayId");
+    if(!carrierGatewayIdNode.IsNull())
+    {
+      m_carrierGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(carrierGatewayIdNode.GetText());
+      m_carrierGatewayIdHasBeenSet = true;
+    }
+    XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
+    if(!coreNetworkArnNode.IsNull())
+    {
+      m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
+      m_coreNetworkArnHasBeenSet = true;
+    }
+    XmlNode localGatewayIdNode = resultNode.FirstChild("localGatewayId");
+    if(!localGatewayIdNode.IsNull())
+    {
+      m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
+      m_localGatewayIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -185,6 +209,21 @@ void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
 
+  if(m_carrierGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierGatewayId=" << StringUtils::URLEncode(m_carrierGatewayId.c_str()) << "&";
+  }
+
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+
+  if(m_localGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
+  }
+
 }
 
 void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -232,6 +271,18 @@ void AnalysisRouteTableRoute::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+  if(m_carrierGatewayIdHasBeenSet)
+  {
+      oStream << location << ".CarrierGatewayId=" << StringUtils::URLEncode(m_carrierGatewayId.c_str()) << "&";
+  }
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+  if(m_localGatewayIdHasBeenSet)
+  {
+      oStream << location << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
   }
 }
 

@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline const Aws::Vector<Column>& GetPartitionKeys() const{ return m_partitionKeys; }
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline void SetPartitionKeys(const Aws::Vector<Column>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline void SetPartitionKeys(Aws::Vector<Column>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline Schema& WithPartitionKeys(const Aws::Vector<Column>& value) { SetPartitionKeys(value); return *this;}
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline Schema& WithPartitionKeys(Aws::Vector<Column>&& value) { SetPartitionKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline Schema& AddPartitionKeys(const Column& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
 
     /**
-     * <p>The partition keys for the data set underlying this schema.</p>
+     * <p>The partition keys for the dataset underlying this schema.</p>
      */
     inline Schema& AddPartitionKeys(Column&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
 

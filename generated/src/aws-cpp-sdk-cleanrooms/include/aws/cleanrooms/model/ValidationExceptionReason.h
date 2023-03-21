@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FIELD_VALIDATION_FAILED,
-    INVALID_CONFIGURATION
+    INVALID_CONFIGURATION,
+    INVALID_QUERY
   };
 
 namespace ValidationExceptionReasonMapper

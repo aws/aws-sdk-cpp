@@ -216,56 +216,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFilterInArns() const{ return m_filterInArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline bool FilterInArnsHasBeenSet() const { return m_filterInArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline void SetFilterInArns(const Aws::Vector<Aws::String>& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline void SetFilterInArns(Aws::Vector<Aws::String>&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline NetworkInsightsAnalysis& WithFilterInArns(const Aws::Vector<Aws::String>& value) { SetFilterInArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline NetworkInsightsAnalysis& WithFilterInArns(Aws::Vector<Aws::String>&& value) { SetFilterInArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(const Aws::String& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(Aws::String&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
-     * path must traverse.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources that the path must
+     * traverse.</p>
      */
     inline NetworkInsightsAnalysis& AddFilterInArns(const char* value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
 

@@ -36,6 +36,7 @@
 #include <aws/chime-sdk-messaging/model/GetChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageStatusResult.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointResult.h>
+#include <aws/chime-sdk-messaging/model/GetMessagingStreamingConfigurationsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelBansResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelFlowsResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsResult.h>
@@ -48,6 +49,7 @@
 #include <aws/chime-sdk-messaging/model/ListSubChannelsResult.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceResult.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesResult.h>
+#include <aws/chime-sdk-messaging/model/PutMessagingStreamingConfigurationsResult.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/SearchChannelsResult.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageResult.h>
@@ -110,6 +112,7 @@ namespace Aws
       class DeleteChannelMembershipRequest;
       class DeleteChannelMessageRequest;
       class DeleteChannelModeratorRequest;
+      class DeleteMessagingStreamingConfigurationsRequest;
       class DescribeChannelRequest;
       class DescribeChannelBanRequest;
       class DescribeChannelFlowRequest;
@@ -122,6 +125,7 @@ namespace Aws
       class GetChannelMessageRequest;
       class GetChannelMessageStatusRequest;
       class GetMessagingSessionEndpointRequest;
+      class GetMessagingStreamingConfigurationsRequest;
       class ListChannelBansRequest;
       class ListChannelFlowsRequest;
       class ListChannelMembershipsRequest;
@@ -134,6 +138,7 @@ namespace Aws
       class ListSubChannelsRequest;
       class ListTagsForResourceRequest;
       class PutChannelMembershipPreferencesRequest;
+      class PutMessagingStreamingConfigurationsRequest;
       class RedactChannelMessageRequest;
       class SearchChannelsRequest;
       class SendChannelMessageRequest;
@@ -160,6 +165,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelMembershipOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelMessageOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteChannelModeratorOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DeleteMessagingStreamingConfigurationsOutcome;
       typedef Aws::Utils::Outcome<DescribeChannelResult, ChimeSDKMessagingError> DescribeChannelOutcome;
       typedef Aws::Utils::Outcome<DescribeChannelBanResult, ChimeSDKMessagingError> DescribeChannelBanOutcome;
       typedef Aws::Utils::Outcome<DescribeChannelFlowResult, ChimeSDKMessagingError> DescribeChannelFlowOutcome;
@@ -172,6 +178,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetChannelMessageResult, ChimeSDKMessagingError> GetChannelMessageOutcome;
       typedef Aws::Utils::Outcome<GetChannelMessageStatusResult, ChimeSDKMessagingError> GetChannelMessageStatusOutcome;
       typedef Aws::Utils::Outcome<GetMessagingSessionEndpointResult, ChimeSDKMessagingError> GetMessagingSessionEndpointOutcome;
+      typedef Aws::Utils::Outcome<GetMessagingStreamingConfigurationsResult, ChimeSDKMessagingError> GetMessagingStreamingConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListChannelBansResult, ChimeSDKMessagingError> ListChannelBansOutcome;
       typedef Aws::Utils::Outcome<ListChannelFlowsResult, ChimeSDKMessagingError> ListChannelFlowsOutcome;
       typedef Aws::Utils::Outcome<ListChannelMembershipsResult, ChimeSDKMessagingError> ListChannelMembershipsOutcome;
@@ -184,6 +191,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSubChannelsResult, ChimeSDKMessagingError> ListSubChannelsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMessagingError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutChannelMembershipPreferencesResult, ChimeSDKMessagingError> PutChannelMembershipPreferencesOutcome;
+      typedef Aws::Utils::Outcome<PutMessagingStreamingConfigurationsResult, ChimeSDKMessagingError> PutMessagingStreamingConfigurationsOutcome;
       typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeSDKMessagingError> RedactChannelMessageOutcome;
       typedef Aws::Utils::Outcome<SearchChannelsResult, ChimeSDKMessagingError> SearchChannelsOutcome;
       typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeSDKMessagingError> SendChannelMessageOutcome;
@@ -210,6 +218,7 @@ namespace Aws
       typedef std::future<DeleteChannelMembershipOutcome> DeleteChannelMembershipOutcomeCallable;
       typedef std::future<DeleteChannelMessageOutcome> DeleteChannelMessageOutcomeCallable;
       typedef std::future<DeleteChannelModeratorOutcome> DeleteChannelModeratorOutcomeCallable;
+      typedef std::future<DeleteMessagingStreamingConfigurationsOutcome> DeleteMessagingStreamingConfigurationsOutcomeCallable;
       typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
       typedef std::future<DescribeChannelBanOutcome> DescribeChannelBanOutcomeCallable;
       typedef std::future<DescribeChannelFlowOutcome> DescribeChannelFlowOutcomeCallable;
@@ -222,6 +231,7 @@ namespace Aws
       typedef std::future<GetChannelMessageOutcome> GetChannelMessageOutcomeCallable;
       typedef std::future<GetChannelMessageStatusOutcome> GetChannelMessageStatusOutcomeCallable;
       typedef std::future<GetMessagingSessionEndpointOutcome> GetMessagingSessionEndpointOutcomeCallable;
+      typedef std::future<GetMessagingStreamingConfigurationsOutcome> GetMessagingStreamingConfigurationsOutcomeCallable;
       typedef std::future<ListChannelBansOutcome> ListChannelBansOutcomeCallable;
       typedef std::future<ListChannelFlowsOutcome> ListChannelFlowsOutcomeCallable;
       typedef std::future<ListChannelMembershipsOutcome> ListChannelMembershipsOutcomeCallable;
@@ -234,6 +244,7 @@ namespace Aws
       typedef std::future<ListSubChannelsOutcome> ListSubChannelsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutChannelMembershipPreferencesOutcome> PutChannelMembershipPreferencesOutcomeCallable;
+      typedef std::future<PutMessagingStreamingConfigurationsOutcome> PutMessagingStreamingConfigurationsOutcomeCallable;
       typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
       typedef std::future<SearchChannelsOutcome> SearchChannelsOutcomeCallable;
       typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
@@ -263,6 +274,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelMembershipRequest&, const Model::DeleteChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelMessageRequest&, const Model::DeleteChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteChannelModeratorRequest&, const Model::DeleteChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelModeratorResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DeleteMessagingStreamingConfigurationsRequest&, const Model::DeleteMessagingStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessagingStreamingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelBanRequest&, const Model::DescribeChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelBanResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelFlowRequest&, const Model::DescribeChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelFlowResponseReceivedHandler;
@@ -275,6 +287,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageRequest&, const Model::GetChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageStatusRequest&, const Model::GetChannelMessageStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageStatusResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetMessagingSessionEndpointRequest&, const Model::GetMessagingSessionEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingSessionEndpointResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetMessagingStreamingConfigurationsRequest&, const Model::GetMessagingStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingStreamingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelBansRequest&, const Model::ListChannelBansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelBansResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelFlowsRequest&, const Model::ListChannelFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelFlowsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelMembershipsRequest&, const Model::ListChannelMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelMembershipsResponseReceivedHandler;
@@ -287,6 +300,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListSubChannelsRequest&, const Model::ListSubChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::PutChannelMembershipPreferencesRequest&, const Model::PutChannelMembershipPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelMembershipPreferencesResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::PutMessagingStreamingConfigurationsRequest&, const Model::PutMessagingStreamingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMessagingStreamingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SearchChannelsRequest&, const Model::SearchChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;

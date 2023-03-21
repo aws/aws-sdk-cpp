@@ -862,6 +862,106 @@ namespace mgn
         }
 
         /**
+         * <p>List export errors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExportErrorsOutcome ListExportErrors(const Model::ListExportErrorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExportErrors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListExportErrorsRequestT = Model::ListExportErrorsRequest>
+        Model::ListExportErrorsOutcomeCallable ListExportErrorsCallable(const ListExportErrorsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListExportErrors, request);
+        }
+
+        /**
+         * An Async wrapper for ListExportErrors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListExportErrorsRequestT = Model::ListExportErrorsRequest>
+        void ListExportErrorsAsync(const ListExportErrorsRequestT& request, const ListExportErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListExportErrors, request, handler, context);
+        }
+
+        /**
+         * <p>List exports.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListExportsRequestT = Model::ListExportsRequest>
+        Model::ListExportsOutcomeCallable ListExportsCallable(const ListExportsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListExports, request);
+        }
+
+        /**
+         * An Async wrapper for ListExports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListExportsRequestT = Model::ListExportsRequest>
+        void ListExportsAsync(const ListExportsRequestT& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListExports, request, handler, context);
+        }
+
+        /**
+         * <p>List import errors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportErrorsOutcome ListImportErrors(const Model::ListImportErrorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImportErrors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListImportErrorsRequestT = Model::ListImportErrorsRequest>
+        Model::ListImportErrorsOutcomeCallable ListImportErrorsCallable(const ListImportErrorsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListImportErrors, request);
+        }
+
+        /**
+         * An Async wrapper for ListImportErrors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListImportErrorsRequestT = Model::ListImportErrorsRequest>
+        void ListImportErrorsAsync(const ListImportErrorsRequestT& request, const ListImportErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListImportErrors, request, handler, context);
+        }
+
+        /**
+         * <p>List imports.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListImportsRequestT = Model::ListImportsRequest>
+        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::ListImports, request);
+        }
+
+        /**
+         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListImportsRequestT = Model::ListImportsRequest>
+        void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::ListImports, request, handler, context);
+        }
+
+        /**
          * <p>List source server post migration custom actions.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">AWS
@@ -1145,6 +1245,56 @@ namespace mgn
         void StartCutoverAsync(const StartCutoverRequestT& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MgnClient::StartCutover, request, handler, context);
+        }
+
+        /**
+         * <p>Start export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::StartExportOutcome StartExport(const Model::StartExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartExportRequestT = Model::StartExportRequest>
+        Model::StartExportOutcomeCallable StartExportCallable(const StartExportRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::StartExport, request);
+        }
+
+        /**
+         * An Async wrapper for StartExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartExportRequestT = Model::StartExportRequest>
+        void StartExportAsync(const StartExportRequestT& request, const StartExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::StartExport, request, handler, context);
+        }
+
+        /**
+         * <p>Start import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartImportRequestT = Model::StartImportRequest>
+        Model::StartImportOutcomeCallable StartImportCallable(const StartImportRequestT& request) const
+        {
+            return SubmitCallable(&MgnClient::StartImport, request);
+        }
+
+        /**
+         * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartImportRequestT = Model::StartImportRequest>
+        void StartImportAsync(const StartImportRequestT& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MgnClient::StartImport, request, handler, context);
         }
 
         /**

@@ -20,6 +20,7 @@ namespace Model
 
 SsmDocument::SsmDocument() : 
     m_actionNameHasBeenSet(false),
+    m_externalParametersHasBeenSet(false),
     m_mustSucceedForCutover(false),
     m_mustSucceedForCutoverHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -31,6 +32,7 @@ SsmDocument::SsmDocument() :
 
 SsmDocument::SsmDocument(JsonView jsonValue) : 
     m_actionNameHasBeenSet(false),
+    m_externalParametersHasBeenSet(false),
     m_mustSucceedForCutover(false),
     m_mustSucceedForCutoverHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -48,6 +50,16 @@ SsmDocument& SsmDocument::operator =(JsonView jsonValue)
     m_actionName = jsonValue.GetString("actionName");
 
     m_actionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("externalParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
+    for(auto& externalParametersItem : externalParametersJsonMap)
+    {
+      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
+    }
+    m_externalParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mustSucceedForCutover"))
@@ -98,6 +110,17 @@ JsonValue SsmDocument::Jsonize() const
   if(m_actionNameHasBeenSet)
   {
    payload.WithString("actionName", m_actionName);
+
+  }
+
+  if(m_externalParametersHasBeenSet)
+  {
+   JsonValue externalParametersJsonMap;
+   for(auto& externalParametersItem : m_externalParameters)
+   {
+     externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
+   }
+   payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
 
   }
 

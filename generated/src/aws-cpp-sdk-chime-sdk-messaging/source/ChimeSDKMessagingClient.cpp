@@ -35,6 +35,7 @@
 #include <aws/chime-sdk-messaging/model/DeleteChannelMembershipRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/DeleteChannelModeratorRequest.h>
+#include <aws/chime-sdk-messaging/model/DeleteMessagingStreamingConfigurationsRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelBanRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelFlowRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/chime-sdk-messaging/model/GetChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageStatusRequest.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointRequest.h>
+#include <aws/chime-sdk-messaging/model/GetMessagingStreamingConfigurationsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelBansRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelFlowsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelMembershipsRequest.h>
@@ -59,6 +61,7 @@
 #include <aws/chime-sdk-messaging/model/ListSubChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesRequest.h>
+#include <aws/chime-sdk-messaging/model/PutMessagingStreamingConfigurationsRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/SearchChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageRequest.h>
@@ -488,6 +491,22 @@ DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(co
   return DeleteChannelModeratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMessagingStreamingConfigurations(const DeleteMessagingStreamingConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMessagingStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return DeleteMessagingStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
+  return DeleteMessagingStreamingConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -781,6 +800,22 @@ GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionE
   return GetMessagingSessionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::GetMessagingStreamingConfigurations(const GetMessagingStreamingConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMessagingStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return GetMessagingStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
+  return GetMessagingStreamingConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChannelBansRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1010,6 +1045,22 @@ PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMember
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/preferences");
   return PutChannelMembershipPreferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::PutMessagingStreamingConfigurations(const PutMessagingStreamingConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMessagingStreamingConfigurations", "Required field: AppInstanceArn, is not set");
+    return PutMessagingStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
+  return PutMessagingStreamingConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const

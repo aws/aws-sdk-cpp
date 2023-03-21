@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Protocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/PathRequestFilter.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -41,181 +42,181 @@ namespace Model
   public:
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the source of the
-     * path.</p>
+     * <p>The IP address of the source.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
 
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline const Aws::String& GetDestinationIp() const{ return m_destinationIp; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline bool DestinationIpHasBeenSet() const { return m_destinationIpHasBeenSet; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline void SetDestinationIp(const Aws::String& value) { m_destinationIpHasBeenSet = true; m_destinationIp = value; }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline void SetDestinationIp(Aws::String&& value) { m_destinationIpHasBeenSet = true; m_destinationIp = std::move(value); }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline void SetDestinationIp(const char* value) { m_destinationIpHasBeenSet = true; m_destinationIp.assign(value); }
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(const Aws::String& value) { SetDestinationIp(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(Aws::String&& value) { SetDestinationIp(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Web Services resource that is the destination of
-     * the path.</p>
+     * <p>The IP address of the destination.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(const char* value) { SetDestinationIp(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource that is the source of the path.</p>
+     * <p>The ID or ARN of the source. If the resource is in another account, you must
+     * specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services resource that is the destination of the path.</p>
+     * <p>The ID or ARN of the destination. If the resource is in another account, you
+     * must specify an ARN.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -410,6 +411,92 @@ namespace Model
      */
     inline CreateNetworkInsightsPathRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline const PathRequestFilter& GetFilterAtSource() const{ return m_filterAtSource; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline bool FilterAtSourceHasBeenSet() const { return m_filterAtSourceHasBeenSet; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline void SetFilterAtSource(const PathRequestFilter& value) { m_filterAtSourceHasBeenSet = true; m_filterAtSource = value; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline void SetFilterAtSource(PathRequestFilter&& value) { m_filterAtSourceHasBeenSet = true; m_filterAtSource = std::move(value); }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline CreateNetworkInsightsPathRequest& WithFilterAtSource(const PathRequestFilter& value) { SetFilterAtSource(value); return *this;}
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * source. If you specify this parameter, you can't specify the parameters for the
+     * source IP address or the destination port.</p>
+     */
+    inline CreateNetworkInsightsPathRequest& WithFilterAtSource(PathRequestFilter&& value) { SetFilterAtSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline const PathRequestFilter& GetFilterAtDestination() const{ return m_filterAtDestination; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline bool FilterAtDestinationHasBeenSet() const { return m_filterAtDestinationHasBeenSet; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline void SetFilterAtDestination(const PathRequestFilter& value) { m_filterAtDestinationHasBeenSet = true; m_filterAtDestination = value; }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline void SetFilterAtDestination(PathRequestFilter&& value) { m_filterAtDestinationHasBeenSet = true; m_filterAtDestination = std::move(value); }
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline CreateNetworkInsightsPathRequest& WithFilterAtDestination(const PathRequestFilter& value) { SetFilterAtDestination(value); return *this;}
+
+    /**
+     * <p>Scopes the analysis to network paths that match specific filters at the
+     * destination. If you specify this parameter, you can't specify the parameter for
+     * the destination IP address.</p>
+     */
+    inline CreateNetworkInsightsPathRequest& WithFilterAtDestination(PathRequestFilter&& value) { SetFilterAtDestination(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_sourceIp;
@@ -438,6 +525,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    PathRequestFilter m_filterAtSource;
+    bool m_filterAtSourceHasBeenSet = false;
+
+    PathRequestFilter m_filterAtDestination;
+    bool m_filterAtDestinationHasBeenSet = false;
   };
 
 } // namespace Model

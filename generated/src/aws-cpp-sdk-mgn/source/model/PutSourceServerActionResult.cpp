@@ -19,6 +19,7 @@ using namespace Aws;
 
 PutSourceServerActionResult::PutSourceServerActionResult() : 
     m_active(false),
+    m_category(ActionCategory::NOT_SET),
     m_mustSucceedForCutover(false),
     m_order(0),
     m_timeoutSeconds(0)
@@ -27,6 +28,7 @@ PutSourceServerActionResult::PutSourceServerActionResult() :
 
 PutSourceServerActionResult::PutSourceServerActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_active(false),
+    m_category(ActionCategory::NOT_SET),
     m_mustSucceedForCutover(false),
     m_order(0),
     m_timeoutSeconds(0)
@@ -55,6 +57,18 @@ PutSourceServerActionResult& PutSourceServerActionResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("category"))
+  {
+    m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
   if(jsonValue.ValueExists("documentIdentifier"))
   {
     m_documentIdentifier = jsonValue.GetString("documentIdentifier");
@@ -65,6 +79,15 @@ PutSourceServerActionResult& PutSourceServerActionResult::operator =(const Aws::
   {
     m_documentVersion = jsonValue.GetString("documentVersion");
 
+  }
+
+  if(jsonValue.ValueExists("externalParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
+    for(auto& externalParametersItem : externalParametersJsonMap)
+    {
+      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
+    }
   }
 
   if(jsonValue.ValueExists("mustSucceedForCutover"))

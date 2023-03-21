@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A pointer to the data set that underlies this table. Currently, this can only
+   * <p>A pointer to the dataset that underlies this table. Currently, this can only
    * be an AWS Glue table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TableReference">AWS
    * API Reference</a></p>

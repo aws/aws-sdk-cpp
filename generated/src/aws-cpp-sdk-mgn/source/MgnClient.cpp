@@ -51,6 +51,10 @@
 #include <aws/mgn/model/GetReplicationConfigurationRequest.h>
 #include <aws/mgn/model/InitializeServiceRequest.h>
 #include <aws/mgn/model/ListApplicationsRequest.h>
+#include <aws/mgn/model/ListExportErrorsRequest.h>
+#include <aws/mgn/model/ListExportsRequest.h>
+#include <aws/mgn/model/ListImportErrorsRequest.h>
+#include <aws/mgn/model/ListImportsRequest.h>
 #include <aws/mgn/model/ListSourceServerActionsRequest.h>
 #include <aws/mgn/model/ListTagsForResourceRequest.h>
 #include <aws/mgn/model/ListTemplateActionsRequest.h>
@@ -62,6 +66,8 @@
 #include <aws/mgn/model/RemoveTemplateActionRequest.h>
 #include <aws/mgn/model/RetryDataReplicationRequest.h>
 #include <aws/mgn/model/StartCutoverRequest.h>
+#include <aws/mgn/model/StartExportRequest.h>
+#include <aws/mgn/model/StartImportRequest.h>
 #include <aws/mgn/model/StartReplicationRequest.h>
 #include <aws/mgn/model/StartTestRequest.h>
 #include <aws/mgn/model/TagResourceRequest.h>
@@ -474,6 +480,42 @@ ListApplicationsOutcome MgnClient::ListApplications(const ListApplicationsReques
   return ListApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListExportErrorsOutcome MgnClient::ListExportErrors(const ListExportErrorsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExportErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExportErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListExportErrors");
+  return ListExportErrorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExportsOutcome MgnClient::ListExports(const ListExportsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListExports");
+  return ListExportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportErrorsOutcome MgnClient::ListImportErrors(const ListImportErrorsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImportErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImportErrors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListImportErrors");
+  return ListImportErrorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportsOutcome MgnClient::ListImports(const ListImportsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListImports");
+  return ListImportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSourceServerActionsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceServerActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -577,6 +619,24 @@ StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) 
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCutover, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/StartCutover");
   return StartCutoverOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartExportOutcome MgnClient::StartExport(const StartExportRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartExport");
+  return StartExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartImportOutcome MgnClient::StartImport(const StartImportRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartImport");
+  return StartImportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const

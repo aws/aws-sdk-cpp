@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline const Aws::Vector<BatchGetAssetPropertyValueEntry>& GetEntries() const{ return m_entries; }
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline void SetEntries(const Aws::Vector<BatchGetAssetPropertyValueEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline void SetEntries(Aws::Vector<BatchGetAssetPropertyValueEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline BatchGetAssetPropertyValueRequest& WithEntries(const Aws::Vector<BatchGetAssetPropertyValueEntry>& value) { SetEntries(value); return *this;}
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline BatchGetAssetPropertyValueRequest& WithEntries(Aws::Vector<BatchGetAssetPropertyValueEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline BatchGetAssetPropertyValueRequest& AddEntries(const BatchGetAssetPropertyValueEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
      * <p>The list of asset property value entries for the batch get request. You can
-     * specify up to 16 entries per request.</p>
+     * specify up to 128 entries per request.</p>
      */
     inline BatchGetAssetPropertyValueRequest& AddEntries(BatchGetAssetPropertyValueEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 

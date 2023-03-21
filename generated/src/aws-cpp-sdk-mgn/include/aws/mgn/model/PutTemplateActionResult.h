@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/ActionCategory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mgn/model/SsmExternalParameter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/model/SsmParameterStoreParameter.h>
 #include <utility>
@@ -124,6 +126,68 @@ namespace Model
 
 
     /**
+     * <p>Template post migration custom action category.</p>
+     */
+    inline const ActionCategory& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>Template post migration custom action category.</p>
+     */
+    inline void SetCategory(const ActionCategory& value) { m_category = value; }
+
+    /**
+     * <p>Template post migration custom action category.</p>
+     */
+    inline void SetCategory(ActionCategory&& value) { m_category = std::move(value); }
+
+    /**
+     * <p>Template post migration custom action category.</p>
+     */
+    inline PutTemplateActionResult& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>Template post migration custom action category.</p>
+     */
+    inline PutTemplateActionResult& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline PutTemplateActionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline PutTemplateActionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Template post migration custom action description.</p>
+     */
+    inline PutTemplateActionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>Template post migration custom action document identifier.</p>
      */
     inline const Aws::String& GetDocumentIdentifier() const{ return m_documentIdentifier; }
@@ -193,6 +257,62 @@ namespace Model
      * <p>Template post migration custom action document version.</p>
      */
     inline PutTemplateActionResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const{ return m_externalParameters; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline void SetExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { m_externalParameters = value; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline void SetExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { m_externalParameters = std::move(value); }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& WithExternalParameters(const Aws::Map<Aws::String, SsmExternalParameter>& value) { SetExternalParameters(value); return *this;}
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& WithExternalParameters(Aws::Map<Aws::String, SsmExternalParameter>&& value) { SetExternalParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(const Aws::String& key, const SsmExternalParameter& value) { m_externalParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(Aws::String&& key, const SsmExternalParameter& value) { m_externalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(const Aws::String& key, SsmExternalParameter&& value) { m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(Aws::String&& key, SsmExternalParameter&& value) { m_externalParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(const char* key, SsmExternalParameter&& value) { m_externalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Template post migration custom action external parameters.</p>
+     */
+    inline PutTemplateActionResult& AddExternalParameters(const char* key, const SsmExternalParameter& value) { m_externalParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -364,9 +484,15 @@ namespace Model
 
     bool m_active;
 
+    ActionCategory m_category;
+
+    Aws::String m_description;
+
     Aws::String m_documentIdentifier;
 
     Aws::String m_documentVersion;
+
+    Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
 
     bool m_mustSucceedForCutover;
 

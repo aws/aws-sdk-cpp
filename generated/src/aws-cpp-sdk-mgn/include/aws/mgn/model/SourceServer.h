@@ -152,6 +152,47 @@ namespace Model
 
 
     /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline const Aws::String& GetFqdnForActionFramework() const{ return m_fqdnForActionFramework; }
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline bool FqdnForActionFrameworkHasBeenSet() const { return m_fqdnForActionFrameworkHasBeenSet; }
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline void SetFqdnForActionFramework(const Aws::String& value) { m_fqdnForActionFrameworkHasBeenSet = true; m_fqdnForActionFramework = value; }
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline void SetFqdnForActionFramework(Aws::String&& value) { m_fqdnForActionFrameworkHasBeenSet = true; m_fqdnForActionFramework = std::move(value); }
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline void SetFqdnForActionFramework(const char* value) { m_fqdnForActionFrameworkHasBeenSet = true; m_fqdnForActionFramework.assign(value); }
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline SourceServer& WithFqdnForActionFramework(const Aws::String& value) { SetFqdnForActionFramework(value); return *this;}
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline SourceServer& WithFqdnForActionFramework(Aws::String&& value) { SetFqdnForActionFramework(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server fqdn for action framework.</p>
+     */
+    inline SourceServer& WithFqdnForActionFramework(const char* value) { SetFqdnForActionFramework(value); return *this;}
+
+
+    /**
      * <p>Source server archived status.</p>
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
@@ -404,6 +445,47 @@ namespace Model
 
 
     /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline const Aws::String& GetUserProvidedID() const{ return m_userProvidedID; }
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline bool UserProvidedIDHasBeenSet() const { return m_userProvidedIDHasBeenSet; }
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline void SetUserProvidedID(const Aws::String& value) { m_userProvidedIDHasBeenSet = true; m_userProvidedID = value; }
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline void SetUserProvidedID(Aws::String&& value) { m_userProvidedIDHasBeenSet = true; m_userProvidedID = std::move(value); }
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline void SetUserProvidedID(const char* value) { m_userProvidedIDHasBeenSet = true; m_userProvidedID.assign(value); }
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline SourceServer& WithUserProvidedID(const Aws::String& value) { SetUserProvidedID(value); return *this;}
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline SourceServer& WithUserProvidedID(Aws::String&& value) { SetUserProvidedID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server user provided ID.</p>
+     */
+    inline SourceServer& WithUserProvidedID(const char* value) { SetUserProvidedID(value); return *this;}
+
+
+    /**
      * <p>Source server vCenter client id.</p>
      */
     inline const Aws::String& GetVcenterClientID() const{ return m_vcenterClientID; }
@@ -479,6 +561,9 @@ namespace Model
     DataReplicationInfo m_dataReplicationInfo;
     bool m_dataReplicationInfoHasBeenSet = false;
 
+    Aws::String m_fqdnForActionFramework;
+    bool m_fqdnForActionFrameworkHasBeenSet = false;
+
     bool m_isArchived;
     bool m_isArchivedHasBeenSet = false;
 
@@ -499,6 +584,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_userProvidedID;
+    bool m_userProvidedIDHasBeenSet = false;
 
     Aws::String m_vcenterClientID;
     bool m_vcenterClientIDHasBeenSet = false;

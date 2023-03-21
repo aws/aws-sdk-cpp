@@ -18,7 +18,8 @@ CreateConfiguredTableRequest::CreateConfiguredTableRequest() :
     m_tableReferenceHasBeenSet(false),
     m_allowedColumnsHasBeenSet(false),
     m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false)
+    m_analysisMethodHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,17 @@ Aws::String CreateConfiguredTableRequest::SerializePayload() const
   if(m_analysisMethodHasBeenSet)
   {
    payload.WithString("analysisMethod", AnalysisMethodMapper::GetNameForAnalysisMethod(m_analysisMethod));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

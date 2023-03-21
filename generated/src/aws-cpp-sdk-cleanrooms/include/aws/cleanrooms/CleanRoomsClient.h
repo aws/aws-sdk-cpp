@@ -16,13 +16,12 @@ namespace Aws
 namespace CleanRooms
 {
   /**
-   *  <p>AWS Clean Rooms is in preview release and is subject to change.</p>
-   *  <p>Welcome to the <i>AWS Clean Rooms API Reference</i>.</p> <p>AWS Clean
-   * Rooms is an AWS service that helps multiple parties to join their data together
-   * in a secure collaboration workspace. In the collaboration, members who can query
-   * and receive results can get insights into the combined data without either party
-   * getting access to the other party's raw data.</p> <p>To learn more about AWS
-   * Clean Rooms concepts, procedures, and best practices, see the <a
+   * <p>Welcome to the <i>AWS Clean Rooms API Reference</i>.</p> <p>AWS Clean Rooms
+   * is an AWS service that helps multiple parties to join their data together in a
+   * secure collaboration workspace. In the collaboration, members who can query and
+   * receive results can get insights into the collective datasets without either
+   * party getting access to the other party's raw data.</p> <p>To learn more about
+   * AWS Clean Rooms concepts, procedures, and best practices, see the <a
    * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">AWS
    * Clean Rooms User Guide</a>.</p>
    */
@@ -774,6 +773,32 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Lists all of the tags that have been added to a resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Creates a protected query that is started by AWS Clean Rooms.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedQuery">AWS
@@ -797,6 +822,56 @@ namespace CleanRooms
         void StartProtectedQueryAsync(const StartProtectedQueryRequestT& request, const StartProtectedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::StartProtectedQuery, request, handler, context);
+        }
+
+        /**
+         * <p>Tags a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes a tag or list of tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::UntagResource, request, handler, context);
         }
 
         /**

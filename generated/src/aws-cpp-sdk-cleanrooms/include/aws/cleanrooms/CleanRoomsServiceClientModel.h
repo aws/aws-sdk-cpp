@@ -45,7 +45,10 @@
 #include <aws/cleanrooms/model/ListMembershipsResult.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesResult.h>
 #include <aws/cleanrooms/model/ListSchemasResult.h>
+#include <aws/cleanrooms/model/ListTagsForResourceResult.h>
 #include <aws/cleanrooms/model/StartProtectedQueryResult.h>
+#include <aws/cleanrooms/model/TagResourceResult.h>
+#include <aws/cleanrooms/model/UntagResourceResult.h>
 #include <aws/cleanrooms/model/UpdateCollaborationResult.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableResult.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAnalysisRuleResult.h>
@@ -119,7 +122,10 @@ namespace Aws
       class ListMembershipsRequest;
       class ListProtectedQueriesRequest;
       class ListSchemasRequest;
+      class ListTagsForResourceRequest;
       class StartProtectedQueryRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateCollaborationRequest;
       class UpdateConfiguredTableRequest;
       class UpdateConfiguredTableAnalysisRuleRequest;
@@ -156,7 +162,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMembershipsResult, CleanRoomsError> ListMembershipsOutcome;
       typedef Aws::Utils::Outcome<ListProtectedQueriesResult, CleanRoomsError> ListProtectedQueriesOutcome;
       typedef Aws::Utils::Outcome<ListSchemasResult, CleanRoomsError> ListSchemasOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, CleanRoomsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<StartProtectedQueryResult, CleanRoomsError> StartProtectedQueryOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, CleanRoomsError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, CleanRoomsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCollaborationResult, CleanRoomsError> UpdateCollaborationOutcome;
       typedef Aws::Utils::Outcome<UpdateConfiguredTableResult, CleanRoomsError> UpdateConfiguredTableOutcome;
       typedef Aws::Utils::Outcome<UpdateConfiguredTableAnalysisRuleResult, CleanRoomsError> UpdateConfiguredTableAnalysisRuleOutcome;
@@ -193,7 +202,10 @@ namespace Aws
       typedef std::future<ListMembershipsOutcome> ListMembershipsOutcomeCallable;
       typedef std::future<ListProtectedQueriesOutcome> ListProtectedQueriesOutcomeCallable;
       typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<StartProtectedQueryOutcome> StartProtectedQueryOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCollaborationOutcome> UpdateCollaborationOutcomeCallable;
       typedef std::future<UpdateConfiguredTableOutcome> UpdateConfiguredTableOutcomeCallable;
       typedef std::future<UpdateConfiguredTableAnalysisRuleOutcome> UpdateConfiguredTableAnalysisRuleOutcomeCallable;
@@ -233,7 +245,10 @@ namespace Aws
     typedef std::function<void(const CleanRoomsClient*, const Model::ListMembershipsRequest&, const Model::ListMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembershipsResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListProtectedQueriesRequest&, const Model::ListProtectedQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedQueriesResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::StartProtectedQueryRequest&, const Model::StartProtectedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProtectedQueryResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateCollaborationRequest&, const Model::UpdateCollaborationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCollaborationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateConfiguredTableRequest&, const Model::UpdateConfiguredTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfiguredTableResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::UpdateConfiguredTableAnalysisRuleRequest&, const Model::UpdateConfiguredTableAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfiguredTableAnalysisRuleResponseReceivedHandler;

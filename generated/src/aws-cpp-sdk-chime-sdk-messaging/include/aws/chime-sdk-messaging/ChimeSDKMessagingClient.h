@@ -501,6 +501,35 @@ namespace ChimeSDKMessaging
         }
 
         /**
+         * <p>Deletes the streaming configurations for an <code>AppInstance</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+         * messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMessagingStreamingConfigurationsOutcome DeleteMessagingStreamingConfigurations(const Model::DeleteMessagingStreamingConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMessagingStreamingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMessagingStreamingConfigurationsRequestT = Model::DeleteMessagingStreamingConfigurationsRequest>
+        Model::DeleteMessagingStreamingConfigurationsOutcomeCallable DeleteMessagingStreamingConfigurationsCallable(const DeleteMessagingStreamingConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMessagingClient::DeleteMessagingStreamingConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMessagingStreamingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMessagingStreamingConfigurationsRequestT = Model::DeleteMessagingStreamingConfigurationsRequest>
+        void DeleteMessagingStreamingConfigurationsAsync(const DeleteMessagingStreamingConfigurationsRequestT& request, const DeleteMessagingStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMessagingClient::DeleteMessagingStreamingConfigurations, request, handler, context);
+        }
+
+        /**
          * <p>Returns the full details of a channel in an Amazon Chime
          * <code>AppInstance</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
          * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
@@ -851,6 +880,35 @@ namespace ChimeSDKMessaging
         }
 
         /**
+         * <p>Retrieves the data streaming configuration for an <code>AppInstance</code>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+         * messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMessagingStreamingConfigurationsOutcome GetMessagingStreamingConfigurations(const Model::GetMessagingStreamingConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMessagingStreamingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMessagingStreamingConfigurationsRequestT = Model::GetMessagingStreamingConfigurationsRequest>
+        Model::GetMessagingStreamingConfigurationsOutcomeCallable GetMessagingStreamingConfigurationsCallable(const GetMessagingStreamingConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMessagingClient::GetMessagingStreamingConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for GetMessagingStreamingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMessagingStreamingConfigurationsRequestT = Model::GetMessagingStreamingConfigurationsRequest>
+        void GetMessagingStreamingConfigurationsAsync(const GetMessagingStreamingConfigurationsRequestT& request, const GetMessagingStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMessagingClient::GetMessagingStreamingConfigurations, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the users banned from a particular channel.</p>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
@@ -1196,6 +1254,35 @@ namespace ChimeSDKMessaging
         void PutChannelMembershipPreferencesAsync(const PutChannelMembershipPreferencesRequestT& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMessagingClient::PutChannelMembershipPreferences, request, handler, context);
+        }
+
+        /**
+         * <p>Sets the data streaming configuration for an <code>AppInstance</code>. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming
+         * messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMessagingStreamingConfigurationsOutcome PutMessagingStreamingConfigurations(const Model::PutMessagingStreamingConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutMessagingStreamingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutMessagingStreamingConfigurationsRequestT = Model::PutMessagingStreamingConfigurationsRequest>
+        Model::PutMessagingStreamingConfigurationsOutcomeCallable PutMessagingStreamingConfigurationsCallable(const PutMessagingStreamingConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMessagingClient::PutMessagingStreamingConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for PutMessagingStreamingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutMessagingStreamingConfigurationsRequestT = Model::PutMessagingStreamingConfigurationsRequest>
+        void PutMessagingStreamingConfigurationsAsync(const PutMessagingStreamingConfigurationsRequestT& request, const PutMessagingStreamingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMessagingClient::PutMessagingStreamingConfigurations, request, handler, context);
         }
 
         /**

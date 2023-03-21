@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateMembershipRequest::CreateMembershipRequest() : 
     m_collaborationIdentifierHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false)
+    m_queryLogStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String CreateMembershipRequest::SerializePayload() const
   if(m_queryLogStatusHasBeenSet)
   {
    payload.WithString("queryLogStatus", MembershipQueryLogStatusMapper::GetNameForMembershipQueryLogStatus(m_queryLogStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

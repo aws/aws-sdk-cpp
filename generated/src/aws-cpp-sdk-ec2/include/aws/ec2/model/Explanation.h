@@ -15,6 +15,8 @@
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
 #include <aws/ec2/model/TransitGatewayRouteTableRoute.h>
+#include <aws/ec2/model/FirewallStatelessRule.h>
+#include <aws/ec2/model/FirewallStatefulRule.h>
 #include <aws/ec2/model/PortRange.h>
 #include <utility>
 
@@ -1789,6 +1791,68 @@ namespace Model
      */
     inline Explanation& WithComponentRegion(const char* value) { SetComponentRegion(value); return *this;}
 
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline const FirewallStatelessRule& GetFirewallStatelessRule() const{ return m_firewallStatelessRule; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline bool FirewallStatelessRuleHasBeenSet() const { return m_firewallStatelessRuleHasBeenSet; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline void SetFirewallStatelessRule(const FirewallStatelessRule& value) { m_firewallStatelessRuleHasBeenSet = true; m_firewallStatelessRule = value; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline void SetFirewallStatelessRule(FirewallStatelessRule&& value) { m_firewallStatelessRuleHasBeenSet = true; m_firewallStatelessRule = std::move(value); }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline Explanation& WithFirewallStatelessRule(const FirewallStatelessRule& value) { SetFirewallStatelessRule(value); return *this;}
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline Explanation& WithFirewallStatelessRule(FirewallStatelessRule&& value) { SetFirewallStatelessRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline const FirewallStatefulRule& GetFirewallStatefulRule() const{ return m_firewallStatefulRule; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline bool FirewallStatefulRuleHasBeenSet() const { return m_firewallStatefulRuleHasBeenSet; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline void SetFirewallStatefulRule(const FirewallStatefulRule& value) { m_firewallStatefulRuleHasBeenSet = true; m_firewallStatefulRule = value; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline void SetFirewallStatefulRule(FirewallStatefulRule&& value) { m_firewallStatefulRuleHasBeenSet = true; m_firewallStatefulRule = std::move(value); }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline Explanation& WithFirewallStatefulRule(const FirewallStatefulRule& value) { SetFirewallStatefulRule(value); return *this;}
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline Explanation& WithFirewallStatefulRule(FirewallStatefulRule&& value) { SetFirewallStatefulRule(std::move(value)); return *this;}
+
   private:
 
     AnalysisComponent m_acl;
@@ -1943,6 +2007,12 @@ namespace Model
 
     Aws::String m_componentRegion;
     bool m_componentRegionHasBeenSet = false;
+
+    FirewallStatelessRule m_firewallStatelessRule;
+    bool m_firewallStatelessRuleHasBeenSet = false;
+
+    FirewallStatefulRule m_firewallStatefulRule;
+    bool m_firewallStatefulRuleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,6 +13,9 @@
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TransitGatewayRouteTableRoute.h>
+#include <aws/ec2/model/FirewallStatelessRule.h>
+#include <aws/ec2/model/FirewallStatefulRule.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AdditionalDetail.h>
 #include <aws/ec2/model/Explanation.h>
 #include <utility>
@@ -583,6 +586,109 @@ namespace Model
      */
     inline PathComponent& WithElasticLoadBalancerListener(AnalysisComponent&& value) { SetElasticLoadBalancerListener(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline const FirewallStatelessRule& GetFirewallStatelessRule() const{ return m_firewallStatelessRule; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline bool FirewallStatelessRuleHasBeenSet() const { return m_firewallStatelessRuleHasBeenSet; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline void SetFirewallStatelessRule(const FirewallStatelessRule& value) { m_firewallStatelessRuleHasBeenSet = true; m_firewallStatelessRule = value; }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline void SetFirewallStatelessRule(FirewallStatelessRule&& value) { m_firewallStatelessRuleHasBeenSet = true; m_firewallStatelessRule = std::move(value); }
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline PathComponent& WithFirewallStatelessRule(const FirewallStatelessRule& value) { SetFirewallStatelessRule(value); return *this;}
+
+    /**
+     * <p>The Network Firewall stateless rule.</p>
+     */
+    inline PathComponent& WithFirewallStatelessRule(FirewallStatelessRule&& value) { SetFirewallStatelessRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline const FirewallStatefulRule& GetFirewallStatefulRule() const{ return m_firewallStatefulRule; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline bool FirewallStatefulRuleHasBeenSet() const { return m_firewallStatefulRuleHasBeenSet; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline void SetFirewallStatefulRule(const FirewallStatefulRule& value) { m_firewallStatefulRuleHasBeenSet = true; m_firewallStatefulRule = value; }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline void SetFirewallStatefulRule(FirewallStatefulRule&& value) { m_firewallStatefulRuleHasBeenSet = true; m_firewallStatefulRule = std::move(value); }
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline PathComponent& WithFirewallStatefulRule(const FirewallStatefulRule& value) { SetFirewallStatefulRule(value); return *this;}
+
+    /**
+     * <p>The Network Firewall stateful rule.</p>
+     */
+    inline PathComponent& WithFirewallStatefulRule(FirewallStatefulRule&& value) { SetFirewallStatefulRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline PathComponent& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline PathComponent& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the VPC endpoint service.</p>
+     */
+    inline PathComponent& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
   private:
 
     int m_sequenceNumber;
@@ -635,6 +741,15 @@ namespace Model
 
     AnalysisComponent m_elasticLoadBalancerListener;
     bool m_elasticLoadBalancerListenerHasBeenSet = false;
+
+    FirewallStatelessRule m_firewallStatelessRule;
+    bool m_firewallStatelessRuleHasBeenSet = false;
+
+    FirewallStatefulRule m_firewallStatefulRule;
+    bool m_firewallStatefulRuleHasBeenSet = false;
+
+    Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

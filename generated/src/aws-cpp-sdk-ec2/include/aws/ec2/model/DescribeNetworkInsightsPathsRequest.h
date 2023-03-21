@@ -86,64 +86,152 @@ namespace Model
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>destination - The ID of the resource.</p> </li> <li> <p>destination-port -
-     * The destination port.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
+     * <p>destination - The ID of the resource.</p> </li> <li>
+     * <p>filter-at-source.source-address - The source IPv4 address at the source.</p>
+     * </li> <li> <p>filter-at-source.source-port-range - The source port range at the
+     * source.</p> </li> <li> <p>filter-at-source.destination-address - The destination
+     * IPv4 address at the source.</p> </li> <li>
+     * <p>filter-at-source.destination-port-range - The destination port range at the
+     * source.</p> </li> <li> <p>filter-at-destination.source-address - The source IPv4
+     * address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.source-port-range - The source port range at the
+     * destination.</p> </li> <li> <p>filter-at-destination.destination-address - The
+     * destination IPv4 address at the destination.</p> </li> <li>
+     * <p>filter-at-destination.destination-port-range - The destination port range at
+     * the destination.</p> </li> <li> <p>protocol - The protocol.</p> </li> <li>
      * <p>source - The ID of the resource.</p> </li> </ul>
      */
     inline DescribeNetworkInsightsPathsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
