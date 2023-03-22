@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline const Aws::Vector<ComponentRecommendation>& GetComponentRecommendations() const{ return m_componentRecommendations; }
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline void SetComponentRecommendations(const Aws::Vector<ComponentRecommendation>& value) { m_componentRecommendations = value; }
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline void SetComponentRecommendations(Aws::Vector<ComponentRecommendation>&& value) { m_componentRecommendations = std::move(value); }
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline ListAppComponentRecommendationsResult& WithComponentRecommendations(const Aws::Vector<ComponentRecommendation>& value) { SetComponentRecommendations(value); return *this;}
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline ListAppComponentRecommendationsResult& WithComponentRecommendations(Aws::Vector<ComponentRecommendation>&& value) { SetComponentRecommendations(std::move(value)); return *this;}
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline ListAppComponentRecommendationsResult& AddComponentRecommendations(const ComponentRecommendation& value) { m_componentRecommendations.push_back(value); return *this; }
 
     /**
-     * <p>The recommendations for an AWS Resilience Hub Application Component, returned
-     * as an object. This object contains the names of the Application Components,
+     * <p>The recommendations for an Resilience Hub Application Component, returned as
+     * an object. This object contains the names of the Application Components,
      * configuration recommendations, and recommendation statuses.</p>
      */
     inline ListAppComponentRecommendationsResult& AddComponentRecommendations(ComponentRecommendation&& value) { m_componentRecommendations.push_back(std::move(value)); return *this; }

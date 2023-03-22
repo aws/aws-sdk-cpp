@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines a resource that is not supported by AWS Resilience Hub.</p><p><h3>See
+   * <p>Defines a resource that is not supported by Resilience Hub.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UnsupportedResource">AWS
    * API Reference</a></p>
@@ -142,6 +142,47 @@ namespace Model
      */
     inline UnsupportedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline const Aws::String& GetUnsupportedResourceStatus() const{ return m_unsupportedResourceStatus; }
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline bool UnsupportedResourceStatusHasBeenSet() const { return m_unsupportedResourceStatusHasBeenSet; }
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline void SetUnsupportedResourceStatus(const Aws::String& value) { m_unsupportedResourceStatusHasBeenSet = true; m_unsupportedResourceStatus = value; }
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline void SetUnsupportedResourceStatus(Aws::String&& value) { m_unsupportedResourceStatusHasBeenSet = true; m_unsupportedResourceStatus = std::move(value); }
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline void SetUnsupportedResourceStatus(const char* value) { m_unsupportedResourceStatusHasBeenSet = true; m_unsupportedResourceStatus.assign(value); }
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline UnsupportedResource& WithUnsupportedResourceStatus(const Aws::String& value) { SetUnsupportedResourceStatus(value); return *this;}
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline UnsupportedResource& WithUnsupportedResourceStatus(Aws::String&& value) { SetUnsupportedResourceStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of unsupported resource.</p>
+     */
+    inline UnsupportedResource& WithUnsupportedResourceStatus(const char* value) { SetUnsupportedResourceStatus(value); return *this;}
+
   private:
 
     LogicalResourceId m_logicalResourceId;
@@ -152,6 +193,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::String m_unsupportedResourceStatus;
+    bool m_unsupportedResourceStatusHasBeenSet = false;
   };
 
 } // namespace Model

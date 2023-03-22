@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The assessment for an AWS Resilience Hub application, returned as an object.
-     * This object includes Amazon Resource Names (ARNs), compliance information,
-     * compliance status, cost, messages, resiliency scores, and more.</p>
+     * <p>The assessment for an Resilience Hub application, returned as an object. This
+     * object includes Amazon Resource Names (ARNs), compliance information, compliance
+     * status, cost, messages, resiliency scores, and more.</p>
      */
     inline const AppAssessment& GetAssessment() const{ return m_assessment; }
 
     /**
-     * <p>The assessment for an AWS Resilience Hub application, returned as an object.
-     * This object includes Amazon Resource Names (ARNs), compliance information,
-     * compliance status, cost, messages, resiliency scores, and more.</p>
+     * <p>The assessment for an Resilience Hub application, returned as an object. This
+     * object includes Amazon Resource Names (ARNs), compliance information, compliance
+     * status, cost, messages, resiliency scores, and more.</p>
      */
     inline void SetAssessment(const AppAssessment& value) { m_assessment = value; }
 
     /**
-     * <p>The assessment for an AWS Resilience Hub application, returned as an object.
-     * This object includes Amazon Resource Names (ARNs), compliance information,
-     * compliance status, cost, messages, resiliency scores, and more.</p>
+     * <p>The assessment for an Resilience Hub application, returned as an object. This
+     * object includes Amazon Resource Names (ARNs), compliance information, compliance
+     * status, cost, messages, resiliency scores, and more.</p>
      */
     inline void SetAssessment(AppAssessment&& value) { m_assessment = std::move(value); }
 
     /**
-     * <p>The assessment for an AWS Resilience Hub application, returned as an object.
-     * This object includes Amazon Resource Names (ARNs), compliance information,
-     * compliance status, cost, messages, resiliency scores, and more.</p>
+     * <p>The assessment for an Resilience Hub application, returned as an object. This
+     * object includes Amazon Resource Names (ARNs), compliance information, compliance
+     * status, cost, messages, resiliency scores, and more.</p>
      */
     inline DescribeAppAssessmentResult& WithAssessment(const AppAssessment& value) { SetAssessment(value); return *this;}
 
     /**
-     * <p>The assessment for an AWS Resilience Hub application, returned as an object.
-     * This object includes Amazon Resource Names (ARNs), compliance information,
-     * compliance status, cost, messages, resiliency scores, and more.</p>
+     * <p>The assessment for an Resilience Hub application, returned as an object. This
+     * object includes Amazon Resource Names (ARNs), compliance information, compliance
+     * status, cost, messages, resiliency scores, and more.</p>
      */
     inline DescribeAppAssessmentResult& WithAssessment(AppAssessment&& value) { SetAssessment(std::move(value)); return *this;}
 

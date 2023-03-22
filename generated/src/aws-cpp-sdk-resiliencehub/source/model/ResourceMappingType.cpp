@@ -25,6 +25,7 @@ namespace Aws
         static const int AppRegistryApp_HASH = HashingUtils::HashString("AppRegistryApp");
         static const int ResourceGroup_HASH = HashingUtils::HashString("ResourceGroup");
         static const int Terraform_HASH = HashingUtils::HashString("Terraform");
+        static const int EKS_HASH = HashingUtils::HashString("EKS");
 
 
         ResourceMappingType GetResourceMappingTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ResourceMappingType::Terraform;
           }
+          else if (hashCode == EKS_HASH)
+          {
+            return ResourceMappingType::EKS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "ResourceGroup";
           case ResourceMappingType::Terraform:
             return "Terraform";
+          case ResourceMappingType::EKS:
+            return "EKS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

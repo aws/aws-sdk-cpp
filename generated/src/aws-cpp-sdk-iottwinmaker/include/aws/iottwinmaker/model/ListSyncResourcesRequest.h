@@ -76,91 +76,115 @@ namespace Model
 
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(const Aws::String& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(Aws::String&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(const char* value) { m_syncSourceHasBeenSet = true; m_syncSource.assign(value); }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline ListSyncResourcesRequest& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline ListSyncResourcesRequest& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline ListSyncResourcesRequest& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
 
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline const Aws::Vector<SyncResourceFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<SyncResourceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<SyncResourceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline ListSyncResourcesRequest& WithFilters(const Aws::Vector<SyncResourceFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline ListSyncResourcesRequest& WithFilters(Aws::Vector<SyncResourceFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline ListSyncResourcesRequest& AddFilters(const SyncResourceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects that filter the request.</p>
+     * <p>A list of objects that filter the request.</p> <p>The following filter
+     * combinations are supported:</p> <ul> <li> <p>Filter with state</p> </li> <li>
+     * <p>Filter with ResourceType and ResourceId</p> </li> <li> <p>Filter with
+     * ResourceType and ExternalId</p> </li> </ul>
      */
     inline ListSyncResourcesRequest& AddFilters(SyncResourceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

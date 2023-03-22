@@ -28,7 +28,9 @@ namespace Model
     DEBIAN,
     MACOS,
     RASPBIAN,
-    ROCKY_LINUX
+    ROCKY_LINUX,
+    ALMA_LINUX,
+    AMAZON_LINUX_2023
   };
 
 namespace OperatingSystemMapper

@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines an AWS Resilience Hub application.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines an Resilience Hub application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/App">AWS
    * API Reference</a></p>
    */

@@ -558,37 +558,37 @@ namespace Model
 
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline void SetSyncSource(const Aws::String& value) { m_syncSource = value; }
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline void SetSyncSource(Aws::String&& value) { m_syncSource = std::move(value); }
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline void SetSyncSource(const char* value) { m_syncSource.assign(value); }
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline GetComponentTypeResult& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline GetComponentTypeResult& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
 
     /**
-     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     * <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
      */
     inline GetComponentTypeResult& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
 

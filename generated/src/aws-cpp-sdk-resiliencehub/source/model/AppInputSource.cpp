@@ -19,6 +19,7 @@ namespace Model
 {
 
 AppInputSource::AppInputSource() : 
+    m_eksSourceClusterNamespaceHasBeenSet(false),
     m_importType(ResourceMappingType::NOT_SET),
     m_importTypeHasBeenSet(false),
     m_resourceCount(0),
@@ -30,6 +31,7 @@ AppInputSource::AppInputSource() :
 }
 
 AppInputSource::AppInputSource(JsonView jsonValue) : 
+    m_eksSourceClusterNamespaceHasBeenSet(false),
     m_importType(ResourceMappingType::NOT_SET),
     m_importTypeHasBeenSet(false),
     m_resourceCount(0),
@@ -43,6 +45,13 @@ AppInputSource::AppInputSource(JsonView jsonValue) :
 
 AppInputSource& AppInputSource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("eksSourceClusterNamespace"))
+  {
+    m_eksSourceClusterNamespace = jsonValue.GetObject("eksSourceClusterNamespace");
+
+    m_eksSourceClusterNamespaceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("importType"))
   {
     m_importType = ResourceMappingTypeMapper::GetResourceMappingTypeForName(jsonValue.GetString("importType"));
@@ -84,6 +93,12 @@ AppInputSource& AppInputSource::operator =(JsonView jsonValue)
 JsonValue AppInputSource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_eksSourceClusterNamespaceHasBeenSet)
+  {
+   payload.WithObject("eksSourceClusterNamespace", m_eksSourceClusterNamespace.Jsonize());
+
+  }
 
   if(m_importTypeHasBeenSet)
   {

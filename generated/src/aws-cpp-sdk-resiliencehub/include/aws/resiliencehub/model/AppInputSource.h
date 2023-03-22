@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/resiliencehub/model/EksSourceClusterNamespace.h>
 #include <aws/resiliencehub/model/ResourceMappingType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehub/model/TerraformSource.h>
@@ -26,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The list of AWS Resilience Hub application input sources.</p><p><h3>See
+   * <p>The list of Resilience Hub application input sources.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppInputSource">AWS
    * API Reference</a></p>
@@ -38,6 +39,37 @@ namespace Model
     AWS_RESILIENCEHUB_API AppInputSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API AppInputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline const EksSourceClusterNamespace& GetEksSourceClusterNamespace() const{ return m_eksSourceClusterNamespace; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline bool EksSourceClusterNamespaceHasBeenSet() const { return m_eksSourceClusterNamespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline void SetEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = value; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline void SetEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = std::move(value); }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline AppInputSource& WithEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { SetEksSourceClusterNamespace(value); return *this;}
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
+     */
+    inline AppInputSource& WithEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { SetEksSourceClusterNamespace(std::move(value)); return *this;}
 
 
     /**
@@ -72,22 +104,22 @@ namespace Model
 
 
     /**
-     * <p>The number of resources that were imported.</p>
+     * <p>The number of resources.</p>
      */
     inline int GetResourceCount() const{ return m_resourceCount; }
 
     /**
-     * <p>The number of resources that were imported.</p>
+     * <p>The number of resources.</p>
      */
     inline bool ResourceCountHasBeenSet() const { return m_resourceCountHasBeenSet; }
 
     /**
-     * <p>The number of resources that were imported.</p>
+     * <p>The number of resources.</p>
      */
     inline void SetResourceCount(int value) { m_resourceCountHasBeenSet = true; m_resourceCount = value; }
 
     /**
-     * <p>The number of resources that were imported.</p>
+     * <p>The number of resources.</p>
      */
     inline AppInputSource& WithResourceCount(int value) { SetResourceCount(value); return *this;}
 
@@ -229,6 +261,9 @@ namespace Model
     inline AppInputSource& WithTerraformSource(TerraformSource&& value) { SetTerraformSource(std::move(value)); return *this;}
 
   private:
+
+    EksSourceClusterNamespace m_eksSourceClusterNamespace;
+    bool m_eksSourceClusterNamespaceHasBeenSet = false;
 
     ResourceMappingType m_importType;
     bool m_importTypeHasBeenSet = false;

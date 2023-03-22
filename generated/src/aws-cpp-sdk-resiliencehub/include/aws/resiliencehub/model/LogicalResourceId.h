@@ -38,6 +38,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline const Aws::String& GetEksSourceName() const{ return m_eksSourceName; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline bool EksSourceNameHasBeenSet() const { return m_eksSourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(const Aws::String& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = value; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(Aws::String&& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(const char* value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline LogicalResourceId& WithEksSourceName(const Aws::String& value) { SetEksSourceName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline LogicalResourceId& WithEksSourceName(Aws::String&& value) { SetEksSourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline LogicalResourceId& WithEksSourceName(const char* value) { SetEksSourceName(value); return *this;}
+
+
+    /**
      * <p>The identifier of the resource.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
@@ -201,6 +258,9 @@ namespace Model
     inline LogicalResourceId& WithTerraformSourceName(const char* value) { SetTerraformSourceName(value); return *this;}
 
   private:
+
+    Aws::String m_eksSourceName;
+    bool m_eksSourceNameHasBeenSet = false;
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;

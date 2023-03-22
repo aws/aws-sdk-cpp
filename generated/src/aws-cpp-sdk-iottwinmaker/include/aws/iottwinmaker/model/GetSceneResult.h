@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -314,6 +315,128 @@ namespace Model
     inline GetSceneResult& AddCapabilities(const char* value) { m_capabilities.push_back(value); return *this; }
 
 
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSceneMetadata() const{ return m_sceneMetadata; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline void SetSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_sceneMetadata = value; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline void SetSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_sceneMetadata = std::move(value); }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& WithSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetSceneMetadata(value); return *this;}
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& WithSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetSceneMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(const Aws::String& key, const Aws::String& value) { m_sceneMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(Aws::String&& key, const Aws::String& value) { m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(const Aws::String& key, Aws::String&& value) { m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(Aws::String&& key, Aws::String&& value) { m_sceneMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(const char* key, Aws::String&& value) { m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(Aws::String&& key, const char* value) { m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The response metadata.</p>
+     */
+    inline GetSceneResult& AddSceneMetadata(const char* key, const char* value) { m_sceneMetadata.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetGeneratedSceneMetadata() const{ return m_generatedSceneMetadata; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline void SetGeneratedSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_generatedSceneMetadata = value; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline void SetGeneratedSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_generatedSceneMetadata = std::move(value); }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& WithGeneratedSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetGeneratedSceneMetadata(value); return *this;}
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& WithGeneratedSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetGeneratedSceneMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(const Aws::String& key, const Aws::String& value) { m_generatedSceneMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(Aws::String&& key, const Aws::String& value) { m_generatedSceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(const Aws::String& key, Aws::String&& value) { m_generatedSceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(Aws::String&& key, Aws::String&& value) { m_generatedSceneMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(const char* key, Aws::String&& value) { m_generatedSceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(Aws::String&& key, const char* value) { m_generatedSceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The generated scene metadata.</p>
+     */
+    inline GetSceneResult& AddGeneratedSceneMetadata(const char* key, const char* value) { m_generatedSceneMetadata.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -352,6 +475,10 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<Aws::String> m_capabilities;
+
+    Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
+
+    Aws::Map<Aws::String, Aws::String> m_generatedSceneMetadata;
 
     Aws::String m_requestId;
   };

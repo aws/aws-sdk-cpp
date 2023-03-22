@@ -170,6 +170,70 @@ namespace Model
 
 
     /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetEksSourceNames() const{ return m_eksSourceNames; }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline bool EksSourceNamesHasBeenSet() const { return m_eksSourceNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceNames(const Aws::Vector<Aws::String>& value) { m_eksSourceNamesHasBeenSet = true; m_eksSourceNames = value; }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceNames(Aws::Vector<Aws::String>&& value) { m_eksSourceNamesHasBeenSet = true; m_eksSourceNames = std::move(value); }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline RemoveDraftAppVersionResourceMappingsRequest& WithEksSourceNames(const Aws::Vector<Aws::String>& value) { SetEksSourceNames(value); return *this;}
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline RemoveDraftAppVersionResourceMappingsRequest& WithEksSourceNames(Aws::Vector<Aws::String>&& value) { SetEksSourceNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline RemoveDraftAppVersionResourceMappingsRequest& AddEksSourceNames(const Aws::String& value) { m_eksSourceNamesHasBeenSet = true; m_eksSourceNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline RemoveDraftAppVersionResourceMappingsRequest& AddEksSourceNames(Aws::String&& value) { m_eksSourceNamesHasBeenSet = true; m_eksSourceNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces
+     * you want to remove from the resource mappings.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p> 
+     */
+    inline RemoveDraftAppVersionResourceMappingsRequest& AddEksSourceNames(const char* value) { m_eksSourceNamesHasBeenSet = true; m_eksSourceNames.push_back(value); return *this; }
+
+
+    /**
      * <p>The names of the CloudFormation stacks you want to remove from the resource
      * mappings.</p>
      */
@@ -386,6 +450,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_appRegistryAppNames;
     bool m_appRegistryAppNamesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_eksSourceNames;
+    bool m_eksSourceNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logicalStackNames;
     bool m_logicalStackNamesHasBeenSet = false;

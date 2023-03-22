@@ -18,7 +18,8 @@ CreateSceneRequest::CreateSceneRequest() :
     m_contentLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sceneMetadataHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,17 @@ Aws::String CreateSceneRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_sceneMetadataHasBeenSet)
+  {
+   JsonValue sceneMetadataJsonMap;
+   for(auto& sceneMetadataItem : m_sceneMetadata)
+   {
+     sceneMetadataJsonMap.WithString(sceneMetadataItem.first, sceneMetadataItem.second);
+   }
+   payload.WithObject("sceneMetadata", std::move(sceneMetadataJsonMap));
 
   }
 

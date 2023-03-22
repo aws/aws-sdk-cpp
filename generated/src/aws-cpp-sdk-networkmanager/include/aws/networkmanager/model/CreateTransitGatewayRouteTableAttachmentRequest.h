@@ -77,42 +77,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline const Aws::String& GetTransitGatewayRouteTableArn() const{ return m_transitGatewayRouteTableArn; }
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline bool TransitGatewayRouteTableArnHasBeenSet() const { return m_transitGatewayRouteTableArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline void SetTransitGatewayRouteTableArn(const Aws::String& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = value; }
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline void SetTransitGatewayRouteTableArn(Aws::String&& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = std::move(value); }
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline void SetTransitGatewayRouteTableArn(const char* value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn.assign(value); }
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline CreateTransitGatewayRouteTableAttachmentRequest& WithTransitGatewayRouteTableArn(const Aws::String& value) { SetTransitGatewayRouteTableArn(value); return *this;}
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline CreateTransitGatewayRouteTableAttachmentRequest& WithTransitGatewayRouteTableArn(Aws::String&& value) { SetTransitGatewayRouteTableArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the transit gateway route table for the attachment request.</p>
+     * <p>The ARN of the transit gateway route table for the attachment request. For
+     * example, <code>"TransitGatewayRouteTableArn":
+     * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
     inline CreateTransitGatewayRouteTableAttachmentRequest& WithTransitGatewayRouteTableArn(const char* value) { SetTransitGatewayRouteTableArn(value); return *this;}
 

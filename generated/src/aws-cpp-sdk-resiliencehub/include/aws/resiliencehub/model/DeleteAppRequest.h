@@ -172,26 +172,22 @@ namespace Model
 
 
     /**
-     * <p>A boolean option to force the deletion of an AWS Resilience Hub application.
-     * </p>
+     * <p>A boolean option to force the deletion of an Resilience Hub application. </p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
-     * <p>A boolean option to force the deletion of an AWS Resilience Hub application.
-     * </p>
+     * <p>A boolean option to force the deletion of an Resilience Hub application. </p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
-     * <p>A boolean option to force the deletion of an AWS Resilience Hub application.
-     * </p>
+     * <p>A boolean option to force the deletion of an Resilience Hub application. </p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
-     * <p>A boolean option to force the deletion of an AWS Resilience Hub application.
-     * </p>
+     * <p>A boolean option to force the deletion of an Resilience Hub application. </p>
      */
     inline DeleteAppRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 

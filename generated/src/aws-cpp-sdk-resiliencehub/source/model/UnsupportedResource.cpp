@@ -21,14 +21,16 @@ namespace Model
 UnsupportedResource::UnsupportedResource() : 
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_unsupportedResourceStatusHasBeenSet(false)
 {
 }
 
 UnsupportedResource::UnsupportedResource(JsonView jsonValue) : 
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_unsupportedResourceStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ UnsupportedResource& UnsupportedResource::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unsupportedResourceStatus"))
+  {
+    m_unsupportedResourceStatus = jsonValue.GetString("unsupportedResourceStatus");
+
+    m_unsupportedResourceStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue UnsupportedResource::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", m_resourceType);
+
+  }
+
+  if(m_unsupportedResourceStatusHasBeenSet)
+  {
+   payload.WithString("unsupportedResourceStatus", m_unsupportedResourceStatus);
 
   }
 

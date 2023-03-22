@@ -72,83 +72,83 @@ namespace Model
 
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline SyncResourceSummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline SyncResourceSummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * <p>The external Id.</p>
+     * <p>The external ID.</p>
      */
     inline SyncResourceSummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline SyncResourceSummary& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline SyncResourceSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource Id.</p>
+     * <p>The resource ID.</p>
      */
     inline SyncResourceSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

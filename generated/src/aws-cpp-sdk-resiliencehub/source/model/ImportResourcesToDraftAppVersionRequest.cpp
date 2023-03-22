@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ImportResourcesToDraftAppVersionRequest::ImportResourcesToDraftAppVersionRequest() : 
     m_appArnHasBeenSet(false),
+    m_eksSourcesHasBeenSet(false),
     m_importStrategy(ResourceImportStrategyType::NOT_SET),
     m_importStrategyHasBeenSet(false),
     m_sourceArnsHasBeenSet(false),
@@ -28,6 +29,17 @@ Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
   if(m_appArnHasBeenSet)
   {
    payload.WithString("appArn", m_appArn);
+
+  }
+
+  if(m_eksSourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eksSourcesJsonList(m_eksSources.size());
+   for(unsigned eksSourcesIndex = 0; eksSourcesIndex < eksSourcesJsonList.GetLength(); ++eksSourcesIndex)
+   {
+     eksSourcesJsonList[eksSourcesIndex].AsObject(m_eksSources[eksSourcesIndex].Jsonize());
+   }
+   payload.WithArray("eksSources", std::move(eksSourcesJsonList));
 
   }
 

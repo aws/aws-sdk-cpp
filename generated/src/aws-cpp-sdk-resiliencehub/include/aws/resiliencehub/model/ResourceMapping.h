@@ -81,6 +81,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline const Aws::String& GetEksSourceName() const{ return m_eksSourceName; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline bool EksSourceNameHasBeenSet() const { return m_eksSourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(const Aws::String& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = value; }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(Aws::String&& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline void SetEksSourceName(const char* value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline ResourceMapping& WithEksSourceName(const Aws::String& value) { SetEksSourceName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline ResourceMapping& WithEksSourceName(Aws::String&& value) { SetEksSourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * resource belongs to.</p>  <p>This parameter accepts values in
+     * "eks-cluster/namespace" format.</p> 
+     */
+    inline ResourceMapping& WithEksSourceName(const char* value) { SetEksSourceName(value); return *this;}
+
+
+    /**
      * <p>The name of the CloudFormation stack this resource is mapped to.</p>
      */
     inline const Aws::String& GetLogicalStackName() const{ return m_logicalStackName; }
@@ -130,8 +187,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline const ResourceMappingType& GetMappingType() const{ return m_mappingType; }
 
@@ -144,8 +201,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline bool MappingTypeHasBeenSet() const { return m_mappingTypeHasBeenSet; }
 
@@ -158,8 +215,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline void SetMappingType(const ResourceMappingType& value) { m_mappingTypeHasBeenSet = true; m_mappingType = value; }
 
@@ -172,8 +229,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline void SetMappingType(ResourceMappingType&& value) { m_mappingTypeHasBeenSet = true; m_mappingType = std::move(value); }
 
@@ -186,8 +243,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline ResourceMapping& WithMappingType(const ResourceMappingType& value) { SetMappingType(value); return *this;}
 
@@ -200,8 +257,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to a resource group. The name of the resource group is
-     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to an Resource Groups. The name of the resource group
+     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline ResourceMapping& WithMappingType(ResourceMappingType&& value) { SetMappingType(std::move(value)); return *this;}
 
@@ -363,6 +420,9 @@ namespace Model
 
     Aws::String m_appRegistryAppName;
     bool m_appRegistryAppNameHasBeenSet = false;
+
+    Aws::String m_eksSourceName;
+    bool m_eksSourceNameHasBeenSet = false;
 
     Aws::String m_logicalStackName;
     bool m_logicalStackNameHasBeenSet = false;

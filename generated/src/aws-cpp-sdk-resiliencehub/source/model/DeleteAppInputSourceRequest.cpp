@@ -16,6 +16,7 @@ DeleteAppInputSourceRequest::DeleteAppInputSourceRequest() :
     m_appArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_eksSourceClusterNamespaceHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_terraformSourceHasBeenSet(false)
 {
@@ -34,6 +35,12 @@ Aws::String DeleteAppInputSourceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_eksSourceClusterNamespaceHasBeenSet)
+  {
+   payload.WithObject("eksSourceClusterNamespace", m_eksSourceClusterNamespace.Jsonize());
 
   }
 

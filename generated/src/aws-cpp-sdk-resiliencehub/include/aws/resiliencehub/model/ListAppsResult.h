@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline const Aws::Vector<AppSummary>& GetAppSummaries() const{ return m_appSummaries; }
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline void SetAppSummaries(const Aws::Vector<AppSummary>& value) { m_appSummaries = value; }
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline void SetAppSummaries(Aws::Vector<AppSummary>&& value) { m_appSummaries = std::move(value); }
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline ListAppsResult& WithAppSummaries(const Aws::Vector<AppSummary>& value) { SetAppSummaries(value); return *this;}
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline ListAppsResult& WithAppSummaries(Aws::Vector<AppSummary>&& value) { SetAppSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline ListAppsResult& AddAppSummaries(const AppSummary& value) { m_appSummaries.push_back(value); return *this; }
 
     /**
-     * <p>Summaries for the AWS Resilience Hub application.</p>
+     * <p>Summaries for the Resilience Hub application.</p>
      */
     inline ListAppsResult& AddAppSummaries(AppSummary&& value) { m_appSummaries.push_back(std::move(value)); return *this; }
 

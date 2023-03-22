@@ -186,32 +186,32 @@ namespace Model
 
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline const UpdateReason& GetUpdateReason() const{ return m_updateReason; }
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline bool UpdateReasonHasBeenSet() const { return m_updateReasonHasBeenSet; }
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline void SetUpdateReason(const UpdateReason& value) { m_updateReasonHasBeenSet = true; m_updateReason = value; }
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline void SetUpdateReason(UpdateReason&& value) { m_updateReasonHasBeenSet = true; m_updateReason = std::move(value); }
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline PricingPlan& WithUpdateReason(const UpdateReason& value) { SetUpdateReason(value); return *this;}
 
     /**
-     * <p>The update reason, for changing a pricing plan.</p>
+     * <p>The update reason for changing a pricing plan.</p>
      */
     inline PricingPlan& WithUpdateReason(UpdateReason&& value) { SetUpdateReason(std::move(value)); return *this;}
 
