@@ -317,6 +317,72 @@ namespace Model
      */
     inline CreateSceneRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSceneMetadata() const{ return m_sceneMetadata; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline bool SceneMetadataHasBeenSet() const { return m_sceneMetadataHasBeenSet; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline void SetSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata = value; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline void SetSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata = std::move(value); }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& WithSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetSceneMetadata(value); return *this;}
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& WithSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetSceneMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(const Aws::String& key, const Aws::String& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(Aws::String&& key, const Aws::String& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(const Aws::String& key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(Aws::String&& key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(const char* key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(Aws::String&& key, const char* value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The request metadata.</p>
+     */
+    inline CreateSceneRequest& AddSceneMetadata(const char* key, const char* value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
@@ -336,6 +402,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
+    bool m_sceneMetadataHasBeenSet = false;
   };
 
 } // namespace Model

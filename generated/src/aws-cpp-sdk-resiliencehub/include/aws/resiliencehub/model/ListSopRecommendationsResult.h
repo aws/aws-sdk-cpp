@@ -78,44 +78,44 @@ namespace Model
 
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline const Aws::Vector<SopRecommendation>& GetSopRecommendations() const{ return m_sopRecommendations; }
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline void SetSopRecommendations(const Aws::Vector<SopRecommendation>& value) { m_sopRecommendations = value; }
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline void SetSopRecommendations(Aws::Vector<SopRecommendation>&& value) { m_sopRecommendations = std::move(value); }
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline ListSopRecommendationsResult& WithSopRecommendations(const Aws::Vector<SopRecommendation>& value) { SetSopRecommendations(value); return *this;}
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline ListSopRecommendationsResult& WithSopRecommendations(Aws::Vector<SopRecommendation>&& value) { SetSopRecommendations(std::move(value)); return *this;}
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline ListSopRecommendationsResult& AddSopRecommendations(const SopRecommendation& value) { m_sopRecommendations.push_back(value); return *this; }
 
     /**
-     * <p>The standard operating procedure (SOP) recommendations for the AWS Resilience
-     * Hub applications.</p>
+     * <p>The standard operating procedure (SOP) recommendations for the Resilience Hub
+     * applications.</p>
      */
     inline ListSopRecommendationsResult& AddSopRecommendations(SopRecommendation&& value) { m_sopRecommendations.push_back(std::move(value)); return *this; }
 

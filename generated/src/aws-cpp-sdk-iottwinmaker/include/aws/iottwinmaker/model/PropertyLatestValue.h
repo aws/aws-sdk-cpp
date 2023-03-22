@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline const EntityPropertyReference& GetPropertyReference() const{ return m_propertyReference; }
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline bool PropertyReferenceHasBeenSet() const { return m_propertyReferenceHasBeenSet; }
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline void SetPropertyReference(const EntityPropertyReference& value) { m_propertyReferenceHasBeenSet = true; m_propertyReference = value; }
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline void SetPropertyReference(EntityPropertyReference&& value) { m_propertyReferenceHasBeenSet = true; m_propertyReference = std::move(value); }
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline PropertyLatestValue& WithPropertyReference(const EntityPropertyReference& value) { SetPropertyReference(value); return *this;}
 
     /**
-     * <p>An object that specifies information about a property.&gt;</p>
+     * <p>An object that specifies information about a property.</p>
      */
     inline PropertyLatestValue& WithPropertyReference(EntityPropertyReference&& value) { SetPropertyReference(std::move(value)); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/EksSourceClusterNamespace.h>
 #include <aws/resiliencehub/model/TerraformSource.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -173,8 +174,45 @@ namespace Model
 
 
     /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline const EksSourceClusterNamespace& GetEksSourceClusterNamespace() const{ return m_eksSourceClusterNamespace; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline bool EksSourceClusterNamespaceHasBeenSet() const { return m_eksSourceClusterNamespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline void SetEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = value; }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline void SetEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = std::move(value); }
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline DeleteAppInputSourceRequest& WithEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { SetEksSourceClusterNamespace(value); return *this;}
+
+    /**
+     * <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want
+     * to delete from the Resilience Hub application.</p>
+     */
+    inline DeleteAppInputSourceRequest& WithEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { SetEksSourceClusterNamespace(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -182,7 +220,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -190,7 +228,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -198,7 +236,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -206,7 +244,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -214,7 +252,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -222,7 +260,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -230,7 +268,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the imported resource you want to remove
-     * from the AWS Resilience Hub application. For more information about ARNs, see <a
+     * from the Resilience Hub application. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
      * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
      */
@@ -238,38 +276,38 @@ namespace Model
 
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline const TerraformSource& GetTerraformSource() const{ return m_terraformSource; }
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline bool TerraformSourceHasBeenSet() const { return m_terraformSourceHasBeenSet; }
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline void SetTerraformSource(const TerraformSource& value) { m_terraformSourceHasBeenSet = true; m_terraformSource = value; }
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline void SetTerraformSource(TerraformSource&& value) { m_terraformSourceHasBeenSet = true; m_terraformSource = std::move(value); }
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline DeleteAppInputSourceRequest& WithTerraformSource(const TerraformSource& value) { SetTerraformSource(value); return *this;}
 
     /**
-     * <p>The imported Terraform s3 state ﬁle you want to remove from the AWS
-     * Resilience Hub application.</p>
+     * <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience
+     * Hub application.</p>
      */
     inline DeleteAppInputSourceRequest& WithTerraformSource(TerraformSource&& value) { SetTerraformSource(std::move(value)); return *this;}
 
@@ -280,6 +318,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    EksSourceClusterNamespace m_eksSourceClusterNamespace;
+    bool m_eksSourceClusterNamespaceHasBeenSet = false;
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet = false;

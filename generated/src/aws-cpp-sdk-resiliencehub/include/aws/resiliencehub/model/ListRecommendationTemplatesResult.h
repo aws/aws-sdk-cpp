@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline const Aws::Vector<RecommendationTemplate>& GetRecommendationTemplates() const{ return m_recommendationTemplates; }
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline void SetRecommendationTemplates(const Aws::Vector<RecommendationTemplate>& value) { m_recommendationTemplates = value; }
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline void SetRecommendationTemplates(Aws::Vector<RecommendationTemplate>&& value) { m_recommendationTemplates = std::move(value); }
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline ListRecommendationTemplatesResult& WithRecommendationTemplates(const Aws::Vector<RecommendationTemplate>& value) { SetRecommendationTemplates(value); return *this;}
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline ListRecommendationTemplatesResult& WithRecommendationTemplates(Aws::Vector<RecommendationTemplate>&& value) { SetRecommendationTemplates(std::move(value)); return *this;}
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline ListRecommendationTemplatesResult& AddRecommendationTemplates(const RecommendationTemplate& value) { m_recommendationTemplates.push_back(value); return *this; }
 
     /**
-     * <p>The recommendation templates for the AWS Resilience Hub applications.</p>
+     * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
     inline ListRecommendationTemplatesResult& AddRecommendationTemplates(RecommendationTemplate&& value) { m_recommendationTemplates.push_back(std::move(value)); return *this; }
 

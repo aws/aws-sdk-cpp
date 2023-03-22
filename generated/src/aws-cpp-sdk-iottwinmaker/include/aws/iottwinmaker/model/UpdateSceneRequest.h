@@ -8,6 +8,7 @@
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -250,6 +251,72 @@ namespace Model
      */
     inline UpdateSceneRequest& AddCapabilities(const char* value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSceneMetadata() const{ return m_sceneMetadata; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline bool SceneMetadataHasBeenSet() const { return m_sceneMetadataHasBeenSet; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline void SetSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata = value; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline void SetSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata = std::move(value); }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& WithSceneMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetSceneMetadata(value); return *this;}
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& WithSceneMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetSceneMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(const Aws::String& key, const Aws::String& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(Aws::String&& key, const Aws::String& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(const Aws::String& key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(Aws::String&& key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(const char* key, Aws::String&& value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(Aws::String&& key, const char* value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The scene metadata.</p>
+     */
+    inline UpdateSceneRequest& AddSceneMetadata(const char* key, const char* value) { m_sceneMetadataHasBeenSet = true; m_sceneMetadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
@@ -266,6 +333,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
+    bool m_sceneMetadataHasBeenSet = false;
   };
 
 } // namespace Model

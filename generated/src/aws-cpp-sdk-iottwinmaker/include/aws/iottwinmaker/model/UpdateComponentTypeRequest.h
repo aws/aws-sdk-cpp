@@ -378,62 +378,62 @@ namespace Model
 
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline const Aws::Map<Aws::String, PropertyGroupRequest>& GetPropertyGroups() const{ return m_propertyGroups; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline void SetPropertyGroups(const Aws::Map<Aws::String, PropertyGroupRequest>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline void SetPropertyGroups(Aws::Map<Aws::String, PropertyGroupRequest>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& WithPropertyGroups(const Aws::Map<Aws::String, PropertyGroupRequest>& value) { SetPropertyGroups(value); return *this;}
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& WithPropertyGroups(Aws::Map<Aws::String, PropertyGroupRequest>&& value) { SetPropertyGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(const Aws::String& key, const PropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(Aws::String&& key, const PropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(const Aws::String& key, PropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(Aws::String&& key, PropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(const char* key, PropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The property groups</p>
+     * <p>The property groups.</p>
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(const char* key, const PropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
 

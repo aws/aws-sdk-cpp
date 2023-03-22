@@ -35,56 +35,56 @@ namespace Model
 
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline const Aws::Vector<AlarmRecommendation>& GetAlarmRecommendations() const{ return m_alarmRecommendations; }
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline void SetAlarmRecommendations(const Aws::Vector<AlarmRecommendation>& value) { m_alarmRecommendations = value; }
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline void SetAlarmRecommendations(Aws::Vector<AlarmRecommendation>&& value) { m_alarmRecommendations = std::move(value); }
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline ListAlarmRecommendationsResult& WithAlarmRecommendations(const Aws::Vector<AlarmRecommendation>& value) { SetAlarmRecommendations(value); return *this;}
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline ListAlarmRecommendationsResult& WithAlarmRecommendations(Aws::Vector<AlarmRecommendation>&& value) { SetAlarmRecommendations(std::move(value)); return *this;}
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
     inline ListAlarmRecommendationsResult& AddAlarmRecommendations(const AlarmRecommendation& value) { m_alarmRecommendations.push_back(value); return *this; }
 
     /**
-     * <p>The alarm recommendations for an AWS Resilience Hub application, returned as
-     * an object. This object includes Application Component names, descriptions,
+     * <p>The alarm recommendations for an Resilience Hub application, returned as an
+     * object. This object includes Application Component names, descriptions,
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */

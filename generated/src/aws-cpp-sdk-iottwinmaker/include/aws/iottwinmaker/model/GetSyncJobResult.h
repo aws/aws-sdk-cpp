@@ -107,43 +107,43 @@ namespace Model
 
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(const Aws::String& value) { m_syncSource = value; }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(Aws::String&& value) { m_syncSource = std::move(value); }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline void SetSyncSource(const char* value) { m_syncSource.assign(value); }
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline GetSyncJobResult& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline GetSyncJobResult& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
 
     /**
-     * <p>The sync soucre.</p>  <p>Currently the only supported syncSoucre is
+     * <p>The sync soucre.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline GetSyncJobResult& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}

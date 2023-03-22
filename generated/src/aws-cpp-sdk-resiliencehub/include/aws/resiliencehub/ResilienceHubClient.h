@@ -16,12 +16,12 @@ namespace Aws
 namespace ResilienceHub
 {
   /**
-   * <p>AWS Resilience Hub helps you proactively prepare and protect your Amazon Web
-   * Services applications from disruptions. Resilience Hub offers continuous
-   * resiliency assessment and validation that integrates into your software
-   * development lifecycle. This enables you to uncover resiliency weaknesses, ensure
-   * recovery time objective (RTO) and recovery point objective (RPO) targets for
-   * your applications are met, and resolve issues before they are released into
+   * <p>Resilience Hub helps you proactively prepare and protect your Amazon Web
+   * Services applications from disruptions. It offers continual resiliency
+   * assessment and validation that integrates into your software development
+   * lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery
+   * time objective (RTO) and recovery point objective (RPO) targets for your
+   * applications are met, and resolve issues before they are released into
    * production. </p>
    */
   class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>
@@ -107,17 +107,17 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates an AWS Resilience Hub application. An AWS Resilience Hub application
-         * is a collection of Amazon Web Services resources structured to prevent and
-         * recover Amazon Web Services application disruptions. To describe a AWS
-         * Resilience Hub application, you provide an application name, resources from one
-         * or more–up to five–CloudFormation stacks, and an appropriate resiliency
-         * policy.</p> <p>After you create an AWS Resilience Hub application, you publish
-         * it so that you can run a resiliency assessment on it. You can then use
-         * recommendations from the assessment to improve resiliency by running another
-         * assessment, comparing results, and then iterating the process until you achieve
-         * your goals for recovery time objective (RTO) and recovery point objective
-         * (RPO).</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Resilience Hub application. An Resilience Hub application is a
+         * collection of Amazon Web Services resources structured to prevent and recover
+         * Amazon Web Services application disruptions. To describe a Resilience Hub
+         * application, you provide an application name, resources from one or more–up to
+         * five–CloudFormation stacks, and an appropriate resiliency policy.</p> <p>After
+         * you create an Resilience Hub application, you publish it so that you can run a
+         * resiliency assessment on it. You can then use recommendations from the
+         * assessment to improve resiliency by running another assessment, comparing
+         * results, and then iterating the process until you achieve your goals for
+         * recovery time objective (RTO) and recovery point objective (RPO).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -142,11 +142,11 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates a new Application Component in the AWS Resilience Hub
-         * application.</p>  <p>This API updates the AWS Resilience Hub application
-         * draft version. To use this Application Component for running assessments, you
-         * must publish the AWS Resilience Hub application using the
-         * <code>PublishAppVersion</code> API.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a new Application Component in the Resilience Hub application.</p>
+         *  <p>This API updates the Resilience Hub application draft version. To use
+         * this Application Component for running assessments, you must publish the
+         * Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent">AWS
          * API Reference</a></p>
          */
@@ -171,17 +171,16 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Adds a resource to the AWS Resilience Hub applicationand assigns it to the
+         * <p>Adds a resource to the Resilience Hub application and assigns it to the
          * specified Application Components. If you specify a new Application Component,
-         * AWS Resilience Hub will automatically create the Application Component.</p>
-         *  <ul> <li> <p>This action has no effect outside AWS Resilience Hub.</p>
-         * </li> <li> <p>This API updates the AWS Resilience Hub application draft version.
-         * To use this resource for running resiliency assessments, you must publish the
-         * AWS Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
-         * </li> <li> <p>To update application version with new
-         * <code>physicalResourceID</code>, you must call
-         * <code>ResolveAppVersionResources</code> API.</p> </li> </ul> <p><h3>See
-         * Also:</h3>   <a
+         * Resilience Hub will automatically create the Application Component.</p> 
+         * <ul> <li> <p>This action has no effect outside Resilience Hub.</p> </li> <li>
+         * <p>This API updates the Resilience Hub application draft version. To use this
+         * resource for running resiliency assessments, you must publish the Resilience Hub
+         * application using the <code>PublishAppVersion</code> API.</p> </li> <li> <p>To
+         * update application version with new <code>physicalResourceID</code>, you must
+         * call <code>ResolveAppVersionResources</code> API.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource">AWS
          * API Reference</a></p>
          */
@@ -206,7 +205,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates a new recommendation template for the AWS Resilience Hub
+         * <p>Creates a new recommendation template for the Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateRecommendationTemplate">AWS
          * API Reference</a></p>
@@ -257,7 +256,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Deletes an AWS Resilience Hub application. This is a destructive action that
+         * <p>Deletes an Resilience Hub application. This is a destructive action that
          * can't be undone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteApp">AWS
          * API Reference</a></p>
@@ -283,7 +282,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Deletes an AWS Resilience Hub application assessment. This is a destructive
+         * <p>Deletes an Resilience Hub application assessment. This is a destructive
          * action that can't be undone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppAssessment">AWS
          * API Reference</a></p>
@@ -309,7 +308,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Deletes the input source and all of its imported resources from the AWS
+         * <p>Deletes the input source and all of its imported resources from the
          * Resilience Hub application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource">AWS
          * API Reference</a></p>
@@ -335,13 +334,13 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Deletes an Application Component from the AWS Resilience Hub application.</p>
-         *  <ul> <li> <p>This API updates the AWS Resilience Hub application draft
+         * <p>Deletes an Application Component from the Resilience Hub application.</p>
+         *  <ul> <li> <p>This API updates the Resilience Hub application draft
          * version. To use this Application Component for running assessments, you must
-         * publish the AWS Resilience Hub application using the
-         * <code>PublishAppVersion</code> API.</p> </li> <li> <p>You will not be able to
-         * delete an Application Component if it has resources associated with it.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * publish the Resilience Hub application using the <code>PublishAppVersion</code>
+         * API.</p> </li> <li> <p>You will not be able to delete an Application Component
+         * if it has resources associated with it.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent">AWS
          * API Reference</a></p>
          */
@@ -366,14 +365,14 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Deletes a resource from the AWS Resilience Hub application.</p>  <ul>
-         * <li> <p>You can only delete a manually added resource. To exclude non-manually
-         * added resources, use the <code>UpdateAppVersionResource</code> API.</p> </li>
-         * <li> <p>This action has no effect outside AWS Resilience Hub.</p> </li> <li>
-         * <p>This API updates the AWS Resilience Hub application draft version. To use
-         * this resource for running resiliency assessments, you must publish the AWS
-         * Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * <p>Deletes a resource from the Resilience Hub application.</p>  <ul> <li>
+         * <p>You can only delete a manually added resource. To exclude non-manually added
+         * resources, use the <code>UpdateAppVersionResource</code> API.</p> </li> <li>
+         * <p>This action has no effect outside Resilience Hub.</p> </li> <li> <p>This API
+         * updates the Resilience Hub application draft version. To use this resource for
+         * running resiliency assessments, you must publish the Resilience Hub application
+         * using the <code>PublishAppVersion</code> API.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource">AWS
          * API Reference</a></p>
          */
@@ -450,7 +449,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes an AWS Resilience Hub application.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an Resilience Hub application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeApp">AWS
          * API Reference</a></p>
          */
@@ -475,7 +474,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes an assessment for an AWS Resilience Hub application.</p><p><h3>See
+         * <p>Describes an assessment for an Resilience Hub application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppAssessment">AWS
          * API Reference</a></p>
@@ -501,8 +500,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes the AWS Resilience Hub application version.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the Resilience Hub application version.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion">AWS
          * API Reference</a></p>
          */
@@ -527,7 +526,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes an Application Component in the AWS Resilience Hub
+         * <p>Describes an Application Component in the Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent">AWS
          * API Reference</a></p>
@@ -553,9 +552,9 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes a resource of the AWS Resilience Hub application.</p> 
-         * <p>This API accepts only one of the following parameters to descibe the
-         * resource:</p> <ul> <li> <p> <code>resourceName</code> </p> </li> <li> <p>
+         * <p>Describes a resource of the Resilience Hub application.</p>  <p>This
+         * API accepts only one of the following parameters to descibe the resource:</p>
+         * <ul> <li> <p> <code>resourceName</code> </p> </li> <li> <p>
          * <code>logicalResourceId</code> </p> </li> <li> <p>
          * <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you
          * can also provide <code>awsAccountId</code>, and <code>awsRegion</code>)</p>
@@ -611,7 +610,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes details about an AWS Resilience Hub application.</p><p><h3>See
+         * <p>Describes details about an Resilience Hub application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate">AWS
          * API Reference</a></p>
@@ -667,9 +666,9 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Describes a specified resiliency policy for an AWS Resilience Hub
-         * application. The returned policy object includes creation time, data location
-         * constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and
+         * <p>Describes a specified resiliency policy for an Resilience Hub application.
+         * The returned policy object includes creation time, data location constraints,
+         * the Amazon Resource Name (ARN) for the policy, tags, tier, and
          * more.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResiliencyPolicy">AWS
          * API Reference</a></p>
@@ -695,9 +694,9 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Imports resources to AWS Resilience Hub application draft version from
-         * different input sources. For more information about the input sources supported
-         * by AWS Resilience Hub, see <a
+         * <p>Imports resources to Resilience Hub application draft version from different
+         * input sources. For more information about the input sources supported by
+         * Resilience Hub, see <a
          * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
          * the structure and describe your Resilience Hub application</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -725,7 +724,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the alarm recommendations for an AWS Resilience Hub
+         * <p>Lists the alarm recommendations for an Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAlarmRecommendations">AWS
          * API Reference</a></p>
@@ -751,8 +750,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the assessments for an AWS Resilience Hub application. You can use
-         * request parameters to refine the results for the response object.</p><p><h3>See
+         * <p>Lists the assessments for an Resilience Hub application. You can use request
+         * parameters to refine the results for the response object.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessments">AWS
          * API Reference</a></p>
@@ -778,7 +777,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the compliances for an AWS Resilience Hub Application
+         * <p>Lists the compliances for an Resilience Hub Application
          * Component.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentCompliances">AWS
          * API Reference</a></p>
@@ -804,7 +803,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the recommendations for an AWS Resilience Hub Application
+         * <p>Lists the recommendations for an Resilience Hub Application
          * Component.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentRecommendations">AWS
          * API Reference</a></p>
@@ -830,8 +829,8 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists all the input sources of the AWS Resilience Hub application. For more
-         * information about the input sources supported by AWS Resilience Hub, see <a
+         * <p>Lists all the input sources of the Resilience Hub application. For more
+         * information about the input sources supported by Resilience Hub, see <a
          * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
          * the structure and describe your Resilience Hub application</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -859,7 +858,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists all the Application Components in the AWS Resilience Hub
+         * <p>Lists all the Application Components in the Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents">AWS
          * API Reference</a></p>
@@ -912,7 +911,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists all the resources in an AWS Resilience Hub application.</p><p><h3>See
+         * <p>Lists all the resources in an Resilience Hub application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResources">AWS
          * API Reference</a></p>
@@ -938,7 +937,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the different versions for the AWS Resilience Hub
+         * <p>Lists the different versions for the Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersions">AWS
          * API Reference</a></p>
@@ -964,7 +963,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists your AWS Resilience Hub applications.</p>  <p>You can filter
+         * <p>Lists your Resilience Hub applications.</p>  <p>You can filter
          * applications using only one filter at a time or without using any filter. If you
          * try to filter applications using multiple filters, you will get the following
          * error:</p> <p> <code>An error occurred (ValidationException) when calling the
@@ -994,7 +993,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the recommendation templates for the AWS Resilience Hub
+         * <p>Lists the recommendation templates for the Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">AWS
          * API Reference</a></p>
@@ -1020,7 +1019,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the resiliency policies for the AWS Resilience Hub
+         * <p>Lists the resiliency policies for the Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">AWS
          * API Reference</a></p>
@@ -1046,7 +1045,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the standard operating procedure (SOP) recommendations for the AWS
+         * <p>Lists the standard operating procedure (SOP) recommendations for the
          * Resilience Hub applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">AWS
          * API Reference</a></p>
@@ -1072,7 +1071,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the suggested resiliency policies for the AWS Resilience Hub
+         * <p>Lists the suggested resiliency policies for the Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">AWS
          * API Reference</a></p>
@@ -1098,7 +1097,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the tags for your resources in your AWS Resilience Hub
+         * <p>Lists the tags for your resources in your Resilience Hub
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1124,7 +1123,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the test recommendations for the AWS Resilience Hub
+         * <p>Lists the test recommendations for the Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTestRecommendations">AWS
          * API Reference</a></p>
@@ -1150,10 +1149,10 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Lists the resources that are not currently supported in AWS Resilience Hub.
-         * An unsupported resource is a resource that exists in the object that was used to
-         * create an app, but is not supported by AWS Resilience Hub.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the resources that are not currently supported in Resilience Hub. An
+         * unsupported resource is a resource that exists in the object that was used to
+         * create an app, but is not supported by Resilience Hub.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListUnsupportedAppVersionResources">AWS
          * API Reference</a></p>
          */
@@ -1178,7 +1177,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Publishes a new version of a specific AWS Resilience Hub
+         * <p>Publishes a new version of a specific Resilience Hub
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PublishAppVersion">AWS
          * API Reference</a></p>
@@ -1204,7 +1203,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Adds or updates the app template for an AWS Resilience Hub application draft
+         * <p>Adds or updates the app template for an Resilience Hub application draft
          * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PutDraftAppVersionTemplate">AWS
          * API Reference</a></p>
@@ -1383,11 +1382,11 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Updates the AWS Resilience Hub application version.</p>  <p>This API
-         * updates the AWS Resilience Hub application draft version. To use this
-         * information for running resiliency assessments, you must publish the AWS
-         * Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Updates the Resilience Hub application version.</p>  <p>This API
+         * updates the Resilience Hub application draft version. To use this information
+         * for running resiliency assessments, you must publish the Resilience Hub
+         * application using the <code>PublishAppVersion</code> API.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion">AWS
          * API Reference</a></p>
          */
@@ -1412,11 +1411,11 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Updates an existing Application Component in the AWS Resilience Hub
-         * application.</p>  <p>This API updates the AWS Resilience Hub application
-         * draft version. To use this Application Component for running assessments, you
-         * must publish the AWS Resilience Hub application using the
-         * <code>PublishAppVersion</code> API.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Application Component in the Resilience Hub
+         * application.</p>  <p>This API updates the Resilience Hub application draft
+         * version. To use this Application Component for running assessments, you must
+         * publish the Resilience Hub application using the <code>PublishAppVersion</code>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent">AWS
          * API Reference</a></p>
          */
@@ -1441,15 +1440,14 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Updates the resource details in the AWS Resilience Hub application.</p>
-         *  <ul> <li> <p>This action has no effect outside AWS Resilience Hub.</p>
-         * </li> <li> <p>This API updates the AWS Resilience Hub application draft version.
-         * To use this resource for running resiliency assessments, you must publish the
-         * AWS Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
-         * </li> <li> <p>To update application version with new
-         * <code>physicalResourceID</code>, you must call
-         * <code>ResolveAppVersionResources</code> API.</p> </li> </ul> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the resource details in the Resilience Hub application.</p> 
+         * <ul> <li> <p>This action has no effect outside Resilience Hub.</p> </li> <li>
+         * <p>This API updates the Resilience Hub application draft version. To use this
+         * resource for running resiliency assessments, you must publish the Resilience Hub
+         * application using the <code>PublishAppVersion</code> API.</p> </li> <li> <p>To
+         * update application version with new <code>physicalResourceID</code>, you must
+         * call <code>ResolveAppVersionResources</code> API.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource">AWS
          * API Reference</a></p>
          */

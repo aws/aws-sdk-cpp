@@ -324,30 +324,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates if a resource is excluded from an AWS Resilience Hub
-     * application.</p>  <p>You can exclude only imported resources from an AWS
-     * Resilience Hub application.</p> 
+     * <p>Indicates if a resource is excluded from an Resilience Hub application.</p>
+     *  <p>You can exclude only imported resources from an Resilience Hub
+     * application.</p> 
      */
     inline bool GetExcluded() const{ return m_excluded; }
 
     /**
-     * <p>Indicates if a resource is excluded from an AWS Resilience Hub
-     * application.</p>  <p>You can exclude only imported resources from an AWS
-     * Resilience Hub application.</p> 
+     * <p>Indicates if a resource is excluded from an Resilience Hub application.</p>
+     *  <p>You can exclude only imported resources from an Resilience Hub
+     * application.</p> 
      */
     inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
 
     /**
-     * <p>Indicates if a resource is excluded from an AWS Resilience Hub
-     * application.</p>  <p>You can exclude only imported resources from an AWS
-     * Resilience Hub application.</p> 
+     * <p>Indicates if a resource is excluded from an Resilience Hub application.</p>
+     *  <p>You can exclude only imported resources from an Resilience Hub
+     * application.</p> 
      */
     inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
 
     /**
-     * <p>Indicates if a resource is excluded from an AWS Resilience Hub
-     * application.</p>  <p>You can exclude only imported resources from an AWS
-     * Resilience Hub application.</p> 
+     * <p>Indicates if a resource is excluded from an Resilience Hub application.</p>
+     *  <p>You can exclude only imported resources from an Resilience Hub
+     * application.</p> 
      */
     inline UpdateAppVersionResourceRequest& WithExcluded(bool value) { SetExcluded(value); return *this;}
 

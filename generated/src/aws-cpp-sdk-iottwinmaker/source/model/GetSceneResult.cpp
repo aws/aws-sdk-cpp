@@ -80,6 +80,24 @@ GetSceneResult& GetSceneResult::operator =(const Aws::AmazonWebServiceResult<Jso
     }
   }
 
+  if(jsonValue.ValueExists("sceneMetadata"))
+  {
+    Aws::Map<Aws::String, JsonView> sceneMetadataJsonMap = jsonValue.GetObject("sceneMetadata").GetAllObjects();
+    for(auto& sceneMetadataItem : sceneMetadataJsonMap)
+    {
+      m_sceneMetadata[sceneMetadataItem.first] = sceneMetadataItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("generatedSceneMetadata"))
+  {
+    Aws::Map<Aws::String, JsonView> generatedSceneMetadataJsonMap = jsonValue.GetObject("generatedSceneMetadata").GetAllObjects();
+    for(auto& generatedSceneMetadataItem : generatedSceneMetadataJsonMap)
+    {
+      m_generatedSceneMetadata[generatedSceneMetadataItem.first] = generatedSceneMetadataItem.second.AsString();
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

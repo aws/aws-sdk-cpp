@@ -19,6 +19,7 @@ namespace Model
 {
 
 LogicalResourceId::LogicalResourceId() : 
+    m_eksSourceNameHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
@@ -27,6 +28,7 @@ LogicalResourceId::LogicalResourceId() :
 }
 
 LogicalResourceId::LogicalResourceId(JsonView jsonValue) : 
+    m_eksSourceNameHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
@@ -37,6 +39,13 @@ LogicalResourceId::LogicalResourceId(JsonView jsonValue) :
 
 LogicalResourceId& LogicalResourceId::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("eksSourceName"))
+  {
+    m_eksSourceName = jsonValue.GetString("eksSourceName");
+
+    m_eksSourceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
@@ -71,6 +80,12 @@ LogicalResourceId& LogicalResourceId::operator =(JsonView jsonValue)
 JsonValue LogicalResourceId::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_eksSourceNameHasBeenSet)
+  {
+   payload.WithString("eksSourceName", m_eksSourceName);
+
+  }
 
   if(m_identifierHasBeenSet)
   {

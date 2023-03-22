@@ -1211,11 +1211,11 @@ namespace IAM
         }
 
         /**
-         * <p>Deletes the permissions boundary for the specified IAM role. </p> 
-         * <p>Deleting the permissions boundary for a role might increase its permissions.
-         * For example, it might allow anyone who assumes the role to perform all the
-         * actions granted in its permissions policies. </p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the permissions boundary for the specified IAM role. </p> <p>You
+         * cannot set the boundary for a service-linked role.</p>  <p>Deleting
+         * the permissions boundary for a role might increase its permissions. For example,
+         * it might allow anyone who assumes the role to perform all the actions granted in
+         * its permissions policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">AWS
          * API Reference</a></p>
          */
@@ -3977,7 +3977,7 @@ namespace IAM
          * managed policy to set the boundary for a role. Use the boundary to control the
          * maximum permissions that the role can have. Setting a permissions boundary is an
          * advanced feature that can affect the permissions for the role.</p> <p>You cannot
-         * set the boundary for a service-linked role. </p>  <p>Policies used as
+         * set the boundary for a service-linked role.</p>  <p>Policies used as
          * permissions boundaries do not provide permissions. You must also attach a
          * permissions policy to the role. To learn how the effective permissions for a
          * role are evaluated, see <a

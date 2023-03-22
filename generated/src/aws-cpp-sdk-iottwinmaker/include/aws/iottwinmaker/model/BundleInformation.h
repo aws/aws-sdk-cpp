@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about pricing bundle.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the pricing bundle.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BundleInformation">AWS
    * API Reference</a></p>
    */

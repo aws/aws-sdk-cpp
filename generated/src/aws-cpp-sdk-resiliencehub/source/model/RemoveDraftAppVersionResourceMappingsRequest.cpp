@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 RemoveDraftAppVersionResourceMappingsRequest::RemoveDraftAppVersionResourceMappingsRequest() : 
     m_appArnHasBeenSet(false),
     m_appRegistryAppNamesHasBeenSet(false),
+    m_eksSourceNamesHasBeenSet(false),
     m_logicalStackNamesHasBeenSet(false),
     m_resourceGroupNamesHasBeenSet(false),
     m_resourceNamesHasBeenSet(false),
@@ -40,6 +41,17 @@ Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() con
      appRegistryAppNamesJsonList[appRegistryAppNamesIndex].AsString(m_appRegistryAppNames[appRegistryAppNamesIndex]);
    }
    payload.WithArray("appRegistryAppNames", std::move(appRegistryAppNamesJsonList));
+
+  }
+
+  if(m_eksSourceNamesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eksSourceNamesJsonList(m_eksSourceNames.size());
+   for(unsigned eksSourceNamesIndex = 0; eksSourceNamesIndex < eksSourceNamesJsonList.GetLength(); ++eksSourceNamesIndex)
+   {
+     eksSourceNamesJsonList[eksSourceNamesIndex].AsString(m_eksSourceNames[eksSourceNamesIndex]);
+   }
+   payload.WithArray("eksSourceNames", std::move(eksSourceNamesJsonList));
 
   }
 

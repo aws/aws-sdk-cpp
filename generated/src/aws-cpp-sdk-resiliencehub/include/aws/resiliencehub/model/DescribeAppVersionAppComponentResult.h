@@ -104,19 +104,29 @@ namespace Model
     inline DescribeAppVersionAppComponentResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The list of Application Components that belong to this resource.</p>
+     */
     inline const AppComponent& GetAppComponent() const{ return m_appComponent; }
 
-    
+    /**
+     * <p>The list of Application Components that belong to this resource.</p>
+     */
     inline void SetAppComponent(const AppComponent& value) { m_appComponent = value; }
 
-    
+    /**
+     * <p>The list of Application Components that belong to this resource.</p>
+     */
     inline void SetAppComponent(AppComponent&& value) { m_appComponent = std::move(value); }
 
-    
+    /**
+     * <p>The list of Application Components that belong to this resource.</p>
+     */
     inline DescribeAppVersionAppComponentResult& WithAppComponent(const AppComponent& value) { SetAppComponent(value); return *this;}
 
-    
+    /**
+     * <p>The list of Application Components that belong to this resource.</p>
+     */
     inline DescribeAppVersionAppComponentResult& WithAppComponent(AppComponent&& value) { SetAppComponent(std::move(value)); return *this;}
 
 

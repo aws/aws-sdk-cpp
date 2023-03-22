@@ -43,6 +43,15 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
 
   }
 
+  if(jsonValue.ValueExists("eksSources"))
+  {
+    Aws::Utils::Array<JsonView> eksSourcesJsonList = jsonValue.GetArray("eksSources");
+    for(unsigned eksSourcesIndex = 0; eksSourcesIndex < eksSourcesJsonList.GetLength(); ++eksSourcesIndex)
+    {
+      m_eksSources.push_back(eksSourcesJsonList[eksSourcesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("sourceArns"))
   {
     Aws::Utils::Array<JsonView> sourceArnsJsonList = jsonValue.GetArray("sourceArns");

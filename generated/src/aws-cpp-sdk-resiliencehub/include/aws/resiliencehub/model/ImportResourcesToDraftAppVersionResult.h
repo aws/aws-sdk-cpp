@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/model/ResourceImportStatusType.h>
+#include <aws/resiliencehub/model/EksSource.h>
 #include <aws/resiliencehub/model/TerraformSource.h>
 #include <utility>
 
@@ -143,42 +144,85 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline const Aws::Vector<EksSource>& GetEksSources() const{ return m_eksSources; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline void SetEksSources(const Aws::Vector<EksSource>& value) { m_eksSources = value; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline void SetEksSources(Aws::Vector<EksSource>&& value) { m_eksSources = std::move(value); }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline ImportResourcesToDraftAppVersionResult& WithEksSources(const Aws::Vector<EksSource>& value) { SetEksSources(value); return *this;}
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline ImportResourcesToDraftAppVersionResult& WithEksSources(Aws::Vector<EksSource>&& value) { SetEksSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline ImportResourcesToDraftAppVersionResult& AddEksSources(const EksSource& value) { m_eksSources.push_back(value); return *this; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you have
+     * imported.</p>
+     */
+    inline ImportResourcesToDraftAppVersionResult& AddEksSources(EksSource&& value) { m_eksSources.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceArns() const{ return m_sourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline void SetSourceArns(const Aws::Vector<Aws::String>& value) { m_sourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline void SetSourceArns(Aws::Vector<Aws::String>&& value) { m_sourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline ImportResourcesToDraftAppVersionResult& WithSourceArns(const Aws::Vector<Aws::String>& value) { SetSourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline ImportResourcesToDraftAppVersionResult& WithSourceArns(Aws::Vector<Aws::String>&& value) { SetSourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline ImportResourcesToDraftAppVersionResult& AddSourceArns(const Aws::String& value) { m_sourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline ImportResourcesToDraftAppVersionResult& AddSourceArns(Aws::String&& value) { m_sourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you imported.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
      */
     inline ImportResourcesToDraftAppVersionResult& AddSourceArns(const char* value) { m_sourceArns.push_back(value); return *this; }
 
@@ -210,37 +254,37 @@ namespace Model
 
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline const Aws::Vector<TerraformSource>& GetTerraformSources() const{ return m_terraformSources; }
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline void SetTerraformSources(const Aws::Vector<TerraformSource>& value) { m_terraformSources = value; }
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline void SetTerraformSources(Aws::Vector<TerraformSource>&& value) { m_terraformSources = std::move(value); }
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline ImportResourcesToDraftAppVersionResult& WithTerraformSources(const Aws::Vector<TerraformSource>& value) { SetTerraformSources(value); return *this;}
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline ImportResourcesToDraftAppVersionResult& WithTerraformSources(Aws::Vector<TerraformSource>&& value) { SetTerraformSources(std::move(value)); return *this;}
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline ImportResourcesToDraftAppVersionResult& AddTerraformSources(const TerraformSource& value) { m_terraformSources.push_back(value); return *this; }
 
     /**
-     * <p> A list of terraform file s3 URLs you need to import. </p>
+     * <p> A list of terraform file s3 URLs you have imported. </p>
      */
     inline ImportResourcesToDraftAppVersionResult& AddTerraformSources(TerraformSource&& value) { m_terraformSources.push_back(std::move(value)); return *this; }
 
@@ -271,6 +315,8 @@ namespace Model
     Aws::String m_appArn;
 
     Aws::String m_appVersion;
+
+    Aws::Vector<EksSource> m_eksSources;
 
     Aws::Vector<Aws::String> m_sourceArns;
 

@@ -20,6 +20,7 @@ namespace Model
 
 ResourceMapping::ResourceMapping() : 
     m_appRegistryAppNameHasBeenSet(false),
+    m_eksSourceNameHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
     m_mappingType(ResourceMappingType::NOT_SET),
     m_mappingTypeHasBeenSet(false),
@@ -32,6 +33,7 @@ ResourceMapping::ResourceMapping() :
 
 ResourceMapping::ResourceMapping(JsonView jsonValue) : 
     m_appRegistryAppNameHasBeenSet(false),
+    m_eksSourceNameHasBeenSet(false),
     m_logicalStackNameHasBeenSet(false),
     m_mappingType(ResourceMappingType::NOT_SET),
     m_mappingTypeHasBeenSet(false),
@@ -50,6 +52,13 @@ ResourceMapping& ResourceMapping::operator =(JsonView jsonValue)
     m_appRegistryAppName = jsonValue.GetString("appRegistryAppName");
 
     m_appRegistryAppNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksSourceName"))
+  {
+    m_eksSourceName = jsonValue.GetString("eksSourceName");
+
+    m_eksSourceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logicalStackName"))
@@ -104,6 +113,12 @@ JsonValue ResourceMapping::Jsonize() const
   if(m_appRegistryAppNameHasBeenSet)
   {
    payload.WithString("appRegistryAppName", m_appRegistryAppName);
+
+  }
+
+  if(m_eksSourceNameHasBeenSet)
+  {
+   payload.WithString("eksSourceName", m_eksSourceName);
 
   }
 

@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline const Aws::Vector<AppComponentCompliance>& GetComponentCompliances() const{ return m_componentCompliances; }
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline void SetComponentCompliances(const Aws::Vector<AppComponentCompliance>& value) { m_componentCompliances = value; }
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline void SetComponentCompliances(Aws::Vector<AppComponentCompliance>&& value) { m_componentCompliances = std::move(value); }
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline ListAppComponentCompliancesResult& WithComponentCompliances(const Aws::Vector<AppComponentCompliance>& value) { SetComponentCompliances(value); return *this;}
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline ListAppComponentCompliancesResult& WithComponentCompliances(Aws::Vector<AppComponentCompliance>&& value) { SetComponentCompliances(std::move(value)); return *this;}
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline ListAppComponentCompliancesResult& AddComponentCompliances(const AppComponentCompliance& value) { m_componentCompliances.push_back(value); return *this; }
 
     /**
-     * <p>The compliances for an AWS Resilience Hub Application Component, returned as
-     * an object. This object contains the names of the Application Components,
+     * <p>The compliances for an Resilience Hub Application Component, returned as an
+     * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
     inline ListAppComponentCompliancesResult& AddComponentCompliances(AppComponentCompliance&& value) { m_componentCompliances.push_back(std::move(value)); return *this; }

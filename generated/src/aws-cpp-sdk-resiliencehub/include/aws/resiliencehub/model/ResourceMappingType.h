@@ -20,7 +20,8 @@ namespace Model
     Resource,
     AppRegistryApp,
     ResourceGroup,
-    Terraform
+    Terraform,
+    EKS
   };
 
 namespace ResourceMappingTypeMapper

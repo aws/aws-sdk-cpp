@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline const Aws::Vector<AppInputSource>& GetAppInputSources() const{ return m_appInputSources; }
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline void SetAppInputSources(const Aws::Vector<AppInputSource>& value) { m_appInputSources = value; }
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline void SetAppInputSources(Aws::Vector<AppInputSource>&& value) { m_appInputSources = std::move(value); }
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline ListAppInputSourcesResult& WithAppInputSources(const Aws::Vector<AppInputSource>& value) { SetAppInputSources(value); return *this;}
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline ListAppInputSourcesResult& WithAppInputSources(Aws::Vector<AppInputSource>&& value) { SetAppInputSources(std::move(value)); return *this;}
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline ListAppInputSourcesResult& AddAppInputSources(const AppInputSource& value) { m_appInputSources.push_back(value); return *this; }
 
     /**
-     * <p>The list of AWS Resilience Hub application input sources.</p>
+     * <p>The list of Resilience Hub application input sources.</p>
      */
     inline ListAppInputSourcesResult& AddAppInputSources(AppInputSource&& value) { m_appInputSources.push_back(std::move(value)); return *this; }
 

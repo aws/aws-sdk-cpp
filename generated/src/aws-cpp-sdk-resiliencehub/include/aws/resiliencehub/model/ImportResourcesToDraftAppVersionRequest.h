@@ -7,8 +7,9 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/resiliencehub/model/ResourceImportStrategyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resiliencehub/model/ResourceImportStrategyType.h>
+#include <aws/resiliencehub/model/EksSource.h>
 #include <aws/resiliencehub/model/TerraformSource.h>
 #include <utility>
 
@@ -117,93 +118,133 @@ namespace Model
 
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline const Aws::Vector<EksSource>& GetEksSources() const{ return m_eksSources; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline bool EksSourcesHasBeenSet() const { return m_eksSourcesHasBeenSet; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline void SetEksSources(const Aws::Vector<EksSource>& value) { m_eksSourcesHasBeenSet = true; m_eksSources = value; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline void SetEksSources(Aws::Vector<EksSource>&& value) { m_eksSourcesHasBeenSet = true; m_eksSources = std::move(value); }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithEksSources(const Aws::Vector<EksSource>& value) { SetEksSources(value); return *this;}
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& WithEksSources(Aws::Vector<EksSource>&& value) { SetEksSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& AddEksSources(const EksSource& value) { m_eksSourcesHasBeenSet = true; m_eksSources.push_back(value); return *this; }
+
+    /**
+     * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
+     * to import.</p>
+     */
+    inline ImportResourcesToDraftAppVersionRequest& AddEksSources(EksSource&& value) { m_eksSourcesHasBeenSet = true; m_eksSources.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline const ResourceImportStrategyType& GetImportStrategy() const{ return m_importStrategy; }
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline bool ImportStrategyHasBeenSet() const { return m_importStrategyHasBeenSet; }
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline void SetImportStrategy(const ResourceImportStrategyType& value) { m_importStrategyHasBeenSet = true; m_importStrategy = value; }
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline void SetImportStrategy(ResourceImportStrategyType&& value) { m_importStrategyHasBeenSet = true; m_importStrategy = std::move(value); }
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(const ResourceImportStrategyType& value) { SetImportStrategy(value); return *this;}
 
     /**
-     * <p>The import strategy you would like to set to import resources into AWS
-     * Resilience Hub application.</p>
+     * <p>The import strategy you would like to set to import resources into Resilience
+     * Hub application.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(ResourceImportStrategyType&& value) { SetImportStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceArns() const{ return m_sourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline bool SourceArnsHasBeenSet() const { return m_sourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline void SetSourceArns(const Aws::Vector<Aws::String>& value) { m_sourceArnsHasBeenSet = true; m_sourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline void SetSourceArns(Aws::Vector<Aws::String>&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithSourceArns(const Aws::Vector<Aws::String>& value) { SetSourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& WithSourceArns(Aws::Vector<Aws::String>&& value) { SetSourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(const Aws::String& value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(Aws::String&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) for the resources that you want to
-     * import.</p>
+     * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
     inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(const char* value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(value); return *this; }
 
@@ -252,6 +293,9 @@ namespace Model
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
+
+    Aws::Vector<EksSource> m_eksSources;
+    bool m_eksSourcesHasBeenSet = false;
 
     ResourceImportStrategyType m_importStrategy;
     bool m_importStrategyHasBeenSet = false;

@@ -78,44 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline const Aws::Vector<ResiliencyPolicy>& GetResiliencyPolicies() const{ return m_resiliencyPolicies; }
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline void SetResiliencyPolicies(const Aws::Vector<ResiliencyPolicy>& value) { m_resiliencyPolicies = value; }
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline void SetResiliencyPolicies(Aws::Vector<ResiliencyPolicy>&& value) { m_resiliencyPolicies = std::move(value); }
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline ListSuggestedResiliencyPoliciesResult& WithResiliencyPolicies(const Aws::Vector<ResiliencyPolicy>& value) { SetResiliencyPolicies(value); return *this;}
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline ListSuggestedResiliencyPoliciesResult& WithResiliencyPolicies(Aws::Vector<ResiliencyPolicy>&& value) { SetResiliencyPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline ListSuggestedResiliencyPoliciesResult& AddResiliencyPolicies(const ResiliencyPolicy& value) { m_resiliencyPolicies.push_back(value); return *this; }
 
     /**
-     * <p>The suggested resiliency policies for the AWS Resilience Hub
-     * applications.</p>
+     * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
     inline ListSuggestedResiliencyPoliciesResult& AddResiliencyPolicies(ResiliencyPolicy&& value) { m_resiliencyPolicies.push_back(std::move(value)); return *this; }
 

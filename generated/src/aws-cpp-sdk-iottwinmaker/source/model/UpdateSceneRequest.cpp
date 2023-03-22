@@ -17,7 +17,8 @@ UpdateSceneRequest::UpdateSceneRequest() :
     m_sceneIdHasBeenSet(false),
     m_contentLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_sceneMetadataHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String UpdateSceneRequest::SerializePayload() const
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
    }
    payload.WithArray("capabilities", std::move(capabilitiesJsonList));
+
+  }
+
+  if(m_sceneMetadataHasBeenSet)
+  {
+   JsonValue sceneMetadataJsonMap;
+   for(auto& sceneMetadataItem : m_sceneMetadata)
+   {
+     sceneMetadataJsonMap.WithString(sceneMetadataItem.first, sceneMetadataItem.second);
+   }
+   payload.WithObject("sceneMetadata", std::move(sceneMetadataJsonMap));
 
   }
 

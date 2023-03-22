@@ -155,25 +155,25 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of input sources to be displayed per AWS Resilience Hub
+     * <p>Maximum number of input sources to be displayed per Resilience Hub
      * application.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of input sources to be displayed per AWS Resilience Hub
+     * <p>Maximum number of input sources to be displayed per Resilience Hub
      * application.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of input sources to be displayed per AWS Resilience Hub
+     * <p>Maximum number of input sources to be displayed per Resilience Hub
      * application.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of input sources to be displayed per AWS Resilience Hub
+     * <p>Maximum number of input sources to be displayed per Resilience Hub
      * application.</p>
      */
     inline ListAppInputSourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
