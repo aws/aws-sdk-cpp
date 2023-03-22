@@ -259,7 +259,6 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 
 bool InstanceProfileCredentialsProvider::ExpiresSoon() const
 {
-    ReaderLockGuard guard(m_reloadLock);
     auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
     AWSCredentials credentials;
 
