@@ -18,7 +18,13 @@ namespace Model
     NOT_SET,
     KEY,
     VALUE,
-    COLUMN_HEADER
+    COLUMN_HEADER,
+    TABLE_TITLE,
+    TABLE_FOOTER,
+    TABLE_SECTION_TITLE,
+    TABLE_SUMMARY,
+    STRUCTURED_TABLE,
+    SEMI_STRUCTURED_TABLE
   };
 
 namespace EntityTypeMapper

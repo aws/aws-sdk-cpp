@@ -28,7 +28,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_channelIdHasBeenSet(false),
     m_memberArnsHasBeenSet(false),
     m_moderatorArnsHasBeenSet(false),
-    m_elasticChannelConfigurationHasBeenSet(false)
+    m_elasticChannelConfigurationHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_elasticChannelConfigurationHasBeenSet)
   {
    payload.WithObject("ElasticChannelConfiguration", m_elasticChannelConfiguration.Jsonize());
+
+  }
+
+  if(m_expirationSettingsHasBeenSet)
+  {
+   payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
 
   }
 

@@ -23,7 +23,8 @@ AppInstanceUser::AppInstanceUser() :
     m_nameHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+    m_lastUpdatedTimestampHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AppInstanceUser::AppInstanceUser(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
+    m_lastUpdatedTimestampHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ AppInstanceUser& AppInstanceUser::operator =(JsonView jsonValue)
     m_lastUpdatedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpirationSettings"))
+  {
+    m_expirationSettings = jsonValue.GetObject("ExpirationSettings");
+
+    m_expirationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +116,12 @@ JsonValue AppInstanceUser::Jsonize() const
   if(m_lastUpdatedTimestampHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTimestamp", m_lastUpdatedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_expirationSettingsHasBeenSet)
+  {
+   payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
+
   }
 
   return payload;

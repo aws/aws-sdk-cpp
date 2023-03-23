@@ -136,7 +136,13 @@ namespace Model
      * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
      * support changing the desired number of vCPUs of an existing compute environment.
      * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p> 
+     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
+     * setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
+     * <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
+     * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
@@ -147,7 +153,13 @@ namespace Model
      * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
      * support changing the desired number of vCPUs of an existing compute environment.
      * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p> 
+     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
+     * setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
+     * <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
+     * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
@@ -158,7 +170,13 @@ namespace Model
      * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
      * support changing the desired number of vCPUs of an existing compute environment.
      * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p> 
+     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
+     * setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
+     * <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
+     * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
@@ -169,7 +187,13 @@ namespace Model
      * on Fargate resources. Don't specify it.</p>   <p>Batch doesn't
      * support changing the desired number of vCPUs of an existing compute environment.
      * Don't specify this parameter for compute environments using Amazon EKS
-     * clusters.</p> 
+     * clusters.</p>   <p>When you update the <code>desiredvCpus</code>
+     * setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values. </p> <p>Additionally, the updated
+     * <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
+     * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 

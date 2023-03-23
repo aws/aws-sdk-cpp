@@ -23,7 +23,8 @@ StreamingConfiguration::StreamingConfiguration() :
     m_dataRetentionInHoursHasBeenSet(false),
     m_disabled(false),
     m_disabledHasBeenSet(false),
-    m_streamingNotificationTargetsHasBeenSet(false)
+    m_streamingNotificationTargetsHasBeenSet(false),
+    m_mediaInsightsConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ StreamingConfiguration::StreamingConfiguration(JsonView jsonValue) :
     m_dataRetentionInHoursHasBeenSet(false),
     m_disabled(false),
     m_disabledHasBeenSet(false),
-    m_streamingNotificationTargetsHasBeenSet(false)
+    m_streamingNotificationTargetsHasBeenSet(false),
+    m_mediaInsightsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +65,13 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
     m_streamingNotificationTargetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MediaInsightsConfiguration"))
+  {
+    m_mediaInsightsConfiguration = jsonValue.GetObject("MediaInsightsConfiguration");
+
+    m_mediaInsightsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +99,12 @@ JsonValue StreamingConfiguration::Jsonize() const
      streamingNotificationTargetsJsonList[streamingNotificationTargetsIndex].AsObject(m_streamingNotificationTargets[streamingNotificationTargetsIndex].Jsonize());
    }
    payload.WithArray("StreamingNotificationTargets", std::move(streamingNotificationTargetsJsonList));
+
+  }
+
+  if(m_mediaInsightsConfigurationHasBeenSet)
+  {
+   payload.WithObject("MediaInsightsConfiguration", m_mediaInsightsConfiguration.Jsonize());
 
   }
 

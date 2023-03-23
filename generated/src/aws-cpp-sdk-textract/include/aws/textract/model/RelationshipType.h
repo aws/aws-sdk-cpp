@@ -21,7 +21,10 @@ namespace Model
     COMPLEX_FEATURES,
     MERGED_CELL,
     TITLE,
-    ANSWER
+    ANSWER,
+    TABLE,
+    TABLE_TITLE,
+    TABLE_FOOTER
   };
 
 namespace RelationshipTypeMapper

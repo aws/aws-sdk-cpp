@@ -126,83 +126,91 @@ namespace Model
 
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to create different
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+     * <p>Tags assigned to the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

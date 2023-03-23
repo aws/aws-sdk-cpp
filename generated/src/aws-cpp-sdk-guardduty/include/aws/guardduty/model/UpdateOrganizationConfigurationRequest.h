@@ -8,6 +8,7 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/AutoEnableMembers.h>
 #include <aws/guardduty/model/OrganizationFeatureConfiguration.h>
 #include <utility>
 
@@ -35,69 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline UpdateOrganizationConfigurationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline UpdateOrganizationConfigurationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the detector to update the delegated administrator for.</p>
+     * <p>The ID of the detector that configures the delegated administrator.</p>
      */
     inline UpdateOrganizationConfigurationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
-
-
-    /**
-     * <p>Indicates whether to automatically enable member accounts in the
-     * organization.</p>
-     */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Indicates whether to automatically enable member accounts in the
-     * organization.</p>
-     */
-    inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to automatically enable member accounts in the
-     * organization.</p>
-     */
-    inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-
-    /**
-     * <p>Indicates whether to automatically enable member accounts in the
-     * organization.</p>
-     */
-    inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
 
 
     /**
@@ -140,16 +116,89 @@ namespace Model
      */
     inline UpdateOrganizationConfigurationRequest& AddFeatures(OrganizationFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline bool AutoEnableOrganizationMembersHasBeenSet() const { return m_autoEnableOrganizationMembersHasBeenSet; }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = std::move(value); }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization. </p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that new accounts joining the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts (new and existing members) in the organization are configured to have
+     * GuardDuty enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates
+     * that no account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet = false;
 
-    bool m_autoEnable;
-    bool m_autoEnableHasBeenSet = false;
-
     Aws::Vector<OrganizationFeatureConfiguration> m_features;
     bool m_featuresHasBeenSet = false;
+
+    AutoEnableMembers m_autoEnableOrganizationMembers;
+    bool m_autoEnableOrganizationMembersHasBeenSet = false;
   };
 
 } // namespace Model

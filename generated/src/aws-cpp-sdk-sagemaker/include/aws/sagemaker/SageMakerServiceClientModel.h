@@ -28,6 +28,7 @@
 #include <aws/sagemaker/model/CreateAppImageConfigResult.h>
 #include <aws/sagemaker/model/CreateArtifactResult.h>
 #include <aws/sagemaker/model/CreateAutoMLJobResult.h>
+#include <aws/sagemaker/model/CreateAutoMLJobV2Result.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/CreateCompilationJobResult.h>
 #include <aws/sagemaker/model/CreateContextResult.h>
@@ -94,6 +95,7 @@
 #include <aws/sagemaker/model/DescribeAppImageConfigResult.h>
 #include <aws/sagemaker/model/DescribeArtifactResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
+#include <aws/sagemaker/model/DescribeAutoMLJobV2Result.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryResult.h>
 #include <aws/sagemaker/model/DescribeCompilationJobResult.h>
 #include <aws/sagemaker/model/DescribeContextResult.h>
@@ -317,6 +319,7 @@ namespace Aws
       class CreateAppImageConfigRequest;
       class CreateArtifactRequest;
       class CreateAutoMLJobRequest;
+      class CreateAutoMLJobV2Request;
       class CreateCodeRepositoryRequest;
       class CreateCompilationJobRequest;
       class CreateContextRequest;
@@ -416,6 +419,7 @@ namespace Aws
       class DescribeAppImageConfigRequest;
       class DescribeArtifactRequest;
       class DescribeAutoMLJobRequest;
+      class DescribeAutoMLJobV2Request;
       class DescribeCodeRepositoryRequest;
       class DescribeCompilationJobRequest;
       class DescribeContextRequest;
@@ -620,6 +624,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateAppImageConfigResult, SageMakerError> CreateAppImageConfigOutcome;
       typedef Aws::Utils::Outcome<CreateArtifactResult, SageMakerError> CreateArtifactOutcome;
       typedef Aws::Utils::Outcome<CreateAutoMLJobResult, SageMakerError> CreateAutoMLJobOutcome;
+      typedef Aws::Utils::Outcome<CreateAutoMLJobV2Result, SageMakerError> CreateAutoMLJobV2Outcome;
       typedef Aws::Utils::Outcome<CreateCodeRepositoryResult, SageMakerError> CreateCodeRepositoryOutcome;
       typedef Aws::Utils::Outcome<CreateCompilationJobResult, SageMakerError> CreateCompilationJobOutcome;
       typedef Aws::Utils::Outcome<CreateContextResult, SageMakerError> CreateContextOutcome;
@@ -719,6 +724,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAppImageConfigResult, SageMakerError> DescribeAppImageConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeArtifactResult, SageMakerError> DescribeArtifactOutcome;
       typedef Aws::Utils::Outcome<DescribeAutoMLJobResult, SageMakerError> DescribeAutoMLJobOutcome;
+      typedef Aws::Utils::Outcome<DescribeAutoMLJobV2Result, SageMakerError> DescribeAutoMLJobV2Outcome;
       typedef Aws::Utils::Outcome<DescribeCodeRepositoryResult, SageMakerError> DescribeCodeRepositoryOutcome;
       typedef Aws::Utils::Outcome<DescribeCompilationJobResult, SageMakerError> DescribeCompilationJobOutcome;
       typedef Aws::Utils::Outcome<DescribeContextResult, SageMakerError> DescribeContextOutcome;
@@ -923,6 +929,7 @@ namespace Aws
       typedef std::future<CreateAppImageConfigOutcome> CreateAppImageConfigOutcomeCallable;
       typedef std::future<CreateArtifactOutcome> CreateArtifactOutcomeCallable;
       typedef std::future<CreateAutoMLJobOutcome> CreateAutoMLJobOutcomeCallable;
+      typedef std::future<CreateAutoMLJobV2Outcome> CreateAutoMLJobV2OutcomeCallable;
       typedef std::future<CreateCodeRepositoryOutcome> CreateCodeRepositoryOutcomeCallable;
       typedef std::future<CreateCompilationJobOutcome> CreateCompilationJobOutcomeCallable;
       typedef std::future<CreateContextOutcome> CreateContextOutcomeCallable;
@@ -1022,6 +1029,7 @@ namespace Aws
       typedef std::future<DescribeAppImageConfigOutcome> DescribeAppImageConfigOutcomeCallable;
       typedef std::future<DescribeArtifactOutcome> DescribeArtifactOutcomeCallable;
       typedef std::future<DescribeAutoMLJobOutcome> DescribeAutoMLJobOutcomeCallable;
+      typedef std::future<DescribeAutoMLJobV2Outcome> DescribeAutoMLJobV2OutcomeCallable;
       typedef std::future<DescribeCodeRepositoryOutcome> DescribeCodeRepositoryOutcomeCallable;
       typedef std::future<DescribeCompilationJobOutcome> DescribeCompilationJobOutcomeCallable;
       typedef std::future<DescribeContextOutcome> DescribeContextOutcomeCallable;
@@ -1229,6 +1237,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateAppImageConfigRequest&, const Model::CreateAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateArtifactRequest&, const Model::CreateArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArtifactResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAutoMLJobRequest&, const Model::CreateAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoMLJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateAutoMLJobV2Request&, const Model::CreateAutoMLJobV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoMLJobV2ResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCodeRepositoryRequest&, const Model::CreateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCompilationJobRequest&, const Model::CreateCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateContextRequest&, const Model::CreateContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContextResponseReceivedHandler;
@@ -1328,6 +1337,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAppImageConfigRequest&, const Model::DescribeAppImageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppImageConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeArtifactRequest&, const Model::DescribeArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeArtifactResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobRequest&, const Model::DescribeAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobV2Request&, const Model::DescribeAutoMLJobV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobV2ResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCodeRepositoryRequest&, const Model::DescribeCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCompilationJobRequest&, const Model::DescribeCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeContextRequest&, const Model::DescribeContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContextResponseReceivedHandler;

@@ -27,7 +27,9 @@ namespace Model
     TITLE,
     QUERY,
     QUERY_RESULT,
-    SIGNATURE
+    SIGNATURE,
+    TABLE_TITLE,
+    TABLE_FOOTER
   };
 
 namespace BlockTypeMapper

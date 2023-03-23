@@ -107,12 +107,13 @@ namespace ChimeSDKIdentity
         }
 
         /**
-         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
-         * The promoted user can perform the following actions. </p> <ul> <li> <p>
-         * <code>ChannelModerator</code> actions across all channels in the
-         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
-         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
-         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * <p>Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an
+         * <code>AppInstanceAdmin</code>. The promoted entity can perform the following
+         * actions. </p> <ul> <li> <p> <code>ChannelModerator</code> actions across all
+         * channels in the <code>AppInstance</code>.</p> </li> <li> <p>
+         * <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an
+         * <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to
+         * an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">AWS
          * API Reference</a></p>
          */
@@ -134,6 +135,33 @@ namespace ChimeSDKIdentity
         void CreateAppInstanceAdminAsync(const CreateAppInstanceAdminRequestT& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKIdentityClient::CreateAppInstanceAdmin, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a bot under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>Configuration</code> and <code>Name</code> for that
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceBotOutcome CreateAppInstanceBot(const Model::CreateAppInstanceBotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAppInstanceBot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAppInstanceBotRequestT = Model::CreateAppInstanceBotRequest>
+        Model::CreateAppInstanceBotOutcomeCallable CreateAppInstanceBotCallable(const CreateAppInstanceBotRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::CreateAppInstanceBot, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAppInstanceBot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAppInstanceBotRequestT = Model::CreateAppInstanceBotRequest>
+        void CreateAppInstanceBotAsync(const CreateAppInstanceBotRequestT& request, const CreateAppInstanceBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::CreateAppInstanceBot, request, handler, context);
         }
 
         /**
@@ -190,8 +218,9 @@ namespace ChimeSDKIdentity
         }
 
         /**
-         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
-         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>
+         * or <code>AppInstanceBot</code>. This action does not delete the
+         * user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">AWS
          * API Reference</a></p>
          */
@@ -213,6 +242,31 @@ namespace ChimeSDKIdentity
         void DeleteAppInstanceAdminAsync(const DeleteAppInstanceAdminRequestT& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKIdentityClient::DeleteAppInstanceAdmin, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an <code>AppInstanceBot</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceBotOutcome DeleteAppInstanceBot(const Model::DeleteAppInstanceBotRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAppInstanceBot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAppInstanceBotRequestT = Model::DeleteAppInstanceBotRequest>
+        Model::DeleteAppInstanceBotOutcomeCallable DeleteAppInstanceBotCallable(const DeleteAppInstanceBotRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::DeleteAppInstanceBot, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAppInstanceBot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAppInstanceBotRequestT = Model::DeleteAppInstanceBotRequest>
+        void DeleteAppInstanceBotAsync(const DeleteAppInstanceBotRequestT& request, const DeleteAppInstanceBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::DeleteAppInstanceBot, request, handler, context);
         }
 
         /**
@@ -319,6 +373,31 @@ namespace ChimeSDKIdentity
         }
 
         /**
+         * <p>The <code>AppInstanceBot's</code> information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceBotOutcome DescribeAppInstanceBot(const Model::DescribeAppInstanceBotRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppInstanceBot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppInstanceBotRequestT = Model::DescribeAppInstanceBotRequest>
+        Model::DescribeAppInstanceBotOutcomeCallable DescribeAppInstanceBotCallable(const DescribeAppInstanceBotRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::DescribeAppInstanceBot, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppInstanceBot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppInstanceBotRequestT = Model::DescribeAppInstanceBotRequest>
+        void DescribeAppInstanceBotAsync(const DescribeAppInstanceBotRequestT& request, const DescribeAppInstanceBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::DescribeAppInstanceBot, request, handler, context);
+        }
+
+        /**
          * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">AWS
@@ -420,6 +499,32 @@ namespace ChimeSDKIdentity
         void ListAppInstanceAdminsAsync(const ListAppInstanceAdminsRequestT& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKIdentityClient::ListAppInstanceAdmins, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all <code>AppInstanceBots</code> created under a single
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstanceBotsOutcome ListAppInstanceBots(const Model::ListAppInstanceBotsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAppInstanceBots that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAppInstanceBotsRequestT = Model::ListAppInstanceBotsRequest>
+        Model::ListAppInstanceBotsOutcomeCallable ListAppInstanceBotsCallable(const ListAppInstanceBotsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::ListAppInstanceBots, request);
+        }
+
+        /**
+         * An Async wrapper for ListAppInstanceBots that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAppInstanceBotsRequestT = Model::ListAppInstanceBotsRequest>
+        void ListAppInstanceBotsAsync(const ListAppInstanceBotsRequestT& request, const ListAppInstanceBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::ListAppInstanceBots, request, handler, context);
         }
 
         /**
@@ -553,6 +658,36 @@ namespace ChimeSDKIdentity
         }
 
         /**
+         * <p>Sets the number of days before the <code>AppInstanceUser</code> is
+         * automatically deleted.</p>  <p>A background process deletes expired
+         * <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion
+         * times may vary.</p> <p>Expired <code>AppInstanceUsers</code> that have not yet
+         * been deleted appear as active, and you can update their expiration settings. The
+         * system honors the new settings.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAppInstanceUserExpirationSettingsOutcome PutAppInstanceUserExpirationSettings(const Model::PutAppInstanceUserExpirationSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAppInstanceUserExpirationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAppInstanceUserExpirationSettingsRequestT = Model::PutAppInstanceUserExpirationSettingsRequest>
+        Model::PutAppInstanceUserExpirationSettingsOutcomeCallable PutAppInstanceUserExpirationSettingsCallable(const PutAppInstanceUserExpirationSettingsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::PutAppInstanceUserExpirationSettings, request);
+        }
+
+        /**
+         * An Async wrapper for PutAppInstanceUserExpirationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAppInstanceUserExpirationSettingsRequestT = Model::PutAppInstanceUserExpirationSettingsRequest>
+        void PutAppInstanceUserExpirationSettingsAsync(const PutAppInstanceUserExpirationSettingsRequestT& request, const PutAppInstanceUserExpirationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::PutAppInstanceUserExpirationSettings, request, handler, context);
+        }
+
+        /**
          * <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The
          * endpoint receives messages for a user. For push notifications, the endpoint is a
          * mobile device used to receive mobile push notifications for a
@@ -655,6 +790,32 @@ namespace ChimeSDKIdentity
         void UpdateAppInstanceAsync(const UpdateAppInstanceRequestT& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKIdentityClient::UpdateAppInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the name and metadata of an
+         * <code>AppInstanceBot</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppInstanceBotOutcome UpdateAppInstanceBot(const Model::UpdateAppInstanceBotRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAppInstanceBot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAppInstanceBotRequestT = Model::UpdateAppInstanceBotRequest>
+        Model::UpdateAppInstanceBotOutcomeCallable UpdateAppInstanceBotCallable(const UpdateAppInstanceBotRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKIdentityClient::UpdateAppInstanceBot, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAppInstanceBot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAppInstanceBotRequestT = Model::UpdateAppInstanceBotRequest>
+        void UpdateAppInstanceBotAsync(const UpdateAppInstanceBotRequestT& request, const UpdateAppInstanceBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKIdentityClient::UpdateAppInstanceBot, request, handler, context);
         }
 
         /**

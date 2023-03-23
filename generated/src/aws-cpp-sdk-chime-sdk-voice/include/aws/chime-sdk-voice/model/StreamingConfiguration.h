@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-voice/model/MediaInsightsConfiguration.h>
 #include <aws/chime-sdk-voice/model/StreamingNotificationTarget.h>
 #include <utility>
 
@@ -83,6 +84,25 @@ namespace Model
     
     inline StreamingConfiguration& AddStreamingNotificationTargets(StreamingNotificationTarget&& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const MediaInsightsConfiguration& GetMediaInsightsConfiguration() const{ return m_mediaInsightsConfiguration; }
+
+    
+    inline bool MediaInsightsConfigurationHasBeenSet() const { return m_mediaInsightsConfigurationHasBeenSet; }
+
+    
+    inline void SetMediaInsightsConfiguration(const MediaInsightsConfiguration& value) { m_mediaInsightsConfigurationHasBeenSet = true; m_mediaInsightsConfiguration = value; }
+
+    
+    inline void SetMediaInsightsConfiguration(MediaInsightsConfiguration&& value) { m_mediaInsightsConfigurationHasBeenSet = true; m_mediaInsightsConfiguration = std::move(value); }
+
+    
+    inline StreamingConfiguration& WithMediaInsightsConfiguration(const MediaInsightsConfiguration& value) { SetMediaInsightsConfiguration(value); return *this;}
+
+    
+    inline StreamingConfiguration& WithMediaInsightsConfiguration(MediaInsightsConfiguration&& value) { SetMediaInsightsConfiguration(std::move(value)); return *this;}
+
   private:
 
     int m_dataRetentionInHours;
@@ -93,6 +113,9 @@ namespace Model
 
     Aws::Vector<StreamingNotificationTarget> m_streamingNotificationTargets;
     bool m_streamingNotificationTargetsHasBeenSet = false;
+
+    MediaInsightsConfiguration m_mediaInsightsConfiguration;
+    bool m_mediaInsightsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

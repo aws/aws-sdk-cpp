@@ -19,8 +19,8 @@ namespace ChimeSDKMediaPipelines
    * <p>The Amazon Chime SDK media pipeline APIs in this section allow software
    * developers to create Amazon Chime SDK media pipelines that capture, concatenate,
    * or stream your Amazon Chime SDK meetings. For more information about media
-   * pipleines, see <a
-   * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
+   * pipelines, see <a
+   * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
    * Chime SDK media pipelines</a>. </p>
    */
   class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>
@@ -129,7 +129,58 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
-         * <p>Creates a streaming media pipeline in an Amazon Chime SDK
+         * <p>Creates a media insights pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipeline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMediaInsightsPipelineOutcome CreateMediaInsightsPipeline(const Model::CreateMediaInsightsPipelineRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMediaInsightsPipeline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMediaInsightsPipelineRequestT = Model::CreateMediaInsightsPipelineRequest>
+        Model::CreateMediaInsightsPipelineOutcomeCallable CreateMediaInsightsPipelineCallable(const CreateMediaInsightsPipelineRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipeline, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMediaInsightsPipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMediaInsightsPipelineRequestT = Model::CreateMediaInsightsPipelineRequest>
+        void CreateMediaInsightsPipelineAsync(const CreateMediaInsightsPipelineRequestT& request, const CreateMediaInsightsPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipeline, request, handler, context);
+        }
+
+        /**
+         * <p>A structure that contains the static configurations for a media insights
+         * pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipelineConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMediaInsightsPipelineConfigurationOutcome CreateMediaInsightsPipelineConfiguration(const Model::CreateMediaInsightsPipelineConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMediaInsightsPipelineConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMediaInsightsPipelineConfigurationRequestT = Model::CreateMediaInsightsPipelineConfigurationRequest>
+        Model::CreateMediaInsightsPipelineConfigurationOutcomeCallable CreateMediaInsightsPipelineConfigurationCallable(const CreateMediaInsightsPipelineConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipelineConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMediaInsightsPipelineConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMediaInsightsPipelineConfigurationRequestT = Model::CreateMediaInsightsPipelineConfigurationRequest>
+        void CreateMediaInsightsPipelineConfigurationAsync(const CreateMediaInsightsPipelineConfigurationRequestT& request, const CreateMediaInsightsPipelineConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipelineConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a media live connector pipeline in an Amazon Chime SDK
          * meeting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">AWS
          * API Reference</a></p>
@@ -177,6 +228,31 @@ namespace ChimeSDKMediaPipelines
         void DeleteMediaCapturePipelineAsync(const DeleteMediaCapturePipelineRequestT& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified configuration settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaInsightsPipelineConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMediaInsightsPipelineConfigurationOutcome DeleteMediaInsightsPipelineConfiguration(const Model::DeleteMediaInsightsPipelineConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMediaInsightsPipelineConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMediaInsightsPipelineConfigurationRequestT = Model::DeleteMediaInsightsPipelineConfigurationRequest>
+        Model::DeleteMediaInsightsPipelineConfigurationOutcomeCallable DeleteMediaInsightsPipelineConfigurationCallable(const DeleteMediaInsightsPipelineConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::DeleteMediaInsightsPipelineConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMediaInsightsPipelineConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMediaInsightsPipelineConfigurationRequestT = Model::DeleteMediaInsightsPipelineConfigurationRequest>
+        void DeleteMediaInsightsPipelineConfigurationAsync(const DeleteMediaInsightsPipelineConfigurationRequestT& request, const DeleteMediaInsightsPipelineConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::DeleteMediaInsightsPipelineConfiguration, request, handler, context);
         }
 
         /**
@@ -230,6 +306,32 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
+         * <p>Gets the configuration settings for a media insights pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaInsightsPipelineConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaInsightsPipelineConfigurationOutcome GetMediaInsightsPipelineConfiguration(const Model::GetMediaInsightsPipelineConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMediaInsightsPipelineConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaInsightsPipelineConfigurationRequestT = Model::GetMediaInsightsPipelineConfigurationRequest>
+        Model::GetMediaInsightsPipelineConfigurationOutcomeCallable GetMediaInsightsPipelineConfigurationCallable(const GetMediaInsightsPipelineConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::GetMediaInsightsPipelineConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetMediaInsightsPipelineConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaInsightsPipelineConfigurationRequestT = Model::GetMediaInsightsPipelineConfigurationRequest>
+        void GetMediaInsightsPipelineConfigurationAsync(const GetMediaInsightsPipelineConfigurationRequestT& request, const GetMediaInsightsPipelineConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::GetMediaInsightsPipelineConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Gets an existing media pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">AWS
          * API Reference</a></p>
@@ -277,6 +379,32 @@ namespace ChimeSDKMediaPipelines
         void ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequestT& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the available media insights pipeline configurations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaInsightsPipelineConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaInsightsPipelineConfigurationsOutcome ListMediaInsightsPipelineConfigurations(const Model::ListMediaInsightsPipelineConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMediaInsightsPipelineConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMediaInsightsPipelineConfigurationsRequestT = Model::ListMediaInsightsPipelineConfigurationsRequest>
+        Model::ListMediaInsightsPipelineConfigurationsOutcomeCallable ListMediaInsightsPipelineConfigurationsCallable(const ListMediaInsightsPipelineConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListMediaInsightsPipelineConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMediaInsightsPipelineConfigurationsRequestT = Model::ListMediaInsightsPipelineConfigurationsRequest>
+        void ListMediaInsightsPipelineConfigurationsAsync(const ListMediaInsightsPipelineConfigurationsRequestT& request, const ListMediaInsightsPipelineConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations, request, handler, context);
         }
 
         /**
@@ -330,8 +458,9 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
-         * <p>The ARN of the media pipeline that you want to tag. Consists of he pipeline's
-         * endpoint region, resource ID, and pipeline ID.</p><p><h3>See Also:</h3>   <a
+         * <p>The ARN of the media pipeline that you want to tag. Consists of the
+         * pipeline's endpoint region, resource ID, and pipeline ID.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/TagResource">AWS
          * API Reference</a></p>
          */
@@ -378,6 +507,58 @@ namespace ChimeSDKMediaPipelines
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the media insights pipeline's configuration settings.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMediaInsightsPipelineConfigurationOutcome UpdateMediaInsightsPipelineConfiguration(const Model::UpdateMediaInsightsPipelineConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMediaInsightsPipelineConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMediaInsightsPipelineConfigurationRequestT = Model::UpdateMediaInsightsPipelineConfigurationRequest>
+        Model::UpdateMediaInsightsPipelineConfigurationOutcomeCallable UpdateMediaInsightsPipelineConfigurationCallable(const UpdateMediaInsightsPipelineConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMediaInsightsPipelineConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMediaInsightsPipelineConfigurationRequestT = Model::UpdateMediaInsightsPipelineConfigurationRequest>
+        void UpdateMediaInsightsPipelineConfigurationAsync(const UpdateMediaInsightsPipelineConfigurationRequestT& request, const UpdateMediaInsightsPipelineConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the status of a media insights pipeline.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMediaInsightsPipelineStatusOutcome UpdateMediaInsightsPipelineStatus(const Model::UpdateMediaInsightsPipelineStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMediaInsightsPipelineStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMediaInsightsPipelineStatusRequestT = Model::UpdateMediaInsightsPipelineStatusRequest>
+        Model::UpdateMediaInsightsPipelineStatusOutcomeCallable UpdateMediaInsightsPipelineStatusCallable(const UpdateMediaInsightsPipelineStatusRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMediaInsightsPipelineStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMediaInsightsPipelineStatusRequestT = Model::UpdateMediaInsightsPipelineStatusRequest>
+        void UpdateMediaInsightsPipelineStatusAsync(const UpdateMediaInsightsPipelineStatusRequestT& request, const UpdateMediaInsightsPipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus, request, handler, context);
         }
 
 

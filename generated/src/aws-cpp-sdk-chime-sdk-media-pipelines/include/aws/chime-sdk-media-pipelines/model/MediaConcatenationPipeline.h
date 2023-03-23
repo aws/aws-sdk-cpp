@@ -134,42 +134,42 @@ namespace Model
 
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline const Aws::Vector<ConcatenationSource>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline void SetSources(const Aws::Vector<ConcatenationSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline void SetSources(Aws::Vector<ConcatenationSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline MediaConcatenationPipeline& WithSources(const Aws::Vector<ConcatenationSource>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline MediaConcatenationPipeline& WithSources(Aws::Vector<ConcatenationSource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline MediaConcatenationPipeline& AddSources(const ConcatenationSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * <p>The data sources being concatnated.</p>
+     * <p>The data sources being concatenated.</p>
      */
     inline MediaConcatenationPipeline& AddSources(ConcatenationSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

@@ -11,6 +11,7 @@
 #include <aws/chime-sdk-messaging/model/ChannelPrivacy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
+#include <aws/chime-sdk-messaging/model/ExpirationSettings.h>
 #include <aws/chime-sdk-messaging/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -338,42 +339,50 @@ namespace Model
 
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
@@ -553,6 +562,43 @@ namespace Model
      */
     inline CreateChannelRequest& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline bool ExpirationSettingsHasBeenSet() const { return m_expirationSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = value; }
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::move(value); }
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline CreateChannelRequest& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
+
+    /**
+     * <p>Settings that control the interval after which the channel is automatically
+     * deleted.</p>
+     */
+    inline CreateChannelRequest& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceArn;
@@ -590,6 +636,9 @@ namespace Model
 
     ElasticChannelConfiguration m_elasticChannelConfiguration;
     bool m_elasticChannelConfigurationHasBeenSet = false;
+
+    ExpirationSettings m_expirationSettings;
+    bool m_expirationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

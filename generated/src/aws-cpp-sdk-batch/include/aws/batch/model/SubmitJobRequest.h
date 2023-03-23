@@ -391,65 +391,97 @@ namespace Model
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline SubmitJobRequest& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline SubmitJobRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The job definition used by this job. This value can be one of
-     * <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN)
-     * for the job definition. If <code>name</code> is specified without a revision
-     * then the latest active revision is used.</p>
+     * <code>definition-name</code>, <code>definition-name:revision</code>, or the
+     * Amazon Resource Name (ARN) for the job definition, with or without the revision
+     * (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i>
+     * </code>, or
+     * <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>
+     * </code>).</p> <p>If the revision is not specified, then the latest active
+     * revision is used.</p>
      */
     inline SubmitJobRequest& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
 

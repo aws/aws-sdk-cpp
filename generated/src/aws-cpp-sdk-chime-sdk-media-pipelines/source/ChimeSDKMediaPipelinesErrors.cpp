@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrors.h>
 #include <aws/chime-sdk-media-pipelines/model/ServiceUnavailableException.h>
+#include <aws/chime-sdk-media-pipelines/model/ConflictException.h>
 #include <aws/chime-sdk-media-pipelines/model/NotFoundException.h>
 #include <aws/chime-sdk-media-pipelines/model/ServiceFailureException.h>
 #include <aws/chime-sdk-media-pipelines/model/ForbiddenException.h>
@@ -28,6 +29,12 @@ template<> AWS_CHIMESDKMEDIAPIPELINES_API ServiceUnavailableException ChimeSDKMe
 {
   assert(this->GetErrorType() == ChimeSDKMediaPipelinesErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIMESDKMEDIAPIPELINES_API ConflictException ChimeSDKMediaPipelinesError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMediaPipelinesErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKMEDIAPIPELINES_API NotFoundException ChimeSDKMediaPipelinesError::GetModeledError()
@@ -75,6 +82,7 @@ template<> AWS_CHIMESDKMEDIAPIPELINES_API UnauthorizedClientException ChimeSDKMe
 namespace ChimeSDKMediaPipelinesErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
@@ -88,7 +96,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMediaPipelinesErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMediaPipelinesErrors::NOT_FOUND), false);
   }

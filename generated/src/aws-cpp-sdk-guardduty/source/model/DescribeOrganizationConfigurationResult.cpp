@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult() : 
-    m_autoEnable(false),
-    m_memberAccountLimitReached(false)
+    m_memberAccountLimitReached(false),
+    m_autoEnableOrganizationMembers(AutoEnableMembers::NOT_SET)
 {
 }
 
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_autoEnable(false),
-    m_memberAccountLimitReached(false)
+    m_memberAccountLimitReached(false),
+    m_autoEnableOrganizationMembers(AutoEnableMembers::NOT_SET)
 {
   *this = result;
 }
@@ -33,12 +33,6 @@ DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult
 DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("autoEnable"))
-  {
-    m_autoEnable = jsonValue.GetBool("autoEnable");
-
-  }
-
   if(jsonValue.ValueExists("memberAccountLimitReached"))
   {
     m_memberAccountLimitReached = jsonValue.GetBool("memberAccountLimitReached");
@@ -57,6 +51,12 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
+  if(jsonValue.ValueExists("autoEnableOrganizationMembers"))
+  {
+    m_autoEnableOrganizationMembers = AutoEnableMembersMapper::GetAutoEnableMembersForName(jsonValue.GetString("autoEnableOrganizationMembers"));
 
   }
 

@@ -31,7 +31,8 @@ ChannelMessageSummary::ChannelMessageSummary() :
     m_redacted(false),
     m_redactedHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ChannelMessageSummary::ChannelMessageSummary(JsonView jsonValue) :
     m_redacted(false),
     m_redactedHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +137,13 @@ ChannelMessageSummary& ChannelMessageSummary::operator =(JsonView jsonValue)
     m_messageAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentType"))
+  {
+    m_contentType = jsonValue.GetString("ContentType");
+
+    m_contentTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +215,12 @@ JsonValue ChannelMessageSummary::Jsonize() const
      messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
    }
    payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
+
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("ContentType", m_contentType);
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-media-pipelines/model/MediaCapturePipeline.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaLiveConnectorPipeline.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaConcatenationPipeline.h>
+#include <aws/chime-sdk-media-pipelines/model/MediaInsightsPipeline.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,37 @@ namespace Model
      */
     inline MediaPipeline& WithMediaConcatenationPipeline(MediaConcatenationPipeline&& value) { SetMediaConcatenationPipeline(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline const MediaInsightsPipeline& GetMediaInsightsPipeline() const{ return m_mediaInsightsPipeline; }
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline bool MediaInsightsPipelineHasBeenSet() const { return m_mediaInsightsPipelineHasBeenSet; }
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline void SetMediaInsightsPipeline(const MediaInsightsPipeline& value) { m_mediaInsightsPipelineHasBeenSet = true; m_mediaInsightsPipeline = value; }
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline void SetMediaInsightsPipeline(MediaInsightsPipeline&& value) { m_mediaInsightsPipelineHasBeenSet = true; m_mediaInsightsPipeline = std::move(value); }
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline MediaPipeline& WithMediaInsightsPipeline(const MediaInsightsPipeline& value) { SetMediaInsightsPipeline(value); return *this;}
+
+    /**
+     * <p>The media insights pipeline of a media pipeline.</p>
+     */
+    inline MediaPipeline& WithMediaInsightsPipeline(MediaInsightsPipeline&& value) { SetMediaInsightsPipeline(std::move(value)); return *this;}
+
   private:
 
     MediaCapturePipeline m_mediaCapturePipeline;
@@ -142,6 +174,9 @@ namespace Model
 
     MediaConcatenationPipeline m_mediaConcatenationPipeline;
     bool m_mediaConcatenationPipelineHasBeenSet = false;
+
+    MediaInsightsPipeline m_mediaInsightsPipeline;
+    bool m_mediaInsightsPipelineHasBeenSet = false;
   };
 
 } // namespace Model

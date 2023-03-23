@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ManifestFile_HASH = HashingUtils::HashString("ManifestFile");
         static const int S3Prefix_HASH = HashingUtils::HashString("S3Prefix");
+        static const int AugmentedManifestFile_HASH = HashingUtils::HashString("AugmentedManifestFile");
 
 
         AutoMLS3DataType GetAutoMLS3DataTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == S3Prefix_HASH)
           {
             return AutoMLS3DataType::S3Prefix;
+          }
+          else if (hashCode == AugmentedManifestFile_HASH)
+          {
+            return AutoMLS3DataType::AugmentedManifestFile;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ManifestFile";
           case AutoMLS3DataType::S3Prefix:
             return "S3Prefix";
+          case AutoMLS3DataType::AugmentedManifestFile:
+            return "AugmentedManifestFile";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

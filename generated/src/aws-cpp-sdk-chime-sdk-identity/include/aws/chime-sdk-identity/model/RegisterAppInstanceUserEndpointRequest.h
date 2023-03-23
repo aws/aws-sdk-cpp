@@ -258,42 +258,50 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline RegisterAppInstanceUserEndpointRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline RegisterAppInstanceUserEndpointRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token for each client request. </p>
+     * <p>The unique ID assigned to the request. Use different tokens to register other
+     * endpoints.</p>
      */
     inline RegisterAppInstanceUserEndpointRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

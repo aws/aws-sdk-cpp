@@ -319,6 +319,47 @@ namespace Model
      */
     inline ChannelMessageCallback& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
 
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline ChannelMessageCallback& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline ChannelMessageCallback& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The content type of the call-back message.</p>
+     */
+    inline ChannelMessageCallback& WithContentType(const char* value) { SetContentType(value); return *this;}
+
   private:
 
     Aws::String m_messageId;
@@ -338,6 +379,9 @@ namespace Model
 
     Aws::String m_subChannelId;
     bool m_subChannelIdHasBeenSet = false;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

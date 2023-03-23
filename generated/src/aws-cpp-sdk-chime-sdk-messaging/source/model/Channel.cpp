@@ -31,7 +31,8 @@ Channel::Channel() :
     m_lastMessageTimestampHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
     m_channelFlowArnHasBeenSet(false),
-    m_elasticChannelConfigurationHasBeenSet(false)
+    m_elasticChannelConfigurationHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Channel::Channel(JsonView jsonValue) :
     m_lastMessageTimestampHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
     m_channelFlowArnHasBeenSet(false),
-    m_elasticChannelConfigurationHasBeenSet(false)
+    m_elasticChannelConfigurationHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,6 +134,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_elasticChannelConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpirationSettings"))
+  {
+    m_expirationSettings = jsonValue.GetObject("ExpirationSettings");
+
+    m_expirationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -197,6 +206,12 @@ JsonValue Channel::Jsonize() const
   if(m_elasticChannelConfigurationHasBeenSet)
   {
    payload.WithObject("ElasticChannelConfiguration", m_elasticChannelConfiguration.Jsonize());
+
+  }
+
+  if(m_expirationSettingsHasBeenSet)
+  {
+   payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
 
   }
 

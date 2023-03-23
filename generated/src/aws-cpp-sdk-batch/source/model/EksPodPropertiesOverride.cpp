@@ -19,12 +19,14 @@ namespace Model
 {
 
 EksPodPropertiesOverride::EksPodPropertiesOverride() : 
-    m_containersHasBeenSet(false)
+    m_containersHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
 EksPodPropertiesOverride::EksPodPropertiesOverride(JsonView jsonValue) : 
-    m_containersHasBeenSet(false)
+    m_containersHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,13 @@ EksPodPropertiesOverride& EksPodPropertiesOverride::operator =(JsonView jsonValu
       m_containers.push_back(containersJsonList[containersIndex].AsObject());
     }
     m_containersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+
+    m_metadataHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +65,12 @@ JsonValue EksPodPropertiesOverride::Jsonize() const
      containersJsonList[containersIndex].AsObject(m_containers[containersIndex].Jsonize());
    }
    payload.WithArray("containers", std::move(containersJsonList));
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

@@ -117,42 +117,50 @@ namespace Model
 
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelBanRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelBanRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline CreateChannelBanRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 

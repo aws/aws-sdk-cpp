@@ -24,7 +24,8 @@ RepositorySummary::RepositorySummary() :
     m_domainNameHasBeenSet(false),
     m_domainOwnerHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RepositorySummary::RepositorySummary(JsonView jsonValue) :
     m_domainNameHasBeenSet(false),
     m_domainOwnerHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ RepositorySummary& RepositorySummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("createdTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,11 @@ JsonValue RepositorySummary::Jsonize() const
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   return payload;

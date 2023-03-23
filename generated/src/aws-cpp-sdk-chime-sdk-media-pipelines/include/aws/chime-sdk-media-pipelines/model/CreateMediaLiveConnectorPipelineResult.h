@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The new media pipeline.</p>
+     * <p>The new media live connector pipeline.</p>
      */
     inline const MediaLiveConnectorPipeline& GetMediaLiveConnectorPipeline() const{ return m_mediaLiveConnectorPipeline; }
 
     /**
-     * <p>The new media pipeline.</p>
+     * <p>The new media live connector pipeline.</p>
      */
     inline void SetMediaLiveConnectorPipeline(const MediaLiveConnectorPipeline& value) { m_mediaLiveConnectorPipeline = value; }
 
     /**
-     * <p>The new media pipeline.</p>
+     * <p>The new media live connector pipeline.</p>
      */
     inline void SetMediaLiveConnectorPipeline(MediaLiveConnectorPipeline&& value) { m_mediaLiveConnectorPipeline = std::move(value); }
 
     /**
-     * <p>The new media pipeline.</p>
+     * <p>The new media live connector pipeline.</p>
      */
     inline CreateMediaLiveConnectorPipelineResult& WithMediaLiveConnectorPipeline(const MediaLiveConnectorPipeline& value) { SetMediaLiveConnectorPipeline(value); return *this;}
 
     /**
-     * <p>The new media pipeline.</p>
+     * <p>The new media live connector pipeline.</p>
      */
     inline CreateMediaLiveConnectorPipelineResult& WithMediaLiveConnectorPipeline(MediaLiveConnectorPipeline&& value) { SetMediaLiveConnectorPipeline(std::move(value)); return *this;}
 

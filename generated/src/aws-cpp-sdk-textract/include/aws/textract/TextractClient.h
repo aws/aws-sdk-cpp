@@ -165,7 +165,7 @@ namespace Textract
         /**
          * <p>Analyzes identity documents for relevant information. This information is
          * extracted and returned as <code>IdentityDocumentFields</code>, which records
-         * both the normalized field and value of the extracted text.Unlike other Amazon
+         * both the normalized field and value of the extracted text. Unlike other Amazon
          * Textract operations, <code>AnalyzeID</code> doesn't return any Geometry
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS

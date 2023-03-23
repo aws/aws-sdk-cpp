@@ -37,22 +37,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p>
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
+     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * value is 1.</p>
      */
     inline int GetMaxCandidates() const{ return m_maxCandidates; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p>
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
+     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * value is 1.</p>
      */
     inline bool MaxCandidatesHasBeenSet() const { return m_maxCandidatesHasBeenSet; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p>
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
+     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * value is 1.</p>
      */
     inline void SetMaxCandidates(int value) { m_maxCandidatesHasBeenSet = true; m_maxCandidates = value; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p>
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
+     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * value is 1.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxCandidates(int value) { SetMaxCandidates(value); return *this;}
 
@@ -60,28 +68,36 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that each training job executed inside
      * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.</p>
+     * For more information, see the used by the action.</p> <p>For V2 jobs (jobs
+     * created by calling <code>CreateAutoMLJobV2</code>), this field controls the
+     * runtime of the job candidate.</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
     /**
      * <p>The maximum time, in seconds, that each training job executed inside
      * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.</p>
+     * For more information, see the used by the action.</p> <p>For V2 jobs (jobs
+     * created by calling <code>CreateAutoMLJobV2</code>), this field controls the
+     * runtime of the job candidate.</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, that each training job executed inside
      * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.</p>
+     * For more information, see the used by the action.</p> <p>For V2 jobs (jobs
+     * created by calling <code>CreateAutoMLJobV2</code>), this field controls the
+     * runtime of the job candidate.</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
     /**
      * <p>The maximum time, in seconds, that each training job executed inside
      * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
-     * For more information, see the used by the action.</p>
+     * For more information, see the used by the action.</p> <p>For V2 jobs (jobs
+     * created by calling <code>CreateAutoMLJobV2</code>), this field controls the
+     * runtime of the job candidate.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 
@@ -92,7 +108,7 @@ namespace Model
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
      * steps of the job, such as automatic one-click Autopilot model deployment, are
-     * not completed. </p>
+     * not completed.</p>
      */
     inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
 
@@ -102,7 +118,7 @@ namespace Model
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
      * steps of the job, such as automatic one-click Autopilot model deployment, are
-     * not completed. </p>
+     * not completed.</p>
      */
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
 
@@ -112,7 +128,7 @@ namespace Model
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
      * steps of the job, such as automatic one-click Autopilot model deployment, are
-     * not completed. </p>
+     * not completed.</p>
      */
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
 
@@ -122,7 +138,7 @@ namespace Model
      * processing is ended gracefully. The AutoML job identifies the best model whose
      * training was completed and marks it as the best-performing model. Any unfinished
      * steps of the job, such as automatic one-click Autopilot model deployment, are
-     * not completed. </p>
+     * not completed.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
 

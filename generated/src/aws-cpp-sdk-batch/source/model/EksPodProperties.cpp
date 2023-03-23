@@ -24,7 +24,8 @@ EksPodProperties::EksPodProperties() :
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ EksPodProperties::EksPodProperties(JsonView jsonValue) :
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,13 @@ EksPodProperties& EksPodProperties::operator =(JsonView jsonValue)
     m_volumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +135,12 @@ JsonValue EksPodProperties::Jsonize() const
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
    }
    payload.WithArray("volumes", std::move(volumesJsonList));
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

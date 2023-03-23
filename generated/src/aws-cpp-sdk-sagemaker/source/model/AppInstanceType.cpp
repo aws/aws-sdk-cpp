@@ -77,6 +77,7 @@ namespace Aws
         static const int ml_g5_12xlarge_HASH = HashingUtils::HashString("ml.g5.12xlarge");
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_geospatial_interactive_HASH = HashingUtils::HashString("ml.geospatial.interactive");
 
 
         AppInstanceType GetAppInstanceTypeForName(const Aws::String& name)
@@ -310,6 +311,10 @@ namespace Aws
           {
             return AppInstanceType::ml_g5_48xlarge;
           }
+          else if (hashCode == ml_geospatial_interactive_HASH)
+          {
+            return AppInstanceType::ml_geospatial_interactive;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -438,6 +443,8 @@ namespace Aws
             return "ml.g5.24xlarge";
           case AppInstanceType::ml_g5_48xlarge:
             return "ml.g5.48xlarge";
+          case AppInstanceType::ml_geospatial_interactive:
+            return "ml.geospatial.interactive";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

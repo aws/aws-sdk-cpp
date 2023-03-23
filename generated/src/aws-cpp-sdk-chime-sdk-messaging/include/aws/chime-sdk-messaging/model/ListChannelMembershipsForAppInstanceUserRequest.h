@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline bool AppInstanceUserArnHasBeenSet() const { return m_appInstanceUserArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = value; }
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = std::move(value); }
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn.assign(value); }
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the <code>AppInstanceUser</code>s</p>
+     * <p>The ARN of the user or bot.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
 
@@ -152,42 +152,50 @@ namespace Model
 
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline ListChannelMembershipsForAppInstanceUserRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 

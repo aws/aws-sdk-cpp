@@ -12,8 +12,10 @@
 #include <aws/sagemaker/model/CandidateStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/CandidateProperties.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/AutoMLCandidateStep.h>
 #include <aws/sagemaker/model/AutoMLContainerDefinition.h>
+#include <aws/sagemaker/model/AutoMLProcessingUnit.h>
 #include <utility>
 
 namespace Aws
@@ -210,42 +212,42 @@ namespace Model
 
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline const Aws::Vector<AutoMLContainerDefinition>& GetInferenceContainers() const{ return m_inferenceContainers; }
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline bool InferenceContainersHasBeenSet() const { return m_inferenceContainersHasBeenSet; }
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline void SetInferenceContainers(const Aws::Vector<AutoMLContainerDefinition>& value) { m_inferenceContainersHasBeenSet = true; m_inferenceContainers = value; }
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline void SetInferenceContainers(Aws::Vector<AutoMLContainerDefinition>&& value) { m_inferenceContainersHasBeenSet = true; m_inferenceContainers = std::move(value); }
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline AutoMLCandidate& WithInferenceContainers(const Aws::Vector<AutoMLContainerDefinition>& value) { SetInferenceContainers(value); return *this;}
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline AutoMLCandidate& WithInferenceContainers(Aws::Vector<AutoMLContainerDefinition>&& value) { SetInferenceContainers(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline AutoMLCandidate& AddInferenceContainers(const AutoMLContainerDefinition& value) { m_inferenceContainersHasBeenSet = true; m_inferenceContainers.push_back(value); return *this; }
 
     /**
-     * <p>Information about the inference container definitions.</p>
+     * <p>Information about the recommended inference container definitions.</p>
      */
     inline AutoMLCandidate& AddInferenceContainers(AutoMLContainerDefinition&& value) { m_inferenceContainersHasBeenSet = true; m_inferenceContainers.push_back(std::move(value)); return *this; }
 
@@ -414,6 +416,87 @@ namespace Model
      */
     inline AutoMLCandidate& WithCandidateProperties(CandidateProperties&& value) { SetCandidateProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& GetInferenceContainerDefinitions() const{ return m_inferenceContainerDefinitions; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline bool InferenceContainerDefinitionsHasBeenSet() const { return m_inferenceContainerDefinitionsHasBeenSet; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline void SetInferenceContainerDefinitions(const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions = value; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline void SetInferenceContainerDefinitions(Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions = std::move(value); }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& WithInferenceContainerDefinitions(const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& value) { SetInferenceContainerDefinitions(value); return *this;}
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& WithInferenceContainerDefinitions(Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>&& value) { SetInferenceContainerDefinitions(std::move(value)); return *this;}
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& AddInferenceContainerDefinitions(const AutoMLProcessingUnit& key, const Aws::Vector<AutoMLContainerDefinition>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(key, value); return *this; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& AddInferenceContainerDefinitions(AutoMLProcessingUnit&& key, const Aws::Vector<AutoMLContainerDefinition>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& AddInferenceContainerDefinitions(const AutoMLProcessingUnit& key, Aws::Vector<AutoMLContainerDefinition>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
+     * container definitions for the candidate. This field is populated for the V2 API
+     * only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).</p>
+     */
+    inline AutoMLCandidate& AddInferenceContainerDefinitions(AutoMLProcessingUnit&& key, Aws::Vector<AutoMLContainerDefinition>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_candidateName;
@@ -448,6 +531,9 @@ namespace Model
 
     CandidateProperties m_candidateProperties;
     bool m_candidatePropertiesHasBeenSet = false;
+
+    Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>> m_inferenceContainerDefinitions;
+    bool m_inferenceContainerDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

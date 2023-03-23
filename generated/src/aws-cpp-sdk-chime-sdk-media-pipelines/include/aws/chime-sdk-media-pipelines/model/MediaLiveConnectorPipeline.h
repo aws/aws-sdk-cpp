@@ -238,32 +238,32 @@ namespace Model
 
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline MediaLiveConnectorPipeline& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>Thetime at which the connector pipeline was created.</p>
+     * <p>The time at which the connector pipeline was created.</p>
      */
     inline MediaLiveConnectorPipeline& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 

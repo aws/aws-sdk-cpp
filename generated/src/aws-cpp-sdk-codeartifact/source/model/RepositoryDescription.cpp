@@ -26,7 +26,8 @@ RepositoryDescription::RepositoryDescription() :
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_upstreamsHasBeenSet(false),
-    m_externalConnectionsHasBeenSet(false)
+    m_externalConnectionsHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ RepositoryDescription::RepositoryDescription(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_upstreamsHasBeenSet(false),
-    m_externalConnectionsHasBeenSet(false)
+    m_externalConnectionsHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
     m_externalConnectionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("createdTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -170,6 +179,11 @@ JsonValue RepositoryDescription::Jsonize() const
    }
    payload.WithArray("externalConnections", std::move(externalConnectionsJsonList));
 
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("createdTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   return payload;

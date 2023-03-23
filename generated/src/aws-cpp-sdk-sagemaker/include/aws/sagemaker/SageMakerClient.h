@@ -381,6 +381,37 @@ namespace SageMaker
         }
 
         /**
+         * <p>Creates an Amazon SageMaker AutoML job that uses non-tabular data such as
+         * images or text for Computer Vision or Natural Language Processing problems.</p>
+         * <p>Find the resulting model after you run an AutoML job V2 by calling .</p>
+         * <p>To create an <code>AutoMLJob</code> using tabular data, see .</p> 
+         * <p>This API action is callable through SageMaker Canvas only. Calling it
+         * directly from the CLI or an SDK results in an error.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutoMLJobV2Outcome CreateAutoMLJobV2(const Model::CreateAutoMLJobV2Request& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutoMLJobV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutoMLJobV2RequestT = Model::CreateAutoMLJobV2Request>
+        Model::CreateAutoMLJobV2OutcomeCallable CreateAutoMLJobV2Callable(const CreateAutoMLJobV2RequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateAutoMLJobV2, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutoMLJobV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutoMLJobV2RequestT = Model::CreateAutoMLJobV2Request>
+        void CreateAutoMLJobV2Async(const CreateAutoMLJobV2RequestT& request, const CreateAutoMLJobV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateAutoMLJobV2, request, handler, context);
+        }
+
+        /**
          * <p>Creates a Git repository as a resource in your SageMaker account. You can
          * associate the repository with notebook instances so that you can use Git source
          * control for the notebooks you create. The Git repository is a resource in your
@@ -3429,6 +3460,34 @@ namespace SageMaker
         void DescribeAutoMLJobAsync(const DescribeAutoMLJobRequestT& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DescribeAutoMLJob, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about an Amazon SageMaker AutoML V2 job.</p> 
+         * <p>This API action is callable through SageMaker Canvas only. Calling it
+         * directly from the CLI or an SDK results in an error.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAutoMLJobV2Outcome DescribeAutoMLJobV2(const Model::DescribeAutoMLJobV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAutoMLJobV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAutoMLJobV2RequestT = Model::DescribeAutoMLJobV2Request>
+        Model::DescribeAutoMLJobV2OutcomeCallable DescribeAutoMLJobV2Callable(const DescribeAutoMLJobV2RequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeAutoMLJobV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAutoMLJobV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAutoMLJobV2RequestT = Model::DescribeAutoMLJobV2Request>
+        void DescribeAutoMLJobV2Async(const DescribeAutoMLJobV2RequestT& request, const DescribeAutoMLJobV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeAutoMLJobV2, request, handler, context);
         }
 
         /**

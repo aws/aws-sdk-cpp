@@ -50,6 +50,7 @@ enum class ChimeSDKIdentityErrors
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
+  NOT_FOUND,
   RESOURCE_LIMIT_EXCEEDED,
   SERVICE_FAILURE,
   THROTTLED_CLIENT,

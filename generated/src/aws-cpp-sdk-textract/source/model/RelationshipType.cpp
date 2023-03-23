@@ -26,6 +26,9 @@ namespace Aws
         static const int MERGED_CELL_HASH = HashingUtils::HashString("MERGED_CELL");
         static const int TITLE_HASH = HashingUtils::HashString("TITLE");
         static const int ANSWER_HASH = HashingUtils::HashString("ANSWER");
+        static const int TABLE_HASH = HashingUtils::HashString("TABLE");
+        static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
+        static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
 
 
         RelationshipType GetRelationshipTypeForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return RelationshipType::ANSWER;
           }
+          else if (hashCode == TABLE_HASH)
+          {
+            return RelationshipType::TABLE;
+          }
+          else if (hashCode == TABLE_TITLE_HASH)
+          {
+            return RelationshipType::TABLE_TITLE;
+          }
+          else if (hashCode == TABLE_FOOTER_HASH)
+          {
+            return RelationshipType::TABLE_FOOTER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +96,12 @@ namespace Aws
             return "TITLE";
           case RelationshipType::ANSWER:
             return "ANSWER";
+          case RelationshipType::TABLE:
+            return "TABLE";
+          case RelationshipType::TABLE_TITLE:
+            return "TABLE_TITLE";
+          case RelationshipType::TABLE_FOOTER:
+            return "TABLE_FOOTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

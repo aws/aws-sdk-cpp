@@ -71,32 +71,32 @@ namespace Model
 
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline const LiveConnectorRTMPConfiguration& GetRTMPConfiguration() const{ return m_rTMPConfiguration; }
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline bool RTMPConfigurationHasBeenSet() const { return m_rTMPConfigurationHasBeenSet; }
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline void SetRTMPConfiguration(const LiveConnectorRTMPConfiguration& value) { m_rTMPConfigurationHasBeenSet = true; m_rTMPConfiguration = value; }
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline void SetRTMPConfiguration(LiveConnectorRTMPConfiguration&& value) { m_rTMPConfigurationHasBeenSet = true; m_rTMPConfiguration = std::move(value); }
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline LiveConnectorSinkConfiguration& WithRTMPConfiguration(const LiveConnectorRTMPConfiguration& value) { SetRTMPConfiguration(value); return *this;}
 
     /**
-     * <p>The sink configuration's RTMP configuration setttings.</p>
+     * <p>The sink configuration's RTMP configuration settings.</p>
      */
     inline LiveConnectorSinkConfiguration& WithRTMPConfiguration(LiveConnectorRTMPConfiguration&& value) { SetRTMPConfiguration(std::move(value)); return *this;}
 

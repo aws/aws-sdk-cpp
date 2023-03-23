@@ -446,6 +446,47 @@ namespace Model
      */
     inline ChannelMessageSummary& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline ChannelMessageSummary& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline ChannelMessageSummary& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The content type of the channel messsage listed in the summary.</p>
+     */
+    inline ChannelMessageSummary& WithContentType(const char* value) { SetContentType(value); return *this;}
+
   private:
 
     Aws::String m_messageId;
@@ -480,6 +521,9 @@ namespace Model
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet = false;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

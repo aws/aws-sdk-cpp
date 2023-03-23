@@ -202,48 +202,48 @@ namespace Model
 
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline const ProblemType& GetProblemType() const{ return m_problemType; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline CreateAutoMLJobRequest& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. For
-     * more information, see <a
+     * <p>Defines the type of supervised learning problem available for the candidates.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -253,42 +253,48 @@ namespace Model
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
      * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
-     * infers whether to minimize or maximize it.</p>
+     * infers whether to minimize or maximize it. For , only <code>Accuracy</code> is
+     * supported.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 
@@ -395,50 +401,74 @@ namespace Model
 
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline CreateAutoMLJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline CreateAutoMLJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline CreateAutoMLJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
      */
     inline CreateAutoMLJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

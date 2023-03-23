@@ -73,32 +73,32 @@ namespace Model
 
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline const ChannelMembershipType& GetType() const{ return m_type; }
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline void SetType(const ChannelMembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline void SetType(ChannelMembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline BatchChannelMemberships& WithType(const ChannelMembershipType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The membership types set for the channel users.</p>
+     * <p>The membership types set for the channel members.</p>
      */
     inline BatchChannelMemberships& WithType(ChannelMembershipType&& value) { SetType(std::move(value)); return *this;}
 
@@ -145,42 +145,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline BatchChannelMemberships& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline BatchChannelMemberships& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the channel to which you're adding users.</p>
+     * <p>The ARN of the channel to which you're adding members.</p>
      */
     inline BatchChannelMemberships& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
 

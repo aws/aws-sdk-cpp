@@ -487,7 +487,11 @@ namespace GuardDuty
 
         /**
          * <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator
-         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * account) specified by the account IDs.</p> <p>With
+         * <code>autoEnableOrganizationMembers</code> configuration for your organization
+         * set to <code>ALL</code>, you'll receive an error if you attempt to disable
+         * GuardDuty for a member account in your organization.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">AWS
          * API Reference</a></p>
          */
@@ -678,7 +682,9 @@ namespace GuardDuty
 
         /**
          * <p>Disassociates the current GuardDuty member account from its administrator
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration
+         * for your organization set to <code>ALL</code>, you'll receive an error if you
+         * attempt to disable GuardDuty in a member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">AWS
          * API Reference</a></p>
          */
@@ -704,7 +710,11 @@ namespace GuardDuty
 
         /**
          * <p>Disassociates GuardDuty member accounts (to the current administrator
-         * account) specified by the account IDs.</p><p><h3>See Also:</h3>   <a
+         * account) specified by the account IDs.</p> <p>With
+         * <code>autoEnableOrganizationMembers</code> configuration for your organization
+         * set to <code>ALL</code>, you'll receive an error if you attempt to disassociate
+         * a member account before removing them from your Amazon Web Services
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          */
@@ -1407,7 +1417,9 @@ namespace GuardDuty
         /**
          * <p>Turns on GuardDuty monitoring of the specified member accounts. Use this
          * operation to restart monitoring of accounts that you stopped monitoring with the
-         * <code>StopMonitoringMembers</code> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">AWS
          * API Reference</a></p>
          */
@@ -1434,7 +1446,10 @@ namespace GuardDuty
         /**
          * <p>Stops GuardDuty monitoring for the specified member accounts. Use the
          * <code>StartMonitoringMembers</code> operation to restart monitoring for those
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * accounts.</p> <p>With <code>autoEnableOrganizationMembers</code> configuration
+         * for your organization set to <code>ALL</code>, you'll receive an error if you
+         * attempt to stop monitoring the member accounts in your
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
          */
@@ -1701,10 +1716,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Updates the delegated administrator account with the values provided.</p>
-         * <p>There might be regional differences because some data sources might not be
-         * available in all the Amazon Web Services Regions where GuardDuty is presently
-         * supported. For more information, see <a
+         * <p>Configures the delegated administrator account with the provided values. You
+         * must provide the value for either <code>autoEnableOrganizationMembers</code> or
+         * <code>autoEnable</code>. </p> <p>There might be regional differences because
+         * some data sources might not be available in all the Amazon Web Services Regions
+         * where GuardDuty is presently supported. For more information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
          * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration">AWS

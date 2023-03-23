@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime-sdk-identity/model/ExpirationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -222,6 +223,43 @@ namespace Model
      */
     inline AppInstanceUser& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline bool ExpirationSettingsHasBeenSet() const { return m_expirationSettingsHasBeenSet; }
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = value; }
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::move(value); }
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline AppInstanceUser& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
+
+    /**
+     * <p>The interval after which an <code>AppInstanceUser</code> is automatically
+     * deleted.</p>
+     */
+    inline AppInstanceUser& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceUserArn;
@@ -238,6 +276,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet = false;
+
+    ExpirationSettings m_expirationSettings;
+    bool m_expirationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

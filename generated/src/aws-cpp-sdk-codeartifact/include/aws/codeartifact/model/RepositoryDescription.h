@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/codeartifact/model/UpstreamRepositoryInfo.h>
 #include <aws/codeartifact/model/RepositoryExternalConnectionInfo.h>
 #include <utility>
@@ -421,6 +422,37 @@ namespace Model
      */
     inline RepositoryDescription& AddExternalConnections(RepositoryExternalConnectionInfo&& value) { m_externalConnectionsHasBeenSet = true; m_externalConnections.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline RepositoryDescription& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline RepositoryDescription& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -446,6 +478,9 @@ namespace Model
 
     Aws::Vector<RepositoryExternalConnectionInfo> m_externalConnections;
     bool m_externalConnectionsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

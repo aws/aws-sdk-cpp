@@ -398,65 +398,81 @@ namespace Model
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline const Aws::String& GetAssetSHA256() const{ return m_assetSHA256; }
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline bool AssetSHA256HasBeenSet() const { return m_assetSHA256HasBeenSet; }
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline void SetAssetSHA256(const Aws::String& value) { m_assetSHA256HasBeenSet = true; m_assetSHA256 = value; }
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline void SetAssetSHA256(Aws::String&& value) { m_assetSHA256HasBeenSet = true; m_assetSHA256 = std::move(value); }
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline void SetAssetSHA256(const char* value) { m_assetSHA256HasBeenSet = true; m_assetSHA256.assign(value); }
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline PublishPackageVersionRequest& WithAssetSHA256(const Aws::String& value) { SetAssetSHA256(value); return *this;}
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline PublishPackageVersionRequest& WithAssetSHA256(Aws::String&& value) { SetAssetSHA256(std::move(value)); return *this;}
 
     /**
      * <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must
-     * be calculated by the caller and provided with the request.</p> <p>This value is
-     * used as an integrity check to verify that the <code>assetContent</code> has not
-     * changed after it was originally sent.</p>
+     * be calculated by the caller and provided with the request (see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
+     * a generic package</a> in the <i>CodeArtifact User Guide</i>).</p> <p>This value
+     * is used as an integrity check to verify that the <code>assetContent</code> has
+     * not changed after it was originally sent.</p>
      */
     inline PublishPackageVersionRequest& WithAssetSHA256(const char* value) { SetAssetSHA256(value); return *this;}
 
@@ -465,7 +481,7 @@ namespace Model
      * <p>Specifies whether the package version should remain in the
      * <code>unfinished</code> state. If omitted, the package version status will be
      * set to <code>Published</code> (see <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
      * version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values:
      * <code>unfinished</code> </p>
      */
@@ -475,7 +491,7 @@ namespace Model
      * <p>Specifies whether the package version should remain in the
      * <code>unfinished</code> state. If omitted, the package version status will be
      * set to <code>Published</code> (see <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
      * version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values:
      * <code>unfinished</code> </p>
      */
@@ -485,7 +501,7 @@ namespace Model
      * <p>Specifies whether the package version should remain in the
      * <code>unfinished</code> state. If omitted, the package version status will be
      * set to <code>Published</code> (see <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
      * version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values:
      * <code>unfinished</code> </p>
      */
@@ -495,7 +511,7 @@ namespace Model
      * <p>Specifies whether the package version should remain in the
      * <code>unfinished</code> state. If omitted, the package version status will be
      * set to <code>Published</code> (see <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
      * version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values:
      * <code>unfinished</code> </p>
      */

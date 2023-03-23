@@ -199,42 +199,50 @@ namespace Model
 
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline UpdateChannelMessageRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline UpdateChannelMessageRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+     * that makes the API call.</p>
      */
     inline UpdateChannelMessageRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
@@ -287,6 +295,47 @@ namespace Model
      */
     inline UpdateChannelMessageRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
 
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline UpdateChannelMessageRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline UpdateChannelMessageRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The content type of the channel message.</p>
+     */
+    inline UpdateChannelMessageRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
@@ -306,6 +355,9 @@ namespace Model
 
     Aws::String m_subChannelId;
     bool m_subChannelIdHasBeenSet = false;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

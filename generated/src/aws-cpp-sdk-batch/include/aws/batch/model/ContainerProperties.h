@@ -11,6 +11,7 @@
 #include <aws/batch/model/LogConfiguration.h>
 #include <aws/batch/model/NetworkConfiguration.h>
 #include <aws/batch/model/FargatePlatformConfiguration.h>
+#include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -1606,6 +1607,49 @@ namespace Model
      */
     inline ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline ContainerProperties& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
+    inline ContainerProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_image;
@@ -1661,6 +1705,9 @@ namespace Model
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
     bool m_fargatePlatformConfigurationHasBeenSet = false;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

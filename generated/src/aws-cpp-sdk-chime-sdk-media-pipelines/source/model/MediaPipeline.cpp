@@ -21,14 +21,16 @@ namespace Model
 MediaPipeline::MediaPipeline() : 
     m_mediaCapturePipelineHasBeenSet(false),
     m_mediaLiveConnectorPipelineHasBeenSet(false),
-    m_mediaConcatenationPipelineHasBeenSet(false)
+    m_mediaConcatenationPipelineHasBeenSet(false),
+    m_mediaInsightsPipelineHasBeenSet(false)
 {
 }
 
 MediaPipeline::MediaPipeline(JsonView jsonValue) : 
     m_mediaCapturePipelineHasBeenSet(false),
     m_mediaLiveConnectorPipelineHasBeenSet(false),
-    m_mediaConcatenationPipelineHasBeenSet(false)
+    m_mediaConcatenationPipelineHasBeenSet(false),
+    m_mediaInsightsPipelineHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ MediaPipeline& MediaPipeline::operator =(JsonView jsonValue)
     m_mediaConcatenationPipelineHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MediaInsightsPipeline"))
+  {
+    m_mediaInsightsPipeline = jsonValue.GetObject("MediaInsightsPipeline");
+
+    m_mediaInsightsPipelineHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue MediaPipeline::Jsonize() const
   if(m_mediaConcatenationPipelineHasBeenSet)
   {
    payload.WithObject("MediaConcatenationPipeline", m_mediaConcatenationPipeline.Jsonize());
+
+  }
+
+  if(m_mediaInsightsPipelineHasBeenSet)
+  {
+   payload.WithObject("MediaInsightsPipeline", m_mediaInsightsPipeline.Jsonize());
 
   }
 

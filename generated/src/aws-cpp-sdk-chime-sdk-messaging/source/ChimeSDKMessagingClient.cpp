@@ -60,6 +60,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/ListSubChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
+#include <aws/chime-sdk-messaging/model/PutChannelExpirationSettingsRequest.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesRequest.h>
 #include <aws/chime-sdk-messaging/model/PutMessagingStreamingConfigurationsRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
@@ -1017,6 +1018,22 @@ ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const Li
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutChannelExpirationSettingsOutcome ChimeSDKMessagingClient::PutChannelExpirationSettings(const PutChannelExpirationSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutChannelExpirationSettings", "Required field: ChannelArn, is not set");
+    return PutChannelExpirationSettingsOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutChannelExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/expiration-settings");
+  return PutChannelExpirationSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(const PutChannelMembershipPreferencesRequest& request) const

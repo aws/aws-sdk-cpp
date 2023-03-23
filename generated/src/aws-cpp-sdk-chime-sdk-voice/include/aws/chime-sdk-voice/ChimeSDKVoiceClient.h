@@ -326,6 +326,52 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::CreateVoiceProfileOutcome CreateVoiceProfile(const Model::CreateVoiceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVoiceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVoiceProfileRequestT = Model::CreateVoiceProfileRequest>
+        Model::CreateVoiceProfileOutcomeCallable CreateVoiceProfileCallable(const CreateVoiceProfileRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::CreateVoiceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVoiceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVoiceProfileRequestT = Model::CreateVoiceProfileRequest>
+        void CreateVoiceProfileAsync(const CreateVoiceProfileRequestT& request, const CreateVoiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::CreateVoiceProfile, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::CreateVoiceProfileDomainOutcome CreateVoiceProfileDomain(const Model::CreateVoiceProfileDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVoiceProfileDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVoiceProfileDomainRequestT = Model::CreateVoiceProfileDomainRequest>
+        Model::CreateVoiceProfileDomainOutcomeCallable CreateVoiceProfileDomainCallable(const CreateVoiceProfileDomainRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::CreateVoiceProfileDomain, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVoiceProfileDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVoiceProfileDomainRequestT = Model::CreateVoiceProfileDomainRequest>
+        void CreateVoiceProfileDomainAsync(const CreateVoiceProfileDomainRequestT& request, const CreateVoiceProfileDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::CreateVoiceProfileDomain, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::DeletePhoneNumberOutcome DeletePhoneNumber(const Model::DeletePhoneNumberRequest& request) const;
 
         /**
@@ -602,6 +648,52 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::DeleteVoiceProfileOutcome DeleteVoiceProfile(const Model::DeleteVoiceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVoiceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVoiceProfileRequestT = Model::DeleteVoiceProfileRequest>
+        Model::DeleteVoiceProfileOutcomeCallable DeleteVoiceProfileCallable(const DeleteVoiceProfileRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::DeleteVoiceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVoiceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVoiceProfileRequestT = Model::DeleteVoiceProfileRequest>
+        void DeleteVoiceProfileAsync(const DeleteVoiceProfileRequestT& request, const DeleteVoiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::DeleteVoiceProfile, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::DeleteVoiceProfileDomainOutcome DeleteVoiceProfileDomain(const Model::DeleteVoiceProfileDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVoiceProfileDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVoiceProfileDomainRequestT = Model::DeleteVoiceProfileDomainRequest>
+        Model::DeleteVoiceProfileDomainOutcomeCallable DeleteVoiceProfileDomainCallable(const DeleteVoiceProfileDomainRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::DeleteVoiceProfileDomain, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVoiceProfileDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVoiceProfileDomainRequestT = Model::DeleteVoiceProfileDomainRequest>
+        void DeleteVoiceProfileDomainAsync(const DeleteVoiceProfileDomainRequestT& request, const DeleteVoiceProfileDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::DeleteVoiceProfileDomain, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::DisassociatePhoneNumbersFromVoiceConnectorOutcome DisassociatePhoneNumbersFromVoiceConnector(const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest& request) const;
 
         /**
@@ -853,6 +945,29 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::GetSpeakerSearchTaskOutcome GetSpeakerSearchTask(const Model::GetSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSpeakerSearchTaskRequestT = Model::GetSpeakerSearchTaskRequest>
+        Model::GetSpeakerSearchTaskOutcomeCallable GetSpeakerSearchTaskCallable(const GetSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::GetSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSpeakerSearchTaskRequestT = Model::GetSpeakerSearchTaskRequest>
+        void GetSpeakerSearchTaskAsync(const GetSpeakerSearchTaskRequestT& request, const GetSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::GetSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::GetVoiceConnectorOutcome GetVoiceConnector(const Model::GetVoiceConnectorRequest& request) const;
 
         /**
@@ -1060,6 +1175,75 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::GetVoiceProfileOutcome GetVoiceProfile(const Model::GetVoiceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVoiceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVoiceProfileRequestT = Model::GetVoiceProfileRequest>
+        Model::GetVoiceProfileOutcomeCallable GetVoiceProfileCallable(const GetVoiceProfileRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::GetVoiceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for GetVoiceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVoiceProfileRequestT = Model::GetVoiceProfileRequest>
+        void GetVoiceProfileAsync(const GetVoiceProfileRequestT& request, const GetVoiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceProfile, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::GetVoiceProfileDomainOutcome GetVoiceProfileDomain(const Model::GetVoiceProfileDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVoiceProfileDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVoiceProfileDomainRequestT = Model::GetVoiceProfileDomainRequest>
+        Model::GetVoiceProfileDomainOutcomeCallable GetVoiceProfileDomainCallable(const GetVoiceProfileDomainRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::GetVoiceProfileDomain, request);
+        }
+
+        /**
+         * An Async wrapper for GetVoiceProfileDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVoiceProfileDomainRequestT = Model::GetVoiceProfileDomainRequest>
+        void GetVoiceProfileDomainAsync(const GetVoiceProfileDomainRequestT& request, const GetVoiceProfileDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceProfileDomain, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::GetVoiceToneAnalysisTaskOutcome GetVoiceToneAnalysisTask(const Model::GetVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVoiceToneAnalysisTaskRequestT = Model::GetVoiceToneAnalysisTaskRequest>
+        Model::GetVoiceToneAnalysisTaskOutcomeCallable GetVoiceToneAnalysisTaskCallable(const GetVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::GetVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVoiceToneAnalysisTaskRequestT = Model::GetVoiceToneAnalysisTaskRequest>
+        void GetVoiceToneAnalysisTaskAsync(const GetVoiceToneAnalysisTaskRequestT& request, const GetVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceToneAnalysisTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::ListAvailableVoiceConnectorRegionsOutcome ListAvailableVoiceConnectorRegions() const;
 
         /**
@@ -1220,6 +1404,29 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::ListVoiceConnectorGroupsOutcome ListVoiceConnectorGroups(const Model::ListVoiceConnectorGroupsRequest& request) const;
 
         /**
@@ -1284,6 +1491,52 @@ namespace ChimeSDKVoice
         void ListVoiceConnectorsAsync(const ListVoiceConnectorsRequestT& request, const ListVoiceConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKVoiceClient::ListVoiceConnectors, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::ListVoiceProfileDomainsOutcome ListVoiceProfileDomains(const Model::ListVoiceProfileDomainsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVoiceProfileDomains that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVoiceProfileDomainsRequestT = Model::ListVoiceProfileDomainsRequest>
+        Model::ListVoiceProfileDomainsOutcomeCallable ListVoiceProfileDomainsCallable(const ListVoiceProfileDomainsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::ListVoiceProfileDomains, request);
+        }
+
+        /**
+         * An Async wrapper for ListVoiceProfileDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVoiceProfileDomainsRequestT = Model::ListVoiceProfileDomainsRequest>
+        void ListVoiceProfileDomainsAsync(const ListVoiceProfileDomainsRequestT& request, const ListVoiceProfileDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::ListVoiceProfileDomains, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::ListVoiceProfilesOutcome ListVoiceProfiles(const Model::ListVoiceProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVoiceProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVoiceProfilesRequestT = Model::ListVoiceProfilesRequest>
+        Model::ListVoiceProfilesOutcomeCallable ListVoiceProfilesCallable(const ListVoiceProfilesRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::ListVoiceProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for ListVoiceProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVoiceProfilesRequestT = Model::ListVoiceProfilesRequest>
+        void ListVoiceProfilesAsync(const ListVoiceProfilesRequestT& request, const ListVoiceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::ListVoiceProfiles, request, handler, context);
         }
 
         /**
@@ -1542,6 +1795,144 @@ namespace ChimeSDKVoice
         /**
          * 
          */
+        virtual Model::StartSpeakerSearchTaskOutcome StartSpeakerSearchTask(const Model::StartSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSpeakerSearchTaskRequestT = Model::StartSpeakerSearchTaskRequest>
+        Model::StartSpeakerSearchTaskOutcomeCallable StartSpeakerSearchTaskCallable(const StartSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::StartSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSpeakerSearchTaskRequestT = Model::StartSpeakerSearchTaskRequest>
+        void StartSpeakerSearchTaskAsync(const StartSpeakerSearchTaskRequestT& request, const StartSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::StartSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::StartVoiceToneAnalysisTaskOutcome StartVoiceToneAnalysisTask(const Model::StartVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartVoiceToneAnalysisTaskRequestT = Model::StartVoiceToneAnalysisTaskRequest>
+        Model::StartVoiceToneAnalysisTaskOutcomeCallable StartVoiceToneAnalysisTaskCallable(const StartVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::StartVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartVoiceToneAnalysisTaskRequestT = Model::StartVoiceToneAnalysisTaskRequest>
+        void StartVoiceToneAnalysisTaskAsync(const StartVoiceToneAnalysisTaskRequestT& request, const StartVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::StartVoiceToneAnalysisTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::StopSpeakerSearchTaskOutcome StopSpeakerSearchTask(const Model::StopSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopSpeakerSearchTaskRequestT = Model::StopSpeakerSearchTaskRequest>
+        Model::StopSpeakerSearchTaskOutcomeCallable StopSpeakerSearchTaskCallable(const StopSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::StopSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for StopSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopSpeakerSearchTaskRequestT = Model::StopSpeakerSearchTaskRequest>
+        void StopSpeakerSearchTaskAsync(const StopSpeakerSearchTaskRequestT& request, const StopSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::StopSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::StopVoiceToneAnalysisTaskOutcome StopVoiceToneAnalysisTask(const Model::StopVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopVoiceToneAnalysisTaskRequestT = Model::StopVoiceToneAnalysisTaskRequest>
+        Model::StopVoiceToneAnalysisTaskOutcomeCallable StopVoiceToneAnalysisTaskCallable(const StopVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::StopVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for StopVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopVoiceToneAnalysisTaskRequestT = Model::StopVoiceToneAnalysisTaskRequest>
+        void StopVoiceToneAnalysisTaskAsync(const StopVoiceToneAnalysisTaskRequestT& request, const StopVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::StopVoiceToneAnalysisTask, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * 
+         */
         virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
 
         /**
@@ -1744,6 +2135,52 @@ namespace ChimeSDKVoice
         void UpdateVoiceConnectorGroupAsync(const UpdateVoiceConnectorGroupRequestT& request, const UpdateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKVoiceClient::UpdateVoiceConnectorGroup, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::UpdateVoiceProfileOutcome UpdateVoiceProfile(const Model::UpdateVoiceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateVoiceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateVoiceProfileRequestT = Model::UpdateVoiceProfileRequest>
+        Model::UpdateVoiceProfileOutcomeCallable UpdateVoiceProfileCallable(const UpdateVoiceProfileRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::UpdateVoiceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateVoiceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateVoiceProfileRequestT = Model::UpdateVoiceProfileRequest>
+        void UpdateVoiceProfileAsync(const UpdateVoiceProfileRequestT& request, const UpdateVoiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::UpdateVoiceProfile, request, handler, context);
+        }
+
+        /**
+         * 
+         */
+        virtual Model::UpdateVoiceProfileDomainOutcome UpdateVoiceProfileDomain(const Model::UpdateVoiceProfileDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateVoiceProfileDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateVoiceProfileDomainRequestT = Model::UpdateVoiceProfileDomainRequest>
+        Model::UpdateVoiceProfileDomainOutcomeCallable UpdateVoiceProfileDomainCallable(const UpdateVoiceProfileDomainRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::UpdateVoiceProfileDomain, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateVoiceProfileDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateVoiceProfileDomainRequestT = Model::UpdateVoiceProfileDomainRequest>
+        void UpdateVoiceProfileDomainAsync(const UpdateVoiceProfileDomainRequestT& request, const UpdateVoiceProfileDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::UpdateVoiceProfileDomain, request, handler, context);
         }
 
         /**
