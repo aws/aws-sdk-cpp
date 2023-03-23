@@ -19,7 +19,8 @@ CreateAppInstanceUserRequest::CreateAppInstanceUserRequest() :
     m_metadataHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_expirationSettingsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String CreateAppInstanceUserRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_expirationSettingsHasBeenSet)
+  {
+   payload.WithObject("ExpirationSettings", m_expirationSettings.Jsonize());
 
   }
 

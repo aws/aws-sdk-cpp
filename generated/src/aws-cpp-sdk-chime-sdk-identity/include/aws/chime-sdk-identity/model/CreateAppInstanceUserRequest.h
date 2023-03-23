@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-identity/model/ExpirationSettings.h>
 #include <aws/chime-sdk-identity/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -200,42 +201,50 @@ namespace Model
 
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceUserRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceUserRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+     * <p>The unique ID of the request. Use different tokens to request additional
+     * <code>AppInstances</code>.</p>
      */
     inline CreateAppInstanceUserRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -280,6 +289,43 @@ namespace Model
      */
     inline CreateAppInstanceUserRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline bool ExpirationSettingsHasBeenSet() const { return m_expirationSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = value; }
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::move(value); }
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline CreateAppInstanceUserRequest& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
+
+    /**
+     * <p>Settings that control the interval after which the
+     * <code>AppInstanceUser</code> is automatically deleted.</p>
+     */
+    inline CreateAppInstanceUserRequest& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appInstanceArn;
@@ -299,6 +345,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ExpirationSettings m_expirationSettings;
+    bool m_expirationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

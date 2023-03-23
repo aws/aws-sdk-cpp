@@ -72,7 +72,8 @@ namespace Model
     ml_g5_16xlarge,
     ml_g5_12xlarge,
     ml_g5_24xlarge,
-    ml_g5_48xlarge
+    ml_g5_48xlarge,
+    ml_geospatial_interactive
   };
 
 namespace AppInstanceTypeMapper

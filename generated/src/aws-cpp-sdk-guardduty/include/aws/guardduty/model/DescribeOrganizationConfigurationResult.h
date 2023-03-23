@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/AutoEnableMembers.h>
 #include <aws/guardduty/model/OrganizationFeatureConfigurationResult.h>
 #include <utility>
 
@@ -32,25 +33,6 @@ namespace Model
     AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult();
     AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Indicates whether GuardDuty is automatically enabled for accounts added to
-     * the organization.</p>
-     */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Indicates whether GuardDuty is automatically enabled for accounts added to
-     * the organization.</p>
-     */
-    inline void SetAutoEnable(bool value) { m_autoEnable = value; }
-
-    /**
-     * <p>Indicates whether GuardDuty is automatically enabled for accounts added to
-     * the organization.</p>
-     */
-    inline DescribeOrganizationConfigurationResult& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
 
 
     /**
@@ -151,6 +133,67 @@ namespace Model
     inline DescribeOrganizationConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+     * new accounts joining the organization are configured to have GuardDuty enabled
+     * automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
+     * (new and existing members) in the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates that no
+     * account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+     * new accounts joining the organization are configured to have GuardDuty enabled
+     * automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
+     * (new and existing members) in the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates that no
+     * account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembers = value; }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+     * new accounts joining the organization are configured to have GuardDuty enabled
+     * automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
+     * (new and existing members) in the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates that no
+     * account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembers = std::move(value); }
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+     * new accounts joining the organization are configured to have GuardDuty enabled
+     * automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
+     * (new and existing members) in the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates that no
+     * account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
+
+    /**
+     * <p>Indicates the auto-enablement configuration of GuardDuty for the member
+     * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+     * new accounts joining the organization are configured to have GuardDuty enabled
+     * automatically.</p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
+     * (new and existing members) in the organization are configured to have GuardDuty
+     * enabled automatically.</p> </li> <li> <p> <code>NONE</code>: Indicates that no
+     * account in the organization will be configured to have GuardDuty enabled
+     * automatically.</p> </li> </ul>
+     */
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -174,13 +217,13 @@ namespace Model
 
   private:
 
-    bool m_autoEnable;
-
     bool m_memberAccountLimitReached;
 
     Aws::Vector<OrganizationFeatureConfigurationResult> m_features;
 
     Aws::String m_nextToken;
+
+    AutoEnableMembers m_autoEnableOrganizationMembers;
 
     Aws::String m_requestId;
   };

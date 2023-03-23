@@ -32,7 +32,8 @@ namespace Model
     DeployingModel,
     ModelDeploymentError,
     GeneratingModelInsightsReport,
-    ModelInsightsError
+    ModelInsightsError,
+    TrainingModels
   };
 
 namespace AutoMLJobSecondaryStatusMapper

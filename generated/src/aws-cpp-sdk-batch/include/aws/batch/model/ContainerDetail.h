@@ -11,6 +11,7 @@
 #include <aws/batch/model/LogConfiguration.h>
 #include <aws/batch/model/NetworkConfiguration.h>
 #include <aws/batch/model/FargatePlatformConfiguration.h>
+#include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -1550,6 +1551,25 @@ namespace Model
      */
     inline ContainerDetail& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    
+    inline ContainerDetail& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    
+    inline ContainerDetail& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_image;
@@ -1629,6 +1649,9 @@ namespace Model
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
     bool m_fargatePlatformConfigurationHasBeenSet = false;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

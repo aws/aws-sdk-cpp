@@ -43,50 +43,58 @@ namespace Model
 
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline DocumentGroup& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline DocumentGroup& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of document that Amazon Textract has detected. See LINK for a list
-     * of all types returned by Textract.</p>
+     * <p>The type of document that Amazon Textract has detected. See <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+     * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
     inline DocumentGroup& WithType(const char* value) { SetType(value); return *this;}
 

@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline void SetSourceConfiguration(const SourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(const SourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
 
     /**
-     * <p>The source configuration for a specified media pipline.</p>
+     * <p>The source configuration for a specified media pipeline.</p>
      */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
 

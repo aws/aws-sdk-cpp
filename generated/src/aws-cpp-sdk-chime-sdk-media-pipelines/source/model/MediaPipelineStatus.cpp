@@ -25,6 +25,7 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static const int Paused_HASH = HashingUtils::HashString("Paused");
 
 
         MediaPipelineStatus GetMediaPipelineStatusForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return MediaPipelineStatus::Stopped;
           }
+          else if (hashCode == Paused_HASH)
+          {
+            return MediaPipelineStatus::Paused;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "Stopping";
           case MediaPipelineStatus::Stopped:
             return "Stopped";
+          case MediaPipelineStatus::Paused:
+            return "Paused";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

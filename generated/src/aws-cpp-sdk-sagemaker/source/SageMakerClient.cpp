@@ -31,6 +31,7 @@
 #include <aws/sagemaker/model/CreateAppImageConfigRequest.h>
 #include <aws/sagemaker/model/CreateArtifactRequest.h>
 #include <aws/sagemaker/model/CreateAutoMLJobRequest.h>
+#include <aws/sagemaker/model/CreateAutoMLJobV2Request.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/CreateCompilationJobRequest.h>
 #include <aws/sagemaker/model/CreateContextRequest.h>
@@ -130,6 +131,7 @@
 #include <aws/sagemaker/model/DescribeAppImageConfigRequest.h>
 #include <aws/sagemaker/model/DescribeArtifactRequest.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobRequest.h>
+#include <aws/sagemaker/model/DescribeAutoMLJobV2Request.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/DescribeCompilationJobRequest.h>
 #include <aws/sagemaker/model/DescribeContextRequest.h>
@@ -527,6 +529,14 @@ CreateAutoMLJobOutcome SageMakerClient::CreateAutoMLJob(const CreateAutoMLJobReq
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAutoMLJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateAutoMLJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAutoMLJobV2Outcome SageMakerClient::CreateAutoMLJobV2(const CreateAutoMLJobV2Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAutoMLJobV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAutoMLJobV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAutoMLJobV2Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCodeRepositoryOutcome SageMakerClient::CreateCodeRepository(const CreateCodeRepositoryRequest& request) const
@@ -1319,6 +1329,14 @@ DescribeAutoMLJobOutcome SageMakerClient::DescribeAutoMLJob(const DescribeAutoML
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutoMLJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeAutoMLJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAutoMLJobV2Outcome SageMakerClient::DescribeAutoMLJobV2(const DescribeAutoMLJobV2Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutoMLJobV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutoMLJobV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAutoMLJobV2Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCodeRepositoryOutcome SageMakerClient::DescribeCodeRepository(const DescribeCodeRepositoryRequest& request) const

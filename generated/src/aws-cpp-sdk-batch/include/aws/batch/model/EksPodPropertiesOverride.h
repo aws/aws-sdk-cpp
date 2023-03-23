@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EksMetadata.h>
 #include <aws/batch/model/EksContainerOverride.h>
 #include <utility>
 
@@ -79,10 +80,32 @@ namespace Model
      */
     inline EksPodPropertiesOverride& AddContainers(EksContainerOverride&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const EksMetadata& GetMetadata() const{ return m_metadata; }
+
+    
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    
+    inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    
+    inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    
+    inline EksPodPropertiesOverride& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
+
+    
+    inline EksPodPropertiesOverride& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<EksContainerOverride> m_containers;
     bool m_containersHasBeenSet = false;
+
+    EksMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

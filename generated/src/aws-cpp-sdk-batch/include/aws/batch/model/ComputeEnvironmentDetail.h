@@ -343,8 +343,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline const CEState& GetState() const{ return m_state; }
 
@@ -358,8 +367,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -373,8 +391,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -388,8 +415,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -403,8 +439,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline ComputeEnvironmentDetail& WithState(const CEState& value) { SetState(value); return *this;}
 
@@ -418,8 +463,17 @@ namespace Model
      * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
      * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
      * state continue to progress normally. Managed compute environments in the
-     * <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code> state don't scale out. </p>  <p>Compute environments
+     * in a <code>DISABLED</code> state may continue to incur billing charges. To
+     * prevent additional charges, turn off and then delete the compute environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+     * in the <i>Batch User Guide</i>.</p>  <p>When an instance is idle, the
+     * instance scales down to the <code>minvCpus</code> value. However, the instance
+     * size doesn't change. For example, consider a <code>c5.8xlarge</code> instance
+     * with a <code>minvCpus</code> value of <code>4</code> and a
+     * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
+     * down to a <code>c5.large</code> instance.</p>
      */
     inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 

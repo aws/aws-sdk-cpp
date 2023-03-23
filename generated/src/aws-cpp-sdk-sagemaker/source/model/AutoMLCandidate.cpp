@@ -31,7 +31,8 @@ AutoMLCandidate::AutoMLCandidate() :
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_candidatePropertiesHasBeenSet(false)
+    m_candidatePropertiesHasBeenSet(false),
+    m_inferenceContainerDefinitionsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ AutoMLCandidate::AutoMLCandidate(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_candidatePropertiesHasBeenSet(false)
+    m_candidatePropertiesHasBeenSet(false),
+    m_inferenceContainerDefinitionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +140,23 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
     m_candidatePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InferenceContainerDefinitions"))
+  {
+    Aws::Map<Aws::String, JsonView> inferenceContainerDefinitionsJsonMap = jsonValue.GetObject("InferenceContainerDefinitions").GetAllObjects();
+    for(auto& inferenceContainerDefinitionsItem : inferenceContainerDefinitionsJsonMap)
+    {
+      Aws::Utils::Array<JsonView> autoMLContainerDefinitionsJsonList = inferenceContainerDefinitionsItem.second.AsArray();
+      Aws::Vector<AutoMLContainerDefinition> autoMLContainerDefinitionsList;
+      autoMLContainerDefinitionsList.reserve((size_t)autoMLContainerDefinitionsJsonList.GetLength());
+      for(unsigned autoMLContainerDefinitionsIndex = 0; autoMLContainerDefinitionsIndex < autoMLContainerDefinitionsJsonList.GetLength(); ++autoMLContainerDefinitionsIndex)
+      {
+        autoMLContainerDefinitionsList.push_back(autoMLContainerDefinitionsJsonList[autoMLContainerDefinitionsIndex].AsObject());
+      }
+      m_inferenceContainerDefinitions[AutoMLProcessingUnitMapper::GetAutoMLProcessingUnitForName(inferenceContainerDefinitionsItem.first)] = std::move(autoMLContainerDefinitionsList);
+    }
+    m_inferenceContainerDefinitionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +232,22 @@ JsonValue AutoMLCandidate::Jsonize() const
   if(m_candidatePropertiesHasBeenSet)
   {
    payload.WithObject("CandidateProperties", m_candidateProperties.Jsonize());
+
+  }
+
+  if(m_inferenceContainerDefinitionsHasBeenSet)
+  {
+   JsonValue inferenceContainerDefinitionsJsonMap;
+   for(auto& inferenceContainerDefinitionsItem : m_inferenceContainerDefinitions)
+   {
+     Aws::Utils::Array<JsonValue> autoMLContainerDefinitionsJsonList(inferenceContainerDefinitionsItem.second.size());
+     for(unsigned autoMLContainerDefinitionsIndex = 0; autoMLContainerDefinitionsIndex < autoMLContainerDefinitionsJsonList.GetLength(); ++autoMLContainerDefinitionsIndex)
+     {
+       autoMLContainerDefinitionsJsonList[autoMLContainerDefinitionsIndex].AsObject(inferenceContainerDefinitionsItem.second[autoMLContainerDefinitionsIndex].Jsonize());
+     }
+     inferenceContainerDefinitionsJsonMap.WithArray(AutoMLProcessingUnitMapper::GetNameForAutoMLProcessingUnit(inferenceContainerDefinitionsItem.first), std::move(autoMLContainerDefinitionsJsonList));
+   }
+   payload.WithObject("InferenceContainerDefinitions", std::move(inferenceContainerDefinitionsJsonMap));
 
   }
 

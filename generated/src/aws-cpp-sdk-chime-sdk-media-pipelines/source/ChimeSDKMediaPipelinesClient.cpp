@@ -23,16 +23,23 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaCapturePipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaConcatenationPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaInsightsPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaLiveConnectorPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaCapturePipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/DeleteMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaCapturePipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/GetMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/TagResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/UntagResourceRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineConfigurationRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineStatusRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -179,6 +186,24 @@ CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
   return CreateMediaConcatenationPipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateMediaInsightsPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipeline(const CreateMediaInsightsPipelineRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaInsightsPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaInsightsPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipelines");
+  return CreateMediaInsightsPipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipelineConfiguration(const CreateMediaInsightsPipelineConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations");
+  return CreateMediaInsightsPipelineConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(const CreateMediaLiveConnectorPipelineRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaLiveConnectorPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -201,6 +226,21 @@ DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCaptu
   endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-capture-pipelines/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
   return DeleteMediaCapturePipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::DeleteMediaInsightsPipelineConfiguration(const DeleteMediaInsightsPipelineConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMediaInsightsPipelineConfiguration", "Required field: Identifier, is not set");
+    return DeleteMediaInsightsPipelineConfigurationOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return DeleteMediaInsightsPipelineConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const
@@ -233,6 +273,21 @@ GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipe
   return GetMediaCapturePipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::GetMediaInsightsPipelineConfiguration(const GetMediaInsightsPipelineConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMediaInsightsPipelineConfiguration", "Required field: Identifier, is not set");
+    return GetMediaInsightsPipelineConfigurationOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return GetMediaInsightsPipelineConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -255,6 +310,15 @@ ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCaptureP
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaCapturePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-capture-pipelines");
   return ListMediaCapturePipelinesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations(const ListMediaInsightsPipelineConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaInsightsPipelineConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaInsightsPipelineConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations");
+  return ListMediaInsightsPipelineConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const
@@ -302,5 +366,35 @@ UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagReso
   ss.str("?operation=untag-resource");
   endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineConfiguration(const UpdateMediaInsightsPipelineConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMediaInsightsPipelineConfiguration", "Required field: Identifier, is not set");
+    return UpdateMediaInsightsPipelineConfigurationOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return UpdateMediaInsightsPipelineConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus(const UpdateMediaInsightsPipelineStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaInsightsPipelineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMediaInsightsPipelineStatus", "Required field: Identifier, is not set");
+    return UpdateMediaInsightsPipelineStatusOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMediaInsightsPipelineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-status/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  return UpdateMediaInsightsPipelineStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

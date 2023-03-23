@@ -32,6 +32,8 @@ namespace Aws
         static const int QUERY_HASH = HashingUtils::HashString("QUERY");
         static const int QUERY_RESULT_HASH = HashingUtils::HashString("QUERY_RESULT");
         static const int SIGNATURE_HASH = HashingUtils::HashString("SIGNATURE");
+        static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
+        static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
 
 
         BlockType GetBlockTypeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return BlockType::SIGNATURE;
           }
+          else if (hashCode == TABLE_TITLE_HASH)
+          {
+            return BlockType::TABLE_TITLE;
+          }
+          else if (hashCode == TABLE_FOOTER_HASH)
+          {
+            return BlockType::TABLE_FOOTER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +133,10 @@ namespace Aws
             return "QUERY_RESULT";
           case BlockType::SIGNATURE:
             return "SIGNATURE";
+          case BlockType::TABLE_TITLE:
+            return "TABLE_TITLE";
+          case BlockType::TABLE_FOOTER:
+            return "TABLE_FOOTER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

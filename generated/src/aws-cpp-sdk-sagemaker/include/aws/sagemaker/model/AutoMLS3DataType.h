@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ManifestFile,
-    S3Prefix
+    S3Prefix,
+    AugmentedManifestFile
   };
 
 namespace AutoMLS3DataTypeMapper

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a metric to minimize or maximize as the objective of a
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API
+   * jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>),
+   * support <code>Accuracy</code> only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobObjective">AWS
    * API Reference</a></p>
    */

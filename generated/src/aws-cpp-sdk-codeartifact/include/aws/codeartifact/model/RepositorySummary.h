@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -294,6 +295,37 @@ namespace Model
      */
     inline RepositorySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline RepositorySummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that represents the date and time the repository was created.</p>
+     */
+    inline RepositorySummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -313,6 +345,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

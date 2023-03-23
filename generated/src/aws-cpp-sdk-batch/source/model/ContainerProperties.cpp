@@ -38,7 +38,8 @@ ContainerProperties::ContainerProperties() :
     m_logConfigurationHasBeenSet(false),
     m_secretsHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
-    m_fargatePlatformConfigurationHasBeenSet(false)
+    m_fargatePlatformConfigurationHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_logConfigurationHasBeenSet(false),
     m_secretsHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
-    m_fargatePlatformConfigurationHasBeenSet(false)
+    m_fargatePlatformConfigurationHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +218,13 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_fargatePlatformConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_fargatePlatformConfigurationHasBeenSet)
   {
    payload.WithObject("fargatePlatformConfiguration", m_fargatePlatformConfiguration.Jsonize());
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

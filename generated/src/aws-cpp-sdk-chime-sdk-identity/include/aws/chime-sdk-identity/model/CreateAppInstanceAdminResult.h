@@ -34,27 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+     * <p>The ARN and name of the administrator, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline const Identity& GetAppInstanceAdmin() const{ return m_appInstanceAdmin; }
 
     /**
-     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+     * <p>The ARN and name of the administrator, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstanceAdmin(const Identity& value) { m_appInstanceAdmin = value; }
 
     /**
-     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+     * <p>The ARN and name of the administrator, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline void SetAppInstanceAdmin(Identity&& value) { m_appInstanceAdmin = std::move(value); }
 
     /**
-     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+     * <p>The ARN and name of the administrator, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(const Identity& value) { SetAppInstanceAdmin(value); return *this;}
 
     /**
-     * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
+     * <p>The ARN and name of the administrator, the ARN of the
+     * <code>AppInstance</code>, and the created and last-updated timestamps. All
+     * timestamps use epoch milliseconds.</p>
      */
     inline CreateAppInstanceAdminResult& WithAppInstanceAdmin(Identity&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
 

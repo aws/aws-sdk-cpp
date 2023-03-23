@@ -19,7 +19,8 @@ UpdateChannelMessageRequest::UpdateChannelMessageRequest() :
     m_contentHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
+    m_subChannelIdHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,12 @@ Aws::String UpdateChannelMessageRequest::SerializePayload() const
   if(m_subChannelIdHasBeenSet)
   {
    payload.WithString("SubChannelId", m_subChannelId);
+
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("ContentType", m_contentType);
 
   }
 

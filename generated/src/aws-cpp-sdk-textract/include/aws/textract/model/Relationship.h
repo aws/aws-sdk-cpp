@@ -44,62 +44,110 @@ namespace Model
 
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline const RelationshipType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline Relationship& WithType(const RelationshipType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
-     * A relationship of type VALUE is a list that contains the ID of the VALUE block
-     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
-     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
+     * <p>The type of relationship between the blocks in the IDs array and the current
+     * block. The following list describes the relationship types that can be returned.
+     * </p> <ul> <li> <p> <i>VALUE</i> - A list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair.</p> </li> <li> <p>
+     * <i>CHILD</i> - A list of IDs that identify blocks found within the current block
+     * object. For example, WORD blocks have a CHILD relationship to the LINE block
+     * type.</p> </li> <li> <p> <i>MERGED_CELL</i> - A list of IDs that identify each
+     * of the MERGED_CELL block types in a table.</p> </li> <li> <p> <i>ANSWER</i> - A
+     * list that contains the ID of the QUERY_RESULT block that’s associated with the
+     * corresponding QUERY block. </p> </li> <li> <p> <i>TABLE</i> - A list of IDs that
+     * identify associated TABLE block types. </p> </li> <li> <p> <i>TABLE_TITLE</i> -
+     * A list that contains the ID for the TABLE_TITLE block type in a table. </p>
+     * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
+     * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
     inline Relationship& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
 

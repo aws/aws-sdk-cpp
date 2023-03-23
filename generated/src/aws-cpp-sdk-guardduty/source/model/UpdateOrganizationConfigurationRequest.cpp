@@ -14,21 +14,15 @@ using namespace Aws::Utils;
 
 UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
     m_detectorIdHasBeenSet(false),
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+    m_featuresHasBeenSet(false),
+    m_autoEnableOrganizationMembers(AutoEnableMembers::NOT_SET),
+    m_autoEnableOrganizationMembersHasBeenSet(false)
 {
 }
 
 Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_autoEnableHasBeenSet)
-  {
-   payload.WithBool("autoEnable", m_autoEnable);
-
-  }
 
   if(m_featuresHasBeenSet)
   {
@@ -39,6 +33,11 @@ Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
    }
    payload.WithArray("features", std::move(featuresJsonList));
 
+  }
+
+  if(m_autoEnableOrganizationMembersHasBeenSet)
+  {
+   payload.WithString("autoEnableOrganizationMembers", AutoEnableMembersMapper::GetNameForAutoEnableMembers(m_autoEnableOrganizationMembers));
   }
 
   return payload.View().WriteReadable();

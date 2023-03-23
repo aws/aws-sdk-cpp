@@ -172,56 +172,56 @@ namespace Model
 
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline const MovPaddingControl& GetPaddingControl() const{ return m_paddingControl; }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline bool PaddingControlHasBeenSet() const { return m_paddingControlHasBeenSet; }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline void SetPaddingControl(const MovPaddingControl& value) { m_paddingControlHasBeenSet = true; m_paddingControl = value; }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline void SetPaddingControl(MovPaddingControl&& value) { m_paddingControlHasBeenSet = true; m_paddingControl = std::move(value); }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline MovSettings& WithPaddingControl(const MovPaddingControl& value) { SetPaddingControl(value); return *this;}
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON.
-     * Unless you need Omneon compatibility, set this value to NONE. When you keep the
-     * default value, OMNEON, MediaConvert increases the length of the edit list atom.
-     * This might cause file rejections when a recipient of the output file doesn't
-     * expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this
+     * output compatible with Omneon: Choose Omneon. When you do, MediaConvert
+     * increases the length of the 'elst' edit list atom. Note that this might cause
+     * file rejections when a recipient of the output file doesn't expect this extra
+     * padding.
      */
     inline MovSettings& WithPaddingControl(MovPaddingControl&& value) { SetPaddingControl(std::move(value)); return *this;}
 

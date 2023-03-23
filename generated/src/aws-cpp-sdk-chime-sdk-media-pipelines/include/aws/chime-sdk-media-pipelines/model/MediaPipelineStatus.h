@@ -20,7 +20,8 @@ namespace Model
     InProgress,
     Failed,
     Stopping,
-    Stopped
+    Stopped,
+    Paused
   };
 
 namespace MediaPipelineStatusMapper

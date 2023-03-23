@@ -23,7 +23,9 @@ static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
+static const int GONE_HASH = HashingUtils::HashString("GoneException");
 static const int THROTTLED_CLIENT_HASH = HashingUtils::HashString("ThrottledClientException");
+static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
@@ -52,9 +54,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKVoiceErrors::RESOURCE_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == GONE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKVoiceErrors::GONE), false);
+  }
   else if (hashCode == THROTTLED_CLIENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKVoiceErrors::THROTTLED_CLIENT), false);
+  }
+  else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKVoiceErrors::UNPROCESSABLE_ENTITY), false);
   }
   else if (hashCode == UNAUTHORIZED_CLIENT_HASH)
   {

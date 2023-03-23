@@ -1075,7 +1075,7 @@ namespace CodeArtifact
         /**
          * <p>Creates a new package version containing one or more assets (or files).</p>
          * <p>The <code>unfinished</code> flag can be used to keep the package version in
-         * the <code>Unfinished</code> state until all of it’s assets have been uploaded
+         * the <code>Unfinished</code> state until all of its assets have been uploaded
          * (see <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
          * version status</a> in the <i>CodeArtifact user guide</i>). To set the package
@@ -1084,7 +1084,10 @@ namespace CodeArtifact
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
          * Once a package version’s status is set to <code>Published</code>, it cannot
          * change back to <code>Unfinished</code>.</p>  <p>Only generic packages can
-         * be published using this API.</p> <p><h3>See Also:</h3>   <a
+         * be published using this API. For more information, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using
+         * generic packages</a> in the <i>CodeArtifact User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">AWS
          * API Reference</a></p>
          */

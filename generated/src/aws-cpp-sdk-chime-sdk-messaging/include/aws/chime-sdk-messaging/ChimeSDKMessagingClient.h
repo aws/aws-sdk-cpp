@@ -83,9 +83,9 @@ namespace ChimeSDKMessaging
          * that channel go through channel flow processors. To stop processing, use the
          * <code>DisassociateChannelFlow</code> API.</p>  <p>Only administrators or
          * channel moderators can associate a channel flow. The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AssociateChannelFlow">AWS
          * API Reference</a></p>
          */
@@ -110,7 +110,8 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds a specified number of users and bots to a channel. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/BatchCreateChannelMembership">AWS
          * API Reference</a></p>
          */
@@ -166,9 +167,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
          * <b>Restriction</b>: You can't change a channel's privacy.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannel">AWS
          * API Reference</a></p>
          */
@@ -198,9 +199,9 @@ namespace ChimeSDKMessaging
          * and then <code>CreateChannelMembership</code>. Bans are cleaned up when you
          * delete users or channels.</p> <p>If you ban a user who is already part of a
          * channel, that user is automatically kicked from the channel.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelBan">AWS
          * API Reference</a></p>
          */
@@ -261,7 +262,7 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Adds a user to a channel. The <code>InvitedBy</code> field in
+         * <p>Adds a member to a channel. The <code>InvitedBy</code> field in
          * <code>ChannelMembership</code> is derived from the request header. A channel
          * member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p>
          * </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p>
@@ -270,8 +271,9 @@ namespace ChimeSDKMessaging
          * member to list messages, but you must be a member to send messages.</p> </li>
          * <li> <p>Private Channels: You must be a member to list or send messages.</p>
          * </li> </ul>  <p>The <code>x-amz-chime-bearer</code> request header is
-         * mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the
-         * API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
+         * mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or
+         * <code>AppInstanceBot</code> that makes the API call as the value in the
+         * header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelMembership">AWS
          * API Reference</a></p>
          */
@@ -301,9 +303,10 @@ namespace ChimeSDKMessaging
          * and remove other moderators of the channel.</p> </li> <li> <p>Add and remove
          * user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p>
          * </li> <li> <p>List messages in the channel.</p> </li> </ul>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelModerator">AWS
          * API Reference</a></p>
          */
@@ -330,9 +333,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>Immediately makes a channel and its memberships inaccessible and marks them
          * for deletion. This is an irreversible process.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the
+         * API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannel">AWS
          * API Reference</a></p>
          */
@@ -357,10 +360,10 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Removes a user from a channel's ban list.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <p>Removes a member from a channel's ban list.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelBan">AWS
          * API Reference</a></p>
          */
@@ -446,9 +449,9 @@ namespace ChimeSDKMessaging
          * <p>Deletes a channel message. Only admins can perform this action. Deletion
          * makes messages inaccessible immediately. A background process deletes any
          * revisions created by <code>UpdateChannelMessage</code>.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -474,9 +477,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Deletes a channel moderator.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelModerator">AWS
          * API Reference</a></p>
          */
@@ -532,9 +535,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>Returns the full details of a channel in an Amazon Chime
          * <code>AppInstance</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
-         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
-         * that makes the API call as the value in the header.</p> <p><h3>See
-         * Also:</h3>   <a
+         * request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> that makes the API call as the value in the
+         * header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannel">AWS
          * API Reference</a></p>
          */
@@ -560,9 +563,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Returns the full details of a channel ban.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelBan">AWS
          * API Reference</a></p>
          */
@@ -614,9 +617,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Returns the full details of a user's channel membership.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelMembership">AWS
          * API Reference</a></p>
          */
@@ -642,10 +645,10 @@ namespace ChimeSDKMessaging
 
         /**
          * <p> Returns the details of a channel based on the membership of the specified
-         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
-         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
-         * that makes the API call as the value in the header.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelMembershipForAppInstanceUser">AWS
          * API Reference</a></p>
          */
@@ -671,10 +674,10 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Returns the full details of a channel moderated by the specified
-         * <code>AppInstanceUser</code>.</p>  <p>The <code>x-amz-chime-bearer</code>
-         * request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
-         * that makes the API call as the value in the header.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          */
@@ -730,9 +733,10 @@ namespace ChimeSDKMessaging
          * <p>Disassociates a channel flow from all its channels. Once disassociated, all
          * messages to that channel stop going through the channel flow processor.</p>
          *  <p>Only administrators or channel moderators can disassociate a channel
-         * flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * flow.</p> <p>The <code>x-amz-chime-bearer</code> request header is mandatory.
+         * Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+         * that makes the API call as the value in the header.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DisassociateChannelFlow">AWS
          * API Reference</a></p>
          */
@@ -757,13 +761,16 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the
-         * specified channel. The <code>AppInstanceUser</code> must be a member of the
-         * channel. Only the <code>AppInstanceUser</code> who owns the membership can
-         * retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel
-         * moderator roles can't retrieve preferences for other users. Banned users can't
-         * retrieve membership preferences for the channel from which they are
-         * banned.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the membership preferences of an <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> for the specified channel. A user or a bot must be a
+         * member of the channel and own the membership to be able to retrieve membership
+         * preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel
+         * moderator roles can't retrieve preferences for other users or bots. Banned users
+         * or bots can't retrieve membership preferences for the channel from which they
+         * are banned.</p>  <p>The <code>x-amz-chime-bearer</code> request header is
+         * mandatory. Use the ARN of the <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> that makes the API call as the value in the
+         * header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">AWS
          * API Reference</a></p>
          */
@@ -789,9 +796,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Gets the full details of a channel message.</p>  <p>The
-         * x-amz-chime-bearer request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -827,9 +834,10 @@ namespace ChimeSDKMessaging
          * <ul> <li> <p>This API does not return statuses for denied messages, because we
          * don't store them once the processor denies them. </p> </li> <li> <p>Only the
          * message sender can invoke this API.</p> </li> <li> <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> </li> </ul> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessageStatus">AWS
          * API Reference</a></p>
          */
@@ -909,10 +917,10 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Lists all the users banned from a particular channel.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <p>Lists all the users and bots banned from a particular channel.</p> 
+         * <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN
+         * of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+         * the API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelBans">AWS
          * API Reference</a></p>
          */
@@ -964,10 +972,10 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Lists all channel memberships in a channel.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p>  <p>If you want to list the channels to which a
-         * specific app instance user belongs, see the <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p>  <p>If you want to list the channels
+         * to which a specific app instance user belongs, see the <a
          * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMemberships">AWS
@@ -994,12 +1002,12 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part
-         * of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that
-         * is not their own. </p>  <p>The <code>x-amz-chime-bearer</code> request
-         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
-         * <a
+         * <p> Lists all channels that anr <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> is a part of. Only an <code>AppInstanceAdmin</code>
+         * can call the API with a user ARN that is not their own. </p>  <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMembershipsForAppInstanceUser">AWS
          * API Reference</a></p>
          */
@@ -1029,9 +1037,10 @@ namespace ChimeSDKMessaging
          * descending order.</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
-         * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
-         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-         * value in the header.</p> <p><h3>See Also:</h3>   <a
+         * message.</p> <p>Also, the <code>x-amz-chime-bearer</code> request header is
+         * mandatory. Use the ARN of the <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> that makes the API call as the value in the
+         * header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMessages">AWS
          * API Reference</a></p>
          */
@@ -1057,9 +1066,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Lists all the moderators for a channel.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelModerators">AWS
          * API Reference</a></p>
          */
@@ -1090,9 +1099,9 @@ namespace ChimeSDKMessaging
          * retrieve all public channels in the account.</p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
          * private channels in an account.</p> </li> </ul>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -1147,8 +1156,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
-         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-         * value in the header.</p> <p><h3>See Also:</h3>   <a
+         * the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsModeratedByAppInstanceUser">AWS
          * API Reference</a></p>
          */
@@ -1226,12 +1236,48 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the
-         * specified channel. The <code>AppInstanceUser</code> must be a member of the
-         * channel. Only the <code>AppInstanceUser</code> who owns the membership can set
-         * preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator
-         * roles can't set preferences for other users. Banned users can't set membership
-         * preferences for the channel from which they are banned.</p><p><h3>See Also:</h3>
+         * <p>Sets the number of days before the channel is automatically deleted.</p>
+         *  <ul> <li> <p>A background process deletes expired channels within 6 hours
+         * of expiration. Actual deletion times may vary.</p> </li> <li> <p>Expired
+         * channels that have not yet been deleted appear as active, and you can update
+         * their expiration settings. The system honors the new settings.</p> </li> <li>
+         * <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN
+         * of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+         * the API call as the value in the header.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelExpirationSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutChannelExpirationSettingsOutcome PutChannelExpirationSettings(const Model::PutChannelExpirationSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutChannelExpirationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutChannelExpirationSettingsRequestT = Model::PutChannelExpirationSettingsRequest>
+        Model::PutChannelExpirationSettingsOutcomeCallable PutChannelExpirationSettingsCallable(const PutChannelExpirationSettingsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMessagingClient::PutChannelExpirationSettings, request);
+        }
+
+        /**
+         * An Async wrapper for PutChannelExpirationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutChannelExpirationSettingsRequestT = Model::PutChannelExpirationSettingsRequest>
+        void PutChannelExpirationSettingsAsync(const PutChannelExpirationSettingsRequestT& request, const PutChannelExpirationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMessagingClient::PutChannelExpirationSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Sets the membership preferences of an <code>AppInstanceUser</code> or
+         * <code>AppIntanceBot</code> for the specified channel. The user or bot must be a
+         * member of the channel. Only the user or bot who owns the membership can set
+         * preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel
+         * moderator roles can't set preferences for other users or users. Banned users or
+         * bots can't set membership preferences for the channel from which they are
+         * banned.</p>  <p>The x-amz-chime-bearer request header is mandatory. Use
+         * the ARN of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">AWS
          * API Reference</a></p>
@@ -1289,8 +1335,9 @@ namespace ChimeSDKMessaging
          * <p>Redacts message content, but not metadata. The message exists in the back
          * end, but the action returns null content, and the state shows as redacted.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
-         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-         * value in the header.</p> <p><h3>See Also:</h3>   <a
+         * the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/RedactChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -1315,9 +1362,12 @@ namespace ChimeSDKMessaging
         }
 
         /**
-         * <p>Allows <code>ChimeBearer</code> to search channels by channel members.
-         * AppInstanceUsers can search across the channels that they belong to.
-         * AppInstanceAdmins can search across all channels.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows the <code>ChimeBearer</code> to search channels by channel members.
+         * Users or bots can search across the channels that they belong to. Users in the
+         * <code>AppInstanceAdmin</code> role can search across all channels.</p> <p>The
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">AWS
          * API Reference</a></p>
          */
@@ -1344,10 +1394,11 @@ namespace ChimeSDKMessaging
         /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
-         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-         * value in the header.</p> <p>Also, <code>STANDARD</code> messages can contain 4KB
-         * of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30
-         * bytes of data and no metadata.</p> <p><h3>See Also:</h3>   <a
+         * the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that
+         * makes the API call as the value in the header.</p> <p>Also,
+         * <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
+         * <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SendChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -1426,9 +1477,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
          * channel's privacy. </p>  <p>The <code>x-amz-chime-bearer</code> request
-         * header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
-         * <a
+         * header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or
+         * <code>AppInstanceBot</code> that makes the API call as the value in the
+         * header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannel">AWS
          * API Reference</a></p>
          */
@@ -1480,9 +1531,9 @@ namespace ChimeSDKMessaging
 
         /**
          * <p>Updates the content of a message.</p>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+         * <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API
+         * call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelMessage">AWS
          * API Reference</a></p>
          */
@@ -1509,8 +1560,9 @@ namespace ChimeSDKMessaging
         /**
          * <p>The details of the time when a user last read messages in a channel.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
-         * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-         * value in the header.</p> <p><h3>See Also:</h3>   <a
+         * the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that
+         * makes the API call as the value in the header.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelReadMarker">AWS
          * API Reference</a></p>
          */

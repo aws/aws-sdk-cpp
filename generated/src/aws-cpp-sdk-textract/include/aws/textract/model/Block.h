@@ -78,8 +78,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -114,8 +121,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -150,8 +164,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -186,8 +207,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -222,8 +250,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -258,8 +293,15 @@ namespace Model
      * words that are detected on a document page.</p> </li> <li> <p> <i>TABLE</i> - A
      * table that's detected on a document page. A table is grid-based information with
      * two or more rows or columns, with a cell span of one row and one column each.
-     * </p> </li> <li> <p> <i>CELL</i> - A cell within a detected table. The cell is
-     * the parent of the block that contains the text in the cell.</p> </li> <li> <p>
+     * </p> </li> <li> <p> <i>TABLE_TITLE</i> - The title of a table. A title is
+     * typically a line of text above or below a table, or embedded as the first row of
+     * a table. </p> </li> <li> <p> <i>TABLE_FOOTER</i> - The footer associated with a
+     * table. A footer is typically a line or lines of text below a table or embedded
+     * as the last row of a table. </p> </li> <li> <p> <i>CELL</i> - A cell within a
+     * detected table. The cell is the parent of the block that contains the text in
+     * the cell.</p> </li> <li> <p> <i>MERGED_CELL</i> - A cell in a table whose
+     * content spans more than one row or column. The <code>Relationships</code> array
+     * for this cell contain data from individual cells.</p> </li> <li> <p>
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
@@ -441,32 +483,28 @@ namespace Model
 
 
     /**
-     * <p>The number of rows that a table cell spans. Currently this value is always 1,
-     * even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't
+     * <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline int GetRowSpan() const{ return m_rowSpan; }
 
     /**
-     * <p>The number of rows that a table cell spans. Currently this value is always 1,
-     * even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't
+     * <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline bool RowSpanHasBeenSet() const { return m_rowSpanHasBeenSet; }
 
     /**
-     * <p>The number of rows that a table cell spans. Currently this value is always 1,
-     * even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't
+     * <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline void SetRowSpan(int value) { m_rowSpanHasBeenSet = true; m_rowSpan = value; }
 
     /**
-     * <p>The number of rows that a table cell spans. Currently this value is always 1,
-     * even if the number of rows spanned is greater than 1. <code>RowSpan</code> isn't
+     * <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
@@ -474,33 +512,29 @@ namespace Model
 
 
     /**
-     * <p>The number of columns that a table cell spans. Currently this value is always
-     * 1, even if the number of columns spanned is greater than 1.
-     * <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>. </p>
      */
     inline int GetColumnSpan() const{ return m_columnSpan; }
 
     /**
-     * <p>The number of columns that a table cell spans. Currently this value is always
-     * 1, even if the number of columns spanned is greater than 1.
-     * <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>. </p>
      */
     inline bool ColumnSpanHasBeenSet() const { return m_columnSpanHasBeenSet; }
 
     /**
-     * <p>The number of columns that a table cell spans. Currently this value is always
-     * 1, even if the number of columns spanned is greater than 1.
-     * <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>. </p>
      */
     inline void SetColumnSpan(int value) { m_columnSpanHasBeenSet = true; m_columnSpan = value; }
 
     /**
-     * <p>The number of columns that a table cell spans. Currently this value is always
-     * 1, even if the number of columns spanned is greater than 1.
-     * <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>. </p>
      */
     inline Block& WithColumnSpan(int value) { SetColumnSpan(value); return *this;}
@@ -599,154 +633,250 @@ namespace Model
 
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline const Aws::Vector<Relationship>& GetRelationships() const{ return m_relationships; }
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline bool RelationshipsHasBeenSet() const { return m_relationshipsHasBeenSet; }
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline void SetRelationships(const Aws::Vector<Relationship>& value) { m_relationshipsHasBeenSet = true; m_relationships = value; }
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline void SetRelationships(Aws::Vector<Relationship>&& value) { m_relationshipsHasBeenSet = true; m_relationships = std::move(value); }
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline Block& WithRelationships(const Aws::Vector<Relationship>& value) { SetRelationships(value); return *this;}
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline Block& WithRelationships(Aws::Vector<Relationship>&& value) { SetRelationships(std::move(value)); return *this;}
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline Block& AddRelationships(const Relationship& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(value); return *this; }
 
     /**
-     * <p>A list of child blocks of the current block. For example, a LINE object has
-     * child blocks for each WORD block that's part of the line of text. There aren't
-     * Relationship objects in the list for relationships that don't exist, such as
-     * when the current block has no child blocks. The list size can be the
-     * following:</p> <ul> <li> <p>0 - The block has no child blocks.</p> </li> <li>
-     * <p>1 - The block has child blocks.</p> </li> </ul>
+     * <p>A list of relationship objects that describe how blocks are related to each
+     * other. For example, a LINE block object contains a CHILD relationship type with
+     * the WORD blocks that make up the line of text. There aren't Relationship objects
+     * in the list for relationships that don't exist, such as when the current block
+     * has no child blocks.</p>
      */
     inline Block& AddRelationships(Relationship&& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline const Aws::Vector<EntityType>& GetEntityTypes() const{ return m_entityTypes; }
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline void SetEntityTypes(const Aws::Vector<EntityType>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline void SetEntityTypes(Aws::Vector<EntityType>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline Block& WithEntityTypes(const Aws::Vector<EntityType>& value) { SetEntityTypes(value); return *this;}
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline Block& WithEntityTypes(Aws::Vector<EntityType>&& value) { SetEntityTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline Block& AddEntityTypes(const EntityType& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of entity. The following can be returned:</p> <ul> <li> <p>
-     * <i>KEY</i> - An identifier for a field on the document.</p> </li> <li> <p>
-     * <i>VALUE</i> - The field text.</p> </li> </ul> <p> <code>EntityTypes</code>
-     * isn't returned by <code>DetectDocumentText</code> and
+     * <p>The type of entity. </p> <p>The following entity types can be returned by
+     * FORMS analysis:</p> <ul> <li> <p> <i>KEY</i> - An identifier for a field on the
+     * document.</p> </li> <li> <p> <i>VALUE</i> - The field text.</p> </li> </ul>
+     * <p>The following entity types can be returned by TABLES analysis:</p> <ul> <li>
+     * <p> <i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column. </p>
+     * </li> <li> <p> <i>TABLE_TITLE</i> - Identifies a cell that is a title within the
+     * table. </p> </li> <li> <p> <i>TABLE_SECTION_TITLE</i> - Identifies a cell that
+     * is a title of a section within a table. A section title is a cell that typically
+     * spans an entire row above a section. </p> </li> <li> <p> <i>TABLE_FOOTER</i> -
+     * Identifies a cell that is a footer of a table. </p> </li> <li> <p>
+     * <i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can
+     * be a row of a table or an additional, smaller table that contains summary
+     * information for another table. </p> </li> <li> <p> <i>STRUCTURED_TABLE </i> -
+     * Identifies a table with column headers where the content of each row corresponds
+     * to the headers. </p> </li> <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a
+     * non-structured table. </p> </li> </ul> <p> <code>EntityTypes</code> isn't
+     * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
     inline Block& AddEntityTypes(EntityType&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
@@ -796,8 +926,8 @@ namespace Model
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
      * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations operations will also return a <code>Page</code> value of 1 because
-     * every input document is considered to be a single-page document.</p>
+     * operations will also return a <code>Page</code> value of 1 because every input
+     * document is considered to be a single-page document.</p>
      */
     inline int GetPage() const{ return m_page; }
 
@@ -808,8 +938,8 @@ namespace Model
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
      * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations operations will also return a <code>Page</code> value of 1 because
-     * every input document is considered to be a single-page document.</p>
+     * operations will also return a <code>Page</code> value of 1 because every input
+     * document is considered to be a single-page document.</p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
@@ -820,8 +950,8 @@ namespace Model
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
      * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations operations will also return a <code>Page</code> value of 1 because
-     * every input document is considered to be a single-page document.</p>
+     * operations will also return a <code>Page</code> value of 1 because every input
+     * document is considered to be a single-page document.</p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
@@ -832,8 +962,8 @@ namespace Model
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
      * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations operations will also return a <code>Page</code> value of 1 because
-     * every input document is considered to be a single-page document.</p>
+     * operations will also return a <code>Page</code> value of 1 because every input
+     * document is considered to be a single-page document.</p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
 

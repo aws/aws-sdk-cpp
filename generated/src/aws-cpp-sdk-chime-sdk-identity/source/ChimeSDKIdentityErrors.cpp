@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
 #include <aws/chime-sdk-identity/model/ConflictException.h>
 #include <aws/chime-sdk-identity/model/ServiceUnavailableException.h>
+#include <aws/chime-sdk-identity/model/NotFoundException.h>
 #include <aws/chime-sdk-identity/model/ServiceFailureException.h>
 #include <aws/chime-sdk-identity/model/ForbiddenException.h>
 #include <aws/chime-sdk-identity/model/ResourceLimitExceededException.h>
@@ -34,6 +35,12 @@ template<> AWS_CHIMESDKIDENTITY_API ServiceUnavailableException ChimeSDKIdentity
 {
   assert(this->GetErrorType() == ChimeSDKIdentityErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIMESDKIDENTITY_API NotFoundException ChimeSDKIdentityError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKIdentityErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKIDENTITY_API ServiceFailureException ChimeSDKIdentityError::GetModeledError()
@@ -76,6 +83,7 @@ namespace ChimeSDKIdentityErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
@@ -91,6 +99,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::NOT_FOUND), false);
   }
   else if (hashCode == SERVICE_FAILURE_HASH)
   {

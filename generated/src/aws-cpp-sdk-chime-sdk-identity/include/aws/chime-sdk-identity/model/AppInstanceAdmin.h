@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of an <code>AppInstanceAdmin</code>.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The name and ARN of the admin for the <code>AppInstance</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/AppInstanceAdmin">AWS
    * API Reference</a></p>
    */

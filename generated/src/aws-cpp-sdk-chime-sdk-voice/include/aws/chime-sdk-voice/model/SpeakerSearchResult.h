@@ -1,0 +1,83 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace ChimeSDKVoice
+{
+namespace Model
+{
+
+  class SpeakerSearchResult
+  {
+  public:
+    AWS_CHIMESDKVOICE_API SpeakerSearchResult();
+    AWS_CHIMESDKVOICE_API SpeakerSearchResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API SpeakerSearchResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline double GetConfidenceScore() const{ return m_confidenceScore; }
+
+    
+    inline bool ConfidenceScoreHasBeenSet() const { return m_confidenceScoreHasBeenSet; }
+
+    
+    inline void SetConfidenceScore(double value) { m_confidenceScoreHasBeenSet = true; m_confidenceScore = value; }
+
+    
+    inline SpeakerSearchResult& WithConfidenceScore(double value) { SetConfidenceScore(value); return *this;}
+
+
+    
+    inline const Aws::String& GetVoiceProfileId() const{ return m_voiceProfileId; }
+
+    
+    inline bool VoiceProfileIdHasBeenSet() const { return m_voiceProfileIdHasBeenSet; }
+
+    
+    inline void SetVoiceProfileId(const Aws::String& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = value; }
+
+    
+    inline void SetVoiceProfileId(Aws::String&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::move(value); }
+
+    
+    inline void SetVoiceProfileId(const char* value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId.assign(value); }
+
+    
+    inline SpeakerSearchResult& WithVoiceProfileId(const Aws::String& value) { SetVoiceProfileId(value); return *this;}
+
+    
+    inline SpeakerSearchResult& WithVoiceProfileId(Aws::String&& value) { SetVoiceProfileId(std::move(value)); return *this;}
+
+    
+    inline SpeakerSearchResult& WithVoiceProfileId(const char* value) { SetVoiceProfileId(value); return *this;}
+
+  private:
+
+    double m_confidenceScore;
+    bool m_confidenceScoreHasBeenSet = false;
+
+    Aws::String m_voiceProfileId;
+    bool m_voiceProfileIdHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace ChimeSDKVoice
+} // namespace Aws

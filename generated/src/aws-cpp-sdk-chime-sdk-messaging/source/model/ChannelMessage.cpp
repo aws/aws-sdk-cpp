@@ -35,7 +35,8 @@ ChannelMessage::ChannelMessage() :
     m_persistenceHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
+    m_subChannelIdHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ChannelMessage::ChannelMessage(JsonView jsonValue) :
     m_persistenceHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
+    m_subChannelIdHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +166,13 @@ ChannelMessage& ChannelMessage::operator =(JsonView jsonValue)
     m_subChannelIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentType"))
+  {
+    m_contentType = jsonValue.GetString("ContentType");
+
+    m_contentTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -252,6 +261,12 @@ JsonValue ChannelMessage::Jsonize() const
   if(m_subChannelIdHasBeenSet)
   {
    payload.WithString("SubChannelId", m_subChannelId);
+
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("ContentType", m_contentType);
 
   }
 

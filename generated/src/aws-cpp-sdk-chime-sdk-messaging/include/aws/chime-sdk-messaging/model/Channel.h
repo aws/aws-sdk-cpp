@@ -11,6 +11,7 @@
 #include <aws/chime-sdk-messaging/model/Identity.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime-sdk-messaging/model/ElasticChannelConfiguration.h>
+#include <aws/chime-sdk-messaging/model/ExpirationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -428,6 +429,37 @@ namespace Model
      */
     inline Channel& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline bool ExpirationSettingsHasBeenSet() const { return m_expirationSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = value; }
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::move(value); }
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline Channel& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
+
+    /**
+     * <p>Settings that control when a channel expires.</p>
+     */
+    inline Channel& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -462,6 +494,9 @@ namespace Model
 
     ElasticChannelConfiguration m_elasticChannelConfiguration;
     bool m_elasticChannelConfigurationHasBeenSet = false;
+
+    ExpirationSettings m_expirationSettings;
+    bool m_expirationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

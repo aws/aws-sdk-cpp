@@ -23,26 +23,32 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
 #include <aws/chime-sdk-identity/model/CreateAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/CreateAppInstanceAdminRequest.h>
+#include <aws/chime-sdk-identity/model/CreateAppInstanceBotRequest.h>
 #include <aws/chime-sdk-identity/model/CreateAppInstanceUserRequest.h>
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceAdminRequest.h>
+#include <aws/chime-sdk-identity/model/DeleteAppInstanceBotRequest.h>
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceUserRequest.h>
 #include <aws/chime-sdk-identity/model/DeregisterAppInstanceUserEndpointRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceAdminRequest.h>
+#include <aws/chime-sdk-identity/model/DescribeAppInstanceBotRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceUserRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceUserEndpointRequest.h>
 #include <aws/chime-sdk-identity/model/GetAppInstanceRetentionSettingsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceAdminsRequest.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceBotsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUsersRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstancesRequest.h>
 #include <aws/chime-sdk-identity/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-identity/model/PutAppInstanceRetentionSettingsRequest.h>
+#include <aws/chime-sdk-identity/model/PutAppInstanceUserExpirationSettingsRequest.h>
 #include <aws/chime-sdk-identity/model/RegisterAppInstanceUserEndpointRequest.h>
 #include <aws/chime-sdk-identity/model/TagResourceRequest.h>
 #include <aws/chime-sdk-identity/model/UntagResourceRequest.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceRequest.h>
+#include <aws/chime-sdk-identity/model/UpdateAppInstanceBotRequest.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserRequest.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserEndpointRequest.h>
 
@@ -198,6 +204,15 @@ CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(con
   return CreateAppInstanceAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateAppInstanceBotOutcome ChimeSDKIdentityClient::CreateAppInstanceBot(const CreateAppInstanceBotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots");
+  return CreateAppInstanceBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -242,6 +257,21 @@ DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(con
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceAdminArn());
   return DeleteAppInstanceAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const DeleteAppInstanceBotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceBotArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAppInstanceBot", "Required field: AppInstanceBotArn, is not set");
+    return DeleteAppInstanceBotOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceBotArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
+  return DeleteAppInstanceBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
@@ -318,6 +348,21 @@ DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin
   return DescribeAppInstanceAdminOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeAppInstanceBotOutcome ChimeSDKIdentityClient::DescribeAppInstanceBot(const DescribeAppInstanceBotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceBotArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceBot", "Required field: AppInstanceBotArn, is not set");
+    return DescribeAppInstanceBotOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceBotArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
+  return DescribeAppInstanceBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -385,6 +430,20 @@ ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/admins");
   return ListAppInstanceAdminsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppInstanceBotsOutcome ChimeSDKIdentityClient::ListAppInstanceBots(const ListAppInstanceBotsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAppInstanceBots", "Required field: AppInstanceArn, is not set");
+    return ListAppInstanceBotsOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstanceBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots");
+  return ListAppInstanceBotsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(const ListAppInstanceUserEndpointsRequest& request) const
@@ -456,6 +515,22 @@ PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRet
   return PutAppInstanceRetentionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
+PutAppInstanceUserExpirationSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceUserExpirationSettings(const PutAppInstanceUserExpirationSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAppInstanceUserExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAppInstanceUserExpirationSettings", "Required field: AppInstanceUserArn, is not set");
+    return PutAppInstanceUserExpirationSettingsOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAppInstanceUserExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-users/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/expiration-settings");
+  return PutAppInstanceUserExpirationSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
 RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(const RegisterAppInstanceUserEndpointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAppInstanceUserEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -509,6 +584,21 @@ UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateA
   endpointResolutionOutcome.GetResult().AddPathSegments("/app-instances/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
   return UpdateAppInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppInstanceBotOutcome ChimeSDKIdentityClient::UpdateAppInstanceBot(const UpdateAppInstanceBotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppInstanceBotArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAppInstanceBot", "Required field: AppInstanceBotArn, is not set");
+    return UpdateAppInstanceBotOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceBotArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app-instance-bots/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
+  return UpdateAppInstanceBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const

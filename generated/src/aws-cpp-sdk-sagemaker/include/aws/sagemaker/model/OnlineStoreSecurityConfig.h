@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker
      * Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3
-     * server-side encryption.</p> <p>The caller (either IAM user or IAM role) of
+     * server-side encryption.</p> <p>The caller (either user or IAM role) of
      * <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:</p> <ul> <li> <p>
      * <code>"kms:Encrypt"</code> </p> </li> <li> <p> <code>"kms:Decrypt"</code> </p>

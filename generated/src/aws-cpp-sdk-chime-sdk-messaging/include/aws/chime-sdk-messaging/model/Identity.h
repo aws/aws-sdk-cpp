@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of a user.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a user or bot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/Identity">AWS
    * API Reference</a></p>
    */

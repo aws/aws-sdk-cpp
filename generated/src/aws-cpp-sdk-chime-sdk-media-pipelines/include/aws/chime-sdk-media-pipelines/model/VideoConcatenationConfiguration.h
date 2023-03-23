@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration object of a video contacatentation pipeline.</p><p><h3>See
+   * <p>The configuration object of a video concatenation pipeline.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/VideoConcatenationConfiguration">AWS
    * API Reference</a></p>
