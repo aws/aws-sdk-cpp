@@ -34,7 +34,8 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() :
     m_languageCodeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(JsonView jsonValu
     m_languageCodeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_flywheelArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(JsonV
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlywheelArn"))
+  {
+    m_flywheelArn = jsonValue.GetString("FlywheelArn");
+
+    m_flywheelArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +252,12 @@ JsonValue EntitiesDetectionJobProperties::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_flywheelArnHasBeenSet)
+  {
+   payload.WithString("FlywheelArn", m_flywheelArn);
 
   }
 

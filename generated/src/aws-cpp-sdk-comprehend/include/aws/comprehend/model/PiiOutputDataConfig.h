@@ -112,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline PiiOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline PiiOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job.</p>
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job.</p>
      */
     inline PiiOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

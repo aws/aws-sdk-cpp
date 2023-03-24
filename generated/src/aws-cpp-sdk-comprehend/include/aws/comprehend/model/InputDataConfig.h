@@ -42,7 +42,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -52,7 +52,7 @@ namespace Model
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -62,7 +62,7 @@ namespace Model
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -72,7 +72,7 @@ namespace Model
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -82,7 +82,7 @@ namespace Model
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -92,7 +92,7 @@ namespace Model
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -102,7 +102,7 @@ namespace Model
     inline InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
@@ -112,7 +112,7 @@ namespace Model
     inline InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 URI for the input data. The URI must be in same region as the
+     * <p>The Amazon S3 URI for the input data. The URI must be in same Region as the
      * API endpoint that you are calling. The URI can point to a single input file or
      * it can provide the prefix for a collection of data files. </p> <p>For example,
      * if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a

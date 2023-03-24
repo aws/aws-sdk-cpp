@@ -87,8 +87,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -98,8 +99,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -109,8 +111,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -120,8 +123,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -131,8 +135,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -142,8 +147,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -153,8 +159,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -164,8 +171,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-     * fully qualified identifier for the job. It includes the AWS account, Region, and
-     * the job ID. The format of the ARN is as follows:</p> <p>
+     * fully qualified identifier for the job. It includes the Amazon Web Services
+     * account, Amazon Web Services Region, and the job ID. The format of the ARN is as
+     * follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -455,50 +463,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline EventsDetectionJobProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline EventsDetectionJobProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline EventsDetectionJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

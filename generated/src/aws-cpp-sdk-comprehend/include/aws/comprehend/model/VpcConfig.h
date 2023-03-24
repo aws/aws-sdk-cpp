@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -194,7 +194,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -204,7 +204,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>
@@ -224,7 +224,7 @@ namespace Model
     /**
      * <p>The ID for each subnet being used in your private VPC. This subnet is a
      * subset of the a range of IPv4 addresses used by the VPC and is specific to a
-     * given availability zone in the VPC’s region. This ID number is preceded by
+     * given availability zone in the VPC’s Region. This ID number is preceded by
      * "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see
      * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
      * and Subnets</a>. </p>

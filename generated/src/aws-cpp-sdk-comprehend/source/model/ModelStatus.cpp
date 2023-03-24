@@ -27,6 +27,7 @@ namespace Aws
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int IN_ERROR_HASH = HashingUtils::HashString("IN_ERROR");
         static const int TRAINED_HASH = HashingUtils::HashString("TRAINED");
+        static const int TRAINED_WITH_WARNING_HASH = HashingUtils::HashString("TRAINED_WITH_WARNING");
 
 
         ModelStatus GetModelStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ModelStatus::TRAINED;
           }
+          else if (hashCode == TRAINED_WITH_WARNING_HASH)
+          {
+            return ModelStatus::TRAINED_WITH_WARNING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "IN_ERROR";
           case ModelStatus::TRAINED:
             return "TRAINED";
+          case ModelStatus::TRAINED_WITH_WARNING:
+            return "TRAINED_WITH_WARNING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

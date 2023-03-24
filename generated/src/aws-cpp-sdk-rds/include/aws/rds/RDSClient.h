@@ -596,10 +596,16 @@ namespace Aws
         }
 
         /**
-         * <p>Creates a new Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> <p>You can
-         * use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-         * Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or
-         * PostgreSQL DB instance. For more information about Amazon Aurora, see <a
+         * <p>Creates a new Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> <p>If you
+         * create an Aurora DB cluster, the request creates an empty cluster. You must
+         * explicitly create the writer instance for your DB cluster using the <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html">CreateDBInstance</a>
+         * operation. If you create a Multi-AZ DB cluster, the request creates a writer and
+         * two reader DB instances for you, each in a different Availability Zone.</p>
+         * <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create
+         * an Amazon Aurora DB cluster as a read replica of another DB cluster or Amazon
+         * RDS MySQL or PostgreSQL DB instance. For more information about Amazon Aurora,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
          * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>You can
          * also use the <code>ReplicationSourceIdentifier</code> parameter to create a
@@ -4374,10 +4380,10 @@ namespace Aws
          * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
          * DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-export-snapshot.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
          * DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User
          * Guide</i>.</p> <p>For more information on exporting DB cluster data, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/export-cluster-data.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/export-cluster-data.html">Exporting
          * DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS

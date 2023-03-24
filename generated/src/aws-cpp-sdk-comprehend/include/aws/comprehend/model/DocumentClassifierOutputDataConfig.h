@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>When you use the <code>OutputDataConfig</code> object while creating a custom
      * classifier, you specify the Amazon S3 location where you want to write the
-     * confusion matrix. The URI must be in the same region as the API endpoint that
+     * confusion matrix. The URI must be in the same Region as the API endpoint that
      * you are calling. The location is used as the prefix for the actual location of
      * this output file.</p> <p>When the custom classifier job is finished, the service
      * creates the output file in a directory specific to the job. The
@@ -144,9 +144,9 @@ namespace Model
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -158,9 +158,9 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -172,9 +172,9 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -186,9 +186,9 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -200,9 +200,9 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -214,9 +214,9 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -228,9 +228,9 @@ namespace Model
     inline DocumentClassifierOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -242,9 +242,9 @@ namespace Model
     inline DocumentClassifierOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+     * can be one of the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>

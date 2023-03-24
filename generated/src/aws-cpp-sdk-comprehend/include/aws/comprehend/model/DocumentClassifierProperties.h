@@ -486,59 +486,59 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data.</p>
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -547,10 +547,10 @@ namespace Model
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -559,10 +559,10 @@ namespace Model
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -571,10 +571,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -583,10 +583,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -595,10 +595,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -607,10 +607,10 @@ namespace Model
     inline DocumentClassifierProperties& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -619,10 +619,10 @@ namespace Model
     inline DocumentClassifierProperties& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -736,88 +736,80 @@ namespace Model
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline DocumentClassifierProperties& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline DocumentClassifierProperties& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
@@ -867,57 +859,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline DocumentClassifierProperties& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline DocumentClassifierProperties& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
-     * from a different AWS account to create the document classifier model in your AWS
-     * account.</p>
+     * from a different Amazon Web Services account to create the document classifier
+     * model in your Amazon Web Services account.</p>
      */
     inline DocumentClassifierProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
 

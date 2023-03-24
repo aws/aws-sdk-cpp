@@ -128,6 +128,7 @@ static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("D
 static const int CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomAvailabilityZoneNotFound");
 static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
 static const int D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterBacktrackNotFoundFault");
+static const int CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH = HashingUtils::HashString("CreateCustomDBEngineVersionFault");
 static const int S_N_S_NO_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("SNSNoAuthorization");
 static const int RESERVED_D_B_INSTANCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceNotFound");
 static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestoreFault");
@@ -702,6 +703,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT), false);
     return true;
   }
+  else if (hashCode == CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT), false);
+    return true;
+  }
   else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
@@ -757,17 +763,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::SOURCE_NOT_FOUND_FAULT), false);
     return true;
   }
-  else if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH)
+  if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT), false);
     return true;

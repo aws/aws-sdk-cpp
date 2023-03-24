@@ -104,66 +104,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline StartSentimentDetectionJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline StartSentimentDetectionJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based
+     * permissions</a>.</p>
      */
     inline StartSentimentDetectionJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -302,10 +302,10 @@ namespace Model
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -314,10 +314,10 @@ namespace Model
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -326,10 +326,10 @@ namespace Model
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -338,10 +338,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -350,10 +350,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -362,10 +362,10 @@ namespace Model
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -374,10 +374,10 @@ namespace Model
     inline StartSentimentDetectionJobRequest& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -386,10 +386,10 @@ namespace Model
     inline StartSentimentDetectionJobRequest& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt data on the storage volume attached to the ML compute instance(s)
-     * that process the analysis job. The VolumeKmsKeyId can be either of the following
-     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>

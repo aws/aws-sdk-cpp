@@ -131,58 +131,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline CreateFlywheelRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline CreateFlywheelRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend the permissions required to access the
-     * flywheel data in the data lake.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * the permissions required to access the flywheel data in the data lake.</p>
      */
     inline CreateFlywheelRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

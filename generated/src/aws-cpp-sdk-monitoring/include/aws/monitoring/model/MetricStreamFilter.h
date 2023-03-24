@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>This structure contains the name of one of the metric namespaces that is
-   * listed in a filter of a metric stream.</p><p><h3>See Also:</h3>   <a
+   * listed in a filter of a metric stream.</p> <p>The namespace can contain only
+   * ASCII printable characters (ASCII range 32 through 126). It must contain at
+   * least one non-whitespace character.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStreamFilter">AWS
    * API Reference</a></p>
    */

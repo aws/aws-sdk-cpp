@@ -405,50 +405,50 @@ namespace Model
 
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline const Aws::Vector<GlobalClusterMember>& GetGlobalClusterMembers() const{ return m_globalClusterMembers; }
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline bool GlobalClusterMembersHasBeenSet() const { return m_globalClusterMembersHasBeenSet; }
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline void SetGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = value; }
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline void SetGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = std::move(value); }
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline GlobalCluster& WithGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { SetGlobalClusterMembers(value); return *this;}
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline GlobalCluster& WithGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { SetGlobalClusterMembers(std::move(value)); return *this;}
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline GlobalCluster& AddGlobalClusterMembers(const GlobalClusterMember& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(value); return *this; }
 
     /**
-     * <p>The list of cluster IDs for secondary clusters within the global database
-     * cluster. Currently limited to 1 item.</p>
+     * <p>The list of primary and secondary clusters within the global database
+     * cluster.</p>
      */
     inline GlobalCluster& AddGlobalClusterMembers(GlobalClusterMember&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(std::move(value)); return *this; }
 

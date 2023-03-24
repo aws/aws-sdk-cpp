@@ -39,88 +39,80 @@ namespace Model
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline DataSecurityConfig& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline DataSecurityConfig& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */

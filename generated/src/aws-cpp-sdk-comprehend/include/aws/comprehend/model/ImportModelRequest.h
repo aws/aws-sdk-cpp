@@ -130,7 +130,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
@@ -138,7 +138,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
@@ -146,7 +146,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
@@ -154,7 +154,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
@@ -162,7 +162,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline ImportModelRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline ImportModelRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
@@ -186,94 +186,86 @@ namespace Model
      * <p>The version name given to the custom model that is created by this import.
      * Version names can have a maximum of 256 characters. Alphanumeric characters,
      * hyphens (-) and underscores (_) are allowed. The version name must be unique
-     * among all models with the same classifier name in the account/AWS Region.</p>
+     * among all models with the same classifier name in the account/Region.</p>
      */
     inline ImportModelRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline ImportModelRequest& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
     inline ImportModelRequest& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
-     * following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
+     * <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+     * models. The ModelKmsKeyId can be either of the following formats:</p> <ul> <li>
+     * <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+     * <li> <p>Amazon Resource Name (ARN) of a KMS Key:
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
@@ -281,58 +273,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend permission to use Amazon Key Management
-     * Service (KMS) to encrypt or decrypt the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the
+     * custom model.</p>
      */
     inline ImportModelRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
