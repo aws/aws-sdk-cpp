@@ -186,49 +186,121 @@ namespace Model
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline StartExportTaskRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline StartExportTaskRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM role to use for writing to the Amazon S3 bucket when
-     * exporting a snapshot or cluster.</p>
+     * exporting a snapshot or cluster.</p> <p>In the IAM policy attached to your IAM
+     * role, include the following required actions to allow the transfer of files from
+     * Amazon RDS or Amazon Aurora to an S3 bucket:</p> <ul> <li> <p>s3:PutObject*</p>
+     * </li> <li> <p>s3:GetObject*</p> </li> <li> <p>s3:ListBucket</p> </li> <li>
+     * <p>s3:DeleteObject*</p> </li> <li> <p>s3:GetBucketLocation </p> </li> </ul>
+     * <p>In the policy, include the resources to identify the S3 bucket and objects in
+     * the bucket. The following list of resources shows the Amazon Resource Name (ARN)
+     * format for accessing S3:</p> <ul> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
+     * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
     inline StartExportTaskRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

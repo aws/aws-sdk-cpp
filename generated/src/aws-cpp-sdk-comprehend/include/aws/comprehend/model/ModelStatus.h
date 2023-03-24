@@ -22,7 +22,8 @@ namespace Model
     STOP_REQUESTED,
     STOPPED,
     IN_ERROR,
-    TRAINED
+    TRAINED,
+    TRAINED_WITH_WARNING
   };
 
 namespace ModelStatusMapper

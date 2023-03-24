@@ -87,42 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline MetricDatum& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline MetricDatum& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline MetricDatum& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The dimensions associated with the metric.</p>
+     * <p>The dimensions associated with the metric. </p>
      */
     inline MetricDatum& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 

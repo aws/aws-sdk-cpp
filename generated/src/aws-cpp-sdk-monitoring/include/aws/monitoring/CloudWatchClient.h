@@ -98,7 +98,11 @@ namespace CloudWatch
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
+         * If you specify an incorrect alarm name or make any other error in the operation,
+         * no alarms are deleted. To confirm that alarms were deleted successfully, you can
+         * use the <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+         * operation after using <code>DeleteAlarms</code>.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -1135,13 +1139,13 @@ namespace CloudWatch
          * existing alarm, its state is left unchanged, but the update completely
          * overwrites the previous configuration of the alarm.</p> <p>If you are an IAM
          * user, you must have Amazon EC2 permissions for some alarm operations:</p> <ul>
-         * <li> <p>The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2
-         * actions</p> </li> <li> <p>The <code>iam:CreateServiceLinkedRole</code> to create
-         * an alarm with Systems Manager OpsItem actions.</p> </li> </ul> <p>The first time
-         * you create an alarm in the Amazon Web Services Management Console, the CLI, or
-         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
-         * role for you. The service-linked roles are called
-         * <code>AWSServiceRoleForCloudWatchEvents</code> and
+         * <li> <p>The <code>iam:CreateServiceLinkedRole</code> permission for all alarms
+         * with EC2 actions</p> </li> <li> <p>The <code>iam:CreateServiceLinkedRole</code>
+         * permissions to create an alarm with Systems Manager OpsItem or response plan
+         * actions.</p> </li> </ul> <p>The first time you create an alarm in the Amazon Web
+         * Services Management Console, the CLI, or by using the PutMetricAlarm API,
+         * CloudWatch creates the necessary service-linked role for you. The service-linked
+         * roles are called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon

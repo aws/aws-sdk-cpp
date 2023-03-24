@@ -85,8 +85,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -96,8 +97,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -107,8 +109,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -118,8 +121,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -129,8 +133,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -140,8 +145,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
@@ -151,8 +157,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the AWS account,
-     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * unique, fully qualified identifier for the job. It includes the Amazon Web
+     * Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:</p> <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      * </p> <p>The following is an example job ARN:</p> <p>
      * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
