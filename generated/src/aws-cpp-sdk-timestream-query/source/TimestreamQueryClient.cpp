@@ -175,6 +175,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CancelQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -225,6 +226,7 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateScheduledQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -275,6 +277,7 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteScheduledQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -333,6 +336,7 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeScheduledQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -383,6 +387,7 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ExecuteScheduledQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -433,6 +438,7 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListScheduledQueries", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -483,6 +489,7 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsForResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -533,6 +540,7 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("PrepareQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -583,6 +591,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Query", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -633,6 +642,7 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -683,6 +693,7 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -733,6 +744,7 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateScheduledQuery", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
